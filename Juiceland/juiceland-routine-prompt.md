@@ -63,9 +63,10 @@ Then execute:
 
 8. (folded into 7)
 
-9. DELIVER TASK + GROUP — per `juiceland-delivery.md` and `method.md`, gated on
-   (am_queue_count + dormant_count > 0). Lark task (members added in separate calls) + Quality-group
-   message with the task link. Skip both if the gate is 0.
+9. DELIVER GROUP — per `juiceland-delivery.md` and `method.md`, gated on
+   (am_queue_count + dormant_count > 0). Send the summary to the Juiceland Lark group
+   (chat_id in delivery file; fallback Food Operation Core). NO Lark task is created (task channel off).
+   Skip the group message if the gate is 0.
 
 10. FAILURE PATH — if any step hard-fails (query error after retry, completeness stop, script error,
     send error), post a short message to the CHAW Finance group (oc_a834e976f4c5a57474d2e022e765dc1f)
