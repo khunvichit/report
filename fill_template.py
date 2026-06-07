@@ -30,25 +30,27 @@ data.json shape (the model produces this — small, well under the token limit):
 """
 import sys, json, re
 
-def render_repeats(html, repeats):
+def render_repeats(html, repeats, _local=None):
     # Process each REPEAT block. Non-greedy, DOTALL so it spans newlines.
     pattern = re.compile(r"<!--\s*REPEAT:(\w+)[\s\S]*?-->(.*?)<!--\s*/REPEAT:\1\s*-->", re.DOTALL)
+    combined = repeats if _local is None else {**repeats, **_local}
     def repl(m):
         name, inner = m.group(1), m.group(2)
-        items = repeats.get(name, [])
+        items = combined.get(name, [])
         out = []
         for item in items:
             block = inner
+            # Sub-lists in this item are used for nested REPEAT expansion.
+            sub_lists = {k: v for k, v in item.items() if isinstance(v, list)}
+            if sub_lists:
+                block = render_repeats(block, repeats, sub_lists)
             for k, v in item.items():
-                block = block.replace("{{" + k + "}}", str(v))
+                if not isinstance(v, list):
+                    block = block.replace("{{" + k + "}}", str(v))
             out.append(block)
         return "".join(out)
-    # Loop until no nested REPEATs remain (handles REPEAT inside REPEAT).
-    prev = None
-    while prev != html:
-        prev = html
-        html = pattern.sub(repl, html)
-    return html
+    # Single pass is sufficient since nesting is handled recursively above.
+    return pattern.sub(repl, html)
 
 def render_sections(html, sections):
     pattern = re.compile(r"<!--\s*SECTION:(\w+)[\s\S]*?-->(.*?)<!--\s*/SECTION:\1\s*-->", re.DOTALL)
