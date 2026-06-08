@@ -36,9 +36,10 @@ Run the 5 checks in `khiang-queries.md`. Any hard-stop failure → do NOT send; 
 - Period metrics: `net_30d` / `avg_30d` (Query H) and `net_mtd` / `avg_mtd` / `mtd_days` /
   `mtd_signed_pct` (Query I). Use ACTUAL trading days for the averages, not calendar days.
 - Anomalies per `khiang-prediction.md` using **bill count** vs HOURLY_BILL_BENCH × 0.50.
-  Set `anomaly_count`, `critical_n`, `high_n`. (The CCTV section was removed — anomalies now drive
-  ONLY the alert banner and the Khiang-group message, not an in-email action plan.)
+  Set `anomaly_count`. (CCTV section removed — anomalies now drive ONLY the email alert banner +
+  hourly-table styling. The Khiang group message is a plain daily digest, NOT anomaly-gated.)
 - For each hourly row, build `top3` from Query E2 (itemid ×qty, top 3, " · " separated; "—" if none).
+- Build `rice_top10_lines` for the group digest from the same `top10_rice` data (see `khiang-delivery.md`).
 - Sections: `alert_banner = (anomaly_count > 0)`; `promo = (staff10_bills + set50_bills > 0)`.
 
 ## 6. Build data.json (NOT html)
@@ -62,8 +63,9 @@ Do NOT send with unresolved tokens.
 
 ## 8. Send
 - EMAIL: always (after completeness). manual-test → owner only. Body = contents of `email.html`.
-- GROUP: gated (anomaly_count > 0), scheduled mode only. Primary chat_id, fallback on failure.
-  Message includes MTD avg + 30d avg (per `khiang-delivery.md`). No task, no task link.
+- GROUP: fires DAILY (not anomaly-gated), scheduled mode only. Primary chat_id (Khiang), fallback
+  (Quality) on failure. Daily sales digest: net sales, avg ticket, MTD avg, 30d avg, Top 10 rice menu
+  (per `khiang-delivery.md`). No CCTV framing, no task.
 
 ## 9. Failure path (fail loud)
 On any hard stop or channel hard-failure: DM owner (vichit@sfb.co.th) / post failure group with which

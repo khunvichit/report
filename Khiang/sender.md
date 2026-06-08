@@ -28,5 +28,5 @@ STOP (already sent today). Run the whole routine EXACTLY ONCE per day.
 ```
 ✅ <Brand> Daily Report — {report_date_display}
    Net Sales: ฿{net_sales} ({signed_pct}%)  Bills: {total_bills}  Anomalies: {anomaly_count}
-   📧 email → {recipients}   📋 task → {task_guid|skipped}   💬 group → {chat_id|skipped}
+   📧 email → {recipients}   💬 group → {chat_id}   (task channel off)
 ```

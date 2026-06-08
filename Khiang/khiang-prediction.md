@@ -28,27 +28,27 @@ if actual_bills[h] < HOURLY_BILL_BENCH[h] * 0.50:   # >50% drop in customer flow
 anomaly_count = number of flagged hours
 ```
 `sections.alert_banner = anomaly_count > 0`
-(The in-email CCTV action plan was removed. Anomalies now feed ONLY: the alert banner, the hourly
-table's `hour_flag`/`note` styling, and the Khiang-group message. No `cctv_tasks` repeat is built.)
+(The in-email CCTV action plan was removed AND the group message is now a plain daily digest.
+Anomalies feed ONLY the email: the alert banner + the hourly table's `hour_flag`/`note` styling.
+No `cctv_tasks` repeat is built, and the Khiang group message does NOT list anomalies.)
 
-## Priority & issue type (bill-count based) — used to classify hours for the group message
-| Condition | Issue type | Priority |
-|-----------|-----------|----------|
-| bills < 5% of bench | Near-zero traffic | 🔴 Critical |
-| 11–13h bills < 50% bench | Lunch peak collapse | 🔴 Critical |
-| 09–10h bills < 50% bench | Pre-peak slowdown | 🟠 High |
-| 17–20h bills < 50% bench | Evening traffic dip | 🟠 High |
-| 21–23h bills < 50% bench | Early-closing suspected | 🟠 High |
-| any other hour < 50% bench | Low customer flow | 🟠 High |
+## Priority & issue type (bill-count based) — drives the hourly table's flag/note styling only
+| Condition | Issue type | Priority | hourly note tag |
+|-----------|-----------|----------|-----------------|
+| bills < 5% of bench | Near-zero traffic | 🔴 Critical | 🔴 near-zero |
+| 11–13h bills < 50% bench | Lunch peak collapse | 🔴 Critical | 🔴 collapsed |
+| 09–10h bills < 50% bench | Pre-peak slowdown | 🟠 High | ⚠️ Low |
+| 17–20h bills < 50% bench | Evening traffic dip | 🟠 High | ⚠️ Low |
+| 21–23h bills < 50% bench | Early-closing suspected | 🟠 High | ⚠️ Low |
+| any other hour < 50% bench | Low customer flow | 🟠 High | ⚠️ Low |
 
-Rank Critical before High; within a tier, order by hour. Set `critical_n` / `high_n` counts.
-The Khiang-group message lists one line per flagged hour: `🔴/🟠 [{hour}] {issue_type}
-(bills {actual} vs bench {bench}, {pct}%)` — see `khiang-delivery.md`.
+For each flagged hour: set `hour_flag = " 🚨"`, `row_bg = #FFEBEE`, and a short factual `note`.
+`anomaly_count` (count of flagged hours) drives the alert banner only.
 
 ## GUARDRAILS (non-negotiable)
 - **Describe, don't diagnose.** State what the data shows ("bills 88% below benchmark at 10:00").
-  NEVER assert an unobserved cause ("staff left early", "ran out of pork") in the report or the
-  group message — anomalies are flagged factually for the team to investigate.
+  NEVER assert an unobserved cause ("staff left early", "ran out of pork") in the report — anomalies
+  are flagged factually.
 - **No invented numbers.** Every figure traces to a query result or a stated benchmark.
 - The hourly table `note` is a short factual tag (✅ Normal / ⚠️ Low / 🔴 collapsed), bill-driven.
-- If `anomaly_count == 0`: alert_banner section OFF; no Khiang-group post.
+- If `anomaly_count == 0`: alert_banner section OFF. (The Khiang group digest still fires daily.)
