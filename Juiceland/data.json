@@ -1,0 +1,745 @@
+{
+  "scalars": {
+    "report_date": "2026-06-07",
+    "report_date_display": "7 June 2026",
+    "report_day_th": "วันอาทิตย์",
+    "window_30d_start": "9 May 2026",
+    "generated_timestamp": "2026-06-08 07:30",
+    "subject_prefix": "⚠️",
+    "comb_net": "56,719",
+    "signed_pct": "-20.4",
+    "mw1_net": "25,977",
+    "se3_net": "17,749",
+    "pkt_net": "12,993",
+    "mw1_vs_30d": "-25.3",
+    "se3_vs_30d": "-28.4",
+    "pkt_vs_30d": "+11.1",
+    "mw1_avg_30d": "34,784",
+    "mw1_min_30d": "25,913",
+    "mw1_max_30d": "45,430",
+    "se3_avg_30d": "24,776",
+    "se3_min_30d": "15,959",
+    "se3_max_30d": "39,492",
+    "pkt_avg_30d": "11,691",
+    "pkt_min_30d": "7,039",
+    "pkt_max_30d": "16,234",
+    "comb_avg_30d": "71,252",
+    "comb_monthly_runrate": "2,137.5K",
+    "last7_total": "464,246",
+    "last7_avg": "66,321",
+    "mw1_7d_total": "238,602",
+    "se3_7d_total": "137,376",
+    "pkt_7d_total": "88,268",
+    "comb_7d_total": "464,246",
+    "am_queue_count": "7",
+    "dormant_count": "26",
+    "np_total_units": "271",
+    "np_total_rev": "51,881",
+    "np_summary_line": "6 drink + 3 seasonal-fruit + 3 new-category SKUs launched since May 2026",
+    "drinks_n": "6",
+    "drinks_todate_units": "215",
+    "drinks_todate_rev": "42,164",
+    "drinks_yest": "18",
+    "drinks_yest_rev": "3,365",
+    "fruit_n": "3",
+    "fruit_todate_units": "21",
+    "fruit_todate_rev": "3,534",
+    "fruit_yest": "0",
+    "fruit_yest_rev": "0",
+    "new_cat_n": "3",
+    "new_cat_todate_units": "35",
+    "new_cat_todate_rev": "6,183",
+    "new_cat_yest": "0",
+    "new_cat_yest_rev": "0",
+    "grape_total_rev": "238,740",
+    "grape_last_mw1": "21 May 2026",
+    "grape_last_se3": "28 Apr 2026",
+    "chaw_values": "Curious · Team · Act Fast · Empowered · Simple"
+  },
+  "repeats": {
+    "chart_days": [
+      {
+        "date": "2026-05-09",
+        "day_num": "9",
+        "weekday_th_abbr": "ส.",
+        "mw1_net": "27,290",
+        "se3_net": "22,575",
+        "pkt_net": "9,516",
+        "mw1_bar_px": "132",
+        "se3_bar_px": "109",
+        "pkt_bar_px": "46"
+      },
+      {
+        "date": "2026-05-10",
+        "day_num": "10",
+        "weekday_th_abbr": "อา.",
+        "mw1_net": "36,901",
+        "se3_net": "26,350",
+        "pkt_net": "10,994",
+        "mw1_bar_px": "179",
+        "se3_bar_px": "128",
+        "pkt_bar_px": "53"
+      },
+      {
+        "date": "2026-05-11",
+        "day_num": "11",
+        "weekday_th_abbr": "จ.",
+        "mw1_net": "33,928",
+        "se3_net": "25,400",
+        "pkt_net": "9,884",
+        "mw1_bar_px": "164",
+        "se3_bar_px": "123",
+        "pkt_bar_px": "48"
+      },
+      {
+        "date": "2026-05-12",
+        "day_num": "12",
+        "weekday_th_abbr": "อ.",
+        "mw1_net": "31,386",
+        "se3_net": "18,990",
+        "pkt_net": "11,704",
+        "mw1_bar_px": "152",
+        "se3_bar_px": "92",
+        "pkt_bar_px": "57"
+      },
+      {
+        "date": "2026-05-13",
+        "day_num": "13",
+        "weekday_th_abbr": "พ.",
+        "mw1_net": "34,122",
+        "se3_net": "25,085",
+        "pkt_net": "13,897",
+        "mw1_bar_px": "165",
+        "se3_bar_px": "121",
+        "pkt_bar_px": "67"
+      },
+      {
+        "date": "2026-05-14",
+        "day_num": "14",
+        "weekday_th_abbr": "พฤ.",
+        "mw1_net": "40,908",
+        "se3_net": "21,800",
+        "pkt_net": "7,820",
+        "mw1_bar_px": "198",
+        "se3_bar_px": "106",
+        "pkt_bar_px": "38"
+      },
+      {
+        "date": "2026-05-15",
+        "day_num": "15",
+        "weekday_th_abbr": "ศ.",
+        "mw1_net": "35,787",
+        "se3_net": "19,010",
+        "pkt_net": "10,244",
+        "mw1_bar_px": "173",
+        "se3_bar_px": "92",
+        "pkt_bar_px": "50"
+      },
+      {
+        "date": "2026-05-16",
+        "day_num": "16",
+        "weekday_th_abbr": "ส.",
+        "mw1_net": "30,766",
+        "se3_net": "25,470",
+        "pkt_net": "9,920",
+        "mw1_bar_px": "149",
+        "se3_bar_px": "123",
+        "pkt_bar_px": "48"
+      },
+      {
+        "date": "2026-05-17",
+        "day_num": "17",
+        "weekday_th_abbr": "อา.",
+        "mw1_net": "34,754",
+        "se3_net": "35,410",
+        "pkt_net": "13,484",
+        "mw1_bar_px": "168",
+        "se3_bar_px": "171",
+        "pkt_bar_px": "65"
+      },
+      {
+        "date": "2026-05-18",
+        "day_num": "18",
+        "weekday_th_abbr": "จ.",
+        "mw1_net": "25,913",
+        "se3_net": "22,700",
+        "pkt_net": "12,484",
+        "mw1_bar_px": "125",
+        "se3_bar_px": "110",
+        "pkt_bar_px": "60"
+      },
+      {
+        "date": "2026-05-19",
+        "day_num": "19",
+        "weekday_th_abbr": "อ.",
+        "mw1_net": "33,034",
+        "se3_net": "25,820",
+        "pkt_net": "7,867",
+        "mw1_bar_px": "160",
+        "se3_bar_px": "125",
+        "pkt_bar_px": "38"
+      },
+      {
+        "date": "2026-05-20",
+        "day_num": "20",
+        "weekday_th_abbr": "พ.",
+        "mw1_net": "31,093",
+        "se3_net": "17,308",
+        "pkt_net": "10,311",
+        "mw1_bar_px": "151",
+        "se3_bar_px": "84",
+        "pkt_bar_px": "50"
+      },
+      {
+        "date": "2026-05-21",
+        "day_num": "21",
+        "weekday_th_abbr": "พฤ.",
+        "mw1_net": "36,940",
+        "se3_net": "29,297",
+        "pkt_net": "9,611",
+        "mw1_bar_px": "179",
+        "se3_bar_px": "142",
+        "pkt_bar_px": "47"
+      },
+      {
+        "date": "2026-05-22",
+        "day_num": "22",
+        "weekday_th_abbr": "ศ.",
+        "mw1_net": "40,088",
+        "se3_net": "26,689",
+        "pkt_net": "10,358",
+        "mw1_bar_px": "194",
+        "se3_bar_px": "129",
+        "pkt_bar_px": "50"
+      },
+      {
+        "date": "2026-05-23",
+        "day_num": "23",
+        "weekday_th_abbr": "ส.",
+        "mw1_net": "38,640",
+        "se3_net": "39,492",
+        "pkt_net": "12,698",
+        "mw1_bar_px": "187",
+        "se3_bar_px": "191",
+        "pkt_bar_px": "61"
+      },
+      {
+        "date": "2026-05-24",
+        "day_num": "24",
+        "weekday_th_abbr": "อา.",
+        "mw1_net": "45,430",
+        "se3_net": "28,328",
+        "pkt_net": "12,933",
+        "mw1_bar_px": "220",
+        "se3_bar_px": "137",
+        "pkt_bar_px": "63"
+      },
+      {
+        "date": "2026-05-25",
+        "day_num": "25",
+        "weekday_th_abbr": "จ.",
+        "mw1_net": "38,221",
+        "se3_net": "31,984",
+        "pkt_net": "10,502",
+        "mw1_bar_px": "185",
+        "se3_bar_px": "155",
+        "pkt_bar_px": "51"
+      },
+      {
+        "date": "2026-05-26",
+        "day_num": "26",
+        "weekday_th_abbr": "อ.",
+        "mw1_net": "36,852",
+        "se3_net": "24,576",
+        "pkt_net": "7,039",
+        "mw1_bar_px": "178",
+        "se3_bar_px": "119",
+        "pkt_bar_px": "34"
+      },
+      {
+        "date": "2026-05-27",
+        "day_num": "27",
+        "weekday_th_abbr": "พ.",
+        "mw1_net": "33,877",
+        "se3_net": "26,502",
+        "pkt_net": "16,234",
+        "mw1_bar_px": "164",
+        "se3_bar_px": "128",
+        "pkt_bar_px": "79"
+      },
+      {
+        "date": "2026-05-28",
+        "day_num": "28",
+        "weekday_th_abbr": "พฤ.",
+        "mw1_net": "33,415",
+        "se3_net": "31,121",
+        "pkt_net": "12,474",
+        "mw1_bar_px": "162",
+        "se3_bar_px": "151",
+        "pkt_bar_px": "60"
+      },
+      {
+        "date": "2026-05-29",
+        "day_num": "29",
+        "weekday_th_abbr": "ศ.",
+        "mw1_net": "42,210",
+        "se3_net": "22,568",
+        "pkt_net": "13,844",
+        "mw1_bar_px": "204",
+        "se3_bar_px": "109",
+        "pkt_bar_px": "67"
+      },
+      {
+        "date": "2026-05-30",
+        "day_num": "30",
+        "weekday_th_abbr": "ส.",
+        "mw1_net": "34,788",
+        "se3_net": "26,883",
+        "pkt_net": "14,605",
+        "mw1_bar_px": "168",
+        "se3_bar_px": "130",
+        "pkt_bar_px": "71"
+      },
+      {
+        "date": "2026-05-31",
+        "day_num": "31",
+        "weekday_th_abbr": "อา.",
+        "mw1_net": "28,583",
+        "se3_net": "32,544",
+        "pkt_net": "14,052",
+        "mw1_bar_px": "138",
+        "se3_bar_px": "158",
+        "pkt_bar_px": "68"
+      },
+      {
+        "date": "2026-06-01",
+        "day_num": "1",
+        "weekday_th_abbr": "จ.",
+        "mw1_net": "32,133",
+        "se3_net": "24,075",
+        "pkt_net": "13,940",
+        "mw1_bar_px": "156",
+        "se3_bar_px": "117",
+        "pkt_bar_px": "68"
+      },
+      {
+        "date": "2026-06-02",
+        "day_num": "2",
+        "weekday_th_abbr": "อ.",
+        "mw1_net": "36,476",
+        "se3_net": "15,959",
+        "pkt_net": "9,920",
+        "mw1_bar_px": "177",
+        "se3_bar_px": "77",
+        "pkt_bar_px": "48"
+      },
+      {
+        "date": "2026-06-03",
+        "day_num": "3",
+        "weekday_th_abbr": "พ.",
+        "mw1_net": "40,024",
+        "se3_net": "19,497",
+        "pkt_net": "10,813",
+        "mw1_bar_px": "194",
+        "se3_bar_px": "94",
+        "pkt_bar_px": "52"
+      },
+      {
+        "date": "2026-06-04",
+        "day_num": "4",
+        "weekday_th_abbr": "พฤ.",
+        "mw1_net": "35,666",
+        "se3_net": "16,604",
+        "pkt_net": "13,146",
+        "mw1_bar_px": "173",
+        "se3_bar_px": "80",
+        "pkt_bar_px": "64"
+      },
+      {
+        "date": "2026-06-05",
+        "day_num": "5",
+        "weekday_th_abbr": "ศ.",
+        "mw1_net": "35,611",
+        "se3_net": "20,180",
+        "pkt_net": "13,589",
+        "mw1_bar_px": "172",
+        "se3_bar_px": "98",
+        "pkt_bar_px": "66"
+      },
+      {
+        "date": "2026-06-06",
+        "day_num": "6",
+        "weekday_th_abbr": "ส.",
+        "mw1_net": "32,714",
+        "se3_net": "23,312",
+        "pkt_net": "13,867",
+        "mw1_bar_px": "158",
+        "se3_bar_px": "113",
+        "pkt_bar_px": "67"
+      },
+      {
+        "date": "2026-06-07",
+        "day_num": "7",
+        "weekday_th_abbr": "อา.",
+        "mw1_net": "25,977",
+        "se3_net": "17,749",
+        "pkt_net": "12,993",
+        "mw1_bar_px": "126",
+        "se3_bar_px": "86",
+        "pkt_bar_px": "63"
+      }
+    ],
+    "last7_headers": [
+      {
+        "col_date": "1/6",
+        "col_weekday_th": "จ.",
+        "header_bg": ""
+      },
+      {
+        "col_date": "2/6",
+        "col_weekday_th": "อ.",
+        "header_bg": ""
+      },
+      {
+        "col_date": "3/6",
+        "col_weekday_th": "พ.",
+        "header_bg": ""
+      },
+      {
+        "col_date": "4/6",
+        "col_weekday_th": "พฤ.",
+        "header_bg": ""
+      },
+      {
+        "col_date": "5/6",
+        "col_weekday_th": "ศ.",
+        "header_bg": ""
+      },
+      {
+        "col_date": "6/6",
+        "col_weekday_th": "ส.",
+        "header_bg": ""
+      },
+      {
+        "col_date": "7/6",
+        "col_weekday_th": "อา.",
+        "header_bg": "background:#4744CD;"
+      }
+    ],
+    "last7_mw1": [
+      {
+        "net": "32,133",
+        "cell_style": ""
+      },
+      {
+        "net": "36,476",
+        "cell_style": ""
+      },
+      {
+        "net": "40,024",
+        "cell_style": ""
+      },
+      {
+        "net": "35,666",
+        "cell_style": ""
+      },
+      {
+        "net": "35,611",
+        "cell_style": ""
+      },
+      {
+        "net": "32,714",
+        "cell_style": ""
+      },
+      {
+        "net": "25,977",
+        "cell_style": "background:#FFF3E0;font-weight:700;"
+      }
+    ],
+    "last7_se3": [
+      {
+        "net": "24,075",
+        "cell_style": ""
+      },
+      {
+        "net": "15,959",
+        "cell_style": ""
+      },
+      {
+        "net": "19,497",
+        "cell_style": ""
+      },
+      {
+        "net": "16,604",
+        "cell_style": ""
+      },
+      {
+        "net": "20,180",
+        "cell_style": ""
+      },
+      {
+        "net": "23,312",
+        "cell_style": ""
+      },
+      {
+        "net": "17,749",
+        "cell_style": "background:#FFF3E0;font-weight:700;"
+      }
+    ],
+    "last7_pkt": [
+      {
+        "net": "13,940",
+        "cell_style": ""
+      },
+      {
+        "net": "9,920",
+        "cell_style": ""
+      },
+      {
+        "net": "10,813",
+        "cell_style": ""
+      },
+      {
+        "net": "13,146",
+        "cell_style": ""
+      },
+      {
+        "net": "13,589",
+        "cell_style": ""
+      },
+      {
+        "net": "13,867",
+        "cell_style": ""
+      },
+      {
+        "net": "12,993",
+        "cell_style": "background:#FFF3E0;font-weight:700;"
+      }
+    ],
+    "last7_comb": [
+      {
+        "net": "70,148",
+        "cell_bg": ""
+      },
+      {
+        "net": "62,355",
+        "cell_bg": ""
+      },
+      {
+        "net": "70,334",
+        "cell_bg": ""
+      },
+      {
+        "net": "65,416",
+        "cell_bg": ""
+      },
+      {
+        "net": "69,380",
+        "cell_bg": ""
+      },
+      {
+        "net": "69,893",
+        "cell_bg": ""
+      },
+      {
+        "net": "56,719",
+        "cell_bg": "background:#FFF3E0;"
+      }
+    ],
+    "am_items": [
+      {
+        "memo": "HOT CHOCOLATE 8 oz",
+        "last_sold": "27/05/2026",
+        "gap_days": "11",
+        "velocity_7d": "0",
+        "target": "4",
+        "branch_split": "MW1 only",
+        "hypothesis_text": "Stock-out or pilot ended early",
+        "hypothesis_color": "#E65100"
+      },
+      {
+        "memo": "HOT CHOCOLATE 8 oz",
+        "last_sold": "29/05/2026",
+        "gap_days": "9",
+        "velocity_7d": "0",
+        "target": "4",
+        "branch_split": "SE3 only",
+        "hypothesis_text": "Stock-out or pilot ended early",
+        "hypothesis_color": "#E65100"
+      },
+      {
+        "memo": "VANILLA BEAN GREEK YOGURT",
+        "last_sold": "26/05/2026",
+        "gap_days": "12",
+        "velocity_7d": "0",
+        "target": "1.5",
+        "branch_split": "MW1 only",
+        "hypothesis_text": "Low demand — consider pulling",
+        "hypothesis_color": "#856404"
+      },
+      {
+        "memo": "RASPBERRY GREEK YOGURT",
+        "last_sold": "22/05/2026",
+        "gap_days": "16",
+        "velocity_7d": "0",
+        "target": "1.5",
+        "branch_split": "MW1 only",
+        "hypothesis_text": "Low demand — consider pulling",
+        "hypothesis_color": "#856404"
+      },
+      {
+        "memo": "Mango Sticky Rice (Box)",
+        "last_sold": "31/05/2026",
+        "gap_days": "7",
+        "velocity_7d": "0",
+        "target": "2.5",
+        "branch_split": "SE3 only",
+        "hypothesis_text": "Stock-out suspected",
+        "hypothesis_color": "#E65100"
+      },
+      {
+        "memo": "Overnight Oat Berry 16 oz",
+        "last_sold": "27/05/2026",
+        "gap_days": "11",
+        "velocity_7d": "0",
+        "target": "1.5",
+        "branch_split": "SE3 only",
+        "hypothesis_text": "Low demand or supply issue",
+        "hypothesis_color": "#856404"
+      },
+      {
+        "memo": "BLUEBERRY GREEK YOGURT",
+        "last_sold": "05/06/2026",
+        "gap_days": "2",
+        "velocity_7d": "0.3",
+        "target": "1.5",
+        "branch_split": "MW1 only",
+        "hypothesis_text": "Declining — monitor closely",
+        "hypothesis_color": "#1565C0"
+      }
+    ],
+    "top20_branches": [
+      {
+        "header_color": "#5551FE",
+        "header_label": "MW1 · 26-T1MW1-03+04",
+        "top20_rows_html": "<tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">1</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"EVIAN\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">EVIAN</div><div style=\"font-size:9px;color:#888;\">4 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">39</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿4,374</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">2</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"MANGO 400G.\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">MANGO 400G.</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">8</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿1,196</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">3</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"WATERMELON 400G.\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">WATERMELON 400G.</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">7</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿981</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">4</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"COCONUT JUICE BOTTLE\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">COCONUT JUICE BOTTLE</div><div style=\"font-size:9px;color:#888;\">3 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">6</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿1,037</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">5</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"S5 MANGO SMOOTHIE 22OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">S5 MANGO SMOOTHIE 22OZ</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">6</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿1,037</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">6</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"COCONUT READY TO DRINK\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">COCONUT READY TO DRINK</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">6</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿953</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">7</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"S3 WATERMELON SMOOTHIE 22OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">S3 WATERMELON SMOOTHIE 22OZ</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">5</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿864</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">8</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"S1 COCONUT SMOOTHIE 22OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">S1 COCONUT SMOOTHIE 22OZ</div><div style=\"font-size:9px;color:#888;\">3 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">5</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿958</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">9</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"CH2 HOT AMERICANO\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">CH2 HOT AMERICANO</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">4</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿505</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">10</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"3 kinds of fruit400g Papaya/Pineapple/Guava\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">3 kinds of fruit400g Papaya/Pinea…</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">4</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿561</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">11</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"WATERMELON JUICE BOTTLE\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">WATERMELON JUICE BOTTLE</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">4</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿692</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">12</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"PRIDE PARROT RED\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">PRIDE PARROT RED</div><div style=\"font-size:9px;color:#888;\">3 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">4</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿748</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">13</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"PRIDE PARROT YELLOW\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">PRIDE PARROT YELLOW</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">3</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿561</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">14</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"Mango juice (Bottle) 300 ml\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Mango juice (Bottle) 300 ml</div><div style=\"font-size:9px;color:#888;\">3 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">3</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿519</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">15</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"P1 GOLDEN GLOW 22OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">P1 GOLDEN GLOW 22OZ</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">3</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿631</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">16</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"PINEAPPLE JUICE BOTTLE\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">PINEAPPLE JUICE BOTTLE</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">3</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿519</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">17</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"CARROT JUICE BOTTLE\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">CARROT JUICE BOTTLE</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">3</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿519</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">18</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"PINEAPPLE 400G.\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">PINEAPPLE 400G.</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿280</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">19</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"Mango passion juice (Bottle) 300 ml\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Mango passion juice (Bottle) 300 …</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿346</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">20</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"C5 PINEAPPLE&GREEN APPLE COLD PREESED 22OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">C5 PINEAPPLE&GREEN APPLE COLD PRE…</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿393</td></tr>"
+      },
+      {
+        "header_color": "#F27061",
+        "header_label": "SE3 · 27-T1SE3-05",
+        "top20_rows_html": "<tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">1</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"EVIAN\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">EVIAN</div><div style=\"font-size:9px;color:#888;\">4 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">21</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿2,355</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">2</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"COCONUT READY TO DRINK\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">COCONUT READY TO DRINK</div><div style=\"font-size:9px;color:#888;\">4 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">9</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿1,430</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">3</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"WATERMELON 400G.\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">WATERMELON 400G.</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">9</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿1,262</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">4</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"3 kinds of fruit400g Papaya/Pineapple/Guava\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">3 kinds of fruit400g Papaya/Pinea…</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">8</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿1,122</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">5</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"PRIDE PARROT RED\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">PRIDE PARROT RED</div><div style=\"font-size:9px;color:#888;\">3 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">6</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿1,122</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">6</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"YS1 MANGO YOGHURT SMOOTHIE 22OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">YS1 MANGO YOGHURT SMOOTHIE 22OZ</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">4</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿748</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">7</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"MANGO 400G.\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">MANGO 400G.</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">4</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿598</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">8</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"PINEAPPLE 400G.\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">PINEAPPLE 400G.</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">3</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿421</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">9</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"S5 MANGO SMOOTHIE 22OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">S5 MANGO SMOOTHIE 22OZ</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿346</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">10</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"COCONUT JUICE BOTTLE\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">COCONUT JUICE BOTTLE</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿346</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">11</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"C1 GUAVA&GREEN APPLE&RED APPLE COLD PREESED 16OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">C1 GUAVA&GREEN APPLE&RED APPLE CO…</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿346</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">12</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"S4 MIXBERRY SMOOTHIE 22OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">S4 MIXBERRY SMOOTHIE 22OZ</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿346</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">13</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"S2 MANGO PASSION SMOOTHIE 16OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">S2 MANGO PASSION SMOOTHIE 16OZ</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿299</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">14</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"S2 MANGO PASSION SMOOTHIE 22OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">S2 MANGO PASSION SMOOTHIE 22OZ</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿346</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">15</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"PAPAYA 400G.\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">PAPAYA 400G.</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿280</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">16</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"P1 GOLDEN GLOW 22OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">P1 GOLDEN GLOW 22OZ</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">1</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿210</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">17</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"CH3 HOT CAPPUCCINO\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">CH3 HOT CAPPUCCINO</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">1</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿140</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">18</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"MANGO (1 PCS.) 380 G.\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">MANGO (1 PCS.) 380 G.</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">1</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿140</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">19</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"Chicken Club Croissant\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Chicken Club Croissant</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">1</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿139</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">20</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"MANGO PASSION JUICE (BOTTLE) 300 ML\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">MANGO PASSION JUICE (BOTTLE) 300 …</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">1</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿173</td></tr>"
+      },
+      {
+        "header_color": "#2E7D32",
+        "header_label": "PKT · 28 Unit 362 (Phuket)",
+        "top20_rows_html": "<tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">1</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"Evian 500ml. (Bottle)\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Evian 500ml. (Bottle)</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">16</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿1,794</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">2</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"Up size Smoothie & Cold Press Juice 16→22oz\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Up size Smoothie & Cold Press Jui…</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">7</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿164</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">3</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"Mango 400 g. (Pack)\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Mango 400 g. (Pack)</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">6</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿897</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">4</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"Coconut (EA)\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Coconut (EA)</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">6</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿953</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">5</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"CH2 Caffe latte (hot) 12oz\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">CH2 Caffe latte (hot) 12oz</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">5</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿701</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">6</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"Watermelon 400 g. (Pack)\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Watermelon 400 g. (Pack)</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">4</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿561</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">7</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"Watermelon Cold Pressed Juice 300ml (bottle)\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Watermelon Cold Pressed Juice 300…</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">3</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿519</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">8</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"Mango Berry Smoothie 16oz\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Mango Berry Smoothie 16oz</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">3</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿519</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">9</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"Ham and Cheese Croissant\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Ham and Cheese Croissant</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿355</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">10</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"C6 pineapple cold pressed 16oz\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">C6 pineapple cold pressed 16oz</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿346</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">11</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"S5 mango smoothie 16oz\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">S5 mango smoothie 16oz</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿299</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">12</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"YS2 Strawberry yoghurt smoothie 16oz\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">YS2 Strawberry yoghurt smoothie 1…</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿327</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">13</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"S3 watermelon smoothie 16oz\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">S3 watermelon smoothie 16oz</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿299</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">14</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"Mango juice (Bottle) 300 ml\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Mango juice (Bottle) 300 ml</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿346</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">15</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"Pineapple 400 g. (Pack)\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Pineapple 400 g. (Pack)</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿280</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">16</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"C5 pineapple & green apple cold pressed 16oz\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">C5 pineapple & green apple cold p…</div><div style=\"font-size:9px;color:#888;\">2 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">2</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿346</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">17</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"Tuna Sandwich\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Tuna Sandwich</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">1</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿168</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">18</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"Salt Grilled Salmon Onigiri\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Salt Grilled Salmon Onigiri</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">1</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿102</td></tr><tr style=\"background:#fff;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">19</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"Pride Parrot Yellow Smoothie 22oz\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Pride Parrot Yellow Smoothie 22oz</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">1</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿187</td></tr><tr style=\"background:#FAFAFA;\"><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;color:#888;\">20</td><td style=\"padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top;\" title=\"CI3 Iced Cappuccino 16oz\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">CI3 Iced Cappuccino 16oz</div><div style=\"font-size:9px;color:#888;\">1 bills</div></td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">1</td><td style=\"padding:5px 6px;text-align:right;border-bottom:1px solid #eee;vertical-align:top;font-size:10px;\">฿159</td></tr>"
+      }
+    ],
+    "dormant_branches": [
+      {
+        "branch": "MW1",
+        "header_color": "#5551FE",
+        "branch_count": "11",
+        "dormant_rows_html": "<tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"SHINE MUSCAT GRAPES 400G (PACK)\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">SHINE MUSCAT GRAPES 400G (PACK)</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 34u over 13d (฿5,084)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#C62828;font-weight:700;font-size:10px;\">17d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"HOT CHOCOLATE 8 oz\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">HOT CHOCOLATE 8 oz</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 18u over 4d (฿2,187)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">11d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"VANILLA BEAN GREEK YOGURT\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">VANILLA BEAN GREEK YOGURT</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 14u over 11d (฿2,473)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">12d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"RASPBERRY GREEK YOGURT\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">RASPBERRY GREEK YOGURT</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 9u over 7d (฿1,590)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#C62828;font-weight:700;font-size:10px;\">16d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"SEEDLESS GRAPE 400G.\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">SEEDLESS GRAPE 400G.</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 7u over 5d (฿1,047)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">12d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"CI1 ICED ESPRESSO ORANGE 16OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">CI1 ICED ESPRESSO ORANGE 16OZ</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 5u over 4d (฿935)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#C62828;font-weight:700;font-size:10px;\">15d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"Mango Berry Smoothie 16oz\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Mango Berry Smoothie 16oz</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 5u over 4d (฿865)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">12d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"Mango Pineapple Smoothie 16oz\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Mango Pineapple Smoothie 16oz</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 4u over 2d (฿692)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#C62828;font-weight:700;font-size:10px;\">15d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"CAESAR SALAD\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">CAESAR SALAD</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 4u over 3d (฿673)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">9d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"HONEY TOPPING\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">HONEY TOPPING</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 3u over 3d (฿70)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">11d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"MANGO TOPPING\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">MANGO TOPPING</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 3u over 3d (฿70)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">11d</td></tr>"
+      },
+      {
+        "branch": "SE3",
+        "header_color": "#F27061",
+        "branch_count": "9",
+        "dormant_rows_html": "<tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"HOT CHOCOLATE 8 oz\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">HOT CHOCOLATE 8 oz</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 22u over 6d (฿2,673)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">9d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"Mango Sticky Rice (Box)\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Mango Sticky Rice (Box)</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 19u over 8d (฿3,179)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">7d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"Golden Harmony Greek Yogur\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Golden Harmony Greek Yogur</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 17u over 8d (฿3,003)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">7d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"MANGO PINEAPPLE SMOOTHIE 16OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">MANGO PINEAPPLE SMOOTHIE 16OZ</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 17u over 9d (฿2,939)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">7d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"BANANA YOGHURT SMOOTHIE 16OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">BANANA YOGHURT SMOOTHIE 16OZ</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 9u over 7d (฿1,472)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">10d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"MANGO BERRY SMOOTHIE 16OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">MANGO BERRY SMOOTHIE 16OZ</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 8u over 5d (฿1,383)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#C62828;font-weight:700;font-size:10px;\">19d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"T2 ICED THAI TEA WITH LIME 22OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">T2 ICED THAI TEA WITH LIME 22OZ</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 7u over 7d (฿1,145)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">10d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"Overnight Oat Berry 16 oz\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Overnight Oat Berry 16 oz</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 7u over 5d (฿1,694)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">11d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"CI4 ICED CAPPUCCINO 22OZ\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">CI4 ICED CAPPUCCINO 22OZ</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 6u over 5d (฿1,093)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">8d</td></tr>"
+      },
+      {
+        "branch": "PKT",
+        "header_color": "#2E7D32",
+        "branch_count": "6",
+        "dormant_rows_html": "<tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"CH3 Espresso (hot) 4oz\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">CH3 Espresso (hot) 4oz</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 14u over 10d (฿1,626)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">7d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"Orange Cold Pressed Juice 300ml (bottle)\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Orange Cold Pressed Juice 300ml (…</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 11u over 8d (฿1,902)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">11d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"Mango Pineapple Smoothie 16oz\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Mango Pineapple Smoothie 16oz</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 10u over 8d (฿1,729)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">10d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"Chicken Ham Wrap\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Chicken Ham Wrap</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 6u over 6d (฿1,570)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">7d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"Mango Sticky Rice (Box)\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Mango Sticky Rice (Box)</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 5u over 5d (฿1,168)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">13d</td></tr><tr style=\"background:#fff;border-bottom:1px solid #eee;\"><td style=\"padding:5px 6px;vertical-align:top;\" title=\"Ebiko salad Japanese Rice Balls (Onigiri)\"><div style=\"font-weight:600;font-size:10px;line-height:1.2;\">Ebiko salad Japanese Rice Balls (…</div><div style=\"font-size:9px;color:#888;margin-top:1px;\">Was selling: 5u over 4d (฿509)</div></td><td style=\"padding:5px 6px;text-align:right;vertical-align:top;color:#E65100;font-weight:700;font-size:10px;\">8d</td></tr>"
+      }
+    ],
+    "np_type_tables": [
+      {
+        "type_bg": "#E3F2FD",
+        "type_fg": "#1976D2",
+        "type_icon": "🥤",
+        "type_label": "New Drinks & Smoothies",
+        "np_rows_html": "<tr style=\"border-bottom:1px solid #eee;background:#fff;\"><td style=\"padding:6px 8px;\"><div style=\"font-weight:600;\">SOFT-SLUSH! ORIGINAL</div><div style=\"font-size:9px;color:#888;\">Launched 02/05 · MW1 exclusive</div></td><td style=\"padding:6px 8px;text-align:right;\">46u</td><td style=\"padding:6px 8px;text-align:right;\">฿6,878</td><td style=\"padding:6px 8px;font-size:10px;color:#666;\">MW1</td><td style=\"padding:6px 8px;text-align:right;\">1u</td><td style=\"padding:6px 8px;font-size:10px;\">🟢 on target</td></tr><tr style=\"border-bottom:1px solid #eee;background:#FAFAFA;\"><td style=\"padding:6px 8px;\"><div style=\"font-weight:600;\">SOFT-SLUSH! DELUXE</div><div style=\"font-size:9px;color:#888;\">Launched 01/05 · MW1 exclusive</div></td><td style=\"padding:6px 8px;text-align:right;\">33u</td><td style=\"padding:6px 8px;text-align:right;\">฿7,379</td><td style=\"padding:6px 8px;font-size:10px;color:#666;\">MW1</td><td style=\"padding:6px 8px;text-align:right;\">1u</td><td style=\"padding:6px 8px;font-size:10px;\">🟢 on target</td></tr><tr style=\"border-bottom:1px solid #eee;background:#fff;\"><td style=\"padding:6px 8px;\"><div style=\"font-weight:600;\">PRIDE PARROT RED</div><div style=\"font-size:9px;color:#888;\">Launched 01/06 · All branches</div></td><td style=\"padding:6px 8px;text-align:right;\">63u</td><td style=\"padding:6px 8px;text-align:right;\">฿11,757</td><td style=\"padding:6px 8px;font-size:10px;color:#666;\">MW1:44 SE3:13 PKT:6</td><td style=\"padding:6px 8px;text-align:right;\">11u</td><td style=\"padding:6px 8px;font-size:10px;\">🟢 on target</td></tr><tr style=\"border-bottom:1px solid #eee;background:#FAFAFA;\"><td style=\"padding:6px 8px;\"><div style=\"font-weight:600;\">PRIDE PARROT YELLOW</div><div style=\"font-size:9px;color:#888;\">Launched 01/06 · All branches</div></td><td style=\"padding:6px 8px;text-align:right;\">33u</td><td style=\"padding:6px 8px;text-align:right;\">฿6,169</td><td style=\"padding:6px 8px;font-size:10px;color:#666;\">MW1:27 SE3:5 PKT:1</td><td style=\"padding:6px 8px;text-align:right;\">5u</td><td style=\"padding:6px 8px;font-size:10px;\">🟢 on target</td></tr><tr style=\"border-bottom:1px solid #eee;background:#fff;\"><td style=\"padding:6px 8px;\"><div style=\"font-weight:600;\">Overnight Oat mango 16 oz</div><div style=\"font-size:9px;color:#888;\">Launched 21/05 · MW1+SE3</div></td><td style=\"padding:6px 8px;text-align:right;\">32u</td><td style=\"padding:6px 8px;text-align:right;\">฿8,045</td><td style=\"padding:6px 8px;font-size:10px;color:#666;\">MW1:27 SE3:5</td><td style=\"padding:6px 8px;text-align:right;\">0u</td><td style=\"padding:6px 8px;font-size:10px;\">🟠 stock-out suspect</td></tr><tr style=\"border-bottom:1px solid #eee;background:#FAFAFA;\"><td style=\"padding:6px 8px;\"><div style=\"font-weight:600;\">Overnight Oat Berry 16 oz</div><div style=\"font-size:9px;color:#888;\">Launched 22/05 · SE3</div></td><td style=\"padding:6px 8px;text-align:right;\">8u</td><td style=\"padding:6px 8px;text-align:right;\">฿1,936</td><td style=\"padding:6px 8px;font-size:10px;color:#666;\">SE3</td><td style=\"padding:6px 8px;text-align:right;\">0u</td><td style=\"padding:6px 8px;font-size:10px;\">🔴 waste risk</td></tr>"
+      },
+      {
+        "type_bg": "#FCE4EC",
+        "type_fg": "#AD1457",
+        "type_icon": "🍉",
+        "type_label": "Seasonal Fruits",
+        "np_rows_html": "<tr style=\"border-bottom:1px solid #eee;background:#fff;\"><td style=\"padding:6px 8px;\"><div style=\"font-weight:600;\">LYCHEE 400G.</div><div style=\"font-size:9px;color:#888;\">Launched 28/05 · MW1+SE3</div></td><td style=\"padding:6px 8px;text-align:right;\">15u</td><td style=\"padding:6px 8px;text-align:right;\">฿2,384</td><td style=\"padding:6px 8px;font-size:10px;color:#666;\">MW1:4 SE3:11</td><td style=\"padding:6px 8px;text-align:right;\">0u</td><td style=\"padding:6px 8px;font-size:10px;\">🟠 stock-out suspect</td></tr><tr style=\"border-bottom:1px solid #eee;background:#FAFAFA;\"><td style=\"padding:6px 8px;\"><div style=\"font-weight:600;\">MANGOSTEEN 400g.</div><div style=\"font-size:9px;color:#888;\">Launched 28/05 · SE3 only</div></td><td style=\"padding:6px 8px;text-align:right;\">3u</td><td style=\"padding:6px 8px;text-align:right;\">฿701</td><td style=\"padding:6px 8px;font-size:10px;color:#666;\">SE3</td><td style=\"padding:6px 8px;text-align:right;\">0u</td><td style=\"padding:6px 8px;font-size:10px;\">🔴 waste risk</td></tr><tr style=\"border-bottom:1px solid #eee;background:#fff;\"><td style=\"padding:6px 8px;\"><div style=\"font-weight:600;\">ROSE APPLE 400G.</div><div style=\"font-size:9px;color:#888;\">Launched 30/05 · SE3 only</div></td><td style=\"padding:6px 8px;text-align:right;\">3u</td><td style=\"padding:6px 8px;text-align:right;\">฿449</td><td style=\"padding:6px 8px;font-size:10px;color:#666;\">SE3</td><td style=\"padding:6px 8px;text-align:right;\">0u</td><td style=\"padding:6px 8px;font-size:10px;\">🔴 waste risk</td></tr>"
+      },
+      {
+        "type_bg": "#E8F5E9",
+        "type_fg": "#2E7D32",
+        "type_icon": "⭐",
+        "type_label": "New Category (Greek Yogurt)",
+        "np_rows_html": "<tr style=\"border-bottom:1px solid #eee;background:#fff;\"><td style=\"padding:6px 8px;\"><div style=\"font-weight:600;\">BLUEBERRY GREEK YOGURT</div><div style=\"font-size:9px;color:#888;\">Launched 13/05 · MW1 only</div></td><td style=\"padding:6px 8px;text-align:right;\">12u</td><td style=\"padding:6px 8px;text-align:right;\">฿2,120</td><td style=\"padding:6px 8px;font-size:10px;color:#666;\">MW1</td><td style=\"padding:6px 8px;text-align:right;\">0u</td><td style=\"padding:6px 8px;font-size:10px;\">🟠 stock-out suspect</td></tr><tr style=\"border-bottom:1px solid #eee;background:#FAFAFA;\"><td style=\"padding:6px 8px;\"><div style=\"font-weight:600;\">RASPBERRY GREEK YOGURT</div><div style=\"font-size:9px;color:#888;\">Launched 13/05 · MW1 only</div></td><td style=\"padding:6px 8px;text-align:right;\">9u</td><td style=\"padding:6px 8px;text-align:right;\">฿1,590</td><td style=\"padding:6px 8px;font-size:10px;color:#666;\">MW1</td><td style=\"padding:6px 8px;text-align:right;\">0u</td><td style=\"padding:6px 8px;font-size:10px;\">🔴 waste risk</td></tr><tr style=\"border-bottom:1px solid #eee;background:#fff;\"><td style=\"padding:6px 8px;\"><div style=\"font-weight:600;\">VANILLA BEAN GREEK YOGURT</div><div style=\"font-size:9px;color:#888;\">Launched 13/05 · MW1 only</div></td><td style=\"padding:6px 8px;text-align:right;\">14u</td><td style=\"padding:6px 8px;text-align:right;\">฿2,473</td><td style=\"padding:6px 8px;font-size:10px;color:#666;\">MW1</td><td style=\"padding:6px 8px;text-align:right;\">0u</td><td style=\"padding:6px 8px;font-size:10px;\">🔴 waste risk</td></tr>"
+      }
+    ],
+    "seasonal_skus": [
+      {
+        "fruit_emoji": "🍊",
+        "memo": "LYCHEE 400G.",
+        "launch": "28/05/2026",
+        "mw1_units": "4",
+        "mw1_per_day": "58",
+        "se3_units": "11",
+        "se3_per_day": "175"
+      },
+      {
+        "fruit_emoji": "🟣",
+        "memo": "MANGOSTEEN 400g.",
+        "launch": "28/05/2026",
+        "mw1_units": "0",
+        "mw1_per_day": "0",
+        "se3_units": "3",
+        "se3_per_day": "64"
+      },
+      {
+        "fruit_emoji": "🌹",
+        "memo": "ROSE APPLE 400G.",
+        "launch": "30/05/2026",
+        "mw1_units": "0",
+        "mw1_per_day": "0",
+        "se3_units": "3",
+        "se3_per_day": "50"
+      }
+    ],
+    "seasonal_coverage": [
+      {
+        "branch_label": "MW1 · Suvarnabhumi",
+        "branch_color": "#5551FE",
+        "grape_baseline": "339",
+        "new_fruit_per_day": "58",
+        "coverage_pct": "17",
+        "daily_gap": "฿281/d shortfall",
+        "monthly_impact": "฿8,436/mo shortfall",
+        "coverage_color": "#721C24",
+        "badge_bg": "#F8D7DA",
+        "badge_text": "🔴 Large gap — push promotion or add SKU"
+      },
+      {
+        "branch_label": "SE3 · Suvarnabhumi",
+        "branch_color": "#F27061",
+        "grape_baseline": "251",
+        "new_fruit_per_day": "288",
+        "coverage_pct": "115",
+        "daily_gap": "+฿37/d surplus",
+        "monthly_impact": "+฿1,122/mo",
+        "coverage_color": "#155724",
+        "badge_bg": "#D4EDDA",
+        "badge_text": "✅ Fully replaced"
+      }
+    ]
+  },
+  "sections": {
+    "am_review": true,
+    "seasonal": true,
+    "dormant": true,
+    "forecast_shown": false,
+    "forecast_suppressed": true,
+    "anomaly_shown": false
+  }
+}
