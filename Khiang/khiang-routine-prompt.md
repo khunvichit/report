@@ -26,6 +26,7 @@ If already sent today → STOP. Run exactly once per day.
 Run Queries A–I (`khiang-queries.md`) with the read-only NetSuite tool, param `query`.
 Retry a failed query ONCE (wait 20–90s); do not restart. Pin Sub 12 / loc 27 / entities.
 Queries H (30-day per-day) and I (month-to-date) feed the period strip + bar chart;
+Query J (7-day per-day) feeds the heatmap table;
 Query E2 feeds the Top-3-items-per-hour column in the hourly comparison.
 
 ## 4. Completeness — HARD STOP
@@ -44,7 +45,8 @@ Run the 5 checks in `khiang-queries.md`. Any hard-stop failure → do NOT send; 
 
 ## 6. Build data.json (NOT html)
 Write `data.json` with `scalars`, `repeats` (`top10_all`, `top10_rice`, `hourly_rows`,
-`chart_days`, `chart_labels`), and `sections`. Every scalar token in the template must have a key —
+`chart_days`, `chart_labels`, `heatmap_rows`), and `sections`. Every scalar token in the template must
+have a key —
 including the period-strip tokens `net_30d`, `avg_30d`, `d30_start`, `net_mtd`, `avg_mtd`, `mtd_days`,
 `mtd_month`, `mtd_signed_pct`, and the chart line offset `mtd_line_px`. Each `hourly_rows` item now
 carries a `top3` token (from Query E2). The `cctv_tasks` repeat and `cctv_followup`/`task_guid`
@@ -55,6 +57,9 @@ New blue `#D1ECF1/#0C5460`. Alternate `row_bg` `#FFFFFF`/`#FAFAFA`; hourly anoma
 and `chart_labels` (matching order: `day_label`, plus `label_color`/`label_weight` = `#5551FE`/`700`
 for the REPORT_DATE day, else `#AAA`/`400`) per the Chart derivation in `khiang-queries.md`. The two
 lists MUST be the same length and order so bars line up with labels.
+**7-day heatmap:** build `heatmap_rows` (7 items, oldest→newest) per the Heatmap derivation in
+`khiang-queries.md` (Query J): each row carries `day_label_th`, `rev`/`bills`/`ticket` values, and a
+pre-computed `*_bg`/`*_fg`/`*_weight` per cell (shaded within each column's own 7-day min→max).
 
 ## 7. Assemble HTML
 Run: `python3 fill_template.py khiang-template.html data.json > email.html`

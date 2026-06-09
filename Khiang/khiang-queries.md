@@ -30,6 +30,7 @@ Compute in **Asia/Bangkok**, then format. Honour a manual `REPORT_DATE` override
 REPORT_DATE        = now(Asia/Bangkok).date() − 1
 PREV_DATE          = REPORT_DATE − 1
 5D_START           = REPORT_DATE − 5         # 5-day window: 5D_START .. PREV_DATE inclusive
+7D_START           = REPORT_DATE − 6         # 7-day window: 7D_START .. REPORT_DATE inclusive (heatmap)
 D30_START          = REPORT_DATE − 29        # 30-day window: D30_START .. REPORT_DATE inclusive
 MTD_START          = first day of REPORT_DATE's month (e.g. 2026-05-01)
 mtd_days           = REPORT_DATE.day          # number of days elapsed in month incl. REPORT_DATE
@@ -161,6 +162,41 @@ WHERE t.trandate BETWEEN TO_DATE('{5D_START}','YYYY-MM-DD') AND TO_DATE('{PREV_D
 GROUP BY t.trandate
 ```
 Derive: `avg_5d = round(mean(net_sales))`, `avg_bills`, `avg_ticket_bench`.
+
+## Query J — 7-Day Per-Day Revenue + Bills (heatmap table)
+> One row per day for the trailing 7 days (incl. REPORT_DATE). Avg ticket derived per row.
+```sql
+SELECT t.trandate,
+  SUM(CASE WHEN t.type='CustInvc' THEN ABS(tl.netamount) ELSE 0 END) -
+  SUM(CASE WHEN t.type='CustCred' THEN ABS(tl.netamount) ELSE 0 END) AS net_sales,
+  COUNT(DISTINCT CASE WHEN t.type='CustInvc' THEN t.id END) AS bills
+FROM transaction t
+JOIN transactionline tl ON t.id = tl.transaction AND tl.mainline = 'T'
+WHERE t.trandate BETWEEN TO_DATE('{7D_START}','YYYY-MM-DD') AND TO_DATE('{REPORT_DATE}','YYYY-MM-DD')
+  AND t.type IN ('CustInvc','CustCred')
+  AND tl.subsidiary = 12
+  AND EXISTS (SELECT 1 FROM transactionline tl2 WHERE tl2.transaction = t.id AND tl2.location = 27 AND tl2.mainline = 'F')
+GROUP BY t.trandate
+```
+Sort by `trandate` ascending client-side. Per row derive `avg_ticket = round(net_sales / bills)`
+(if `bills = 0` → avg_ticket = 0). This feeds the `heatmap_rows` repeat (see derivation below).
+
+### Heatmap derivation (7 rows × 3 metric columns, shaded within each column)
+Each metric column (revenue, bills, avg_ticket) is shaded against ITS OWN 7-day min→max.
+```
+for metric m in [net_sales, bills, avg_ticket]:
+    lo = min(m over 7 rows); hi = max(m over 7 rows)
+    for each day row r:
+        t = 0.5 if hi == lo else (r[m] − lo) / (hi − lo)   # 0..1 within this column
+        # shade: light cream (low) → CHAW indigo tint (high), text stays readable
+        r[m_bg] = lerp_hex('#FBF3EA', '#C9C7FF', t)         # bg per cell
+        r[m_fg] = '#2C3E50'                                  # ink; keep dark for contrast
+    # mark the column's max cell bold (the week's best day for that metric)
+day_label_th = trandate as "พ 13/5" (Thai weekday abbr + D/M); bold if trandate == REPORT_DATE
+```
+> Shade only — no green/red target logic here (that lives in the 30-day chart). The point of the
+> heatmap is relative intensity across the week, per metric. Provide `lerp_hex(a,b,t)` in the routine
+> (linear interpolate each RGB channel, return `#RRGGBB`).
 
 ## Query G — Promotion Detection
 ```sql
