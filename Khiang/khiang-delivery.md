@@ -8,7 +8,7 @@ Delivery:
   Channels: email + group          # NO task channel (not yet enabled for Khiang)
   Fire group: ALWAYS (daily digest — no longer gated on anomalies)
   Email key: [Khiang] Daily Sales Report — {report_date_display}
-  Owner (manual-test recipient): vichit@sfb.co.th
+  Owner (manual-test recipient): vichit@chaw.co.th
 ```
 
 > Task channel is intentionally OFF, and the in-email CCTV action plan was removed. Anomaly hours are
@@ -21,9 +21,10 @@ Delivery:
 - `to`:
   ```json
   [ {"address":"management@chaw.co.th","name":"CHAW Management"},
-    {"address":"khiang@chaw.co.th","name":"Khiang Team"} ]
+    {"address":"khiang@chaw.co.th","name":"Khiang Team"},
+    {"address":"Franchisebusiness.div@zengroup.co.th","name":"Franchise Business Division"} ]
   ```
-  > manual-test mode overrides `to` → owner only (vichit@sfb.co.th).
+  > manual-test mode overrides `to` → owner only (vichit@chaw.co.th).
 - Subject: `{target_icon} [Khiang] Daily Sales Report — {report_date_display} | ฿{net_sales} ({signed_pct}%)`
   - target_icon: 🔥 ≥฿50,000 · ✅ ฿40,000–50,000 · ⚠️ <฿40,000
 

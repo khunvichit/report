@@ -73,7 +73,7 @@ Do NOT send with unresolved tokens.
   (per `khiang-delivery.md`). No CCTV framing, no task.
 
 ## 9. Failure path (fail loud)
-On any hard stop or channel hard-failure: DM owner (vichit@sfb.co.th) / post failure group with which
+On any hard stop or channel hard-failure: DM owner (vichit@chaw.co.th) / post failure group with which
 step failed + why. No silent failure. No whole-routine auto-retry.
 
 ## 10. Console
