@@ -81,21 +81,38 @@ ORDER BY tl.location, qty DESC
 ```
 `{{memo_display}}` = truncate ~34 chars + …, full in `{{memo_full}}`. PKT memos differ from BKK — don't unify.
 
-## Query C — New-product daily history
-Feeds: Section 4. Products = `NEW_PRODUCTS` registry (in runbook). `{NEW_PRODUCT_MEMO_LIST}` = quoted memos.
+## Query C — New-product daily history (self-selecting, 30-day rule)
+Feeds: Section 4. A product is "new" if its first-ever (normalized) sale is within the trailing
+30 days of report_date — see `juiceland-report-runbook.md` §1–4 for the rule, categorization, and
+status logic. No manual registry: the query selects new products itself, so Section 4 can't go stale.
 
 ```sql
-SELECT t.trandate, tl.location, tl.memo,
-  SUM(ABS(tl.quantity)) AS qty, SUM(ABS(tl.netamount)) AS revenue,
-  COUNT(DISTINCT t.id) AS bills
-FROM transaction t
-JOIN transactionline tl ON t.id = tl.transaction
-WHERE t.type = 'CustInvc' AND tl.mainline = 'F'
-  AND tl.location IN (33,105,109,169) AND tl.class = 3
-  AND tl.netamount < 0 AND tl.memo IN ({NEW_PRODUCT_MEMO_LIST})
-GROUP BY t.trandate, tl.location, tl.memo
-ORDER BY tl.memo, t.trandate, tl.location
+WITH norm AS (
+  SELECT t.trandate AS trandate, tl.location AS location, tl.memo AS memo,
+         UPPER(TRIM(REPLACE(REPLACE(tl.memo, CHR(10), ''), CHR(13), ''))) AS nmemo,
+         tl.quantity AS quantity, tl.netamount AS netamount, t.id AS tid
+  FROM transaction t
+  JOIN transactionline tl ON t.id = tl.transaction
+  WHERE t.type = 'CustInvc' AND tl.mainline = 'F'
+    AND tl.location IN (33,105,109,169) AND tl.class = 3 AND tl.netamount < 0
+    AND tl.memo IS NOT NULL
+    AND UPPER(TRIM(tl.memo)) NOT IN ('VAT','CREDIT DEDUCT')
+),
+firstsale AS (
+  SELECT nmemo, MIN(trandate) AS first_sold
+  FROM norm
+  GROUP BY nmemo
+  HAVING MIN(trandate) >= TO_DATE('{REPORT_DATE}','YYYY-MM-DD') - 30
+)
+SELECT n.trandate, n.location, MIN(n.memo) AS memo, fs.first_sold,
+       SUM(ABS(n.quantity)) AS qty, SUM(ABS(n.netamount)) AS revenue,
+       COUNT(DISTINCT n.tid) AS bills
+FROM norm n
+JOIN firstsale fs ON fs.nmemo = n.nmemo
+GROUP BY n.trandate, n.location, n.nmemo, fs.first_sold
+ORDER BY n.nmemo, n.trandate, n.location
 ```
+Roll loc 169 into MW1 in code. Drop excluded/noise memos per runbook §1 after fetch.
 
 | Token | From |
 |-------|------|

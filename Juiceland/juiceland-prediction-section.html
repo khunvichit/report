@@ -1,0 +1,73 @@
+<!--
+==================================================================================
+  PREDICTION SECTION — insert as section 1 (top of body), BEFORE the AM banner.
+  Same placeholder rules as the main template: {{token}} = substitute,
+  REPEAT/SECTION markers as documented there. Data per juiceland-prediction.md.
+  Compute LAST, display FIRST.
+==================================================================================
+-->
+
+<!-- ===== 🔮 AI ESTIMATE (forecast + commentary + anomaly) ===== -->
+<div style="margin-top:18px;border:1px solid #D6D4FF;border-radius:10px;overflow:hidden;">
+  <!-- Labeled header — must read as an estimate, never as fact -->
+  <div style="background:#EEEDFF;padding:10px 16px;border-bottom:1px solid #D6D4FF;">
+    <span style="font-weight:700;font-size:14px;color:#5551FE;">🔮 AI Estimate</span>
+    <span style="font-size:11px;color:#7A77B8;margin-left:6px;">forecast &amp; read for {{forecast_date_display}} · grounded in actuals below · not a guarantee</span>
+  </div>
+
+  <div style="padding:14px 16px;">
+
+    <!-- Forecast row: 3 branch ranges + combined. Always a RANGE + confidence dot. -->
+    <div style="font-size:11px;color:#666;font-weight:600;margin-bottom:6px;">Expected net sales today (ex-VAT range)</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12px;">
+      <tr>
+        <!-- SECTION:forecast_shown — if confidence is 🔴 Low / insufficient history, OMIT this <tr>
+             and render the fallback row below instead. -->
+        <td style="padding:8px;background:#F5EDE4;border-radius:6px 0 0 6px;">
+          <div style="font-size:10px;color:#5551FE;font-weight:700;">MW1 {{mw1_conf_dot}}</div>
+          <div style="font-size:14px;font-weight:700;color:#222;margin-top:3px;">฿{{mw1_fc_low}}–{{mw1_fc_high}}</div>
+        </td>
+        <td style="padding:8px;background:#F5EDE4;border-left:2px solid #fff;">
+          <div style="font-size:10px;color:#F27061;font-weight:700;">SE3 {{se3_conf_dot}}</div>
+          <div style="font-size:14px;font-weight:700;color:#222;margin-top:3px;">฿{{se3_fc_low}}–{{se3_fc_high}}</div>
+        </td>
+        <td style="padding:8px;background:#F5EDE4;border-left:2px solid #fff;">
+          <div style="font-size:10px;color:#2E7D32;font-weight:700;">PKT {{pkt_conf_dot}}</div>
+          <div style="font-size:14px;font-weight:700;color:#222;margin-top:3px;">฿{{pkt_fc_low}}–{{pkt_fc_high}}</div>
+        </td>
+        <td style="padding:8px;background:#E8E8FA;border-radius:0 6px 6px 0;border-left:2px solid #fff;">
+          <div style="font-size:10px;color:#5551FE;font-weight:700;">COMBINED {{comb_conf_dot}}</div>
+          <div style="font-size:14px;font-weight:700;color:#5551FE;margin-top:3px;">฿{{comb_fc_low}}–{{comb_fc_high}}</div>
+        </td>
+        <!-- /SECTION:forecast_shown -->
+      </tr>
+    </table>
+    <!-- SECTION:forecast_suppressed — render ONLY when forecast suppressed (low confidence/thin data) -->
+    <div style="padding:8px 10px;background:#FFF8E1;border-radius:6px;font-size:11px;color:#8A6D00;">
+      ⚠️ Insufficient recent history for a reliable forecast today — showing actuals only.
+    </div>
+    <!-- /SECTION:forecast_suppressed -->
+    <div style="font-size:9px;color:#999;margin-top:4px;">Confidence: 🟢 high · 🟡 medium · 🔴 low. Range = same-weekday trend ± recent variance.</div>
+
+    <!-- Commentary: 2–4 sentences, describe-don't-diagnose (see prediction.md guardrails) -->
+    <div style="margin-top:12px;font-size:12px;color:#333;line-height:1.5;border-left:3px solid #5551FE;padding-left:10px;">
+      {{commentary_text}}
+    </div>
+
+    <!-- Anomaly summary: top 3–5 pointers, not a re-listing -->
+    <!-- SECTION:anomaly_shown — OMIT whole block if no anomalies -->
+    <div style="margin-top:12px;">
+      <div style="font-size:11px;color:#C62828;font-weight:700;margin-bottom:4px;">⚠️ Worth your attention ({{anomaly_count}})</div>
+      <table style="width:100%;border-collapse:collapse;font-size:11px;">
+        <!-- REPEAT:anomaly_items — top 3–5 by materiality -->
+        <tr style="border-bottom:1px solid #f0f0f0;">
+          <td style="padding:4px 0;color:#333;">{{anomaly_text}}</td>
+          <td style="padding:4px 0;text-align:right;color:#999;font-size:10px;">see {{anomaly_section_ref}} ↓</td>
+        </tr>
+        <!-- /REPEAT:anomaly_items -->
+      </table>
+    </div>
+    <!-- /SECTION:anomaly_shown -->
+
+  </div>
+</div>
