@@ -1,0 +1,1318 @@
+<!--
+==================================================================================
+  JUICELAND DAILY SALES REPORT — LOCKED HTML TEMPLATE (file #1 of 3)
+  Used by: juiceland-report-runbook.md  ·  Data map: juiceland-queries.md
+==================================================================================
+
+  HOW THIS FILE WORKS — read before editing
+  -----------------------------------------
+  This is the FROZEN visual structure of the email. The routine must reproduce
+  this HTML verbatim and only substitute values. Do NOT let the model
+  re-invent layout, colours, spacing, or section order.
+
+  TWO kinds of substitution:
+
+  1. placeholder  — a single value. Replace the token, keep everything else.
+       e.g. 68,145  ->  68,545
+
+  2. 
+       A row/block that repeats once per data item. Render the block once for
+       each item in the named dataset, substituting its tokens each time.
+       Then DELETE the markers themselves from the output.
+       If the dataset is EMPTY, render the fallback shown in <!-- EMPTY:name -->.
+
+  RULES
+  - Never change hex colours, px sizes, or inline styles. They are email-client tested.
+  - Branch order is ALWAYS MW1, SE3, PKT. Colours: MW1 #5551FE, SE3 #F27061, PKT #2E7D32.
+  - Currency: ฿ prefix, thousands comma, no decimals  (e.g. ฿68,545) unless token says otherwise.
+  - Conditional whole sections are wrapped in 
+    with a one-line rule for when to omit. Omit = remove the entire block.
+  - Do NOT write this HTML to disk in production; pass it straight to lark_send_email.
+==================================================================================
+-->
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<title>✅ [Juiceland] Daily Sales Report — 11 June 2026 | ฿68,145 (-4.5%)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0;padding:0;background:#F4F4F8;font-family:'Poppins',-apple-system,BlinkMacSystemFont,Arial,sans-serif;color:#222;">
+<table style="max-width:760px;margin:0 auto;background:#fff;width:100%;">
+<tr><td>
+
+<!-- ============================ 1. HEADER BAND ============================ -->
+<div style="background:linear-gradient(135deg,#5551FE,#7B79FF);padding:28px 24px;color:#fff;">
+  <table style="width:100%;"><tr>
+    <td>
+      <div style="font-size:11px;letter-spacing:2px;opacity:0.8;">JUICELAND DAILY SALES REPORT</div>
+      <div style="font-size:26px;font-weight:700;margin-top:6px;">11 June 2026 <span style="opacity:0.7;font-weight:500;">· วันพฤหัสบดี</span></div>
+      <div style="font-size:12px;opacity:0.85;margin-top:4px;">Suvarnabhumi T1 (MW1, SE3) + Phuket Airport (PKT) · Juice Land brand only · NetSuite</div>
+    </td>
+    <td style="text-align:right;vertical-align:top;">
+      <div style="background:#F27061;color:#fff;display:inline-block;padding:10px 16px;border-radius:8px;">
+        <div style="font-size:10px;opacity:0.9;">COMBINED NET (ex-VAT)</div>
+        <div style="font-size:22px;font-weight:700;">฿68,145</div>
+        <div style="font-size:11px;margin-top:2px;">-4.5% vs 30d avg</div>
+      </div>
+    </td>
+  </tr></table>
+</div>
+
+<div style="padding:24px;">
+
+<!-- ============================ 2. AM REVIEW BANNER ============================ -->
+
+    <div style="background:#FFF8E1;border:2px solid #FFA000;padding:0;margin-top:18px;border-radius:8px;overflow:hidden;">
+      <div style="background:#FFA000;color:#fff;padding:12px 16px;">
+        <div style="font-weight:700;font-size:15px;">🚨 AREA MANAGER REVIEW REQUIRED — 21 products</div>
+        <div style="font-size:11px;opacity:0.95;margin-top:3px;">Please reply by end of day with the reason for each item below. The system can flag the pattern, but only you can tell us whether it's stock-out, low demand, or something else. Also check the <b>30 dormant SKUs</b> section below — products that stopped selling 7+ days ago.</div>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:11px;background:#fff;">
+        <tr style="background:#F5EDE4;">
+          <th style="padding:8px;text-align:left;color:#444;">Product · Sales Pattern</th>
+          <th style="padding:8px;text-align:left;color:#444;">System Hypothesis</th>
+          <th style="padding:8px;text-align:left;color:#444;">Your Response</th>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">SHINE MUSCAT GRAPES 400G (PACK)</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 21 May 2026 (21d ago) · 7d avg 0.7/day · target 2.2/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">MW1</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">HOT CHOCOLATE 8 oz</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 27 May 2026 (15d ago) · 7d avg 0.6/day · target 1.8/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">MW1</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">Up size Smoothie & Cold Press</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 1 Jun 2026 (10d ago) · 7d avg 0.5/day · target 1.6/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">MW1</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">VANILLA BEAN GREEK YOGURT</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 26 May 2026 (16d ago) · 7d avg 0.5/day · target 1.4/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">MW1</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">RASPBERRY GREEK YOGURT</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 22 May 2026 (20d ago) · 7d avg 0.3/day · target 0.9/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">MW1</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">T2 ICED THAI TEA WITH LIME 16OZ</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 1 Jun 2026 (10d ago) · 7d avg 0.3/day · target 0.8/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">MW1</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">T2 ICED THAI TEA WITH LIME 22OZ</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 3 Jun 2026 (8d ago) · 7d avg 0.3/day · target 0.8/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">MW1</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">Mango Berry Smoothie 16oz</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 26 May 2026 (16d ago) · 7d avg 0.2/day · target 0.5/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">MW1</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">HOT CHOCOLATE 8 oz</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 29 May 2026 (13d ago) · 7d avg 0.7/day · target 2.2/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">SE3</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">Mango Sticky Rice (Box)</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 31 May 2026 (11d ago) · 7d avg 0.6/day · target 1.9/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">SE3</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">MANGO PINEAPPLE SMOOTHIE 16OZ</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 31 May 2026 (11d ago) · 7d avg 0.6/day · target 1.7/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">SE3</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">Golden Harmony Greek Yogur</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 31 May 2026 (11d ago) · 7d avg 0.6/day · target 1.7/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">SE3</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">CI3 ICED AMERICANO 16OZ</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 4 Jun 2026 (7d ago) · 7d avg 0.4/day · target 1.1/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">SE3</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">MANGO BERRY SMOOTHIE 16OZ</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 19 May 2026 (23d ago) · 7d avg 0.3/day · target 0.8/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">SE3</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">T2 ICED THAI TEA WITH LIME 22OZ</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 28 May 2026 (14d ago) · 7d avg 0.2/day · target 0.7/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">SE3</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">Overnight Oat Berry 16 oz</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 27 May 2026 (15d ago) · 7d avg 0.2/day · target 0.7/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">SE3</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">BANANA YOGHURT SMOOTHIE 16OZ</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 28 May 2026 (14d ago) · 7d avg 0.2/day · target 0.7/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">SE3</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">Overnight Oat mango 16 oz</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 4 Jun 2026 (7d ago) · 7d avg 0.2/day · target 0.5/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">SE3</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">CI4 ICED CAPPUCCINO 22OZ</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 30 May 2026 (12d ago) · 7d avg 0.2/day · target 0.5/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">SE3</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">Mango Pineapple Smoothie 16oz</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 28 May 2026 (14d ago) · 7d avg 0.3/day · target 0.9/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">PKT</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #eee;">
+          <td style="padding:10px 8px;vertical-align:top;width:38%;">
+            <div style="font-weight:700;font-size:12px;color:#222;">Orange Cold Pressed Juice 300 ml. …</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">Last sold 27 May 2026 (15d ago) · 7d avg 0.2/day · target 0.6/day</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">PKT</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:30%;font-size:11px;color:#E65100;font-weight:600;">
+            Investigate: stock-out or discontinued?
+            <div style="color:#888;font-weight:400;font-size:10px;margin-top:3px;">(system best-guess — confirm or correct)</div>
+          </td>
+          <td style="padding:10px 8px;vertical-align:top;width:32%;font-size:11px;background:#FFFEF0;">
+            <b>Please reply:</b>
+            <div style="margin-top:4px;color:#444;">
+              ☐ Out of stock<br>
+              ☐ Low demand / consider pulling<br>
+              ☐ Reduced batch already<br>
+              ☐ Other (specify): _______________
+            </div>
+          </td>
+        </tr>
+        
+      </table>
+      <div style="background:#FFF8E1;padding:8px 16px;font-size:10px;color:#666;">
+        Reply via Lark task or email to <a href="mailto:management@chaw.co.th" style="color:#5551FE;">management@chaw.co.th</a> ·
+        🟠 Stock-out → restock or remove from menu · ⚠️ Waste risk → reduce batch / promote / discontinue
+      </div>
+    </div>
+
+
+<!-- ============================ 3. 30-DAY TREND CHART ============================ -->
+<div style="margin-top:24px;">
+  <div style="font-weight:600;color:#5551FE;margin-bottom:4px;font-size:14px;">📈 30-Day Juice Land Sales Trend</div>
+  <div style="font-size:11px;color:#666;margin-bottom:12px;">
+    2026-05-13 → 2026-06-11 · Daily ex-VAT net sales · NetSuite ·
+    <span style="display:inline-block;width:10px;height:10px;background:#5551FE;vertical-align:middle;border-radius:2px;"></span> MW1
+    &nbsp;&nbsp;
+    <span style="display:inline-block;width:10px;height:10px;background:#F27061;vertical-align:middle;border-radius:2px;"></span> SE3
+    &nbsp;&nbsp;
+    <span style="display:inline-block;width:10px;height:10px;background:#2E7D32;vertical-align:middle;border-radius:2px;"></span> PKT
+  </div>
+  <table style="width:100%;border-collapse:collapse;"><tr style="vertical-align:bottom;">
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 13 May: ฿34,122" style="width:5px;height:165px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 13 May: ฿25,085" style="width:5px;height:121px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 13 May: ฿13,897" style="width:5px;height:67px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        13<br><span style="color:#bbb;font-weight:400;">พ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 14 May: ฿40,908" style="width:5px;height:198px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 14 May: ฿21,800" style="width:5px;height:106px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 14 May: ฿7,820" style="width:5px;height:38px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        14<br><span style="color:#bbb;font-weight:400;">พฤ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 15 May: ฿35,787" style="width:5px;height:173px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 15 May: ฿19,010" style="width:5px;height:92px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 15 May: ฿10,244" style="width:5px;height:50px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        15<br><span style="color:#bbb;font-weight:400;">ศ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 16 May: ฿30,766" style="width:5px;height:149px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 16 May: ฿25,470" style="width:5px;height:123px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 16 May: ฿9,920" style="width:5px;height:48px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        16<br><span style="color:#bbb;font-weight:400;">ส</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 17 May: ฿34,754" style="width:5px;height:168px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 17 May: ฿35,410" style="width:5px;height:171px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 17 May: ฿13,484" style="width:5px;height:65px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        17<br><span style="color:#bbb;font-weight:400;">อา</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 18 May: ฿25,913" style="width:5px;height:125px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 18 May: ฿22,700" style="width:5px;height:110px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 18 May: ฿12,484" style="width:5px;height:60px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        18<br><span style="color:#bbb;font-weight:400;">จ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 19 May: ฿33,034" style="width:5px;height:160px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 19 May: ฿25,820" style="width:5px;height:125px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 19 May: ฿7,867" style="width:5px;height:38px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        19<br><span style="color:#bbb;font-weight:400;">อ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 20 May: ฿31,093" style="width:5px;height:151px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 20 May: ฿17,308" style="width:5px;height:84px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 20 May: ฿10,311" style="width:5px;height:50px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        20<br><span style="color:#bbb;font-weight:400;">พ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 21 May: ฿36,940" style="width:5px;height:179px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 21 May: ฿29,297" style="width:5px;height:142px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 21 May: ฿9,611" style="width:5px;height:47px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        21<br><span style="color:#bbb;font-weight:400;">พฤ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 22 May: ฿40,088" style="width:5px;height:194px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 22 May: ฿26,689" style="width:5px;height:129px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 22 May: ฿10,358" style="width:5px;height:50px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        22<br><span style="color:#bbb;font-weight:400;">ศ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 23 May: ฿38,640" style="width:5px;height:187px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 23 May: ฿39,492" style="width:5px;height:191px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 23 May: ฿12,698" style="width:5px;height:61px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        23<br><span style="color:#bbb;font-weight:400;">ส</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 24 May: ฿45,430" style="width:5px;height:220px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 24 May: ฿28,328" style="width:5px;height:137px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 24 May: ฿12,933" style="width:5px;height:63px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        24<br><span style="color:#bbb;font-weight:400;">อา</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 25 May: ฿38,221" style="width:5px;height:185px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 25 May: ฿31,984" style="width:5px;height:155px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 25 May: ฿10,502" style="width:5px;height:51px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        25<br><span style="color:#bbb;font-weight:400;">จ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 26 May: ฿36,852" style="width:5px;height:178px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 26 May: ฿24,576" style="width:5px;height:119px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 26 May: ฿7,039" style="width:5px;height:34px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        26<br><span style="color:#bbb;font-weight:400;">อ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 27 May: ฿33,877" style="width:5px;height:164px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 27 May: ฿26,502" style="width:5px;height:128px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 27 May: ฿16,234" style="width:5px;height:79px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        27<br><span style="color:#bbb;font-weight:400;">พ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 28 May: ฿33,415" style="width:5px;height:162px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 28 May: ฿31,121" style="width:5px;height:151px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 28 May: ฿12,474" style="width:5px;height:60px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        28<br><span style="color:#bbb;font-weight:400;">พฤ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 29 May: ฿42,210" style="width:5px;height:204px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 29 May: ฿22,568" style="width:5px;height:109px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 29 May: ฿13,844" style="width:5px;height:67px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        29<br><span style="color:#bbb;font-weight:400;">ศ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 30 May: ฿34,788" style="width:5px;height:168px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 30 May: ฿26,883" style="width:5px;height:130px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 30 May: ฿14,605" style="width:5px;height:71px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        30<br><span style="color:#bbb;font-weight:400;">ส</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 31 May: ฿28,583" style="width:5px;height:138px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 31 May: ฿32,544" style="width:5px;height:158px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 31 May: ฿14,052" style="width:5px;height:68px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        31<br><span style="color:#bbb;font-weight:400;">อา</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 1 Jun: ฿32,133" style="width:5px;height:156px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 1 Jun: ฿24,075" style="width:5px;height:117px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 1 Jun: ฿13,940" style="width:5px;height:68px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        1<br><span style="color:#bbb;font-weight:400;">จ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 2 Jun: ฿36,476" style="width:5px;height:177px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 2 Jun: ฿15,959" style="width:5px;height:77px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 2 Jun: ฿9,920" style="width:5px;height:48px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        2<br><span style="color:#bbb;font-weight:400;">อ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 3 Jun: ฿40,024" style="width:5px;height:194px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 3 Jun: ฿19,497" style="width:5px;height:94px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 3 Jun: ฿10,813" style="width:5px;height:52px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        3<br><span style="color:#bbb;font-weight:400;">พ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 4 Jun: ฿35,666" style="width:5px;height:173px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 4 Jun: ฿16,604" style="width:5px;height:80px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 4 Jun: ฿13,146" style="width:5px;height:64px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        4<br><span style="color:#bbb;font-weight:400;">พฤ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 5 Jun: ฿35,611" style="width:5px;height:172px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 5 Jun: ฿20,180" style="width:5px;height:98px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 5 Jun: ฿13,589" style="width:5px;height:66px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        5<br><span style="color:#bbb;font-weight:400;">ศ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 6 Jun: ฿32,714" style="width:5px;height:158px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 6 Jun: ฿23,312" style="width:5px;height:113px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 6 Jun: ฿13,867" style="width:5px;height:67px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        6<br><span style="color:#bbb;font-weight:400;">ส</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 7 Jun: ฿25,977" style="width:5px;height:126px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 7 Jun: ฿17,749" style="width:5px;height:86px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 7 Jun: ฿12,993" style="width:5px;height:63px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        7<br><span style="color:#bbb;font-weight:400;">อา</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 8 Jun: ฿38,857" style="width:5px;height:188px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 8 Jun: ฿24,570" style="width:5px;height:119px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 8 Jun: ฿12,810" style="width:5px;height:62px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        8<br><span style="color:#bbb;font-weight:400;">จ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 9 Jun: ฿30,612" style="width:5px;height:148px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 9 Jun: ฿12,035" style="width:5px;height:58px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 9 Jun: ฿10,190" style="width:5px;height:49px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        9<br><span style="color:#bbb;font-weight:400;">อ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 10 Jun: ฿37,665" style="width:5px;height:182px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 10 Jun: ฿22,155" style="width:5px;height:107px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 10 Jun: ฿10,250" style="width:5px;height:50px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        10<br><span style="color:#bbb;font-weight:400;">พ</span>
+      </div>
+    </td>
+    
+    <td style="vertical-align:bottom;padding:0 1px;text-align:center;">
+      <div style="height:220px;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:1px;">
+        <div title="MW1 11 Jun: ฿36,938" style="width:5px;height:179px;background:#5551FE;border-radius:2px 2px 0 0;"></div>
+        <div title="SE3 11 Jun: ฿18,834" style="width:5px;height:91px;background:#F27061;border-radius:2px 2px 0 0;"></div>
+        <div title="PKT 11 Jun: ฿12,373" style="width:5px;height:60px;background:#2E7D32;border-radius:2px 2px 0 0;"></div>
+      </div>
+      <div style="font-size:9px;color:#888;font-weight:500;margin-top:4px;font-family:monospace;line-height:1.1;">
+        11<br><span style="color:#bbb;font-weight:400;">พฤ</span>
+      </div>
+    </td>
+    
+  </tr></table>
+
+  <!-- ---- Last 7 days daily values table ---- -->
+  <div style="margin-top:14px;">
+    <div style="font-size:11px;color:#666;font-weight:600;margin-bottom:6px;">Last 7 days · daily ex-VAT net sales · 7d total ฿463,281 (avg ฿66,183/day)</div>
+    <table style="width:100%;border-collapse:collapse;font-size:11px;border:1px solid #eee;">
+      <tr style="background:#5551FE;color:#fff;">
+        <th style="padding:6px 8px;text-align:left;">Branch</th>
+        
+        <th style="padding:6px 6px;text-align:right;">5 Jun<br><span style="font-weight:400;font-size:9px;opacity:0.8;">ศ</span></th>
+        
+        <th style="padding:6px 6px;text-align:right;">6 Jun<br><span style="font-weight:400;font-size:9px;opacity:0.8;">ส</span></th>
+        
+        <th style="padding:6px 6px;text-align:right;">7 Jun<br><span style="font-weight:400;font-size:9px;opacity:0.8;">อา</span></th>
+        
+        <th style="padding:6px 6px;text-align:right;">8 Jun<br><span style="font-weight:400;font-size:9px;opacity:0.8;">จ</span></th>
+        
+        <th style="padding:6px 6px;text-align:right;">9 Jun<br><span style="font-weight:400;font-size:9px;opacity:0.8;">อ</span></th>
+        
+        <th style="padding:6px 6px;text-align:right;">10 Jun<br><span style="font-weight:400;font-size:9px;opacity:0.8;">พ</span></th>
+        
+        <th style="padding:6px 6px;text-align:right;background:#4744CD;color:#fff;">11 Jun<br><span style="font-weight:400;font-size:9px;opacity:0.8;">พฤ</span></th>
+        
+        <th style="padding:6px 8px;text-align:right;background:#4744CD;">7d Total</th>
+      </tr>
+      <!-- MW1 row -->
+      <tr style="background:#fff;"><td style="padding:5px 8px;font-weight:600;color:#5551FE;">MW1</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿35,611</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿32,714</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿25,977</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿38,857</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿30,612</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿37,665</td>
+        
+        <td style="padding:5px 6px;text-align:right;background:#FFF3E0;font-weight:700;">฿36,938</td>
+        
+        <td style="padding:5px 8px;text-align:right;font-weight:700;background:#F5EDE4;">฿238,374</td></tr>
+      <!-- SE3 row -->
+      <tr style="background:#FAFAFA;"><td style="padding:5px 8px;font-weight:600;color:#F27061;">SE3</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿20,180</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿23,312</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿17,749</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿24,570</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿12,035</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿22,155</td>
+        
+        <td style="padding:5px 6px;text-align:right;background:#FFF3E0;font-weight:700;">฿18,834</td>
+        
+        <td style="padding:5px 8px;text-align:right;font-weight:700;background:#F5EDE4;">฿138,835</td></tr>
+      <!-- PKT row -->
+      <tr style="background:#fff;"><td style="padding:5px 8px;font-weight:600;color:#2E7D32;">PKT</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿13,589</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿13,867</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿12,993</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿12,810</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿10,190</td>
+        
+        <td style="padding:5px 6px;text-align:right;">฿10,250</td>
+        
+        <td style="padding:5px 6px;text-align:right;background:#FFF3E0;font-weight:700;">฿12,373</td>
+        
+        <td style="padding:5px 8px;text-align:right;font-weight:700;background:#F5EDE4;">฿86,072</td></tr>
+      <!-- Combined row -->
+      <tr style="background:#E8E8FA;font-weight:700;border-top:2px solid #5551FE;">
+        <td style="padding:6px 8px;color:#5551FE;">Combined</td>
+        
+        <td style="padding:6px 6px;text-align:right;color:#5551FE;">฿69,380</td>
+        
+        <td style="padding:6px 6px;text-align:right;color:#5551FE;">฿69,893</td>
+        
+        <td style="padding:6px 6px;text-align:right;color:#5551FE;">฿56,719</td>
+        
+        <td style="padding:6px 6px;text-align:right;color:#5551FE;">฿76,237</td>
+        
+        <td style="padding:6px 6px;text-align:right;color:#5551FE;">฿52,837</td>
+        
+        <td style="padding:6px 6px;text-align:right;color:#5551FE;">฿70,070</td>
+        
+        <td style="padding:6px 6px;text-align:right;color:#5551FE;background:#FFF3E0;">฿68,145</td>
+        
+        <td style="padding:6px 8px;text-align:right;background:#5551FE;color:#fff;">฿463,281</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ---- 30-day average KPI cards ---- -->
+  <table style="width:100%;margin-top:14px;border-collapse:collapse;font-size:12px;">
+    <tr>
+      <td style="background:#F5EDE4;padding:10px;border-radius:8px 0 0 8px;">
+        <div style="font-size:10px;color:#666;letter-spacing:1px;font-weight:600;">MW1 · 30-DAY AVG</div>
+        <div style="font-size:18px;font-weight:700;color:#5551FE;margin-top:4px;">฿35,270</div>
+        <div style="font-size:10px;color:#666;margin-top:2px;">฿25,913–฿45,430</div>
+      </td>
+      <td style="background:#F5EDE4;padding:10px;border-left:2px solid #fff;">
+        <div style="font-size:10px;color:#666;letter-spacing:1px;font-weight:600;">SE3 · 30-DAY AVG</div>
+        <div style="font-size:18px;font-weight:700;color:#F27061;margin-top:4px;">฿24,252</div>
+        <div style="font-size:10px;color:#666;margin-top:2px;">฿12,035–฿39,492</div>
+      </td>
+      <td style="background:#F5EDE4;padding:10px;border-left:2px solid #fff;">
+        <div style="font-size:10px;color:#666;letter-spacing:1px;font-weight:600;">PKT · 30-DAY AVG</div>
+        <div style="font-size:18px;font-weight:700;color:#2E7D32;margin-top:4px;">฿11,809</div>
+        <div style="font-size:10px;color:#666;margin-top:2px;">฿7,039–฿16,234</div>
+      </td>
+      <td style="background:#F5EDE4;padding:10px;border-left:2px solid #fff;border-radius:0 8px 8px 0;">
+        <div style="font-size:10px;color:#666;letter-spacing:1px;font-weight:600;">COMBINED 30D</div>
+        <div style="font-size:18px;font-weight:700;color:#5551FE;margin-top:4px;">฿71,331</div>
+        <div style="font-size:10px;color:#666;margin-top:2px;">run-rate ~฿2139.9K/mo</div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- ============================ 4. NEW PRODUCT LAUNCHES ============================ -->
+<div style="margin-top:28px;">
+  <div style="background:linear-gradient(90deg,#E40303 0%,#FF8C00 17%,#FFED00 33%,#008026 50%,#004DFF 67%,#750787 100%);padding:3px;border-radius:10px;">
+    <div style="background:#fff;border-radius:8px;padding:18px;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;">
+        <div>
+          <div style="font-weight:700;color:#222;font-size:16px;">🆕 New Product Launches</div>
+          <div style="font-size:11px;color:#666;margin-top:2px;">27 new SKUs launched in last 30 days</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:24px;font-weight:700;color:#5551FE;">383 units</div>
+          <div style="font-size:12px;color:#666;">฿63,687 ex-VAT to date</div>
+        </div>
+      </div>
+
+      <!-- Per-type KPI strip: 3 cells, fixed order Drinks / Fruit / New Category -->
+      <table style="width:100%;margin-top:14px;border-collapse:separate;border-spacing:0;border-radius:6px;overflow:hidden;border:1px solid #eee;">
+        <tr>
+          <td style="padding:10px 14px;background:#E3F2FD;">
+            <div style="font-size:10px;color:#1976D2;letter-spacing:0.5px;font-weight:700;">🥤 DRINKS</div>
+            <div style="font-size:11px;color:#888;margin-top:2px;">5 SKUs</div>
+            <div style="font-size:14px;font-weight:700;color:#1976D2;margin-top:4px;">68 units · ฿8,514</div>
+          </td>
+          <td style="padding:10px 14px;border-left:1px solid #ddd;background:#FCE4EC;">
+            <div style="font-size:10px;color:#AD1457;letter-spacing:0.5px;font-weight:700;">🍉 SEASONAL FRUITS</div>
+            <div style="font-size:11px;color:#888;margin-top:2px;">14 SKUs</div>
+            <div style="font-size:14px;font-weight:700;color:#AD1457;margin-top:4px;">117 units · ฿20,410</div>
+          </td>
+          <td style="padding:10px 14px;border-left:1px solid #ddd;background:#E8F5E9;">
+            <div style="font-size:10px;color:#2E7D32;letter-spacing:0.5px;font-weight:700;">⭐ NEW CATEGORY</div>
+            <div style="font-size:11px;color:#888;margin-top:2px;">8 SKUs</div>
+            <div style="font-size:14px;font-weight:700;color:#2E7D32;margin-top:4px;">198 units · ฿34,763</div>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Three grouped sub-tables, one per type. Header banner colour per type metadata. -->
+      
+      <div style="margin-top:14px;">
+        <div style="background:#1565C0;color:#fff;padding:6px 12px;border-radius:6px 6px 0 0;font-weight:700;font-size:12px;">🥤 New Drinks</div>
+        <table style="width:100%;border-collapse:collapse;font-size:11px;border:1px solid #eee;">
+          <tr style="background:#F5EDE4;">
+            <th style="padding:5px 8px;text-align:left;">Product</th>
+            <th style="padding:5px 8px;text-align:right;">Total</th>
+            <th style="padding:5px 8px;text-align:right;">Revenue</th>
+            <th style="padding:5px 8px;text-align:left;">Branch split</th>
+            <th style="padding:5px 8px;text-align:right;">Yest</th>
+            <th style="padding:5px 8px;text-align:left;">Status</th>
+          </tr>
+          
+        </table>
+      </div>
+      
+      <div style="margin-top:14px;">
+        <div style="background:#AD1457;color:#fff;padding:6px 12px;border-radius:6px 6px 0 0;font-weight:700;font-size:12px;">🍉 Seasonal Fruits</div>
+        <table style="width:100%;border-collapse:collapse;font-size:11px;border:1px solid #eee;">
+          <tr style="background:#F5EDE4;">
+            <th style="padding:5px 8px;text-align:left;">Product</th>
+            <th style="padding:5px 8px;text-align:right;">Total</th>
+            <th style="padding:5px 8px;text-align:right;">Revenue</th>
+            <th style="padding:5px 8px;text-align:left;">Branch split</th>
+            <th style="padding:5px 8px;text-align:right;">Yest</th>
+            <th style="padding:5px 8px;text-align:left;">Status</th>
+          </tr>
+          
+        </table>
+      </div>
+      
+      <div style="margin-top:14px;">
+        <div style="background:#2E7D32;color:#fff;padding:6px 12px;border-radius:6px 6px 0 0;font-weight:700;font-size:12px;">⭐ New Category</div>
+        <table style="width:100%;border-collapse:collapse;font-size:11px;border:1px solid #eee;">
+          <tr style="background:#F5EDE4;">
+            <th style="padding:5px 8px;text-align:left;">Product</th>
+            <th style="padding:5px 8px;text-align:right;">Total</th>
+            <th style="padding:5px 8px;text-align:right;">Revenue</th>
+            <th style="padding:5px 8px;text-align:left;">Branch split</th>
+            <th style="padding:5px 8px;text-align:right;">Yest</th>
+            <th style="padding:5px 8px;text-align:left;">Status</th>
+          </tr>
+          
+        </table>
+      </div>
+      
+      <div style="font-size:10px;color:#888;margin-top:10px;">
+        Status: 🟢 on target · 🟡 below target (≥50%) · 🔴 waste risk (&lt;50%) · 🟠 stock-out suspect (≥2d gap) · ⚪ made-to-order / no sales yet
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================ 5. TOP 20 PER BRANCH ============================ -->
+<div style="margin-top:28px;font-weight:600;color:#5551FE;font-size:14px;">📊 Top 20 Products per Branch (yesterday · NetSuite line memo · ex-VAT)</div>
+<table style="width:100%;margin-top:10px;border-collapse:separate;border-spacing:0;"><tr>
+  
+  <td style="width:33.33%;vertical-align:top;padding:0 5px;">
+    <div style="font-weight:600;color:#5551FE;margin-bottom:4px;font-size:12px;">MW1</div>
+    <table style="width:100%;border-collapse:collapse;font-size:10px;">
+      <tr style="background:#F5EDE4;">
+        <th style="padding:4px 6px;text-align:left;width:18px;">#</th>
+        <th style="padding:4px 6px;text-align:left;">Product</th>
+        <th style="padding:4px 6px;text-align:right;">Qty</th>
+        <th style="padding:4px 6px;text-align:right;">฿ ex-VAT</th>
+      </tr>
+      
+    </table>
+  </td>
+  
+  <td style="width:33.33%;vertical-align:top;padding:0 5px;">
+    <div style="font-weight:600;color:#F27061;margin-bottom:4px;font-size:12px;">SE3</div>
+    <table style="width:100%;border-collapse:collapse;font-size:10px;">
+      <tr style="background:#F5EDE4;">
+        <th style="padding:4px 6px;text-align:left;width:18px;">#</th>
+        <th style="padding:4px 6px;text-align:left;">Product</th>
+        <th style="padding:4px 6px;text-align:right;">Qty</th>
+        <th style="padding:4px 6px;text-align:right;">฿ ex-VAT</th>
+      </tr>
+      
+    </table>
+  </td>
+  
+  <td style="width:33.33%;vertical-align:top;padding:0 5px;">
+    <div style="font-weight:600;color:#2E7D32;margin-bottom:4px;font-size:12px;">PKT</div>
+    <table style="width:100%;border-collapse:collapse;font-size:10px;">
+      <tr style="background:#F5EDE4;">
+        <th style="padding:4px 6px;text-align:left;width:18px;">#</th>
+        <th style="padding:4px 6px;text-align:left;">Product</th>
+        <th style="padding:4px 6px;text-align:right;">Qty</th>
+        <th style="padding:4px 6px;text-align:right;">฿ ex-VAT</th>
+      </tr>
+      
+    </table>
+  </td>
+  
+</tr></table>
+
+<!-- ============================ 6. SEASONAL REPLACEMENT TRACKER ============================ -->
+
+<div style="margin-top:28px;">
+  <div style="font-weight:600;color:#5551FE;font-size:14px;margin-bottom:4px;">🍇 Seasonal Replacement Tracker</div>
+  <div style="font-size:11px;color:#666;margin-bottom:10px;">
+    Shine Muscat grapes ended their season (Dec 2025 → May 2026, ฿238,740 over 6 months).
+    Tracking whether the May/Jun launches at Suvarnabhumi are filling the revenue gap.
+    <br><span style="color:#999;">Last sold MW1: 21 May 2026 · SE3: 28 Apr 2026 · PKT never carried grapes.</span>
+  </div>
+
+  <table style="width:100%;border-collapse:collapse;font-size:11px;border:1px solid #eee;margin-bottom:14px;">
+    <tr style="background:#F5EDE4;">
+      <th style="padding:6px 8px;text-align:left;">New seasonal SKU</th>
+      <th style="padding:6px 8px;text-align:left;">Launched</th>
+      <th style="padding:6px 8px;text-align:right;">MW1</th>
+      <th style="padding:6px 8px;text-align:right;">SE3</th>
+    </tr>
+    
+    <tr style="border-bottom:1px solid #eee;">
+      <td style="padding:6px 8px;font-size:11px;"><span style="font-size:14px;">🍑</span> BLUEBERRY GREEK YOGURT</td>
+      <td style="padding:6px 8px;font-size:10px;color:#888;">Launched 13 May 2026</td>
+      <td style="padding:6px 8px;text-align:right;font-size:11px;">12 units · ฿0.1/d</td>
+      <td style="padding:6px 8px;text-align:right;font-size:11px;"> units · ฿/d</td>
+    </tr>
+    
+    <tr style="border-bottom:1px solid #eee;">
+      <td style="padding:6px 8px;font-size:11px;"><span style="font-size:14px;">🍑</span> Fanta Orange 450 ml. (Bottle)</td>
+      <td style="padding:6px 8px;font-size:10px;color:#888;">Launched 31 May 2026</td>
+      <td style="padding:6px 8px;text-align:right;font-size:11px;">11 units · ฿1.0/d</td>
+      <td style="padding:6px 8px;text-align:right;font-size:11px;"> units · ฿/d</td>
+    </tr>
+    
+    <tr style="border-bottom:1px solid #eee;">
+      <td style="padding:6px 8px;font-size:11px;"><span style="font-size:14px;">🍑</span> Fanta Strawberry 450 ml. (Bottle)</td>
+      <td style="padding:6px 8px;font-size:10px;color:#888;">Launched 1 Jun 2026</td>
+      <td style="padding:6px 8px;text-align:right;font-size:11px;">11 units · ฿0.7/d</td>
+      <td style="padding:6px 8px;text-align:right;font-size:11px;"> units · ฿/d</td>
+    </tr>
+    
+    <tr style="border-bottom:1px solid #eee;">
+      <td style="padding:6px 8px;font-size:11px;"><span style="font-size:14px;">🍑</span> LYCHEE 400G.</td>
+      <td style="padding:6px 8px;font-size:10px;color:#888;">Launched 28 May 2026</td>
+      <td style="padding:6px 8px;text-align:right;font-size:11px;">19 units · ฿1.4/d</td>
+      <td style="padding:6px 8px;text-align:right;font-size:11px;"> units · ฿/d</td>
+    </tr>
+    
+    <tr style="border-bottom:1px solid #eee;">
+      <td style="padding:6px 8px;font-size:11px;"><span style="font-size:14px;">🥭</span> MANGOSTEEN 400g.</td>
+      <td style="padding:6px 8px;font-size:10px;color:#888;">Launched 28 May 2026</td>
+      <td style="padding:6px 8px;text-align:right;font-size:11px;">4 units · ฿0.1/d</td>
+      <td style="padding:6px 8px;text-align:right;font-size:11px;"> units · ฿/d</td>
+    </tr>
+    
+    <tr style="border-bottom:1px solid #eee;">
+      <td style="padding:6px 8px;font-size:11px;"><span style="font-size:14px;">🥭</span> Overnight Oat mango 16 oz</td>
+      <td style="padding:6px 8px;font-size:10px;color:#888;">Launched 21 May 2026</td>
+      <td style="padding:6px 8px;text-align:right;font-size:11px;">32 units · ฿0.4/d</td>
+      <td style="padding:6px 8px;text-align:right;font-size:11px;"> units · ฿/d</td>
+    </tr>
+    
+    <tr style="border-bottom:1px solid #eee;">
+      <td style="padding:6px 8px;font-size:11px;"><span style="font-size:14px;">🍇</span> SEEDLESS GRAPE TOPPING</td>
+      <td style="padding:6px 8px;font-size:10px;color:#888;">Launched 5 Jun 2026</td>
+      <td style="padding:6px 8px;text-align:right;font-size:11px;">1 units · ฿0.1/d</td>
+      <td style="padding:6px 8px;text-align:right;font-size:11px;"> units · ฿/d</td>
+    </tr>
+    
+  </table>
+
+  <table style="width:100%;border-collapse:separate;border-spacing:0;"><tr>
+    
+    <td style="width:50%;vertical-align:top;padding:0 6px;">
+      <div style="background:#fff;border:1px solid #eee;border-top:4px solid #5551FE;border-radius:8px;padding:14px;">
+        <div style="font-weight:700;font-size:12px;color:#222;margin-bottom:8px;">MW1</div>
+        <table style="width:100%;font-size:11px;border-collapse:collapse;">
+          <tr><td style="color:#666;padding:4px 0;">Grape baseline (lost)</td><td style="text-align:right;font-weight:600;color:#888;text-decoration:line-through;">฿339/d</td></tr>
+          <tr><td style="color:#666;padding:4px 0;">New fruit (gained)</td><td style="text-align:right;font-weight:600;color:#155724;">฿340/d</td></tr>
+          <tr style="border-top:1px solid #eee;"><td style="color:#444;padding:6px 0 2px;font-weight:600;">Coverage</td><td style="text-align:right;font-weight:700;color:#2E7D32;">100%</td></tr>
+          <tr><td style="color:#444;padding:2px 0;font-weight:600;">Daily gap</td><td style="text-align:right;font-weight:700;color:#2E7D32;">฿+1/d</td></tr>
+          <tr><td style="color:#888;padding:2px 0;font-size:10px;">→ Monthly impact</td><td style="text-align:right;font-size:10px;color:#888;">฿+35/mo</td></tr>
+        </table>
+        <div style="margin-top:10px;padding:6px 8px;background:#E8F5E9;color:#2E7D32;border-radius:4px;font-size:10px;font-weight:600;text-align:center;">
+          ✅ Baseline covered (100%)
+        </div>
+      </div>
+    </td>
+    
+    <td style="width:50%;vertical-align:top;padding:0 6px;">
+      <div style="background:#fff;border:1px solid #eee;border-top:4px solid #F27061;border-radius:8px;padding:14px;">
+        <div style="font-weight:700;font-size:12px;color:#222;margin-bottom:8px;">SE3</div>
+        <table style="width:100%;font-size:11px;border-collapse:collapse;">
+          <tr><td style="color:#666;padding:4px 0;">Grape baseline (lost)</td><td style="text-align:right;font-weight:600;color:#888;text-decoration:line-through;">฿251/d</td></tr>
+          <tr><td style="color:#666;padding:4px 0;">New fruit (gained)</td><td style="text-align:right;font-weight:600;color:#155724;">฿340/d</td></tr>
+          <tr style="border-top:1px solid #eee;"><td style="color:#444;padding:6px 0 2px;font-weight:600;">Coverage</td><td style="text-align:right;font-weight:700;color:#2E7D32;">136%</td></tr>
+          <tr><td style="color:#444;padding:2px 0;font-weight:600;">Daily gap</td><td style="text-align:right;font-weight:700;color:#2E7D32;">฿+89/d</td></tr>
+          <tr><td style="color:#888;padding:2px 0;font-size:10px;">→ Monthly impact</td><td style="text-align:right;font-size:10px;color:#888;">฿+2,675/mo</td></tr>
+        </table>
+        <div style="margin-top:10px;padding:6px 8px;background:#E8F5E9;color:#2E7D32;border-radius:4px;font-size:10px;font-weight:600;text-align:center;">
+          ✅ Baseline covered (136%)
+        </div>
+      </div>
+    </td>
+    
+  </tr></table>
+</div>
+
+
+<!-- ============================ 7. DORMANT SKUs ============================ -->
+
+<div style="margin-top:28px;">
+  <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:4px;">
+    <div style="font-weight:600;color:#5551FE;font-size:14px;">🚫 Dormant SKUs — sold previously, no sales in 7+ days</div>
+    <div style="font-size:11px;color:#666;">30 items across all branches</div>
+  </div>
+  <div style="font-size:11px;color:#666;margin-bottom:10px;">
+    Items that sold in the past 30 days but have stopped. Investigate if stock-out, supplier issue, menu pull, or genuine slow-down.
+    Sorted by past impact (highest 30d quantity first). Orange = 7-13 days, Red = 14+ days dormant.
+  </div>
+  <table style="width:100%;border-collapse:separate;border-spacing:0;"><tr>
+    
+    <td style="width:33.33%;vertical-align:top;padding:0 5px;">
+      <div style="font-weight:600;color:#5551FE;font-size:12px;margin-bottom:4px;">MW1 <span style="color:#888;font-weight:500;">· 12 items</span></div>
+      <table style="width:100%;border-collapse:collapse;font-size:10px;">
+        <tr style="background:#F5EDE4;">
+          <th style="padding:4px 6px;text-align:left;">Item · Prior 30d activity</th>
+          <th style="padding:4px 6px;text-align:right;">Last sold</th>
+        </tr>
+        
+      </table>
+    </td>
+    
+    <td style="width:33.33%;vertical-align:top;padding:0 5px;">
+      <div style="font-weight:600;color:#F27061;font-size:12px;margin-bottom:4px;">SE3 <span style="color:#888;font-weight:500;">· 14 items</span></div>
+      <table style="width:100%;border-collapse:collapse;font-size:10px;">
+        <tr style="background:#F5EDE4;">
+          <th style="padding:4px 6px;text-align:left;">Item · Prior 30d activity</th>
+          <th style="padding:4px 6px;text-align:right;">Last sold</th>
+        </tr>
+        
+      </table>
+    </td>
+    
+    <td style="width:33.33%;vertical-align:top;padding:0 5px;">
+      <div style="font-weight:600;color:#2E7D32;font-size:12px;margin-bottom:4px;">PKT <span style="color:#888;font-weight:500;">· 4 items</span></div>
+      <table style="width:100%;border-collapse:collapse;font-size:10px;">
+        <tr style="background:#F5EDE4;">
+          <th style="padding:4px 6px;text-align:left;">Item · Prior 30d activity</th>
+          <th style="padding:4px 6px;text-align:right;">Last sold</th>
+        </tr>
+        
+      </table>
+    </td>
+    
+  </tr></table>
+</div>
+
+
+<!-- ============================ 8. DATA SOURCE FOOTNOTE ============================ -->
+<div style="margin-top:24px;padding:10px 14px;background:#F8F9FA;border-left:3px solid #ccc;border-radius:4px;">
+  <div style="font-size:10px;color:#666;line-height:1.5;">
+    <b>Data source.</b> Figures sourced from NetSuite SuiteQL · Class 3 (Juice Land) · Locations 33 (MW1) + 105 (SE3) + 109 (PKT) ·
+    ex-VAT net sales · Top 20 grouped by transactionline memo. Hourly breakdown omitted pending Odoo import-pipeline fix.
+  </div>
+</div>
+
+</div>
+
+<!-- ============================ 9. CHAW VALUES FOOTER ============================ -->
+<div style="background:#2C3E50;color:#fff;padding:18px;">
+  <div style="text-align:center;font-size:11px;letter-spacing:3px;opacity:0.7;margin-bottom:10px;">CHAW VALUES</div>
+  <table style="width:100%;border-collapse:collapse;"><tr>
+    <td style="padding:8px;font-size:11px;color:#fff;text-align:center;border-right:1px solid rgba(255,255,255,0.15);"><div style="font-size:18px;font-weight:700;color:#F27061;">C</div><div style="opacity:0.85;">Continuous Improvement</div></td>
+    <td style="padding:8px;font-size:11px;color:#fff;text-align:center;border-right:1px solid rgba(255,255,255,0.15);"><div style="font-size:18px;font-weight:700;color:#F27061;">C</div><div style="opacity:0.85;">Customer Orientation</div></td>
+    <td style="padding:8px;font-size:11px;color:#fff;text-align:center;border-right:1px solid rgba(255,255,255,0.15);"><div style="font-size:18px;font-weight:700;color:#F27061;">H</div><div style="opacity:0.85;">Humorous</div></td>
+    <td style="padding:8px;font-size:11px;color:#fff;text-align:center;border-right:1px solid rgba(255,255,255,0.15);"><div style="font-size:18px;font-weight:700;color:#F27061;">A</div><div style="opacity:0.85;">Attention to Communication</div></td>
+    <td style="padding:8px;font-size:11px;color:#fff;text-align:center;border-right:1px solid rgba(255,255,255,0.15);"><div style="font-size:18px;font-weight:700;color:#F27061;">W</div><div style="opacity:0.85;">Work-Life Balance</div></td>
+  </tr></table>
+  <div style="text-align:center;font-size:10px;opacity:0.6;margin-top:14px;">
+    Generated 2026-06-12 14:09 Bangkok · Juiceland Daily Report v2.2<br>
+    NetSuite SuiteQL · Class 3 (Juice Land) · Locations 33 (MW1) + 105 (SE3) + 109 (PKT)
+  </div>
+</div>
+
+</td></tr></table>
+</body></html>
