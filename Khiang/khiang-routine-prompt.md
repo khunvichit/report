@@ -26,7 +26,7 @@ If already sent today → STOP. Run exactly once per day.
 Run Queries A–I (`khiang-queries.md`) with the read-only NetSuite tool, param `query`.
 Retry a failed query ONCE (wait 20–90s); do not restart. Pin Sub 12 / loc 27 / entities.
 Queries H (30-day per-day) and I (month-to-date) feed the period strip + bar chart;
-Query J (7-day per-day) feeds the heatmap table;
+Query J (14-day per-day) feeds the heatmap table — last 7 days displayed, prior 7 = WoW baseline;
 Query E2 feeds the Top-3-items-per-hour column in the hourly comparison.
 
 ## 4. Completeness — HARD STOP
@@ -39,7 +39,8 @@ Run the 5 checks in `khiang-queries.md`. Any hard-stop failure → do NOT send; 
 - Anomalies per `khiang-prediction.md` using **bill count** vs HOURLY_BILL_BENCH × 0.50.
   Set `anomaly_count`. (CCTV section removed — anomalies now drive ONLY the email alert banner +
   hourly-table styling. The Khiang group message is a plain daily digest, NOT anomaly-gated.)
-- For each hourly row, build `top3` from Query E2 (itemid ×qty, top 3, " · " separated; "—" if none).
+- For each hourly row, build `top3` from Query E2 (menu NAME `displayname` ×qty, top 3,
+  "<br>"-separated one per line; strip code prefixes, truncate ~22 chars, fallback itemid; "—" if none).
 - Build `rice_top10_lines` for the group digest from the same `top10_rice` data (see `khiang-delivery.md`).
 - Sections: `alert_banner = (anomaly_count > 0)`; `promo = (staff10_bills + set50_bills > 0)`.
 
@@ -58,8 +59,10 @@ and `chart_labels` (matching order: `day_label`, plus `label_color`/`label_weigh
 for the REPORT_DATE day, else `#AAA`/`400`) per the Chart derivation in `khiang-queries.md`. The two
 lists MUST be the same length and order so bars line up with labels.
 **7-day heatmap:** build `heatmap_rows` (7 items, oldest→newest) per the Heatmap derivation in
-`khiang-queries.md` (Query J): each row carries `day_label_th`, `rev`/`bills`/`ticket` values, and a
-pre-computed `*_bg`/`*_fg`/`*_weight` per cell (shaded within each column's own 7-day min→max).
+`khiang-queries.md` (Query J): each row carries `day_label_th`, `rev`/`bills`/`ticket` values, a
+pre-computed `*_bg`/`*_fg`/`*_weight` per cell (shaded within each column's own 7-day min→max),
+plus the WoW tokens `wow_pct`/`wow_color`/`wow_weight` (vs same weekday last week, from the first
+half of the 14-day Query J window; "—" grey if no baseline).
 
 ## 7. Assemble HTML
 Run: `python3 fill_template.py khiang-template.html data.json > email.html`

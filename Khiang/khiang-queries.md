@@ -31,6 +31,7 @@ REPORT_DATE        = now(Asia/Bangkok).date() − 1
 PREV_DATE          = REPORT_DATE − 1
 5D_START           = REPORT_DATE − 5         # 5-day window: 5D_START .. PREV_DATE inclusive
 7D_START           = REPORT_DATE − 6         # 7-day window: 7D_START .. REPORT_DATE inclusive (heatmap)
+14D_START          = REPORT_DATE − 13        # 14-day window: feeds Query J (prior week = WoW baseline)
 D30_START          = REPORT_DATE − 29        # 30-day window: D30_START .. REPORT_DATE inclusive
 MTD_START          = first day of REPORT_DATE's month (e.g. 2026-05-01)
 mtd_days           = REPORT_DATE.day          # number of days elapsed in month incl. REPORT_DATE
@@ -140,12 +141,14 @@ WHERE t.trandate = TO_DATE('{REPORT_DATE}','YYYY-MM-DD')
 GROUP BY TO_CHAR(t.createddate,'HH24'), i.itemid, i.displayname
 ```
 Build `top3` per hour in the routine: group rows by `hour`, sort by `qty` desc client-side, take the
-first 3, and format as a compact string for the hourly row's Top-3 column, e.g.:
+first 3, and format using the MENU NAME (`displayname`), one item per line, e.g.:
 ```
-top3 = "K037 ×12 · K023 ×9 · K038 ×7"   # itemid ×qty, top 3, separated by " · "
+top3 = "ข้าวกะเพราหมูสับ ×12<br>ข้าวผัดกุ้ง ×9<br>ข้าวกะเพราไก่ ×7"   # name ×qty, top 3, "<br>"-separated
 ```
+Name rules: use `displayname`; strip any leading itemid/code prefix if present (e.g. "K037 - ข้าว…" →
+"ข้าว…"); truncate to ~22 chars with "…" if longer; fallback to `itemid` if displayname is empty.
 If an hour has < 3 items, list what exists. If an hour has 0 item rows (e.g. a totals-only hour) →
-`top3 = "—"`. Keep it to itemid+qty (not Thai names) so the column stays narrow and email-safe.
+`top3 = "—"`.
 
 ## Query F — 5-Day Net Sales (avg_5d KPI + optional trend)
 ```sql
@@ -163,8 +166,9 @@ GROUP BY t.trandate
 ```
 Derive: `avg_5d = round(mean(net_sales))`, `avg_bills`, `avg_ticket_bench`.
 
-## Query J — 7-Day Per-Day Revenue + Bills (heatmap table)
-> One row per day for the trailing 7 days (incl. REPORT_DATE). Avg ticket derived per row.
+## Query J — 14-Day Per-Day Revenue + Bills (heatmap table + WoW baseline)
+> One row per day for the trailing 14 days (incl. REPORT_DATE). Only the last 7 days are DISPLAYED
+> as heatmap rows; days 8–14 back exist solely as the week-on-week comparison baseline.
 ```sql
 SELECT t.trandate,
   SUM(CASE WHEN t.type='CustInvc' THEN ABS(tl.netamount) ELSE 0 END) -
@@ -172,14 +176,15 @@ SELECT t.trandate,
   COUNT(DISTINCT CASE WHEN t.type='CustInvc' THEN t.id END) AS bills
 FROM transaction t
 JOIN transactionline tl ON t.id = tl.transaction AND tl.mainline = 'T'
-WHERE t.trandate BETWEEN TO_DATE('{7D_START}','YYYY-MM-DD') AND TO_DATE('{REPORT_DATE}','YYYY-MM-DD')
+WHERE t.trandate BETWEEN TO_DATE('{14D_START}','YYYY-MM-DD') AND TO_DATE('{REPORT_DATE}','YYYY-MM-DD')
   AND t.type IN ('CustInvc','CustCred')
   AND tl.subsidiary = 12
   AND EXISTS (SELECT 1 FROM transactionline tl2 WHERE tl2.transaction = t.id AND tl2.location = 27 AND tl2.mainline = 'F')
 GROUP BY t.trandate
 ```
 Sort by `trandate` ascending client-side. Per row derive `avg_ticket = round(net_sales / bills)`
-(if `bills = 0` → avg_ticket = 0). This feeds the `heatmap_rows` repeat (see derivation below).
+(if `bills = 0` → avg_ticket = 0). Display rows = the 7 days `7D_START..REPORT_DATE`; this feeds
+the `heatmap_rows` repeat (see derivation below).
 
 ### Heatmap derivation (7 rows × 3 metric columns, shaded within each column)
 Each metric column (revenue, bills, avg_ticket) is shaded against ITS OWN 7-day min→max.
@@ -194,6 +199,21 @@ for metric m in [net_sales, bills, avg_ticket]:
     # mark the column's max cell bold (the week's best day for that metric)
 day_label_th = trandate as "พ 13/5" (Thai weekday abbr + D/M); bold if trandate == REPORT_DATE
 ```
+
+### WoW column (week-on-week net sales, same weekday last week)
+For each of the 7 displayed days, the baseline is `trandate − 7` from the same Query J result set:
+```
+prev = net_sales of (r.trandate − 7 days)        # row from the first half of the 14-day window
+if prev missing or prev == 0:
+    wow_pct = "—"; wow_color = '#888'; wow_weight = 400
+else:
+    pct        = round((r.net_sales − prev) / prev × 100, 1)
+    wow_pct    = signed string, e.g. "+12.4%" / "-8.0%"    # prefix '+' if ≥ 0
+    wow_color  = '#27AE60' if pct >= 0 else '#E74C3C'      # green up / red down
+    wow_weight = 700 if abs(pct) >= 10 else 400            # bold the big swings
+```
+> WoW compares revenue only (not bills/ticket) and is NOT shaded — it sits outside the
+> per-column min→max shading scheme.
 > Shade only — no green/red target logic here (that lives in the 30-day chart). The point of the
 > heatmap is relative intensity across the week, per metric. Provide `lerp_hex(a,b,t)` in the routine
 > (linear interpolate each RGB channel, return `#RRGGBB`).

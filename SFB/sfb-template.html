@@ -1,0 +1,188 @@
+<!-- ============================================================
+  SFB DAILY SALES REPORT — LOCKED HTML TEMPLATE
+  Source of truth: sfb-daily-PROD-25may.html (25 May 2026 production email)
+  DO NOT regenerate this file from prose. The routine fills it with
+  fill_template.py using data.json. Markers:
+    double-brace token            -> scalar, replaced globally from data.scalars
+    REPEAT:name block             -> one copy per list item in data.repeats[name]
+    SECTION:name block            -> kept if data.sections[name] is true, else removed
+  Lark TASKS have been removed (per owner request 2026-06). Group = Food Operation Core.
+  Chart bar heights are PIXELS, pre-computed in data.json (same PIXEL_PER_BAHT for both charts).
+============================================================ -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>{{subject}}</title>
+<style>
+body { font-family:Poppins,-apple-system,sans-serif; background:#F5EDE4; margin:0; padding:24px; color:#2C3E50; }
+.wrap { max-width:920px; margin:0 auto; background:#FFF8F5; border-radius:12px; overflow:hidden; box-shadow:0 4px 24px rgba(44,62,80,0.08); }
+.draft { background:#E3F2FD; color:#1565C0; text-align:center; padding:8px; font-weight:600; font-size:13px; border-bottom:1px solid #BBDEFB; }
+.hdr { background:linear-gradient(135deg,#5551FE 0%,#7B79FF 100%); color:#fff; padding:28px 32px; }
+.hdr h1 { margin:0 0 6px 0; font-size:24px; font-weight:600; }
+.hdr .sub { opacity:0.85; font-size:13px; }
+.hdr .badge { display:inline-block; background:rgba(255,255,255,0.18); padding:4px 10px; border-radius:12px; font-size:11px; margin-top:8px; }
+.section { padding:24px 32px; border-bottom:1px solid #F0E5DA; }
+.section h2 { margin:0 0 16px 0; font-size:16px; font-weight:600; }
+.insight { background:#FFF; border-left:4px solid #F27061; padding:16px 18px; border-radius:4px; }
+.insight ul { margin:0; padding-left:18px; line-height:1.7; font-size:13px; }
+.insight li b { color:#5551FE; }
+.kpi { display:flex; gap:12px; }
+.kpi .card { flex:1; background:#fff; border-radius:8px; padding:16px; border:1px solid #F0E5DA; }
+.kpi .lbl { font-size:11px; color:#5F5E5A; text-transform:uppercase; letter-spacing:0.5px; }
+.kpi .val { font-size:24px; font-weight:600; margin:4px 0; }
+.kpi .delta { font-size:11px; font-weight:500; line-height:1.5; }
+.delta-up { color:#2D7A3F; } .delta-down { color:#C5453E; } .delta-neutral { color:#5F5E5A; } .delta-na { color:#5F5E5A; }
+table.barchart { width:100%; table-layout:fixed; border-collapse:collapse; }
+table.barchart td.yaxis { width:70px; vertical-align:top; padding-right:8px; font-size:10px; color:#5F5E5A; text-align:right; position:relative; height:240px; }
+table.barchart td.yaxis .y-mtd { position:absolute; top:53px; right:8px; background:#FFF8F5; padding:1px 4px; border-radius:2px; font-weight:600; color:#4A5568; }
+td.bar-cell { vertical-align:bottom; padding:0 1px; height:240px; position:relative; background-image: linear-gradient(to bottom, transparent 0px, transparent 58px, rgba(74,85,104,0.85) 58px, rgba(74,85,104,0.85) 60px, transparent 60px); }
+.bar-stack { display:flex; flex-direction:column-reverse; height:220px; }
+.seg { width:100%; }
+.seg-subway { background:#5551FE; } .seg-khiang { background:#7B79FF; } .seg-jl { background:#2D7A3F; } .seg-se { background:#F39C12; } .seg-vendi { background:#C5453E; }
+.seg-bkk { background:#5551FE; } .seg-dmk { background:#7B79FF; } .seg-pkt { background:#F27061; } .seg-other { background:#C5BFB0; }
+td.bar-cell.d1 .bar-stack { box-shadow: 0 -3px 0 #F27061 inset; }
+td.axlbl { font-size:9px; color:#5F5E5A; text-align:center; padding-top:4px; }
+td.axhol { border-bottom:2px solid #F27061; color:#F27061; font-weight:600; } td.axd1 { color:#F27061; font-weight:600; }
+.legend { width:100%; border-collapse:collapse; font-size:12px; margin-top:14px; }
+.legend th, .legend td { padding:6px 10px; text-align:left; border-bottom:1px solid #F0E5DA; }
+.legend th { color:#5F5E5A; font-weight:500; font-size:10px; text-transform:uppercase; }
+.legend .sw { display:inline-block; width:12px; height:12px; border-radius:2px; vertical-align:middle; margin-right:6px; }
+.signal-badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:10px; font-weight:600; }
+.s-crisis { background:#FBE9E7; color:#C5453E; } .s-quality { background:#FFF3CD; color:#856404; } .s-soft { background:#F0E5DA; color:#5F5E5A; } .s-traffic { background:#E8F5E9; color:#2D7A3F; } .s-upsell { background:#E3F2FD; color:#5551FE; }
+.sev-badge { display:inline-block; padding:3px 8px; border-radius:10px; font-size:10px; font-weight:600; white-space:nowrap; }
+.sev-surge { background:#FBE9E7; color:#F27061; } .sev-positive { background:#E8F5E9; color:#2D7A3F; } .sev-neutral { background:#F0E5DA; color:#5F5E5A; } .sev-watch { background:#FFF3CD; color:#856404; } .sev-high { background:#FFEFE0; color:#C77818; } .sev-critical { background:#FBE9E7; color:#C5453E; } .sev-new { background:#E3F2FD; color:#1565C0; }
+.branch-h3 { font-size:13px; font-weight:600; margin:0 0 8px 0; padding:6px 10px; border-radius:4px; }
+.heatmap { width:100%; border-collapse:collapse; font-size:13px; }
+.heatmap th { background:#F5EDE4; color:#5F5E5A; font-weight:500; font-size:11px; text-transform:uppercase; padding:8px 10px; text-align:center; border:1px solid #F0E5DA; }
+.heatmap th.heat-bu { text-align:left; }
+.heatmap th.heat-metric { background:#F0E5DA; }
+.heatmap td { padding:10px 10px; text-align:center; border:1px solid #F0E5DA; }
+.heatmap td.heat-bu { text-align:left; font-weight:600; font-size:13px; vertical-align:middle; background:#FBFBFD; }
+.heatmap tr.grp-start td { border-top:2px solid #5551FE; }
+.heatmap td.heat-rev { text-align:right; font-weight:600; font-size:13px; }
+.heatmap td.heat-bills { text-align:right; color:#5F5E5A; }
+.heatmap td.heat-cell { font-weight:700; font-size:13px; }
+.branch-h3-warn { background:#FFF3CD; color:#856404; border-left:4px solid #F39C12; }
+.branch-h3-ok { background:#E8F5E9; color:#2D7A3F; border-left:4px solid #2D7A3F; }
+.dt { width:100%; border-collapse:collapse; font-size:12px; }
+.dt th, .dt td { padding:8px 10px; border-bottom:1px solid #F0E5DA; text-align:left; }
+.dt th { color:#5F5E5A; font-weight:500; font-size:10px; text-transform:uppercase; background:#F5EDE4; }
+.muted { color:#5F5E5A; font-weight:400; }
+.hrblock { margin-bottom:18px; }
+.hrblock-head { font-size:12px; margin-bottom:4px; }
+.hr-flag { display:inline-block; background:#FFF3CD; color:#856404; padding:1px 6px; border-radius:8px; font-size:10px; font-weight:600; margin-left:6px; }
+.hr-totals { float:right; font-size:11px; color:#4A5568; font-weight:600; }
+.hr-src { font-size:10px; margin-left:8px; }
+.hrtable { width:100%; table-layout:fixed; border-collapse:collapse; font-size:9px; }
+.hrtable th { background:#F5EDE4; color:#5F5E5A; font-weight:600; font-size:8px; padding:2px 0; border:1px solid #F0E5DA; }
+.hrtable td.hr-cell { padding:3px 1px; text-align:center; border:1px solid #F0E5DA; font-size:8px; line-height:1.2; }
+.hrtable td.hr-row-lbl { font-size:10px; font-weight:600; padding:3px 6px; background:#FBFBFD; width:80px; text-align:left; border:1px solid #F0E5DA; }
+.hr-base { color:#5F5E5A; background:#FBFBFD; }
+.hr-zero { background:#FFF3CD; color:#856404; font-weight:600; }
+.hr-down { background:#FBE9E7; color:#C5453E; font-weight:600; }
+.hr-up { background:#E8F5E9; color:#2D7A3F; font-weight:600; }
+.footer { background:#2C3E50; color:#C5BFB0; padding:20px 32px; font-size:11px; line-height:1.6; }
+.footer b { color:#fff; }
+</style></head><body>
+<div class="wrap">
+  <div class="draft" style="background:#E8F5E9; color:#2D7A3F; border-bottom:1px solid #C8E6C9;">📨 SFB Daily Report · {{report_date_display}} ({{weekday_en}}) · Sub 12 Food Operation Core</div>
+  <div class="hdr">
+    <h1>SFB Daily Sales Report</h1>
+    <div class="sub">{{weekday_th}} {{report_date_display}} · Sub 12 · Food Operation Core</div>
+    <span class="badge">{{status_emoji}} {{rev_K}} · WoW {{wow_signed}}</span>
+  </div>
+
+  <div class="section">
+    <h2>🎯 Executive Insight</h2>
+    <div class="insight"><ul>
+<!-- REPEAT:insight_bullets -->
+      <li>{{bullet_html}}</li>
+<!-- /REPEAT:insight_bullets -->
+    </ul></div>
+  </div>
+
+  <div class="section">
+    <h2>📊 KPI Headline</h2>
+    <div class="kpi">
+      <div class="card"><div class="lbl">Revenue</div><div class="val">{{rev_K}}</div><div class="delta {{rev_delta_class}}">WoW {{wow_signed}}<br>DoD {{dod_signed}}<br>vs MTD avg {{mtd_signed}}</div></div>
+      <div class="card"><div class="lbl">Bills</div><div class="val">{{bills_total}}</div><div class="delta {{bills_delta_class}}">WoW {{bills_wow_signed}}</div></div>
+      <div class="card"><div class="lbl">Avg Ticket</div><div class="val">{{ticket}}</div><div class="delta {{ticket_delta_class}}">WoW {{ticket_wow_signed}}</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📈 30-Day Revenue by BU ({{window_label}})</h2>
+    <table class="barchart">
+      <tr><td class="yaxis"><div class="y-mtd">MTD avg<br>{{mtd_avg_K}}</div></td>
+<!-- REPEAT:bu_chart_days -->
+<td class="bar-cell {{d1_class}}" title="{{day_title}}"><div class="bar-stack"><div class="seg seg-vendi" style="height:{{h_vendi}}px"></div><div class="seg seg-se" style="height:{{h_se}}px"></div><div class="seg seg-jl" style="height:{{h_jl}}px"></div><div class="seg seg-khiang" style="height:{{h_khiang}}px"></div><div class="seg seg-subway" style="height:{{h_subway}}px"></div></div></td>
+<!-- /REPEAT:bu_chart_days -->
+</tr>
+      <tr><td></td>
+<!-- REPEAT:bu_chart_axis -->
+<td class="axlbl {{ax_class}}">{{ax_label}}</td>
+<!-- /REPEAT:bu_chart_axis -->
+</tr>
+    </table>
+    <table class="legend"><tr><th></th><th>BU</th><th>D1 Rev</th><th>D1 Bills</th><th>Share</th><th>WoW</th><th>Bills Δ</th><th>Ticket Δ</th><th>Signal</th></tr>
+<!-- REPEAT:bu_legend_rows -->
+<tr><td><span class="sw" style="background:{{color}}"></span></td><td><b>{{bu_name}}</b></td><td>{{d1_rev}}</td><td>{{d1_bills}}</td><td>{{share}}</td><td class="{{wow_class}}">{{wow}}</td><td class="{{bills_class}}">{{bills_delta}}</td><td class="{{ticket_class}}">{{ticket_delta}}</td><td><span class="signal-badge {{signal_class}}">{{signal}}</span></td></tr>
+<!-- /REPEAT:bu_legend_rows -->
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>🌏 30-Day Revenue by Airport</h2>
+    <table class="barchart">
+      <tr><td class="yaxis"><div class="y-mtd">MTD avg<br>{{mtd_avg_K}}</div></td>
+<!-- REPEAT:airport_chart_days -->
+<td class="bar-cell {{d1_class}}" title="{{day_title}}"><div class="bar-stack"><div class="seg seg-pkt" style="height:{{h_pkt}}px"></div><div class="seg seg-dmk" style="height:{{h_dmk}}px"></div><div class="seg seg-bkk" style="height:{{h_bkk}}px"></div></div></td>
+<!-- /REPEAT:airport_chart_days -->
+</tr>
+      <tr><td></td>
+<!-- REPEAT:airport_chart_axis -->
+<td class="axlbl {{ax_class}}">{{ax_label}}</td>
+<!-- /REPEAT:airport_chart_axis -->
+</tr>
+    </table>
+    <table class="legend"><tr><th></th><th>Airport</th><th>D1 Rev</th><th>D1 Bills</th><th>Share</th><th>WoW</th><th>Bills Δ</th></tr>
+<!-- REPEAT:airport_legend_rows -->
+<tr><td><span class="sw" style="background:{{color}}"></span></td><td><b>{{airport_name}}</b></td><td>{{d1_rev}}</td><td>{{d1_bills}}</td><td>{{share}}</td><td class="{{wow_class}}">{{wow}}</td><td class="{{bills_class}}">{{bills_delta}}</td></tr>
+<!-- /REPEAT:airport_legend_rows -->
+</table></div>
+  <div class="section">
+    <h2>🏪 Location Performance — WoW heatmap</h2>
+    <div style="background:#FFF; border-left:3px solid #5551FE; padding:10px 14px; font-size:12px; color:#2C3E50; margin:0 0 14px 0; line-height:1.6;">
+      <b>📖 How to read this:</b> <b>Bills</b> = customer transactions (receipts) · <b>Avg Ticket</b> = revenue ÷ bills (avg spend per customer) · <b>Revenue</b> = bills × ticket. WoW = vs same weekday last week.
+      <br><span style="font-size:11px; color:#5F5E5A;">Rows grouped by location (highest D1 revenue first). Δ cells use a continuous green→grey→red gradient — deeper green = stronger growth WoW, deeper red = steeper decline.</span>
+    </div>
+    <table class="heatmap">
+      <tr>
+        <th class="heat-bu">Location</th>
+        <th>BU</th>
+        <th>Airport</th>
+        <th>D1 Rev</th>
+        <th>D1 Bills</th>
+        <th class="heat-metric">Revenue Δ WoW</th>
+        <th class="heat-metric">Bills Δ WoW</th>
+        <th class="heat-metric">Ticket Δ WoW</th>
+        <th>Signal</th>
+      </tr>
+<!-- REPEAT:loc_heatmap_rows -->
+        <tr class="{{row_class}}">
+          {{loc_cell}}<td class="heat-bills" style="text-align:left;"><span class="sw" style="background:{{bu_color}}"></span>{{bu_name}}</td>
+          <td class="heat-bills" style="text-align:center;">{{airport}}</td>
+          <td class="heat-rev">{{d1_rev}}</td>
+          <td class="heat-bills">{{d1_bills}}</td>
+          <td class="heat-cell" style="background:{{rev_bg}}; color:{{rev_fg}};">{{rev_delta}}</td><td class="heat-cell" style="background:{{bills_bg}}; color:{{bills_fg}};">{{bills_delta}}</td><td class="heat-cell" style="background:{{ticket_bg}}; color:{{ticket_fg}};">{{ticket_delta}}</td>
+          <td><span class="signal-badge {{signal_class}}">{{signal}}</span></td>
+        </tr>
+<!-- /REPEAT:loc_heatmap_rows -->
+    </table>
+  </div>
+
+  <div class="footer">
+    <div><b>CHAW Food Operation Core</b> · Sub 12 — Siam Franchise B (SFB)</div>
+    <div>Source: NetSuite Sub 12 <code>transactionline</code> (pre-VAT) · MTD: {{mtd_label}}</div>
+    <div>SFB Daily routine (multi-file) · Generated {{generated_display}}</div>
+  </div>
+</div>
+</body></html>

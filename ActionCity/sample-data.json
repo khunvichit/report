@@ -1,0 +1,74 @@
+{
+  "scalars": {
+    "report_date_display": "7 Jun 2026", "report_weekday": "Sun", "iso_week": "23",
+    "w_minus1": "22", "w_minus2": "21", "w_minus3": "20", "w_minus4": "19",
+    "mode_badge": "DAILY", "mode_badge_color": "#F27061",
+    "day_net": "68,107", "day_wow_pct": "—", "day_wow_arrow": "", "day_wow_color": "#8a8a93",
+    "day_bills": "197", "day_units": "197", "day_upb": "1.0", "day_ticket": "346",
+    "wtd_net": "382,774", "wtd_days": "7", "wtd_per_day": "54,682",
+    "best_today_list": "Upset Duck Stop Spiral 15 · Fuggler Alley Cat 15 · Grogu 12 · Panpan Mini 12",
+    "week_note": "W22 net ฿356,866 was reduced by ฿48,014 of returns booked that week; W23 ฿382,774 has none — so W23 is up ~7% on a clean basis.",
+    "branch_note": "Westgate took ฿26,807 in W22 then nothing in W23 — investigate store/POS.",
+    "cat_note": "Collectables ~11% of revenue from ~1% of units; episodic, spikes on drop weeks.",
+    "reorder_note": "Lulu Scented is the clear reorder (0.4w cover).",
+    "top_note": "Accelerating: Opandee S4, Fuggler Alley Cat, Qmsv. Cooling: Happy Balloon Dog.",
+    "po_note": "Fix Upset Duck Mini Wishlist PO currency (USD→CNY); return old Bearbrick consignment; hold Sanrio phone-chains.",
+    "dead_owned_skus": "12", "dead_owned_value": "96K",
+    "dead_note": "Big Box ฿3.5M is consignment (not ActionCity cash) but holds shelf space — priority return.",
+    "generated_at": "7 Jun 2026 22:05", "footer_cchaw": "CHAW Retailing Co., Ltd. · Internal management report · Automated routine."
+  },
+  "sections": { "exec_insight": true, "best_today": true },
+  "repeats": {
+    "insight_rows": [
+      {"insight": "W23 net ฿382,774; W22 was ฿356,866 after ฿48k returns, so W23 is up ~7% clean."},
+      {"insight": "Retails 85% of sales, down ~8% WoW; online offsetting — Shopee +28%, Vending +9%."},
+      {"insight": "⚠ ACT Westgate recorded zero sales all week (was ฿27K) — check store/POS."},
+      {"insight": "Reorder: Lulu Scented at 0.4w cover; Big Box consignment ฿3.5M to return."}
+    ],
+    "week_rows": [
+      {"wk_label": "W17", "wk_label_color": "#8a8a93", "wk_weight": "500", "wk_bar_color": "#C9C7FF", "wk_bar_pct": "71", "wk_val_color": "#2b2b33", "wk_net": "540,182"},
+      {"wk_label": "W21", "wk_label_color": "#8a8a93", "wk_weight": "600", "wk_bar_color": "#5551FE", "wk_bar_pct": "100", "wk_val_color": "#5551FE", "wk_net": "755,367"},
+      {"wk_label": "W22", "wk_label_color": "#8a8a93", "wk_weight": "500", "wk_bar_color": "#C9C7FF", "wk_bar_pct": "47", "wk_val_color": "#2b2b33", "wk_net": "356,866"},
+      {"wk_label": "W23 (WTD)", "wk_label_color": "#2b2b33", "wk_weight": "600", "wk_bar_color": "#F27061", "wk_bar_pct": "51", "wk_val_color": "#F27061", "wk_net": "382,774"}
+    ],
+    "bu_rows": [
+      {"bu_name": "Retails", "bu_bar_color": "#5551FE", "bu_bar_pct": "100", "bu_net": "327,078", "bu_share": "85.4", "bu_wow_color": "#d6453a", "bu_wow": "▼8.1%"},
+      {"bu_name": "Vending", "bu_bar_color": "#f5a623", "bu_bar_pct": "10", "bu_net": "31,788", "bu_share": "8.3", "bu_wow_color": "#1f9d57", "bu_wow": "▲8.5%"},
+      {"bu_name": "Shopee", "bu_bar_color": "#1f9d57", "bu_bar_pct": "7", "bu_net": "23,908", "bu_share": "6.2", "bu_wow_color": "#1f9d57", "bu_wow": "▲28.5%"}
+    ],
+    "branch_rows": [
+      {"br_row_bg": "#ffffff", "br_name_color": "#2b2b33", "br_name": "Siam Square One", "br_net": "179,788", "br_bills": "244", "br_ticket": "737", "br_wow_color": "#1f9d57", "br_wow": "▲4.0%", "br_flag": ""},
+      {"br_row_bg": "#ffffff", "br_name_color": "#2b2b33", "br_name": "Central Ladprao", "br_net": "53,352", "br_bills": "115", "br_ticket": "464", "br_wow_color": "#d6453a", "br_wow": "▼13.2%", "br_flag": ""},
+      {"br_row_bg": "#fde7e4", "br_name_color": "#b3261e", "br_name": "ACT Westgate", "br_net": "0", "br_bills": "0", "br_ticket": "—", "br_wow_color": "#b3261e", "br_wow": "฿27K→0", "br_flag": "DARK"}
+    ],
+    "cat_rows": [
+      {"cat_name": "Collectables (100/200/400%)", "cat_skus": "14", "cat_units": "72", "cat_net": "184,282", "cat_share": "9.4", "cat_asp": "2,559", "cat_gp_color": "#1f7a55", "cat_gp": "47.6"},
+      {"cat_name": "The rest", "cat_skus": "261", "cat_units": "5,677", "cat_net": "1,771,989", "cat_share": "90.6", "cat_asp": "312", "cat_gp_color": "#c43b27", "cat_gp": "43.4"}
+    ],
+    "reorder_rows": [
+      {"ro_name": "Lulu Scented Decorative Mini BB", "ro_w4": "0", "ro_w3": "8", "ro_w2": "34", "ro_w1": "35", "ro_w0": "21", "ro_stock_color": "#c43b27", "ro_stock": "10", "ro_cover": "0.4w", "ro_act_bg": "#e3f5ec", "ro_act_color": "#1f9d57", "ro_action": "REORDER↑"},
+      {"ro_name": "Disney Princess On The Run BB", "ro_w4": "37", "ro_w3": "50", "ro_w2": "41", "ro_w1": "30", "ro_w0": "7", "ro_stock_color": "#2b2b33", "ro_stock": "54", "ro_cover": "1.7w", "ro_act_bg": "#e3f5ec", "ro_act_color": "#1f9d57", "ro_action": "REORDER"}
+    ],
+    "top_rows": [
+      {"tp_name": "Upset Duck Status Display", "tp_stock_color": "#2b2b33", "tp_stock": "454", "tp_w1": "68", "tp_w0_color": "#1f7a55", "tp_w0": "72", "tp_2wk": "140", "tp_day": "10.0", "tp_net": "26,208", "tp_gp": "13,936", "tp_gp_color": "#1f7a55", "tp_gp_pct": "53.2"},
+      {"tp_name": "Fuggler Alley Cat Plush KC", "tp_stock_color": "#2b2b33", "tp_stock": "278", "tp_w1": "55", "tp_w0_color": "#1f7a55", "tp_w0": "62", "tp_2wk": "117", "tp_day": "8.4", "tp_net": "46,004", "tp_gp": "23,598", "tp_gp_color": "#1f7a55", "tp_gp_pct": "51.3"}
+    ],
+    "arrival_rows": [
+      {"na_wk": "W19", "na_name": "Lulu Scented Decorative Mini BB", "na_recvd": "108", "na_sold": "96", "na_oh_color": "#c43b27", "na_onhand": "10", "na_read_bg": "#e3f5ec", "na_read_color": "#1f7a55", "na_read": "HOT"},
+      {"na_wk": "W18", "na_name": "Upset Duck Mini Wishlist BB", "na_recvd": "1,440", "na_sold": "125", "na_oh_color": "#c43b27", "na_onhand": "306", "na_read_bg": "#fde3df", "na_read_color": "#c43b27", "na_read": "OVERSTOCK"}
+    ],
+    "po_rows": [
+      {"po_row_bg": "#fdeeec", "po_name": "Upset Duck Mini Wishlist BB", "po_num": "POACT260500021", "po_qty": "192", "po_value": "~฿32,600", "po_flag_bg": "#fde3df", "po_flag_color": "#c43b27", "po_flag": "FX + CANCEL?"},
+      {"po_row_bg": "#ffffff", "po_name": "Mr. Bone Strange Alliance 3.0 BB", "po_num": "POACT260500020", "po_qty": "324", "po_value": "฿74,729", "po_flag_bg": "#e3f5ec", "po_flag_color": "#1f7a55", "po_flag": "OK"}
+    ],
+    "dead_owned_rows": [
+      {"do_name": "Fluffy Meatball", "do_onhand": "78", "do_cost": "285", "do_price": "449", "do_value": "22,253"},
+      {"do_name": "Sanrio Childlike Swing Phone Chain Mini BB", "do_onhand": "96", "do_cost": "128", "do_price": "299", "do_value": "12,303"}
+    ],
+    "dead_consign_rows": [
+      {"dc_tag_bg": "#e1f5ee", "dc_tag_color": "#0f6e56", "dc_tag": "CONSIGN", "dc_supplier": "Big Box International (~฿3.5M)", "dc_skus": "78", "dc_units": "482", "dc_action": "RETURN"},
+      {"dc_tag_bg": "#e1f5ee", "dc_tag_color": "#0f6e56", "dc_tag": "CONSIGN", "dc_supplier": "MNT series", "dc_skus": "46", "dc_units": "3,713", "dc_action": "RETURN"},
+      {"dc_tag_bg": "#eeedfe", "dc_tag_color": "#5551FE", "dc_tag": "INTERCO", "dc_supplier": "Pony on Wheel TH / Toysinbox", "dc_skus": "12", "dc_units": "687", "dc_action": "RETURN"}
+    ]
+  }
+}

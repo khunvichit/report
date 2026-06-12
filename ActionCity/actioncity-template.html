@@ -1,0 +1,234 @@
+<!--
+  actioncity-template.html — LOCKED daily-dashboard email template.
+  The routine FILLS this with fill_template.py from data.json. It NEVER regenerates this HTML.
+  Mechanisms: double-brace scalar token | REPEAT:name rows | SECTION:name conditional block
+  Keep every colour/size/inline style exactly — email-client tested. This comment header is stripped on fill.
+-->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ActionCity Daily Sales &amp; Stock Dashboard</title>
+<style>body{margin:0;padding:0;}</style></head>
+<body style="margin:0;padding:0;background:#F5EDE4;font-family:'Poppins',Arial,Helvetica,sans-serif;color:#2b2b33;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F5EDE4;padding:24px 0;"><tr><td align="center">
+<table role="presentation" width="920" cellpadding="0" cellspacing="0" style="max-width:920px;width:100%;">
+
+<!-- HEADER -->
+<tr><td style="background:#5551FE;border-radius:14px;padding:26px 30px;">
+  <table role="presentation" width="100%"><tr>
+    <td style="vertical-align:middle;">
+      <div style="font-size:13px;font-weight:600;letter-spacing:2px;color:#C9C7FF;text-transform:uppercase;">ActionCity (Thailand) &middot; Sub 22 &middot; Retail / Art Toy</div>
+      <div style="font-size:27px;font-weight:700;color:#ffffff;line-height:1.15;margin-top:4px;">Daily Sales &amp; Stock Dashboard</div>
+      <div style="font-size:15px;color:#E6E5FF;margin-top:3px;">{{report_date_display}} ({{report_weekday}}) &middot; end-of-day close &middot; week-to-date W{{iso_week}}</div>
+    </td>
+    <td align="right" style="vertical-align:middle;">
+      <div style="display:inline-block;background:{{mode_badge_color}};color:#ffffff;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;">{{mode_badge}}</div>
+    </td>
+  </tr></table>
+</td></tr>
+<tr><td style="height:14px;"></td></tr>
+
+<!-- EXEC INSIGHT (generative; omitted if no insight rows) -->
+<!-- SECTION:exec_insight -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:18px 22px;border-left:4px solid #F27061;">
+  <div style="font-size:15px;font-weight:600;margin-bottom:8px;">&#128202; Executive Insight <span style="font-size:11px;font-weight:400;color:#8a8a93;">&middot; AI summary of the numbers below</span></div>
+  <div style="font-size:13px;line-height:1.7;color:#4a4640;">
+    <!-- REPEAT:insight_rows -->
+    &bull; {{insight}}<br>
+    <!-- /REPEAT:insight_rows -->
+  </div>
+</td></tr>
+<tr><td style="height:14px;"></td></tr>
+<!-- /SECTION:exec_insight -->
+
+<!-- KPI HEADLINE -->
+<tr><td>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0"><tr>
+    <td width="25%" style="padding-right:9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Net sales &middot; today</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">&#3647;{{day_net}}</div>
+      <div style="font-size:13px;color:{{day_wow_color}};font-weight:600;margin-top:2px;">{{day_wow_arrow}} {{day_wow_pct}} vs same day last wk</div>
+    </div></td>
+    <td width="25%" style="padding:0 9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Bills &middot; today</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">{{day_bills}}</div>
+      <div style="font-size:13px;color:#8a8a93;font-weight:500;margin-top:2px;">{{day_bills_split}}</div>
+    </div></td>
+    <td width="25%" style="padding:0 9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Avg ticket &middot; today (retail)</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">&#3647;{{day_ticket}}</div>
+      <div style="font-size:13px;color:#8a8a93;font-weight:500;margin-top:2px;">retail only &middot; excl. wholesale</div>
+    </div></td>
+    <td width="25%" style="padding-left:9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Week-to-date &middot; W{{iso_week}}</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">&#3647;{{wtd_net}}</div>
+      <div style="font-size:13px;color:#8a8a93;font-weight:500;margin-top:2px;">{{wtd_days}} days &middot; ~&#3647;{{wtd_per_day}}/day</div>
+    </div></td>
+  </tr></table>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- DAILY SALES BY BRANCH (today) -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:18px 22px;">
+  <div style="font-size:15px;font-weight:600;margin-bottom:2px;">Daily sales by branch <span style="font-size:11px;font-weight:400;color:#8a8a93;">&middot; {{report_date_display}} ({{report_weekday}})</span></div>
+  <div style="font-size:11px;color:#8a8a93;margin-bottom:10px;">Today's net &amp; bills per branch. Ticket = retail only (excludes wholesale).</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:10px;"><td style="padding-bottom:3px;">Branch</td><td align="right" style="padding-bottom:3px;">Net &#3647;</td><td align="right" style="padding-bottom:3px;">Bills</td><td align="right" style="padding-bottom:3px;">Ticket</td><td align="right" style="padding-bottom:3px;">&nbsp;</td></tr>
+    <!-- REPEAT:today_branch_rows -->
+    <tr style="background:{{tb_bg}};border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:{{tb_color}};">{{tb_name}}</td><td align="right" style="font-weight:600;color:{{tb_color}};">{{tb_net}}</td><td align="right">{{tb_bills}}</td><td align="right">{{tb_ticket}}</td><td align="right">{{tb_flag}}</td></tr>
+    <!-- /REPEAT:today_branch_rows -->
+  </table>
+  <div style="font-size:11px;color:#8a8a93;margin-top:7px;">{{today_branch_note}}</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- BEST SELLERS TODAY (omit if none >=5) -->
+<!-- SECTION:best_today -->
+<tr><td style="background:#e1f5ee;border:1px solid #5DCAA5;border-radius:12px;padding:14px 20px;">
+  <div style="font-size:12px;color:#0f6e56;"><b>Best sellers today</b> (5+ pieces): {{best_today_list}}</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+<!-- /SECTION:best_today -->
+
+<!-- NET SALES BY WEEK -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;">Net sales by week</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:16px;">Net = invoices &minus; returns (inventory items, wash-lines excluded). W{{iso_week}} is week-to-date.</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:13px;">
+    <!-- REPEAT:week_rows -->
+    <tr><td width="60" style="color:{{wk_label_color}};padding:5px 0;font-weight:{{wk_weight}};">{{wk_label}}</td><td><div style="background:{{wk_bar_color}};height:18px;width:{{wk_bar_pct}}%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:{{wk_weight}};color:{{wk_val_color}};">&#3647;{{wk_net}}</td></tr>
+    <!-- /REPEAT:week_rows -->
+  </table>
+  <div style="background:#F5EDE4;border-radius:8px;padding:12px 14px;margin-top:14px;font-size:12px;color:#5b5547;line-height:1.6;">{{week_note}}</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REVENUE BY BUSINESS UNIT -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Revenue by business unit <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; W{{iso_week}} to date vs prior week</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;">
+    <tr style="color:#8a8a93;font-size:10px;"><td>BU</td><td></td><td align="right">Net &#3647;</td><td align="right">Share</td><td align="right">WoW</td></tr>
+    <!-- REPEAT:bu_rows -->
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">{{bu_name}}</td><td style="width:40%;"><span style="background:{{bu_bar_color}};height:13px;width:{{bu_bar_pct}}%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">{{bu_net}}</td><td align="right">{{bu_share}}%</td><td align="right" style="color:{{bu_wow_color}};">{{bu_wow}}</td></tr>
+    <!-- /REPEAT:bu_rows -->
+  </table>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REVENUE BY BRANCH -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Revenue by branch <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; W{{iso_week}} to date (&#9881; = vending)</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:11px;">
+    <tr style="color:#8a8a93;font-size:10px;"><td>Branch</td><td align="right">Net &#3647;</td><td align="right">Bills</td><td align="right">Ticket</td><td align="right">WoW</td><td align="right">Flag</td></tr>
+    <!-- REPEAT:branch_rows -->
+    <tr style="background:{{br_row_bg}};border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:{{br_name_color}};">{{br_name}}</td><td align="right" style="font-weight:600;color:{{br_name_color}};">{{br_net}}</td><td align="right">{{br_bills}}</td><td align="right">{{br_ticket}}</td><td align="right" style="color:{{br_wow_color}};">{{br_wow}}</td><td align="right">{{br_flag}}</td></tr>
+    <!-- /REPEAT:branch_rows -->
+  </table>
+  <div style="font-size:11px;color:#8a8a93;margin-top:8px;">{{branch_note}}</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- CATEGORY MIX -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;">Category mix &middot; Collectables vs the rest</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:14px;">Collectables = premium 100/200/300/400/1000% figures. Trailing 4 weeks.</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:13px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left" style="padding:6px 0;">Category</th><th align="right">SKUs</th><th align="right">Units</th><th align="right">Net</th><th align="right">% sales</th><th align="right">ASP</th><th align="right">GP%</th></tr>
+    <!-- REPEAT:cat_rows -->
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">{{cat_name}}</td><td align="right">{{cat_skus}}</td><td align="right">{{cat_units}}</td><td align="right" style="font-weight:600;">&#3647;{{cat_net}}</td><td align="right">{{cat_share}}%</td><td align="right">&#3647;{{cat_asp}}</td><td align="right" style="color:{{cat_gp_color}};">{{cat_gp}}%</td></tr>
+    <!-- /REPEAT:cat_rows -->
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:10px;">{{cat_note}}</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REORDER NOW -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;border:2px solid #F27061;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;"><span style="display:inline-block;width:9px;height:9px;background:#F27061;border-radius:50%;vertical-align:middle;"></span> Reorder now: fast movers, low stock, nothing on order</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:14px;">Retail/e-commerce velocity over the last 5 weeks (W{{w_minus4}}&ndash;W{{iso_week}}). Cover = stock &divide; 4-wk weekly avg.</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="right">W{{w_minus4}}</th><th align="right">W{{w_minus3}}</th><th align="right">W{{w_minus2}}</th><th align="right">W{{w_minus1}}</th><th align="right">W{{iso_week}}</th><th align="right">Stock</th><th align="right">Cover</th><th align="right">Action</th></tr>
+    <!-- REPEAT:reorder_rows -->
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">{{ro_name}}</td><td align="right">{{ro_w4}}</td><td align="right">{{ro_w3}}</td><td align="right">{{ro_w2}}</td><td align="right">{{ro_w1}}</td><td align="right">{{ro_w0}}</td><td align="right" style="color:{{ro_stock_color}};">{{ro_stock}}</td><td align="right">{{ro_cover}}</td><td align="right"><span style="background:{{ro_act_bg}};color:{{ro_act_color}};font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">{{ro_action}}</span></td></tr>
+    <!-- /REPEAT:reorder_rows -->
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:12px;">{{reorder_note}}</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- TOP MOVERS -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Top 20 sellers by units &middot; last 2 weeks (W{{w_minus1}} + W{{iso_week}})</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;table-layout:fixed;">
+    <colgroup><col style="width:34%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:7%"><col style="width:9%"><col style="width:9%"><col style="width:9%"></colgroup>
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="right">Stock</th><th align="right">W{{w_minus1}}</th><th align="right">W{{iso_week}}</th><th align="right">2-wk</th><th align="right">/day</th><th align="right">Net &#3647;</th><th align="right">GP &#3647;</th><th align="right">GP%</th></tr>
+    <!-- REPEAT:top_rows -->
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">{{tp_name}}</td><td align="right" style="color:{{tp_stock_color}};">{{tp_stock}}</td><td align="right">{{tp_w1}}</td><td align="right" style="color:{{tp_w0_color}};">{{tp_w0}}</td><td align="right" style="font-weight:600;">{{tp_2wk}}</td><td align="right" style="font-weight:600;">{{tp_day}}</td><td align="right">{{tp_net}}</td><td align="right">{{tp_gp}}</td><td align="right" style="color:{{tp_gp_color}};">{{tp_gp_pct}}%</td></tr>
+    <!-- /REPEAT:top_rows -->
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:12px;">{{top_note}}</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- NEW ARRIVALS -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">New-arrival performance <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; recent launches (overstock judged on on-hand)</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Wk</th><th align="left">Product</th><th align="right">Recvd</th><th align="right">Sold</th><th align="right">On hand</th><th align="right">Read</th></tr>
+    <!-- REPEAT:arrival_rows -->
+    <tr style="border-top:1px solid #eee;"><td style="padding:6px 4px;font-weight:600;color:#5551FE;">{{na_wk}}</td><td style="padding:6px 0;font-weight:500;">{{na_name}}</td><td align="right">{{na_recvd}}</td><td align="right">{{na_sold}}</td><td align="right" style="color:{{na_oh_color}};">{{na_onhand}}</td><td align="right"><span style="background:{{na_read_bg}};color:{{na_read_color}};font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">{{na_read}}</span></td></tr>
+    <!-- /REPEAT:arrival_rows -->
+  </table>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- PURCHASING: OPEN POs -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Purchasing &mdash; on the way <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; approved POs only, FX-converted</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="left">PO</th><th align="right">Qty</th><th align="right">THB value</th><th align="right">Flag</th></tr>
+    <!-- REPEAT:po_rows -->
+    <tr style="background:{{po_row_bg}};border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">{{po_name}}</td><td style="padding:5px 2px;">{{po_num}}</td><td align="right">{{po_qty}}</td><td align="right">{{po_value}}</td><td align="right"><span style="background:{{po_flag_bg}};color:{{po_flag_color}};font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">{{po_flag}}</span></td></tr>
+    <!-- /REPEAT:po_rows -->
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:12px;">{{po_note}}</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- DEAD STOCK -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;">Dead stock &mdash; 0 sales in 4 weeks</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:12px;">Owned (clear) first; consignment &amp; intercompany (return) summarised below.</div>
+
+  <div style="font-size:13px;font-weight:600;color:#5551FE;margin:4px 0 8px;">1. Owned / bought &mdash; to clear ({{dead_owned_skus}} SKUs &middot; ~&#3647;{{dead_owned_value}} at cost)</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;table-layout:fixed;">
+    <colgroup><col style="width:52%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col style="width:12%"></colgroup>
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="right">On hand</th><th align="right">Cost</th><th align="right">Price</th><th align="right">Stock &#3647;</th></tr>
+    <!-- REPEAT:dead_owned_rows -->
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">{{do_name}}</td><td align="right">{{do_onhand}}</td><td align="right">{{do_cost}}</td><td align="right">{{do_price}}</td><td align="right" style="font-weight:600;">{{do_value}}</td></tr>
+    <!-- /REPEAT:dead_owned_rows -->
+  </table>
+
+  <div style="font-size:13px;font-weight:600;color:#5551FE;margin:18px 0 8px;">2. Consignment &amp; intercompany &mdash; send back</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:13px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Type</th><th align="left">Supplier</th><th align="right">SKUs</th><th align="right">Units</th><th align="right">Action</th></tr>
+    <!-- REPEAT:dead_consign_rows -->
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;"><span style="background:{{dc_tag_bg}};color:{{dc_tag_color}};font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">{{dc_tag}}</span></td><td style="padding:7px 0;font-weight:500;">{{dc_supplier}}</td><td align="right" style="font-weight:600;">{{dc_skus}}</td><td align="right" style="font-weight:600;">{{dc_units}}</td><td align="right"><span style="background:#fdf1df;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">{{dc_action}}</span></td></tr>
+    <!-- /REPEAT:dead_consign_rows -->
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:10px;">{{dead_note}}</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- FOOTER -->
+<tr><td style="background:#efe7dc;border-radius:12px;padding:18px 24px;">
+  <div style="font-size:12px;color:#7a7468;line-height:1.7;">
+    <b style="color:#5b5547;">Channel tags.</b> INTERCO = intercompany to ACTIONCITY PTE (Singapore) &mdash; transfers, not retail demand, excluded from reorder velocity. WHOLESALE = B2B (Siam Specialty). Retail = POS + marketplaces.<br><br>
+    <b style="color:#5b5547;">Data accuracy.</b> Net sales = invoices &minus; returns (<code>-SUM(netamount)</code>); vending/marketplace cost-wash lines excluded so units, ASP and GP% are clean. GP% uses item average cost (THB base). Prices net of 7% VAT.<br><br>
+    <b style="color:#5b5547;">Source.</b> NetSuite Sub 22 (ACTIONCITY THAILAND), generated {{generated_at}} (Asia/Bangkok) for trading day {{report_date_display}}. Sales = posted CustInvc/CustCred, inventory items only.<br>
+    {{footer_cchaw}}
+  </div>
+</td></tr>
+
+</table>
+</td></tr></table>
+</body></html>

@@ -1,0 +1,256 @@
+<!--
+  actioncity-template.html — LOCKED daily-dashboard email template.
+  The routine FILLS this with fill_template.py from data.json. It NEVER regenerates this HTML.
+  Mechanisms: double-brace scalar token | REPEAT:name rows | SECTION:name conditional block
+  Keep every colour/size/inline style exactly — email-client tested. This comment header is stripped on fill.
+-->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ActionCity Daily Sales &amp; Stock Dashboard</title>
+<style>body{margin:0;padding:0;}</style></head>
+<body style="margin:0;padding:0;background:#F5EDE4;font-family:'Poppins',Arial,Helvetica,sans-serif;color:#2b2b33;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F5EDE4;padding:24px 0;"><tr><td align="center">
+<table role="presentation" width="920" cellpadding="0" cellspacing="0" style="max-width:920px;width:100%;">
+
+<!-- HEADER -->
+<tr><td style="background:#5551FE;border-radius:14px;padding:26px 30px;">
+  <table role="presentation" width="100%"><tr>
+    <td style="vertical-align:middle;">
+      <div style="font-size:13px;font-weight:600;letter-spacing:2px;color:#C9C7FF;text-transform:uppercase;">ActionCity (Thailand) &middot; Sub 22 &middot; Retail / Art Toy</div>
+      <div style="font-size:27px;font-weight:700;color:#ffffff;line-height:1.15;margin-top:4px;">Daily Sales &amp; Stock Dashboard</div>
+      <div style="font-size:15px;color:#E6E5FF;margin-top:3px;">7 Jun 2026 (Sun) &middot; end-of-day close &middot; week-to-date W23</div>
+    </td>
+    <td align="right" style="vertical-align:middle;">
+      <div style="display:inline-block;background:#F27061;color:#ffffff;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;">DAILY</div>
+    </td>
+  </tr></table>
+</td></tr>
+<tr><td style="height:14px;"></td></tr>
+
+<!-- EXEC INSIGHT (generative; omitted if no insight rows) -->
+
+<tr><td style="background:#ffffff;border-radius:12px;padding:18px 22px;border-left:4px solid #F27061;">
+  <div style="font-size:15px;font-weight:600;margin-bottom:8px;">&#128202; Executive Insight <span style="font-size:11px;font-weight:400;color:#8a8a93;">&middot; AI summary of the numbers below</span></div>
+  <div style="font-size:13px;line-height:1.7;color:#4a4640;">
+    
+    &bull; W23 net ฿382,774; W22 was ฿356,866 after ฿48k returns, so W23 is up ~7% clean.<br>
+    
+    &bull; Retails 85% of sales, down ~8% WoW; online offsetting — Shopee +28%, Vending +9%.<br>
+    
+    &bull; ⚠ ACT Westgate recorded zero sales all week (was ฿27K) — check store/POS.<br>
+    
+    &bull; Reorder: Lulu Scented at 0.4w cover; Big Box consignment ฿3.5M to return.<br>
+    
+  </div>
+</td></tr>
+<tr><td style="height:14px;"></td></tr>
+
+
+<!-- KPI HEADLINE -->
+<tr><td>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0"><tr>
+    <td width="25%" style="padding-right:9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Net sales &middot; today</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">&#3647;68,107</div>
+      <div style="font-size:13px;color:#8a8a93;font-weight:600;margin-top:2px;"> — vs same day last wk</div>
+    </div></td>
+    <td width="25%" style="padding:0 9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Bills &middot; today</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">197</div>
+      <div style="font-size:13px;color:#8a8a93;font-weight:500;margin-top:2px;">197 units &middot; 1.0/bill</div>
+    </div></td>
+    <td width="25%" style="padding:0 9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Avg ticket &middot; today</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">&#3647;346</div>
+      <div style="font-size:13px;color:#8a8a93;font-weight:500;margin-top:2px;">net of 7% VAT</div>
+    </div></td>
+    <td width="25%" style="padding-left:9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Week-to-date &middot; W23</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">&#3647;382,774</div>
+      <div style="font-size:13px;color:#8a8a93;font-weight:500;margin-top:2px;">7 days &middot; ~&#3647;54,682/day</div>
+    </div></td>
+  </tr></table>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- BEST SELLERS TODAY (omit if none >=5) -->
+
+<tr><td style="background:#e1f5ee;border:1px solid #5DCAA5;border-radius:12px;padding:14px 20px;">
+  <div style="font-size:12px;color:#0f6e56;"><b>Best sellers today</b> (5+ pieces): Upset Duck Stop Spiral 15 · Fuggler Alley Cat 15 · Grogu 12 · Panpan Mini 12</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+
+<!-- NET SALES BY WEEK -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;">Net sales by week</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:16px;">Net = invoices &minus; returns (inventory items, wash-lines excluded). W23 is week-to-date.</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:13px;">
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:500;">W17</td><td><div style="background:#C9C7FF;height:18px;width:71%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:500;color:#2b2b33;">&#3647;540,182</td></tr>
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:600;">W21</td><td><div style="background:#5551FE;height:18px;width:100%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:600;color:#5551FE;">&#3647;755,367</td></tr>
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:500;">W22</td><td><div style="background:#C9C7FF;height:18px;width:47%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:500;color:#2b2b33;">&#3647;356,866</td></tr>
+    
+    <tr><td width="60" style="color:#2b2b33;padding:5px 0;font-weight:600;">W23 (WTD)</td><td><div style="background:#F27061;height:18px;width:51%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:600;color:#F27061;">&#3647;382,774</td></tr>
+    
+  </table>
+  <div style="background:#F5EDE4;border-radius:8px;padding:12px 14px;margin-top:14px;font-size:12px;color:#5b5547;line-height:1.6;">W22 net ฿356,866 was reduced by ฿48,014 of returns booked that week; W23 ฿382,774 has none — so W23 is up ~7% on a clean basis.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REVENUE BY BUSINESS UNIT -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Revenue by business unit <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; W23 to date vs prior week</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;">
+    <tr style="color:#8a8a93;font-size:10px;"><td>BU</td><td></td><td align="right">Net &#3647;</td><td align="right">Share</td><td align="right">WoW</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">Retails</td><td style="width:40%;"><span style="background:#5551FE;height:13px;width:100%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">327,078</td><td align="right">85.4%</td><td align="right" style="color:#d6453a;">▼8.1%</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">Vending</td><td style="width:40%;"><span style="background:#f5a623;height:13px;width:10%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">31,788</td><td align="right">8.3%</td><td align="right" style="color:#1f9d57;">▲8.5%</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">Shopee</td><td style="width:40%;"><span style="background:#1f9d57;height:13px;width:7%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">23,908</td><td align="right">6.2%</td><td align="right" style="color:#1f9d57;">▲28.5%</td></tr>
+    
+  </table>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REVENUE BY BRANCH -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Revenue by branch <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; W23 to date (&#9881; = vending)</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:11px;">
+    <tr style="color:#8a8a93;font-size:10px;"><td>Branch</td><td align="right">Net &#3647;</td><td align="right">Bills</td><td align="right">Ticket</td><td align="right">WoW</td><td align="right">Flag</td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Siam Square One</td><td align="right" style="font-weight:600;color:#2b2b33;">179,788</td><td align="right">244</td><td align="right">737</td><td align="right" style="color:#1f9d57;">▲4.0%</td><td align="right"></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Central Ladprao</td><td align="right" style="font-weight:600;color:#2b2b33;">53,352</td><td align="right">115</td><td align="right">464</td><td align="right" style="color:#d6453a;">▼13.2%</td><td align="right"></td></tr>
+    
+    <tr style="background:#fde7e4;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#b3261e;">ACT Westgate</td><td align="right" style="font-weight:600;color:#b3261e;">0</td><td align="right">0</td><td align="right">—</td><td align="right" style="color:#b3261e;">฿27K→0</td><td align="right">DARK</td></tr>
+    
+  </table>
+  <div style="font-size:11px;color:#8a8a93;margin-top:8px;">Westgate took ฿26,807 in W22 then nothing in W23 — investigate store/POS.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- CATEGORY MIX -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;">Category mix &middot; Collectables vs the rest</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:14px;">Collectables = premium 100/200/300/400/1000% figures. Trailing 4 weeks.</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:13px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left" style="padding:6px 0;">Category</th><th align="right">SKUs</th><th align="right">Units</th><th align="right">Net</th><th align="right">% sales</th><th align="right">ASP</th><th align="right">GP%</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Collectables (100/200/400%)</td><td align="right">14</td><td align="right">72</td><td align="right" style="font-weight:600;">&#3647;184,282</td><td align="right">9.4%</td><td align="right">&#3647;2,559</td><td align="right" style="color:#1f7a55;">47.6%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">The rest</td><td align="right">261</td><td align="right">5,677</td><td align="right" style="font-weight:600;">&#3647;1,771,989</td><td align="right">90.6%</td><td align="right">&#3647;312</td><td align="right" style="color:#c43b27;">43.4%</td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:10px;">Collectables ~11% of revenue from ~1% of units; episodic, spikes on drop weeks.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REORDER NOW -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;border:2px solid #F27061;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;"><span style="display:inline-block;width:9px;height:9px;background:#F27061;border-radius:50%;vertical-align:middle;"></span> Reorder now: fast movers, low stock, nothing on order</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:14px;">Retail/e-commerce velocity over the last 5 weeks (W19&ndash;W23). Cover = stock &divide; 4-wk weekly avg.</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="right">W19</th><th align="right">W20</th><th align="right">W21</th><th align="right">W22</th><th align="right">W23</th><th align="right">Stock</th><th align="right">Cover</th><th align="right">Action</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Lulu Scented Decorative Mini BB</td><td align="right">0</td><td align="right">8</td><td align="right">34</td><td align="right">35</td><td align="right">21</td><td align="right" style="color:#c43b27;">10</td><td align="right">0.4w</td><td align="right"><span style="background:#e3f5ec;color:#1f9d57;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">REORDER↑</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Disney Princess On The Run BB</td><td align="right">37</td><td align="right">50</td><td align="right">41</td><td align="right">30</td><td align="right">7</td><td align="right" style="color:#2b2b33;">54</td><td align="right">1.7w</td><td align="right"><span style="background:#e3f5ec;color:#1f9d57;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">REORDER</span></td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:12px;">Lulu Scented is the clear reorder (0.4w cover).</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- TOP MOVERS -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Top 20 sellers by units &middot; last 2 weeks (W22 + W23)</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;table-layout:fixed;">
+    <colgroup><col style="width:34%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:7%"><col style="width:9%"><col style="width:9%"><col style="width:9%"></colgroup>
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="right">Stock</th><th align="right">W22</th><th align="right">W23</th><th align="right">2-wk</th><th align="right">/day</th><th align="right">Net &#3647;</th><th align="right">GP &#3647;</th><th align="right">GP%</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Upset Duck Status Display</td><td align="right" style="color:#2b2b33;">454</td><td align="right">68</td><td align="right" style="color:#1f7a55;">72</td><td align="right" style="font-weight:600;">140</td><td align="right" style="font-weight:600;">10.0</td><td align="right">26,208</td><td align="right">13,936</td><td align="right" style="color:#1f7a55;">53.2%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Fuggler Alley Cat Plush KC</td><td align="right" style="color:#2b2b33;">278</td><td align="right">55</td><td align="right" style="color:#1f7a55;">62</td><td align="right" style="font-weight:600;">117</td><td align="right" style="font-weight:600;">8.4</td><td align="right">46,004</td><td align="right">23,598</td><td align="right" style="color:#1f7a55;">51.3%</td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:12px;">Accelerating: Opandee S4, Fuggler Alley Cat, Qmsv. Cooling: Happy Balloon Dog.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- NEW ARRIVALS -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">New-arrival performance <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; recent launches (overstock judged on on-hand)</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Wk</th><th align="left">Product</th><th align="right">Recvd</th><th align="right">Sold</th><th align="right">On hand</th><th align="right">Read</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:6px 4px;font-weight:600;color:#5551FE;">W19</td><td style="padding:6px 0;font-weight:500;">Lulu Scented Decorative Mini BB</td><td align="right">108</td><td align="right">96</td><td align="right" style="color:#c43b27;">10</td><td align="right"><span style="background:#e3f5ec;color:#1f7a55;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">HOT</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:6px 4px;font-weight:600;color:#5551FE;">W18</td><td style="padding:6px 0;font-weight:500;">Upset Duck Mini Wishlist BB</td><td align="right">1,440</td><td align="right">125</td><td align="right" style="color:#c43b27;">306</td><td align="right"><span style="background:#fde3df;color:#c43b27;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">OVERSTOCK</span></td></tr>
+    
+  </table>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- PURCHASING: OPEN POs -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Purchasing &mdash; on the way (open POs, FX-converted)</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="left">PO</th><th align="right">Qty</th><th align="right">THB value</th><th align="right">Flag</th></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Upset Duck Mini Wishlist BB</td><td style="padding:5px 2px;">POACT260500021</td><td align="right">192</td><td align="right">~฿32,600</td><td align="right"><span style="background:#fde3df;color:#c43b27;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">FX + CANCEL?</span></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Mr. Bone Strange Alliance 3.0 BB</td><td style="padding:5px 2px;">POACT260500020</td><td align="right">324</td><td align="right">฿74,729</td><td align="right"><span style="background:#e3f5ec;color:#1f7a55;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">OK</span></td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:12px;">Fix Upset Duck Mini Wishlist PO currency (USD→CNY); return old Bearbrick consignment; hold Sanrio phone-chains.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- DEAD STOCK -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;">Dead stock &mdash; 0 sales in 4 weeks</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:12px;">Owned (clear) first; consignment &amp; intercompany (return) summarised below.</div>
+
+  <div style="font-size:13px;font-weight:600;color:#5551FE;margin:4px 0 8px;">1. Owned / bought &mdash; to clear (12 SKUs &middot; ~&#3647;96K at cost)</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;table-layout:fixed;">
+    <colgroup><col style="width:52%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col style="width:12%"></colgroup>
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="right">On hand</th><th align="right">Cost</th><th align="right">Price</th><th align="right">Stock &#3647;</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Fluffy Meatball</td><td align="right">78</td><td align="right">285</td><td align="right">449</td><td align="right" style="font-weight:600;">22,253</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Sanrio Childlike Swing Phone Chain Mini BB</td><td align="right">96</td><td align="right">128</td><td align="right">299</td><td align="right" style="font-weight:600;">12,303</td></tr>
+    
+  </table>
+
+  <div style="font-size:13px;font-weight:600;color:#5551FE;margin:18px 0 8px;">2. Consignment &amp; intercompany &mdash; send back</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:13px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Type</th><th align="left">Supplier</th><th align="right">SKUs</th><th align="right">Units</th><th align="right">Action</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;"><span style="background:#e1f5ee;color:#0f6e56;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">CONSIGN</span></td><td style="padding:7px 0;font-weight:500;">Big Box International (~฿3.5M)</td><td align="right" style="font-weight:600;">78</td><td align="right" style="font-weight:600;">482</td><td align="right"><span style="background:#fdf1df;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">RETURN</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;"><span style="background:#e1f5ee;color:#0f6e56;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">CONSIGN</span></td><td style="padding:7px 0;font-weight:500;">MNT series</td><td align="right" style="font-weight:600;">46</td><td align="right" style="font-weight:600;">3,713</td><td align="right"><span style="background:#fdf1df;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">RETURN</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;"><span style="background:#eeedfe;color:#5551FE;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">INTERCO</span></td><td style="padding:7px 0;font-weight:500;">Pony on Wheel TH / Toysinbox</td><td align="right" style="font-weight:600;">12</td><td align="right" style="font-weight:600;">687</td><td align="right"><span style="background:#fdf1df;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">RETURN</span></td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:10px;">Big Box ฿3.5M is consignment (not ActionCity cash) but holds shelf space — priority return.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- FOOTER -->
+<tr><td style="background:#efe7dc;border-radius:12px;padding:18px 24px;">
+  <div style="font-size:12px;color:#7a7468;line-height:1.7;">
+    <b style="color:#5b5547;">Channel tags.</b> INTERCO = intercompany to ACTIONCITY PTE (Singapore) &mdash; transfers, not retail demand, excluded from reorder velocity. WHOLESALE = B2B (Siam Specialty). Retail = POS + marketplaces.<br><br>
+    <b style="color:#5b5547;">Data accuracy.</b> Net sales = invoices &minus; returns (<code>-SUM(netamount)</code>); vending/marketplace cost-wash lines excluded so units, ASP and GP% are clean. GP% uses item average cost (THB base). Prices net of 7% VAT.<br><br>
+    <b style="color:#5b5547;">Source.</b> NetSuite Sub 22 (ACTIONCITY THAILAND), generated 7 Jun 2026 22:05 (Asia/Bangkok) for trading day 7 Jun 2026. Sales = posted CustInvc/CustCred, inventory items only.<br>
+    CHAW Retailing Co., Ltd. · Internal management report · Automated routine.
+  </div>
+</td></tr>
+
+</table>
+</td></tr></table>
+</body></html>

@@ -134,13 +134,14 @@
 <!-- ── 7-DAY HEATMAP (rows=days, cols=Revenue/Bills/Avg Ticket; shaded per column) ── -->
 <tr><td style="padding:18px 32px 8px;">
   <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:4px;border-left:3px solid #5551FE;padding-left:10px;">7-Day Performance Heatmap</div>
-  <div style="font-size:11px;color:#888;margin-bottom:12px;padding-left:13px;">เฉดสีเข้ม = ค่าสูงในรอบ 7 วัน (แยกตามคอลัมน์)</div>
+  <div style="font-size:11px;color:#888;margin-bottom:12px;padding-left:13px;">เฉดสีเข้ม = ค่าสูงในรอบ 7 วัน (แยกตามคอลัมน์) &nbsp;·&nbsp; WoW = เทียบวันเดียวกันสัปดาห์ก่อน</div>
   <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E8E8E8;border-radius:8px;overflow:hidden;">
     <tr style="background:#F8F9FA;">
-      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" width="28%">วัน</td>
-      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="28%">Revenue</td>
-      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="20%">Bills</td>
-      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="24%">Avg Ticket</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" width="22%">วัน</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="26%">Revenue</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="16%">Bills</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="20%">Avg Ticket</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="16%">WoW</td>
     </tr>
     <!-- REPEAT:heatmap_rows -->
     <tr style="border-top:1px solid #E8E8E8;">
@@ -148,6 +149,7 @@
       <td style="padding:9px 12px;font-size:11px;font-weight:{{rev_weight}};color:{{rev_fg}};background:{{rev_bg}};" align="right">฿{{rev}}</td>
       <td style="padding:9px 12px;font-size:11px;font-weight:{{bills_weight}};color:{{bills_fg}};background:{{bills_bg}};" align="right">{{bills}}</td>
       <td style="padding:9px 12px;font-size:11px;font-weight:{{ticket_weight}};color:{{ticket_fg}};background:{{ticket_bg}};" align="right">฿{{ticket}}</td>
+      <td style="padding:9px 12px;font-size:11px;font-weight:{{wow_weight}};color:{{wow_color}};" align="right">{{wow_pct}}</td>
     </tr>
     <!-- /REPEAT:heatmap_rows -->
   </table>
