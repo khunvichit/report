@@ -33,6 +33,7 @@ PREV_DATE          = REPORT_DATE − 1
 7D_START           = REPORT_DATE − 6         # 7-day window: 7D_START .. REPORT_DATE inclusive (heatmap)
 14D_START          = REPORT_DATE − 13        # 14-day window: feeds Query J (prior week = WoW baseline)
 D30_START          = REPORT_DATE − 29        # 30-day window: D30_START .. REPORT_DATE inclusive
+W35_START          = REPORT_DATE − 34        # 35-day window: Query H (5 full weeks for the weekly table)
 MTD_START          = first day of REPORT_DATE's month (e.g. 2026-05-01)
 mtd_days           = REPORT_DATE.day          # number of days elapsed in month incl. REPORT_DATE
 mtd_month          = "May 2026"               # Mon YYYY of REPORT_DATE
@@ -237,24 +238,33 @@ Parse: `staff10_bills` = bills at rate `-9.81`; `set50_bills` = bills at rate `-
 
 ---
 
-## Query H — Last-30-Day Net Sales PER DAY (period strip + bar chart)
-> Returns one row per trading day. Feeds both the 30d strip totals AND the daily bar chart.
-> Single window; narrow to the month boundary if rate-limited. Inclusive of REPORT_DATE.
+## Query H — Last-35-Day Net Sales + Bills PER DAY × SEGMENT (strip, sales chart, weekly table)
+> Returns one row per trading day per segment (Walk-In / Airport Staff) over 35 days = 5 full
+> weeks. Feeds the 30d strip totals + daily sales bar chart (most recent 30 days, segments
+> summed) AND the weekly customer table (all 35 days, segments kept apart). Single window;
+> narrow if rate-limited. Inclusive of REPORT_DATE.
 ```sql
 SELECT t.trandate,
+  CASE WHEN t.entity = 51407 THEN 'Staff' ELSE 'Walk-In' END AS segment,
   SUM(CASE WHEN t.type='CustInvc' THEN ABS(tl.netamount) ELSE 0 END) -
-  SUM(CASE WHEN t.type='CustCred' THEN ABS(tl.netamount) ELSE 0 END) AS net_sales
+  SUM(CASE WHEN t.type='CustCred' THEN ABS(tl.netamount) ELSE 0 END) AS net_sales,
+  COUNT(DISTINCT CASE WHEN t.type='CustInvc' THEN t.id END) AS bills
 FROM transaction t
 JOIN transactionline tl ON t.id = tl.transaction AND tl.mainline = 'T'
-WHERE t.trandate BETWEEN TO_DATE('{D30_START}','YYYY-MM-DD') AND TO_DATE('{REPORT_DATE}','YYYY-MM-DD')
+WHERE t.trandate BETWEEN TO_DATE('{W35_START}','YYYY-MM-DD') AND TO_DATE('{REPORT_DATE}','YYYY-MM-DD')
   AND t.type IN ('CustInvc','CustCred')
   AND tl.subsidiary = 12
   AND EXISTS (SELECT 1 FROM transactionline tl2 WHERE tl2.transaction = t.id AND tl2.location = 27 AND tl2.mainline = 'F')
-GROUP BY t.trandate
+GROUP BY t.trandate, CASE WHEN t.entity = 51407 THEN 'Staff' ELSE 'Walk-In' END
 ```
-Sort rows by `trandate` ascending client-side (no ORDER BY on GROUP BY).
-Derive for the strip: `days = count(rows)`; `net_30d = sum(net_sales)`; `avg_30d = round(net_30d / days)`.
-Build the chart `chart_days` list from these rows (see "Chart derivation" below).
+Sort rows by `trandate` ascending client-side (no ORDER BY on GROUP BY). Collapse per day:
+`net_sales(day) = sum over segments`; `walk_bills(day)` / `staff_bills(day)` = segment bills
+(missing segment → 0); `bills(day) = walk_bills + staff_bills`.
+Strip + sales chart use ONLY the most recent 30 days (`D30_START..REPORT_DATE`):
+`days = count(distinct trandate in 30d)`; `net_30d = sum(net_sales over 30d)`;
+`avg_30d = round(net_30d / days)`.
+Build the chart `chart_days` list from those 30 per-day totals (see "Chart derivation" below);
+the weekly table uses the full 35 days (see "Weekly table derivation").
 
 ### Chart derivation (30-day daily bar chart with MTD-average line)
 For the bar chart `chart_days` repeat block, from the sorted Query H rows:
@@ -272,6 +282,35 @@ for each day d:
 > The MTD-average line is drawn as a thin absolutely-positioned rule at `mtd_line_px` from the
 > baseline, spanning the plot width, labelled `MTD avg ฿{avg_mtd}`. Bars shorter than the line read
 > as below-month-average days at a glance; colour still encodes vs-target.
+
+### Customer-trend WEEKLY table derivation (TRANSPOSED: columns = 5 weeks, rows = segments)
+From Query H's per-day SEGMENT data (full 35 days), aggregate into 5 trailing weeks aligned to
+REPORT_DATE: week w (w = 5 oldest .. 1 newest) covers the 7 days ending `REPORT_DATE − (w−1)×7`.
+The template has FOUR repeats, each a list of 5 items ordered oldest→newest week:
+`week_headers` (header cells) and `walk_cells` / `staff_cells` / `total_cells` (one data cell
+per week for each row).
+```
+for each week w (oldest first):
+    walk / staff = sum of segment bills over the week's 7 days; total = walk + staff
+    label        = "D–D Mon (Thai)", e.g. "5–11 มิ.ย." (cross-month: "29 พ.ค.–4 มิ.ย.")
+    is_current   = (w == 1, the week ending REPORT_DATE)
+week_headers item: label;  head_color = '#5551FE' if is_current else '#888';
+                   head_bg = '#EEECFF' if is_current else '#F8F9FA'
+per cell (each of walk/staff/total for that week):
+    val    = the count, thousands-separated
+    weight = 700 if is_current else 400              # (total row is always 700 in the template)
+    bg     = '#EEECFF' if is_current else '#FFFFFF'
+    # WoW vs the PREVIOUS week's same figure:
+    prev = previous week's value; oldest week or prev == 0 → pct = ""; color = '#888'
+    else: p = round((cur − prev)/prev × 100, 1);
+          pct   = arrow + signed %, e.g. "▲+5.2%" / "▼-3.1%"
+          color = '#27AE60' if p >= 0 else '#E74C3C'
+avg_bills_30d = round(sum(total bills over the most recent 30 days) / days)   # caption scalar
+```
+Tokens: `week_headers` → `label`/`head_color`/`head_bg`; each `*_cells` item →
+`val`/`pct`/`color`/`weight`/`bg`. All four lists MUST be length 5, same week order.
+> RETIRED: `cust_weeks`, `cust_points`/`cust_days`, `cust7_*`, `cust_line_px`. `chart_labels`
+> renders only under the 30-day sales chart.
 
 ## Query I — Month-to-Date Net Sales (period strip)
 ```sql

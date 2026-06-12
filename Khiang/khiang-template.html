@@ -131,6 +131,38 @@
   </td></tr></table>
 </td></tr>
 
+<!-- ── CUSTOMER TREND BY WEEK (transposed: columns = 5 weeks, rows = Walk-In / Staff / Total) ── -->
+<tr><td style="padding:18px 32px 8px;">
+  <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:4px;border-left:3px solid #5551FE;padding-left:10px;">Customer Trend by Week — Bills</div>
+  <div style="font-size:11px;color:#888;margin-bottom:12px;padding-left:13px;">จำนวนบิล (ลูกค้า) รายสัปดาห์ ย้อนหลัง 5 สัปดาห์ &nbsp;·&nbsp; % = เทียบสัปดาห์ก่อนหน้า &nbsp;·&nbsp; avg 30 วัน = {{avg_bills_30d}} บิล/วัน</div>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E8E8E8;border-radius:8px;overflow:hidden;">
+    <tr style="background:#F8F9FA;">
+      <td style="padding:8px 10px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" width="15%">ลูกค้า</td>
+      <!-- REPEAT:week_headers -->
+      <td style="padding:8px 6px;font-size:9px;font-weight:700;color:{{head_color}};text-transform:uppercase;letter-spacing:.3px;background:{{head_bg}};" align="center" width="17%">{{label}}</td>
+      <!-- /REPEAT:week_headers -->
+    </tr>
+    <tr style="border-top:1px solid #E8E8E8;">
+      <td style="padding:9px 10px;font-size:11px;font-weight:700;color:#5551FE;">Walk-In</td>
+      <!-- REPEAT:walk_cells -->
+      <td style="padding:9px 6px;background:{{bg}};" align="center"><div style="font-size:12px;font-weight:{{weight}};color:#2C3E50;">{{val}}</div><div style="font-size:9px;font-weight:700;color:{{color}};margin-top:1px;">{{pct}}</div></td>
+      <!-- /REPEAT:walk_cells -->
+    </tr>
+    <tr style="border-top:1px solid #E8E8E8;">
+      <td style="padding:9px 10px;font-size:11px;font-weight:700;color:#F27061;">Airport Staff</td>
+      <!-- REPEAT:staff_cells -->
+      <td style="padding:9px 6px;background:{{bg}};" align="center"><div style="font-size:12px;font-weight:{{weight}};color:#2C3E50;">{{val}}</div><div style="font-size:9px;font-weight:700;color:{{color}};margin-top:1px;">{{pct}}</div></td>
+      <!-- /REPEAT:staff_cells -->
+    </tr>
+    <tr style="border-top:2px solid #E8E8E8;background:#F8F9FA;">
+      <td style="padding:9px 10px;font-size:11px;font-weight:700;color:#2C3E50;">Total</td>
+      <!-- REPEAT:total_cells -->
+      <td style="padding:9px 6px;background:{{bg}};" align="center"><div style="font-size:12px;font-weight:700;color:#2C3E50;">{{val}}</div><div style="font-size:9px;font-weight:700;color:{{color}};margin-top:1px;">{{pct}}</div></td>
+      <!-- /REPEAT:total_cells -->
+    </tr>
+  </table>
+</td></tr>
+
 <!-- ── 7-DAY HEATMAP (rows=days, cols=Revenue/Bills/Avg Ticket; shaded per column) ── -->
 <tr><td style="padding:18px 32px 8px;">
   <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:4px;border-left:3px solid #5551FE;padding-left:10px;">7-Day Performance Heatmap</div>
