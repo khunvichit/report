@@ -1,0 +1,597 @@
+<!-- ============================================================
+  SFB DAILY SALES REPORT — LOCKED HTML TEMPLATE
+  Source of truth: sfb-daily-PROD-25may.html (25 May 2026 production email)
+  DO NOT regenerate this file from prose. The routine fills it with
+  fill_template.py using data.json. Markers:
+    double-brace token            -> scalar, replaced globally from data.scalars
+    REPEAT:name block             -> one copy per list item in data.repeats[name]
+    SECTION:name block            -> kept if data.sections[name] is true, else removed
+  Lark TASKS have been removed (per owner request 2026-06). Group = Food Operation Core.
+  Chart bar heights are PIXELS, pre-computed in data.json (same PIXEL_PER_BAHT for both charts).
+============================================================ -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>🚨 SFB Daily — 10 July 2025 | ฿691K (WoW +20.4%) | 14 locations</title>
+<style>
+body { font-family:Poppins,-apple-system,sans-serif; background:#F5EDE4; margin:0; padding:24px; color:#2C3E50; }
+.wrap { max-width:920px; margin:0 auto; background:#FFF8F5; border-radius:12px; overflow:hidden; box-shadow:0 4px 24px rgba(44,62,80,0.08); }
+.draft { background:#E3F2FD; color:#1565C0; text-align:center; padding:8px; font-weight:600; font-size:13px; border-bottom:1px solid #BBDEFB; }
+.hdr { background:linear-gradient(135deg,#5551FE 0%,#7B79FF 100%); color:#fff; padding:28px 32px; }
+.hdr h1 { margin:0 0 6px 0; font-size:24px; font-weight:600; }
+.hdr .sub { opacity:0.85; font-size:13px; }
+.hdr .badge { display:inline-block; background:rgba(255,255,255,0.18); padding:4px 10px; border-radius:12px; font-size:11px; margin-top:8px; }
+.section { padding:24px 32px; border-bottom:1px solid #F0E5DA; }
+.section h2 { margin:0 0 16px 0; font-size:16px; font-weight:600; }
+.insight { background:#FFF; border-left:4px solid #F27061; padding:16px 18px; border-radius:4px; }
+.insight ul { margin:0; padding-left:18px; line-height:1.7; font-size:13px; }
+.insight li b { color:#5551FE; }
+.kpi { display:flex; gap:12px; }
+.kpi .card { flex:1; background:#fff; border-radius:8px; padding:16px; border:1px solid #F0E5DA; }
+.kpi .lbl { font-size:11px; color:#5F5E5A; text-transform:uppercase; letter-spacing:0.5px; }
+.kpi .val { font-size:24px; font-weight:600; margin:4px 0; }
+.kpi .delta { font-size:11px; font-weight:500; line-height:1.5; }
+.delta-up { color:#2D7A3F; } .delta-down { color:#C5453E; } .delta-neutral { color:#5F5E5A; } .delta-na { color:#5F5E5A; }
+table.barchart { width:100%; table-layout:fixed; border-collapse:collapse; }
+table.barchart td.yaxis { width:70px; vertical-align:top; padding-right:8px; font-size:10px; color:#5F5E5A; text-align:right; position:relative; height:240px; }
+table.barchart td.yaxis .y-mtd { position:absolute; top:53px; right:8px; background:#FFF8F5; padding:1px 4px; border-radius:2px; font-weight:600; color:#4A5568; }
+td.bar-cell { vertical-align:bottom; padding:0 1px; height:240px; position:relative; background-image: linear-gradient(to bottom, transparent 0px, transparent 58px, rgba(74,85,104,0.85) 58px, rgba(74,85,104,0.85) 60px, transparent 60px); }
+.bar-stack { display:flex; flex-direction:column-reverse; height:220px; }
+.seg { width:100%; }
+.seg-subway { background:#5551FE; } .seg-khiang { background:#7B79FF; } .seg-jl { background:#2D7A3F; } .seg-se { background:#F39C12; } .seg-vendi { background:#C5453E; }
+.seg-bkk { background:#5551FE; } .seg-dmk { background:#7B79FF; } .seg-pkt { background:#F27061; } .seg-other { background:#C5BFB0; }
+td.bar-cell.d1 .bar-stack { box-shadow: 0 -3px 0 #F27061 inset; }
+td.axlbl { font-size:9px; color:#5F5E5A; text-align:center; padding-top:4px; }
+td.axhol { border-bottom:2px solid #F27061; color:#F27061; font-weight:600; } td.axd1 { color:#F27061; font-weight:600; }
+.legend { width:100%; border-collapse:collapse; font-size:12px; margin-top:14px; }
+.legend th, .legend td { padding:6px 10px; text-align:left; border-bottom:1px solid #F0E5DA; }
+.legend th { color:#5F5E5A; font-weight:500; font-size:10px; text-transform:uppercase; }
+.legend .sw { display:inline-block; width:12px; height:12px; border-radius:2px; vertical-align:middle; margin-right:6px; }
+.signal-badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:10px; font-weight:600; }
+.s-crisis { background:#FBE9E7; color:#C5453E; } .s-quality { background:#FFF3CD; color:#856404; } .s-soft { background:#F0E5DA; color:#5F5E5A; } .s-traffic { background:#E8F5E9; color:#2D7A3F; } .s-upsell { background:#E3F2FD; color:#5551FE; }
+.sev-badge { display:inline-block; padding:3px 8px; border-radius:10px; font-size:10px; font-weight:600; white-space:nowrap; }
+.sev-surge { background:#FBE9E7; color:#F27061; } .sev-positive { background:#E8F5E9; color:#2D7A3F; } .sev-neutral { background:#F0E5DA; color:#5F5E5A; } .sev-watch { background:#FFF3CD; color:#856404; } .sev-high { background:#FFEFE0; color:#C77818; } .sev-critical { background:#FBE9E7; color:#C5453E; } .sev-new { background:#E3F2FD; color:#1565C0; }
+.branch-h3 { font-size:13px; font-weight:600; margin:0 0 8px 0; padding:6px 10px; border-radius:4px; }
+.heatmap { width:100%; border-collapse:collapse; font-size:13px; }
+.heatmap th { background:#F5EDE4; color:#5F5E5A; font-weight:500; font-size:11px; text-transform:uppercase; padding:8px 10px; text-align:center; border:1px solid #F0E5DA; }
+.heatmap th.heat-bu { text-align:left; }
+.heatmap th.heat-metric { background:#F0E5DA; }
+.heatmap td { padding:10px 10px; text-align:center; border:1px solid #F0E5DA; }
+.heatmap td.heat-bu { text-align:left; font-weight:600; font-size:13px; vertical-align:middle; background:#FBFBFD; }
+.heatmap tr.grp-start td { border-top:2px solid #5551FE; }
+.heatmap td.heat-rev { text-align:right; font-weight:600; font-size:13px; }
+.heatmap td.heat-bills { text-align:right; color:#5F5E5A; }
+.heatmap td.heat-cell { font-weight:700; font-size:13px; }
+.branch-h3-warn { background:#FFF3CD; color:#856404; border-left:4px solid #F39C12; }
+.branch-h3-ok { background:#E8F5E9; color:#2D7A3F; border-left:4px solid #2D7A3F; }
+.dt { width:100%; border-collapse:collapse; font-size:12px; }
+.dt th, .dt td { padding:8px 10px; border-bottom:1px solid #F0E5DA; text-align:left; }
+.dt th { color:#5F5E5A; font-weight:500; font-size:10px; text-transform:uppercase; background:#F5EDE4; }
+.muted { color:#5F5E5A; font-weight:400; }
+.hrblock { margin-bottom:18px; }
+.hrblock-head { font-size:12px; margin-bottom:4px; }
+.hr-flag { display:inline-block; background:#FFF3CD; color:#856404; padding:1px 6px; border-radius:8px; font-size:10px; font-weight:600; margin-left:6px; }
+.hr-totals { float:right; font-size:11px; color:#4A5568; font-weight:600; }
+.hr-src { font-size:10px; margin-left:8px; }
+.hrtable { width:100%; table-layout:fixed; border-collapse:collapse; font-size:9px; }
+.hrtable th { background:#F5EDE4; color:#5F5E5A; font-weight:600; font-size:8px; padding:2px 0; border:1px solid #F0E5DA; }
+.hrtable td.hr-cell { padding:3px 1px; text-align:center; border:1px solid #F0E5DA; font-size:8px; line-height:1.2; }
+.hrtable td.hr-row-lbl { font-size:10px; font-weight:600; padding:3px 6px; background:#FBFBFD; width:80px; text-align:left; border:1px solid #F0E5DA; }
+.hr-base { color:#5F5E5A; background:#FBFBFD; }
+.hr-zero { background:#FFF3CD; color:#856404; font-weight:600; }
+.hr-down { background:#FBE9E7; color:#C5453E; font-weight:600; }
+.hr-up { background:#E8F5E9; color:#2D7A3F; font-weight:600; }
+.footer { background:#2C3E50; color:#C5BFB0; padding:20px 32px; font-size:11px; line-height:1.6; }
+.footer b { color:#fff; }
+</style></head><body>
+<div class="wrap">
+  <div class="draft" style="background:#E8F5E9; color:#2D7A3F; border-bottom:1px solid #C8E6C9;">📨 SFB Daily Report · 10 July 2025 (Thu) · Sub 12 Food Operation Core</div>
+  <div class="hdr">
+    <h1>SFB Daily Sales Report</h1>
+    <div class="sub">วันพฤหัสบดี 10 July 2025 · Sub 12 · Food Operation Core</div>
+    <span class="badge">🚨 ฿691K · WoW +20.4%</span>
+  </div>
+
+  <div class="section">
+    <h2>🎯 Executive Insight</h2>
+    <div class="insight"><ul>
+
+      <li>D1 SFB revenue <b>฿690,588</b> (+20.4% WoW · +0.2% DoD · vs MTD avg +12.1%), 3,381 bills, avg ticket <b>฿204</b></li>
+
+      <li><b>Traffic-driven surge</b>: bills +31.7% WoW while avg ticket −8.6% — volume, not spend, drove the gain. DMK led airports at +35.2% WoW, BKK +18.1%, PKT flat (−0.3%)</li>
+
+      <li>⭐ <b>Juice Land</b> leading: WoW +43.3% (bills +38.6%, ticket +3.4%). <b>Subway</b> +24.4% carried ฿554.8K (80.3% share) on bills +48.5%, ticket −16.2%</li>
+
+      <li>🔥 Three branches hit <b>NEW MTD HIGH</b>: 24-T1EW4-14 ฿80.9K, 05-DMK-Inter-S ฿60.1K, 23-T1CE4-13 ฿59.3K</li>
+
+      <li><b>Top location×BU movers</b>: 23-T1CE4-13·Subway +86.8%, 25-DMK-CS·Subway +68.4%, 24-T1EW4-14·Subway +59.4%</li>
+
+      <li>🔻 <b>Weakest location×BU</b> — all at 27-T1SE3-05: RoRu −54.0% (฿4.3K), Subway −20.8%, Vendi −10.9%. 13-PKT-G1-S also ran <80% of its MTD avg (฿17.3K)</li>
+
+    </ul></div>
+  </div>
+
+  <div class="section">
+    <h2>📊 KPI Headline</h2>
+    <div class="kpi">
+      <div class="card"><div class="lbl">Revenue</div><div class="val">฿691K</div><div class="delta delta-up">WoW +20.4%<br>DoD +0.16%<br>vs MTD avg +12.06%</div></div>
+      <div class="card"><div class="lbl">Bills</div><div class="val">3,381</div><div class="delta delta-up">WoW +31.71%</div></div>
+      <div class="card"><div class="lbl">Avg Ticket</div><div class="val">฿204</div><div class="delta delta-down">WoW -8.56%</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📈 30-Day Revenue by BU (Jun 11 → Jul 10)</h2>
+    <table class="barchart">
+      <tr><td class="yaxis"><div class="y-mtd">MTD avg<br>฿616 K</div></td>
+
+<td class="bar-cell " title="2025-06-11: ฿517,808"><div class="bar-stack"><div class="seg seg-vendi" style="height:3px"></div><div class="seg seg-se" style="height:22px"></div><div class="seg seg-jl" style="height:7px"></div><div class="seg seg-khiang" style="height:5px"></div><div class="seg seg-subway" style="height:124px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-12: ฿562,172"><div class="bar-stack"><div class="seg seg-vendi" style="height:3px"></div><div class="seg seg-se" style="height:25px"></div><div class="seg seg-jl" style="height:8px"></div><div class="seg seg-khiang" style="height:7px"></div><div class="seg seg-subway" style="height:132px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-13: ฿597,996"><div class="bar-stack"><div class="seg seg-vendi" style="height:3px"></div><div class="seg seg-se" style="height:26px"></div><div class="seg seg-jl" style="height:7px"></div><div class="seg seg-khiang" style="height:7px"></div><div class="seg seg-subway" style="height:142px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-14: ฿621,600"><div class="bar-stack"><div class="seg seg-vendi" style="height:5px"></div><div class="seg seg-se" style="height:28px"></div><div class="seg seg-jl" style="height:8px"></div><div class="seg seg-khiang" style="height:10px"></div><div class="seg seg-subway" style="height:142px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-15: ฿666,672"><div class="bar-stack"><div class="seg seg-vendi" style="height:3px"></div><div class="seg seg-se" style="height:36px"></div><div class="seg seg-jl" style="height:7px"></div><div class="seg seg-khiang" style="height:7px"></div><div class="seg seg-subway" style="height:153px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-16: ฿637,156"><div class="bar-stack"><div class="seg seg-vendi" style="height:4px"></div><div class="seg seg-se" style="height:30px"></div><div class="seg seg-jl" style="height:7px"></div><div class="seg seg-khiang" style="height:7px"></div><div class="seg seg-subway" style="height:149px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-17: ฿494,926"><div class="bar-stack"><div class="seg seg-vendi" style="height:2px"></div><div class="seg seg-se" style="height:25px"></div><div class="seg seg-jl" style="height:8px"></div><div class="seg seg-khiang" style="height:6px"></div><div class="seg seg-subway" style="height:113px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-18: ฿491,189"><div class="bar-stack"><div class="seg seg-vendi" style="height:4px"></div><div class="seg seg-se" style="height:19px"></div><div class="seg seg-jl" style="height:8px"></div><div class="seg seg-khiang" style="height:6px"></div><div class="seg seg-subway" style="height:115px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-19: ฿556,675"><div class="bar-stack"><div class="seg seg-vendi" style="height:6px"></div><div class="seg seg-se" style="height:27px"></div><div class="seg seg-jl" style="height:7px"></div><div class="seg seg-khiang" style="height:7px"></div><div class="seg seg-subway" style="height:125px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-20: ฿607,760"><div class="bar-stack"><div class="seg seg-vendi" style="height:3px"></div><div class="seg seg-se" style="height:27px"></div><div class="seg seg-jl" style="height:8px"></div><div class="seg seg-khiang" style="height:6px"></div><div class="seg seg-subway" style="height:144px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-21: ฿610,027"><div class="bar-stack"><div class="seg seg-vendi" style="height:4px"></div><div class="seg seg-se" style="height:24px"></div><div class="seg seg-jl" style="height:8px"></div><div class="seg seg-khiang" style="height:9px"></div><div class="seg seg-subway" style="height:144px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-22: ฿656,064"><div class="bar-stack"><div class="seg seg-vendi" style="height:4px"></div><div class="seg seg-se" style="height:32px"></div><div class="seg seg-jl" style="height:8px"></div><div class="seg seg-khiang" style="height:8px"></div><div class="seg seg-subway" style="height:151px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-23: ฿560,491"><div class="bar-stack"><div class="seg seg-vendi" style="height:4px"></div><div class="seg seg-se" style="height:23px"></div><div class="seg seg-jl" style="height:7px"></div><div class="seg seg-khiang" style="height:6px"></div><div class="seg seg-subway" style="height:134px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-24: ฿515,794"><div class="bar-stack"><div class="seg seg-vendi" style="height:4px"></div><div class="seg seg-se" style="height:20px"></div><div class="seg seg-jl" style="height:7px"></div><div class="seg seg-khiang" style="height:8px"></div><div class="seg seg-subway" style="height:120px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-25: ฿607,472"><div class="bar-stack"><div class="seg seg-vendi" style="height:4px"></div><div class="seg seg-se" style="height:20px"></div><div class="seg seg-jl" style="height:7px"></div><div class="seg seg-khiang" style="height:8px"></div><div class="seg seg-subway" style="height:149px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-26: ฿587,641"><div class="bar-stack"><div class="seg seg-vendi" style="height:4px"></div><div class="seg seg-se" style="height:27px"></div><div class="seg seg-jl" style="height:9px"></div><div class="seg seg-khiang" style="height:7px"></div><div class="seg seg-subway" style="height:135px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-27: ฿621,573"><div class="bar-stack"><div class="seg seg-vendi" style="height:3px"></div><div class="seg seg-se" style="height:25px"></div><div class="seg seg-jl" style="height:8px"></div><div class="seg seg-khiang" style="height:7px"></div><div class="seg seg-subway" style="height:150px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-28: ฿678,141"><div class="bar-stack"><div class="seg seg-vendi" style="height:6px"></div><div class="seg seg-se" style="height:28px"></div><div class="seg seg-jl" style="height:8px"></div><div class="seg seg-khiang" style="height:8px"></div><div class="seg seg-subway" style="height:161px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-29: ฿709,321"><div class="bar-stack"><div class="seg seg-vendi" style="height:4px"></div><div class="seg seg-se" style="height:31px"></div><div class="seg seg-jl" style="height:8px"></div><div class="seg seg-khiang" style="height:8px"></div><div class="seg seg-subway" style="height:169px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-30: ฿661,686"><div class="bar-stack"><div class="seg seg-vendi" style="height:5px"></div><div class="seg seg-se" style="height:29px"></div><div class="seg seg-jl" style="height:7px"></div><div class="seg seg-khiang" style="height:9px"></div><div class="seg seg-subway" style="height:156px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-01: ฿588,728"><div class="bar-stack"><div class="seg seg-vendi" style="height:5px"></div><div class="seg seg-se" style="height:28px"></div><div class="seg seg-jl" style="height:8px"></div><div class="seg seg-khiang" style="height:7px"></div><div class="seg seg-subway" style="height:135px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-02: ฿566,827"><div class="bar-stack"><div class="seg seg-vendi" style="height:4px"></div><div class="seg seg-se" style="height:24px"></div><div class="seg seg-jl" style="height:9px"></div><div class="seg seg-khiang" style="height:8px"></div><div class="seg seg-subway" style="height:131px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-03: ฿573,430"><div class="bar-stack"><div class="seg seg-vendi" style="height:4px"></div><div class="seg seg-se" style="height:22px"></div><div class="seg seg-jl" style="height:7px"></div><div class="seg seg-khiang" style="height:6px"></div><div class="seg seg-subway" style="height:138px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-04: ฿572,488"><div class="bar-stack"><div class="seg seg-vendi" style="height:5px"></div><div class="seg seg-se" style="height:29px"></div><div class="seg seg-jl" style="height:9px"></div><div class="seg seg-khiang" style="height:7px"></div><div class="seg seg-subway" style="height:128px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-05: ฿611,457"><div class="bar-stack"><div class="seg seg-vendi" style="height:4px"></div><div class="seg seg-se" style="height:29px"></div><div class="seg seg-jl" style="height:8px"></div><div class="seg seg-khiang" style="height:11px"></div><div class="seg seg-subway" style="height:137px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-06: ฿646,187"><div class="bar-stack"><div class="seg seg-vendi" style="height:5px"></div><div class="seg seg-se" style="height:28px"></div><div class="seg seg-jl" style="height:10px"></div><div class="seg seg-khiang" style="height:6px"></div><div class="seg seg-subway" style="height:152px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-07: ฿610,038"><div class="bar-stack"><div class="seg seg-vendi" style="height:5px"></div><div class="seg seg-se" style="height:22px"></div><div class="seg seg-jl" style="height:7px"></div><div class="seg seg-khiang" style="height:5px"></div><div class="seg seg-subway" style="height:149px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-08: ฿613,371"><div class="bar-stack"><div class="seg seg-vendi" style="height:3px"></div><div class="seg seg-se" style="height:28px"></div><div class="seg seg-jl" style="height:7px"></div><div class="seg seg-khiang" style="height:6px"></div><div class="seg seg-subway" style="height:145px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-09: ฿689,469"><div class="bar-stack"><div class="seg seg-vendi" style="height:5px"></div><div class="seg seg-se" style="height:28px"></div><div class="seg seg-jl" style="height:7px"></div><div class="seg seg-khiang" style="height:7px"></div><div class="seg seg-subway" style="height:167px"></div></div></td>
+
+<td class="bar-cell d1" title="2025-07-10: ฿690,588"><div class="bar-stack"><div class="seg seg-vendi" style="height:4px"></div><div class="seg seg-se" style="height:23px"></div><div class="seg seg-jl" style="height:10px"></div><div class="seg seg-khiang" style="height:5px"></div><div class="seg seg-subway" style="height:172px"></div></div></td>
+
+</tr>
+      <tr><td></td>
+
+<td class="axlbl ">06-11</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">06-16</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">06-21</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">06-26</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">07-01</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">07-06</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl axd1">07-10</td>
+
+</tr>
+    </table>
+    <table class="legend"><tr><th></th><th>BU</th><th>D1 Rev</th><th>D1 Bills</th><th>Share</th><th>WoW</th><th>Bills Δ</th><th>Ticket Δ</th><th>Signal</th></tr>
+
+<tr><td><span class="sw" style="background:#5551FE"></span></td><td><b>Subway</b></td><td>฿554.8K</td><td>2,463</td><td>80.3%</td><td class="delta-up">+24.4%</td><td class="delta-up">+48.5%</td><td class="delta-down">-16.2%</td><td><span class="signal-badge s-quality">⚠️ Mixed</span></td></tr>
+
+<tr><td><span class="sw" style="background:#F39C12"></span></td><td><b>Siam Express</b></td><td>฿75.3K</td><td>518</td><td>10.9%</td><td class="delta-up">+7.0%</td><td class="delta-up">+6.8%</td><td class="delta-up">+0.1%</td><td><span class="signal-badge s-traffic">🚶 Traffic-driven</span></td></tr>
+
+<tr><td><span class="sw" style="background:#2D7A3F"></span></td><td><b>Juice Land</b></td><td>฿32.9K</td><td>183</td><td>4.8%</td><td class="delta-up">+43.3%</td><td class="delta-up">+38.6%</td><td class="delta-up">+3.4%</td><td><span class="signal-badge s-upsell">⭐ BEST</span></td></tr>
+
+<tr><td><span class="sw" style="background:#C5453E"></span></td><td><b>Vendi</b></td><td>฿12.5K</td><td>99</td><td>1.8%</td><td class="delta-down">-10.9%</td><td class="delta-down">-12.4%</td><td class="delta-up">+1.7%</td><td><span class="signal-badge s-soft">↘ Soft decline</span></td></tr>
+
+<tr><td><span class="sw" style="background:#7B79FF"></span></td><td><b>Very Thai</b></td><td>฿10.9K</td><td>56</td><td>1.6%</td><td class="delta-down">-1.2%</td><td class="delta-down">-11.1%</td><td class="delta-up">+11.1%</td><td><span class="signal-badge s-soft">🤔 Premium mix</span></td></tr>
+
+<tr><td><span class="sw" style="background:#7B79FF"></span></td><td><b>RoRu</b></td><td>฿4.3K</td><td>62</td><td>0.6%</td><td class="delta-down">-54.0%</td><td class="delta-down">-46.1%</td><td class="delta-down">-14.7%</td><td><span class="signal-badge s-crisis">🚨 CRISIS</span></td></tr>
+
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>🌏 30-Day Revenue by Airport</h2>
+    <table class="barchart">
+      <tr><td class="yaxis"><div class="y-mtd">MTD avg<br>฿616 K</div></td>
+
+<td class="bar-cell " title="2025-06-11: ฿517,808"><div class="bar-stack"><div class="seg seg-pkt" style="height:19px"></div><div class="seg seg-dmk" style="height:43px"></div><div class="seg seg-bkk" style="height:98px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-12: ฿562,172"><div class="bar-stack"><div class="seg seg-pkt" style="height:25px"></div><div class="seg seg-dmk" style="height:49px"></div><div class="seg seg-bkk" style="height:100px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-13: ฿597,996"><div class="bar-stack"><div class="seg seg-pkt" style="height:27px"></div><div class="seg seg-dmk" style="height:55px"></div><div class="seg seg-bkk" style="height:104px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-14: ฿621,600"><div class="bar-stack"><div class="seg seg-pkt" style="height:29px"></div><div class="seg seg-dmk" style="height:48px"></div><div class="seg seg-bkk" style="height:116px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-15: ฿666,672"><div class="bar-stack"><div class="seg seg-pkt" style="height:35px"></div><div class="seg seg-dmk" style="height:61px"></div><div class="seg seg-bkk" style="height:112px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-16: ฿637,156"><div class="bar-stack"><div class="seg seg-pkt" style="height:30px"></div><div class="seg seg-dmk" style="height:58px"></div><div class="seg seg-bkk" style="height:110px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-17: ฿494,926"><div class="bar-stack"><div class="seg seg-pkt" style="height:23px"></div><div class="seg seg-dmk" style="height:41px"></div><div class="seg seg-bkk" style="height:89px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-18: ฿491,189"><div class="bar-stack"><div class="seg seg-pkt" style="height:19px"></div><div class="seg seg-dmk" style="height:43px"></div><div class="seg seg-bkk" style="height:91px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-19: ฿556,675"><div class="bar-stack"><div class="seg seg-pkt" style="height:26px"></div><div class="seg seg-dmk" style="height:42px"></div><div class="seg seg-bkk" style="height:105px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-20: ฿607,760"><div class="bar-stack"><div class="seg seg-pkt" style="height:25px"></div><div class="seg seg-dmk" style="height:58px"></div><div class="seg seg-bkk" style="height:105px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-21: ฿610,027"><div class="bar-stack"><div class="seg seg-pkt" style="height:24px"></div><div class="seg seg-dmk" style="height:51px"></div><div class="seg seg-bkk" style="height:114px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-22: ฿656,064"><div class="bar-stack"><div class="seg seg-pkt" style="height:30px"></div><div class="seg seg-dmk" style="height:63px"></div><div class="seg seg-bkk" style="height:110px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-23: ฿560,491"><div class="bar-stack"><div class="seg seg-pkt" style="height:22px"></div><div class="seg seg-dmk" style="height:48px"></div><div class="seg seg-bkk" style="height:104px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-24: ฿515,794"><div class="bar-stack"><div class="seg seg-pkt" style="height:23px"></div><div class="seg seg-dmk" style="height:40px"></div><div class="seg seg-bkk" style="height:97px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-25: ฿607,472"><div class="bar-stack"><div class="seg seg-pkt" style="height:21px"></div><div class="seg seg-dmk" style="height:47px"></div><div class="seg seg-bkk" style="height:120px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-26: ฿587,641"><div class="bar-stack"><div class="seg seg-pkt" style="height:24px"></div><div class="seg seg-dmk" style="height:50px"></div><div class="seg seg-bkk" style="height:108px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-27: ฿621,573"><div class="bar-stack"><div class="seg seg-pkt" style="height:24px"></div><div class="seg seg-dmk" style="height:60px"></div><div class="seg seg-bkk" style="height:109px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-28: ฿678,141"><div class="bar-stack"><div class="seg seg-pkt" style="height:25px"></div><div class="seg seg-dmk" style="height:56px"></div><div class="seg seg-bkk" style="height:129px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-29: ฿709,321"><div class="bar-stack"><div class="seg seg-pkt" style="height:28px"></div><div class="seg seg-dmk" style="height:69px"></div><div class="seg seg-bkk" style="height:123px"></div></div></td>
+
+<td class="bar-cell " title="2025-06-30: ฿661,686"><div class="bar-stack"><div class="seg seg-pkt" style="height:28px"></div><div class="seg seg-dmk" style="height:55px"></div><div class="seg seg-bkk" style="height:122px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-01: ฿588,728"><div class="bar-stack"><div class="seg seg-pkt" style="height:28px"></div><div class="seg seg-dmk" style="height:44px"></div><div class="seg seg-bkk" style="height:111px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-02: ฿566,827"><div class="bar-stack"><div class="seg seg-pkt" style="height:26px"></div><div class="seg seg-dmk" style="height:44px"></div><div class="seg seg-bkk" style="height:105px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-03: ฿573,430"><div class="bar-stack"><div class="seg seg-pkt" style="height:21px"></div><div class="seg seg-dmk" style="height:47px"></div><div class="seg seg-bkk" style="height:111px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-04: ฿572,488"><div class="bar-stack"><div class="seg seg-pkt" style="height:28px"></div><div class="seg seg-dmk" style="height:53px"></div><div class="seg seg-bkk" style="height:96px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-05: ฿611,457"><div class="bar-stack"><div class="seg seg-pkt" style="height:27px"></div><div class="seg seg-dmk" style="height:50px"></div><div class="seg seg-bkk" style="height:109px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-06: ฿646,187"><div class="bar-stack"><div class="seg seg-pkt" style="height:27px"></div><div class="seg seg-dmk" style="height:53px"></div><div class="seg seg-bkk" style="height:121px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-07: ฿610,038"><div class="bar-stack"><div class="seg seg-pkt" style="height:19px"></div><div class="seg seg-dmk" style="height:59px"></div><div class="seg seg-bkk" style="height:111px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-08: ฿613,371"><div class="bar-stack"><div class="seg seg-pkt" style="height:27px"></div><div class="seg seg-dmk" style="height:55px"></div><div class="seg seg-bkk" style="height:109px"></div></div></td>
+
+<td class="bar-cell " title="2025-07-09: ฿689,469"><div class="bar-stack"><div class="seg seg-pkt" style="height:25px"></div><div class="seg seg-dmk" style="height:70px"></div><div class="seg seg-bkk" style="height:118px"></div></div></td>
+
+<td class="bar-cell d1" title="2025-07-10: ฿690,588"><div class="bar-stack"><div class="seg seg-pkt" style="height:20px"></div><div class="seg seg-dmk" style="height:63px"></div><div class="seg seg-bkk" style="height:131px"></div></div></td>
+
+</tr>
+      <tr><td></td>
+
+<td class="axlbl ">06-11</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">06-16</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">06-21</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">06-26</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">07-01</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">07-06</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl ">·</td>
+
+<td class="axlbl axd1">07-10</td>
+
+</tr>
+    </table>
+    <table class="legend"><tr><th></th><th>Airport</th><th>D1 Rev</th><th>D1 Bills</th><th>Share</th><th>WoW</th><th>Bills Δ</th></tr>
+
+<tr><td><span class="sw" style="background:#5551FE"></span></td><td><b>BKK (Suvarnabhumi)</b></td><td>฿421.6K</td><td>1,868</td><td>61.1%</td><td class="delta-up">+18.1%</td><td class="delta-up">+28.2%</td></tr>
+
+<tr><td><span class="sw" style="background:#7B79FF"></span></td><td><b>DMK (Don Mueang)</b></td><td>฿203.0K</td><td>1,150</td><td>29.4%</td><td class="delta-up">+35.2%</td><td class="delta-up">+56.5%</td></tr>
+
+<tr><td><span class="sw" style="background:#F27061"></span></td><td><b>PKT (Phuket)</b></td><td>฿66.0K</td><td>363</td><td>9.6%</td><td class="delta-down">-0.3%</td><td class="delta-down">-3.2%</td></tr>
+
+</table></div>
+  <div class="section">
+    <h2>🏪 Location Performance — WoW heatmap</h2>
+    <div style="background:#FFF; border-left:3px solid #5551FE; padding:10px 14px; font-size:12px; color:#2C3E50; margin:0 0 14px 0; line-height:1.6;">
+      <b>📖 How to read this:</b> <b>Bills</b> = customer transactions (receipts) · <b>Avg Ticket</b> = revenue ÷ bills (avg spend per customer) · <b>Revenue</b> = bills × ticket. WoW = vs same weekday last week.
+      <br><span style="font-size:11px; color:#5F5E5A;">Rows grouped by location (highest D1 revenue first). Δ cells use a continuous green→grey→red gradient — deeper green = stronger growth WoW, deeper red = steeper decline.</span>
+    </div>
+    <table class="heatmap">
+      <tr>
+        <th class="heat-bu">Location</th>
+        <th>BU</th>
+        <th>Airport</th>
+        <th>D1 Rev</th>
+        <th>D1 Bills</th>
+        <th class="heat-metric">Revenue Δ WoW</th>
+        <th class="heat-metric">Bills Δ WoW</th>
+        <th class="heat-metric">Ticket Δ WoW</th>
+        <th>Signal</th>
+      </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>18-T1FW4-08-SS</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿96.2K</td>
+          <td class="heat-bills">469</td>
+          <td class="heat-cell" style="background:#c5ccb7; color:#2C3E50;">+5.1%</td><td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+54.3%</td><td class="heat-cell" style="background:#c5453e; color:#ffffff;">-31.9%</td>
+          <td><span class="signal-badge s-quality">⚠️ Mixed</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>24-T1EW4-14</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿80.9K</td>
+          <td class="heat-bills">295</td>
+          <td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+59.4%</td><td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+32.3%</td><td class="heat-cell" style="background:#44814e; color:#ffffff;">+20.5%</td>
+          <td><span class="signal-badge s-upsell">⭐ BEST</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="2"><b>26-T1MW1-03+04</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿46.0K</td>
+          <td class="heat-bills">215</td>
+          <td class="heat-cell" style="background:#8dab8a; color:#2C3E50;">+11.8%</td><td class="heat-cell" style="background:#8bab89; color:#2C3E50;">+12.0%</td><td class="heat-cell" style="background:#f0e4d9; color:#2C3E50;">-0.2%</td>
+          <td><span class="signal-badge s-traffic">🚶 Traffic-driven</span></td>
+        </tr>
+
+        <tr class="">
+          <td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#2D7A3F"></span>Juice Land</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿32.9K</td>
+          <td class="heat-bills">183</td>
+          <td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+43.3%</td><td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+38.6%</td><td class="heat-cell" style="background:#d3d4c3; color:#2C3E50;">+3.4%</td>
+          <td><span class="signal-badge s-upsell">⭐ BEST</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>21-T1BE2-06</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿68.0K</td>
+          <td class="heat-bills">174</td>
+          <td class="heat-cell" style="background:#efe0d6; color:#2C3E50;">-0.7%</td><td class="heat-cell" style="background:#dcdaca; color:#2C3E50;">+2.4%</td><td class="heat-cell" style="background:#ebd2c7; color:#2C3E50;">-3.0%</td>
+          <td><span class="signal-badge s-soft">─ Stable</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="2"><b>22-DMK-3Pier2-SS</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">DMK</td>
+          <td class="heat-rev">฿42.3K</td>
+          <td class="heat-bills">208</td>
+          <td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+28.5%</td><td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+63.8%</td><td class="heat-cell" style="background:#cb5b54; color:#ffffff;">-21.5%</td>
+          <td><span class="signal-badge s-quality">⚠️ Mixed</span></td>
+        </tr>
+
+        <tr class="">
+          <td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#F39C12"></span>Siam Express</td>
+          <td class="heat-bills" style="text-align:center;">DMK</td>
+          <td class="heat-rev">฿20.1K</td>
+          <td class="heat-bills">211</td>
+          <td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+33.0%</td><td class="heat-cell" style="background:#377a45; color:#ffffff;">+22.0%</td><td class="heat-cell" style="background:#a4b99d; color:#2C3E50;">+9.0%</td>
+          <td><span class="signal-badge s-upsell">⭐ BEST</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>05-DMK-Inter-S</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">DMK</td>
+          <td class="heat-rev">฿60.1K</td>
+          <td class="heat-bills">362</td>
+          <td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+41.7%</td><td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+120.7%</td><td class="heat-cell" style="background:#c5453e; color:#ffffff;">-35.8%</td>
+          <td><span class="signal-badge s-quality">⚠️ Mixed</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>23-T1CE4-13</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿59.3K</td>
+          <td class="heat-bills">278</td>
+          <td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+86.8%</td><td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+155.0%</td><td class="heat-cell" style="background:#c5453e; color:#ffffff;">-26.8%</td>
+          <td><span class="signal-badge s-quality">⚠️ Mixed</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>04-DMK-T2MTE3-09</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">DMK</td>
+          <td class="heat-rev">฿46.4K</td>
+          <td class="heat-bills">260</td>
+          <td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+43.8%</td><td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+52.9%</td><td class="heat-cell" style="background:#e6bfb5; color:#2C3E50;">-6.0%</td>
+          <td><span class="signal-badge s-quality">⚠️ Mixed</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="3"><b>27-T1SE3-05</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿21.6K</td>
+          <td class="heat-bills">93</td>
+          <td class="heat-cell" style="background:#cc6058; color:#ffffff;">-20.8%</td><td class="heat-cell" style="background:#e6beb4; color:#2C3E50;">-6.1%</td><td class="heat-cell" style="background:#d58178; color:#ffffff;">-15.6%</td>
+          <td><span class="signal-badge s-crisis">🚨 CRISIS</span></td>
+        </tr>
+
+        <tr class="">
+          <td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#C5453E"></span>Vendi</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿12.5K</td>
+          <td class="heat-bills">99</td>
+          <td class="heat-cell" style="background:#dd9f96; color:#2C3E50;">-10.9%</td><td class="heat-cell" style="background:#db968d; color:#2C3E50;">-12.4%</td><td class="heat-cell" style="background:#e1ddce; color:#2C3E50;">+1.7%</td>
+          <td><span class="signal-badge s-soft">↘ Soft decline</span></td>
+        </tr>
+
+        <tr class="">
+          <td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#7B79FF"></span>RoRu</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿4.3K</td>
+          <td class="heat-bills">62</td>
+          <td class="heat-cell" style="background:#c5453e; color:#ffffff;">-54.0%</td><td class="heat-cell" style="background:#c5453e; color:#ffffff;">-46.1%</td><td class="heat-cell" style="background:#d7877e; color:#ffffff;">-14.7%</td>
+          <td><span class="signal-badge s-crisis">🚨 CRISIS</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>20-PKT-Floor 3-S</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#F39C12"></span>Siam Express</td>
+          <td class="heat-bills" style="text-align:center;">PKT</td>
+          <td class="heat-rev">฿37.9K</td>
+          <td class="heat-bills">220</td>
+          <td class="heat-cell" style="background:#c6ccb8; color:#2C3E50;">+5.1%</td><td class="heat-cell" style="background:#d8d7c7; color:#2C3E50;">+2.8%</td><td class="heat-cell" style="background:#dedacb; color:#2C3E50;">+2.2%</td>
+          <td><span class="signal-badge s-soft">─ Stable</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>25-DMK-CS</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">DMK</td>
+          <td class="heat-rev">฿20.2K</td>
+          <td class="heat-bills">62</td>
+          <td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+68.4%</td><td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+93.8%</td><td class="heat-cell" style="background:#d99188; color:#ffffff;">-13.1%</td>
+          <td><span class="signal-badge s-quality">⚠️ Mixed</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>13-PKT-G1-S</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#F39C12"></span>Siam Express</td>
+          <td class="heat-bills" style="text-align:center;">PKT</td>
+          <td class="heat-rev">฿17.3K</td>
+          <td class="heat-bills">87</td>
+          <td class="heat-cell" style="background:#dfa59c; color:#2C3E50;">-10.0%</td><td class="heat-cell" style="background:#dd9d94; color:#2C3E50;">-11.2%</td><td class="heat-cell" style="background:#e4ded0; color:#2C3E50;">+1.4%</td>
+          <td><span class="signal-badge s-soft">↘ Soft decline</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>09-DMK-G1-S</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">DMK</td>
+          <td class="heat-rev">฿13.9K</td>
+          <td class="heat-bills">47</td>
+          <td class="heat-cell" style="background:#dfa69d; color:#2C3E50;">-9.8%</td><td class="heat-cell" style="background:#c5453e; color:#ffffff;">-31.9%</td><td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+32.5%</td>
+          <td><span class="signal-badge s-soft">🤔 Premium mix</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>28 JUICELAND Unit 362</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#7B79FF"></span>Very Thai</td>
+          <td class="heat-bills" style="text-align:center;">PKT</td>
+          <td class="heat-rev">฿10.9K</td>
+          <td class="heat-bills">56</td>
+          <td class="heat-cell" style="background:#eeddd2; color:#2C3E50;">-1.2%</td><td class="heat-cell" style="background:#dd9e95; color:#2C3E50;">-11.1%</td><td class="heat-cell" style="background:#93af8e; color:#2C3E50;">+11.1%</td>
+          <td><span class="signal-badge s-soft">🤔 Premium mix</span></td>
+        </tr>
+
+    </table>
+  </div>
+
+  <div class="footer">
+    <div><b>CHAW Food Operation Core</b> · Sub 12 — Siam Franchise B (SFB)</div>
+    <div>Source: NetSuite Sub 12 <code>transactionline</code> (pre-VAT) · MTD: Jul 1–10 (10 days)</div>
+    <div>SFB Daily routine (multi-file) · Generated 12 June 2026</div>
+  </div>
+</div>
+</body></html>
