@@ -236,6 +236,35 @@ GROUP BY ROUND(tl.rate,2)
 ```
 Parse: `staff10_bills` = bills at rate `-9.81`; `set50_bills` = bills at rate `-16.20`.
 
+## Query G2 — Promotion bills PER DAY, last 35 days (promo weekly trend table)
+> Same detection as Query G but per trandate over the 5-week window.
+```sql
+SELECT t.trandate, ROUND(tl.rate,2) AS discount_rate, COUNT(DISTINCT t.id) AS bills
+FROM transaction t
+JOIN transactionline tl ON t.id = tl.transaction
+JOIN item i ON tl.item = i.id
+WHERE t.trandate BETWEEN TO_DATE('{W35_START}','YYYY-MM-DD') AND TO_DATE('{REPORT_DATE}','YYYY-MM-DD')
+  AND t.type = 'CustInvc'
+  AND tl.mainline = 'F'
+  AND tl.location = 27
+  AND tl.subsidiary = 12
+  AND i.itemid = 'POS_DISCOUNT'
+  AND tl.rate < 0
+GROUP BY t.trandate, ROUND(tl.rate,2)
+```
+Parse per day: `staff10(day)` = bills at rate `-9.81`; `set50(day)` = bills at rate `-16.20`
+(main rates only — egg add-on rates `-1.68`/`-5.30` are NOT counted, they'd double-count bills).
+Missing day/rate → 0.
+
+### Promotion weekly trend derivation (`staff10_cells` / `set50_cells` — 5 items each)
+Aggregate Query G2 into the SAME 5 week buckets as the customer weekly table (week w covers the
+7 days ending `REPORT_DATE − (w−1)×7`; the `week_headers` repeat is shared — rendered above both
+tables). Per week, per promo: `val` = sum of that promo's bills (thousands-separated), then the
+same cell tokens as the customer table: WoW `pct` ("▲+5.2%" / "▼-3.1%"; blank for the oldest
+week or prev = 0), `color` (`#27AE60` up / `#E74C3C` down / `#888` blank), `weight` 700 and
+`bg` `#EEECFF` for the current week else 400/`#FFFFFF`. A week with no promo bills renders
+val "0" (and pct blank if prev = 0).
+
 ---
 
 ## Query H — Last-35-Day Net Sales + Bills PER DAY × SEGMENT (strip, sales chart, weekly table)

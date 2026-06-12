@@ -161,6 +161,29 @@ for i, wk in enumerate(weeks):
         })
 walk_cells, staff_cells, total_cells = cells["walk"], cells["staff"], cells["total"]
 
+# ── promotion trend by week: same 5 buckets, rows = Staff 10% / +฿50 Drink Set ──
+staff10_d = {d: max(0, round(random.gauss(16, 4))) for d in D35}
+set50_d = {d: max(0, round(random.gauss(30, 6))) for d in D35}
+
+def weekly_cells(series):
+    totals = [sum(series.get(d, 0) for d in wk["days"]) for wk in weeks]
+    out = []
+    for i, v in enumerate(totals):
+        cur = weeks[i]["w"] == 1
+        prev = totals[i - 1] if i > 0 else 0
+        if prev == 0:
+            pct, color = "", "#888"
+        else:
+            p = round((v - prev) / prev * 100, 1)
+            pct = f"{'▲' if p >= 0 else '▼'}{'+' if p >= 0 else ''}{p}%"
+            color = "#27AE60" if p >= 0 else "#E74C3C"
+        out.append({"val": fmt(v), "pct": pct, "color": color,
+                    "weight": "700" if cur else "400",
+                    "bg": "#EEECFF" if cur else "#FFFFFF"})
+    return out
+
+staff10_cells, set50_cells = weekly_cells(staff10_d), weekly_cells(set50_d)
+
 # ── 7-day heatmap (+ WoW vs same weekday last week) ──
 last7 = D14[7:]
 rows = [{"d": d, "rev": sales[d], "bills": bills[d],
@@ -300,6 +323,7 @@ data = {
         "chart_days": chart_days, "chart_labels": chart_labels,
         "week_headers": week_headers, "walk_cells": walk_cells,
         "staff_cells": staff_cells, "total_cells": total_cells,
+        "staff10_cells": staff10_cells, "set50_cells": set50_cells,
         "heatmap_rows": heatmap_rows,
         "top10_all": top10_all, "top10_rice": top10_rice,
         "hourly_rows": hourly_rows,

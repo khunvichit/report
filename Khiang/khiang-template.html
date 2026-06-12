@@ -276,6 +276,32 @@
 </td></tr>
 <!-- /SECTION:promo -->
 
+<!-- ── PROMOTION TREND BY WEEK (always shown; columns = 5 weeks, rows = the two promos) ── -->
+<tr><td style="padding:18px 32px 8px;">
+  <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:4px;border-left:3px solid #27AE60;padding-left:10px;">Promotion Trend by Week — Bills</div>
+  <div style="font-size:11px;color:#888;margin-bottom:12px;padding-left:13px;">จำนวนบิลโปรโมชันรายสัปดาห์ ย้อนหลัง 5 สัปดาห์ &nbsp;·&nbsp; % = เทียบสัปดาห์ก่อนหน้า</div>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E8E8E8;border-radius:8px;overflow:hidden;">
+    <tr style="background:#F8F9FA;">
+      <td style="padding:8px 10px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" width="15%">โปรโมชัน</td>
+      <!-- REPEAT:week_headers -->
+      <td style="padding:8px 6px;font-size:9px;font-weight:700;color:{{head_color}};text-transform:uppercase;letter-spacing:.3px;background:{{head_bg}};" align="center" width="17%">{{label}}</td>
+      <!-- /REPEAT:week_headers -->
+    </tr>
+    <tr style="border-top:1px solid #E8E8E8;">
+      <td style="padding:9px 10px;font-size:11px;font-weight:700;color:#5551FE;">Staff 10%</td>
+      <!-- REPEAT:staff10_cells -->
+      <td style="padding:9px 6px;background:{{bg}};" align="center"><div style="font-size:12px;font-weight:{{weight}};color:#2C3E50;">{{val}}</div><div style="font-size:9px;font-weight:700;color:{{color}};margin-top:1px;">{{pct}}</div></td>
+      <!-- /REPEAT:staff10_cells -->
+    </tr>
+    <tr style="border-top:1px solid #E8E8E8;">
+      <td style="padding:9px 10px;font-size:11px;font-weight:700;color:#F27061;">+฿50 Drink Set</td>
+      <!-- REPEAT:set50_cells -->
+      <td style="padding:9px 6px;background:{{bg}};" align="center"><div style="font-size:12px;font-weight:{{weight}};color:#2C3E50;">{{val}}</div><div style="font-size:9px;font-weight:700;color:{{color}};margin-top:1px;">{{pct}}</div></td>
+      <!-- /REPEAT:set50_cells -->
+    </tr>
+  </table>
+</td></tr>
+
 <!-- ── FOOTER ── -->
 <tr><td style="padding:18px 32px 26px;">
   <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #E8E8E8;">

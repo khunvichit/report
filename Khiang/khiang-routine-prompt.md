@@ -27,7 +27,8 @@ Run Queries A–I (`khiang-queries.md`) with the read-only NetSuite tool, param 
 Retry a failed query ONCE (wait 20–90s); do not restart. Pin Sub 12 / loc 27 / entities.
 Queries H (30-day per-day) and I (month-to-date) feed the period strip + bar chart;
 Query J (14-day per-day) feeds the heatmap table — last 7 days displayed, prior 7 = WoW baseline;
-Query E2 feeds the Top-3-items-per-hour column in the hourly comparison.
+Query E2 feeds the Top-3-items-per-hour column in the hourly comparison;
+Query G2 (35-day daily promo bills) feeds the Promotion Trend by Week table.
 
 ## 4. Completeness — HARD STOP
 Run the 5 checks in `khiang-queries.md`. Any hard-stop failure → do NOT send; go to step 10 (fail loud).
@@ -47,7 +48,8 @@ Run the 5 checks in `khiang-queries.md`. Any hard-stop failure → do NOT send; 
 ## 6. Build data.json (NOT html)
 Write `data.json` with `scalars`, `repeats` (`top10_all`, `top10_rice`, `hourly_rows`,
 `chart_days`, `chart_labels`, `week_headers`, `walk_cells`, `staff_cells`, `total_cells`,
-`heatmap_rows`), and `sections`. Every scalar token in the template must
+`staff10_cells`, `set50_cells`, `heatmap_rows`), and `sections`. `week_headers` renders above
+BOTH weekly tables (customer + promotion) — same 5 weeks. Every scalar token in the template must
 have a key —
 including the period-strip tokens `net_30d`, `avg_30d`, `d30_start`, `net_mtd`, `avg_mtd`, `mtd_days`,
 `mtd_month`, `mtd_signed_pct`, and the chart line offset `mtd_line_px`. Each `hourly_rows` item now
