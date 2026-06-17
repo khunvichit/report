@@ -1,23 +1,23 @@
 # ActionCity Daily Report — Routine Prompt
 
 > **THIS FILE IS THE FULL INSTRUCTION SET.** The routine executes every step below, in order,
-> unattended (no approval prompts). All paths are relative to the repo root. Use the attached
-> NetSuite + Lark connectors. Do not improvise beyond these steps.
+> unattended (no approval prompts). All files are in this single folder — reference them by bare
+> filename. Use the attached NetSuite + Lark connectors. Do not improvise beyond these steps.
 
 ## Inputs / files to read first
-- `ActionCity/actioncity-queries.md` — data layer (SuiteQL, fixed params, date logic, completeness).
-- `ActionCity/actioncity-prediction.md` — insight bullets + rule-based flags/colours.
-- `ActionCity/actioncity-delivery.md` — channels, recipients, subject, group message.
-- `ActionCity/actioncity-template.html` — locked layout (DO NOT regenerate).
+- `actioncity-queries.md` — data layer (SuiteQL, fixed params, date logic, completeness).
+- `actioncity-prediction.md` — insight bullets + rule-based flags/colours.
+- `actioncity-delivery.md` — channels, recipients, subject, group message.
+- `actioncity-template.html` — locked layout (DO NOT regenerate).
 - `method.md`, `sender.md`, `branding.md`, `contacts.md` — shared engine + IDs.
-- `ActionCity/fill_template.py` — HTML assembler.
+- `fill_template.py` — HTML assembler.
 
 ## Steps
 
 0. **Freshness preflight (no stale data).**
    - **Delete** any `data.json` and `email.html` left in the working dir from a previous run. Never reuse them.
    - The repo must NOT contain a committed `data.json`/`email.html` (only the template + sample). If one is present, ignore it.
-   - Lint the template: `python3 ActionCity/preflight_check.py lint ActionCity/actioncity-template.html`. It must pass (the template holds only `{{tokens}}`, no baked-in numbers). If it fails → fail loud, do not run.
+   - Lint the template: `python3 preflight_check.py lint actioncity-template.html`. It must pass (the template holds only `{{tokens}}`, no baked-in numbers). If it fails → fail loud, do not run.
 1. **Mode.** Read `MODE` env (default `scheduled`). Read optional `REPORT_DATE` override.
 2. **Dates (Asia/Bangkok).** This is an END-OF-DAY routine: `report_date = now(Asia/Bangkok).date()`
    (or REPORT_DATE). Derive `iso_week`, `w_minus1..w_minus4`, `wtd_start`, `wtd_days`, week windows,
@@ -34,10 +34,10 @@
    this run's query results. **Do NOT emit the HTML in model output** (32K-token crash). **Do NOT
    copy numbers from the sample, a prior run, or this prompt** — every value must trace to a step-4 query.
    Write data.json to disk. Then **freshness self-check (hard gate):**
-   - `python3 ActionCity/preflight_check.py fresh data.json <report_date>` must pass (report_date_display = today; day_net non-zero; week_rows present).
+   - `python3 preflight_check.py fresh data.json <report_date>` must pass (report_date_display = today; day_net non-zero; week_rows present).
    - **Control-total recheck:** re-run the today-total query once; assert its net == `scalars.day_net`. If they differ, the data.json is stale/mismatched → STOP, fail loud.
 8. **Assemble + send.**
-   - `python3 ActionCity/fill_template.py ActionCity/actioncity-template.html data.json > email.html`
+   - `python3 fill_template.py actioncity-template.html data.json > email.html`
    - If stderr lists unresolved `{{tokens}}` → fix data.json and re-run; never send unresolved money/date tokens.
    - Per `method.md` order: email (always) → group (gated by mode). `manual-test`: email to owner only, skip group.
    - Email body = contents of `email.html` via `lark_send_email`. Group via `lark_send_message` with the short card from delivery.md.

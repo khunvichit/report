@@ -4,24 +4,30 @@ Automated **daily end-of-day** (~22:00 Asia/Bangkok) sales & stock dashboard for
 (NetSuite Sub 22), delivered by **Lark email + group**. Built the CHAW way: single-purpose files the
 routine reads and fills with code — never regenerates from prose.
 
-## What's here
+## What's here — single flat folder
+
+All files live in one folder; the routine reads them by bare filename (no subfolders).
 
 ```
-actioncity_report_routine/
-  sender.md          ← shared: 3-channel mechanics
-  method.md          ← shared: routing / gating / modes
-  branding.md        ← shared: CHAW/ActionCity CI (confirm vs chaw-branding skill)
-  contacts.md        ← shared: recipients + group chat_id (RESOLVE chat_ids before go-live)
-  ActionCity/
-    actioncity-template.html     ← LOCKED layout (tokens / REPEAT / SECTION) — never regenerate
-    actioncity-queries.md        ← SuiteQL per token, fixed params, BKK dates, completeness checks
-    actioncity-prediction.md     ← exec-insight method + rule-based flags/colours (guardrailed)
-    actioncity-delivery.md       ← channels (email+group), recipients, subject, group card
-    actioncity-routine-prompt.md ← THE FULL INSTRUCTION SET the routine executes
-    fill_template.py             ← assembles HTML from template + data.json (no model HTML output)
-    sample-data.json             ← example data.json (real W23 numbers) for testing
-    sample-email.html            ← example rendered output (from the sample)
+ActionCity_daily_report/
+  actioncity-routine-prompt.md ← THE FULL INSTRUCTION SET the routine executes (start here)
+  actioncity-template.html     ← LOCKED layout (tokens / REPEAT / SECTION) — never regenerate
+  actioncity-queries.md        ← SuiteQL per token, fixed params, BKK dates, completeness checks
+  actioncity-prediction.md     ← exec-insight method + rule-based flags/colours (guardrailed)
+  actioncity-delivery.md       ← channels (email+group), recipients, subject, group card
+  fill_template.py             ← assembles HTML from template + data.json (no model HTML output)
+  preflight_check.py           ← freshness guards (template lint + data.json date/control check)
+  sender.md                    ← 3-channel mechanics
+  method.md                    ← routing / gating / modes
+  branding.md                  ← CHAW/ActionCity CI (confirm vs chaw-branding skill)
+  contacts.md                  ← recipients + group chat_id (RESOLVE chat_ids before go-live)
+  sample-data.json             ← example data.json for testing
+  sample-email.html            ← example rendered output (from the sample)
+  data.json / actioncity-email-2026-06-10.html ← today's live example run (delete in repo; regenerated each run)
 ```
+
+> Single-folder keeps it simple to run today. If you later add more BU reports, lift the four shared
+> files (sender / method / branding / contacts) to the repo root and give each report its own folder.
 
 ## Why it can't go stale (always live data)
 
@@ -43,14 +49,14 @@ Plus `netamount<>0` to drop the vending/marketplace cost-wash lines. Both are pi
 
 ## Deploy (produce-files-only → you wire it up)
 
-1. **Create a private GitHub repo** (e.g. `chaw/report-routines`). Copy these files in, keeping the
-   structure above (shared at root, `ActionCity/` folder). Shared files are reused by future BU reports.
+1. **Create a private GitHub repo** (e.g. `chaw/report-routines`). Copy all files from this folder in
+   (flat — all in one folder, as listed above).
 2. **Resolve IDs once** and paste into `contacts.md`: run `lark_list_chats` for the ActionCity ops
    group `chat_id` (+ a fallback). Confirm the CCHAW footer wording from the `chaw-branding` skill into `branding.md`.
 3. **Create the Claude routine.** Attach the **NetSuite + Lark connectors to the routine itself**.
    Set the prompt box to the one-line bootstrap:
    ```
-   Read ActionCity/actioncity-routine-prompt.md from the repo and execute every step in it exactly,
+   Read actioncity-routine-prompt.md from the repo and execute every step in it exactly,
    in order. Run unattended — no approval prompts. Use the attached NetSuite and Lark connectors.
    ```
 4. **Validate in `manual-test` first** (set env `MODE=manual-test`): Run-now. Confirm — files read,
@@ -61,7 +67,8 @@ Plus `netamount<>0` to drop the vending/marketplace cost-wash lines. Both are pi
 
 ## Test it locally (already verified)
 ```
-cd ActionCity
+cd ActionCity_daily_report
+python3 preflight_check.py lint actioncity-template.html
 python3 fill_template.py actioncity-template.html sample-data.json > sample-email.html
 # 0 unresolved tokens; open sample-email.html to preview the layout.
 ```

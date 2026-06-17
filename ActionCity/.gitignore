@@ -1,0 +1,11 @@
+# Per-run output — regenerated live every run, must NOT be committed (stale-data trap)
+data.json
+email.html
+actioncity-email-*.html
+
+# OS / scratch
+.DS_Store
+*.txt
+e.txt
+err.txt
+fill_warnings.txt

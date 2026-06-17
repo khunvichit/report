@@ -100,16 +100,22 @@ GROUP BY tl.class;
 -- bu_share = wtd / SUM(wtd). bu_wow = wtd/prev-1.
 ```
 
-### D. Revenue by branch — `branch_rows[]`  (br_net, br_bills, br_ticket, br_wow, DARK flag)
+### D. Revenue by branch — `branch_rows[]`  — **3-WEEK TREND** (br_w2, br_w1, br_w0, trend, flag)
+Show the **last 3 COMPLETE weeks** of net revenue per branch (not a single WTD-vs-prior compare — that
+was confusing with partial weeks and the wholesale spike). A 3-week trend makes declines (e.g. Central
+Ladprao) and dark stores (Westgate) obvious. Column labels via `br_w2_label`/`br_w1_label`/`br_w0_label`.
 ```sql
 SELECT tl.location AS loc,
-  SUM(CASE WHEN t.trandate BETWEEN :wprev_start AND :wprev_end THEN -tl.netamount ELSE 0 END) AS prev,
-  SUM(CASE WHEN t.trandate BETWEEN :wtd_start AND :report_date THEN -tl.netamount ELSE 0 END) AS wtd,
-  COUNT(DISTINCT CASE WHEN t.trandate BETWEEN :wtd_start AND :report_date THEN t.id END) AS bills
+  SUM(CASE WHEN t.trandate BETWEEN :w2s AND :w2e THEN -tl.netamount ELSE 0 END) AS w2,   -- 3rd-newest full wk
+  SUM(CASE WHEN t.trandate BETWEEN :w1s AND :w1e THEN -tl.netamount ELSE 0 END) AS w1,   -- 2nd-newest full wk
+  SUM(CASE WHEN t.trandate BETWEEN :w0s AND :w0e THEN -tl.netamount ELSE 0 END) AS w0    -- newest full wk
 FROM transaction t JOIN transactionline tl ON tl.transaction=t.id
-WHERE <universal filters> AND t.trandate >= :wprev_start
-GROUP BY tl.location;
--- Map loc→name. ticket = wtd/bills. DARK flag (red pill "DARK") when wtd=0 AND prev>0 → store/POS issue.
+WHERE <universal filters> AND t.trandate BETWEEN :w2s AND :w0e
+GROUP BY tl.location;   -- sort by w0 desc client-side
+-- Map loc→name. br_w0_color: green if w0>=w1 else red. br_trend ▲/▼ on w0 vs w1.
+-- DARK flag (red pill) when w0=0 AND (w1>0 OR w2>0) → store/POS dark. WHOLESALE flag when a B2B
+--   order is booked to a location (e.g. Warehouse HQ) — note it inflates that week's bar.
+-- Current week's live (WTD) per-branch sits in the Daily-sales-by-branch section, not here.
 ```
 
 ### E. Category mix (4-wk) — `cat_rows[]`
@@ -142,19 +148,34 @@ WHERE (s.w1+s.w0)>=20 AND NVL(oh.stock,0)<90 AND (s.w3+s.w2+s.w1+s.w0)>0
 -- Action: cover<0.7 & selling most wks → REORDER↑ ; cover<2 → REORDER ; <2.5 → SMALL BUY ; faded → WATCH.
 ```
 
-### G. Top 20 — `top_rows[]`  (W-1 + W0, stock, net, GP, GP%)
+### G. Top 20 — `top_rows[]`  (W-1 + W0, stock, net, GP, GP%) — **RETAIL ONLY**
+**Exclude wholesale (132) and intercompany (14186)** so a lumpy B2B drop never skews the ranking
+(the 10 Jun Siam Specialty order inflated Opandee S4 +60, Upset Duck Status +48, Oyo +48). Header
+labels use independent tokens `top_w1_label` / `top_w0_label` (e.g. "W23"/"W24"), NOT the current
+ISO week — so the Monday week-rollover never mislabels the two columns. Wholesale is shown separately
+(query G2) in `top_note`.
 ```sql
 WITH oh AS (...), s AS (
   SELECT tl.item itm, SUM(ABS(tl.quantity)) u2,
     SUM(CASE WHEN t.trandate BETWEEN :w1s AND :w1e THEN ABS(tl.quantity) ELSE 0 END) uw1,
-    SUM(CASE WHEN t.trandate BETWEEN :wtd_start AND :report_date THEN ABS(tl.quantity) ELSE 0 END) uw0,
+    SUM(CASE WHEN t.trandate BETWEEN :w0s AND :w0e THEN ABS(tl.quantity) ELSE 0 END) uw0,
     -SUM(tl.netamount) net, (-SUM(tl.netamount)-SUM(ABS(tl.quantity)*i.averagecost)) gp
   FROM transaction t JOIN transactionline tl ON tl.transaction=t.id JOIN item i ON i.id=tl.item
-  WHERE <universal filters> AND t.trandate >= :w1s GROUP BY tl.item)
+  WHERE <universal filters> AND t.entity NOT IN (132,14186)        -- RETAIL ONLY
+    AND t.trandate BETWEEN :w1s AND :w0e GROUP BY tl.item)
 SELECT i.displayname, NVL(oh.stock,0) stock, s.uw1, s.uw0, s.u2,
   ROUND(s.u2/:two_wk_days,1) perday, ROUND(s.net,0) net, ROUND(s.gp,0) gp, ROUND(100*s.gp/s.net,1) gp_pct
 FROM s JOIN item i ON i.id=s.itm LEFT JOIN oh ON oh.itm=s.itm;  -- top 20 by u2 client-side
--- gp_pct red (#c43b27) if <50. :two_wk_days = 7 + wtd_days.
+-- gp_pct red (#c43b27) if <50. :two_wk_days = the two complete weeks' day count.
+-- top_w1_label / top_w0_label = the two week labels covered (e.g. "W23" / "W24").
+```
+
+### G2. Wholesale this period (shown separately under Top 20) — for `top_note`
+```sql
+SELECT -SUM(tl.netamount) net, SUM(ABS(tl.quantity)) units, COUNT(DISTINCT tl.item) skus, COUNT(DISTINCT t.id) orders
+FROM transaction t JOIN transactionline tl ON tl.transaction=t.id
+WHERE <universal filters> AND t.entity = 132 AND t.trandate BETWEEN :w1s AND :w0e;
+-- Render one line: "Wholesale (Siam Specialty): ฿{net} / {units} u across {skus} SKUs ({orders} orders) — excluded above."
 ```
 
 ### H. New arrivals — `arrival_rows[]`
@@ -186,7 +207,7 @@ GROUP BY po.tranid, i.displayname;   -- sort by open_thb client-side; flags per 
 ```sql
 -- dead set: oh.stock>0 AND item NOT IN (sold with netamount<>0 since report_date-28).
 -- Classify by PO vendor: consignment (Big Box / ACTIONCITY PTE / MNT prefix), intercompany (Pony/Toysinbox/Chaw/12380), else OWNED.
--- Owned rows: grouped by external vendor, on_hand/averagecost/price, ORDER by stock value desc.
+-- Owned rows: on_hand/averagecost/price, ORDER BY on_hand DESC (sort client-side; highest units first).
 -- Consignment summary: per supplier SKUs + units (MNT, Big Box, ACTIONCITY PTE, Pony/Toysinbox).
 ```
 
