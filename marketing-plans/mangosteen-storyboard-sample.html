@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mangosteen Storyboard Generator Sample</title>
+  <style>
+    :root {
+      --purple: #6f2da8;
+      --deep-purple: #3f155f;
+      --light-purple: #f4e9ff;
+      --green: #6fbf73;
+      --text: #222;
+      --muted: #666;
+      --border: #e6d8f2;
+      --bg: #fffaf7;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--deep-purple), var(--purple));
+      color: white;
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(63, 21, 95, 0.08);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--deep-purple);
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 14px 0 6px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: Arial, sans-serif;
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 13px 22px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 18px;
+      font-size: 15px;
+    }
+
+    .primary {
+      background: var(--purple);
+      color: white;
+    }
+
+    .secondary {
+      background: var(--light-purple);
+      color: var(--deep-purple);
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .pillar {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    .pillar strong {
+      color: var(--deep-purple);
+    }
+
+    .storyboard-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 14px;
+    }
+
+    .storyboard-table th,
+    .storyboard-table td {
+      border: 1px solid var(--border);
+      padding: 10px;
+      vertical-align: top;
+    }
+
+    .storyboard-table th {
+      background: var(--light-purple);
+      color: var(--deep-purple);
+    }
+
+    .output {
+      white-space: pre-wrap;
+      background: #fbf7ff;
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: 12px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--light-purple);
+      color: var(--deep-purple);
+      border-radius: 999px;
+      padding: 6px 12px;
+      margin: 4px 4px 4px 0;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 20px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      .grid, .pillars {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mangosteen Storyboard Generator</h1>
+    <p>Awareness campaign template for staff-created short-form videos</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Campaign Foundation</h2>
+      <p><strong>Objective:</strong> Build awareness for the Mangosteen launch.</p>
+      <p><strong>Key Message:</strong> Discover Thailand's Queen of Fruits in a refreshing new drink.</p>
+      <div>
+        <span class="tag">Fresh</span>
+        <span class="tag">Tropical</span>
+        <span class="tag">Premium</span>
+        <span class="tag">Purple</span>
+        <span class="tag">Limited Launch</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Content Pillars</h2>
+      <div class="pillars">
+        <div class="pillar"><strong>Product Beauty</strong><br />Make the drink look craveable and premium.</div>
+        <div class="pillar"><strong>Tropical Story</strong><br />Explain why Mangosteen feels special.</div>
+        <div class="pillar"><strong>First Reaction</strong><br />Show honest tasting reactions.</div>
+        <div class="pillar"><strong>FOMO</strong><br />Create urgency for the limited launch.</div>
+        <div class="pillar"><strong>In-Store Discovery</strong><br />Help customers notice it at the store.</div>
+        <div class="pillar"><strong>Staff Recommendation</strong><br />Let staff explain why customers should try it.</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Create Storyboard Brief</h2>
+      <div class="grid">
+        <div>
+          <label for="pillar">Content Pillar</label>
+          <select id="pillar">
+            <option>Product Beauty</option>
+            <option>Tropical Story</option>
+            <option>First Reaction</option>
+            <option>FOMO / Limited-Time Launch</option>
+            <option>In-Store Discovery</option>
+            <option>Staff Recommendation</option>
+          </select>
+        </div>
+        <div>
+          <label for="platform">Platform</label>
+          <select id="platform">
+            <option>TikTok</option>
+            <option>Instagram Reels</option>
+            <option>Facebook Reels</option>
+            <option>LINE OA</option>
+            <option>In-store Screen</option>
+          </select>
+        </div>
+        <div>
+          <label for="duration">Duration</label>
+          <select id="duration">
+            <option>6 seconds</option>
+            <option>10 seconds</option>
+            <option selected>15 seconds</option>
+            <option>20 seconds</option>
+            <option>30 seconds</option>
+          </select>
+        </div>
+        <div>
+          <label for="audience">Target Audience</label>
+          <input id="audience" value="Young office workers and existing customers" />
+        </div>
+      </div>
+
+      <label for="hook">Hook</label>
+      <input id="hook" value="Thailand's Queen of Fruits is now a refreshing drink." />
+
+      <label for="cta">Call to Action</label>
+      <input id="cta" value="Try the new Mangosteen drink today at participating stores." />
+
+      <button class="primary" onclick="generateStoryboard()">Generate Sample Storyboard</button>
+      <button class="secondary" onclick="copyPrompt()">Copy AI Prompt</button>
+    </section>
+
+    <section class="card">
+      <h2>Sample Storyboard Output</h2>
+      <div id="storyboardOutput">
+        <table class="storyboard-table">
+          <thead>
+            <tr>
+              <th>Scene</th>
+              <th>Time</th>
+              <th>Visual</th>
+              <th>Action</th>
+              <th>Text on Screen</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>0-2 sec</td>
+              <td>Close-up of purple Mangosteen drink</td>
+              <td>Cup slides into frame</td>
+              <td>New Mangosteen is here</td>
+              <td>Grab attention</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>3-6 sec</td>
+              <td>Staff preparing drink</td>
+              <td>Pour, shake, serve</td>
+              <td>Fresh tropical taste</td>
+              <td>Show freshness</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>7-11 sec</td>
+              <td>Customer takes first sip</td>
+              <td>Smile reaction</td>
+              <td>Refreshing? Yes.</td>
+              <td>Build social proof</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>12-15 sec</td>
+              <td>Hero product shot</td>
+              <td>Drink beside mangosteen fruit</td>
+              <td>Try it today</td>
+              <td>Drive action</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>AI Prompt for Staff</h2>
+      <p>Staff can copy this prompt into ChatGPT to generate a full storyboard.</p>
+      <div id="promptOutput" class="output">Click "Copy AI Prompt" to generate the prompt.</div>
+    </section>
+  </main>
+
+  <footer>
+    Mangosteen Launch Awareness System | Sample HTML for CHAW staff use
+  </footer>
+
+  <script>
+    function generateStoryboard() {
+      const pillar = document.getElementById('pillar').value;
+      const platform = document.getElementById('platform').value;
+      const duration = document.getElementById('duration').value;
+      const hook = document.getElementById('hook').value;
+      const cta = document.getElementById('cta').value;
+
+      const scenes = {
+        'Product Beauty': [
+          ['1', '0-2 sec', 'Extreme close-up of purple drink', 'Cup slides into frame', 'New Mangosteen', 'Stop scroll'],
+          ['2', '3-5 sec', 'Ice and drink close-up', 'Pour over ice', 'Fresh tropical taste', 'Show refreshment'],
+          ['3', '6-10 sec', 'Staff finishing drink', 'Add lid / garnish', 'Made fresh', 'Show preparation'],
+          ['4', '11-15 sec', 'Hero product shot', 'Cup beside fruit', 'Try it today', 'CTA']
+        ],
+        'Tropical Story': [
+          ['1', '0-3 sec', 'Mangosteen fruit close-up', 'Fruit opens', 'Queen of Fruits?', 'Create curiosity'],
+          ['2', '4-8 sec', 'Fruit and drink side by side', 'Camera pans', 'Thailand tropical favorite', 'Educate'],
+          ['3', '9-12 sec', 'Staff making drink', 'Pour and serve', 'Now a refreshing drink', 'Connect story to product'],
+          ['4', '13-15 sec', 'Product hero shot', 'Cup to camera', 'Try Mangosteen today', 'CTA']
+        ],
+        'First Reaction': [
+          ['1', '0-2 sec', 'Staff holding drink', 'Looks at camera', 'First sip of Mangosteen', 'Hook'],
+          ['2', '3-6 sec', 'Close-up sip', 'Drinks', 'Trying now...', 'Build anticipation'],
+          ['3', '7-10 sec', 'Face reaction', 'Smile / surprise', 'So refreshing', 'Social proof'],
+          ['4', '11-15 sec', 'Product close-up', 'Cup to camera', 'Try it today', 'CTA']
+        ],
+        'FOMO / Limited-Time Launch': [
+          ['1', '0-2 sec', 'Big product reveal', 'Cup pops into frame', 'Limited launch', 'Urgency'],
+          ['2', '3-6 sec', 'Staff serving', 'Hand over drink', 'Mangosteen is here', 'Availability'],
+          ['3', '7-11 sec', 'Customer taking photo', 'Phone shot', 'Worth sharing', 'Social proof'],
+          ['4', '12-15 sec', 'Product close-up', 'Slow movement', 'Try before it is gone', 'CTA']
+        ],
+        'In-Store Discovery': [
+          ['1', '0-2 sec', 'Storefront / counter', 'Camera walks in', 'New drink spotted', 'Location awareness'],
+          ['2', '3-5 sec', 'Menu board / poster', 'Zoom to Mangosteen', 'Mangosteen is here', 'Product notice'],
+          ['3', '6-10 sec', 'Customer orders', 'Staff recommends', 'Ask our staff', 'Prompt purchase'],
+          ['4', '11-15 sec', 'Customer holds drink', 'Walks away', 'Try it today', 'CTA']
+        ],
+        'Staff Recommendation': [
+          ['1', '0-3 sec', 'Staff smiles at camera', 'Holds product', 'Staff pick: Mangosteen', 'Human hook'],
+          ['2', '4-8 sec', 'Staff speaks', 'Explains taste', 'Fresh + tropical', 'Taste cue'],
+          ['3', '9-12 sec', 'Product close-up', 'Staff points to drink', 'Perfect for hot days', 'Use case'],
+          ['4', '13-15 sec', 'Counter handoff', 'Staff gives drink', 'Try it today', 'CTA']
+        ]
+      };
+
+      const selectedScenes = scenes[pillar] || scenes['Product Beauty'];
+      let rows = selectedScenes.map(row => `
+        <tr>
+          <td>${row[0]}</td>
+          <td>${row[1]}</td>
+          <td>${row[2]}</td>
+          <td>${row[3]}</td>
+          <td>${row[4]}</td>
+          <td>${row[5]}</td>
+        </tr>
+      `).join('');
+
+      document.getElementById('storyboardOutput').innerHTML = `
+        <p><strong>Platform:</strong> ${platform} | <strong>Duration:</strong> ${duration}</p>
+        <p><strong>Hook:</strong> ${hook}</p>
+        <table class="storyboard-table">
+          <thead>
+            <tr>
+              <th>Scene</th>
+              <th>Time</th>
+              <th>Visual</th>
+              <th>Action</th>
+              <th>Text on Screen</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+        <p><strong>CTA:</strong> ${cta}</p>
+      `;
+    }
+
+    function copyPrompt() {
+      const pillar = document.getElementById('pillar').value;
+      const platform = document.getElementById('platform').value;
+      const duration = document.getElementById('duration').value;
+      const audience = document.getElementById('audience').value;
+      const hook = document.getElementById('hook').value;
+      const cta = document.getElementById('cta').value;
+
+      const prompt = `Create a short-form video storyboard for our Mangosteen launch. The main objective is awareness. Use the content pillar: ${pillar}. Target audience: ${audience}. Platform: ${platform}. Duration: ${duration}. Key message: Discover Thailand's Queen of Fruits in a refreshing new drink. Hook: ${hook}. CTA: ${cta}. Include scene-by-scene storyboard, text-on-screen, shot ideas, voiceover or sound direction, and keep it simple enough for store staff to film with a phone.`;
+
+      document.getElementById('promptOutput').textContent = prompt;
+      navigator.clipboard.writeText(prompt).catch(() => {});
+    }
+  </script>
+</body>
+</html>
