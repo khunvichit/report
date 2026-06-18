@@ -53,16 +53,22 @@ This routine runs at the **end of the trading day (~22:00 BKK)**, so it reports 
 
 ### A. Today (KPI headline + best sellers) — `day_net, day_units, day_bills, day_bills_split, day_ticket, day_wow_pct, day_wow_arrow/color, best_today_list`
 ```sql
--- Today totals + RETAIL split (retail excludes wholesale 132 and intercompany 14186)
-SELECT -SUM(tl.netamount) AS net, SUM(ABS(tl.quantity)) AS units, COUNT(DISTINCT t.id) AS bills,
+-- Today + same-day-last-week, split RETAIL vs wholesale/interco (132,14186). Run for report_date AND report_date-7.
+SELECT t.trandate AS d,
   -SUM(CASE WHEN t.entity NOT IN (132,14186) THEN tl.netamount ELSE 0 END) AS retail_net,
-  COUNT(DISTINCT CASE WHEN t.entity NOT IN (132,14186) THEN t.id END) AS retail_bills
+  COUNT(DISTINCT CASE WHEN t.entity NOT IN (132,14186) THEN t.id END) AS retail_bills,
+  SUM(CASE WHEN t.entity NOT IN (132,14186) THEN ABS(tl.quantity) ELSE 0 END) AS retail_units,
+  -SUM(CASE WHEN t.entity IN (132,14186) THEN tl.netamount ELSE 0 END) AS wholesale_net
 FROM transaction t JOIN transactionline tl ON tl.transaction=t.id
-WHERE <universal filters> AND t.trandate = TO_DATE(:report_date,'YYYY-MM-DD');
--- day_net = net (all channels, reconciles to NetSuite day total).
--- **day_ticket = retail_net / retail_bills**  ← AVG TICKET EXCLUDES WHOLESALE/INTERCO (bulk B2B distorts it).
--- day_bills = total bills; day_bills_split = "{retail_bills} retail + {bills-retail_bills} wholesale · {units} units".
--- Same-day-last-week for WoW: t.trandate = report_date - 7 → day_wow_pct = net/net_lw - 1.
+WHERE <universal filters> AND t.trandate IN (TO_DATE(:report_date,'YYYY-MM-DD'), TO_DATE(:report_date,'YYYY-MM-DD')-7)
+GROUP BY t.trandate;
+-- **day_net = RETAIL net** (headline is store demand; NOT all-channel). day_units/day_bills/day_ticket all RETAIL.
+--   day_ticket = retail_net / retail_bills.
+-- **day_wow_pct = retail_net(today) / retail_net(last same weekday) - 1**  ← RETAIL-vs-RETAIL ONLY.
+--   CRITICAL: never compare against an all-channel base — a wholesale order in either day creates a fake swing
+--   (the 17 Jun run showed -69% because last Wed's base included a ฿72k wholesale order; retail-to-retail it was +15%).
+-- Wholesale shown SEPARATELY: if wholesale_net(today) > 0, set day_bills_split / a sub-line to
+--   "{retail_bills} retail bills · +฿{wholesale_net} wholesale (excluded from net & ticket)".
 -- Best sellers today (>=5 units, RETAIL only — exclude 132,14186): GROUP BY item, HAVING SUM(ABS(quantity))>=5, top 6.
 ```
 
@@ -208,8 +214,23 @@ GROUP BY po.tranid, i.displayname;   -- sort by open_thb client-side; flags per 
 -- dead set: oh.stock>0 AND item NOT IN (sold with netamount<>0 since report_date-28).
 -- Classify by PO vendor: consignment (Big Box / ACTIONCITY PTE / MNT prefix), intercompany (Pony/Toysinbox/Chaw/12380), else OWNED.
 -- Owned rows: on_hand/averagecost/price, ORDER BY on_hand DESC (sort client-side; highest units first).
--- Consignment summary: per supplier SKUs + units (MNT, Big Box, ACTIONCITY PTE, Pony/Toysinbox).
 ```
+**Consignment/intercompany summary — compute units PER SUPPLIER, not pooled.** Each supplier row's
+units = `SUM(on_hand)` of ONLY the dead items routed to THAT supplier. Run one scoped query per bucket
+(or GROUP BY route) — do NOT assign the all-consignment total to one row (the 17 Jun run wrongly showed
+Big Box ~6,500 units; the real figure is ~460–480). Verify each bucket independently, e.g. Big Box:
+```sql
+WITH oh AS (...dead set...), dead AS (oh.stock>0 AND not sold)
+SELECT COUNT(*) AS skus, SUM(oh) AS units, ROUND(SUM(oh*averagecost),0) AS value
+FROM dead d WHERE EXISTS (SELECT 1 FROM transactionline ptl JOIN transaction po ON po.id=ptl.transaction
+  WHERE ptl.item=d.itm AND ptl.mainline='F' AND po.type='PurchOrd'
+    AND po.entity IN (SELECT id FROM vendor WHERE UPPER(companyname) LIKE '%BIG BOX%'));
+-- MNT bucket = items where itemid LIKE 'MNT%'.  Interco = PO vendor IN (5735,3655,43623,12380).
+```
+> **Sanity gate (add to completeness checks):** Big Box dead-stock units must be in the low hundreds
+> (~400–600), NOT thousands. If a single consignment supplier shows >2,000 units, the buckets are
+> double-counting/pooling — STOP and fix before send. Known-good orders of magnitude: Big Box ≈ 460–480u /
+> ~฿3.6M · MNT ≈ 3,700u · Pony/Toysinbox ≈ 700u.
 
 ---
 
