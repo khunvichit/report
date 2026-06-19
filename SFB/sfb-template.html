@@ -34,8 +34,11 @@ table.barchart { width:100%; table-layout:fixed; border-collapse:collapse; }
 table.barchart td.yaxis { width:70px; vertical-align:top; padding-right:8px; font-size:10px; color:#5F5E5A; text-align:right; position:relative; height:240px; }
 table.barchart td.yaxis .y-mtd { position:absolute; top:53px; right:8px; background:#FFF8F5; padding:1px 4px; border-radius:2px; font-weight:600; color:#4A5568; }
 td.bar-cell { vertical-align:bottom; padding:0 1px; height:240px; position:relative; background-image: linear-gradient(to bottom, transparent 0px, transparent 58px, rgba(74,85,104,0.85) 58px, rgba(74,85,104,0.85) 60px, transparent 60px); }
-.bar-stack { display:flex; flex-direction:column-reverse; height:220px; }
-.seg { width:100%; }
+/* Email-safe stack: no flexbox. The cell is vertical-align:bottom and the stack
+   has no fixed height, so block segments hug the baseline. Segments are listed
+   largest-first (top) in the markup. Renders identically in Outlook/Gmail/mobile. */
+.bar-stack { font-size:0; line-height:0; }
+.seg { display:block; width:100%; font-size:0; line-height:0; }
 .seg-subway { background:#5551FE; } .seg-khiang { background:#7B79FF; } .seg-jl { background:#2D7A3F; } .seg-se { background:#F39C12; } .seg-vendi { background:#C5453E; }
 .seg-bkk { background:#5551FE; } .seg-dmk { background:#7B79FF; } .seg-pkt { background:#F27061; } .seg-other { background:#C5BFB0; }
 td.bar-cell.d1 .bar-stack { box-shadow: 0 -3px 0 #F27061 inset; }
@@ -102,9 +105,9 @@ td.axhol { border-bottom:2px solid #F27061; color:#F27061; font-weight:600; } td
   <div class="section">
     <h2>📊 KPI Headline</h2>
     <div class="kpi">
-      <div class="card"><div class="lbl">Revenue</div><div class="val">{{rev_K}}</div><div class="delta {{rev_delta_class}}">WoW {{wow_signed}}<br>DoD {{dod_signed}}<br>vs MTD avg {{mtd_signed}}</div></div>
-      <div class="card"><div class="lbl">Bills</div><div class="val">{{bills_total}}</div><div class="delta {{bills_delta_class}}">WoW {{bills_wow_signed}}</div></div>
-      <div class="card"><div class="lbl">Avg Ticket</div><div class="val">{{ticket}}</div><div class="delta {{ticket_delta_class}}">WoW {{ticket_wow_signed}}</div></div>
+      <div class="card"><div class="lbl">Revenue</div><div class="val">{{rev_K}}</div><div class="delta"><span class="{{wow_signed_cls}}">WoW {{wow_signed}}</span><br><span class="{{dod_signed_cls}}">DoD {{dod_signed}}</span><br><span class="{{mtd_signed_cls}}">vs MTD avg {{mtd_signed}}</span></div></div>
+      <div class="card"><div class="lbl">Bills</div><div class="val">{{bills_total}}</div><div class="delta {{bills_wow_signed_cls}}">WoW {{bills_wow_signed}}</div></div>
+      <div class="card"><div class="lbl">Avg Ticket</div><div class="val">{{ticket}}</div><div class="delta {{ticket_wow_signed_cls}}">WoW {{ticket_wow_signed}}</div></div>
     </div>
   </div>
 
@@ -113,7 +116,7 @@ td.axhol { border-bottom:2px solid #F27061; color:#F27061; font-weight:600; } td
     <table class="barchart">
       <tr><td class="yaxis"><div class="y-mtd">MTD avg<br>{{mtd_avg_K}}</div></td>
 <!-- REPEAT:bu_chart_days -->
-<td class="bar-cell {{d1_class}}" title="{{day_title}}"><div class="bar-stack"><div class="seg seg-vendi" style="height:{{h_vendi}}px"></div><div class="seg seg-se" style="height:{{h_se}}px"></div><div class="seg seg-jl" style="height:{{h_jl}}px"></div><div class="seg seg-khiang" style="height:{{h_khiang}}px"></div><div class="seg seg-subway" style="height:{{h_subway}}px"></div></div></td>
+<td class="bar-cell {{d1_class}}" valign="bottom" title="{{day_title}}"><div class="bar-stack"><div class="seg seg-subway" style="height:{{h_subway}}px"></div><div class="seg seg-khiang" style="height:{{h_khiang}}px"></div><div class="seg seg-jl" style="height:{{h_jl}}px"></div><div class="seg seg-se" style="height:{{h_se}}px"></div><div class="seg seg-vendi" style="height:{{h_vendi}}px"></div></div></td>
 <!-- /REPEAT:bu_chart_days -->
 </tr>
       <tr><td></td>
@@ -134,7 +137,7 @@ td.axhol { border-bottom:2px solid #F27061; color:#F27061; font-weight:600; } td
     <table class="barchart">
       <tr><td class="yaxis"><div class="y-mtd">MTD avg<br>{{mtd_avg_K}}</div></td>
 <!-- REPEAT:airport_chart_days -->
-<td class="bar-cell {{d1_class}}" title="{{day_title}}"><div class="bar-stack"><div class="seg seg-pkt" style="height:{{h_pkt}}px"></div><div class="seg seg-dmk" style="height:{{h_dmk}}px"></div><div class="seg seg-bkk" style="height:{{h_bkk}}px"></div></div></td>
+<td class="bar-cell {{d1_class}}" valign="bottom" title="{{day_title}}"><div class="bar-stack"><div class="seg seg-bkk" style="height:{{h_bkk}}px"></div><div class="seg seg-dmk" style="height:{{h_dmk}}px"></div><div class="seg seg-pkt" style="height:{{h_pkt}}px"></div></div></td>
 <!-- /REPEAT:airport_chart_days -->
 </tr>
       <tr><td></td>

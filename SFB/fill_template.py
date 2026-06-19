@@ -72,6 +72,21 @@ def main():
         html = f.read()
     with open(data_path, encoding="utf-8") as f:
         data = json.load(f)
+    # Auto-derive a sign-based color class for every signed scalar, e.g. "+9.1%" -> delta-up,
+    # "-7.48%" -> delta-down. Lets a template color each delta line by ITS OWN sign instead of
+    # sharing one class across mixed-sign values (the KPI "negative shown green" bug).
+    scalars = data.setdefault("scalars", {})
+    for key in list(scalars.keys()):
+        cls_key = key + "_cls"
+        if cls_key in scalars:
+            continue
+        val = str(scalars[key]).strip()
+        if val.startswith("+"):
+            scalars[cls_key] = "delta-up"
+        elif val.startswith("-") or val.startswith("−"):
+            scalars[cls_key] = "delta-down"
+        elif val in ("0", "0%", "0.0%", "0.00%", "—", "-", "n/a", "N/A", ""):
+            scalars[cls_key] = "delta-neutral"
     # Order matters: sections first (so dropped sections remove their REPEATs too),
     # then repeats, then scalars (scalars may appear inside repeated blocks already handled).
     html = render_sections(html, data.get("sections", {}))
