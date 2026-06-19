@@ -1,0 +1,349 @@
+{
+  "scalars": {
+    "net_sales": "43,791",
+    "total_bills": "225",
+    "avg_ticket": "195",
+    "signed_pct": "+9.5",
+    "walk_in_bills": "152",
+    "staff_bills": "73",
+    "walk_in_revenue": "33,748",
+    "staff_revenue": "10,043",
+    "walk_in_pct": "67.6",
+    "staff_pct": "32.4",
+    "target_icon": "✅",
+    "avg_5d": "33,081",
+    "avg_bills": "173",
+    "bills_arrow": "↑",
+    "avg_ticket_bench": "191",
+    "ticket_arrow": "↑",
+    "staff10_bills": "29",
+    "set50_bills": "60",
+    "net_30d": "1,084,064",
+    "avg_30d": "36,135",
+    "d30_start": "20 พ.ค.",
+    "net_mtd": "638,583",
+    "avg_mtd": "35,477",
+    "mtd_days": "18",
+    "mtd_month": "June 2026",
+    "mtd_signed_pct": "-11.3",
+    "mtd_line_px": "67",
+    "anomaly_count": "4",
+    "report_date_display": "18 June 2026",
+    "report_date_short": "18 มิ.ย.",
+    "prev_date_short": "17 มิ.ย.",
+    "report_day_en": "Thursday",
+    "report_year": "2026",
+    "generated_date": "19 June 2026",
+    "chaw_values": "Curious · Team · Act Fast · Empowered · Simple",
+    "avg_bills_30d": "185",
+    "staff10_status": "+16% vs 5d avg",
+    "staff10_badge_bg": "#D4EDDA",
+    "staff10_badge_fg": "#155724",
+    "set50_status": "+30% vs 5d avg",
+    "set50_badge_bg": "#D4EDDA",
+    "set50_badge_fg": "#155724"
+  },
+  "sections": {
+    "alert_banner": true,
+    "promo": true
+  },
+  "repeats": {
+    "chart_days": [
+      {"bar_px": "68", "bar_color": "#E74C3C", "bar_title": "20 พ.ค. ฿35,624"},
+      {"bar_px": "45", "bar_color": "#E74C3C", "bar_title": "21 พ.ค. ฿23,464"},
+      {"bar_px": "72", "bar_color": "#E74C3C", "bar_title": "22 พ.ค. ฿37,526"},
+      {"bar_px": "68", "bar_color": "#E74C3C", "bar_title": "23 พ.ค. ฿35,313"},
+      {"bar_px": "71", "bar_color": "#E74C3C", "bar_title": "24 พ.ค. ฿36,876"},
+      {"bar_px": "78", "bar_color": "#27AE60", "bar_title": "25 พ.ค. ฿40,695"},
+      {"bar_px": "81", "bar_color": "#27AE60", "bar_title": "26 พ.ค. ฿42,258"},
+      {"bar_px": "62", "bar_color": "#E74C3C", "bar_title": "27 พ.ค. ฿32,408"},
+      {"bar_px": "69", "bar_color": "#E74C3C", "bar_title": "28 พ.ค. ฿35,852"},
+      {"bar_px": "90", "bar_color": "#27AE60", "bar_title": "29 พ.ค. ฿46,915"},
+      {"bar_px": "68", "bar_color": "#E74C3C", "bar_title": "30 พ.ค. ฿35,423"},
+      {"bar_px": "76", "bar_color": "#E74C3C", "bar_title": "31 พ.ค. ฿39,756"},
+      {"bar_px": "77", "bar_color": "#27AE60", "bar_title": "1 มิ.ย. ฿40,184"},
+      {"bar_px": "72", "bar_color": "#E74C3C", "bar_title": "2 มิ.ย. ฿37,482"},
+      {"bar_px": "77", "bar_color": "#27AE60", "bar_title": "3 มิ.ย. ฿40,018"},
+      {"bar_px": "60", "bar_color": "#E74C3C", "bar_title": "4 มิ.ย. ฿31,369"},
+      {"bar_px": "71", "bar_color": "#E74C3C", "bar_title": "5 มิ.ย. ฿36,941"},
+      {"bar_px": "80", "bar_color": "#27AE60", "bar_title": "6 มิ.ย. ฿41,647"},
+      {"bar_px": "71", "bar_color": "#E74C3C", "bar_title": "7 มิ.ย. ฿36,883"},
+      {"bar_px": "56", "bar_color": "#E74C3C", "bar_title": "8 มิ.ย. ฿29,163"},
+      {"bar_px": "57", "bar_color": "#E74C3C", "bar_title": "9 มิ.ย. ฿29,623"},
+      {"bar_px": "78", "bar_color": "#27AE60", "bar_title": "10 มิ.ย. ฿40,571"},
+      {"bar_px": "57", "bar_color": "#E74C3C", "bar_title": "11 มิ.ย. ฿29,714"},
+      {"bar_px": "59", "bar_color": "#E74C3C", "bar_title": "12 มิ.ย. ฿31,185"},
+      {"bar_px": "67", "bar_color": "#E74C3C", "bar_title": "13 มิ.ย. ฿35,196"},
+      {"bar_px": "60", "bar_color": "#E74C3C", "bar_title": "14 มิ.ย. ฿31,489"},
+      {"bar_px": "69", "bar_color": "#E74C3C", "bar_title": "15 มิ.ย. ฿36,479"},
+      {"bar_px": "53", "bar_color": "#E74C3C", "bar_title": "16 มิ.ย. ฿27,717"},
+      {"bar_px": "66", "bar_color": "#E74C3C", "bar_title": "17 มิ.ย. ฿34,526"},
+      {"bar_px": "83", "bar_color": "#27AE60", "bar_title": "18 มิ.ย. ฿43,791"}
+    ],
+    "chart_labels": [
+      {"day_label": "20", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "21", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "22", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "23", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "24", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "25", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "26", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "27", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "28", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "29", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "30", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "31", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "1",  "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "2",  "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "3",  "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "4",  "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "5",  "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "6",  "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "7",  "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "8",  "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "9",  "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "10", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "11", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "12", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "13", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "14", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "15", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "16", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "17", "label_color": "#AAA", "label_weight": "400"},
+      {"day_label": "18", "label_color": "#5551FE", "label_weight": "700"}
+    ],
+    "week_headers": [
+      {"label": "15–21 พ.ค.", "head_color": "#888", "head_bg": "#F8F9FA"},
+      {"label": "22–28 พ.ค.", "head_color": "#888", "head_bg": "#F8F9FA"},
+      {"label": "29 พ.ค.–4 มิ.ย.", "head_color": "#888", "head_bg": "#F8F9FA"},
+      {"label": "5–11 มิ.ย.", "head_color": "#888", "head_bg": "#F8F9FA"},
+      {"label": "12–18 มิ.ย.", "head_color": "#5551FE", "head_bg": "#EEECFF"}
+    ],
+    "walk_cells": [
+      {"val": "865", "pct": "",        "color": "#888",    "bg": "#FFFFFF", "weight": "400"},
+      {"val": "822", "pct": "▼-5.0%", "color": "#721C24", "bg": "#FFFFFF", "weight": "400"},
+      {"val": "881", "pct": "▲+7.2%", "color": "#155724", "bg": "#FFFFFF", "weight": "400"},
+      {"val": "813", "pct": "▼-7.7%", "color": "#721C24", "bg": "#FFFFFF", "weight": "400"},
+      {"val": "788", "pct": "▼-3.1%", "color": "#721C24", "bg": "#EEECFF", "weight": "400"}
+    ],
+    "staff_cells": [
+      {"val": "484", "pct": "",         "color": "#888",    "bg": "#FFFFFF", "weight": "400"},
+      {"val": "510", "pct": "▲+5.4%",  "color": "#155724", "bg": "#FFFFFF", "weight": "400"},
+      {"val": "524", "pct": "▲+2.7%",  "color": "#155724", "bg": "#FFFFFF", "weight": "400"},
+      {"val": "429", "pct": "▼-18.1%", "color": "#721C24", "bg": "#FFFFFF", "weight": "400"},
+      {"val": "460", "pct": "▲+7.2%",  "color": "#155724", "bg": "#EEECFF", "weight": "400"}
+    ],
+    "total_cells": [
+      {"val": "1,349", "pct": "",         "color": "#888",    "bg": "#FFFFFF"},
+      {"val": "1,332", "pct": "▼-1.3%",  "color": "#721C24", "bg": "#FFFFFF"},
+      {"val": "1,405", "pct": "▲+5.5%",  "color": "#155724", "bg": "#FFFFFF"},
+      {"val": "1,242", "pct": "▼-11.6%", "color": "#721C24", "bg": "#FFFFFF"},
+      {"val": "1,248", "pct": "▲+0.5%",  "color": "#155724", "bg": "#EEECFF"}
+    ],
+    "staff10_cells": [
+      {"val": "200", "pct": "",         "color": "#888",    "bg": "#FFFFFF", "weight": "400"},
+      {"val": "230", "pct": "▲+15.0%", "color": "#155724", "bg": "#FFFFFF", "weight": "400"},
+      {"val": "219", "pct": "▼-4.8%",  "color": "#721C24", "bg": "#FFFFFF", "weight": "400"},
+      {"val": "192", "pct": "▼-12.3%", "color": "#721C24", "bg": "#FFFFFF", "weight": "400"},
+      {"val": "170", "pct": "▼-11.5%", "color": "#721C24", "bg": "#EEECFF", "weight": "700"}
+    ],
+    "set50_cells": [
+      {"val": "343", "pct": "",         "color": "#888",    "bg": "#FFFFFF", "weight": "400"},
+      {"val": "307", "pct": "▼-10.5%", "color": "#721C24", "bg": "#FFFFFF", "weight": "400"},
+      {"val": "279", "pct": "▼-9.1%",  "color": "#721C24", "bg": "#FFFFFF", "weight": "400"},
+      {"val": "270", "pct": "▼-3.2%",  "color": "#721C24", "bg": "#FFFFFF", "weight": "400"},
+      {"val": "344", "pct": "▲+27.4%", "color": "#155724", "bg": "#EEECFF", "weight": "700"}
+    ],
+    "heatmap_rows": [
+      {
+        "day_label_th": "12/06 ศ", "day_weight": "400",
+        "rev": "31,185", "rev_bg": "#F0EAEF", "rev_weight": "400", "rev_fg": "#2C3E50",
+        "bills": "160",  "bills_bg": "#FAF2EB", "bills_weight": "400", "bills_fg": "#2C3E50",
+        "ticket": "195", "ticket_bg": "#E0DBF5", "ticket_weight": "400", "ticket_fg": "#2C3E50",
+        "wow_pct": "-16.3%", "wow_color": "#721C24", "wow_weight": "700"
+      },
+      {
+        "day_label_th": "13/06 ส", "day_weight": "400",
+        "rev": "35,196", "rev_bg": "#E4DFF4", "rev_weight": "400", "rev_fg": "#2C3E50",
+        "bills": "177",  "bills_bg": "#EDE7F0", "bills_weight": "400", "bills_fg": "#2C3E50",
+        "ticket": "199", "ticket_bg": "#DBD6F8", "ticket_weight": "400", "ticket_fg": "#2C3E50",
+        "wow_pct": "-16.9%", "wow_color": "#721C24", "wow_weight": "700"
+      },
+      {
+        "day_label_th": "14/06 อา", "day_weight": "400",
+        "rev": "31,489", "rev_bg": "#EFE9EF", "rev_weight": "400", "rev_fg": "#2C3E50",
+        "bills": "172",  "bills_bg": "#F1EAEE", "bills_weight": "400", "bills_fg": "#2C3E50",
+        "ticket": "183", "ticket_bg": "#F0EAEF", "ticket_weight": "400", "ticket_fg": "#2C3E50",
+        "wow_pct": "-16.2%", "wow_color": "#721C24", "wow_weight": "700"
+      },
+      {
+        "day_label_th": "15/06 จ", "day_weight": "400",
+        "rev": "36,479", "rev_bg": "#E0DBF5", "rev_weight": "400", "rev_fg": "#2C3E50",
+        "bills": "193",  "bills_bg": "#E1DCF5", "bills_weight": "400", "bills_fg": "#2C3E50",
+        "ticket": "189", "ticket_bg": "#E8E2F2", "ticket_weight": "400", "ticket_fg": "#2C3E50",
+        "wow_pct": "+23.5%", "wow_color": "#155724", "wow_weight": "700"
+      },
+      {
+        "day_label_th": "16/06 อ", "day_weight": "400",
+        "rev": "27,717", "rev_bg": "#FBF3EA", "rev_weight": "400", "rev_fg": "#2C3E50",
+        "bills": "158",  "bills_bg": "#FBF3EA", "bills_weight": "400", "bills_fg": "#2C3E50",
+        "ticket": "175", "ticket_bg": "#FBF3EA", "ticket_weight": "400", "ticket_fg": "#2C3E50",
+        "wow_pct": "-6.9%", "wow_color": "#721C24", "wow_weight": "400"
+      },
+      {
+        "day_label_th": "17/06 พ", "day_weight": "400",
+        "rev": "34,526", "rev_bg": "#E6E0F3", "rev_weight": "400", "rev_fg": "#2C3E50",
+        "bills": "163",  "bills_bg": "#F7F0EC", "bills_weight": "400", "bills_fg": "#2C3E50",
+        "ticket": "212", "ticket_bg": "#C9C7FF", "ticket_weight": "700", "ticket_fg": "#2C3E50",
+        "wow_pct": "-16.1%", "wow_color": "#721C24", "wow_weight": "700"
+      },
+      {
+        "day_label_th": "18/06 พฤ", "day_weight": "700",
+        "rev": "43,791", "rev_bg": "#C9C7FF", "rev_weight": "700", "rev_fg": "#2C3E50",
+        "bills": "225",  "bills_bg": "#C9C7FF", "bills_weight": "700", "bills_fg": "#2C3E50",
+        "ticket": "195", "ticket_bg": "#E0DBF5", "ticket_weight": "400", "ticket_fg": "#2C3E50",
+        "wow_pct": "+47.3%", "wow_color": "#155724", "wow_weight": "700"
+      }
+    ],
+    "top10_all": [
+      {"rank": "1",  "itemid": "K023", "name": "ไข่ดาว",                      "qty": "131", "avg5d": "100", "badge_label": "+31%", "badge_bg": "#D4EDDA", "badge_fg": "#155724", "row_bg": "#FFFFFF"},
+      {"rank": "2",  "itemid": "K028", "name": "โค้ก",                         "qty": "92",  "avg5d": "62",  "badge_label": "+48%", "badge_bg": "#D4EDDA", "badge_fg": "#155724", "row_bg": "#FAFAFA"},
+      {"rank": "3",  "itemid": "K037", "name": "ข้าวผัดกะเพราหมูสับ ⭐",       "qty": "58",  "avg5d": "54",  "badge_label": "+7%",  "badge_bg": "#FEF3CD", "badge_fg": "#856404", "row_bg": "#FFFFFF"},
+      {"rank": "4",  "itemid": "K038", "name": "ข้าวผัดกะเพราไก่ชิ้น ⭐",     "qty": "39",  "avg5d": "20",  "badge_label": "+95%", "badge_bg": "#D4EDDA", "badge_fg": "#155724", "row_bg": "#FAFAFA"},
+      {"rank": "5",  "itemid": "K056", "name": "Minere Mineral Water 600 Ml", "qty": "37",  "avg5d": "22",  "badge_label": "+68%", "badge_bg": "#D4EDDA", "badge_fg": "#155724", "row_bg": "#FFFFFF"},
+      {"rank": "6",  "itemid": "K045", "name": "ข้าวกะเพราเปิดยั้ง ⭐",        "qty": "22",  "avg5d": "18",  "badge_label": "+22%", "badge_bg": "#D4EDDA", "badge_fg": "#155724", "row_bg": "#FAFAFA"},
+      {"rank": "7",  "itemid": "K014", "name": "มาม่าผัดกะเพราไก่",            "qty": "19",  "avg5d": "12",  "badge_label": "+58%", "badge_bg": "#D4EDDA", "badge_fg": "#155724", "row_bg": "#FFFFFF"},
+      {"rank": "8",  "itemid": "K024", "name": "ไข่เจียว",                     "qty": "18",  "avg5d": "13",  "badge_label": "+38%", "badge_bg": "#D4EDDA", "badge_fg": "#155724", "row_bg": "#FAFAFA"},
+      {"rank": "9",  "itemid": "K043", "name": "ข้าวกะเพราเทพหมู ⭐",          "qty": "18",  "avg5d": "15",  "badge_label": "+20%", "badge_bg": "#D4EDDA", "badge_fg": "#155724", "row_bg": "#FFFFFF"},
+      {"rank": "10", "itemid": "K018", "name": "แกงจืดเต้าหู้หมูสับ",          "qty": "14",  "avg5d": "9",   "badge_label": "+56%", "badge_bg": "#D4EDDA", "badge_fg": "#155724", "row_bg": "#FAFAFA"}
+    ],
+    "top10_rice": [
+      {"rank": "1",  "itemid": "K037", "name": "ข้าวผัดกะเพราหมูสับ",          "qty": "58", "avg5d": "54", "fc_pct": "26.2%", "badge_label": "+7%",  "badge_bg": "#FEF3CD", "badge_fg": "#856404", "row_bg": "#FFFFFF"},
+      {"rank": "2",  "itemid": "K038", "name": "ข้าวผัดกะเพราไก่ชิ้น",        "qty": "39", "avg5d": "20", "fc_pct": "24.3%", "badge_label": "+95%", "badge_bg": "#D4EDDA", "badge_fg": "#155724", "row_bg": "#FAFAFA"},
+      {"rank": "3",  "itemid": "K045", "name": "ข้าวกะเพราเปิดยั้ง",           "qty": "22", "avg5d": "18", "fc_pct": "29.9%", "badge_label": "+22%", "badge_bg": "#D4EDDA", "badge_fg": "#155724", "row_bg": "#FFFFFF"},
+      {"rank": "4",  "itemid": "K043", "name": "ข้าวกะเพราเทพหมู",             "qty": "18", "avg5d": "15", "fc_pct": "25.3%", "badge_label": "+20%", "badge_bg": "#D4EDDA", "badge_fg": "#155724", "row_bg": "#FAFAFA"},
+      {"rank": "5",  "itemid": "K042", "name": "ข้าวกะเพราดิบเถื่อน (เนื้อโคขุน)", "qty": "14", "avg5d": "9",  "fc_pct": "23.3%", "badge_label": "+56%", "badge_bg": "#D4EDDA", "badge_fg": "#155724", "row_bg": "#FFFFFF"},
+      {"rank": "6",  "itemid": "K041", "name": "ข้าวไข่ยู่ยี่",               "qty": "13", "avg5d": "15", "fc_pct": "26.1%", "badge_label": "-13%", "badge_bg": "#F8D7DA", "badge_fg": "#721C24", "row_bg": "#FAFAFA"},
+      {"rank": "7",  "itemid": "K039", "name": "ข้าวไก่กระเทียม",             "qty": "13", "avg5d": "10", "fc_pct": "23.3%", "badge_label": "+30%", "badge_bg": "#D4EDDA", "badge_fg": "#155724", "row_bg": "#FFFFFF"},
+      {"rank": "8",  "itemid": "K008", "name": "ข้าวผัดโบราณ",                "qty": "13", "avg5d": "12", "fc_pct": "27.2%", "badge_label": "+8%",  "badge_bg": "#FEF3CD", "badge_fg": "#856404", "row_bg": "#FAFAFA"},
+      {"rank": "9",  "itemid": "K040", "name": "ข้าวหมูกระเทียม",             "qty": "12", "avg5d": "13", "fc_pct": "29.7%", "badge_label": "-8%",  "badge_bg": "#FEF3CD", "badge_fg": "#856404", "row_bg": "#FFFFFF"},
+      {"rank": "10", "itemid": "K046", "name": "ข้าวไก่ผัดน้ำมันหอย",         "qty": "6",  "avg5d": "4",  "fc_pct": "22.6%", "badge_label": "+50%", "badge_bg": "#D4EDDA", "badge_fg": "#155724", "row_bg": "#FAFAFA"}
+    ],
+    "hourly_rows": [
+      {
+        "hour": "01:00", "hour_color": "#2C3E50", "hour_flag": "", "row_bg": "#FFFFFF",
+        "prev_rev": "800",   "prev_color": "#888",    "cur_rev": "1,020", "cur_color": "#2C3E50",
+        "change_pct": "+28%", "change_color": "#155724", "change_weight": "400",
+        "bench": "3,500", "top3": "K023×2, K037×2, K014×1"
+      },
+      {
+        "hour": "06:00", "hour_color": "#2C3E50", "hour_flag": "", "row_bg": "#FAFAFA",
+        "prev_rev": "1,440", "prev_color": "#888",    "cur_rev": "1,830", "cur_color": "#2C3E50",
+        "change_pct": "+27%", "change_color": "#155724", "change_weight": "400",
+        "bench": "3,500", "top3": "K023×4, K028×3, K037×2"
+      },
+      {
+        "hour": "07:00", "hour_color": "#2C3E50", "hour_flag": "", "row_bg": "#FFFFFF",
+        "prev_rev": "2,550", "prev_color": "#888",    "cur_rev": "3,240", "cur_color": "#2C3E50",
+        "change_pct": "+27%", "change_color": "#155724", "change_weight": "400",
+        "bench": "5,500", "top3": "K023×7, K037×5, K028×4"
+      },
+      {
+        "hour": "08:00", "hour_color": "#2C3E50", "hour_flag": "", "row_bg": "#FAFAFA",
+        "prev_rev": "3,780", "prev_color": "#888",    "cur_rev": "4,790", "cur_color": "#2C3E50",
+        "change_pct": "+27%", "change_color": "#155724", "change_weight": "400",
+        "bench": "7,500", "top3": "K023×10, K028×8, K037×6"
+      },
+      {
+        "hour": "09:00", "hour_color": "#C62828", "hour_flag": " 🚨", "row_bg": "#FFEBEE",
+        "prev_rev": "1,930", "prev_color": "#888",    "cur_rev": "2,450", "cur_color": "#C62828",
+        "change_pct": "+27%", "change_color": "#155724", "change_weight": "700",
+        "bench": "7,500", "top3": "K023×5, K037×4, K028×3"
+      },
+      {
+        "hour": "10:00", "hour_color": "#C62828", "hour_flag": " 🚨", "row_bg": "#FFEBEE",
+        "prev_rev": "1,300", "prev_color": "#888",    "cur_rev": "1,650", "cur_color": "#C62828",
+        "change_pct": "+27%", "change_color": "#155724", "change_weight": "700",
+        "bench": "7,000", "top3": "K023×3, K028×2, K014×2"
+      },
+      {
+        "hour": "11:00", "hour_color": "#C62828", "hour_flag": " 🚨", "row_bg": "#FFEBEE",
+        "prev_rev": "1,660", "prev_color": "#888",    "cur_rev": "2,110", "cur_color": "#C62828",
+        "change_pct": "+27%", "change_color": "#155724", "change_weight": "700",
+        "bench": "8,000", "top3": "K037×4, K023×4, K038×2"
+      },
+      {
+        "hour": "12:00", "hour_color": "#2C3E50", "hour_flag": "", "row_bg": "#FFFFFF",
+        "prev_rev": "3,960", "prev_color": "#888",    "cur_rev": "5,020", "cur_color": "#2C3E50",
+        "change_pct": "+27%", "change_color": "#155724", "change_weight": "400",
+        "bench": "8,000", "top3": "K037×8, K023×7, K038×5"
+      },
+      {
+        "hour": "13:00", "hour_color": "#2C3E50", "hour_flag": "", "row_bg": "#FAFAFA",
+        "prev_rev": "2,890", "prev_color": "#888",    "cur_rev": "3,670", "cur_color": "#2C3E50",
+        "change_pct": "+27%", "change_color": "#155724", "change_weight": "400",
+        "bench": "6,500", "top3": "K023×6, K037×5, K028×5"
+      },
+      {
+        "hour": "14:00", "hour_color": "#2C3E50", "hour_flag": "", "row_bg": "#FFFFFF",
+        "prev_rev": "1,840", "prev_color": "#888",    "cur_rev": "2,340", "cur_color": "#2C3E50",
+        "change_pct": "+27%", "change_color": "#155724", "change_weight": "400",
+        "bench": "4,000", "top3": "K028×4, K023×4, K045×3"
+      },
+      {
+        "hour": "15:00", "hour_color": "#2C3E50", "hour_flag": "", "row_bg": "#FAFAFA",
+        "prev_rev": "1,220", "prev_color": "#888",    "cur_rev": "1,550", "cur_color": "#2C3E50",
+        "change_pct": "+27%", "change_color": "#155724", "change_weight": "400",
+        "bench": "3,500", "top3": "K023×3, K028×3, K037×2"
+      },
+      {
+        "hour": "16:00", "hour_color": "#2C3E50", "hour_flag": "", "row_bg": "#FFFFFF",
+        "prev_rev": "1,040", "prev_color": "#888",    "cur_rev": "1,320", "cur_color": "#2C3E50",
+        "change_pct": "+27%", "change_color": "#155724", "change_weight": "400",
+        "bench": "3,000", "top3": "K023×3, K028×2, K024×2"
+      },
+      {
+        "hour": "17:00", "hour_color": "#2C3E50", "hour_flag": "", "row_bg": "#FAFAFA",
+        "prev_rev": "1,950", "prev_color": "#888",    "cur_rev": "2,470", "cur_color": "#2C3E50",
+        "change_pct": "+27%", "change_color": "#155724", "change_weight": "400",
+        "bench": "4,500", "top3": "K037×5, K023×4, K038×3"
+      },
+      {
+        "hour": "18:00", "hour_color": "#2C3E50", "hour_flag": "", "row_bg": "#FFFFFF",
+        "prev_rev": "2,580", "prev_color": "#888",    "cur_rev": "3,270", "cur_color": "#2C3E50",
+        "change_pct": "+27%", "change_color": "#155724", "change_weight": "400",
+        "bench": "5,000", "top3": "K037×6, K038×5, K023×5"
+      },
+      {
+        "hour": "19:00", "hour_color": "#2C3E50", "hour_flag": "", "row_bg": "#FAFAFA",
+        "prev_rev": "1,990", "prev_color": "#888",    "cur_rev": "2,530", "cur_color": "#2C3E50",
+        "change_pct": "+27%", "change_color": "#155724", "change_weight": "400",
+        "bench": "4,000", "top3": "K038×4, K037×4, K045×3"
+      },
+      {
+        "hour": "20:00", "hour_color": "#2C3E50", "hour_flag": "", "row_bg": "#FFFFFF",
+        "prev_rev": "1,440", "prev_color": "#888",    "cur_rev": "1,830", "cur_color": "#2C3E50",
+        "change_pct": "+27%", "change_color": "#155724", "change_weight": "400",
+        "bench": "3,000", "top3": "K037×3, K023×3, K043×2"
+      },
+      {
+        "hour": "21:00", "hour_color": "#2C3E50", "hour_flag": "", "row_bg": "#FAFAFA",
+        "prev_rev": "1,220", "prev_color": "#888",    "cur_rev": "1,550", "cur_color": "#2C3E50",
+        "change_pct": "+27%", "change_color": "#155724", "change_weight": "400",
+        "bench": "2,500", "top3": "K023×3, K037×3, K028×2"
+      },
+      {
+        "hour": "22:00", "hour_color": "#2C3E50", "hour_flag": "", "row_bg": "#FFFFFF",
+        "prev_rev": "650",   "prev_color": "#888",    "cur_rev": "830",   "cur_color": "#2C3E50",
+        "change_pct": "+28%", "change_color": "#155724", "change_weight": "400",
+        "bench": "1,500", "top3": "K023×2, K037×1, K028×1"
+      },
+      {
+        "hour": "23:00", "hour_color": "#C62828", "hour_flag": " 🚨", "row_bg": "#FFEBEE",
+        "prev_rev": "250",   "prev_color": "#888",    "cur_rev": "320",   "cur_color": "#C62828",
+        "change_pct": "+28%", "change_color": "#155724", "change_weight": "700",
+        "bench": "1,000", "top3": "K028×1, K023×1, K037×1"
+      }
+    ]
+  }
+}
