@@ -1,0 +1,323 @@
+<!--
+  khiang-template.html — LOCKED layout. Filled by fill_template.py from data.json.
+  DO NOT regenerate this from prose. Edit markup here only when the design changes.
+  Substitution: double-brace scalars, REPEAT:name row blocks, SECTION:name conditional blocks.
+  This how-to header is stripped from the final output by fill_template.py.
+-->
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khiang Daily Report — {{report_date_display}}</title>
+</head>
+<body style="margin:0;padding:0;background:#F0F2F5;font-family:Arial,Helvetica,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F0F2F5;">
+<tr><td align="center" style="padding:24px 12px;">
+<table width="640" cellpadding="0" cellspacing="0" border="0" style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+
+<!-- ── HEADER ── -->
+<tr>
+  <td style="background:#5551FE;padding:26px 32px 18px;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td>
+        <div style="font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;">CHAW MANAGEMENT GROUP</div>
+        <div style="font-size:21px;font-weight:700;color:#fff;margin-bottom:2px;">Khiang Restaurant</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.75);">Daily Sales Report &nbsp;·&nbsp; {{report_date_display}} ({{report_day_en}})</div>
+      </td>
+      <td align="right" valign="top">
+        <table cellpadding="0" cellspacing="0" border="0" style="background:rgba(255,255,255,0.15);border-radius:8px;padding:10px 16px;text-align:center;">
+          <tr><td><div style="font-size:10px;color:rgba(255,255,255,0.7);margin-bottom:3px;">NET SALES</div>
+          <div style="font-size:26px;font-weight:700;color:#fff;">฿{{net_sales}}</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.7);margin-top:2px;">{{signed_pct}}% vs target {{target_icon}}</div></td></tr>
+        </table>
+      </td>
+    </tr></table>
+  </td>
+</tr>
+<tr><td style="background:#4744D4;padding:7px 32px;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td style="font-size:11px;color:rgba(255,255,255,0.7);">📍 Suvarnabhumi Airport T1, Zone ME2-30</td>
+    <td align="right" style="font-size:11px;color:rgba(255,255,255,0.7);">Target: ฿40,000/day &nbsp;|&nbsp; Avg 5d: ฿{{avg_5d}}</td>
+  </tr></table>
+</td></tr>
+
+<!-- ── ALERT BANNER (only if anomalies) ── -->
+<!-- SECTION:alert_banner -->
+<tr><td style="background:#FFEBEE;padding:11px 32px;border-bottom:1px solid #F8D7DA;">
+  <div style="font-size:12px;color:#C62828;font-weight:700;">🚨 {{anomaly_count}} hourly anomalies flagged — see hourly comparison below.</div>
+</td></tr>
+<!-- /SECTION:alert_banner -->
+
+<!-- ── KPI ROW ── -->
+<tr><td style="padding:22px 32px 8px;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td width="24%" style="padding-right:5px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F5EDE4;border-radius:8px;"><tr><td style="padding:13px 12px;">
+        <div style="font-size:10px;color:#888;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;">Total Bills</div>
+        <div style="font-size:22px;font-weight:700;color:#2C3E50;">{{total_bills}}</div>
+        <div style="font-size:10px;color:#888;margin-top:3px;">avg {{avg_bills}}/day {{bills_arrow}}</div>
+      </td></tr></table>
+    </td>
+    <td width="24%" style="padding:0 5px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#EEF8FF;border-radius:8px;"><tr><td style="padding:13px 12px;">
+        <div style="font-size:10px;color:#888;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;">Walk-In</div>
+        <div style="font-size:22px;font-weight:700;color:#2C3E50;">{{walk_in_bills}}</div>
+        <div style="font-size:10px;color:#888;margin-top:3px;">฿{{walk_in_revenue}} · {{walk_in_pct}}%</div>
+      </td></tr></table>
+    </td>
+    <td width="24%" style="padding:0 5px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#EEF8FF;border-radius:8px;"><tr><td style="padding:13px 12px;">
+        <div style="font-size:10px;color:#888;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;">Airport Staff</div>
+        <div style="font-size:22px;font-weight:700;color:#2C3E50;">{{staff_bills}}</div>
+        <div style="font-size:10px;color:#888;margin-top:3px;">฿{{staff_revenue}} · {{staff_pct}}%</div>
+      </td></tr></table>
+    </td>
+    <td width="24%" style="padding-left:5px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F5EDE4;border-radius:8px;"><tr><td style="padding:13px 12px;">
+        <div style="font-size:10px;color:#888;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;">Avg Ticket</div>
+        <div style="font-size:22px;font-weight:700;color:#2C3E50;">฿{{avg_ticket}}</div>
+        <div style="font-size:10px;color:#888;margin-top:3px;">avg ฿{{avg_ticket_bench}} {{ticket_arrow}}</div>
+      </td></tr></table>
+    </td>
+  </tr></table>
+</td></tr>
+
+<!-- ── PERIOD STRIP (30d + MTD) ── -->
+<tr><td style="padding:4px 32px 8px;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td width="50%" style="padding-right:5px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#EEECFF;border-radius:8px;border-left:4px solid #5551FE;"><tr><td style="padding:12px 14px;">
+        <div style="font-size:10px;color:#5551FE;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:700;">Last 30 Days — Net Sales</div>
+        <div style="font-size:20px;font-weight:700;color:#2C3E50;">฿{{net_30d}}</div>
+        <div style="font-size:10px;color:#888;margin-top:3px;">{{d30_start}}–{{report_date_short}} · avg ฿{{avg_30d}}/day</div>
+      </td></tr></table>
+    </td>
+    <td width="50%" style="padding-left:5px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFF0EE;border-radius:8px;border-left:4px solid #F27061;"><tr><td style="padding:12px 14px;">
+        <div style="font-size:10px;color:#F27061;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:700;">Month to Date ({{mtd_month}})</div>
+        <div style="font-size:20px;font-weight:700;color:#2C3E50;">฿{{avg_mtd}}<span style="font-size:11px;font-weight:400;color:#888;">/day avg</span></div>
+        <div style="font-size:10px;color:#888;margin-top:3px;">฿{{net_mtd}} over {{mtd_days}} days · vs target {{mtd_signed_pct}}%</div>
+      </td></tr></table>
+    </td>
+  </tr></table>
+</td></tr>
+
+<!-- ── 30-DAY DAILY SALES CHART (bars green≥target / red<target, MTD-avg line) ── -->
+<tr><td style="padding:18px 32px 8px;">
+  <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:4px;border-left:3px solid #5551FE;padding-left:10px;">Daily Net Sales — Last 30 Days</div>
+  <div style="font-size:11px;color:#888;margin-bottom:12px;padding-left:13px;">🟢 ≥ ฿40,000 target &nbsp;·&nbsp; 🔴 below target &nbsp;·&nbsp; เส้นประ = MTD avg ฿{{avg_mtd}}/day</div>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E8E8E8;border-radius:8px;overflow:hidden;"><tr><td style="padding:16px 14px 10px;">
+    <!-- plot area: relative box holding the MTD line + the bars table -->
+    <div style="position:relative;height:90px;">
+      <!-- MTD average reference line (offset from baseline) -->
+      <div style="position:absolute;left:0;right:0;bottom:{{mtd_line_px}}px;border-top:2px dashed #F27061;height:0;line-height:0;font-size:0;">&nbsp;</div>
+      <div style="position:absolute;right:0;bottom:{{mtd_line_px}}px;transform:translateY(-100%);font-size:9px;color:#F27061;font-weight:700;background:#fff;padding:0 3px;">MTD ฿{{avg_mtd}}</div>
+      <!-- bars: one bottom-aligned cell per day -->
+      <table width="100%" height="90" cellpadding="0" cellspacing="0" border="0" style="height:90px;"><tr style="vertical-align:bottom;">
+        <!-- REPEAT:chart_days -->
+        <td align="center" valign="bottom" style="vertical-align:bottom;padding:0 1px;">
+          <div style="width:100%;max-width:14px;margin:0 auto;height:{{bar_px}}px;background:{{bar_color}};border-radius:2px 2px 0 0;" title="{{bar_title}}">&nbsp;</div>
+        </td>
+        <!-- /REPEAT:chart_days -->
+      </tr></table>
+    </div>
+    <!-- day-of-month labels under the bars -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:4px;border-top:1px solid #E8E8E8;padding-top:3px;"><tr>
+      <!-- REPEAT:chart_labels -->
+      <td align="center" style="font-size:7px;color:{{label_color}};font-weight:{{label_weight}};padding:0 1px;">{{day_label}}</td>
+      <!-- /REPEAT:chart_labels -->
+    </tr></table>
+  </td></tr></table>
+</td></tr>
+
+<!-- ── CUSTOMER TREND BY WEEK (transposed: columns = 5 weeks, rows = Walk-In / Staff / Total) ── -->
+<tr><td style="padding:18px 32px 8px;">
+  <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:4px;border-left:3px solid #5551FE;padding-left:10px;">Customer Trend by Week — Bills</div>
+  <div style="font-size:11px;color:#888;margin-bottom:12px;padding-left:13px;">จำนวนบิล (ลูกค้า) รายสัปดาห์ ย้อนหลัง 5 สัปดาห์ &nbsp;·&nbsp; % = เทียบสัปดาห์ก่อนหน้า &nbsp;·&nbsp; avg 30 วัน = {{avg_bills_30d}} บิล/วัน</div>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E8E8E8;border-radius:8px;overflow:hidden;">
+    <tr style="background:#F8F9FA;">
+      <td style="padding:8px 10px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" width="15%">ลูกค้า</td>
+      <!-- REPEAT:week_headers -->
+      <td style="padding:8px 6px;font-size:9px;font-weight:700;color:{{head_color}};text-transform:uppercase;letter-spacing:.3px;background:{{head_bg}};" align="center" width="17%">{{label}}</td>
+      <!-- /REPEAT:week_headers -->
+    </tr>
+    <tr style="border-top:1px solid #E8E8E8;">
+      <td style="padding:9px 10px;font-size:11px;font-weight:700;color:#5551FE;">Walk-In</td>
+      <!-- REPEAT:walk_cells -->
+      <td style="padding:9px 6px;background:{{bg}};" align="center"><div style="font-size:12px;font-weight:{{weight}};color:#2C3E50;">{{val}}</div><div style="font-size:9px;font-weight:700;color:{{color}};margin-top:1px;">{{pct}}</div></td>
+      <!-- /REPEAT:walk_cells -->
+    </tr>
+    <tr style="border-top:1px solid #E8E8E8;">
+      <td style="padding:9px 10px;font-size:11px;font-weight:700;color:#F27061;">Airport Staff</td>
+      <!-- REPEAT:staff_cells -->
+      <td style="padding:9px 6px;background:{{bg}};" align="center"><div style="font-size:12px;font-weight:{{weight}};color:#2C3E50;">{{val}}</div><div style="font-size:9px;font-weight:700;color:{{color}};margin-top:1px;">{{pct}}</div></td>
+      <!-- /REPEAT:staff_cells -->
+    </tr>
+    <tr style="border-top:2px solid #E8E8E8;background:#F8F9FA;">
+      <td style="padding:9px 10px;font-size:11px;font-weight:700;color:#2C3E50;">Total</td>
+      <!-- REPEAT:total_cells -->
+      <td style="padding:9px 6px;background:{{bg}};" align="center"><div style="font-size:12px;font-weight:700;color:#2C3E50;">{{val}}</div><div style="font-size:9px;font-weight:700;color:{{color}};margin-top:1px;">{{pct}}</div></td>
+      <!-- /REPEAT:total_cells -->
+    </tr>
+  </table>
+</td></tr>
+
+<!-- ── 7-DAY HEATMAP (rows=days, cols=Revenue/Bills/Avg Ticket; shaded per column) ── -->
+<tr><td style="padding:18px 32px 8px;">
+  <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:4px;border-left:3px solid #5551FE;padding-left:10px;">7-Day Performance Heatmap</div>
+  <div style="font-size:11px;color:#888;margin-bottom:12px;padding-left:13px;">เฉดสีเข้ม = ค่าสูงในรอบ 7 วัน (แยกตามคอลัมน์) &nbsp;·&nbsp; WoW = เทียบวันเดียวกันสัปดาห์ก่อน</div>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E8E8E8;border-radius:8px;overflow:hidden;">
+    <tr style="background:#F8F9FA;">
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" width="22%">วัน</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="26%">Revenue</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="16%">Bills</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="20%">Avg Ticket</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="16%">WoW</td>
+    </tr>
+    <!-- REPEAT:heatmap_rows -->
+    <tr style="border-top:1px solid #E8E8E8;">
+      <td style="padding:9px 12px;font-size:11px;font-weight:{{day_weight}};color:#2C3E50;">{{day_label_th}}</td>
+      <td style="padding:9px 12px;font-size:11px;font-weight:{{rev_weight}};color:{{rev_fg}};background:{{rev_bg}};" align="right">฿{{rev}}</td>
+      <td style="padding:9px 12px;font-size:11px;font-weight:{{bills_weight}};color:{{bills_fg}};background:{{bills_bg}};" align="right">{{bills}}</td>
+      <td style="padding:9px 12px;font-size:11px;font-weight:{{ticket_weight}};color:{{ticket_fg}};background:{{ticket_bg}};" align="right">฿{{ticket}}</td>
+      <td style="padding:9px 12px;font-size:11px;font-weight:{{wow_weight}};color:{{wow_color}};" align="right">{{wow_pct}}</td>
+    </tr>
+    <!-- /REPEAT:heatmap_rows -->
+  </table>
+</td></tr>
+
+<!-- ── TOP 10 ALL MENU ── -->
+<tr><td style="padding:18px 32px 8px;">
+  <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:11px;border-left:3px solid #F27061;padding-left:10px;">Top 10 เมนู (All Items)</div>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E8E8E8;border-radius:8px;overflow:hidden;">
+    <tr style="background:#F8F9FA;">
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;width:5%;">#</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;width:10%;">Item</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;">เมนู</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="center">วาน</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="center">5d avg</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right">%</td>
+    </tr>
+    <!-- REPEAT:top10_all -->
+    <tr style="border-top:1px solid #E8E8E8;background:{{row_bg}};"><td style="padding:8px 12px;font-size:11px;color:#888;">{{rank}}</td><td style="padding:8px 12px;font-size:11px;font-weight:700;color:#5551FE;">{{itemid}}</td><td style="padding:8px 12px;font-size:11px;color:#2C3E50;">{{name}}</td><td style="padding:8px 12px;font-size:12px;font-weight:700;color:#2C3E50;" align="center">{{qty}}</td><td style="padding:8px 12px;font-size:11px;color:#888;" align="center">{{avg5d}}</td><td style="padding:8px 12px;font-size:10px;" align="right"><span style="background:{{badge_bg}};color:{{badge_fg}};padding:2px 6px;border-radius:3px;">{{badge_label}}</span></td></tr>
+    <!-- /REPEAT:top10_all -->
+    <tr style="border-top:1px solid #E8E8E8;"><td colspan="6" style="padding:6px 12px;font-size:10px;color:#999;">⭐ = rice menu item</td></tr>
+  </table>
+</td></tr>
+
+<!-- ── TOP 10 RICE MENU ── -->
+<tr><td style="padding:18px 32px 8px;">
+  <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:11px;border-left:3px solid #5551FE;padding-left:10px;">Top 10 เมนูข้าว (Rice Menu Only)</div>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E8E8E8;border-radius:8px;overflow:hidden;">
+    <tr style="background:#EEECFF;">
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#5551FE;text-transform:uppercase;letter-spacing:.5px;width:5%;">#</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#5551FE;text-transform:uppercase;letter-spacing:.5px;width:10%;">Item</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#5551FE;text-transform:uppercase;letter-spacing:.5px;">เมนูข้าว</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#5551FE;text-transform:uppercase;letter-spacing:.5px;" align="center">วาน</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#5551FE;text-transform:uppercase;letter-spacing:.5px;" align="center">5d avg</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#5551FE;text-transform:uppercase;letter-spacing:.5px;" align="right">FC%</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#5551FE;text-transform:uppercase;letter-spacing:.5px;" align="right">%</td>
+    </tr>
+    <!-- REPEAT:top10_rice -->
+    <tr style="border-top:1px solid #E8E8E8;background:{{row_bg}};"><td style="padding:8px 12px;font-size:11px;color:#888;">{{rank}}</td><td style="padding:8px 12px;font-size:11px;font-weight:700;color:#5551FE;">{{itemid}}</td><td style="padding:8px 12px;font-size:11px;color:#2C3E50;">{{name}}</td><td style="padding:8px 12px;font-size:12px;font-weight:700;color:#2C3E50;" align="center">{{qty}}</td><td style="padding:8px 12px;font-size:11px;color:#888;" align="center">{{avg5d}}</td><td style="padding:8px 12px;font-size:10px;color:#888;" align="right">{{fc_pct}}</td><td style="padding:8px 12px;font-size:10px;" align="right"><span style="background:{{badge_bg}};color:{{badge_fg}};padding:2px 6px;border-radius:3px;">{{badge_label}}</span></td></tr>
+    <!-- /REPEAT:top10_rice -->
+  </table>
+</td></tr>
+
+<!-- ── HOURLY COMPARISON ── -->
+<tr><td style="padding:18px 32px 8px;">
+  <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:6px;border-left:3px solid #E67E22;padding-left:10px;">Hourly Sales Comparison — {{prev_date_short}} vs {{report_date_short}}</div>
+  <div style="font-size:11px;color:#888;margin-bottom:10px;padding-left:13px;">เปรียบเทียบรายชั่วโมง เพื่อหาช่วงเวลาที่มีปัญหา</div>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E8E8E8;border-radius:8px;overflow:hidden;">
+    <tr style="background:#F8F9FA;">
+      <td style="padding:8px 10px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" width="9%">ชั่วโมง</td>
+      <td style="padding:8px 10px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="16%">{{prev_date_short}}</td>
+      <td style="padding:8px 10px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="16%">{{report_date_short}}</td>
+      <td style="padding:8px 10px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="12%">เปลี่ยน</td>
+      <td style="padding:8px 10px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="13%">avg ปกติ</td>
+      <td style="padding:8px 10px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" width="34%">Top 3 เมนู (ชม.นี้)</td>
+    </tr>
+    <!-- REPEAT:hourly_rows -->
+    <tr style="border-top:1px solid #E8E8E8;background:{{row_bg}};"><td style="padding:7px 10px;font-size:11px;font-weight:700;color:{{hour_color}};">{{hour}}{{hour_flag}}</td><td style="padding:7px 10px;font-size:11px;color:{{prev_color}};" align="right">{{prev_rev}}</td><td style="padding:7px 10px;font-size:11px;color:{{cur_color}};" align="right">{{cur_rev}}</td><td style="padding:7px 10px;font-size:10px;" align="right"><span style="color:{{change_color}};font-weight:{{change_weight}};">{{change_pct}}</span></td><td style="padding:7px 10px;font-size:10px;color:#888;" align="right">฿{{bench}}</td><td style="padding:7px 10px;font-size:10px;color:#555;line-height:1.4;">{{top3}}</td></tr>
+    <!-- /REPEAT:hourly_rows -->
+  </table>
+</td></tr>
+
+<!-- ── CCTV ACTION PLAN: removed per request. Anomaly flagging still drives the alert banner
+        and the Quality-group message; re-add this SECTION:cctv block if the plan is wanted again. ── -->
+
+<!-- ── PROMOTION ── -->
+<!-- SECTION:promo -->
+<tr><td style="padding:18px 32px 8px;">
+  <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:11px;border-left:3px solid #27AE60;padding-left:10px;">Promotion Status</div>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td width="48%" style="padding-right:6px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#EEECFF;border-radius:8px;border-left:4px solid #5551FE;">
+        <tr><td style="padding:12px 14px;">
+          <div style="font-size:10px;font-weight:700;color:#5551FE;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;">Promo 1 — Staff 10% Discount</div>
+          <div style="font-size:26px;font-weight:700;color:#2C3E50;">{{staff10_bills}} <span style="font-size:12px;font-weight:400;color:#888;">bills</span></div>
+          <div style="font-size:10px;color:#888;margin-top:3px;">Rate: -9.81 ex (rice) + -1.68 ex (egg)</div>
+          <div style="margin-top:7px;"><span style="background:{{staff10_badge_bg}};color:{{staff10_badge_fg}};font-size:10px;padding:2px 8px;border-radius:4px;font-weight:700;">{{staff10_status}}</span></div>
+        </td></tr>
+      </table>
+    </td>
+    <td width="48%" style="padding-left:6px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFF0EE;border-radius:8px;border-left:4px solid #F27061;">
+        <tr><td style="padding:12px 14px;">
+          <div style="font-size:10px;font-weight:700;color:#F27061;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;">Promo 2 — +฿50 Drink Set</div>
+          <div style="font-size:26px;font-weight:700;color:#2C3E50;">{{set50_bills}} <span style="font-size:12px;font-weight:400;color:#888;">bills</span></div>
+          <div style="font-size:10px;color:#888;margin-top:3px;">Rate: -16.20 (drink) + -5.30 (egg)</div>
+          <div style="margin-top:7px;"><span style="background:{{set50_badge_bg}};color:{{set50_badge_fg}};font-size:10px;padding:2px 8px;border-radius:4px;font-weight:700;">{{set50_status}}</span></div>
+        </td></tr>
+      </table>
+    </td>
+  </tr></table>
+</td></tr>
+<!-- /SECTION:promo -->
+
+<!-- ── PROMOTION TREND BY WEEK (always shown; columns = 5 weeks, rows = the two promos) ── -->
+<tr><td style="padding:18px 32px 8px;">
+  <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:4px;border-left:3px solid #27AE60;padding-left:10px;">Promotion Trend by Week — Bills</div>
+  <div style="font-size:11px;color:#888;margin-bottom:12px;padding-left:13px;">จำนวนบิลโปรโมชันรายสัปดาห์ ย้อนหลัง 5 สัปดาห์ &nbsp;·&nbsp; % = เทียบสัปดาห์ก่อนหน้า</div>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E8E8E8;border-radius:8px;overflow:hidden;">
+    <tr style="background:#F8F9FA;">
+      <td style="padding:8px 10px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" width="15%">โปรโมชัน</td>
+      <!-- REPEAT:week_headers -->
+      <td style="padding:8px 6px;font-size:9px;font-weight:700;color:{{head_color}};text-transform:uppercase;letter-spacing:.3px;background:{{head_bg}};" align="center" width="17%">{{label}}</td>
+      <!-- /REPEAT:week_headers -->
+    </tr>
+    <tr style="border-top:1px solid #E8E8E8;">
+      <td style="padding:9px 10px;font-size:11px;font-weight:700;color:#5551FE;">Staff 10%</td>
+      <!-- REPEAT:staff10_cells -->
+      <td style="padding:9px 6px;background:{{bg}};" align="center"><div style="font-size:12px;font-weight:{{weight}};color:#2C3E50;">{{val}}</div><div style="font-size:9px;font-weight:700;color:{{color}};margin-top:1px;">{{pct}}</div></td>
+      <!-- /REPEAT:staff10_cells -->
+    </tr>
+    <tr style="border-top:1px solid #E8E8E8;">
+      <td style="padding:9px 10px;font-size:11px;font-weight:700;color:#F27061;">+฿50 Drink Set</td>
+      <!-- REPEAT:set50_cells -->
+      <td style="padding:9px 6px;background:{{bg}};" align="center"><div style="font-size:12px;font-weight:{{weight}};color:#2C3E50;">{{val}}</div><div style="font-size:9px;font-weight:700;color:{{color}};margin-top:1px;">{{pct}}</div></td>
+      <!-- /REPEAT:set50_cells -->
+    </tr>
+  </table>
+</td></tr>
+
+<!-- ── FOOTER ── -->
+<tr><td style="padding:18px 32px 26px;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #E8E8E8;">
+    <tr><td style="padding-top:14px;font-size:10px;color:#AAA;">
+      CHAW Analytics · Khiang Restaurant · Suvarnabhumi Airport T1<br>
+      Data: NetSuite POS (Zoku) · Generated: {{generated_date}}<br>
+      <span style="color:#888;">CHAW Values: {{chaw_values}}</span>
+    </td>
+    <td align="right" style="padding-top:14px;">
+      <span style="background:#5551FE;color:#fff;font-size:10px;font-weight:700;padding:5px 12px;border-radius:20px;">CHAW</span>
+    </td></tr>
+  </table>
+</td></tr>
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>
