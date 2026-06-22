@@ -1,0 +1,411 @@
+<!--
+  actioncity-template.html — LOCKED daily-dashboard email template.
+  The routine FILLS this with fill_template.py from data.json. It NEVER regenerates this HTML.
+  Mechanisms: double-brace scalar token | REPEAT:name rows | SECTION:name conditional block
+  Keep every colour/size/inline style exactly — email-client tested. This comment header is stripped on fill.
+-->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ActionCity Daily Sales &amp; Stock Dashboard</title>
+<style>body{margin:0;padding:0;}</style></head>
+<body style="margin:0;padding:0;background:#F5EDE4;font-family:'Poppins',Arial,Helvetica,sans-serif;color:#2b2b33;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F5EDE4;padding:24px 0;"><tr><td align="center">
+<table role="presentation" width="920" cellpadding="0" cellspacing="0" style="max-width:920px;width:100%;">
+
+<!-- HEADER -->
+<tr><td style="background:#5551FE;border-radius:14px;padding:26px 30px;">
+  <table role="presentation" width="100%"><tr>
+    <td style="vertical-align:middle;">
+      <div style="font-size:13px;font-weight:600;letter-spacing:2px;color:#C9C7FF;text-transform:uppercase;">ActionCity (Thailand) &middot; Sub 22 &middot; Retail / Art Toy</div>
+      <div style="font-size:27px;font-weight:700;color:#ffffff;line-height:1.15;margin-top:4px;">Daily Sales &amp; Stock Dashboard</div>
+      <div style="font-size:15px;color:#E6E5FF;margin-top:3px;">21 Jun 2026 (Sun) &middot; end-of-day close &middot; week-to-date W25</div>
+    </td>
+    <td align="right" style="vertical-align:middle;">
+      <div style="display:inline-block;background:#F27061;color:#ffffff;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;">DAILY</div>
+    </td>
+  </tr></table>
+</td></tr>
+<tr><td style="height:14px;"></td></tr>
+
+<!-- EXEC INSIGHT (generative; omitted if no insight rows) -->
+
+<tr><td style="background:#ffffff;border-radius:12px;padding:18px 22px;border-left:4px solid #F27061;">
+  <div style="font-size:15px;font-weight:600;margin-bottom:8px;">&#128202; Executive Insight <span style="font-size:11px;font-weight:400;color:#8a8a93;">&middot; AI summary of the numbers below</span></div>
+  <div style="font-size:13px;line-height:1.7;color:#4a4640;">
+    
+    &bull; <b>W25 closes at ฿352,117 over 7 days</b> (฿50,302/day) — today's retail ฿56,442 / 81 bills / 124 units is <b>▼−26.6% vs last Sunday</b> (฿76,928). Below W24's ฿439,693 but above the W22 base (฿356,866). Best seller today: Little World Sweet Conquests Squishy 11 units.<br>
+    
+    &bull; <b>Retails</b> led W25 at ฿316,515 (90% share) but down −21% vs W24 (฿400,674) which was boosted by the 17 Jun Siam Specialty wholesale order. Stripping wholesale: underlying retail pace steady. <b>Vending</b> ฿20,555 (−2.5%), <b>Shopee</b> ฿15,047 (−5.5%) both held. <b>TikTok</b> dropped to ฿0 (W24: ฿2,000).<br>
+    
+    &bull; <b>Siam Square One leads</b> for 3rd consecutive week: W23 ฿179,788 → W24 ฿185,249 → W25 ฿189,880 (+2.5%). <b>Central Ladprao in a 3-week slide</b>: ฿53,352 → ฿43,566 → ฿37,341 (−30% from W23 peak) — watch closely.<br>
+    
+    &bull; <b>⚠ ACT Westgate dark</b> — zero sales recorded for W23, W24 and W25 (3 consecutive weeks). Check store status and POS feed immediately.<br>
+    
+    &bull; <b>Reorder urgent:</b> Grogu Chubby Planet BB at only 5 units vs ~17/wk pace (cover 0.3 wk). Also Lulu Office Series BB (2 units left, cover 0.6 wk) and Naruto Kittenland BB (4 units, cover 0.8 wk).<br>
+    
+    &bull; <b>Dead stock:</b> MNT / Big Box consignment 72 SKUs / 3,547 units — priority return candidate (not ActionCity cash, but holds shelf space). Interco (Pony/Toysinbox/Chaw) 253 SKUs / 3,067 units. Owned dead-stock 125 SKUs / 747 units — review for clearance or markdown.<br>
+    
+  </div>
+</td></tr>
+<tr><td style="height:14px;"></td></tr>
+
+
+<!-- KPI HEADLINE -->
+<tr><td>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0"><tr>
+    <td width="25%" style="padding-right:9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Net sales &middot; today (retail)</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">&#3647;56,442</div>
+      <div style="font-size:13px;color:#d6453a;font-weight:600;margin-top:2px;">&#9660; −26.6% vs same day last wk (retail)</div>
+    </div></td>
+    <td width="25%" style="padding:0 9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Bills &middot; today</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">81</div>
+      <div style="font-size:13px;color:#8a8a93;font-weight:500;margin-top:2px;">81 retail bills · 124 units · ฿697 avg ticket</div>
+    </div></td>
+    <td width="25%" style="padding:0 9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Avg ticket &middot; today (retail)</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">&#3647;697</div>
+      <div style="font-size:13px;color:#8a8a93;font-weight:500;margin-top:2px;">retail only &middot; excl. wholesale</div>
+    </div></td>
+    <td width="25%" style="padding-left:9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Week-to-date &middot; W25</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">&#3647;352,117</div>
+      <div style="font-size:13px;color:#8a8a93;font-weight:500;margin-top:2px;">7 days &middot; ~&#3647;50,302/day</div>
+    </div></td>
+  </tr></table>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- DAILY SALES BY BRANCH (today) -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:18px 22px;">
+  <div style="font-size:15px;font-weight:600;margin-bottom:2px;">Daily sales by branch <span style="font-size:11px;font-weight:400;color:#8a8a93;">&middot; 21 Jun 2026 (Sun)</span></div>
+  <div style="font-size:11px;color:#8a8a93;margin-bottom:10px;">Today's net &amp; bills per branch. Ticket = retail only (excludes wholesale).</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:10px;"><td style="padding-bottom:3px;">Branch</td><td align="right" style="padding-bottom:3px;">Net &#3647;</td><td align="right" style="padding-bottom:3px;">Bills</td><td align="right" style="padding-bottom:3px;">Ticket</td><td align="right" style="padding-bottom:3px;">&nbsp;</td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Siam Square One</td><td align="right" style="font-weight:600;color:#2b2b33;">21,292</td><td align="right">29</td><td align="right">734</td><td align="right"></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Fashion Island</td><td align="right" style="font-weight:600;color:#2b2b33;">14,677</td><td align="right">27</td><td align="right">544</td><td align="right"></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Warehouse HQ (Liberty)</td><td align="right" style="font-weight:600;color:#2b2b33;">10,318</td><td align="right">8</td><td align="right">1,290</td><td align="right"></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Central Ladprao</td><td align="right" style="font-weight:600;color:#2b2b33;">10,155</td><td align="right">17</td><td align="right">597</td><td align="right"></td></tr>
+    
+  </table>
+  <div style="font-size:11px;color:#8a8a93;margin-top:7px;">Sunday EOD — all 4 stores posted. Siam Square One led at ฿21,292 (29 bills); Fashion Island ฿14,677; Warehouse HQ ฿10,318; Central Ladprao ฿10,155. No vending / e-commerce posted today.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- BEST SELLERS TODAY (omit if none >=5) -->
+
+
+<!-- NET SALES BY WEEK -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;">Net sales by week</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:16px;">Net = invoices &minus; returns (inventory items, wash-lines excluded). W25 is week-to-date.</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:13px;">
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:500;">W19</td><td><div style="background:#C9C7FF;height:18px;width:62%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:500;color:#2b2b33;">&#3647;468,288</td></tr>
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:500;">W20</td><td><div style="background:#C9C7FF;height:18px;width:48%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:500;color:#2b2b33;">&#3647;362,936</td></tr>
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:500;">W21</td><td><div style="background:#C9C7FF;height:18px;width:100%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:500;color:#2b2b33;">&#3647;755,367</td></tr>
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:500;">W22</td><td><div style="background:#C9C7FF;height:18px;width:47%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:500;color:#2b2b33;">&#3647;356,866</td></tr>
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:500;">W23</td><td><div style="background:#C9C7FF;height:18px;width:51%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:500;color:#2b2b33;">&#3647;382,578</td></tr>
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:500;">W24</td><td><div style="background:#C9C7FF;height:18px;width:58%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:500;color:#2b2b33;">&#3647;439,693</td></tr>
+    
+    <tr><td width="60" style="color:#2b2b33;padding:5px 0;font-weight:700;">W25 (WTD)</td><td><div style="background:#5551FE;height:18px;width:47%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:700;color:#2b2b33;">&#3647;352,117</td></tr>
+    
+  </table>
+  <div style="background:#F5EDE4;border-radius:8px;padding:12px 14px;margin-top:14px;font-size:12px;color:#5b5547;line-height:1.6;">W25 closed at ฿352,117 (7-day Sun EOD complete). Down −19.9% vs W24 (฿439,693) which included a ฿72k Siam Specialty wholesale drop. Above W22 base (฿356,866). W21 spike (฿755K) was a promotional outlier. Underlying retail run-rate ฿350–440K/week.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REVENUE BY BUSINESS UNIT -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Revenue by business unit <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; W25 to date vs prior week</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;">
+    <tr style="color:#8a8a93;font-size:10px;"><td>BU</td><td></td><td align="right">Net &#3647;</td><td align="right">Share</td><td align="right">WoW</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">Retails</td><td style="width:40%;"><span style="background:#5551FE;height:13px;width:100%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">316,515</td><td align="right">89.9%</td><td align="right" style="color:#d6453a;">&#9660;-21.0%</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">Vending</td><td style="width:40%;"><span style="background:#5551FE;height:13px;width:6%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">20,555</td><td align="right">5.8%</td><td align="right" style="color:#d6453a;">&#9660;-2.5%</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">Shopee</td><td style="width:40%;"><span style="background:#5551FE;height:13px;width:5%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">15,047</td><td align="right">4.3%</td><td align="right" style="color:#d6453a;">&#9660;-5.5%</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">TikTok</td><td style="width:40%;"><span style="background:#5551FE;height:13px;width:0%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">0</td><td align="right">0.0%</td><td align="right" style="color:#d6453a;">&#9660;-100.0%</td></tr>
+    
+  </table>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REVENUE BY BRANCH -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Revenue by branch <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; last 3 weeks (W23&ndash;W25, net &#3647;; &#9881; = vending)</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:11px;">
+    <tr style="color:#8a8a93;font-size:10px;"><td>Branch</td><td align="right">W23</td><td align="right">W24</td><td align="right">W25</td><td align="right">Trend</td><td align="right">Flag</td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Siam Square One</td><td align="right">179,788</td><td align="right">185,249</td><td align="right" style="font-weight:600;color:#1f7a55;">189,880</td><td align="right" style="color:#1f9d57;">&#9650;</td><td align="right"></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Fashion Island</td><td align="right">79,937</td><td align="right">99,027</td><td align="right" style="font-weight:600;color:#c43b27;">78,219</td><td align="right" style="color:#d6453a;">&#9660;</td><td align="right"></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Central Ladprao</td><td align="right">53,352</td><td align="right">43,566</td><td align="right" style="font-weight:600;color:#c43b27;">37,341</td><td align="right" style="color:#d6453a;">&#9660;</td><td align="right"></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Warehouse HQ (Liberty)</td><td align="right">37,712</td><td align="right">90,762</td><td align="right" style="font-weight:600;color:#c43b27;">26,122</td><td align="right" style="color:#d6453a;">&#9660;</td><td align="right"><span style="background:#eeedfe;color:#5551FE;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;">WHSL</span></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Vending IconSiam 6F</td><td align="right">19,871</td><td align="right">9,296</td><td align="right" style="font-weight:600;color:#1f7a55;">11,078</td><td align="right" style="color:#1f9d57;">&#9650;</td><td align="right"></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Vending Rama 9</td><td align="right">4,110</td><td align="right">1,512</td><td align="right" style="font-weight:600;color:#1f7a55;">3,458</td><td align="right" style="color:#1f9d57;">&#9650;</td><td align="right"></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Vending Bangkapi 2</td><td align="right">5,794</td><td align="right">4,794</td><td align="right" style="font-weight:600;color:#c43b27;">3,187</td><td align="right" style="color:#d6453a;">&#9660;</td><td align="right"></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Vending Bangkapi 1</td><td align="right">2,012</td><td align="right">5,485</td><td align="right" style="font-weight:600;color:#c43b27;">2,833</td><td align="right" style="color:#d6453a;">&#9660;</td><td align="right"></td></tr>
+    
+    <tr style="background:#fff8f6;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#c43b27;">ACT Westgate</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;color:#1f7a55;">—</td><td align="right" style="color:#1f9d57;">&#9650;</td><td align="right"><span style="background:#fdeeec;color:#c43b27;font-size:9px;font-weight:700;padding:1px 6px;border-radius:9px;">DARK</span></td></tr>
+    
+  </table>
+  <div style="font-size:11px;color:#8a8a93;margin-top:8px;">Last 3 complete weeks net ฿ (W23/W24/W25). <b>Siam Square One steady uptrend</b> — best branch for 3 weeks. <b>Central Ladprao 3-week decline</b> (฿53K→฿44K→฿37K, −30% from W23). Warehouse HQ W24 spike was the 17 Jun Siam Specialty wholesale order (~฿72K), not store demand (W25 back to ฿26K). <b>ACT Westgate: DARK (3 consecutive zero-weeks)</b> — investigate urgently.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- CATEGORY MIX -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;">Category mix &middot; Collectables vs the rest</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:14px;">Collectables = premium 100/200/300/400/1000% figures. Trailing 4 weeks.</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:13px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left" style="padding:6px 0;">Category</th><th align="right">SKUs</th><th align="right">Units</th><th align="right">Net</th><th align="right">% sales</th><th align="right">ASP</th><th align="right">GP%</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Collectables (100/200/400%)</td><td align="right">24</td><td align="right">45</td><td align="right" style="font-weight:600;">&#3647;155,052</td><td align="right">10.1%</td><td align="right">&#3647;3,446</td><td align="right" style="color:#c43b27;">42.6%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Rest (blind boxes, plush, figures)</td><td align="right">228</td><td align="right">4,493</td><td align="right" style="font-weight:600;">&#3647;1,376,201</td><td align="right">89.9%</td><td align="right">&#3647;306</td><td align="right" style="color:#c43b27;">41.9%</td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:10px;">Collectables ~10% of revenue (4-wk W22–W25) from &lt;1% of units (ASP ฿3,446 vs ฿306 for rest). Both categories running GP ~42% — below the 50% target. Watch pricing on blind-box margins.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REORDER NOW -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;border:2px solid #F27061;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;"><span style="display:inline-block;width:9px;height:9px;background:#F27061;border-radius:50%;vertical-align:middle;"></span> Reorder now: fast movers, low stock, nothing on order</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:14px;">Retail/e-commerce velocity over the last 5 weeks (W21&ndash;W25). Cover = stock &divide; 4-wk weekly avg.</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="right">W21</th><th align="right">W22</th><th align="right">W23</th><th align="right">W24</th><th align="right">W25</th><th align="right">Stock</th><th align="right">Cover</th><th align="right">Action</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Grogu Chubby Planet Series Plush Keychain Blind Box</td><td align="right">0</td><td align="right">0</td><td align="right">16</td><td align="right">37</td><td align="right">14</td><td align="right" style="color:#c43b27;">5</td><td align="right">0.3w</td><td align="right"><span style="background:#e3f5ec;color:#1f9d57;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">REORDER&#8593;</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Lulu The Piggy Office Series Figure Blind Box</td><td align="right">0</td><td align="right">0</td><td align="right">4</td><td align="right">9</td><td align="right">1</td><td align="right" style="color:#c43b27;">2</td><td align="right">0.6w</td><td align="right"><span style="background:#e3f5ec;color:#1f9d57;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">REORDER&#8593;</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Naruto Kittenland Plush Keychain Blind Box</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">18</td><td align="right">2</td><td align="right" style="color:#c43b27;">4</td><td align="right">0.8w</td><td align="right"><span style="background:#e3f5ec;color:#1f9d57;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">REORDER</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Crayon Shinchan Playground Mini Hipper Blind Box</td><td align="right">24</td><td align="right">10</td><td align="right">8</td><td align="right">9</td><td align="right">4</td><td align="right" style="color:#c43b27;">13</td><td align="right">1.7w</td><td align="right"><span style="background:#fef8e7;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">SMALL BUY</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Fuggler Sassy Cuties Squad Plush Keychain Blind Box</td><td align="right">0</td><td align="right">13</td><td align="right">24</td><td align="right">27</td><td align="right">31</td><td align="right" style="color:#2b2b33;">41</td><td align="right">1.7w</td><td align="right"><span style="background:#fef8e7;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">SMALL BUY</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Fuggler Heart Care Bear Monster Plush Keychain Blind Box</td><td align="right">24</td><td align="right">29</td><td align="right">34</td><td align="right">20</td><td align="right">21</td><td align="right" style="color:#2b2b33;">52</td><td align="right">2.0w</td><td align="right"><span style="background:#fef8e7;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">SMALL BUY</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">A Day In The Life Of A Bikini Bottom Resident Series Plush Keychain Blind Box</td><td align="right">13</td><td align="right">28</td><td align="right">10</td><td align="right">8</td><td align="right">8</td><td align="right" style="color:#2b2b33;">28</td><td align="right">2.1w</td><td align="right"><span style="background:#fef8e7;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">SMALL BUY</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Disney Princess On The Run Plush Keychain Blind Box</td><td align="right">41</td><td align="right">30</td><td align="right">7</td><td align="right">8</td><td align="right">12</td><td align="right" style="color:#2b2b33;">34</td><td align="right">2.4w</td><td align="right"><span style="background:#fef8e7;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">SMALL BUY</span></td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:12px;">Retail velocity W22–W25. Grogu Chubby Planet critical (5 units, cover 0.3 wk). Lulu Office Series and Naruto Kittenland also urgent. Fuggler Sassy Cuties accelerating well but not yet alarm-level.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- TOP MOVERS -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Top 20 sellers by units &middot; last 2 weeks (W24 + W25) <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; retail only, wholesale excluded</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;table-layout:fixed;">
+    <colgroup><col style="width:34%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:7%"><col style="width:9%"><col style="width:9%"><col style="width:9%"></colgroup>
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="right">Stock</th><th align="right">W24</th><th align="right">W25</th><th align="right">2-wk</th><th align="right">/day</th><th align="right">Net &#3647;</th><th align="right">GP &#3647;</th><th align="right">GP%</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Upset Duck Status Display Duck Hipper Blind Box</td><td align="right" style="color:#2b2b33;">290</td><td align="right">52</td><td align="right" style="color:#1f9d57;">64</td><td align="right" style="font-weight:600;">116</td><td align="right" style="font-weight:600;">8.3</td><td align="right">21,725</td><td align="right">11,559</td><td align="right" style="color:#1f7a55;">53.2%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Fuggler Alley Cat Plush Keychain Blind Box</td><td align="right" style="color:#2b2b33;">157</td><td align="right">37</td><td align="right" style="color:#1f9d57;">44</td><td align="right" style="font-weight:600;">81</td><td align="right" style="font-weight:600;">5.8</td><td align="right">31,810</td><td align="right">16,255</td><td align="right" style="color:#1f7a55;">51.1%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Upset Duck Stop The Spiral Duck Blind Box</td><td align="right" style="color:#2b2b33;">464</td><td align="right">43</td><td align="right" style="color:#d6453a;">28</td><td align="right" style="font-weight:600;">71</td><td align="right" style="font-weight:600;">5.1</td><td align="right">13,205</td><td align="right">6,981</td><td align="right" style="color:#1f7a55;">52.9%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Opandee Zombie Party Series 4 Figures Blind Box</td><td align="right" style="color:#2b2b33;">554</td><td align="right">29</td><td align="right" style="color:#1f9d57;">32</td><td align="right" style="font-weight:600;">61</td><td align="right" style="font-weight:600;">4.4</td><td align="right">27,935</td><td align="right">13,452</td><td align="right" style="color:#c43b27;">48.2%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Upset Duck Mini Wishlist Plush Keychain Blind Box</td><td align="right" style="color:#2b2b33;">247</td><td align="right">19</td><td align="right" style="color:#1f9d57;">41</td><td align="right" style="font-weight:600;">60</td><td align="right" style="font-weight:600;">4.3</td><td align="right">21,533</td><td align="right">11,265</td><td align="right" style="color:#1f7a55;">52.3%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Fuggler Sassy Cuties Squad Plush Keychain Blind Box</td><td align="right" style="color:#2b2b33;">41</td><td align="right">27</td><td align="right" style="color:#1f9d57;">31</td><td align="right" style="font-weight:600;">58</td><td align="right" style="font-weight:600;">4.1</td><td align="right">24,329</td><td align="right">13,428</td><td align="right" style="color:#1f7a55;">55.2%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Grogu Chubby Planet Series Plush Keychain Blind Box</td><td align="right" style="color:#c43b27;">5</td><td align="right">37</td><td align="right" style="color:#d6453a;">14</td><td align="right" style="font-weight:600;">51</td><td align="right" style="font-weight:600;">3.6</td><td align="right">18,561</td><td align="right">9,776</td><td align="right" style="color:#1f7a55;">52.7%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Mr. Bone Agent Plush Keychain Blind Box</td><td align="right" style="color:#2b2b33;">300</td><td align="right">23</td><td align="right" style="color:#1f9d57;">24</td><td align="right" style="font-weight:600;">47</td><td align="right" style="font-weight:600;">3.4</td><td align="right">24,776</td><td align="right">11,094</td><td align="right" style="color:#c43b27;">44.8%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Fuggler Heart Care Bear Monster Plush Keychain Blind Box</td><td align="right" style="color:#2b2b33;">52</td><td align="right">20</td><td align="right" style="color:#1f9d57;">21</td><td align="right" style="font-weight:600;">41</td><td align="right" style="font-weight:600;">2.9</td><td align="right">16,467</td><td align="right">7,619</td><td align="right" style="color:#c43b27;">46.3%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Upset Duck Pocket Crazy Circus Duck Plush Keychain Blind Box</td><td align="right" style="color:#2b2b33;">173</td><td align="right">21</td><td align="right" style="color:#d6453a;">17</td><td align="right" style="font-weight:600;">38</td><td align="right" style="font-weight:600;">2.7</td><td align="right">14,916</td><td align="right">6,158</td><td align="right" style="color:#c43b27;">41.3%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Sanrio Characters Sweet Style Phone Chain Mini Blind Box</td><td align="right" style="color:#2b2b33;">53</td><td align="right">27</td><td align="right" style="color:#d6453a;">10</td><td align="right" style="font-weight:600;">37</td><td align="right" style="font-weight:600;">2.6</td><td align="right">7,608</td><td align="right">3,751</td><td align="right" style="color:#c43b27;">49.3%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Opandee Lucky Zombie Thirteen Orphans Figure Blind Box</td><td align="right" style="color:#2b2b33;">252</td><td align="right">20</td><td align="right" style="color:#d6453a;">12</td><td align="right" style="font-weight:600;">32</td><td align="right" style="font-weight:600;">2.3</td><td align="right">8,374</td><td align="right">4,219</td><td align="right" style="color:#1f7a55;">50.4%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Cat Hug Plush Keychain Blind Box</td><td align="right" style="color:#2b2b33;">280</td><td align="right">18</td><td align="right" style="color:#d6453a;">11</td><td align="right" style="font-weight:600;">29</td><td align="right" style="font-weight:600;">2.1</td><td align="right">13,103</td><td align="right">7,243</td><td align="right" style="color:#1f7a55;">55.3%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Qmsv Strike & Destiny Gundam Figure Blind Box</td><td align="right" style="color:#2b2b33;">74</td><td align="right">10</td><td align="right" style="color:#1f9d57;">17</td><td align="right" style="font-weight:600;">27</td><td align="right" style="font-weight:600;">1.9</td><td align="right">12,299</td><td align="right">5,362</td><td align="right" style="color:#c43b27;">43.6%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Cat Hug Figure Blind Box</td><td align="right" style="color:#2b2b33;">105</td><td align="right">19</td><td align="right" style="color:#d6453a;">8</td><td align="right" style="font-weight:600;">27</td><td align="right" style="font-weight:600;">1.9</td><td align="right">5,021</td><td align="right">2,760</td><td align="right" style="color:#1f7a55;">55.0%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Fuggler Baby Pinkles Series Plush Keychain Blind Box</td><td align="right" style="color:#2b2b33;">361</td><td align="right">16</td><td align="right" style="color:#d6453a;">11</td><td align="right" style="font-weight:600;">27</td><td align="right" style="font-weight:600;">1.9</td><td align="right">9,589</td><td align="right">5,370</td><td align="right" style="color:#1f7a55;">56.0%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Disney Princess Pony Plush Keychain Blind Box</td><td align="right" style="color:#2b2b33;">47</td><td align="right">20</td><td align="right" style="color:#d6453a;">6</td><td align="right" style="font-weight:600;">26</td><td align="right" style="font-weight:600;">1.9</td><td align="right">11,028</td><td align="right">5,099</td><td align="right" style="color:#c43b27;">46.2%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Panpan Mini 4th Anniversary Blind Box</td><td align="right" style="color:#2b2b33;">132</td><td align="right">20</td><td align="right" style="color:#d6453a;">5</td><td align="right" style="font-weight:600;">25</td><td align="right" style="font-weight:600;">1.8</td><td align="right">10,701</td><td align="right">3,551</td><td align="right" style="color:#c43b27;">33.2%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Bearbrick Series 50 Figure Blind Box</td><td align="right" style="color:#b5740a;">918</td><td align="right">12</td><td align="right" style="color:#1f9d57;">12</td><td align="right" style="font-weight:600;">24</td><td align="right" style="font-weight:600;">1.7</td><td align="right">4,464</td><td align="right">2,370</td><td align="right" style="color:#1f7a55;">53.1%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Naruto Shippuden Cute Animal Sit In Party Plush Keychain Blind Box</td><td align="right" style="color:#2b2b33;">149</td><td align="right">17</td><td align="right" style="color:#d6453a;">6</td><td align="right" style="font-weight:600;">23</td><td align="right" style="font-weight:600;">1.6</td><td align="right">11,925</td><td align="right">5,888</td><td align="right" style="color:#c43b27;">49.4%</td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:12px;"><b>Retail only — wholesale excluded.</b> Wholesale this period (W24+W25): <b>Siam Specialty ฿72,439 / 309 units across 12 SKUs</b> (4 orders on 17 Jun) — shown here, not in the ranking. Upset Duck Status Display led again (116 units, ฿21,725). Fuggler Alley Cat highest revenue (฿31,810). Mr. Bone Agent (฿24,776) and Panpan Mini 4th Anniversary (฿10,701, GP 33%) worth watching on margin.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- NEW ARRIVALS -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">New-arrival performance <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; recent launches (overstock judged on on-hand)</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Wk</th><th align="left">Product</th><th align="right">Recvd</th><th align="right">Sold</th><th align="right">On hand</th><th align="right">Read</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:6px 4px;font-weight:600;color:#5551FE;">W21</td><td style="padding:6px 0;font-weight:500;">Fuggler Sassy Cuties Squad Plush Keychain Blind Box</td><td align="right">136</td><td align="right">95</td><td align="right" style="color:#2b2b33;">41</td><td align="right"><span style="background:#e3f5ec;color:#1f9d57;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">HOT</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:6px 4px;font-weight:600;color:#5551FE;">W23</td><td style="padding:6px 0;font-weight:500;">Naruto Kittenland Plush Keychain Blind Box</td><td align="right">24</td><td align="right">20</td><td align="right" style="color:#c43b27;">4</td><td align="right"><span style="background:#e3f5ec;color:#1f9d57;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">HOT</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:6px 4px;font-weight:600;color:#5551FE;">W23</td><td style="padding:6px 0;font-weight:500;">Lulu The Piggy Office Series Figure Blind Box</td><td align="right">16</td><td align="right">14</td><td align="right" style="color:#c43b27;">2</td><td align="right"><span style="background:#e3f5ec;color:#1f9d57;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">HOT</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:6px 4px;font-weight:600;color:#5551FE;">W23</td><td style="padding:6px 0;font-weight:500;">Lulu The Piggy Lucky Cat Figure Blind Box</td><td align="right">32</td><td align="right">18</td><td align="right" style="color:#2b2b33;">14</td><td align="right"><span style="background:#e8f4ff;color:#1a6aa8;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">SELLING</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:6px 4px;font-weight:600;color:#5551FE;">W24</td><td style="padding:6px 0;font-weight:500;">Lollipoppi Bag Charm Plush Keychain Blind Box</td><td align="right">126</td><td align="right">6</td><td align="right" style="color:#2b2b33;">120</td><td align="right"><span style="background:#fef8e7;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">OVERSTOCK</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:6px 4px;font-weight:600;color:#5551FE;">W22</td><td style="padding:6px 0;font-weight:500;">Astro Boy Red Boots Samurai ( Black Edition ) 200%</td><td align="right">3</td><td align="right">3</td><td align="right" style="color:#c43b27;">0</td><td align="right"><span style="background:#fdeeec;color:#c43b27;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">SOLD OUT</span></td></tr>
+    
+  </table>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- PURCHASING: OPEN POs -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Purchasing &mdash; on the way <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; approved POs only, FX-converted</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="left">PO</th><th align="right">Qty</th><th align="right">THB value</th><th align="right">Flag</th></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Pony on Wheel TH — 463u (53 wks open)</td><td style="padding:5px 2px;">POACT250600020</td><td align="right">463</td><td align="right">฿398,261</td><td align="right"><span style="background:#fdeeec;color:#c43b27;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">OLD·INTERCO</span></td></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">FUJIAN 1983 Culture (USD on China PO)</td><td style="padding:5px 2px;">POACT251200065</td><td align="right">384</td><td align="right">฿217,836</td><td align="right"><span style="background:#fdeeec;color:#c43b27;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">FX+CANCEL?</span></td></tr>
+    
+    <tr style="background:#fef8e7;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Unknown vendor — 644u (48 wks open)</td><td style="padding:5px 2px;">POACT250700030</td><td align="right">644</td><td align="right">฿198,825</td><td align="right"><span style="background:#fef8e7;color:#b5740a;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">OLD PO</span></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Big Box International — 40u consignment</td><td style="padding:5px 2px;">POACT260400017</td><td align="right">40</td><td align="right">฿120,232</td><td align="right"><span style="background:#e1f5ee;color:#0f6e56;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">CONSIGN</span></td></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Pony on Wheel TH — 463u (54 wks open)</td><td style="padding:5px 2px;">POACT250600009</td><td align="right">463</td><td align="right">฿113,346</td><td align="right"><span style="background:#fdeeec;color:#c43b27;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">OLD·INTERCO</span></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Big Box International — 32u consignment</td><td style="padding:5px 2px;">POACT260300034</td><td align="right">32</td><td align="right">฿95,510</td><td align="right"><span style="background:#e1f5ee;color:#0f6e56;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">CONSIGN</span></td></tr>
+    
+    <tr style="background:#fef8e7;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Shenzhen Mo Yan Culture Media (CNY)</td><td style="padding:5px 2px;">POACT260500020</td><td align="right">324</td><td align="right">฿74,729</td><td align="right"><span style="background:#fef8e7;color:#b5740a;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">NEW</span></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">ACTIONCITY PTE. LTD — consignment</td><td style="padding:5px 2px;">POACT260500015</td><td align="right">25</td><td align="right">฿74,252</td><td align="right"><span style="background:#e1f5ee;color:#0f6e56;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">CONSIGN</span></td></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Pony on Wheel TH — 287u (27 wks open)</td><td style="padding:5px 2px;">POACT251200030</td><td align="right">287</td><td align="right">฿66,485</td><td align="right"><span style="background:#fdeeec;color:#c43b27;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">OLD·INTERCO</span></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Kingdom Come Co., Ltd (THB)</td><td style="padding:5px 2px;">POACT260200033</td><td align="right">192</td><td align="right">฿64,150</td><td align="right"><span style="background:#f4fdf8;color:#1f9d57;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">OK</span></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Big Box International — consignment</td><td style="padding:5px 2px;">POACT260300033</td><td align="right">10</td><td align="right">฿54,834</td><td align="right"><span style="background:#e1f5ee;color:#0f6e56;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">CONSIGN</span></td></tr>
+    
+    <tr style="background:#fef8e7;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">HEYCIAO International Group (CNY)</td><td style="padding:5px 2px;">POACT260500014</td><td align="right">216</td><td align="right">฿47,321</td><td align="right"><span style="background:#fef8e7;color:#b5740a;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">NEW</span></td></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Pony on Wheel TH — 194u (37 wks open)</td><td style="padding:5px 2px;">POACT251000011</td><td align="right">194</td><td align="right">฿43,981</td><td align="right"><span style="background:#fdeeec;color:#c43b27;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">OLD·INTERCO</span></td></tr>
+    
+    <tr style="background:#fef8e7;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">HEYCIAO International Group (CNY)</td><td style="padding:5px 2px;">POACT260400006</td><td align="right">240</td><td align="right">฿43,730</td><td align="right"><span style="background:#fef8e7;color:#b5740a;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">NEW</span></td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:12px;">Approved POs only — pending and rejected excluded. <b>Priority actions:</b> Review Pony on Wheel TH POs opened Jun 2025 (53+ weeks, ฿625K+ combined — cancel or expedite). FUJIAN 1983 PO booked in USD on a China vendor — verify FX (could be misbooking). 4 Big Box consignment POs (฿271K) — confirm receipt schedule.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- DEAD STOCK -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;">Dead stock &mdash; 0 sales in 4 weeks</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:12px;">Owned (clear) first; consignment &amp; intercompany (return) summarised below.</div>
+
+  <div style="font-size:13px;font-weight:600;color:#5551FE;margin:4px 0 8px;">1. Owned / bought &mdash; to clear (125 SKUs &middot; ~&#3647;est. ฿100K at cost)</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;table-layout:fixed;">
+    <colgroup><col style="width:52%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col style="width:12%"></colgroup>
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="right">On hand</th><th align="right">Cost</th><th align="right">Price</th><th align="right">Stock &#3647;</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Heyone Mimi Little World Sweet Conquests</td><td align="right">60</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Penguin Canvas Bag</td><td align="right">37</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Ozai First Floating Bottle Mini Plush Blind Box</td><td align="right">23</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Astro Boy Feat. Tokidoki 200%</td><td align="right">21</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Jelilo (Devil Fish)</td><td align="right">20</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Jelilo (Scar Face)</td><td align="right">20</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Jelilo (Sea Dog)</td><td align="right">19</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Jelilo (Shark Tooth)</td><td align="right">19</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Astro Boy Jiangshi Awakening 200%</td><td align="right">18</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Opandee Zombie Party Series 3 Blind Box</td><td align="right">17</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Bearbrick Series 41 Blind Box</td><td align="right">15</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Astro Boy Feat. Kong Andri Copper 200%</td><td align="right">15</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Disney Winnie The Pooh Happy Moment Figures</td><td align="right">15</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Upset Duck Pocket Colourful Player Duck Plush Keychain Blind Box</td><td align="right">14</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Miffy Food Workshop Plush Keychain Blind Box</td><td align="right">13</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Bearbrick Chase 100% Star Wars #1 Blind Box</td><td align="right">12</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Miffy Mini Bag Series Plush Keychain Blind Box</td><td align="right">12</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Stitch Sweet & Cool Adventure Figure Blind Box</td><td align="right">12</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Astro Boy Jiangshi 200%</td><td align="right">11</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Opandee Zombie Party Halloween Figure Blind Box</td><td align="right">11</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+  </table>
+
+  <div style="font-size:13px;font-weight:600;color:#5551FE;margin:18px 0 8px;">2. Consignment &amp; intercompany &mdash; send back</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:13px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Type</th><th align="left">Supplier</th><th align="right">SKUs</th><th align="right">Units</th><th align="right">Action</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;"><span style="background:#fdeeec;color:#c43b27;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">CONSIGN</span></td><td style="padding:7px 0;font-weight:500;">MNT-series / Big Box V-00654 (mystery boxes)</td><td align="right" style="font-weight:600;">46</td><td align="right" style="font-weight:600;">3,488</td><td align="right"><span style="background:#fdf1df;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">RETURN</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;"><span style="background:#fdeeec;color:#c43b27;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">CONSIGN</span></td><td style="padding:7px 0;font-weight:500;">Big Box International V-00698 (individual items)</td><td align="right" style="font-weight:600;">26</td><td align="right" style="font-weight:600;">59</td><td align="right"><span style="background:#fdf1df;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">RETURN</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;"><span style="background:#e1f5ee;color:#0f6e56;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">INTERCO</span></td><td style="padding:7px 0;font-weight:500;">Pony on Wheel TH / Toysinbox / Chaw Retailing</td><td align="right" style="font-weight:600;">253</td><td align="right" style="font-weight:600;">3,067</td><td align="right"><span style="background:#fdf1df;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">RETURN</span></td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:10px;">MNT / Big Box consignment ฿3.5M+ at retail is not ActionCity cash but occupies shelf space — priority return. Interco dead (Pony/Toysinbox/Chaw) 3,067 units — return to supplier or arrange inter-store transfer. Owned dead 747 units (~฿100K est.) — consider markdown / clearance.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- FOOTER -->
+<tr><td style="background:#efe7dc;border-radius:12px;padding:18px 24px;">
+  <div style="font-size:12px;color:#7a7468;line-height:1.7;">
+    <b style="color:#5b5547;">Channel tags.</b> INTERCO = intercompany to ACTIONCITY PTE (Singapore) &mdash; transfers, not retail demand, excluded from reorder velocity. WHOLESALE = B2B (Siam Specialty). Retail = POS + marketplaces.<br><br>
+    <b style="color:#5b5547;">Data accuracy.</b> Net sales = invoices &minus; returns (<code>-SUM(netamount)</code>); vending/marketplace cost-wash lines excluded so units, ASP and GP% are clean. GP% uses item average cost (THB base). Prices net of 7% VAT.<br><br>
+    <b style="color:#5b5547;">Source.</b> NetSuite Sub 22 (ACTIONCITY THAILAND), generated 21 Jun 2026, 22:00 (Sun EOD) (Asia/Bangkok) for trading day 21 Jun 2026. Sales = posted CustInvc/CustCred, inventory items only.<br>
+    CHAW Retailing Co., Ltd. · ActionCity TH · Internal management report · End-of-day Sunday 21 Jun 2026.
+  </div>
+</td></tr>
+
+</table>
+</td></tr></table>
+</body></html>
