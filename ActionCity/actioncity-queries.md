@@ -210,10 +210,31 @@ GROUP BY po.tranid, i.displayname;   -- sort by open_thb client-side; flags per 
 > Same `approvalstatus = 2` rule applies to any "raised this period" / "received" PO cuts.
 
 ### J. Dead stock — `dead_owned_rows[]`, `dead_consign_rows[]`, scalars `dead_owned_skus/value`
+
+**The "sold in the last 4 weeks" exclusion is MANDATORY and must NEVER be dropped.** It is the entire
+definition of dead stock. (On the 21 Jun run the full query timed out, the routine fell back to a
+"simplified" query that omitted this filter, and active sellers — Fuggler Sassy Cuties, Disney On The
+Run, One Piece Egghead — wrongly appeared as dead stock, ballooning owned to ~96 SKUs vs the real ~12.)
+
+**Two-step, timeout-safe pattern — run in this order; if anything times out, narrow the ROUTE step, never the dead set:**
+
 ```sql
--- dead set: oh.stock>0 AND item NOT IN (sold with netamount<>0 since report_date-28).
--- Classify by PO vendor: consignment (Big Box / ACTIONCITY PTE / MNT prefix), intercompany (Pony/Toysinbox/Chaw/12380), else OWNED.
--- Owned rows: on_hand/averagecost/price, ORDER BY on_hand DESC (sort client-side; highest units first).
+-- STEP 1 (cheap, reliable) — the dead SET. This filter is non-negotiable.
+WITH oh AS (SELECT iil.item itm, SUM(iil.quantityonhand) oh FROM inventoryitemlocations iil
+            WHERE iil.location IN (<all on-hand locs>) GROUP BY iil.item),
+sold AS (SELECT DISTINCT tl.item itm FROM transaction t JOIN transactionline tl ON tl.transaction=t.id
+         WHERE t.type IN('CustInvc','CustCred') AND t.posting='T' AND tl.subsidiary=22 AND tl.mainline='F'
+           AND tl.itemtype='InvtPart' AND tl.netamount<>0
+           AND t.trandate >= TO_DATE(:report_date,'YYYY-MM-DD') - 28)   -- 4 weeks back, computed at runtime
+SELECT i.itemid sku, i.displayname, o.oh AS on_hand, ROUND(i.averagecost,0) cost,
+       ROUND(o.oh*i.averagecost,0) stock_value
+FROM oh o JOIN item i ON i.id=o.itm
+WHERE o.oh>0 AND o.itm NOT IN (SELECT itm FROM sold);   -- <-- the dead set; never omit this NOT IN
+
+-- STEP 2 (route) — tag each dead SKU OWNED vs CONSIGN vs INTERCO with light, scoped EXISTS lookups
+--   (MNT prefix; Big Box vendor; interco vendor ids 5735/3655/43623/12380). If the route join is slow,
+--   only fetch the Big Box + interco SKU id lists and classify in code — do NOT re-add sold/route into one mega-query.
+-- Owned rows = route OWNED, ORDER BY on_hand DESC (highest units first).
 ```
 **Consignment/intercompany summary — compute units PER SUPPLIER, not pooled.** Each supplier row's
 units = `SUM(on_hand)` of ONLY the dead items routed to THAT supplier. Run one scoped query per bucket
@@ -227,10 +248,13 @@ FROM dead d WHERE EXISTS (SELECT 1 FROM transactionline ptl JOIN transaction po 
     AND po.entity IN (SELECT id FROM vendor WHERE UPPER(companyname) LIKE '%BIG BOX%'));
 -- MNT bucket = items where itemid LIKE 'MNT%'.  Interco = PO vendor IN (5735,3655,43623,12380).
 ```
-> **Sanity gate (add to completeness checks):** Big Box dead-stock units must be in the low hundreds
-> (~400–600), NOT thousands. If a single consignment supplier shows >2,000 units, the buckets are
-> double-counting/pooling — STOP and fix before send. Known-good orders of magnitude: Big Box ≈ 460–480u /
-> ~฿3.6M · MNT ≈ 3,700u · Pony/Toysinbox ≈ 700u.
+> **Sanity gates (HARD-STOP — add to completeness checks):**
+> 1. **Sold-exclusion working:** OWNED dead stock ≈ **10–20 SKUs / ~฿80–130k**. If it's >40 SKUs (e.g. ~96),
+>    the "sold in 4 weeks" filter almost certainly failed — STOP, do not send.
+> 2. **No active seller in dead stock:** none of the current **Top-20 sellers** (query G) may appear in the
+>    dead-stock list. If any does (e.g. Fuggler Sassy Cuties, Disney On The Run), the exclusion broke — STOP.
+> 3. **Big Box units** must be low hundreds (~400–600), NOT thousands; >2,000 for one consignment supplier =
+>    pooling bug — STOP. Known-good magnitudes: Big Box ≈ 460–480u / ~฿3.6M · MNT ≈ 3,700u · Pony/Toysinbox ≈ 700u.
 
 ---
 
