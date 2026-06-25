@@ -1,0 +1,1289 @@
+{
+  "scalars": {
+    "subject": "🚨 SFB Daily — 24 June 2026 | ฿623K (WoW -0.8%) | 16 locations",
+    "status_emoji": "🚨",
+    "report_date_display": "24 June 2026",
+    "weekday_th": "วันพุธ",
+    "weekday_en": "Wednesday",
+    "rev_K": "฿623K",
+    "rev_baht": "฿623,316",
+    "wow_signed": "-0.8%",
+    "dod_signed": "+5.5%",
+    "mtd_signed": "-4.0%",
+    "bills_total": "2,070",
+    "ticket": "฿301",
+    "bills_wow_signed": "-3.4%",
+    "ticket_wow_signed": "+2.7%",
+    "mtd_avg_K": "฿649K",
+    "window_label": "26 May – 24 Jun 2026",
+    "mtd_label": "Jun 2026",
+    "generated_display": "25 Jun 2026",
+    "loc_count": "16",
+    "d8_display": "17 June 2026"
+  },
+  "repeats": {
+    "insight_bullets": [
+      {
+        "bullet_html": "<b>D1 Revenue ฿623,316</b> — WoW <b>-0.8%</b>, DoD <b>+5.5%</b>, vs MTD avg <b>-4.0%</b> · 2,070 bills · avg ticket ฿301"
+      },
+      {
+        "bullet_html": "Broad growth across 3 BUs (Juice Land <b>+3.4%</b>, Khiang <b>+13.4%</b>, Vendi <b>+6.7%</b>) while Subway (-1.9%) and Siam Express (-6.0%) declined WoW; total nearly flat at -0.8%."
+      },
+      {
+        "bullet_html": "Hero BU: <b>Khiang</b> ฿36,589 · WoW <b>+13.4%</b> · 184 bills · ฿199/ticket — strongest BU revenue growth this week."
+      },
+      {
+        "bullet_html": "<b>🚨 24-T1EW4-14 / Subway hit NEW MTD LOW</b> at ฿43,367 (MTD range ฿43,367–฿80,926) · WoW -32.4% CRITICAL"
+      },
+      {
+        "bullet_html": "Top movers WoW: 27-T1SE3-05/Subway <b>+63.4%</b> (฿40,104), 21-T1BE2-06/Subway <b>+33.2%</b> (฿60,245), 27-T1SE3-05/Juice Land <b>+18.9%</b> (฿23,042)."
+      },
+      {
+        "bullet_html": "Weakest WoW: 22-DMK-3Pier2-SS/Subway <b>-53.5%</b> (฿17,116), 24-T1EW4-14/Subway <b>-32.4%</b> (฿43,367), 25-DMK-CS/Subway <b>-20.0%</b> (฿10,907)."
+      }
+    ],
+    "bu_chart_days": [
+      {
+        "d1_class": "",
+        "day_title": "2026-05-26",
+        "h_subway": 120,
+        "h_khiang": 10,
+        "h_jl": 17,
+        "h_se": 15,
+        "h_vendi": 2
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-05-27",
+        "h_subway": 126,
+        "h_khiang": 8,
+        "h_jl": 19,
+        "h_se": 17,
+        "h_vendi": 3
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-05-28",
+        "h_subway": 137,
+        "h_khiang": 9,
+        "h_jl": 19,
+        "h_se": 18,
+        "h_vendi": 5
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-05-29",
+        "h_subway": 167,
+        "h_khiang": 12,
+        "h_jl": 19,
+        "h_se": 18,
+        "h_vendi": 4
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-05-30",
+        "h_subway": 168,
+        "h_khiang": 9,
+        "h_jl": 19,
+        "h_se": 19,
+        "h_vendi": 5
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-05-31",
+        "h_subway": 138,
+        "h_khiang": 10,
+        "h_jl": 18,
+        "h_se": 23,
+        "h_vendi": 4
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-01",
+        "h_subway": 150,
+        "h_khiang": 10,
+        "h_jl": 17,
+        "h_se": 20,
+        "h_vendi": 3
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-02",
+        "h_subway": 124,
+        "h_khiang": 9,
+        "h_jl": 15,
+        "h_se": 21,
+        "h_vendi": 2
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-03",
+        "h_subway": 121,
+        "h_khiang": 10,
+        "h_jl": 17,
+        "h_se": 19,
+        "h_vendi": 3
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-04",
+        "h_subway": 121,
+        "h_khiang": 8,
+        "h_jl": 16,
+        "h_se": 16,
+        "h_vendi": 5
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-05",
+        "h_subway": 119,
+        "h_khiang": 9,
+        "h_jl": 17,
+        "h_se": 22,
+        "h_vendi": 3
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-06",
+        "h_subway": 120,
+        "h_khiang": 10,
+        "h_jl": 17,
+        "h_se": 16,
+        "h_vendi": 3
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-07",
+        "h_subway": 124,
+        "h_khiang": 9,
+        "h_jl": 14,
+        "h_se": 18,
+        "h_vendi": 3
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-08",
+        "h_subway": 121,
+        "h_khiang": 7,
+        "h_jl": 19,
+        "h_se": 16,
+        "h_vendi": 3
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-09",
+        "h_subway": 119,
+        "h_khiang": 7,
+        "h_jl": 13,
+        "h_se": 14,
+        "h_vendi": 2
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-10",
+        "h_subway": 116,
+        "h_khiang": 10,
+        "h_jl": 17,
+        "h_se": 13,
+        "h_vendi": 3
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-11",
+        "h_subway": 115,
+        "h_khiang": 7,
+        "h_jl": 17,
+        "h_se": 15,
+        "h_vendi": 3
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-12",
+        "h_subway": 130,
+        "h_khiang": 8,
+        "h_jl": 18,
+        "h_se": 16,
+        "h_vendi": 3
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-13",
+        "h_subway": 121,
+        "h_khiang": 9,
+        "h_jl": 17,
+        "h_se": 16,
+        "h_vendi": 4
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-14",
+        "h_subway": 126,
+        "h_khiang": 8,
+        "h_jl": 18,
+        "h_se": 22,
+        "h_vendi": 3
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-15",
+        "h_subway": 123,
+        "h_khiang": 9,
+        "h_jl": 17,
+        "h_se": 17,
+        "h_vendi": 4
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-16",
+        "h_subway": 114,
+        "h_khiang": 7,
+        "h_jl": 17,
+        "h_se": 15,
+        "h_vendi": 4
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-17",
+        "h_subway": 119,
+        "h_khiang": 8,
+        "h_jl": 17,
+        "h_se": 16,
+        "h_vendi": 4
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-18",
+        "h_subway": 132,
+        "h_khiang": 11,
+        "h_jl": 20,
+        "h_se": 19,
+        "h_vendi": 4
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-19",
+        "h_subway": 137,
+        "h_khiang": 11,
+        "h_jl": 22,
+        "h_se": 17,
+        "h_vendi": 6
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-20",
+        "h_subway": 116,
+        "h_khiang": 8,
+        "h_jl": 19,
+        "h_se": 17,
+        "h_vendi": 5
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-21",
+        "h_subway": 133,
+        "h_khiang": 8,
+        "h_jl": 19,
+        "h_se": 17,
+        "h_vendi": 7
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-22",
+        "h_subway": 125,
+        "h_khiang": 7,
+        "h_jl": 17,
+        "h_se": 17,
+        "h_vendi": 4
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-23",
+        "h_subway": 115,
+        "h_khiang": 8,
+        "h_jl": 17,
+        "h_se": 11,
+        "h_vendi": 4
+      },
+      {
+        "d1_class": "d1",
+        "day_title": "2026-06-24",
+        "h_subway": 117,
+        "h_khiang": 10,
+        "h_jl": 17,
+        "h_se": 15,
+        "h_vendi": 4
+      }
+    ],
+    "bu_chart_axis": [
+      {
+        "ax_label": "26/5",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "27/5",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "28/5",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "29/5",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "30/5",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "31/5",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "1/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "2/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "3/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "4/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "5/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "6/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "7/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "8/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "9/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "10/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "11/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "12/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "13/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "14/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "15/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "16/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "17/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "18/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "19/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "20/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "21/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "22/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "23/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "24/6",
+        "ax_class": "axd1"
+      }
+    ],
+    "bu_legend_rows": [
+      {
+        "color": "#5551FE",
+        "bu_name": "Subway",
+        "d1_rev": "฿447,081",
+        "d1_bills": "1386",
+        "share": "71.7%",
+        "wow": "-1.9%",
+        "wow_class": "delta-down",
+        "bills_delta": "-4.1%",
+        "bills_class": "delta-down",
+        "ticket_delta": "+2.3%",
+        "ticket_class": "delta-up",
+        "signal": "↘ Soft decline",
+        "signal_class": "s-soft"
+      },
+      {
+        "color": "#2D7A3F",
+        "bu_name": "Juice Land",
+        "d1_rev": "฿65,631",
+        "d1_bills": "203",
+        "share": "10.5%",
+        "wow": "+3.4%",
+        "wow_class": "delta-up",
+        "bills_delta": "+0.5%",
+        "bills_class": "delta-up",
+        "ticket_delta": "+2.9%",
+        "ticket_class": "delta-up",
+        "signal": "─ Stable",
+        "signal_class": "s-soft"
+      },
+      {
+        "color": "#7B79FF",
+        "bu_name": "Khiang",
+        "d1_rev": "฿36,589",
+        "d1_bills": "184",
+        "share": "5.9%",
+        "wow": "+13.4%",
+        "wow_class": "delta-up",
+        "bills_delta": "+12.9%",
+        "bills_class": "delta-up",
+        "ticket_delta": "+0.5%",
+        "ticket_class": "delta-up",
+        "signal": "🚶 Traffic-driven",
+        "signal_class": "s-traffic"
+      },
+      {
+        "color": "#F39C12",
+        "bu_name": "Siam Express",
+        "d1_rev": "฿59,217",
+        "d1_bills": "221",
+        "share": "9.5%",
+        "wow": "-6.0%",
+        "wow_class": "delta-down",
+        "bills_delta": "-14.0%",
+        "bills_class": "delta-down",
+        "ticket_delta": "+9.4%",
+        "ticket_class": "delta-up",
+        "signal": "🤔 Premium mix",
+        "signal_class": "s-upsell"
+      },
+      {
+        "color": "#C5453E",
+        "bu_name": "Vendi",
+        "d1_rev": "฿14,798",
+        "d1_bills": "76",
+        "share": "2.4%",
+        "wow": "+6.7%",
+        "wow_class": "delta-up",
+        "bills_delta": "+0.0%",
+        "bills_class": "delta-up",
+        "ticket_delta": "+6.7%",
+        "ticket_class": "delta-up",
+        "signal": "✅ Pure upsell",
+        "signal_class": "s-upsell"
+      }
+    ],
+    "airport_chart_days": [
+      {
+        "d1_class": "",
+        "day_title": "2026-05-26",
+        "h_bkk": 113,
+        "h_dmk": 41,
+        "h_pkt": 10
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-05-27",
+        "h_bkk": 119,
+        "h_dmk": 40,
+        "h_pkt": 14
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-05-28",
+        "h_bkk": 129,
+        "h_dmk": 45,
+        "h_pkt": 15
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-05-29",
+        "h_bkk": 151,
+        "h_dmk": 53,
+        "h_pkt": 14
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-05-30",
+        "h_bkk": 144,
+        "h_dmk": 62,
+        "h_pkt": 14
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-05-31",
+        "h_bkk": 125,
+        "h_dmk": 49,
+        "h_pkt": 20
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-01",
+        "h_bkk": 135,
+        "h_dmk": 48,
+        "h_pkt": 17
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-02",
+        "h_bkk": 121,
+        "h_dmk": 31,
+        "h_pkt": 19
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-03",
+        "h_bkk": 117,
+        "h_dmk": 36,
+        "h_pkt": 17
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-04",
+        "h_bkk": 118,
+        "h_dmk": 33,
+        "h_pkt": 14
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-05",
+        "h_bkk": 121,
+        "h_dmk": 34,
+        "h_pkt": 19
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-06",
+        "h_bkk": 122,
+        "h_dmk": 30,
+        "h_pkt": 14
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-07",
+        "h_bkk": 116,
+        "h_dmk": 36,
+        "h_pkt": 15
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-08",
+        "h_bkk": 114,
+        "h_dmk": 38,
+        "h_pkt": 14
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-09",
+        "h_bkk": 111,
+        "h_dmk": 33,
+        "h_pkt": 12
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-10",
+        "h_bkk": 116,
+        "h_dmk": 33,
+        "h_pkt": 11
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-11",
+        "h_bkk": 109,
+        "h_dmk": 34,
+        "h_pkt": 14
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-12",
+        "h_bkk": 124,
+        "h_dmk": 35,
+        "h_pkt": 14
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-13",
+        "h_bkk": 121,
+        "h_dmk": 32,
+        "h_pkt": 14
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-14",
+        "h_bkk": 121,
+        "h_dmk": 36,
+        "h_pkt": 20
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-15",
+        "h_bkk": 121,
+        "h_dmk": 33,
+        "h_pkt": 14
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-16",
+        "h_bkk": 114,
+        "h_dmk": 29,
+        "h_pkt": 14
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-17",
+        "h_bkk": 114,
+        "h_dmk": 36,
+        "h_pkt": 14
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-18",
+        "h_bkk": 137,
+        "h_dmk": 32,
+        "h_pkt": 17
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-19",
+        "h_bkk": 140,
+        "h_dmk": 39,
+        "h_pkt": 14
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-20",
+        "h_bkk": 121,
+        "h_dmk": 28,
+        "h_pkt": 16
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-21",
+        "h_bkk": 126,
+        "h_dmk": 43,
+        "h_pkt": 13
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-22",
+        "h_bkk": 125,
+        "h_dmk": 31,
+        "h_pkt": 15
+      },
+      {
+        "d1_class": "",
+        "day_title": "2026-06-23",
+        "h_bkk": 121,
+        "h_dmk": 23,
+        "h_pkt": 10
+      },
+      {
+        "d1_class": "d1",
+        "day_title": "2026-06-24",
+        "h_bkk": 118,
+        "h_dmk": 31,
+        "h_pkt": 13
+      }
+    ],
+    "airport_chart_axis": [
+      {
+        "ax_label": "26/5",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "27/5",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "28/5",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "29/5",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "30/5",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "31/5",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "1/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "2/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "3/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "4/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "5/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "6/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "7/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "8/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "9/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "10/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "11/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "12/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "13/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "14/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "15/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "16/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "17/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "18/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "19/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "20/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "21/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "22/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "23/6",
+        "ax_class": ""
+      },
+      {
+        "ax_label": "24/6",
+        "ax_class": "axd1"
+      }
+    ],
+    "airport_legend_rows": [
+      {
+        "color": "#5551FE",
+        "airport_name": "BKK",
+        "d1_rev": "฿453,604",
+        "d1_bills": "1465",
+        "share": "72.8%",
+        "wow": "+3.7%",
+        "wow_class": "delta-up",
+        "bills_delta": "+3.6%",
+        "bills_class": "delta-up"
+      },
+      {
+        "color": "#7B79FF",
+        "airport_name": "DMK",
+        "d1_rev": "฿118,744",
+        "d1_bills": "426",
+        "share": "19.1%",
+        "wow": "-13.3%",
+        "wow_class": "delta-down",
+        "bills_delta": "-18.2%",
+        "bills_class": "delta-down"
+      },
+      {
+        "color": "#F27061",
+        "airport_name": "PKT",
+        "d1_rev": "฿50,968",
+        "d1_bills": "179",
+        "share": "8.2%",
+        "wow": "-5.6%",
+        "wow_class": "delta-down",
+        "bills_delta": "-13.9%",
+        "bills_class": "delta-down"
+      }
+    ],
+    "loc_heatmap_rows": [
+      {
+        "loc_cell": "<td class=\"heat-bu\" rowspan=\"1\"><b>18-T1FW4-08-SS</b></td>",
+        "row_class": "grp-start",
+        "bu_name": "Subway",
+        "bu_color": "#5551FE",
+        "airport": "BKK",
+        "d1_rev": "฿99,878",
+        "d1_bills": "286",
+        "rev_delta": "+2.8%",
+        "bills_delta": "+10.4%",
+        "ticket_delta": "-6.9%",
+        "rev_bg": "#D8D7C7",
+        "rev_fg": "#2C3E50",
+        "bills_bg": "#98B293",
+        "bills_fg": "#2C3E50",
+        "ticket_bg": "#E4B9AF",
+        "ticket_fg": "#2C3E50",
+        "signal": "⚠️ Mixed",
+        "signal_class": "s-quality"
+      },
+      {
+        "loc_cell": "<td class=\"heat-bu\" rowspan=\"3\"><b>27-T1SE3-05</b></td>",
+        "row_class": "grp-start",
+        "bu_name": "Subway",
+        "bu_color": "#5551FE",
+        "airport": "BKK",
+        "d1_rev": "฿40,104",
+        "d1_bills": "141",
+        "rev_delta": "+63.4%",
+        "bills_delta": "+35.6%",
+        "ticket_delta": "+20.6%",
+        "rev_bg": "#1E6B30",
+        "rev_fg": "#ffffff",
+        "bills_bg": "#1E6B30",
+        "bills_fg": "#ffffff",
+        "ticket_bg": "#43814E",
+        "ticket_fg": "#ffffff",
+        "signal": "⭐ BEST",
+        "signal_class": "s-traffic"
+      },
+      {
+        "loc_cell": "",
+        "row_class": "",
+        "bu_name": "Juice Land",
+        "bu_color": "#2D7A3F",
+        "airport": "BKK",
+        "d1_rev": "฿23,042",
+        "d1_bills": "70",
+        "rev_delta": "+18.9%",
+        "bills_delta": "+9.4%",
+        "ticket_delta": "+8.7%",
+        "rev_bg": "#518959",
+        "rev_fg": "#ffffff",
+        "bills_bg": "#A1B79A",
+        "bills_fg": "#2C3E50",
+        "ticket_bg": "#A7BA9F",
+        "ticket_fg": "#2C3E50",
+        "signal": "⭐ BEST",
+        "signal_class": "s-traffic"
+      },
+      {
+        "loc_cell": "",
+        "row_class": "",
+        "bu_name": "Vendi",
+        "bu_color": "#C5453E",
+        "airport": "BKK",
+        "d1_rev": "฿14,798",
+        "d1_bills": "76",
+        "rev_delta": "+6.7%",
+        "bills_delta": "+0.0%",
+        "ticket_delta": "+6.7%",
+        "rev_bg": "#B8C4AC",
+        "rev_fg": "#2C3E50",
+        "bills_bg": "#F0E5DA",
+        "bills_fg": "#2C3E50",
+        "ticket_bg": "#B8C4AC",
+        "ticket_fg": "#2C3E50",
+        "signal": "✅ Pure upsell",
+        "signal_class": "s-upsell"
+      },
+      {
+        "loc_cell": "<td class=\"heat-bu\" rowspan=\"2\"><b>26-T1MW1-03+04</b></td>",
+        "row_class": "grp-start",
+        "bu_name": "Subway",
+        "bu_color": "#5551FE",
+        "airport": "BKK",
+        "d1_rev": "฿36,418",
+        "d1_bills": "103",
+        "rev_delta": "-19.5%",
+        "bills_delta": "-14.2%",
+        "ticket_delta": "-6.2%",
+        "rev_bg": "#CE6860",
+        "rev_fg": "#ffffff",
+        "bills_bg": "#D88A82",
+        "bills_fg": "#ffffff",
+        "ticket_bg": "#E5BDB3",
+        "ticket_fg": "#2C3E50",
+        "signal": "🚨 CRISIS",
+        "signal_class": "s-crisis"
+      },
+      {
+        "loc_cell": "",
+        "row_class": "",
+        "bu_name": "Juice Land",
+        "bu_color": "#2D7A3F",
+        "airport": "BKK",
+        "d1_rev": "฿35,014",
+        "d1_bills": "100",
+        "rev_delta": "+0.8%",
+        "bills_delta": "-4.8%",
+        "ticket_delta": "+5.8%",
+        "rev_bg": "#E9E1D5",
+        "rev_fg": "#2C3E50",
+        "bills_bg": "#E8C7BC",
+        "bills_fg": "#2C3E50",
+        "ticket_bg": "#BFC9B2",
+        "ticket_fg": "#2C3E50",
+        "signal": "🤔 Premium mix",
+        "signal_class": "s-upsell"
+      },
+      {
+        "loc_cell": "<td class=\"heat-bu\" rowspan=\"1\"><b>21-T1BE2-06</b></td>",
+        "row_class": "grp-start",
+        "bu_name": "Subway",
+        "bu_color": "#5551FE",
+        "airport": "BKK",
+        "d1_rev": "฿60,245",
+        "d1_bills": "146",
+        "rev_delta": "+33.2%",
+        "bills_delta": "+20.7%",
+        "ticket_delta": "+10.4%",
+        "rev_bg": "#1E6B30",
+        "rev_fg": "#ffffff",
+        "bills_bg": "#42804E",
+        "bills_fg": "#ffffff",
+        "ticket_bg": "#99B293",
+        "ticket_fg": "#2C3E50",
+        "signal": "⭐ BEST",
+        "signal_class": "s-traffic"
+      },
+      {
+        "loc_cell": "<td class=\"heat-bu\" rowspan=\"1\"><b>24-T1EW4-14</b></td>",
+        "row_class": "grp-start",
+        "bu_name": "Subway",
+        "bu_color": "#5551FE",
+        "airport": "BKK",
+        "d1_rev": "฿43,367",
+        "d1_bills": "145",
+        "rev_delta": "-32.4%",
+        "bills_delta": "-16.2%",
+        "ticket_delta": "-19.3%",
+        "rev_bg": "#C5453E",
+        "rev_fg": "#ffffff",
+        "bills_bg": "#D47D75",
+        "bills_fg": "#ffffff",
+        "ticket_bg": "#CF6961",
+        "ticket_fg": "#ffffff",
+        "signal": "🚨 CRISIS",
+        "signal_class": "s-crisis"
+      },
+      {
+        "loc_cell": "<td class=\"heat-bu\" rowspan=\"1\"><b>04-DMK-T2MTE3-09</b></td>",
+        "row_class": "grp-start",
+        "bu_name": "Subway",
+        "bu_color": "#5551FE",
+        "airport": "DMK",
+        "d1_rev": "฿37,643",
+        "d1_bills": "122",
+        "rev_delta": "+12.1%",
+        "bills_delta": "+17.3%",
+        "ticket_delta": "-4.5%",
+        "rev_bg": "#8AAA88",
+        "rev_fg": "#2C3E50",
+        "bills_bg": "#5F9164",
+        "bills_fg": "#ffffff",
+        "ticket_bg": "#E8C9BE",
+        "ticket_fg": "#2C3E50",
+        "signal": "⚠️ Mixed",
+        "signal_class": "s-quality"
+      },
+      {
+        "loc_cell": "<td class=\"heat-bu\" rowspan=\"1\"><b>17-T1ME2-30</b></td>",
+        "row_class": "grp-start",
+        "bu_name": "Khiang",
+        "bu_color": "#7B79FF",
+        "airport": "BKK",
+        "d1_rev": "฿36,589",
+        "d1_bills": "184",
+        "rev_delta": "+13.4%",
+        "bills_delta": "+12.9%",
+        "ticket_delta": "+0.5%",
+        "rev_bg": "#7FA47F",
+        "rev_fg": "#ffffff",
+        "bills_bg": "#84A682",
+        "bills_fg": "#2C3E50",
+        "ticket_bg": "#ECE3D7",
+        "ticket_fg": "#2C3E50",
+        "signal": "🚶 Traffic-driven",
+        "signal_class": "s-traffic"
+      },
+      {
+        "loc_cell": "<td class=\"heat-bu\" rowspan=\"1\"><b>05-DMK-Inter-S</b></td>",
+        "row_class": "grp-start",
+        "bu_name": "Subway",
+        "bu_color": "#5551FE",
+        "airport": "DMK",
+        "d1_rev": "฿29,506",
+        "d1_bills": "103",
+        "rev_delta": "-4.6%",
+        "bills_delta": "-16.3%",
+        "ticket_delta": "+14.0%",
+        "rev_bg": "#E8C8BD",
+        "rev_fg": "#2C3E50",
+        "bills_bg": "#D47D75",
+        "bills_fg": "#ffffff",
+        "ticket_bg": "#7BA17B",
+        "ticket_fg": "#ffffff",
+        "signal": "🤔 Premium mix",
+        "signal_class": "s-upsell"
+      },
+      {
+        "loc_cell": "<td class=\"heat-bu\" rowspan=\"1\"><b>23-T1CE4-13</b></td>",
+        "row_class": "grp-start",
+        "bu_name": "Subway",
+        "bu_color": "#5551FE",
+        "airport": "BKK",
+        "d1_rev": "฿29,500",
+        "d1_bills": "102",
+        "rev_delta": "+8.5%",
+        "bills_delta": "-1.0%",
+        "ticket_delta": "+9.5%",
+        "rev_bg": "#A9BCA0",
+        "rev_fg": "#2C3E50",
+        "bills_bg": "#EEDFD4",
+        "bills_fg": "#2C3E50",
+        "ticket_bg": "#A0B699",
+        "ticket_fg": "#2C3E50",
+        "signal": "✅ Pure upsell",
+        "signal_class": "s-upsell"
+      },
+      {
+        "loc_cell": "<td class=\"heat-bu\" rowspan=\"1\"><b>19-T1MB1-03</b></td>",
+        "row_class": "grp-start",
+        "bu_name": "Subway",
+        "bu_color": "#5551FE",
+        "airport": "BKK",
+        "d1_rev": "฿27,074",
+        "d1_bills": "79",
+        "rev_delta": "+11.6%",
+        "bills_delta": "-15.1%",
+        "ticket_delta": "+31.4%",
+        "rev_bg": "#8FAC8B",
+        "rev_fg": "#2C3E50",
+        "bills_bg": "#D6857C",
+        "bills_fg": "#ffffff",
+        "ticket_bg": "#1E6B30",
+        "ticket_fg": "#ffffff",
+        "signal": "🤔 Premium mix",
+        "signal_class": "s-upsell"
+      },
+      {
+        "loc_cell": "<td class=\"heat-bu\" rowspan=\"1\"><b>20-PKT-Floor 3-S</b></td>",
+        "row_class": "grp-start",
+        "bu_name": "Siam Express",
+        "bu_color": "#F39C12",
+        "airport": "PKT",
+        "d1_rev": "฿26,015",
+        "d1_bills": "97",
+        "rev_delta": "+3.4%",
+        "bills_delta": "+6.6%",
+        "ticket_delta": "-2.9%",
+        "rev_bg": "#D3D4C3",
+        "rev_fg": "#2C3E50",
+        "bills_bg": "#B9C5AD",
+        "bills_fg": "#2C3E50",
+        "ticket_bg": "#EBD2C8",
+        "ticket_fg": "#2C3E50",
+        "signal": "🚶 Traffic-driven",
+        "signal_class": "s-traffic"
+      },
+      {
+        "loc_cell": "<td class=\"heat-bu\" rowspan=\"2\"><b>22-DMK-3Pier2-SS</b></td>",
+        "row_class": "grp-start",
+        "bu_name": "Subway",
+        "bu_color": "#5551FE",
+        "airport": "DMK",
+        "d1_rev": "฿17,116",
+        "d1_bills": "61",
+        "rev_delta": "-53.5%",
+        "bills_delta": "-52.3%",
+        "ticket_delta": "-2.4%",
+        "rev_bg": "#C5453E",
+        "rev_fg": "#ffffff",
+        "bills_bg": "#C5453E",
+        "bills_fg": "#ffffff",
+        "ticket_bg": "#ECD6CB",
+        "ticket_fg": "#2C3E50",
+        "signal": "↘ Soft decline",
+        "signal_class": "s-soft"
+      },
+      {
+        "loc_cell": "",
+        "row_class": "",
+        "bu_name": "Siam Express",
+        "bu_color": "#F39C12",
+        "airport": "DMK",
+        "d1_rev": "฿8,249",
+        "d1_bills": "42",
+        "rev_delta": "-8.3%",
+        "bills_delta": "-14.3%",
+        "ticket_delta": "+7.0%",
+        "rev_bg": "#E2B0A6",
+        "rev_fg": "#2C3E50",
+        "bills_bg": "#D78A81",
+        "bills_fg": "#ffffff",
+        "ticket_bg": "#B5C3AA",
+        "ticket_fg": "#2C3E50",
+        "signal": "🤔 Premium mix",
+        "signal_class": "s-upsell"
+      },
+      {
+        "loc_cell": "<td class=\"heat-bu\" rowspan=\"1\"><b>13-PKT-G1-S</b></td>",
+        "row_class": "grp-start",
+        "bu_name": "Siam Express",
+        "bu_color": "#F39C12",
+        "airport": "PKT",
+        "d1_rev": "฿24,953",
+        "d1_bills": "82",
+        "rev_delta": "-13.4%",
+        "bills_delta": "-29.9%",
+        "ticket_delta": "+23.5%",
+        "rev_bg": "#D98F86",
+        "rev_fg": "#ffffff",
+        "bills_bg": "#C5453E",
+        "bills_fg": "#ffffff",
+        "ticket_bg": "#2B723A",
+        "ticket_fg": "#ffffff",
+        "signal": "🤔 Premium mix",
+        "signal_class": "s-upsell"
+      },
+      {
+        "loc_cell": "<td class=\"heat-bu\" rowspan=\"1\"><b>09-DMK-G1-S</b></td>",
+        "row_class": "grp-start",
+        "bu_name": "Subway",
+        "bu_color": "#5551FE",
+        "airport": "DMK",
+        "d1_rev": "฿15,323",
+        "d1_bills": "59",
+        "rev_delta": "+17.8%",
+        "bills_delta": "-3.3%",
+        "ticket_delta": "+21.8%",
+        "rev_bg": "#5A8E61",
+        "rev_fg": "#ffffff",
+        "bills_bg": "#EAD0C6",
+        "bills_fg": "#2C3E50",
+        "ticket_bg": "#397A46",
+        "ticket_fg": "#ffffff",
+        "signal": "🤔 Premium mix",
+        "signal_class": "s-upsell"
+      },
+      {
+        "loc_cell": "<td class=\"heat-bu\" rowspan=\"1\"><b>25-DMK-CS</b></td>",
+        "row_class": "grp-start",
+        "bu_name": "Subway",
+        "bu_color": "#5551FE",
+        "airport": "DMK",
+        "d1_rev": "฿10,907",
+        "d1_bills": "39",
+        "rev_delta": "-20.0%",
+        "bills_delta": "-30.4%",
+        "ticket_delta": "+14.9%",
+        "rev_bg": "#CE655D",
+        "rev_fg": "#ffffff",
+        "bills_bg": "#C5453E",
+        "bills_fg": "#ffffff",
+        "ticket_bg": "#739C75",
+        "ticket_fg": "#ffffff",
+        "signal": "🤔 Premium mix",
+        "signal_class": "s-upsell"
+      },
+      {
+        "loc_cell": "<td class=\"heat-bu\" rowspan=\"1\"><b>28 JUICELAND Unit 362</b></td>",
+        "row_class": "grp-start",
+        "bu_name": "Juice Land",
+        "bu_color": "#2D7A3F",
+        "airport": "BKK",
+        "d1_rev": "฿7,575",
+        "d1_bills": "33",
+        "rev_delta": "-19.0%",
+        "bills_delta": "+0.0%",
+        "ticket_delta": "-19.0%",
+        "rev_bg": "#CF6B63",
+        "rev_fg": "#ffffff",
+        "bills_bg": "#F0E5DA",
+        "bills_fg": "#2C3E50",
+        "ticket_bg": "#CF6B63",
+        "ticket_fg": "#ffffff",
+        "signal": "📉 Quality slip",
+        "signal_class": "s-quality"
+      }
+    ]
+  },
+  "sections": {}
+}
