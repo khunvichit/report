@@ -1,0 +1,521 @@
+<!--
+  vending-template.html — Vending Services Daily Sales Report (Sub 13, v1.0)
+
+  THIS IS A LOCKED TEMPLATE. Do not regenerate. Edit only when the layout truly changes.
+  The routine fills this with code (fill_template.py), never via model output.
+
+  Substitution mechanisms (see template-format.md in chaw-report-builder skill):
+    double-curly TOKEN                                         scalar replace from data.json
+    REPEAT:name ... /REPEAT:name (in HTML comments)            render once per item in repeats[name]
+    SECTION:name ... /SECTION:name (in HTML comments)          keep if sections[name] is true, else drop
+
+  See vending-queries.md for the source of every token here.
+-->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>🔥 Vending Daily — 25 May 2026 | ฿354.6K (WoW +11.4%) | 7 service tickets</title>
+<style>
+body { font-family:Poppins,-apple-system,sans-serif; background:#F5EDE4; margin:0; padding:24px; color:#2C3E50; }
+.wrap { max-width:920px; margin:0 auto; background:#FFF8F5; border-radius:12px; overflow:hidden; box-shadow:0 4px 24px rgba(44,62,80,0.08); }
+.draft { background:#E3F2FD; color:#1565C0; text-align:center; padding:8px; font-weight:600; font-size:13px; border-bottom:1px solid #BBDEFB; }
+.hdr { background:linear-gradient(135deg,#5551FE 0%,#7B79FF 100%); color:#fff; padding:28px 32px; }
+.hdr h1 { margin:0 0 6px 0; font-size:24px; font-weight:600; }
+.hdr .sub { opacity:0.85; font-size:13px; }
+.hdr .badge { display:inline-block; background:rgba(255,255,255,0.18); padding:4px 10px; border-radius:12px; font-size:11px; margin-top:8px; }
+.section { padding:24px 32px; border-bottom:1px solid #F0E5DA; }
+.section h2 { margin:0 0 16px 0; font-size:16px; font-weight:600; }
+.insight { background:#FFF; border-left:4px solid #F27061; padding:16px 18px; border-radius:4px; }
+.insight ul { margin:0; padding-left:18px; line-height:1.7; font-size:13px; }
+.insight li b { color:#5551FE; }
+.kpi { display:flex; gap:12px; }
+.kpi .card { flex:1; background:#fff; border-radius:8px; padding:16px; border:1px solid #F0E5DA; }
+.kpi .lbl { font-size:11px; color:#5F5E5A; text-transform:uppercase; letter-spacing:0.5px; }
+.kpi .val { font-size:24px; font-weight:600; margin:4px 0; }
+.kpi .delta { font-size:11px; font-weight:500; line-height:1.5; }
+.delta-up { color:#2D7A3F; } .delta-down { color:#C5453E; } .delta-neutral { color:#5F5E5A; } .delta-na { color:#5F5E5A; }
+table.barchart { width:100%; table-layout:fixed; border-collapse:collapse; }
+table.barchart td.yaxis { width:70px; vertical-align:top; padding-right:8px; font-size:10px; color:#5F5E5A; text-align:right; position:relative; height:240px; }
+table.barchart td.yaxis .y-mtd { position:absolute; top:65px; right:8px; background:#FFF8F5; padding:1px 4px; border-radius:2px; font-weight:600; color:#4A5568; }
+td.bar-cell { vertical-align:bottom; padding:0 1px; height:240px; position:relative; background-image: linear-gradient(to bottom, transparent 0px, transparent 74px, rgba(74,85,104,0.85) 74px, rgba(74,85,104,0.85) 76px, transparent 76px); }
+.bar-stack { display:flex; flex-direction:column-reverse; height:220px; }
+.seg { width:100%; }
+.seg-vendi { background:#5551FE; } .seg-vending { background:#7B79FF; }
+.seg-svb { background:#5551FE; } .seg-dmk { background:#7B79FF; }
+td.bar-cell.d1 .bar-stack { box-shadow: 0 -3px 0 #F27061 inset; }
+td.axlbl { font-size:9px; color:#5F5E5A; text-align:center; padding-top:4px; }
+td.axhol { border-bottom:2px solid #F27061; color:#F27061; font-weight:600; } td.axd1 { color:#F27061; font-weight:600; }
+.legend { width:100%; border-collapse:collapse; font-size:12px; margin-top:14px; }
+.legend th, .legend td { padding:6px 10px; text-align:left; border-bottom:1px solid #F0E5DA; }
+.legend th { color:#5F5E5A; font-weight:500; font-size:10px; text-transform:uppercase; }
+.legend .sw { display:inline-block; width:12px; height:12px; border-radius:2px; vertical-align:middle; margin-right:6px; }
+.signal-badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:10px; font-weight:600; }
+.s-crisis { background:#FBE9E7; color:#C5453E; } .s-quality { background:#FFF3CD; color:#856404; } .s-soft { background:#F0E5DA; color:#5F5E5A; } .s-traffic { background:#E8F5E9; color:#2D7A3F; } .s-upsell { background:#E3F2FD; color:#5551FE; }
+.sev-badge { display:inline-block; padding:3px 8px; border-radius:10px; font-size:10px; font-weight:600; white-space:nowrap; }
+.sev-surge { background:#FBE9E7; color:#F27061; } .sev-positive { background:#E8F5E9; color:#2D7A3F; } .sev-neutral { background:#F0E5DA; color:#5F5E5A; } .sev-watch { background:#FFF3CD; color:#856404; } .sev-high { background:#FFEFE0; color:#C77818; } .sev-critical { background:#FBE9E7; color:#C5453E; } .sev-new { background:#E3F2FD; color:#1565C0; }
+.branch-h3 { font-size:13px; font-weight:600; margin:0 0 8px 0; padding:6px 10px; border-radius:4px; }
+.heatmap { width:100%; border-collapse:collapse; font-size:13px; }
+.heatmap th { background:#F5EDE4; color:#5F5E5A; font-weight:500; font-size:11px; text-transform:uppercase; padding:8px 10px; text-align:center; border:1px solid #F0E5DA; }
+.heatmap th.heat-bu { text-align:left; }
+.heatmap th.heat-metric { background:#F0E5DA; }
+.heatmap td { padding:10px 10px; text-align:center; border:1px solid #F0E5DA; }
+.heatmap td.heat-bu { text-align:left; font-weight:600; font-size:13px; }
+.heatmap td.heat-rev { text-align:right; font-weight:600; font-size:13px; }
+.heatmap td.heat-bills { text-align:right; color:#5F5E5A; }
+.heatmap td.heat-cell { font-weight:700; font-size:13px; }
+.branch-h3-warn { background:#FFF3CD; color:#856404; border-left:4px solid #F39C12; }
+.branch-h3-ok { background:#E8F5E9; color:#2D7A3F; border-left:4px solid #2D7A3F; }
+.dt { width:100%; border-collapse:collapse; font-size:12px; }
+.dt th, .dt td { padding:8px 10px; border-bottom:1px solid #F0E5DA; text-align:left; }
+.dt th { color:#5F5E5A; font-weight:500; font-size:10px; text-transform:uppercase; background:#F5EDE4; }
+.muted { color:#5F5E5A; font-weight:400; }
+.footer { background:#2C3E50; color:#C5BFB0; padding:20px 32px; font-size:11px; line-height:1.6; }
+.footer b { color:#fff; }
+.dq { background:#FFF3CD; color:#856404; padding:10px 16px; font-size:12px; border-left:4px solid #F39C12; }
+</style></head><body>
+<div class="wrap">
+
+  
+
+  
+  <div class="draft" style="background:#E8F5E9; color:#2D7A3F; border-bottom:1px solid #C8E6C9;">📨 Vending Daily Report · 25 May 2026 (วันจันทร์) · 7 service tickets · Sub 13</div>
+  
+
+  <div class="hdr">
+    <h1>Vending Services — Daily Sales Report</h1>
+    <div class="sub">วันจันทร์ 25 May 2026 · Sub 13 · Vending Services Company Limited</div>
+    <span class="badge">🔥 v1.0 · ฿354.6K · WoW +11.4%</span>
+  </div>
+
+  
+  <div class="dq">⚠ Data quality: 3 Vending machines (T1MW4-14, T1MW4-18, T1MW4-19) appeared in 30-day data but had no sales on D1/D2/D8. Crucible Event (Vendi pop-up) also no sales in window. 1 DATA task created.</div>
+  
+
+  <div class="section">
+    <h2>🎯 Executive Insight</h2>
+    <div class="insight"><ul>
+      
+      <li>D1 Vending revenue <b>฿354,580</b> (+11.4% WoW · +7.4% DoD · vs MTD avg ฿350K +1.3%), 1,848 vends, avg ticket <b>฿192</b> — strong day, above month pace.</li>
+      
+      <li><b>Split story</b>: Vendi kiosks up +15.2% WoW (Bills +5.9% · Ticket +8.9%) — ⭐ BEST signal. 84% of revenue. Vending machines softer at −5.0% WoW.</li>
+      
+      <li>🔥 Hero: <b>01-T1AE3-09A+B</b> (Vendi · SVB) D1 ฿87.5K · WoW +60.6% · DoD +20.2% — biggest single-day at any kiosk this month.</li>
+      
+      <li>🟠 Worst: <b>T1BE1-01</b> (Vending · SVB) D1 ฿1,644 vs D8 ฿4,708 — <b>−65.1% WoW</b>, 28 vends vs 74 baseline. Likely machine fault.</li>
+      
+      <li><b>DMK +16.3% WoW</b> outpaces SVB (+10.9% WoW) — both airports positive, DMK piers (05-317, 05-318, 09-321+322) all green.</li>
+      
+      <li><b>7 machines flagged</b> for service across both airports — see Sales by Machine + Next Actions.</li>
+      
+    </ul></div>
+  </div>
+
+  <div class="section">
+    <h2>📊 KPI Headline</h2>
+    <div class="kpi">
+      <div class="card"><div class="lbl">Revenue</div><div class="val">฿354.6K</div><div class="delta delta-up">WoW +11.4%<br>DoD +7.4%<br>vs MTD avg +1.3%</div></div>
+      <div class="card"><div class="lbl">Vends</div><div class="val">1,848</div><div class="delta delta-up">WoW +0.7%</div></div>
+      <div class="card"><div class="lbl">Avg Ticket</div><div class="val">฿192</div><div class="delta delta-up">WoW +10.7%</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📈 30-Day Revenue by BU (26 Apr → 25 May)</h2>
+    <table class="barchart">
+      <tr><td class="yaxis"><div class="y-mtd">MTD avg<br>฿350 K</div></td>
+        
+        <td class="bar-cell " title="2026-04-26: ฿430,830"><div class="bar-stack"><div class="seg seg-vending" style="height:34px"></div><div class="seg seg-vendi" style="height:168px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-04-27: ฿402,994"><div class="bar-stack"><div class="seg seg-vending" style="height:33px"></div><div class="seg seg-vendi" style="height:156px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-04-28: ฿383,535"><div class="bar-stack"><div class="seg seg-vending" style="height:33px"></div><div class="seg seg-vendi" style="height:147px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-04-29: ฿401,779"><div class="bar-stack"><div class="seg seg-vending" style="height:33px"></div><div class="seg seg-vendi" style="height:155px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-04-30: ฿463,798"><div class="bar-stack"><div class="seg seg-vending" style="height:37px"></div><div class="seg seg-vendi" style="height:180px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-01: ฿438,969"><div class="bar-stack"><div class="seg seg-vending" style="height:43px"></div><div class="seg seg-vendi" style="height:163px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-02: ฿413,685"><div class="bar-stack"><div class="seg seg-vending" style="height:35px"></div><div class="seg seg-vendi" style="height:159px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-03: ฿439,831"><div class="bar-stack"><div class="seg seg-vending" style="height:37px"></div><div class="seg seg-vendi" style="height:169px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-04: ฿441,014"><div class="bar-stack"><div class="seg seg-vending" style="height:36px"></div><div class="seg seg-vendi" style="height:170px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-05: ฿411,881"><div class="bar-stack"><div class="seg seg-vending" style="height:33px"></div><div class="seg seg-vendi" style="height:160px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-06: ฿388,680"><div class="bar-stack"><div class="seg seg-vending" style="height:32px"></div><div class="seg seg-vendi" style="height:150px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-07: ฿349,814"><div class="bar-stack"><div class="seg seg-vending" style="height:30px"></div><div class="seg seg-vendi" style="height:134px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-08: ฿357,439"><div class="bar-stack"><div class="seg seg-vending" style="height:30px"></div><div class="seg seg-vendi" style="height:138px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-09: ฿360,326"><div class="bar-stack"><div class="seg seg-vending" style="height:30px"></div><div class="seg seg-vendi" style="height:139px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-10: ฿360,794"><div class="bar-stack"><div class="seg seg-vending" style="height:32px"></div><div class="seg seg-vendi" style="height:137px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-11: ฿328,454"><div class="bar-stack"><div class="seg seg-vending" style="height:28px"></div><div class="seg seg-vendi" style="height:126px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-12: ฿293,430"><div class="bar-stack"><div class="seg seg-vending" style="height:25px"></div><div class="seg seg-vendi" style="height:112px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-13: ฿303,842"><div class="bar-stack"><div class="seg seg-vending" style="height:23px"></div><div class="seg seg-vendi" style="height:120px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-14: ฿315,266"><div class="bar-stack"><div class="seg seg-vending" style="height:25px"></div><div class="seg seg-vendi" style="height:123px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-15: ฿326,500"><div class="bar-stack"><div class="seg seg-vending" style="height:26px"></div><div class="seg seg-vendi" style="height:127px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-16: ฿325,970"><div class="bar-stack"><div class="seg seg-vending" style="height:28px"></div><div class="seg seg-vendi" style="height:125px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-17: ฿346,423"><div class="bar-stack"><div class="seg seg-vending" style="height:32px"></div><div class="seg seg-vendi" style="height:131px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-18: ฿318,151"><div class="bar-stack"><div class="seg seg-vending" style="height:28px"></div><div class="seg seg-vendi" style="height:121px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-19: ฿286,886"><div class="bar-stack"><div class="seg seg-vending" style="height:23px"></div><div class="seg seg-vendi" style="height:112px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-20: ฿293,922"><div class="bar-stack"><div class="seg seg-vending" style="height:25px"></div><div class="seg seg-vendi" style="height:113px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-21: ฿302,340"><div class="bar-stack"><div class="seg seg-vending" style="height:25px"></div><div class="seg seg-vendi" style="height:117px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-22: ฿335,040"><div class="bar-stack"><div class="seg seg-vending" style="height:26px"></div><div class="seg seg-vendi" style="height:131px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-23: ฿326,990"><div class="bar-stack"><div class="seg seg-vending" style="height:21px"></div><div class="seg seg-vendi" style="height:132px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-24: ฿330,097"><div class="bar-stack"><div class="seg seg-vending" style="height:25px"></div><div class="seg seg-vendi" style="height:129px"></div></div></td>
+        
+        <td class="bar-cell d1" title="2026-05-25: ฿354,580"><div class="bar-stack"><div class="seg seg-vending" style="height:26px"></div><div class="seg seg-vendi" style="height:140px"></div></div></td>
+        
+      </tr>
+      <tr><td></td>
+        
+        <td class="axlbl">04-26</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl axhol">05-01</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">05-06</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">05-11</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">05-16</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">05-21</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl axd1">05-25</td>
+        
+      </tr>
+    </table>
+    <table class="legend"><tr><th></th><th>BU</th><th>D1 Rev</th><th>D1 Vends</th><th>Share</th><th>WoW</th><th>Vends Δ</th><th>Ticket Δ</th><th>Signal</th></tr>
+      
+      <tr><td><span class="sw" style="background:#5551FE"></span></td><td><b>Vendi</b> <span class="muted">kiosks · 11 locations</span></td><td>฿298.2K</td><td>1,065</td><td>84.1%</td><td class="delta-up">+15.2%</td><td class="delta-up">+5.9%</td><td class="delta-up">+8.9%</td><td><span class="signal-badge s-upsell">⭐ BEST</span></td></tr>
+      
+      <tr><td><span class="sw" style="background:#7B79FF"></span></td><td><b>Vending</b> <span class="muted">machines · 12 locations</span></td><td>฿56.4K</td><td>783</td><td>15.9%</td><td class="delta-down">−5.0%</td><td class="delta-down">−5.7%</td><td class="delta-neutral">+0.7%</td><td><span class="signal-badge s-soft">↘ Soft decline</span></td></tr>
+      
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>🌏 30-Day Revenue by Airport</h2>
+    <table class="barchart">
+      <tr><td class="yaxis"><div class="y-mtd">MTD avg<br>฿350 K</div></td>
+        
+        <td class="bar-cell " title="2026-04-26: ฿430,830"><div class="bar-stack"><div class="seg seg-dmk" style="height:23px"></div><div class="seg seg-svb" style="height:179px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-04-27: ฿402,994"><div class="bar-stack"><div class="seg seg-dmk" style="height:22px"></div><div class="seg seg-svb" style="height:167px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-04-28: ฿383,535"><div class="bar-stack"><div class="seg seg-dmk" style="height:21px"></div><div class="seg seg-svb" style="height:159px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-04-29: ฿401,779"><div class="bar-stack"><div class="seg seg-dmk" style="height:21px"></div><div class="seg seg-svb" style="height:167px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-04-30: ฿463,798"><div class="bar-stack"><div class="seg seg-dmk" style="height:25px"></div><div class="seg seg-svb" style="height:192px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-01: ฿438,969"><div class="bar-stack"><div class="seg seg-dmk" style="height:23px"></div><div class="seg seg-svb" style="height:183px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-02: ฿413,685"><div class="bar-stack"><div class="seg seg-dmk" style="height:22px"></div><div class="seg seg-svb" style="height:172px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-03: ฿439,831"><div class="bar-stack"><div class="seg seg-dmk" style="height:23px"></div><div class="seg seg-svb" style="height:183px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-04: ฿441,014"><div class="bar-stack"><div class="seg seg-dmk" style="height:24px"></div><div class="seg seg-svb" style="height:183px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-05: ฿411,881"><div class="bar-stack"><div class="seg seg-dmk" style="height:22px"></div><div class="seg seg-svb" style="height:171px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-06: ฿388,680"><div class="bar-stack"><div class="seg seg-dmk" style="height:21px"></div><div class="seg seg-svb" style="height:161px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-07: ฿349,814"><div class="bar-stack"><div class="seg seg-dmk" style="height:19px"></div><div class="seg seg-svb" style="height:145px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-08: ฿357,439"><div class="bar-stack"><div class="seg seg-dmk" style="height:19px"></div><div class="seg seg-svb" style="height:148px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-09: ฿360,326"><div class="bar-stack"><div class="seg seg-dmk" style="height:19px"></div><div class="seg seg-svb" style="height:150px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-10: ฿360,794"><div class="bar-stack"><div class="seg seg-dmk" style="height:19px"></div><div class="seg seg-svb" style="height:150px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-11: ฿328,454"><div class="bar-stack"><div class="seg seg-dmk" style="height:18px"></div><div class="seg seg-svb" style="height:136px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-12: ฿293,430"><div class="bar-stack"><div class="seg seg-dmk" style="height:16px"></div><div class="seg seg-svb" style="height:121px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-13: ฿303,842"><div class="bar-stack"><div class="seg seg-dmk" style="height:16px"></div><div class="seg seg-svb" style="height:126px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-14: ฿315,266"><div class="bar-stack"><div class="seg seg-dmk" style="height:17px"></div><div class="seg seg-svb" style="height:131px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-15: ฿326,500"><div class="bar-stack"><div class="seg seg-dmk" style="height:17px"></div><div class="seg seg-svb" style="height:136px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-16: ฿325,970"><div class="bar-stack"><div class="seg seg-dmk" style="height:17px"></div><div class="seg seg-svb" style="height:136px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-17: ฿346,423"><div class="bar-stack"><div class="seg seg-dmk" style="height:18px"></div><div class="seg seg-svb" style="height:144px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-18: ฿318,151"><div class="bar-stack"><div class="seg seg-dmk" style="height:17px"></div><div class="seg seg-svb" style="height:132px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-19: ฿286,886"><div class="bar-stack"><div class="seg seg-dmk" style="height:15px"></div><div class="seg seg-svb" style="height:119px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-20: ฿293,922"><div class="bar-stack"><div class="seg seg-dmk" style="height:16px"></div><div class="seg seg-svb" style="height:122px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-21: ฿302,340"><div class="bar-stack"><div class="seg seg-dmk" style="height:16px"></div><div class="seg seg-svb" style="height:126px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-22: ฿335,040"><div class="bar-stack"><div class="seg seg-dmk" style="height:18px"></div><div class="seg seg-svb" style="height:139px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-23: ฿326,990"><div class="bar-stack"><div class="seg seg-dmk" style="height:17px"></div><div class="seg seg-svb" style="height:136px"></div></div></td>
+        
+        <td class="bar-cell " title="2026-05-24: ฿330,097"><div class="bar-stack"><div class="seg seg-dmk" style="height:18px"></div><div class="seg seg-svb" style="height:137px"></div></div></td>
+        
+        <td class="bar-cell d1" title="2026-05-25: ฿354,580"><div class="bar-stack"><div class="seg seg-dmk" style="height:19px"></div><div class="seg seg-svb" style="height:147px"></div></div></td>
+        
+      </tr>
+      <tr><td></td>
+        
+        <td class="axlbl">04-26</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl axhol">05-01</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">05-06</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">05-11</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">05-16</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">05-21</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl">·</td>
+        
+        <td class="axlbl axd1">05-25</td>
+        
+      </tr>
+    </table>
+    <table class="legend"><tr><th></th><th>Airport</th><th>D1 Rev</th><th>D1 Vends</th><th>Share</th><th>WoW</th><th>Vends Δ</th></tr>
+      
+      <tr><td><span class="sw" style="background:#5551FE"></span></td><td><b>SVB</b> (Suvarnabhumi · 17 locations)</td><td>฿314.1K</td><td>1,656</td><td>88.6%</td><td class="delta-up">+10.9%</td><td class="delta-up">+0.2%</td></tr>
+      
+      <tr><td><span class="sw" style="background:#7B79FF"></span></td><td><b>DMK</b> (Don Mueang · 3 locations)</td><td>฿40.5K</td><td>192</td><td>11.4%</td><td class="delta-up">+16.3%</td><td class="delta-up">+4.9%</td></tr>
+      
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>🏢 BU Performance — WoW heatmap</h2>
+    <div style="background:#FFF; border-left:3px solid #5551FE; padding:10px 14px; font-size:12px; color:#2C3E50; margin:0 0 14px 0; line-height:1.6;">
+      <b>📖 How to read this:</b> <b>Vends</b> = vend events (receipts) · <b>Avg Ticket</b> = revenue ÷ vends · <b>Revenue</b> = vends × ticket. WoW = vs same weekday last week.
+      <br><span style="font-size:11px; color:#5F5E5A;">Color scale: 🟩 dark green ≥+20% · green ≥+10% · light green ≥+5% · ⬜ grey ±3% · 🟥 pink ≤−5% · red ≤−10% · dark red ≤−20%.</span>
+    </div>
+    <table class="heatmap">
+      <tr>
+        <th class="heat-bu">BU</th>
+        <th>D1 Rev</th>
+        <th>D1 Vends</th>
+        <th class="heat-metric">Revenue Δ WoW</th>
+        <th class="heat-metric">Vends Δ WoW</th>
+        <th class="heat-metric">Ticket Δ WoW</th>
+        <th>Signal</th>
+      </tr>
+      
+      <tr>
+        <td class="heat-bu"><span class="sw" style="background:#5551FE"></span><b>Vendi</b> <span class="muted">(kiosks)</span></td>
+        <td class="heat-rev">฿298.2K</td>
+        <td class="heat-bills">1,065</td>
+        <td class="heat-cell" style="background:#2D7A3F; color:#fff;">+15.2%</td><td class="heat-cell" style="background:#7AB893; color:#1A4A22;">+5.9%</td><td class="heat-cell" style="background:#7AB893; color:#1A4A22;">+8.9%</td>
+        <td><span class="signal-badge s-upsell">⭐ BEST</span></td>
+      </tr>
+      
+      <tr>
+        <td class="heat-bu"><span class="sw" style="background:#7B79FF"></span><b>Vending</b> <span class="muted">(machines)</span></td>
+        <td class="heat-rev">฿56.4K</td>
+        <td class="heat-bills">783</td>
+        <td class="heat-cell" style="background:#F5B6B0; color:#5A1410;">−5.0%</td><td class="heat-cell" style="background:#F5B6B0; color:#5A1410;">−5.7%</td><td class="heat-cell" style="background:#F0E5DA; color:#5F5E5A;">+0.7%</td>
+        <td><span class="signal-badge s-soft">↘ Soft decline</span></td>
+      </tr>
+      
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>🏪 Sales by Machine (Problem vs OK)</h2>
+    <h3 class="branch-h3 branch-h3-warn">⚠ Problem machines — 7 (worst WoW first)</h3>
+    <table class="dt"><tr><th>Machine</th><th>Airport</th><th>BU</th><th>D1</th><th>D2</th><th>D8</th><th>DoD</th><th>WoW</th><th>Severity</th></tr>
+      
+      <tr><td>T1BE1-01</td><td>SVB</td><td>Vending</td><td>฿1.6K</td><td>฿1.2K</td><td>฿4.7K</td><td class="delta-up">+32.2%</td><td class="delta-down">−65.1%</td><td><span class="sev-badge sev-high">🟠 HIGH</span> <span class="muted" style="font-size:9px;">magnitude escalation</span></td></tr>
+      
+      <tr><td>10-T1BE1-02</td><td>SVB</td><td>Vendi</td><td>฿26.7K</td><td>฿35.6K</td><td>฿33.2K</td><td class="delta-down">−25.1%</td><td class="delta-down">−19.7%</td><td><span class="sev-badge sev-high">🟠 HIGH</span></td></tr>
+      
+      <tr><td>T1GW4-05</td><td>SVB</td><td>Vending</td><td>฿7.7K</td><td>฿8.6K</td><td>฿9.3K</td><td class="delta-down">−10.3%</td><td class="delta-down">−17.5%</td><td><span class="sev-badge sev-high">🟠 HIGH</span></td></tr>
+      
+      <tr><td>07-T1EW3-01+02</td><td>SVB</td><td>Vendi</td><td>฿11.5K</td><td>฿10.5K</td><td>฿13.3K</td><td class="delta-up">+9.4%</td><td class="delta-down">−13.7%</td><td><span class="sev-badge sev-watch">⚠ WATCH</span></td></tr>
+      
+      <tr><td>T1CE3-03</td><td>SVB</td><td>Vending</td><td>฿2.7K</td><td>฿3.2K</td><td>฿3.0K</td><td class="delta-down">−13.7%</td><td class="delta-down">−9.9%</td><td><span class="sev-badge sev-watch">⚠ WATCH</span></td></tr>
+      
+      <tr><td>03-T1BE3-03+04</td><td>SVB</td><td>Vendi</td><td>฿49.1K</td><td>฿45.2K</td><td>฿53.5K</td><td class="delta-up">+8.4%</td><td class="delta-down">−8.2%</td><td><span class="sev-badge sev-watch">⚠ WATCH</span></td></tr>
+      
+      <tr><td>T1GW2-08</td><td>SVB</td><td>Vending</td><td>฿0.73K</td><td>฿0.66K</td><td>฿0.78K</td><td class="delta-up">+10.0%</td><td class="delta-down">−6.7%</td><td><span class="sev-badge sev-watch">⚠ WATCH</span></td></tr>
+      
+    </table>
+    <h3 class="branch-h3 branch-h3-ok" style="margin-top:18px;">✅ OK machines — 12 (best WoW first)</h3>
+    <table class="dt"><tr><th>Machine</th><th>Airport</th><th>BU</th><th>D1</th><th>D2</th><th>D8</th><th>DoD</th><th>WoW</th><th>Severity</th></tr>
+      
+      <tr><td>01-T1AE3-09A+B</td><td>SVB</td><td>Vendi</td><td>฿87.5K</td><td>฿72.8K</td><td>฿54.5K</td><td class="delta-up">+20.2%</td><td class="delta-up">+60.6%</td><td><span class="sev-badge sev-surge">🔥 SURGE</span></td></tr>
+      
+      <tr><td>09-321+322</td><td>DMK</td><td>Vendi</td><td>฿22.7K</td><td>฿13.5K</td><td>฿17.5K</td><td class="delta-up">+67.4%</td><td class="delta-up">+29.7%</td><td><span class="sev-badge sev-surge">🔥 SURGE</span></td></tr>
+      
+      <tr><td>06-T1DW3-02+03</td><td>SVB</td><td>Vendi</td><td>฿32.4K</td><td>฿24.0K</td><td>฿26.5K</td><td class="delta-up">+35.2%</td><td class="delta-up">+22.3%</td><td><span class="sev-badge sev-surge">🔥 SURGE</span></td></tr>
+      
+      <tr><td>T1AE3-05</td><td>SVB</td><td>Vending</td><td>฿7.4K</td><td>฿9.6K</td><td>฿6.1K</td><td class="delta-down">−22.6%</td><td class="delta-up">+20.9%</td><td><span class="sev-badge sev-positive">✅ POSITIVE</span></td></tr>
+      
+      <tr><td>02-T1AE3-06+07</td><td>SVB</td><td>Vendi</td><td>฿23.3K</td><td>฿22.4K</td><td>฿19.4K</td><td class="delta-up">+4.1%</td><td class="delta-up">+20.5%</td><td><span class="sev-badge sev-positive">✅ POSITIVE</span></td></tr>
+      
+      <tr><td>05-T1DE3-01+02</td><td>SVB</td><td>Vendi</td><td>฿17.3K</td><td>฿23.8K</td><td>฿15.6K</td><td class="delta-down">−27.4%</td><td class="delta-up">+11.2%</td><td><span class="sev-badge sev-positive">✅ POSITIVE</span></td></tr>
+      
+      <tr><td>T1FW3-02</td><td>SVB</td><td>Vending</td><td>฿3.6K</td><td>฿4.1K</td><td>฿3.2K</td><td class="delta-down">−13.4%</td><td class="delta-up">+10.1%</td><td><span class="sev-badge sev-positive">✅ POSITIVE</span></td></tr>
+      
+      <tr><td>04-T1CE3-01+02</td><td>SVB</td><td>Vendi</td><td>฿6.8K</td><td>฿7.0K</td><td>฿6.2K</td><td class="delta-down">−2.5%</td><td class="delta-up">+9.6%</td><td><span class="sev-badge sev-positive">✅ POSITIVE</span></td></tr>
+      
+      <tr><td>08-T1ME4-13+14</td><td>SVB</td><td>Vendi</td><td>฿21.0K</td><td>฿21.3K</td><td>฿19.2K</td><td class="delta-down">−1.2%</td><td class="delta-up">+9.2%</td><td><span class="sev-badge sev-positive">✅ POSITIVE</span></td></tr>
+      
+      <tr><td>05-318</td><td>DMK</td><td>Vending</td><td>฿4.9K</td><td>฿4.7K</td><td>฿4.8K</td><td class="delta-up">+6.0%</td><td class="delta-up">+3.5%</td><td><span class="sev-badge sev-positive">✅ POSITIVE</span></td></tr>
+      
+      <tr><td>05-317</td><td>DMK</td><td>Vending</td><td>฿12.9K</td><td>฿13.1K</td><td>฿12.6K</td><td class="delta-down">−1.9%</td><td class="delta-up">+2.5%</td><td><span class="sev-badge sev-positive">✅ POSITIVE</span></td></tr>
+      
+      <tr><td>T1BE3-02</td><td>SVB</td><td>Vending</td><td>฿14.8K</td><td>฿8.9K</td><td>฿14.8K</td><td class="delta-up">+67.0%</td><td class="delta-neutral">−0.3%</td><td><span class="sev-badge sev-neutral">─ NEUTRAL</span></td></tr>
+      
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>📋 Next Actions — 7 service tickets + DATA + FYI</h2>
+    <p style="font-size:11px; color:#5F5E5A; margin:0 0 12px 0;">Each ticket → real Lark task co-assigned to <b>Quality Team</b> (Sarun + Ploynaphat + Surachai · same as SFB), <b>Vichit + Aekkaphop</b> as followers, due Mon 26 May 5pm ICT.</p>
+    <table class="dt"><tr><th>Priority</th><th>Task</th><th>Owner</th><th>Due</th><th>Lark Task</th></tr>
+      
+      <tr><td><span class="signal-badge s-crisis">HIGH</span></td><td>🔧 On-site service <b>T1BE1-01</b> (Vending · SVB) — −65.1% WoW · 28 vends vs 74 baseline. Likely machine fault. Check power, payment terminal, stock.</td><td>Quality Team</td><td>Mon 26 May 5pm</td><td><a href="https://applink.larksuite.com/client/todo/detail?guid=SAMPLE-T1BE1-01" style="color:#5551FE; text-decoration:none; font-weight:600;">→ Open task</a></td></tr>
+      
+      <tr><td><span class="signal-badge s-crisis">HIGH</span></td><td>🔧 On-site service <b>10-T1BE1-02</b> (Vendi · SVB) — −19.7% WoW · DoD −25%. Kiosk demand drop. Investigate operations.</td><td>Quality Team</td><td>Mon 26 May 5pm</td><td><a href="https://applink.larksuite.com/client/todo/detail?guid=SAMPLE-10-T1BE1-02" style="color:#5551FE; text-decoration:none; font-weight:600;">→ Open task</a></td></tr>
+      
+      <tr><td><span class="signal-badge s-crisis">HIGH</span></td><td>🔧 On-site service <b>T1GW4-05</b> (Vending · SVB) — −17.5% WoW · DoD −10%. Suspect stockout or partial outage.</td><td>Quality Team</td><td>Mon 26 May 5pm</td><td><a href="https://applink.larksuite.com/client/todo/detail?guid=SAMPLE-T1GW4-05" style="color:#5551FE; text-decoration:none; font-weight:600;">→ Open task</a></td></tr>
+      
+      <tr><td><span class="signal-badge s-quality">WATCH</span></td><td>🔧 Monitor <b>07-T1EW3-01+02</b> (Vendi · SVB) — −13.7% WoW but DoD positive. Watch tomorrow; if persists, send service.</td><td>Quality Team</td><td>Tue 27 May</td><td><a href="https://applink.larksuite.com/client/todo/detail?guid=SAMPLE-07-T1EW3" style="color:#5551FE; text-decoration:none; font-weight:600;">→ Open task</a></td></tr>
+      
+      <tr><td><span class="signal-badge s-quality">WATCH</span></td><td>🔧 Monitor <b>T1CE3-03</b> (Vending · SVB) — −9.9% WoW · DoD also down. Verify stock + telemetry.</td><td>Quality Team</td><td>Tue 27 May</td><td><a href="https://applink.larksuite.com/client/todo/detail?guid=SAMPLE-T1CE3-03" style="color:#5551FE; text-decoration:none; font-weight:600;">→ Open task</a></td></tr>
+      
+      <tr><td><span class="signal-badge s-quality">WATCH</span></td><td>🔧 Monitor <b>03-T1BE3-03+04</b> (Vendi · SVB) — −8.2% WoW from strong baseline.</td><td>Quality Team</td><td>Tue 27 May</td><td><a href="https://applink.larksuite.com/client/todo/detail?guid=SAMPLE-03-T1BE3" style="color:#5551FE; text-decoration:none; font-weight:600;">→ Open task</a></td></tr>
+      
+      <tr><td><span class="signal-badge s-quality">WATCH</span></td><td>🔧 Monitor <b>T1GW2-08</b> (Vending · SVB) — −6.7% WoW · low-volume machine (D8 ฿779). Restock check.</td><td>Quality Team</td><td>Tue 27 May</td><td><a href="https://applink.larksuite.com/client/todo/detail?guid=SAMPLE-T1GW2-08" style="color:#5551FE; text-decoration:none; font-weight:600;">→ Open task</a></td></tr>
+      
+      <tr><td><span class="signal-badge s-upsell">DATA</span></td><td>📋 3 Vending machines silent in D1/D2/D8: <b>T1MW4-14</b>, <b>T1MW4-18</b>, <b>T1MW4-19</b>. Plus <b>Crucible Event</b> (Vendi pop-up). Verify status — active / inactive / removed from master.</td><td>Vichit</td><td>Wed 28 May</td><td><a href="https://applink.larksuite.com/client/todo/detail?guid=SAMPLE-DATA" style="color:#5551FE; text-decoration:none; font-weight:600;">→ Open task</a></td></tr>
+      
+      <tr><td><span class="signal-badge s-traffic">FYI</span></td><td>🔥 Replicate <b>01-T1AE3-09A+B</b> kiosk pattern — D1 ฿87.5K · +60.6% WoW · +20.2% DoD. Document stock-mix + staffing for adjacent Vendi units.</td><td>Aekkaphop (SVB)</td><td>Wed 28 May</td><td><span class="muted">FYI only</span></td></tr>
+      
+      <tr><td><span class="signal-badge s-traffic">FYI</span></td><td>🔥 DMK over-performing — 09-321+322 SURGE +29.7% · 05-317/318 both positive. DMK runs leaner; consider expanding presence.</td><td>Siraphop (DMK)</td><td>Fri 30 May</td><td><span class="muted">FYI only</span></td></tr>
+      
+    </table>
+  </div>
+
+  <div class="footer">
+    <div><b>CHAW Vending Services</b> · Sub 13 — Vending Services Company Limited · SVB + DMK</div>
+    <div>Source: NetSuite Sub 13 <code>transactionline</code> (pre-VAT) · 2 BUs (Vendi kiosks + Vending machines) · MTD: 1 May–25 May (25 days · ฿8.75M total · avg ฿350K/day)</div>
+    <div>Runbook v1.0 · Generated 26 May 2026 — vichit@chaw.co.th</div>
+    
+    <div style="margin-top:6px;">Production recipients: <b>management@chaw.co.th</b> · <b>vendi@chaw.co.th</b></div>
+    
+  </div>
+</div>
+</body></html>

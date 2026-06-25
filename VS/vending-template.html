@@ -1,0 +1,217 @@
+<!--
+  vending-template.html — Vending Services Daily Sales Report (Sub 13, v1.0)
+
+  THIS IS A LOCKED TEMPLATE. Do not regenerate. Edit only when the layout truly changes.
+  The routine fills this with code (fill_template.py), never via model output.
+
+  Substitution mechanisms (see template-format.md in chaw-report-builder skill):
+    double-curly TOKEN                                         scalar replace from data.json
+    REPEAT:name ... /REPEAT:name (in HTML comments)            render once per item in repeats[name]
+    SECTION:name ... /SECTION:name (in HTML comments)          keep if sections[name] is true, else drop
+
+  See vending-queries.md for the source of every token here.
+-->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>{{status_emoji}} Vending Daily — {{report_date_display}} | ฿{{total_k}}K (WoW {{wow_signed}}%) | {{service_ticket_count}} service tickets</title>
+<style>
+body { font-family:Poppins,-apple-system,sans-serif; background:#F5EDE4; margin:0; padding:24px; color:#2C3E50; }
+.wrap { max-width:920px; margin:0 auto; background:#FFF8F5; border-radius:12px; overflow:hidden; box-shadow:0 4px 24px rgba(44,62,80,0.08); }
+.draft { background:#E3F2FD; color:#1565C0; text-align:center; padding:8px; font-weight:600; font-size:13px; border-bottom:1px solid #BBDEFB; }
+.hdr { background:linear-gradient(135deg,#5551FE 0%,#7B79FF 100%); color:#fff; padding:28px 32px; }
+.hdr h1 { margin:0 0 6px 0; font-size:24px; font-weight:600; }
+.hdr .sub { opacity:0.85; font-size:13px; }
+.hdr .badge { display:inline-block; background:rgba(255,255,255,0.18); padding:4px 10px; border-radius:12px; font-size:11px; margin-top:8px; }
+.section { padding:24px 32px; border-bottom:1px solid #F0E5DA; }
+.section h2 { margin:0 0 16px 0; font-size:16px; font-weight:600; }
+.insight { background:#FFF; border-left:4px solid #F27061; padding:16px 18px; border-radius:4px; }
+.insight ul { margin:0; padding-left:18px; line-height:1.7; font-size:13px; }
+.insight li b { color:#5551FE; }
+.kpi { display:flex; gap:12px; }
+.kpi .card { flex:1; background:#fff; border-radius:8px; padding:16px; border:1px solid #F0E5DA; }
+.kpi .lbl { font-size:11px; color:#5F5E5A; text-transform:uppercase; letter-spacing:0.5px; }
+.kpi .val { font-size:24px; font-weight:600; margin:4px 0; }
+.kpi .delta { font-size:11px; font-weight:500; line-height:1.5; }
+.delta-up { color:#2D7A3F; } .delta-down { color:#C5453E; } .delta-neutral { color:#5F5E5A; } .delta-na { color:#5F5E5A; }
+table.barchart { width:100%; table-layout:fixed; border-collapse:collapse; }
+table.barchart td.yaxis { width:70px; vertical-align:top; padding-right:8px; font-size:10px; color:#5F5E5A; text-align:right; position:relative; height:240px; }
+table.barchart td.yaxis .y-mtd { position:absolute; top:65px; right:8px; background:#FFF8F5; padding:1px 4px; border-radius:2px; font-weight:600; color:#4A5568; }
+td.bar-cell { vertical-align:bottom; padding:0 1px; height:240px; position:relative; background-image: linear-gradient(to bottom, transparent 0px, transparent 74px, rgba(74,85,104,0.85) 74px, rgba(74,85,104,0.85) 76px, transparent 76px); }
+.bar-stack { display:flex; flex-direction:column-reverse; height:220px; }
+.seg { width:100%; }
+.seg-vendi { background:#5551FE; } .seg-vending { background:#7B79FF; }
+.seg-svb { background:#5551FE; } .seg-dmk { background:#7B79FF; }
+td.bar-cell.d1 .bar-stack { box-shadow: 0 -3px 0 #F27061 inset; }
+td.axlbl { font-size:9px; color:#5F5E5A; text-align:center; padding-top:4px; }
+td.axhol { border-bottom:2px solid #F27061; color:#F27061; font-weight:600; } td.axd1 { color:#F27061; font-weight:600; }
+.legend { width:100%; border-collapse:collapse; font-size:12px; margin-top:14px; }
+.legend th, .legend td { padding:6px 10px; text-align:left; border-bottom:1px solid #F0E5DA; }
+.legend th { color:#5F5E5A; font-weight:500; font-size:10px; text-transform:uppercase; }
+.legend .sw { display:inline-block; width:12px; height:12px; border-radius:2px; vertical-align:middle; margin-right:6px; }
+.signal-badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:10px; font-weight:600; }
+.s-crisis { background:#FBE9E7; color:#C5453E; } .s-quality { background:#FFF3CD; color:#856404; } .s-soft { background:#F0E5DA; color:#5F5E5A; } .s-traffic { background:#E8F5E9; color:#2D7A3F; } .s-upsell { background:#E3F2FD; color:#5551FE; }
+.sev-badge { display:inline-block; padding:3px 8px; border-radius:10px; font-size:10px; font-weight:600; white-space:nowrap; }
+.sev-surge { background:#FBE9E7; color:#F27061; } .sev-positive { background:#E8F5E9; color:#2D7A3F; } .sev-neutral { background:#F0E5DA; color:#5F5E5A; } .sev-watch { background:#FFF3CD; color:#856404; } .sev-high { background:#FFEFE0; color:#C77818; } .sev-critical { background:#FBE9E7; color:#C5453E; } .sev-new { background:#E3F2FD; color:#1565C0; }
+.branch-h3 { font-size:13px; font-weight:600; margin:0 0 8px 0; padding:6px 10px; border-radius:4px; }
+.heatmap { width:100%; border-collapse:collapse; font-size:13px; }
+.heatmap th { background:#F5EDE4; color:#5F5E5A; font-weight:500; font-size:11px; text-transform:uppercase; padding:8px 10px; text-align:center; border:1px solid #F0E5DA; }
+.heatmap th.heat-bu { text-align:left; }
+.heatmap th.heat-metric { background:#F0E5DA; }
+.heatmap td { padding:10px 10px; text-align:center; border:1px solid #F0E5DA; }
+.heatmap td.heat-bu { text-align:left; font-weight:600; font-size:13px; }
+.heatmap td.heat-rev { text-align:right; font-weight:600; font-size:13px; }
+.heatmap td.heat-bills { text-align:right; color:#5F5E5A; }
+.heatmap td.heat-cell { font-weight:700; font-size:13px; }
+.branch-h3-warn { background:#FFF3CD; color:#856404; border-left:4px solid #F39C12; }
+.branch-h3-ok { background:#E8F5E9; color:#2D7A3F; border-left:4px solid #2D7A3F; }
+.dt { width:100%; border-collapse:collapse; font-size:12px; }
+.dt th, .dt td { padding:8px 10px; border-bottom:1px solid #F0E5DA; text-align:left; }
+.dt th { color:#5F5E5A; font-weight:500; font-size:10px; text-transform:uppercase; background:#F5EDE4; }
+.muted { color:#5F5E5A; font-weight:400; }
+.footer { background:#2C3E50; color:#C5BFB0; padding:20px 32px; font-size:11px; line-height:1.6; }
+.footer b { color:#fff; }
+.dq { background:#FFF3CD; color:#856404; padding:10px 16px; font-size:12px; border-left:4px solid #F39C12; }
+</style></head><body>
+<div class="wrap">
+
+  <!-- SECTION:draft_banner — only rendered when RUN_MODE=manual-test -->
+  <div class="draft" style="background:#FFF3CD; color:#856404; border-bottom:1px solid #FFE082;">⚠ DRAFT preview · {{report_date_display}} · TEST mode — {{test_recipient}} only · no tasks created</div>
+  <!-- /SECTION:draft_banner -->
+
+  <!-- SECTION:prod_banner — only rendered when RUN_MODE=scheduled or manual-live -->
+  <div class="draft" style="background:#E8F5E9; color:#2D7A3F; border-bottom:1px solid #C8E6C9;">📨 Vending Daily Report · {{report_date_display}} ({{report_date_weekday_th}}) · {{service_ticket_count}} service tickets · Sub 13</div>
+  <!-- /SECTION:prod_banner -->
+
+  <div class="hdr">
+    <h1>Vending Services — Daily Sales Report</h1>
+    <div class="sub">{{report_date_weekday_th}} {{report_date_display}} · Sub 13 · Vending Services Company Limited</div>
+    <span class="badge">{{status_emoji}} v1.0 · ฿{{total_k}}K · WoW {{wow_signed}}%</span>
+  </div>
+
+  <!-- SECTION:data_quality_banner — only when silent machines / new locations detected -->
+  <div class="dq">⚠ Data quality: {{data_quality_message}}. {{data_quality_followup}}</div>
+  <!-- /SECTION:data_quality_banner -->
+
+  <div class="section">
+    <h2>🎯 Executive Insight</h2>
+    <div class="insight"><ul>
+      <!-- REPEAT:insight_bullets — one li per applicable bullet rule (see vending-prediction.md) -->
+      {{html}}
+      <!-- /REPEAT:insight_bullets -->
+    </ul></div>
+  </div>
+
+  <div class="section">
+    <h2>📊 KPI Headline</h2>
+    <div class="kpi">
+      <div class="card"><div class="lbl">Revenue</div><div class="val">฿{{total_k}}K</div><div class="delta {{revenue_delta_class}}">WoW {{wow_signed}}%<br>DoD {{dod_signed}}%<br>vs MTD avg {{mtd_vs_signed}}%</div></div>
+      <div class="card"><div class="lbl">Vends</div><div class="val">{{total_bills}}</div><div class="delta {{bills_delta_class}}">WoW {{bills_wow_signed}}%</div></div>
+      <div class="card"><div class="lbl">Avg Ticket</div><div class="val">฿{{avg_ticket}}</div><div class="delta {{ticket_delta_class}}">WoW {{ticket_wow_signed}}%</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📈 30-Day Revenue by BU ({{thirty_d_start_short}} → {{report_date_short}})</h2>
+    <table class="barchart">
+      <tr><td class="yaxis"><div class="y-mtd">MTD avg<br>฿{{mtd_avg_k}} K</div></td>
+        <!-- REPEAT:chart_days_bu — one td per day, 30 total. {{d1_class}} = "d1" on the last day, "" otherwise -->
+        <td class="bar-cell {{d1_class}}" title="{{tooltip}}"><div class="bar-stack"><div class="seg seg-vending" style="height:{{vending_px}}px"></div><div class="seg seg-vendi" style="height:{{vendi_px}}px"></div></div></td>
+        <!-- /REPEAT:chart_days_bu -->
+      </tr>
+      <tr><td></td>
+        <!-- REPEAT:chart_axis_bu — one td per day matching the day above. {{axlbl_class}} = "axlbl", "axlbl axhol", or "axlbl axd1" -->
+        <td class="{{axlbl_class}}">{{axlbl_text}}</td>
+        <!-- /REPEAT:chart_axis_bu -->
+      </tr>
+    </table>
+    <table class="legend"><tr><th></th><th>BU</th><th>D1 Rev</th><th>D1 Vends</th><th>Share</th><th>WoW</th><th>Vends Δ</th><th>Ticket Δ</th><th>Signal</th></tr>
+      <!-- REPEAT:bu_legend_rows -->
+      <tr><td><span class="sw" style="background:{{color}}"></span></td><td><b>{{bu_name}}</b> <span class="muted">{{bu_note}}</span></td><td>฿{{d1_rev_k}}K</td><td>{{d1_bills}}</td><td>{{share_pct}}%</td><td class="{{wow_class}}">{{wow_signed}}%</td><td class="{{bills_wow_class}}">{{bills_wow_signed}}%</td><td class="{{ticket_wow_class}}">{{ticket_wow_signed}}%</td><td><span class="signal-badge {{signal_class}}">{{signal_label}}</span></td></tr>
+      <!-- /REPEAT:bu_legend_rows -->
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>🌏 30-Day Revenue by Airport</h2>
+    <table class="barchart">
+      <tr><td class="yaxis"><div class="y-mtd">MTD avg<br>฿{{mtd_avg_k}} K</div></td>
+        <!-- REPEAT:chart_days_airport -->
+        <td class="bar-cell {{d1_class}}" title="{{tooltip}}"><div class="bar-stack"><div class="seg seg-dmk" style="height:{{dmk_px}}px"></div><div class="seg seg-svb" style="height:{{svb_px}}px"></div></div></td>
+        <!-- /REPEAT:chart_days_airport -->
+      </tr>
+      <tr><td></td>
+        <!-- REPEAT:chart_axis_airport -->
+        <td class="{{axlbl_class}}">{{axlbl_text}}</td>
+        <!-- /REPEAT:chart_axis_airport -->
+      </tr>
+    </table>
+    <table class="legend"><tr><th></th><th>Airport</th><th>D1 Rev</th><th>D1 Vends</th><th>Share</th><th>WoW</th><th>Vends Δ</th></tr>
+      <!-- REPEAT:airport_legend_rows -->
+      <tr><td><span class="sw" style="background:{{color}}"></span></td><td><b>{{airport_code}}</b> ({{airport_name}})</td><td>฿{{d1_rev_k}}K</td><td>{{d1_bills}}</td><td>{{share_pct}}%</td><td class="{{wow_class}}">{{wow_signed}}%</td><td class="{{bills_wow_class}}">{{bills_wow_signed}}%</td></tr>
+      <!-- /REPEAT:airport_legend_rows -->
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>🏢 BU Performance — WoW heatmap</h2>
+    <div style="background:#FFF; border-left:3px solid #5551FE; padding:10px 14px; font-size:12px; color:#2C3E50; margin:0 0 14px 0; line-height:1.6;">
+      <b>📖 How to read this:</b> <b>Vends</b> = vend events (receipts) · <b>Avg Ticket</b> = revenue ÷ vends · <b>Revenue</b> = vends × ticket. WoW = vs same weekday last week.
+      <br><span style="font-size:11px; color:#5F5E5A;">Color scale: 🟩 dark green ≥+20% · green ≥+10% · light green ≥+5% · ⬜ grey ±3% · 🟥 pink ≤−5% · red ≤−10% · dark red ≤−20%.</span>
+    </div>
+    <table class="heatmap">
+      <tr>
+        <th class="heat-bu">BU</th>
+        <th>D1 Rev</th>
+        <th>D1 Vends</th>
+        <th class="heat-metric">Revenue Δ WoW</th>
+        <th class="heat-metric">Vends Δ WoW</th>
+        <th class="heat-metric">Ticket Δ WoW</th>
+        <th>Signal</th>
+      </tr>
+      <!-- REPEAT:heatmap_rows -->
+      <tr>
+        <td class="heat-bu"><span class="sw" style="background:{{color}}"></span><b>{{bu_name}}</b> <span class="muted">{{bu_note}}</span></td>
+        <td class="heat-rev">฿{{d1_rev_k}}K</td>
+        <td class="heat-bills">{{d1_bills}}</td>
+        <td class="heat-cell" style="background:{{rev_bg}}; color:{{rev_fg}};">{{rev_wow_signed}}%</td><td class="heat-cell" style="background:{{bills_bg}}; color:{{bills_fg}};">{{bills_wow_signed}}%</td><td class="heat-cell" style="background:{{ticket_bg}}; color:{{ticket_fg}};">{{ticket_wow_signed}}%</td>
+        <td><span class="signal-badge {{signal_class}}">{{signal_label}}</span></td>
+      </tr>
+      <!-- /REPEAT:heatmap_rows -->
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>🏪 Sales by Machine (Problem vs OK)</h2>
+    <h3 class="branch-h3 branch-h3-warn">⚠ Problem machines — {{problem_machine_count}} (worst WoW first)</h3>
+    <table class="dt"><tr><th>Machine</th><th>Airport</th><th>BU</th><th>D1</th><th>D2</th><th>D8</th><th>DoD</th><th>WoW</th><th>Severity</th></tr>
+      <!-- REPEAT:problem_machine_rows -->
+      <tr><td>{{machine_id}}</td><td>{{airport}}</td><td>{{bu}}</td><td>฿{{d1_k}}K</td><td>฿{{d2_k}}K</td><td>฿{{d8_k}}K</td><td class="{{dod_class}}">{{dod_signed}}%</td><td class="{{wow_class}}">{{wow_signed}}%</td><td>{{severity_badges_html}}</td></tr>
+      <!-- /REPEAT:problem_machine_rows -->
+    </table>
+    <h3 class="branch-h3 branch-h3-ok" style="margin-top:18px;">✅ OK machines — {{ok_machine_count}} (best WoW first)</h3>
+    <table class="dt"><tr><th>Machine</th><th>Airport</th><th>BU</th><th>D1</th><th>D2</th><th>D8</th><th>DoD</th><th>WoW</th><th>Severity</th></tr>
+      <!-- REPEAT:ok_machine_rows -->
+      <tr><td>{{machine_id}}</td><td>{{airport}}</td><td>{{bu}}</td><td>฿{{d1_k}}K</td><td>฿{{d2_k}}K</td><td>฿{{d8_k}}K</td><td class="{{dod_class}}">{{dod_signed}}%</td><td class="{{wow_class}}">{{wow_signed}}%</td><td>{{severity_badges_html}}</td></tr>
+      <!-- /REPEAT:ok_machine_rows -->
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>📋 Next Actions — {{service_ticket_count}} service tickets + DATA + FYI</h2>
+    <p style="font-size:11px; color:#5F5E5A; margin:0 0 12px 0;">Each ticket → real Lark task co-assigned to <b>Quality Team</b> (Sarun + Ploynaphat + Surachai · same as SFB), <b>Vichit + Aekkaphop</b> as followers, due {{task_due_display}}.</p>
+    <table class="dt"><tr><th>Priority</th><th>Task</th><th>Owner</th><th>Due</th><th>Lark Task</th></tr>
+      <!-- REPEAT:next_action_rows -->
+      <tr><td><span class="signal-badge {{priority_class}}">{{priority_label}}</span></td><td>{{task_body_html}}</td><td>{{owner_label}}</td><td>{{due_display}}</td><td>{{task_link_html}}</td></tr>
+      <!-- /REPEAT:next_action_rows -->
+    </table>
+  </div>
+
+  <div class="footer">
+    <div><b>CHAW Vending Services</b> · Sub 13 — Vending Services Company Limited · SVB + DMK</div>
+    <div>Source: NetSuite Sub 13 <code>transactionline</code> (pre-VAT) · 2 BUs (Vendi kiosks + Vending machines) · MTD: {{mtd_start_short}}–{{report_date_short}} ({{mtd_days}} days · ฿{{mtd_total_m}}M total · avg ฿{{mtd_avg_k}}K/day)</div>
+    <div>Runbook v1.0 · Generated {{generated_display}} — vichit@chaw.co.th</div>
+    <!-- SECTION:prod_banner -->
+    <div style="margin-top:6px;">Production recipients: <b>management@chaw.co.th</b> · <b>vendi@chaw.co.th</b></div>
+    <!-- /SECTION:prod_banner -->
+  </div>
+</div>
+</body></html>

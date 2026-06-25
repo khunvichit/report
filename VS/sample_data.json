@@ -1,0 +1,1098 @@
+{
+  "scalars": {
+    "status_emoji": "🔥",
+    "report_date_display": "25 May 2026",
+    "report_date_short": "25 May",
+    "report_date_weekday_th": "วันจันทร์",
+    "mtd_start_short": "1 May",
+    "mtd_days": "25",
+    "generated_display": "26 May 2026",
+    "thirty_d_start_short": "26 Apr",
+    "total_k": "354.6",
+    "total_bills": "1,848",
+    "avg_ticket": "192",
+    "wow_signed": "+11.4",
+    "dod_signed": "+7.4",
+    "bills_wow_signed": "+0.7",
+    "ticket_wow_signed": "+10.7",
+    "mtd_vs_signed": "+1.3",
+    "mtd_avg_k": "350",
+    "mtd_total_m": "8.75",
+    "service_ticket_count": "7",
+    "problem_machine_count": "7",
+    "ok_machine_count": "12",
+    "task_due_display": "Mon 26 May 5pm ICT",
+    "test_recipient": "vichit@chaw.co.th",
+    "data_quality_message": "3 Vending machines (T1MW4-14, T1MW4-18, T1MW4-19) appeared in 30-day data but had no sales on D1/D2/D8",
+    "data_quality_followup": "Crucible Event (Vendi pop-up) also no sales in window. 1 DATA task created.",
+    "revenue_delta_class": "delta-up",
+    "bills_delta_class": "delta-up",
+    "ticket_delta_class": "delta-up"
+  },
+  "repeats": {
+    "insight_bullets": [
+      {
+        "html": "<li>D1 Vending revenue <b>฿354,580</b> (+11.4% WoW · +7.4% DoD · vs MTD avg ฿350K +1.3%), 1,848 vends, avg ticket <b>฿192</b> — strong day, above month pace.</li>"
+      },
+      {
+        "html": "<li><b>Split story</b>: Vendi kiosks up +15.2% WoW (Bills +5.9% · Ticket +8.9%) — ⭐ BEST signal. 84% of revenue. Vending machines softer at −5.0% WoW.</li>"
+      },
+      {
+        "html": "<li>🔥 Hero: <b>01-T1AE3-09A+B</b> (Vendi · SVB) D1 ฿87.5K · WoW +60.6% · DoD +20.2% — biggest single-day at any kiosk this month.</li>"
+      },
+      {
+        "html": "<li>🟠 Worst: <b>T1BE1-01</b> (Vending · SVB) D1 ฿1,644 vs D8 ฿4,708 — <b>−65.1% WoW</b>, 28 vends vs 74 baseline. Likely machine fault.</li>"
+      },
+      {
+        "html": "<li><b>DMK +16.3% WoW</b> outpaces SVB (+10.9% WoW) — both airports positive, DMK piers (05-317, 05-318, 09-321+322) all green.</li>"
+      },
+      {
+        "html": "<li><b>7 machines flagged</b> for service across both airports — see Sales by Machine + Next Actions.</li>"
+      }
+    ],
+    "chart_days_bu": [
+      {
+        "tooltip": "2026-04-26: ฿430,830",
+        "vendi_px": 168,
+        "vending_px": 34,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-04-27: ฿402,994",
+        "vendi_px": 156,
+        "vending_px": 33,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-04-28: ฿383,535",
+        "vendi_px": 147,
+        "vending_px": 33,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-04-29: ฿401,779",
+        "vendi_px": 155,
+        "vending_px": 33,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-04-30: ฿463,798",
+        "vendi_px": 180,
+        "vending_px": 37,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-01: ฿438,969",
+        "vendi_px": 163,
+        "vending_px": 43,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-02: ฿413,685",
+        "vendi_px": 159,
+        "vending_px": 35,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-03: ฿439,831",
+        "vendi_px": 169,
+        "vending_px": 37,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-04: ฿441,014",
+        "vendi_px": 170,
+        "vending_px": 36,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-05: ฿411,881",
+        "vendi_px": 160,
+        "vending_px": 33,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-06: ฿388,680",
+        "vendi_px": 150,
+        "vending_px": 32,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-07: ฿349,814",
+        "vendi_px": 134,
+        "vending_px": 30,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-08: ฿357,439",
+        "vendi_px": 138,
+        "vending_px": 30,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-09: ฿360,326",
+        "vendi_px": 139,
+        "vending_px": 30,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-10: ฿360,794",
+        "vendi_px": 137,
+        "vending_px": 32,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-11: ฿328,454",
+        "vendi_px": 126,
+        "vending_px": 28,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-12: ฿293,430",
+        "vendi_px": 112,
+        "vending_px": 25,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-13: ฿303,842",
+        "vendi_px": 120,
+        "vending_px": 23,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-14: ฿315,266",
+        "vendi_px": 123,
+        "vending_px": 25,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-15: ฿326,500",
+        "vendi_px": 127,
+        "vending_px": 26,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-16: ฿325,970",
+        "vendi_px": 125,
+        "vending_px": 28,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-17: ฿346,423",
+        "vendi_px": 131,
+        "vending_px": 32,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-18: ฿318,151",
+        "vendi_px": 121,
+        "vending_px": 28,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-19: ฿286,886",
+        "vendi_px": 112,
+        "vending_px": 23,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-20: ฿293,922",
+        "vendi_px": 113,
+        "vending_px": 25,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-21: ฿302,340",
+        "vendi_px": 117,
+        "vending_px": 25,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-22: ฿335,040",
+        "vendi_px": 131,
+        "vending_px": 26,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-23: ฿326,990",
+        "vendi_px": 132,
+        "vending_px": 21,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-24: ฿330,097",
+        "vendi_px": 129,
+        "vending_px": 25,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-25: ฿354,580",
+        "vendi_px": 140,
+        "vending_px": 26,
+        "d1_class": "d1"
+      }
+    ],
+    "chart_axis_bu": [
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "04-26"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl axhol",
+        "axlbl_text": "05-01"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "05-06"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "05-11"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "05-16"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "05-21"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl axd1",
+        "axlbl_text": "05-25"
+      }
+    ],
+    "chart_days_airport": [
+      {
+        "tooltip": "2026-04-26: ฿430,830",
+        "svb_px": 179,
+        "dmk_px": 23,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-04-27: ฿402,994",
+        "svb_px": 167,
+        "dmk_px": 22,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-04-28: ฿383,535",
+        "svb_px": 159,
+        "dmk_px": 21,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-04-29: ฿401,779",
+        "svb_px": 167,
+        "dmk_px": 21,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-04-30: ฿463,798",
+        "svb_px": 192,
+        "dmk_px": 25,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-01: ฿438,969",
+        "svb_px": 183,
+        "dmk_px": 23,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-02: ฿413,685",
+        "svb_px": 172,
+        "dmk_px": 22,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-03: ฿439,831",
+        "svb_px": 183,
+        "dmk_px": 23,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-04: ฿441,014",
+        "svb_px": 183,
+        "dmk_px": 24,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-05: ฿411,881",
+        "svb_px": 171,
+        "dmk_px": 22,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-06: ฿388,680",
+        "svb_px": 161,
+        "dmk_px": 21,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-07: ฿349,814",
+        "svb_px": 145,
+        "dmk_px": 19,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-08: ฿357,439",
+        "svb_px": 148,
+        "dmk_px": 19,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-09: ฿360,326",
+        "svb_px": 150,
+        "dmk_px": 19,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-10: ฿360,794",
+        "svb_px": 150,
+        "dmk_px": 19,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-11: ฿328,454",
+        "svb_px": 136,
+        "dmk_px": 18,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-12: ฿293,430",
+        "svb_px": 121,
+        "dmk_px": 16,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-13: ฿303,842",
+        "svb_px": 126,
+        "dmk_px": 16,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-14: ฿315,266",
+        "svb_px": 131,
+        "dmk_px": 17,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-15: ฿326,500",
+        "svb_px": 136,
+        "dmk_px": 17,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-16: ฿325,970",
+        "svb_px": 136,
+        "dmk_px": 17,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-17: ฿346,423",
+        "svb_px": 144,
+        "dmk_px": 18,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-18: ฿318,151",
+        "svb_px": 132,
+        "dmk_px": 17,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-19: ฿286,886",
+        "svb_px": 119,
+        "dmk_px": 15,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-20: ฿293,922",
+        "svb_px": 122,
+        "dmk_px": 16,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-21: ฿302,340",
+        "svb_px": 126,
+        "dmk_px": 16,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-22: ฿335,040",
+        "svb_px": 139,
+        "dmk_px": 18,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-23: ฿326,990",
+        "svb_px": 136,
+        "dmk_px": 17,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-24: ฿330,097",
+        "svb_px": 137,
+        "dmk_px": 18,
+        "d1_class": ""
+      },
+      {
+        "tooltip": "2026-05-25: ฿354,580",
+        "svb_px": 147,
+        "dmk_px": 19,
+        "d1_class": "d1"
+      }
+    ],
+    "chart_axis_airport": [
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "04-26"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl axhol",
+        "axlbl_text": "05-01"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "05-06"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "05-11"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "05-16"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "05-21"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl",
+        "axlbl_text": "·"
+      },
+      {
+        "axlbl_class": "axlbl axd1",
+        "axlbl_text": "05-25"
+      }
+    ],
+    "bu_legend_rows": [
+      {
+        "color": "#5551FE",
+        "bu_name": "Vendi",
+        "bu_note": "kiosks · 11 locations",
+        "d1_rev_k": "298.2",
+        "d1_bills": "1,065",
+        "share_pct": "84.1",
+        "wow_class": "delta-up",
+        "wow_signed": "+15.2",
+        "bills_wow_class": "delta-up",
+        "bills_wow_signed": "+5.9",
+        "ticket_wow_class": "delta-up",
+        "ticket_wow_signed": "+8.9",
+        "signal_class": "s-upsell",
+        "signal_label": "⭐ BEST"
+      },
+      {
+        "color": "#7B79FF",
+        "bu_name": "Vending",
+        "bu_note": "machines · 12 locations",
+        "d1_rev_k": "56.4",
+        "d1_bills": "783",
+        "share_pct": "15.9",
+        "wow_class": "delta-down",
+        "wow_signed": "−5.0",
+        "bills_wow_class": "delta-down",
+        "bills_wow_signed": "−5.7",
+        "ticket_wow_class": "delta-neutral",
+        "ticket_wow_signed": "+0.7",
+        "signal_class": "s-soft",
+        "signal_label": "↘ Soft decline"
+      }
+    ],
+    "airport_legend_rows": [
+      {
+        "color": "#5551FE",
+        "airport_code": "SVB",
+        "airport_name": "Suvarnabhumi · 17 locations",
+        "d1_rev_k": "314.1",
+        "d1_bills": "1,656",
+        "share_pct": "88.6",
+        "wow_class": "delta-up",
+        "wow_signed": "+10.9",
+        "bills_wow_class": "delta-up",
+        "bills_wow_signed": "+0.2"
+      },
+      {
+        "color": "#7B79FF",
+        "airport_code": "DMK",
+        "airport_name": "Don Mueang · 3 locations",
+        "d1_rev_k": "40.5",
+        "d1_bills": "192",
+        "share_pct": "11.4",
+        "wow_class": "delta-up",
+        "wow_signed": "+16.3",
+        "bills_wow_class": "delta-up",
+        "bills_wow_signed": "+4.9"
+      }
+    ],
+    "heatmap_rows": [
+      {
+        "color": "#5551FE",
+        "bu_name": "Vendi",
+        "bu_note": "(kiosks)",
+        "d1_rev_k": "298.2",
+        "d1_bills": "1,065",
+        "rev_bg": "#2D7A3F",
+        "rev_fg": "#fff",
+        "rev_wow_signed": "+15.2",
+        "bills_bg": "#7AB893",
+        "bills_fg": "#1A4A22",
+        "bills_wow_signed": "+5.9",
+        "ticket_bg": "#7AB893",
+        "ticket_fg": "#1A4A22",
+        "ticket_wow_signed": "+8.9",
+        "signal_class": "s-upsell",
+        "signal_label": "⭐ BEST"
+      },
+      {
+        "color": "#7B79FF",
+        "bu_name": "Vending",
+        "bu_note": "(machines)",
+        "d1_rev_k": "56.4",
+        "d1_bills": "783",
+        "rev_bg": "#F5B6B0",
+        "rev_fg": "#5A1410",
+        "rev_wow_signed": "−5.0",
+        "bills_bg": "#F5B6B0",
+        "bills_fg": "#5A1410",
+        "bills_wow_signed": "−5.7",
+        "ticket_bg": "#F0E5DA",
+        "ticket_fg": "#5F5E5A",
+        "ticket_wow_signed": "+0.7",
+        "signal_class": "s-soft",
+        "signal_label": "↘ Soft decline"
+      }
+    ],
+    "problem_machine_rows": [
+      {
+        "machine_id": "T1BE1-01",
+        "airport": "SVB",
+        "bu": "Vending",
+        "d1_k": "1.6",
+        "d2_k": "1.2",
+        "d8_k": "4.7",
+        "dod_class": "delta-up",
+        "dod_signed": "+32.2",
+        "wow_class": "delta-down",
+        "wow_signed": "−65.1",
+        "severity_badges_html": "<span class=\"sev-badge sev-high\">🟠 HIGH</span> <span class=\"muted\" style=\"font-size:9px;\">magnitude escalation</span>"
+      },
+      {
+        "machine_id": "10-T1BE1-02",
+        "airport": "SVB",
+        "bu": "Vendi",
+        "d1_k": "26.7",
+        "d2_k": "35.6",
+        "d8_k": "33.2",
+        "dod_class": "delta-down",
+        "dod_signed": "−25.1",
+        "wow_class": "delta-down",
+        "wow_signed": "−19.7",
+        "severity_badges_html": "<span class=\"sev-badge sev-high\">🟠 HIGH</span>"
+      },
+      {
+        "machine_id": "T1GW4-05",
+        "airport": "SVB",
+        "bu": "Vending",
+        "d1_k": "7.7",
+        "d2_k": "8.6",
+        "d8_k": "9.3",
+        "dod_class": "delta-down",
+        "dod_signed": "−10.3",
+        "wow_class": "delta-down",
+        "wow_signed": "−17.5",
+        "severity_badges_html": "<span class=\"sev-badge sev-high\">🟠 HIGH</span>"
+      },
+      {
+        "machine_id": "07-T1EW3-01+02",
+        "airport": "SVB",
+        "bu": "Vendi",
+        "d1_k": "11.5",
+        "d2_k": "10.5",
+        "d8_k": "13.3",
+        "dod_class": "delta-up",
+        "dod_signed": "+9.4",
+        "wow_class": "delta-down",
+        "wow_signed": "−13.7",
+        "severity_badges_html": "<span class=\"sev-badge sev-watch\">⚠ WATCH</span>"
+      },
+      {
+        "machine_id": "T1CE3-03",
+        "airport": "SVB",
+        "bu": "Vending",
+        "d1_k": "2.7",
+        "d2_k": "3.2",
+        "d8_k": "3.0",
+        "dod_class": "delta-down",
+        "dod_signed": "−13.7",
+        "wow_class": "delta-down",
+        "wow_signed": "−9.9",
+        "severity_badges_html": "<span class=\"sev-badge sev-watch\">⚠ WATCH</span>"
+      },
+      {
+        "machine_id": "03-T1BE3-03+04",
+        "airport": "SVB",
+        "bu": "Vendi",
+        "d1_k": "49.1",
+        "d2_k": "45.2",
+        "d8_k": "53.5",
+        "dod_class": "delta-up",
+        "dod_signed": "+8.4",
+        "wow_class": "delta-down",
+        "wow_signed": "−8.2",
+        "severity_badges_html": "<span class=\"sev-badge sev-watch\">⚠ WATCH</span>"
+      },
+      {
+        "machine_id": "T1GW2-08",
+        "airport": "SVB",
+        "bu": "Vending",
+        "d1_k": "0.73",
+        "d2_k": "0.66",
+        "d8_k": "0.78",
+        "dod_class": "delta-up",
+        "dod_signed": "+10.0",
+        "wow_class": "delta-down",
+        "wow_signed": "−6.7",
+        "severity_badges_html": "<span class=\"sev-badge sev-watch\">⚠ WATCH</span>"
+      }
+    ],
+    "ok_machine_rows": [
+      {
+        "machine_id": "01-T1AE3-09A+B",
+        "airport": "SVB",
+        "bu": "Vendi",
+        "d1_k": "87.5",
+        "d2_k": "72.8",
+        "d8_k": "54.5",
+        "dod_class": "delta-up",
+        "dod_signed": "+20.2",
+        "wow_class": "delta-up",
+        "wow_signed": "+60.6",
+        "severity_badges_html": "<span class=\"sev-badge sev-surge\">🔥 SURGE</span>"
+      },
+      {
+        "machine_id": "09-321+322",
+        "airport": "DMK",
+        "bu": "Vendi",
+        "d1_k": "22.7",
+        "d2_k": "13.5",
+        "d8_k": "17.5",
+        "dod_class": "delta-up",
+        "dod_signed": "+67.4",
+        "wow_class": "delta-up",
+        "wow_signed": "+29.7",
+        "severity_badges_html": "<span class=\"sev-badge sev-surge\">🔥 SURGE</span>"
+      },
+      {
+        "machine_id": "06-T1DW3-02+03",
+        "airport": "SVB",
+        "bu": "Vendi",
+        "d1_k": "32.4",
+        "d2_k": "24.0",
+        "d8_k": "26.5",
+        "dod_class": "delta-up",
+        "dod_signed": "+35.2",
+        "wow_class": "delta-up",
+        "wow_signed": "+22.3",
+        "severity_badges_html": "<span class=\"sev-badge sev-surge\">🔥 SURGE</span>"
+      },
+      {
+        "machine_id": "T1AE3-05",
+        "airport": "SVB",
+        "bu": "Vending",
+        "d1_k": "7.4",
+        "d2_k": "9.6",
+        "d8_k": "6.1",
+        "dod_class": "delta-down",
+        "dod_signed": "−22.6",
+        "wow_class": "delta-up",
+        "wow_signed": "+20.9",
+        "severity_badges_html": "<span class=\"sev-badge sev-positive\">✅ POSITIVE</span>"
+      },
+      {
+        "machine_id": "02-T1AE3-06+07",
+        "airport": "SVB",
+        "bu": "Vendi",
+        "d1_k": "23.3",
+        "d2_k": "22.4",
+        "d8_k": "19.4",
+        "dod_class": "delta-up",
+        "dod_signed": "+4.1",
+        "wow_class": "delta-up",
+        "wow_signed": "+20.5",
+        "severity_badges_html": "<span class=\"sev-badge sev-positive\">✅ POSITIVE</span>"
+      },
+      {
+        "machine_id": "05-T1DE3-01+02",
+        "airport": "SVB",
+        "bu": "Vendi",
+        "d1_k": "17.3",
+        "d2_k": "23.8",
+        "d8_k": "15.6",
+        "dod_class": "delta-down",
+        "dod_signed": "−27.4",
+        "wow_class": "delta-up",
+        "wow_signed": "+11.2",
+        "severity_badges_html": "<span class=\"sev-badge sev-positive\">✅ POSITIVE</span>"
+      },
+      {
+        "machine_id": "T1FW3-02",
+        "airport": "SVB",
+        "bu": "Vending",
+        "d1_k": "3.6",
+        "d2_k": "4.1",
+        "d8_k": "3.2",
+        "dod_class": "delta-down",
+        "dod_signed": "−13.4",
+        "wow_class": "delta-up",
+        "wow_signed": "+10.1",
+        "severity_badges_html": "<span class=\"sev-badge sev-positive\">✅ POSITIVE</span>"
+      },
+      {
+        "machine_id": "04-T1CE3-01+02",
+        "airport": "SVB",
+        "bu": "Vendi",
+        "d1_k": "6.8",
+        "d2_k": "7.0",
+        "d8_k": "6.2",
+        "dod_class": "delta-down",
+        "dod_signed": "−2.5",
+        "wow_class": "delta-up",
+        "wow_signed": "+9.6",
+        "severity_badges_html": "<span class=\"sev-badge sev-positive\">✅ POSITIVE</span>"
+      },
+      {
+        "machine_id": "08-T1ME4-13+14",
+        "airport": "SVB",
+        "bu": "Vendi",
+        "d1_k": "21.0",
+        "d2_k": "21.3",
+        "d8_k": "19.2",
+        "dod_class": "delta-down",
+        "dod_signed": "−1.2",
+        "wow_class": "delta-up",
+        "wow_signed": "+9.2",
+        "severity_badges_html": "<span class=\"sev-badge sev-positive\">✅ POSITIVE</span>"
+      },
+      {
+        "machine_id": "05-318",
+        "airport": "DMK",
+        "bu": "Vending",
+        "d1_k": "4.9",
+        "d2_k": "4.7",
+        "d8_k": "4.8",
+        "dod_class": "delta-up",
+        "dod_signed": "+6.0",
+        "wow_class": "delta-up",
+        "wow_signed": "+3.5",
+        "severity_badges_html": "<span class=\"sev-badge sev-positive\">✅ POSITIVE</span>"
+      },
+      {
+        "machine_id": "05-317",
+        "airport": "DMK",
+        "bu": "Vending",
+        "d1_k": "12.9",
+        "d2_k": "13.1",
+        "d8_k": "12.6",
+        "dod_class": "delta-down",
+        "dod_signed": "−1.9",
+        "wow_class": "delta-up",
+        "wow_signed": "+2.5",
+        "severity_badges_html": "<span class=\"sev-badge sev-positive\">✅ POSITIVE</span>"
+      },
+      {
+        "machine_id": "T1BE3-02",
+        "airport": "SVB",
+        "bu": "Vending",
+        "d1_k": "14.8",
+        "d2_k": "8.9",
+        "d8_k": "14.8",
+        "dod_class": "delta-up",
+        "dod_signed": "+67.0",
+        "wow_class": "delta-neutral",
+        "wow_signed": "−0.3",
+        "severity_badges_html": "<span class=\"sev-badge sev-neutral\">─ NEUTRAL</span>"
+      }
+    ],
+    "next_action_rows": [
+      {
+        "priority_class": "s-crisis",
+        "priority_label": "HIGH",
+        "task_body_html": "🔧 On-site service <b>T1BE1-01</b> (Vending · SVB) — −65.1% WoW · 28 vends vs 74 baseline. Likely machine fault. Check power, payment terminal, stock.",
+        "owner_label": "Quality Team",
+        "due_display": "Mon 26 May 5pm",
+        "task_link_html": "<a href=\"https://applink.larksuite.com/client/todo/detail?guid=SAMPLE-T1BE1-01\" style=\"color:#5551FE; text-decoration:none; font-weight:600;\">→ Open task</a>"
+      },
+      {
+        "priority_class": "s-crisis",
+        "priority_label": "HIGH",
+        "task_body_html": "🔧 On-site service <b>10-T1BE1-02</b> (Vendi · SVB) — −19.7% WoW · DoD −25%. Kiosk demand drop. Investigate operations.",
+        "owner_label": "Quality Team",
+        "due_display": "Mon 26 May 5pm",
+        "task_link_html": "<a href=\"https://applink.larksuite.com/client/todo/detail?guid=SAMPLE-10-T1BE1-02\" style=\"color:#5551FE; text-decoration:none; font-weight:600;\">→ Open task</a>"
+      },
+      {
+        "priority_class": "s-crisis",
+        "priority_label": "HIGH",
+        "task_body_html": "🔧 On-site service <b>T1GW4-05</b> (Vending · SVB) — −17.5% WoW · DoD −10%. Suspect stockout or partial outage.",
+        "owner_label": "Quality Team",
+        "due_display": "Mon 26 May 5pm",
+        "task_link_html": "<a href=\"https://applink.larksuite.com/client/todo/detail?guid=SAMPLE-T1GW4-05\" style=\"color:#5551FE; text-decoration:none; font-weight:600;\">→ Open task</a>"
+      },
+      {
+        "priority_class": "s-quality",
+        "priority_label": "WATCH",
+        "task_body_html": "🔧 Monitor <b>07-T1EW3-01+02</b> (Vendi · SVB) — −13.7% WoW but DoD positive. Watch tomorrow; if persists, send service.",
+        "owner_label": "Quality Team",
+        "due_display": "Tue 27 May",
+        "task_link_html": "<a href=\"https://applink.larksuite.com/client/todo/detail?guid=SAMPLE-07-T1EW3\" style=\"color:#5551FE; text-decoration:none; font-weight:600;\">→ Open task</a>"
+      },
+      {
+        "priority_class": "s-quality",
+        "priority_label": "WATCH",
+        "task_body_html": "🔧 Monitor <b>T1CE3-03</b> (Vending · SVB) — −9.9% WoW · DoD also down. Verify stock + telemetry.",
+        "owner_label": "Quality Team",
+        "due_display": "Tue 27 May",
+        "task_link_html": "<a href=\"https://applink.larksuite.com/client/todo/detail?guid=SAMPLE-T1CE3-03\" style=\"color:#5551FE; text-decoration:none; font-weight:600;\">→ Open task</a>"
+      },
+      {
+        "priority_class": "s-quality",
+        "priority_label": "WATCH",
+        "task_body_html": "🔧 Monitor <b>03-T1BE3-03+04</b> (Vendi · SVB) — −8.2% WoW from strong baseline.",
+        "owner_label": "Quality Team",
+        "due_display": "Tue 27 May",
+        "task_link_html": "<a href=\"https://applink.larksuite.com/client/todo/detail?guid=SAMPLE-03-T1BE3\" style=\"color:#5551FE; text-decoration:none; font-weight:600;\">→ Open task</a>"
+      },
+      {
+        "priority_class": "s-quality",
+        "priority_label": "WATCH",
+        "task_body_html": "🔧 Monitor <b>T1GW2-08</b> (Vending · SVB) — −6.7% WoW · low-volume machine (D8 ฿779). Restock check.",
+        "owner_label": "Quality Team",
+        "due_display": "Tue 27 May",
+        "task_link_html": "<a href=\"https://applink.larksuite.com/client/todo/detail?guid=SAMPLE-T1GW2-08\" style=\"color:#5551FE; text-decoration:none; font-weight:600;\">→ Open task</a>"
+      },
+      {
+        "priority_class": "s-upsell",
+        "priority_label": "DATA",
+        "task_body_html": "📋 3 Vending machines silent in D1/D2/D8: <b>T1MW4-14</b>, <b>T1MW4-18</b>, <b>T1MW4-19</b>. Plus <b>Crucible Event</b> (Vendi pop-up). Verify status — active / inactive / removed from master.",
+        "owner_label": "Vichit",
+        "due_display": "Wed 28 May",
+        "task_link_html": "<a href=\"https://applink.larksuite.com/client/todo/detail?guid=SAMPLE-DATA\" style=\"color:#5551FE; text-decoration:none; font-weight:600;\">→ Open task</a>"
+      },
+      {
+        "priority_class": "s-traffic",
+        "priority_label": "FYI",
+        "task_body_html": "🔥 Replicate <b>01-T1AE3-09A+B</b> kiosk pattern — D1 ฿87.5K · +60.6% WoW · +20.2% DoD. Document stock-mix + staffing for adjacent Vendi units.",
+        "owner_label": "Aekkaphop (SVB)",
+        "due_display": "Wed 28 May",
+        "task_link_html": "<span class=\"muted\">FYI only</span>"
+      },
+      {
+        "priority_class": "s-traffic",
+        "priority_label": "FYI",
+        "task_body_html": "🔥 DMK over-performing — 09-321+322 SURGE +29.7% · 05-317/318 both positive. DMK runs leaner; consider expanding presence.",
+        "owner_label": "Siraphop (DMK)",
+        "due_display": "Fri 30 May",
+        "task_link_html": "<span class=\"muted\">FYI only</span>"
+      }
+    ]
+  },
+  "sections": {
+    "draft_banner": false,
+    "prod_banner": true,
+    "data_quality_banner": true
+  }
+}
