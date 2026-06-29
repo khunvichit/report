@@ -1,0 +1,624 @@
+<!-- ============================================================
+  SFB DAILY SALES REPORT — LOCKED HTML TEMPLATE
+  Source of truth: sfb-daily-PROD-25may.html (25 May 2026 production email)
+  DO NOT regenerate this file from prose. The routine fills it with
+  fill_template.py using data.json. Markers:
+    double-brace token            -> scalar, replaced globally from data.scalars
+    REPEAT:name block             -> one copy per list item in data.repeats[name]
+    SECTION:name block            -> kept if data.sections[name] is true, else removed
+  Lark TASKS have been removed (per owner request 2026-06). Group = Food Operation Core.
+  Chart bar heights are PIXELS, pre-computed in data.json (same PIXEL_PER_BAHT for both charts).
+============================================================ -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>✅ SFB Daily — 28 June 2026 | ฿707K (WoW +1.3%) | 16 locations</title>
+<style>
+body { font-family:Poppins,-apple-system,sans-serif; background:#F5EDE4; margin:0; padding:24px; color:#2C3E50; }
+.wrap { max-width:920px; margin:0 auto; background:#FFF8F5; border-radius:12px; overflow:hidden; box-shadow:0 4px 24px rgba(44,62,80,0.08); }
+.draft { background:#E3F2FD; color:#1565C0; text-align:center; padding:8px; font-weight:600; font-size:13px; border-bottom:1px solid #BBDEFB; }
+.hdr { background:linear-gradient(135deg,#5551FE 0%,#7B79FF 100%); color:#fff; padding:28px 32px; }
+.hdr h1 { margin:0 0 6px 0; font-size:24px; font-weight:600; }
+.hdr .sub { opacity:0.85; font-size:13px; }
+.hdr .badge { display:inline-block; background:rgba(255,255,255,0.18); padding:4px 10px; border-radius:12px; font-size:11px; margin-top:8px; }
+.section { padding:24px 32px; border-bottom:1px solid #F0E5DA; }
+.section h2 { margin:0 0 16px 0; font-size:16px; font-weight:600; }
+.insight { background:#FFF; border-left:4px solid #F27061; padding:16px 18px; border-radius:4px; }
+.insight ul { margin:0; padding-left:18px; line-height:1.7; font-size:13px; }
+.insight li b { color:#5551FE; }
+.kpi { display:flex; gap:12px; }
+.kpi .card { flex:1; background:#fff; border-radius:8px; padding:16px; border:1px solid #F0E5DA; }
+.kpi .lbl { font-size:11px; color:#5F5E5A; text-transform:uppercase; letter-spacing:0.5px; }
+.kpi .val { font-size:24px; font-weight:600; margin:4px 0; }
+.kpi .delta { font-size:11px; font-weight:500; line-height:1.5; }
+.delta-up { color:#2D7A3F; } .delta-down { color:#C5453E; } .delta-neutral { color:#5F5E5A; } .delta-na { color:#5F5E5A; }
+table.barchart { width:100%; table-layout:fixed; border-collapse:collapse; }
+table.barchart td.yaxis { width:70px; vertical-align:top; padding-right:8px; font-size:10px; color:#5F5E5A; text-align:right; position:relative; height:240px; }
+table.barchart td.yaxis .y-mtd { position:absolute; top:53px; right:8px; background:#FFF8F5; padding:1px 4px; border-radius:2px; font-weight:600; color:#4A5568; }
+td.bar-cell { vertical-align:bottom; padding:0 1px; height:240px; position:relative; background-image: linear-gradient(to bottom, transparent 0px, transparent 58px, rgba(74,85,104,0.85) 58px, rgba(74,85,104,0.85) 60px, transparent 60px); }
+/* Email-safe stack: no flexbox. The cell is vertical-align:bottom and the stack
+   has no fixed height, so block segments hug the baseline. Segments are listed
+   largest-first (top) in the markup. Renders identically in Outlook/Gmail/mobile. */
+.bar-stack { font-size:0; line-height:0; }
+.seg { display:block; width:100%; font-size:0; line-height:0; }
+.seg-subway { background:#5551FE; } .seg-khiang { background:#7B79FF; } .seg-jl { background:#2D7A3F; } .seg-se { background:#F39C12; } .seg-vendi { background:#C5453E; }
+.seg-bkk { background:#5551FE; } .seg-dmk { background:#7B79FF; } .seg-pkt { background:#F27061; } .seg-other { background:#C5BFB0; }
+td.bar-cell.d1 .bar-stack { box-shadow: 0 -3px 0 #F27061 inset; }
+td.axlbl { font-size:9px; color:#5F5E5A; text-align:center; padding-top:4px; }
+td.axhol { border-bottom:2px solid #F27061; color:#F27061; font-weight:600; } td.axd1 { color:#F27061; font-weight:600; }
+.legend { width:100%; border-collapse:collapse; font-size:12px; margin-top:14px; }
+.legend th, .legend td { padding:6px 10px; text-align:left; border-bottom:1px solid #F0E5DA; }
+.legend th { color:#5F5E5A; font-weight:500; font-size:10px; text-transform:uppercase; }
+.legend .sw { display:inline-block; width:12px; height:12px; border-radius:2px; vertical-align:middle; margin-right:6px; }
+.signal-badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:10px; font-weight:600; }
+.s-crisis { background:#FBE9E7; color:#C5453E; } .s-quality { background:#FFF3CD; color:#856404; } .s-soft { background:#F0E5DA; color:#5F5E5A; } .s-traffic { background:#E8F5E9; color:#2D7A3F; } .s-upsell { background:#E3F2FD; color:#5551FE; }
+.sev-badge { display:inline-block; padding:3px 8px; border-radius:10px; font-size:10px; font-weight:600; white-space:nowrap; }
+.sev-surge { background:#FBE9E7; color:#F27061; } .sev-positive { background:#E8F5E9; color:#2D7A3F; } .sev-neutral { background:#F0E5DA; color:#5F5E5A; } .sev-watch { background:#FFF3CD; color:#856404; } .sev-high { background:#FFEFE0; color:#C77818; } .sev-critical { background:#FBE9E7; color:#C5453E; } .sev-new { background:#E3F2FD; color:#1565C0; }
+.branch-h3 { font-size:13px; font-weight:600; margin:0 0 8px 0; padding:6px 10px; border-radius:4px; }
+.heatmap { width:100%; border-collapse:collapse; font-size:13px; }
+.heatmap th { background:#F5EDE4; color:#5F5E5A; font-weight:500; font-size:11px; text-transform:uppercase; padding:8px 10px; text-align:center; border:1px solid #F0E5DA; }
+.heatmap th.heat-bu { text-align:left; }
+.heatmap th.heat-metric { background:#F0E5DA; }
+.heatmap td { padding:10px 10px; text-align:center; border:1px solid #F0E5DA; }
+.heatmap td.heat-bu { text-align:left; font-weight:600; font-size:13px; vertical-align:middle; background:#FBFBFD; }
+.heatmap tr.grp-start td { border-top:2px solid #5551FE; }
+.heatmap td.heat-rev { text-align:right; font-weight:600; font-size:13px; }
+.heatmap td.heat-bills { text-align:right; color:#5F5E5A; }
+.heatmap td.heat-cell { font-weight:700; font-size:13px; }
+.branch-h3-warn { background:#FFF3CD; color:#856404; border-left:4px solid #F39C12; }
+.branch-h3-ok { background:#E8F5E9; color:#2D7A3F; border-left:4px solid #2D7A3F; }
+.dt { width:100%; border-collapse:collapse; font-size:12px; }
+.dt th, .dt td { padding:8px 10px; border-bottom:1px solid #F0E5DA; text-align:left; }
+.dt th { color:#5F5E5A; font-weight:500; font-size:10px; text-transform:uppercase; background:#F5EDE4; }
+.muted { color:#5F5E5A; font-weight:400; }
+.hrblock { margin-bottom:18px; }
+.hrblock-head { font-size:12px; margin-bottom:4px; }
+.hr-flag { display:inline-block; background:#FFF3CD; color:#856404; padding:1px 6px; border-radius:8px; font-size:10px; font-weight:600; margin-left:6px; }
+.hr-totals { float:right; font-size:11px; color:#4A5568; font-weight:600; }
+.hr-src { font-size:10px; margin-left:8px; }
+.hrtable { width:100%; table-layout:fixed; border-collapse:collapse; font-size:9px; }
+.hrtable th { background:#F5EDE4; color:#5F5E5A; font-weight:600; font-size:8px; padding:2px 0; border:1px solid #F0E5DA; }
+.hrtable td.hr-cell { padding:3px 1px; text-align:center; border:1px solid #F0E5DA; font-size:8px; line-height:1.2; }
+.hrtable td.hr-row-lbl { font-size:10px; font-weight:600; padding:3px 6px; background:#FBFBFD; width:80px; text-align:left; border:1px solid #F0E5DA; }
+.hr-base { color:#5F5E5A; background:#FBFBFD; }
+.hr-zero { background:#FFF3CD; color:#856404; font-weight:600; }
+.hr-down { background:#FBE9E7; color:#C5453E; font-weight:600; }
+.hr-up { background:#E8F5E9; color:#2D7A3F; font-weight:600; }
+.footer { background:#2C3E50; color:#C5BFB0; padding:20px 32px; font-size:11px; line-height:1.6; }
+.footer b { color:#fff; }
+</style></head><body>
+<div class="wrap">
+  <div class="draft" style="background:#E8F5E9; color:#2D7A3F; border-bottom:1px solid #C8E6C9;">📨 SFB Daily Report · 28 June 2026 (Sunday) · Sub 12 Food Operation Core</div>
+  <div class="hdr">
+    <h1>SFB Daily Sales Report</h1>
+    <div class="sub">วันอาทิตย์ 28 June 2026 · Sub 12 · Food Operation Core</div>
+    <span class="badge">✅ ฿707K · WoW +1.3%</span>
+  </div>
+
+  <div class="section">
+    <h2>🎯 Executive Insight</h2>
+    <div class="insight"><ul>
+
+      <li>D1 (2026-06-28) total revenue <b>฿707,320</b> · WoW <b>+1.3%</b> · DoD <b>+5.8%</b> · vs MTD avg <b>+8.3%</b> · 2,275 bills · avg ticket <b>฿311</b> (WoW -2.6%)</li>
+
+      <li>One BU (Khiang +46.2% WoW) drove the headline while Juice Land, Siam Express, and Vendi all declined WoW — a hero-save pattern.</li>
+
+      <li>Hero BU: <b>Khiang</b> ฿42,211 · WoW +46.2% · Bills +19.3% · Avg Ticket +22.6%</li>
+
+      <li>17-T1ME2-30 (Khiang) hit <b>NEW MTD HIGH</b>; 28 JUICELAND Unit 362 is at &lt;80% of its MTD avg</li>
+
+      <li>Top 3 rev WoW: 17-T1ME2-30 · Khiang (+46.2% WoW, ฿42,211) · 09-DMK-G1-S · Subway (+37.5% WoW, ฿23,147) · 13-PKT-G1-S · Siam Express (+19.0% WoW, ฿25,242)</li>
+
+      <li>Weakest 3 rev WoW: 25-DMK-CS · Subway (-16.5% WoW, ฿13,592) · 05-DMK-Inter-S · Subway (-18.5% WoW, ฿40,200) · 27-T1SE3-05 · Vendi (-43.9% WoW, ฿14,221)</li>
+
+    </ul></div>
+  </div>
+
+  <div class="section">
+    <h2>📊 KPI Headline</h2>
+    <div class="kpi">
+      <div class="card"><div class="lbl">Revenue</div><div class="val">฿707K</div><div class="delta"><span class="delta-up">WoW +1.3%</span><br><span class="delta-up">DoD +5.8%</span><br><span class="delta-up">vs MTD avg +8.3%</span></div></div>
+      <div class="card"><div class="lbl">Bills</div><div class="val">2,275</div><div class="delta delta-up">WoW +4.1%</div></div>
+      <div class="card"><div class="lbl">Avg Ticket</div><div class="val">฿311</div><div class="delta delta-down">WoW -2.6%</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📈 30-Day Revenue by BU (29 May – 28 Jun 2026)</h2>
+    <table class="barchart">
+      <tr><td class="yaxis"><div class="y-mtd">MTD avg<br>฿653K</div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-05-29"><div class="bar-stack"><div class="seg seg-subway" style="height:167px"></div><div class="seg seg-khiang" style="height:12px"></div><div class="seg seg-jl" style="height:19px"></div><div class="seg seg-se" style="height:18px"></div><div class="seg seg-vendi" style="height:4px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-05-30"><div class="bar-stack"><div class="seg seg-subway" style="height:168px"></div><div class="seg seg-khiang" style="height:9px"></div><div class="seg seg-jl" style="height:19px"></div><div class="seg seg-se" style="height:19px"></div><div class="seg seg-vendi" style="height:5px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-05-31"><div class="bar-stack"><div class="seg seg-subway" style="height:138px"></div><div class="seg seg-khiang" style="height:10px"></div><div class="seg seg-jl" style="height:18px"></div><div class="seg seg-se" style="height:23px"></div><div class="seg seg-vendi" style="height:4px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-01"><div class="bar-stack"><div class="seg seg-subway" style="height:150px"></div><div class="seg seg-khiang" style="height:10px"></div><div class="seg seg-jl" style="height:17px"></div><div class="seg seg-se" style="height:20px"></div><div class="seg seg-vendi" style="height:3px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-02"><div class="bar-stack"><div class="seg seg-subway" style="height:124px"></div><div class="seg seg-khiang" style="height:9px"></div><div class="seg seg-jl" style="height:15px"></div><div class="seg seg-se" style="height:21px"></div><div class="seg seg-vendi" style="height:2px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-03"><div class="bar-stack"><div class="seg seg-subway" style="height:121px"></div><div class="seg seg-khiang" style="height:10px"></div><div class="seg seg-jl" style="height:17px"></div><div class="seg seg-se" style="height:19px"></div><div class="seg seg-vendi" style="height:3px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-04"><div class="bar-stack"><div class="seg seg-subway" style="height:121px"></div><div class="seg seg-khiang" style="height:8px"></div><div class="seg seg-jl" style="height:16px"></div><div class="seg seg-se" style="height:16px"></div><div class="seg seg-vendi" style="height:5px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-05"><div class="bar-stack"><div class="seg seg-subway" style="height:119px"></div><div class="seg seg-khiang" style="height:9px"></div><div class="seg seg-jl" style="height:17px"></div><div class="seg seg-se" style="height:22px"></div><div class="seg seg-vendi" style="height:3px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-06"><div class="bar-stack"><div class="seg seg-subway" style="height:120px"></div><div class="seg seg-khiang" style="height:10px"></div><div class="seg seg-jl" style="height:17px"></div><div class="seg seg-se" style="height:16px"></div><div class="seg seg-vendi" style="height:3px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-07"><div class="bar-stack"><div class="seg seg-subway" style="height:124px"></div><div class="seg seg-khiang" style="height:9px"></div><div class="seg seg-jl" style="height:14px"></div><div class="seg seg-se" style="height:18px"></div><div class="seg seg-vendi" style="height:3px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-08"><div class="bar-stack"><div class="seg seg-subway" style="height:121px"></div><div class="seg seg-khiang" style="height:7px"></div><div class="seg seg-jl" style="height:19px"></div><div class="seg seg-se" style="height:16px"></div><div class="seg seg-vendi" style="height:3px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-09"><div class="bar-stack"><div class="seg seg-subway" style="height:119px"></div><div class="seg seg-khiang" style="height:7px"></div><div class="seg seg-jl" style="height:13px"></div><div class="seg seg-se" style="height:14px"></div><div class="seg seg-vendi" style="height:2px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-10"><div class="bar-stack"><div class="seg seg-subway" style="height:116px"></div><div class="seg seg-khiang" style="height:10px"></div><div class="seg seg-jl" style="height:17px"></div><div class="seg seg-se" style="height:13px"></div><div class="seg seg-vendi" style="height:3px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-11"><div class="bar-stack"><div class="seg seg-subway" style="height:115px"></div><div class="seg seg-khiang" style="height:7px"></div><div class="seg seg-jl" style="height:17px"></div><div class="seg seg-se" style="height:15px"></div><div class="seg seg-vendi" style="height:3px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-12"><div class="bar-stack"><div class="seg seg-subway" style="height:130px"></div><div class="seg seg-khiang" style="height:8px"></div><div class="seg seg-jl" style="height:18px"></div><div class="seg seg-se" style="height:16px"></div><div class="seg seg-vendi" style="height:3px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-13"><div class="bar-stack"><div class="seg seg-subway" style="height:121px"></div><div class="seg seg-khiang" style="height:9px"></div><div class="seg seg-jl" style="height:17px"></div><div class="seg seg-se" style="height:16px"></div><div class="seg seg-vendi" style="height:4px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-14"><div class="bar-stack"><div class="seg seg-subway" style="height:126px"></div><div class="seg seg-khiang" style="height:8px"></div><div class="seg seg-jl" style="height:18px"></div><div class="seg seg-se" style="height:22px"></div><div class="seg seg-vendi" style="height:3px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-15"><div class="bar-stack"><div class="seg seg-subway" style="height:123px"></div><div class="seg seg-khiang" style="height:9px"></div><div class="seg seg-jl" style="height:17px"></div><div class="seg seg-se" style="height:17px"></div><div class="seg seg-vendi" style="height:4px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-16"><div class="bar-stack"><div class="seg seg-subway" style="height:114px"></div><div class="seg seg-khiang" style="height:7px"></div><div class="seg seg-jl" style="height:17px"></div><div class="seg seg-se" style="height:15px"></div><div class="seg seg-vendi" style="height:4px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-17"><div class="bar-stack"><div class="seg seg-subway" style="height:119px"></div><div class="seg seg-khiang" style="height:8px"></div><div class="seg seg-jl" style="height:17px"></div><div class="seg seg-se" style="height:16px"></div><div class="seg seg-vendi" style="height:4px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-18"><div class="bar-stack"><div class="seg seg-subway" style="height:132px"></div><div class="seg seg-khiang" style="height:11px"></div><div class="seg seg-jl" style="height:20px"></div><div class="seg seg-se" style="height:19px"></div><div class="seg seg-vendi" style="height:4px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-19"><div class="bar-stack"><div class="seg seg-subway" style="height:137px"></div><div class="seg seg-khiang" style="height:11px"></div><div class="seg seg-jl" style="height:22px"></div><div class="seg seg-se" style="height:17px"></div><div class="seg seg-vendi" style="height:6px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-20"><div class="bar-stack"><div class="seg seg-subway" style="height:116px"></div><div class="seg seg-khiang" style="height:8px"></div><div class="seg seg-jl" style="height:19px"></div><div class="seg seg-se" style="height:17px"></div><div class="seg seg-vendi" style="height:5px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-21"><div class="bar-stack"><div class="seg seg-subway" style="height:133px"></div><div class="seg seg-khiang" style="height:8px"></div><div class="seg seg-jl" style="height:19px"></div><div class="seg seg-se" style="height:17px"></div><div class="seg seg-vendi" style="height:7px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-22"><div class="bar-stack"><div class="seg seg-subway" style="height:125px"></div><div class="seg seg-khiang" style="height:7px"></div><div class="seg seg-jl" style="height:17px"></div><div class="seg seg-se" style="height:17px"></div><div class="seg seg-vendi" style="height:4px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-23"><div class="bar-stack"><div class="seg seg-subway" style="height:115px"></div><div class="seg seg-khiang" style="height:8px"></div><div class="seg seg-jl" style="height:17px"></div><div class="seg seg-se" style="height:11px"></div><div class="seg seg-vendi" style="height:4px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-24"><div class="bar-stack"><div class="seg seg-subway" style="height:117px"></div><div class="seg seg-khiang" style="height:10px"></div><div class="seg seg-jl" style="height:17px"></div><div class="seg seg-se" style="height:15px"></div><div class="seg seg-vendi" style="height:4px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-25"><div class="bar-stack"><div class="seg seg-subway" style="height:120px"></div><div class="seg seg-khiang" style="height:7px"></div><div class="seg seg-jl" style="height:16px"></div><div class="seg seg-se" style="height:14px"></div><div class="seg seg-vendi" style="height:6px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-26"><div class="bar-stack"><div class="seg seg-subway" style="height:136px"></div><div class="seg seg-khiang" style="height:9px"></div><div class="seg seg-jl" style="height:16px"></div><div class="seg seg-se" style="height:14px"></div><div class="seg seg-vendi" style="height:6px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-27"><div class="bar-stack"><div class="seg seg-subway" style="height:126px"></div><div class="seg seg-khiang" style="height:9px"></div><div class="seg seg-jl" style="height:18px"></div><div class="seg seg-se" style="height:17px"></div><div class="seg seg-vendi" style="height:5px"></div></div></td>
+
+<td class="bar-cell d1" valign="bottom" title="2026-06-28"><div class="bar-stack"><div class="seg seg-subway" style="height:136px"></div><div class="seg seg-khiang" style="height:11px"></div><div class="seg seg-jl" style="height:18px"></div><div class="seg seg-se" style="height:16px"></div><div class="seg seg-vendi" style="height:4px"></div></div></td>
+
+</tr>
+      <tr><td></td>
+
+<td class="axlbl ">29May</td>
+
+<td class="axlbl ">30May</td>
+
+<td class="axlbl ">31May</td>
+
+<td class="axlbl ">1Jun</td>
+
+<td class="axlbl ">2Jun</td>
+
+<td class="axlbl ">3Jun</td>
+
+<td class="axlbl ">4Jun</td>
+
+<td class="axlbl ">5Jun</td>
+
+<td class="axlbl ">6Jun</td>
+
+<td class="axlbl ">7Jun</td>
+
+<td class="axlbl ">8Jun</td>
+
+<td class="axlbl ">9Jun</td>
+
+<td class="axlbl ">10Jun</td>
+
+<td class="axlbl ">11Jun</td>
+
+<td class="axlbl ">12Jun</td>
+
+<td class="axlbl ">13Jun</td>
+
+<td class="axlbl ">14Jun</td>
+
+<td class="axlbl ">15Jun</td>
+
+<td class="axlbl ">16Jun</td>
+
+<td class="axlbl ">17Jun</td>
+
+<td class="axlbl ">18Jun</td>
+
+<td class="axlbl ">19Jun</td>
+
+<td class="axlbl ">20Jun</td>
+
+<td class="axlbl ">21Jun</td>
+
+<td class="axlbl ">22Jun</td>
+
+<td class="axlbl ">23Jun</td>
+
+<td class="axlbl ">24Jun</td>
+
+<td class="axlbl ">25Jun</td>
+
+<td class="axlbl ">26Jun</td>
+
+<td class="axlbl ">27Jun</td>
+
+<td class="axlbl axd1">28Jun</td>
+
+</tr>
+    </table>
+    <table class="legend"><tr><th></th><th>BU</th><th>D1 Rev</th><th>D1 Bills</th><th>Share</th><th>WoW</th><th>Bills Δ</th><th>Ticket Δ</th><th>Signal</th></tr>
+
+<tr><td><span class="sw" style="background:#5551FE"></span></td><td><b>Subway</b></td><td>฿519,385</td><td>1,540</td><td>73%</td><td class="delta-up">+2.2%</td><td class="delta-up">+8.9%</td><td class="delta-down">-6.2%</td><td><span class="signal-badge s-soft">⚠️ Mixed</span></td></tr>
+
+<tr><td><span class="sw" style="background:#7B79FF"></span></td><td><b>Khiang</b></td><td>฿42,211</td><td>204</td><td>6%</td><td class="delta-up">+46.2%</td><td class="delta-up">+19.3%</td><td class="delta-up">+22.6%</td><td><span class="signal-badge s-traffic">⭐ BEST</span></td></tr>
+
+<tr><td><span class="sw" style="background:#2D7A3F"></span></td><td><b>Juice Land</b></td><td>฿68,352</td><td>211</td><td>10%</td><td class="delta-down">-5.3%</td><td class="delta-down">-12.8%</td><td class="delta-up">+8.6%</td><td><span class="signal-badge s-upsell">🤔 Premium</span></td></tr>
+
+<tr><td><span class="sw" style="background:#F39C12"></span></td><td><b>Siam Express</b></td><td>฿63,151</td><td>245</td><td>9%</td><td class="delta-down">-0.5%</td><td class="delta-down">-6.5%</td><td class="delta-up">+6.4%</td><td><span class="signal-badge s-upsell">🤔 Premium</span></td></tr>
+
+<tr><td><span class="sw" style="background:#C5453E"></span></td><td><b>Vendi</b></td><td>฿14,221</td><td>75</td><td>2%</td><td class="delta-down">-43.9%</td><td class="delta-down">-22.7%</td><td class="delta-down">-27.4%</td><td><span class="signal-badge s-crisis">🚨 CRISIS</span></td></tr>
+
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>🌏 30-Day Revenue by Airport</h2>
+    <table class="barchart">
+      <tr><td class="yaxis"><div class="y-mtd">MTD avg<br>฿653K</div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-05-29"><div class="bar-stack"><div class="seg seg-bkk" style="height:151px"></div><div class="seg seg-dmk" style="height:53px"></div><div class="seg seg-pkt" style="height:14px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-05-30"><div class="bar-stack"><div class="seg seg-bkk" style="height:144px"></div><div class="seg seg-dmk" style="height:62px"></div><div class="seg seg-pkt" style="height:14px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-05-31"><div class="bar-stack"><div class="seg seg-bkk" style="height:125px"></div><div class="seg seg-dmk" style="height:49px"></div><div class="seg seg-pkt" style="height:20px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-01"><div class="bar-stack"><div class="seg seg-bkk" style="height:135px"></div><div class="seg seg-dmk" style="height:48px"></div><div class="seg seg-pkt" style="height:17px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-02"><div class="bar-stack"><div class="seg seg-bkk" style="height:121px"></div><div class="seg seg-dmk" style="height:31px"></div><div class="seg seg-pkt" style="height:19px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-03"><div class="bar-stack"><div class="seg seg-bkk" style="height:117px"></div><div class="seg seg-dmk" style="height:36px"></div><div class="seg seg-pkt" style="height:17px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-04"><div class="bar-stack"><div class="seg seg-bkk" style="height:118px"></div><div class="seg seg-dmk" style="height:33px"></div><div class="seg seg-pkt" style="height:14px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-05"><div class="bar-stack"><div class="seg seg-bkk" style="height:117px"></div><div class="seg seg-dmk" style="height:34px"></div><div class="seg seg-pkt" style="height:19px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-06"><div class="bar-stack"><div class="seg seg-bkk" style="height:122px"></div><div class="seg seg-dmk" style="height:30px"></div><div class="seg seg-pkt" style="height:14px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-07"><div class="bar-stack"><div class="seg seg-bkk" style="height:116px"></div><div class="seg seg-dmk" style="height:36px"></div><div class="seg seg-pkt" style="height:15px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-08"><div class="bar-stack"><div class="seg seg-bkk" style="height:114px"></div><div class="seg seg-dmk" style="height:38px"></div><div class="seg seg-pkt" style="height:14px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-09"><div class="bar-stack"><div class="seg seg-bkk" style="height:111px"></div><div class="seg seg-dmk" style="height:33px"></div><div class="seg seg-pkt" style="height:12px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-10"><div class="bar-stack"><div class="seg seg-bkk" style="height:116px"></div><div class="seg seg-dmk" style="height:33px"></div><div class="seg seg-pkt" style="height:11px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-11"><div class="bar-stack"><div class="seg seg-bkk" style="height:109px"></div><div class="seg seg-dmk" style="height:34px"></div><div class="seg seg-pkt" style="height:14px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-12"><div class="bar-stack"><div class="seg seg-bkk" style="height:124px"></div><div class="seg seg-dmk" style="height:35px"></div><div class="seg seg-pkt" style="height:14px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-13"><div class="bar-stack"><div class="seg seg-bkk" style="height:121px"></div><div class="seg seg-dmk" style="height:32px"></div><div class="seg seg-pkt" style="height:14px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-14"><div class="bar-stack"><div class="seg seg-bkk" style="height:121px"></div><div class="seg seg-dmk" style="height:36px"></div><div class="seg seg-pkt" style="height:20px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-15"><div class="bar-stack"><div class="seg seg-bkk" style="height:121px"></div><div class="seg seg-dmk" style="height:33px"></div><div class="seg seg-pkt" style="height:14px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-16"><div class="bar-stack"><div class="seg seg-bkk" style="height:114px"></div><div class="seg seg-dmk" style="height:29px"></div><div class="seg seg-pkt" style="height:14px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-17"><div class="bar-stack"><div class="seg seg-bkk" style="height:114px"></div><div class="seg seg-dmk" style="height:36px"></div><div class="seg seg-pkt" style="height:14px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-18"><div class="bar-stack"><div class="seg seg-bkk" style="height:137px"></div><div class="seg seg-dmk" style="height:32px"></div><div class="seg seg-pkt" style="height:17px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-19"><div class="bar-stack"><div class="seg seg-bkk" style="height:140px"></div><div class="seg seg-dmk" style="height:39px"></div><div class="seg seg-pkt" style="height:14px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-20"><div class="bar-stack"><div class="seg seg-bkk" style="height:121px"></div><div class="seg seg-dmk" style="height:28px"></div><div class="seg seg-pkt" style="height:16px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-21"><div class="bar-stack"><div class="seg seg-bkk" style="height:126px"></div><div class="seg seg-dmk" style="height:43px"></div><div class="seg seg-pkt" style="height:13px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-22"><div class="bar-stack"><div class="seg seg-bkk" style="height:125px"></div><div class="seg seg-dmk" style="height:31px"></div><div class="seg seg-pkt" style="height:15px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-23"><div class="bar-stack"><div class="seg seg-bkk" style="height:121px"></div><div class="seg seg-dmk" style="height:23px"></div><div class="seg seg-pkt" style="height:10px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-24"><div class="bar-stack"><div class="seg seg-bkk" style="height:119px"></div><div class="seg seg-dmk" style="height:31px"></div><div class="seg seg-pkt" style="height:13px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-25"><div class="bar-stack"><div class="seg seg-bkk" style="height:124px"></div><div class="seg seg-dmk" style="height:27px"></div><div class="seg seg-pkt" style="height:12px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-26"><div class="bar-stack"><div class="seg seg-bkk" style="height:133px"></div><div class="seg seg-dmk" style="height:36px"></div><div class="seg seg-pkt" style="height:12px"></div></div></td>
+
+<td class="bar-cell " valign="bottom" title="2026-06-27"><div class="bar-stack"><div class="seg seg-bkk" style="height:129px"></div><div class="seg seg-dmk" style="height:31px"></div><div class="seg seg-pkt" style="height:14px"></div></div></td>
+
+<td class="bar-cell d1" valign="bottom" title="2026-06-28"><div class="bar-stack"><div class="seg seg-bkk" style="height:131px"></div><div class="seg seg-dmk" style="height:41px"></div><div class="seg seg-pkt" style="height:13px"></div></div></td>
+
+</tr>
+      <tr><td></td>
+
+<td class="axlbl ">29May</td>
+
+<td class="axlbl ">30May</td>
+
+<td class="axlbl ">31May</td>
+
+<td class="axlbl ">1Jun</td>
+
+<td class="axlbl ">2Jun</td>
+
+<td class="axlbl ">3Jun</td>
+
+<td class="axlbl ">4Jun</td>
+
+<td class="axlbl ">5Jun</td>
+
+<td class="axlbl ">6Jun</td>
+
+<td class="axlbl ">7Jun</td>
+
+<td class="axlbl ">8Jun</td>
+
+<td class="axlbl ">9Jun</td>
+
+<td class="axlbl ">10Jun</td>
+
+<td class="axlbl ">11Jun</td>
+
+<td class="axlbl ">12Jun</td>
+
+<td class="axlbl ">13Jun</td>
+
+<td class="axlbl ">14Jun</td>
+
+<td class="axlbl ">15Jun</td>
+
+<td class="axlbl ">16Jun</td>
+
+<td class="axlbl ">17Jun</td>
+
+<td class="axlbl ">18Jun</td>
+
+<td class="axlbl ">19Jun</td>
+
+<td class="axlbl ">20Jun</td>
+
+<td class="axlbl ">21Jun</td>
+
+<td class="axlbl ">22Jun</td>
+
+<td class="axlbl ">23Jun</td>
+
+<td class="axlbl ">24Jun</td>
+
+<td class="axlbl ">25Jun</td>
+
+<td class="axlbl ">26Jun</td>
+
+<td class="axlbl ">27Jun</td>
+
+<td class="axlbl axd1">28Jun</td>
+
+</tr>
+    </table>
+    <table class="legend"><tr><th></th><th>Airport</th><th>D1 Rev</th><th>D1 Bills</th><th>Share</th><th>WoW</th><th>Bills Δ</th></tr>
+
+<tr><td><span class="sw" style="background:#5551FE"></span></td><td><b>BKK</b></td><td>฿499,980</td><td>1,545</td><td>71%</td><td class="delta-up">+3.7%</td><td class="delta-up">+8.0%</td></tr>
+
+<tr><td><span class="sw" style="background:#7B79FF"></span></td><td><b>DMK</b></td><td>฿156,390</td><td>542</td><td>22%</td><td class="delta-down">-6.0%</td><td class="delta-down">-2.3%</td></tr>
+
+<tr><td><span class="sw" style="background:#F27061"></span></td><td><b>PKT</b></td><td>฿50,950</td><td>188</td><td>7%</td><td class="delta-up">+3.2%</td><td class="delta-down">-6.5%</td></tr>
+
+</table></div>
+  <div class="section">
+    <h2>🏪 Location Performance — WoW heatmap</h2>
+    <div style="background:#FFF; border-left:3px solid #5551FE; padding:10px 14px; font-size:12px; color:#2C3E50; margin:0 0 14px 0; line-height:1.6;">
+      <b>📖 How to read this:</b> <b>Bills</b> = customer transactions (receipts) · <b>Avg Ticket</b> = revenue ÷ bills (avg spend per customer) · <b>Revenue</b> = bills × ticket. WoW = vs same weekday last week.
+      <br><span style="font-size:11px; color:#5F5E5A;">Rows grouped by location (highest D1 revenue first). Δ cells use a continuous green→grey→red gradient — deeper green = stronger growth WoW, deeper red = steeper decline.</span>
+    </div>
+    <table class="heatmap">
+      <tr>
+        <th class="heat-bu">Location</th>
+        <th>BU</th>
+        <th>Airport</th>
+        <th>D1 Rev</th>
+        <th>D1 Bills</th>
+        <th class="heat-metric">Revenue Δ WoW</th>
+        <th class="heat-metric">Bills Δ WoW</th>
+        <th class="heat-metric">Ticket Δ WoW</th>
+        <th>Signal</th>
+      </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>18-T1FW4-08-SS</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿105,956</td>
+          <td class="heat-bills">242</td>
+          <td class="heat-cell" style="background:#97b292; color:#2C3E50;">+10.5%</td><td class="heat-cell" style="background:#7ea37d; color:#ffffff;">+13.6%</td><td class="heat-cell" style="background:#ebd4c9; color:#2C3E50;">-2.7%</td>
+          <td><span class="signal-badge s-traffic">🚶 Traffic</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="3"><b>27-T1SE3-05</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿48,462</td>
+          <td class="heat-bills">163</td>
+          <td class="heat-cell" style="background:#6e9971; color:#ffffff;">+15.5%</td><td class="heat-cell" style="background:#3a7b47; color:#ffffff;">+21.6%</td><td class="heat-cell" style="background:#e7c5ba; color:#2C3E50;">-5.1%</td>
+          <td><span class="signal-badge s-soft">⚠️ Mixed</span></td>
+        </tr>
+
+        <tr class="">
+          <td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#2D7A3F"></span>Juice Land</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿28,896</td>
+          <td class="heat-bills">80</td>
+          <td class="heat-cell" style="background:#e5bab0; color:#2C3E50;">-6.7%</td><td class="heat-cell" style="background:#d37a72; color:#ffffff;">-16.7%</td><td class="heat-cell" style="background:#8baa88; color:#2C3E50;">+12.0%</td>
+          <td><span class="signal-badge s-upsell">🤔 Premium</span></td>
+        </tr>
+
+        <tr class="">
+          <td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#C5453E"></span>Vendi</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿14,221</td>
+          <td class="heat-bills">75</td>
+          <td class="heat-cell" style="background:#c5453e; color:#ffffff;">-43.9%</td><td class="heat-cell" style="background:#c9544c; color:#ffffff;">-22.7%</td><td class="heat-cell" style="background:#c5453e; color:#ffffff;">-27.4%</td>
+          <td><span class="signal-badge s-crisis">🚨 CRISIS</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="2"><b>26-T1MW1-03+04</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿40,703</td>
+          <td class="heat-bills">131</td>
+          <td class="heat-cell" style="background:#dfa79e; color:#2C3E50;">-9.7%</td><td class="heat-cell" style="background:#c8ceb9; color:#2C3E50;">+4.8%</td><td class="heat-cell" style="background:#d88d84; color:#ffffff;">-13.8%</td>
+          <td><span class="signal-badge s-soft">⚠️ Mixed</span></td>
+        </tr>
+
+        <tr class="">
+          <td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#2D7A3F"></span>Juice Land</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿31,251</td>
+          <td class="heat-bills">96</td>
+          <td class="heat-cell" style="background:#e3b4aa; color:#2C3E50;">-7.7%</td><td class="heat-cell" style="background:#dd9e95; color:#2C3E50;">-11.1%</td><td class="heat-cell" style="background:#d0d2c0; color:#2C3E50;">+3.9%</td>
+          <td><span class="signal-badge s-upsell">🤔 Premium</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>24-T1EW4-14</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿61,363</td>
+          <td class="heat-bills">168</td>
+          <td class="heat-cell" style="background:#efe0d5; color:#2C3E50;">-0.8%</td><td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+33.3%</td><td class="heat-cell" style="background:#c5453e; color:#ffffff;">-25.6%</td>
+          <td><span class="signal-badge s-soft">⚠️ Mixed</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>21-T1BE2-06</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿58,769</td>
+          <td class="heat-bills">127</td>
+          <td class="heat-cell" style="background:#86a884; color:#2C3E50;">+12.6%</td><td class="heat-cell" style="background:#b8c4ac; color:#2C3E50;">+6.7%</td><td class="heat-cell" style="background:#c2cab5; color:#2C3E50;">+5.5%</td>
+          <td><span class="signal-badge s-traffic">⭐ BEST</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>17-T1ME2-30</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#7B79FF"></span>Khiang</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿42,211</td>
+          <td class="heat-bills">204</td>
+          <td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+46.2%</td><td class="heat-cell" style="background:#4e8757; color:#ffffff;">+19.3%</td><td class="heat-cell" style="background:#327740; color:#ffffff;">+22.6%</td>
+          <td><span class="signal-badge s-traffic">⭐ BEST</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>04-DMK-T2MTE3-09</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">DMK</td>
+          <td class="heat-rev">฿41,722</td>
+          <td class="heat-bills">116</td>
+          <td class="heat-cell" style="background:#dfa49b; color:#2C3E50;">-10.1%</td><td class="heat-cell" style="background:#e2b2a8; color:#2C3E50;">-7.9%</td><td class="heat-cell" style="background:#ecd6cb; color:#2C3E50;">-2.4%</td>
+          <td><span class="signal-badge s-soft">↘ Soft</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>05-DMK-Inter-S</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">DMK</td>
+          <td class="heat-rev">฿40,200</td>
+          <td class="heat-bills">133</td>
+          <td class="heat-cell" style="background:#d06f67; color:#ffffff;">-18.5%</td><td class="heat-cell" style="background:#e0a89f; color:#2C3E50;">-9.5%</td><td class="heat-cell" style="background:#dfa69c; color:#2C3E50;">-9.9%</td>
+          <td><span class="signal-badge s-crisis">🚨 CRISIS</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="2"><b>22-DMK-3Pier2-SS</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">DMK</td>
+          <td class="heat-rev">฿25,528</td>
+          <td class="heat-bills">101</td>
+          <td class="heat-cell" style="background:#a5ba9e; color:#2C3E50;">+8.9%</td><td class="heat-cell" style="background:#bbc6af; color:#2C3E50;">+6.3%</td><td class="heat-cell" style="background:#dcd9ca; color:#2C3E50;">+2.4%</td>
+          <td><span class="signal-badge s-traffic">🚶 Traffic</span></td>
+        </tr>
+
+        <tr class="">
+          <td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#F39C12"></span>Siam Express</td>
+          <td class="heat-bills" style="text-align:center;">DMK</td>
+          <td class="heat-rev">฿12,201</td>
+          <td class="heat-bills">57</td>
+          <td class="heat-cell" style="background:#d98f86; color:#ffffff;">-13.5%</td><td class="heat-cell" style="background:#e5bbb1; color:#2C3E50;">-6.6%</td><td class="heat-cell" style="background:#e3b6ac; color:#2C3E50;">-7.4%</td>
+          <td><span class="signal-badge s-crisis">🚨 CRISIS</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>23-T1CE4-13</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿34,981</td>
+          <td class="heat-bills">138</td>
+          <td class="heat-cell" style="background:#d7d6c6; color:#2C3E50;">+3.0%</td><td class="heat-cell" style="background:#99b293; color:#2C3E50;">+10.4%</td><td class="heat-cell" style="background:#e4bab0; color:#2C3E50;">-6.7%</td>
+          <td><span class="signal-badge s-soft">⚠️ Mixed</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>20-PKT-Floor 3-S</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#F39C12"></span>Siam Express</td>
+          <td class="heat-bills" style="text-align:center;">PKT</td>
+          <td class="heat-rev">฿25,708</td>
+          <td class="heat-bills">98</td>
+          <td class="heat-cell" style="background:#e1ada3; color:#2C3E50;">-8.7%</td><td class="heat-cell" style="background:#edd8ce; color:#2C3E50;">-2.0%</td><td class="heat-cell" style="background:#e4b9af; color:#2C3E50;">-6.9%</td>
+          <td><span class="signal-badge s-quality">📉 Quality</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>13-PKT-G1-S</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#F39C12"></span>Siam Express</td>
+          <td class="heat-bills" style="text-align:center;">PKT</td>
+          <td class="heat-rev">฿25,242</td>
+          <td class="heat-bills">90</td>
+          <td class="heat-cell" style="background:#508859; color:#ffffff;">+19.0%</td><td class="heat-cell" style="background:#dd9f96; color:#2C3E50;">-10.9%</td><td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+33.6%</td>
+          <td><span class="signal-badge s-upsell">🤔 Premium</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>19-T1MB1-03</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿24,962</td>
+          <td class="heat-bills">86</td>
+          <td class="heat-cell" style="background:#efe2d7; color:#2C3E50;">-0.4%</td><td class="heat-cell" style="background:#9ab394; color:#2C3E50;">+10.3%</td><td class="heat-cell" style="background:#dfa79e; color:#2C3E50;">-9.7%</td>
+          <td><span class="signal-badge s-soft">⚠️ Mixed</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>09-DMK-G1-S</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">DMK</td>
+          <td class="heat-rev">฿23,147</td>
+          <td class="heat-bills">78</td>
+          <td class="heat-cell" style="background:#1e6b30; color:#ffffff;">+37.5%</td><td class="heat-cell" style="background:#66956a; color:#ffffff;">+16.4%</td><td class="heat-cell" style="background:#588c5f; color:#ffffff;">+18.2%</td>
+          <td><span class="signal-badge s-traffic">⭐ BEST</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>25-DMK-CS</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#5551FE"></span>Subway</td>
+          <td class="heat-bills" style="text-align:center;">DMK</td>
+          <td class="heat-rev">฿13,592</td>
+          <td class="heat-bills">57</td>
+          <td class="heat-cell" style="background:#d47c73; color:#ffffff;">-16.5%</td><td class="heat-cell" style="background:#eacfc5; color:#2C3E50;">-3.4%</td><td class="heat-cell" style="background:#d98e85; color:#ffffff;">-13.6%</td>
+          <td><span class="signal-badge s-crisis">🚨 CRISIS</span></td>
+        </tr>
+
+        <tr class="grp-start">
+          <td class="heat-bu" rowspan="1"><b>28 JUICELAND Unit 362</b></td><td class="heat-bills" style="text-align:left;"><span class="sw" style="background:#2D7A3F"></span>Juice Land</td>
+          <td class="heat-bills" style="text-align:center;">BKK</td>
+          <td class="heat-rev">฿8,205</td>
+          <td class="heat-bills">35</td>
+          <td class="heat-cell" style="background:#93af8f; color:#2C3E50;">+11.1%</td><td class="heat-cell" style="background:#e2b2a9; color:#2C3E50;">-7.9%</td><td class="heat-cell" style="background:#43814e; color:#ffffff;">+20.6%</td>
+          <td><span class="signal-badge s-upsell">🤔 Premium</span></td>
+        </tr>
+
+    </table>
+  </div>
+
+  <div class="footer">
+    <div><b>CHAW Food Operation Core</b> · Sub 12 — Siam Franchise B (SFB)</div>
+    <div>Source: NetSuite Sub 12 <code>transactionline</code> (pre-VAT) · MTD: Jun 2026</div>
+    <div>SFB Daily routine (multi-file) · Generated 28 Jun 2026 (run 29 Jun 2026)</div>
+  </div>
+</div>
+</body></html>
