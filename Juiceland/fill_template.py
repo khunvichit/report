@@ -39,8 +39,13 @@ def render_repeats(html, repeats):
         out = []
         for item in items:
             block = inner
+            # Recursively render nested REPEAT blocks using sub-lists in this item.
+            sub_repeats = {k: v for k, v in item.items() if isinstance(v, list)}
+            if sub_repeats:
+                block = render_repeats(block, sub_repeats)
             for k, v in item.items():
-                block = block.replace("{{" + k + "}}", str(v))
+                if not isinstance(v, list):
+                    block = block.replace("{{" + k + "}}", str(v))
             out.append(block)
         return "".join(out)
     # Loop until no nested REPEATs remain (handles REPEAT inside REPEAT).

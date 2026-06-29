@@ -1,35 +1,3 @@
-<!--
-==================================================================================
-  JUICELAND DAILY SALES REPORT — LOCKED HTML TEMPLATE (file #1 of 3)
-  Used by: juiceland-report-runbook.md  ·  Data map: juiceland-queries.md
-==================================================================================
-
-  HOW THIS FILE WORKS — read before editing
-  -----------------------------------------
-  This is the FROZEN visual structure of the email. The routine must reproduce
-  this HTML verbatim and only substitute values. Do NOT let the model
-  re-invent layout, colours, spacing, or section order.
-
-  TWO kinds of substitution:
-
-  1. {{placeholder}}  — a single value. Replace the token, keep everything else.
-       e.g. 73,136  ->  68,545
-
-  2. 
-       A row/block that repeats once per data item. Render the block once for
-       each item in the named dataset, substituting its {{tokens}} each time.
-       Then DELETE the markers themselves from the output.
-       If the dataset is EMPTY, render the fallback shown in <!-- EMPTY:name -->.
-
-  RULES
-  - Never change hex colours, px sizes, or inline styles. They are email-client tested.
-  - Branch order is ALWAYS MW1, SE3, PKT. Colours: MW1 #5551FE, SE3 #F27061, PKT #2E7D32.
-  - Currency: ฿ prefix, thousands comma, no decimals  (e.g. ฿68,545) unless token says otherwise.
-  - Conditional whole sections are wrapped in 
-    with a one-line rule for when to omit. Omit = remove the entire block.
-  - Do NOT write this HTML to disk in production; pass it straight to lark_send_email.
-==================================================================================
--->
 <!doctype html>
 <html><head>
 <meta charset="utf-8">
