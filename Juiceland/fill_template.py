@@ -28,7 +28,7 @@ data.json shape (the model produces this — small, well under the token limit):
               once per list item (substituting that item's keys), then drop the markers.
 - sections -> for each <!-- SECTION:name --> .. <!-- /SECTION:name -->, keep inner if True else remove.
 """
-import sys, json, re
+import sys, json, re, os
 
 def render_repeats(html, repeats):
     # Process each REPEAT block. Non-greedy, DOTALL so it spans newlines.
@@ -66,17 +66,36 @@ def render_scalars(html, scalars):
         html = html.replace("{{" + k + "}}", str(v))
     return html
 
+def render(html, data):
+    # Order matters: sections first (so dropped sections remove their REPEATs too),
+    # then repeats, then scalars (scalars may appear inside repeated blocks already handled).
+    html = render_sections(html, data.get("sections", {}))
+    html = render_repeats(html, data.get("repeats", {}))
+    html = render_scalars(html, data.get("scalars", {}))
+    return html
+
 def main():
     template_path, data_path = sys.argv[1], sys.argv[2]
     with open(template_path, encoding="utf-8") as f:
         html = f.read()
     with open(data_path, encoding="utf-8") as f:
         data = json.load(f)
-    # Order matters: sections first (so dropped sections remove their REPEATs too),
-    # then repeats, then scalars (scalars may appear inside repeated blocks already handled).
-    html = render_sections(html, data.get("sections", {}))
-    html = render_repeats(html, data.get("repeats", {}))
-    html = render_scalars(html, data.get("scalars", {}))
+
+    # The 🔮 AI Estimate (forecast/commentary/anomaly) block lives in a separate
+    # template file and must be injected at the top of the body before the main
+    # template is rendered (see juiceland-prediction.md: "Render this block at
+    # the TOP of the HTML body regardless of compute order").
+    pred_path = os.path.join(os.path.dirname(os.path.abspath(template_path)), "juiceland-prediction-section.html")
+    if os.path.exists(pred_path):
+        with open(pred_path, encoding="utf-8") as f:
+            pred_html = render(f.read(), data)
+        marker = '<div style="padding:24px;">'
+        idx = html.find(marker)
+        if idx != -1:
+            insert_at = idx + len(marker)
+            html = html[:insert_at] + "\n" + pred_html + html[insert_at:]
+
+    html = render(html, data)
     # Strip the template's how-to comment header and any leftover REPEAT/SECTION markers.
     html = re.sub(r"<!--\s*/?(?:REPEAT|SECTION):\w+[\s\S]*?-->", "", html)
     # Warn (to stderr) if any placeholder survived — never block the send.

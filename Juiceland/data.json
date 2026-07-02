@@ -1,0 +1,2254 @@
+{
+ "scalars": {
+  "report_date": "2026-07-01",
+  "report_date_display": "1 July 2026",
+  "report_day_th": "วันพุธ",
+  "window_30d_start": "2 June 2026",
+  "generated_timestamp": "2026-07-02 14:10",
+  "subject_prefix": "✅",
+  "comb_net": "77,154",
+  "signed_pct": "+8.3",
+  "am_queue_count": "32",
+  "dormant_count": "34",
+  "mw1_net": "41,018",
+  "se3_net": "29,248",
+  "pkt_net": "6,888",
+  "mw1_avg_30d": "36,581",
+  "se3_avg_30d": "23,309",
+  "pkt_avg_30d": "11,323",
+  "comb_avg_30d": "71,212",
+  "mw1_min_30d": "25,977",
+  "mw1_max_30d": "46,618",
+  "se3_min_30d": "12,035",
+  "se3_max_30d": "33,130",
+  "pkt_min_30d": "6,888",
+  "pkt_max_30d": "16,361",
+  "comb_monthly_runrate": "2,136.4K",
+  "last7_total": "517,930",
+  "last7_avg": "73,990",
+  "mw1_7d_total": "257,478",
+  "se3_7d_total": "189,198",
+  "pkt_7d_total": "71,254",
+  "comb_7d_total": "517,930",
+  "np_summary_line": "39 SKUs live in the trailing 30 days · 33 Drinks · 2 Seasonal Fruit · 4 New Category",
+  "np_total_units": "798",
+  "np_total_rev": "138,817",
+  "drinks_n": "33",
+  "drinks_todate_units": "775",
+  "drinks_todate_rev": "135,882",
+  "fruit_n": "2",
+  "fruit_todate_units": "19",
+  "fruit_todate_rev": "2,841",
+  "new_cat_n": "4",
+  "new_cat_todate_units": "4",
+  "new_cat_todate_rev": "93",
+  "grape_total_rev": "239,488",
+  "grape_last_mw1": "1 July 2026",
+  "grape_last_se3": "28 April 2026",
+  "forecast_date_display": "2 July 2026",
+  "mw1_conf_dot": "🟢",
+  "se3_conf_dot": "🟢",
+  "pkt_conf_dot": "🟡",
+  "comb_conf_dot": "🟢",
+  "mw1_fc_low": "33,328",
+  "mw1_fc_high": "42,322",
+  "se3_fc_low": "21,280",
+  "se3_fc_high": "25,327",
+  "pkt_fc_low": "8,840",
+  "pkt_fc_high": "13,369",
+  "comb_fc_low": "66,806",
+  "comb_fc_high": "77,659",
+  "commentary_text": "Yesterday (1 July 2026 · วันพุธ), combined net was ฿77,154 ex-VAT, 8.3% above the 30-day average. MW1 came in at ฿41,018 (+12.1% vs avg) and SE3 at ฿29,248 (+25.5% vs avg), both above their 30-day averages. PKT was the outlier at ฿6,888 (-39.2% vs avg) — its lowest single day across the trailing 30-day window.",
+  "anomaly_count": "4"
+ },
+ "repeats": {
+  "chart_days": [
+   {
+    "date": "2026-06-02",
+    "day_num": "2",
+    "weekday_th_abbr": "อ",
+    "mw1_net": "36,476",
+    "se3_net": "15,959",
+    "pkt_net": "9,920",
+    "mw1_bar_px": "172",
+    "se3_bar_px": "75",
+    "pkt_bar_px": "47"
+   },
+   {
+    "date": "2026-06-03",
+    "day_num": "3",
+    "weekday_th_abbr": "พ",
+    "mw1_net": "40,024",
+    "se3_net": "19,497",
+    "pkt_net": "10,813",
+    "mw1_bar_px": "189",
+    "se3_bar_px": "92",
+    "pkt_bar_px": "51"
+   },
+   {
+    "date": "2026-06-04",
+    "day_num": "4",
+    "weekday_th_abbr": "พฤ",
+    "mw1_net": "35,666",
+    "se3_net": "16,604",
+    "pkt_net": "13,146",
+    "mw1_bar_px": "168",
+    "se3_bar_px": "78",
+    "pkt_bar_px": "62"
+   },
+   {
+    "date": "2026-06-05",
+    "day_num": "5",
+    "weekday_th_abbr": "ศ",
+    "mw1_net": "35,611",
+    "se3_net": "20,180",
+    "pkt_net": "13,589",
+    "mw1_bar_px": "168",
+    "se3_bar_px": "95",
+    "pkt_bar_px": "64"
+   },
+   {
+    "date": "2026-06-06",
+    "day_num": "6",
+    "weekday_th_abbr": "ส",
+    "mw1_net": "32,714",
+    "se3_net": "23,312",
+    "pkt_net": "13,867",
+    "mw1_bar_px": "154",
+    "se3_bar_px": "110",
+    "pkt_bar_px": "65"
+   },
+   {
+    "date": "2026-06-07",
+    "day_num": "7",
+    "weekday_th_abbr": "อา",
+    "mw1_net": "25,977",
+    "se3_net": "17,749",
+    "pkt_net": "12,993",
+    "mw1_bar_px": "123",
+    "se3_bar_px": "84",
+    "pkt_bar_px": "61"
+   },
+   {
+    "date": "2026-06-08",
+    "day_num": "8",
+    "weekday_th_abbr": "จ",
+    "mw1_net": "38,857",
+    "se3_net": "24,570",
+    "pkt_net": "12,810",
+    "mw1_bar_px": "183",
+    "se3_bar_px": "116",
+    "pkt_bar_px": "60"
+   },
+   {
+    "date": "2026-06-09",
+    "day_num": "9",
+    "weekday_th_abbr": "อ",
+    "mw1_net": "30,612",
+    "se3_net": "12,035",
+    "pkt_net": "10,190",
+    "mw1_bar_px": "144",
+    "se3_bar_px": "57",
+    "pkt_bar_px": "48"
+   },
+   {
+    "date": "2026-06-10",
+    "day_num": "10",
+    "weekday_th_abbr": "พ",
+    "mw1_net": "37,665",
+    "se3_net": "22,195",
+    "pkt_net": "10,250",
+    "mw1_bar_px": "178",
+    "se3_bar_px": "105",
+    "pkt_bar_px": "48"
+   },
+   {
+    "date": "2026-06-11",
+    "day_num": "11",
+    "weekday_th_abbr": "พฤ",
+    "mw1_net": "36,938",
+    "se3_net": "18,834",
+    "pkt_net": "12,373",
+    "mw1_bar_px": "174",
+    "se3_bar_px": "89",
+    "pkt_bar_px": "58"
+   },
+   {
+    "date": "2026-06-12",
+    "day_num": "12",
+    "weekday_th_abbr": "ศ",
+    "mw1_net": "35,378",
+    "se3_net": "25,627",
+    "pkt_net": "11,753",
+    "mw1_bar_px": "167",
+    "se3_bar_px": "121",
+    "pkt_bar_px": "55"
+   },
+   {
+    "date": "2026-06-13",
+    "day_num": "13",
+    "weekday_th_abbr": "ส",
+    "mw1_net": "33,715",
+    "se3_net": "25,149",
+    "pkt_net": "12,259",
+    "mw1_bar_px": "159",
+    "se3_bar_px": "119",
+    "pkt_bar_px": "58"
+   },
+   {
+    "date": "2026-06-14",
+    "day_num": "14",
+    "weekday_th_abbr": "อา",
+    "mw1_net": "36,683",
+    "se3_net": "18,753",
+    "pkt_net": "16,361",
+    "mw1_bar_px": "173",
+    "se3_bar_px": "89",
+    "pkt_bar_px": "77"
+   },
+   {
+    "date": "2026-06-15",
+    "day_num": "15",
+    "weekday_th_abbr": "จ",
+    "mw1_net": "34,196",
+    "se3_net": "22,469",
+    "pkt_net": "12,234",
+    "mw1_bar_px": "161",
+    "se3_bar_px": "106",
+    "pkt_bar_px": "58"
+   },
+   {
+    "date": "2026-06-16",
+    "day_num": "16",
+    "weekday_th_abbr": "อ",
+    "mw1_net": "39,711",
+    "se3_net": "19,173",
+    "pkt_net": "9,078",
+    "mw1_bar_px": "187",
+    "se3_bar_px": "90",
+    "pkt_bar_px": "43"
+   },
+   {
+    "date": "2026-06-17",
+    "day_num": "17",
+    "weekday_th_abbr": "พ",
+    "mw1_net": "37,169",
+    "se3_net": "20,735",
+    "pkt_net": "10,010",
+    "mw1_bar_px": "175",
+    "se3_bar_px": "98",
+    "pkt_bar_px": "47"
+   },
+   {
+    "date": "2026-06-18",
+    "day_num": "18",
+    "weekday_th_abbr": "พฤ",
+    "mw1_net": "46,618",
+    "se3_net": "21,253",
+    "pkt_net": "14,308",
+    "mw1_bar_px": "220",
+    "se3_bar_px": "100",
+    "pkt_bar_px": "68"
+   },
+   {
+    "date": "2026-06-19",
+    "day_num": "19",
+    "weekday_th_abbr": "ศ",
+    "mw1_net": "45,531",
+    "se3_net": "32,543",
+    "pkt_net": "12,803",
+    "mw1_bar_px": "215",
+    "se3_bar_px": "154",
+    "pkt_bar_px": "60"
+   },
+   {
+    "date": "2026-06-20",
+    "day_num": "20",
+    "weekday_th_abbr": "ส",
+    "mw1_net": "32,341",
+    "se3_net": "29,278",
+    "pkt_net": "15,844",
+    "mw1_bar_px": "153",
+    "se3_bar_px": "138",
+    "pkt_bar_px": "75"
+   },
+   {
+    "date": "2026-06-21",
+    "day_num": "21",
+    "weekday_th_abbr": "อา",
+    "mw1_net": "36,222",
+    "se3_net": "33,130",
+    "pkt_net": "7,904",
+    "mw1_bar_px": "171",
+    "se3_bar_px": "156",
+    "pkt_bar_px": "37"
+   },
+   {
+    "date": "2026-06-22",
+    "day_num": "22",
+    "weekday_th_abbr": "จ",
+    "mw1_net": "37,555",
+    "se3_net": "25,020",
+    "pkt_net": "7,672",
+    "mw1_bar_px": "177",
+    "se3_bar_px": "118",
+    "pkt_bar_px": "36"
+   },
+   {
+    "date": "2026-06-23",
+    "day_num": "23",
+    "weekday_th_abbr": "อ",
+    "mw1_net": "36,830",
+    "se3_net": "21,203",
+    "pkt_net": "10,066",
+    "mw1_bar_px": "174",
+    "se3_bar_px": "100",
+    "pkt_bar_px": "48"
+   },
+   {
+    "date": "2026-06-24",
+    "day_num": "24",
+    "weekday_th_abbr": "พ",
+    "mw1_net": "37,465",
+    "se3_net": "24,795",
+    "pkt_net": "8,185",
+    "mw1_bar_px": "177",
+    "se3_bar_px": "117",
+    "pkt_bar_px": "39"
+   },
+   {
+    "date": "2026-06-25",
+    "day_num": "25",
+    "weekday_th_abbr": "พฤ",
+    "mw1_net": "36,248",
+    "se3_net": "21,621",
+    "pkt_net": "8,293",
+    "mw1_bar_px": "171",
+    "se3_bar_px": "102",
+    "pkt_bar_px": "39"
+   },
+   {
+    "date": "2026-06-26",
+    "day_num": "26",
+    "weekday_th_abbr": "ศ",
+    "mw1_net": "36,516",
+    "se3_net": "17,724",
+    "pkt_net": "11,868",
+    "mw1_bar_px": "172",
+    "se3_bar_px": "84",
+    "pkt_bar_px": "56"
+   },
+   {
+    "date": "2026-06-27",
+    "day_num": "27",
+    "weekday_th_abbr": "ส",
+    "mw1_net": "33,294",
+    "se3_net": "28,583",
+    "pkt_net": "10,604",
+    "mw1_bar_px": "157",
+    "se3_bar_px": "135",
+    "pkt_bar_px": "50"
+   },
+   {
+    "date": "2026-06-28",
+    "day_num": "28",
+    "weekday_th_abbr": "อา",
+    "mw1_net": "33,438",
+    "se3_net": "30,919",
+    "pkt_net": "8,779",
+    "mw1_bar_px": "158",
+    "se3_bar_px": "146",
+    "pkt_bar_px": "41"
+   },
+   {
+    "date": "2026-06-29",
+    "day_num": "29",
+    "weekday_th_abbr": "จ",
+    "mw1_net": "37,725",
+    "se3_net": "28,374",
+    "pkt_net": "13,916",
+    "mw1_bar_px": "178",
+    "se3_bar_px": "134",
+    "pkt_bar_px": "66"
+   },
+   {
+    "date": "2026-06-30",
+    "day_num": "30",
+    "weekday_th_abbr": "อ",
+    "mw1_net": "39,239",
+    "se3_net": "32,728",
+    "pkt_net": "10,907",
+    "mw1_bar_px": "185",
+    "se3_bar_px": "154",
+    "pkt_bar_px": "51"
+   },
+   {
+    "date": "2026-07-01",
+    "day_num": "1",
+    "weekday_th_abbr": "พ",
+    "mw1_net": "41,018",
+    "se3_net": "29,248",
+    "pkt_net": "6,888",
+    "mw1_bar_px": "194",
+    "se3_bar_px": "138",
+    "pkt_bar_px": "33"
+   }
+  ],
+  "last7_headers": [
+   {
+    "col_date": "25 Jun",
+    "col_weekday_th": "พฤ",
+    "header_bg": ""
+   },
+   {
+    "col_date": "26 Jun",
+    "col_weekday_th": "ศ",
+    "header_bg": ""
+   },
+   {
+    "col_date": "27 Jun",
+    "col_weekday_th": "ส",
+    "header_bg": ""
+   },
+   {
+    "col_date": "28 Jun",
+    "col_weekday_th": "อา",
+    "header_bg": ""
+   },
+   {
+    "col_date": "29 Jun",
+    "col_weekday_th": "จ",
+    "header_bg": ""
+   },
+   {
+    "col_date": "30 Jun",
+    "col_weekday_th": "อ",
+    "header_bg": ""
+   },
+   {
+    "col_date": "1 Jul",
+    "col_weekday_th": "พ",
+    "header_bg": "background:#4744CD;"
+   }
+  ],
+  "last7_mw1": [
+   {
+    "net": "36,248",
+    "cell_style": ""
+   },
+   {
+    "net": "36,516",
+    "cell_style": ""
+   },
+   {
+    "net": "33,294",
+    "cell_style": ""
+   },
+   {
+    "net": "33,438",
+    "cell_style": ""
+   },
+   {
+    "net": "37,725",
+    "cell_style": ""
+   },
+   {
+    "net": "39,239",
+    "cell_style": ""
+   },
+   {
+    "net": "41,018",
+    "cell_style": "background:#FFF3E0;font-weight:700;"
+   }
+  ],
+  "last7_se3": [
+   {
+    "net": "21,621",
+    "cell_style": ""
+   },
+   {
+    "net": "17,724",
+    "cell_style": ""
+   },
+   {
+    "net": "28,583",
+    "cell_style": ""
+   },
+   {
+    "net": "30,919",
+    "cell_style": ""
+   },
+   {
+    "net": "28,374",
+    "cell_style": ""
+   },
+   {
+    "net": "32,728",
+    "cell_style": ""
+   },
+   {
+    "net": "29,248",
+    "cell_style": "background:#FFF3E0;font-weight:700;"
+   }
+  ],
+  "last7_pkt": [
+   {
+    "net": "8,293",
+    "cell_style": ""
+   },
+   {
+    "net": "11,868",
+    "cell_style": ""
+   },
+   {
+    "net": "10,604",
+    "cell_style": ""
+   },
+   {
+    "net": "8,779",
+    "cell_style": ""
+   },
+   {
+    "net": "13,916",
+    "cell_style": ""
+   },
+   {
+    "net": "10,907",
+    "cell_style": ""
+   },
+   {
+    "net": "6,888",
+    "cell_style": "background:#FFF3E0;font-weight:700;"
+   }
+  ],
+  "last7_comb": [
+   {
+    "net": "66,162",
+    "cell_bg": ""
+   },
+   {
+    "net": "66,108",
+    "cell_bg": ""
+   },
+   {
+    "net": "72,481",
+    "cell_bg": ""
+   },
+   {
+    "net": "73,136",
+    "cell_bg": ""
+   },
+   {
+    "net": "80,014",
+    "cell_bg": ""
+   },
+   {
+    "net": "82,874",
+    "cell_bg": ""
+   },
+   {
+    "net": "77,154",
+    "cell_bg": "background:#FFF3E0;"
+   }
+  ],
+  "top20_branches": [
+   {
+    "header_color": "#5551FE",
+    "header_label": "MW1 · 26-T1MW1-03+04",
+    "top20_rows": [
+     {
+      "rank": "1",
+      "memo_display": "EVIAN",
+      "memo_full": "EVIAN",
+      "qty": "39",
+      "revenue": "4,373.85",
+      "bills": "3",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "2",
+      "memo_display": "S2 MANGO PASSION SMOOTHIE 22OZ",
+      "memo_full": "S2 MANGO PASSION SMOOTHIE 22OZ",
+      "qty": "13",
+      "revenue": "2,247.69",
+      "bills": "3",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "3",
+      "memo_display": "COCONUT READY TO DRINK",
+      "memo_full": "COCONUT READY TO DRINK",
+      "qty": "13",
+      "revenue": "2,065.42",
+      "bills": "2",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "4",
+      "memo_display": "C3 WATERMELON  COLD PREESED 22OZ",
+      "memo_full": "C3 WATERMELON  COLD PREESED 22OZ",
+      "qty": "10",
+      "revenue": "1,962.61",
+      "bills": "2",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "5",
+      "memo_display": "WATERMELON JUICE BOTTLE",
+      "memo_full": "WATERMELON JUICE BOTTLE",
+      "qty": "10",
+      "revenue": "1,728.98",
+      "bills": "3",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "6",
+      "memo_display": "WATERMELON 400G.",
+      "memo_full": "WATERMELON 400G.",
+      "qty": "7",
+      "revenue": "981.33",
+      "bills": "2",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "7",
+      "memo_display": "MANGO 400G.",
+      "memo_full": "MANGO 400G.",
+      "qty": "7",
+      "revenue": "1,046.71",
+      "bills": "3",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "8",
+      "memo_display": "MANGOSTEEN SMOOTHIE WITH O-AEW J…",
+      "memo_full": "MANGOSTEEN SMOOTHIE WITH O-AEW JELLY",
+      "qty": "6",
+      "revenue": "1,177.57",
+      "bills": "3",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "9",
+      "memo_display": "S5 MANGO SMOOTHIE 22OZ",
+      "memo_full": "S5 MANGO SMOOTHIE 22OZ",
+      "qty": "6",
+      "revenue": "1,037.39",
+      "bills": "3",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "10",
+      "memo_display": "S5 MANGO SMOOTHIE 16OZ",
+      "memo_full": "S5 MANGO SMOOTHIE 16OZ",
+      "qty": "5",
+      "revenue": "747.66",
+      "bills": "2",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "11",
+      "memo_display": "YS2 STRAWBERRY YOGHURT SMOOTHIE …",
+      "memo_full": "YS2 STRAWBERRY YOGHURT SMOOTHIE 16OZ",
+      "qty": "5",
+      "revenue": "817.75",
+      "bills": "2",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "12",
+      "memo_display": "P2 GREEN BOOST 22OZ",
+      "memo_full": "P2 GREEN BOOST 22OZ",
+      "qty": "5",
+      "revenue": "1,051.40",
+      "bills": "2",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "13",
+      "memo_display": "SHINE MUSCAT GRAPES 400G (PACK)",
+      "memo_full": "SHINE MUSCAT GRAPES 400G (PACK)",
+      "qty": "5",
+      "revenue": "747.65",
+      "bills": "3",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "14",
+      "memo_display": "CH2 HOT AMERICANO",
+      "memo_full": "CH2 HOT AMERICANO",
+      "qty": "5",
+      "revenue": "630.85",
+      "bills": "2",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "15",
+      "memo_display": "MANGOSTEEN SMOOTHIE",
+      "memo_full": "MANGOSTEEN SMOOTHIE ",
+      "qty": "5",
+      "revenue": "942.06",
+      "bills": "3",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "16",
+      "memo_display": "PAPAYA 400G.",
+      "memo_full": "PAPAYA 400G.",
+      "qty": "4",
+      "revenue": "560.76",
+      "bills": "2",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "17",
+      "memo_display": "S3 WATERMELON SMOOTHIE 16OZ",
+      "memo_full": "S3 WATERMELON SMOOTHIE 16OZ",
+      "qty": "4",
+      "revenue": "598.12",
+      "bills": "3",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "18",
+      "memo_display": "S1 COCONUT SMOOTHIE 22OZ",
+      "memo_full": "S1 COCONUT SMOOTHIE 22OZ",
+      "qty": "4",
+      "revenue": "766.36",
+      "bills": "2",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "19",
+      "memo_display": "COCONUT JUICE BOTTLE",
+      "memo_full": "COCONUT JUICE BOTTLE",
+      "qty": "4",
+      "revenue": "691.58",
+      "bills": "2",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "20",
+      "memo_display": "C4 MANGO PASSION  COLD PREESED 2…",
+      "memo_full": "C4 MANGO PASSION  COLD PREESED 22OZ",
+      "qty": "4",
+      "revenue": "785.04",
+      "bills": "1",
+      "row_bg": "#FAFAFA"
+     }
+    ]
+   },
+   {
+    "header_color": "#F27061",
+    "header_label": "SE3 · 27-T1SE3-05",
+    "top20_rows": [
+     {
+      "rank": "1",
+      "memo_display": "EVIAN",
+      "memo_full": "EVIAN",
+      "qty": "27",
+      "revenue": "3,028.05",
+      "bills": "3",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "2",
+      "memo_display": "WATERMELON 400G.",
+      "memo_full": "WATERMELON 400G.",
+      "qty": "17",
+      "revenue": "2,383.20",
+      "bills": "3",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "3",
+      "memo_display": "COCONUT READY TO DRINK",
+      "memo_full": "COCONUT READY TO DRINK",
+      "qty": "14",
+      "revenue": "2,224.32",
+      "bills": "3",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "4",
+      "memo_display": "MANGO 400G.",
+      "memo_full": "MANGO 400G.",
+      "qty": "14",
+      "revenue": "2,093.43",
+      "bills": "2",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "5",
+      "memo_display": "MANGOSTEEN SMOOTHIE",
+      "memo_full": "MANGOSTEEN SMOOTHIE",
+      "qty": "10",
+      "revenue": "1,962.60",
+      "bills": "3",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "6",
+      "memo_display": "3 kinds of fruit400g Papaya/Pine…",
+      "memo_full": "3 kinds of fruit400g Papaya/Pineapple/Guava",
+      "qty": "7",
+      "revenue": "981.31",
+      "bills": "2",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "7",
+      "memo_display": "MANGOSTEEN SMOOTHIE WITH O-AEW J…",
+      "memo_full": "MANGOSTEEN SMOOTHIE WITH O-AEW JELLY",
+      "qty": "6",
+      "revenue": "1,177.56",
+      "bills": "2",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "8",
+      "memo_display": "PAPAYA 400G.",
+      "memo_full": "PAPAYA 400G.",
+      "qty": "5",
+      "revenue": "700.94",
+      "bills": "3",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "9",
+      "memo_display": "S2 MANGO PASSION SMOOTHIE 16OZ",
+      "memo_full": "S2 MANGO PASSION SMOOTHIE 16OZ",
+      "qty": "4",
+      "revenue": "598.12",
+      "bills": "2",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "10",
+      "memo_display": "S1 COCONUT SMOOTHIE 22OZ",
+      "memo_full": "S1 COCONUT SMOOTHIE 22OZ",
+      "qty": "4",
+      "revenue": "766.36",
+      "bills": "2",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "11",
+      "memo_display": "P1 GOLDEN GLOW 22OZ",
+      "memo_full": "P1 GOLDEN GLOW 22OZ",
+      "qty": "4",
+      "revenue": "841.12",
+      "bills": "3",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "12",
+      "memo_display": "S2 MANGO PASSION SMOOTHIE 22OZ",
+      "memo_full": "S2 MANGO PASSION SMOOTHIE 22OZ",
+      "qty": "3",
+      "revenue": "518.70",
+      "bills": "2",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "13",
+      "memo_display": "S5 MANGO SMOOTHIE 16OZ",
+      "memo_full": "S5 MANGO SMOOTHIE 16OZ",
+      "qty": "3",
+      "revenue": "448.60",
+      "bills": "3",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "14",
+      "memo_display": "P2 GREEN BOOST 22OZ",
+      "memo_full": "P2 GREEN BOOST 22OZ",
+      "qty": "3",
+      "revenue": "630.84",
+      "bills": "2",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "15",
+      "memo_display": "S5 MANGO SMOOTHIE 22OZ",
+      "memo_full": "S5 MANGO SMOOTHIE 22OZ",
+      "qty": "3",
+      "revenue": "518.69",
+      "bills": "2",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "16",
+      "memo_display": "C3 WATERMELON  COLD PREESED 22OZ",
+      "memo_full": "C3 WATERMELON  COLD PREESED 22OZ",
+      "qty": "3",
+      "revenue": "588.78",
+      "bills": "2",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "17",
+      "memo_display": "T1 ICED THAI MILK TEA 22OZ",
+      "memo_full": "T1 ICED THAI MILK TEA 22OZ",
+      "qty": "3",
+      "revenue": "490.65",
+      "bills": "1",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "18",
+      "memo_display": "DRAGON FRUIT 400G.",
+      "memo_full": "DRAGON FRUIT 400G.",
+      "qty": "3",
+      "revenue": "420.57",
+      "bills": "1",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "19",
+      "memo_display": "C2 ORANGE  COLD PREESED 16OZ",
+      "memo_full": "C2 ORANGE  COLD PREESED 16OZ",
+      "qty": "3",
+      "revenue": "518.70",
+      "bills": "2",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "20",
+      "memo_display": "CI3 ICED AMERICANO 22OZ",
+      "memo_full": "CI3 ICED AMERICANO 22OZ",
+      "qty": "2",
+      "revenue": "336.44",
+      "bills": "2",
+      "row_bg": "#FAFAFA"
+     }
+    ]
+   },
+   {
+    "header_color": "#2E7D32",
+    "header_label": "PKT · 28 Unit 362 (Phuket)",
+    "top20_rows": [
+     {
+      "rank": "1",
+      "memo_display": "Evian 500ml. (Bottle)",
+      "memo_full": "Evian 500ml. (Bottle)",
+      "qty": "10",
+      "revenue": "1,121.50",
+      "bills": "2",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "2",
+      "memo_display": "Singha Beer 320 ml. (Bottle)",
+      "memo_full": "Singha Beer 320 ml. (Bottle) ",
+      "qty": "3",
+      "revenue": "504.66",
+      "bills": "1",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "3",
+      "memo_display": "Mango 400 g. (Pack)",
+      "memo_full": "Mango 400 g. (Pack)",
+      "qty": "3",
+      "revenue": "448.59",
+      "bills": "2",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "4",
+      "memo_display": "Chicken Ham Sandwich",
+      "memo_full": "Chicken Ham Sandwich",
+      "qty": "2",
+      "revenue": "336.44",
+      "bills": "2",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "5",
+      "memo_display": "Coke 500 ml. (Bottle)",
+      "memo_full": "Coke 500 ml. (Bottle)",
+      "qty": "2",
+      "revenue": "149.54",
+      "bills": "2",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "6",
+      "memo_display": "Banana 2PCS.",
+      "memo_full": "Banana 2PCS.",
+      "qty": "2",
+      "revenue": "110.28",
+      "bills": "1",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "7",
+      "memo_display": "Chang Lager Beer Bottle 320ml",
+      "memo_full": "Chang Lager Beer Bottle 320ml",
+      "qty": "2",
+      "revenue": "334.58",
+      "bills": "1",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "8",
+      "memo_display": "Mangosteen Smoothie 22oz",
+      "memo_full": "Mangosteen Smoothie 22oz",
+      "qty": "1",
+      "revenue": "196.26",
+      "bills": "1",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "9",
+      "memo_display": "3 kinds of fruit (400 g.) Papaya…",
+      "memo_full": "3 kinds of fruit (400 g.) Papaya 150 g. / Pineapple 150 g. / Guava 100 g.)",
+      "qty": "1",
+      "revenue": "140.19",
+      "bills": "1",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "10",
+      "memo_display": "CH2 Caffe latte (hot) 12oz",
+      "memo_full": "CH2 Caffe latte (hot) 12oz",
+      "qty": "1",
+      "revenue": "140.19",
+      "bills": "1",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "11",
+      "memo_display": "Iced Thai Milk Tea 22oz",
+      "memo_full": "Iced Thai Milk Tea 22oz",
+      "qty": "1",
+      "revenue": "163.55",
+      "bills": "1",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "12",
+      "memo_display": "Coconut (EA)",
+      "memo_full": "Coconut (EA)",
+      "qty": "1",
+      "revenue": "158.88",
+      "bills": "1",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "13",
+      "memo_display": "Tuna Salad Japanese Rice Balls (…",
+      "memo_full": "Tuna Salad Japanese Rice Balls (Onigiri)",
+      "qty": "1",
+      "revenue": "101.87",
+      "bills": "1",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "14",
+      "memo_display": "Orange Cold Pressed 22oz",
+      "memo_full": "Orange Cold Pressed 22oz",
+      "qty": "1",
+      "revenue": "196.26",
+      "bills": "1",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "15",
+      "memo_display": "Watermelon 400 g. (Pack)",
+      "memo_full": "Watermelon 400 g. (Pack)",
+      "qty": "1",
+      "revenue": "140.19",
+      "bills": "1",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "16",
+      "memo_display": "S1 Coconut smoothie 16oz",
+      "memo_full": "S1 Coconut smoothie 16oz",
+      "qty": "1",
+      "revenue": "168.23",
+      "bills": "1",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "17",
+      "memo_display": "Coconut Smoothie 22oz",
+      "memo_full": "Coconut Smoothie 22oz",
+      "qty": "1",
+      "revenue": "191.59",
+      "bills": "1",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "18",
+      "memo_display": "Pineapple & Green Apple Cold Pre…",
+      "memo_full": "Pineapple & Green Apple Cold Pressed 22oz",
+      "qty": "1",
+      "revenue": "196.26",
+      "bills": "1",
+      "row_bg": "#FAFAFA"
+     },
+     {
+      "rank": "19",
+      "memo_display": "CI4  Iced Americano 16oz",
+      "memo_full": "CI4  Iced Americano 16oz",
+      "qty": "1",
+      "revenue": "144.86",
+      "bills": "1",
+      "row_bg": "#fff"
+     },
+     {
+      "rank": "20",
+      "memo_display": "S5 mango smoothie  16oz",
+      "memo_full": "S5 mango smoothie  16oz",
+      "qty": "1",
+      "revenue": "149.53",
+      "bills": "1",
+      "row_bg": "#FAFAFA"
+     }
+    ]
+   }
+  ],
+  "np_type_tables": [
+   {
+    "type_bg": "#1976D2",
+    "type_fg": "#fff",
+    "type_icon": "🥤",
+    "type_label": "Drinks",
+    "np_rows": [
+     {
+      "memo": "PRIDE PARROT RED",
+      "launch": "1 Jun 2026",
+      "notes": "31d live",
+      "total_units": "315",
+      "total_rev": "58,805",
+      "branch_split": "MW1 205 · SE3 110",
+      "yest_units": "0",
+      "status_badge": "🟢 on target"
+     },
+     {
+      "memo": "PRIDE PARROT YELLOW",
+      "launch": "1 Jun 2026",
+      "notes": "31d live",
+      "total_units": "203",
+      "total_rev": "37,907",
+      "branch_split": "MW1 128 · SE3 75",
+      "yest_units": "1",
+      "status_badge": "🟢 on target"
+     },
+     {
+      "memo": "MOOVE CLEAR PROTEIN",
+      "launch": "13 Jun 2026",
+      "notes": "19d live",
+      "total_units": "40",
+      "total_rev": "5,608",
+      "branch_split": "MW1 40",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "Pride Parrot Red Smoothie 22 oz.",
+      "launch": "4 Jun 2026",
+      "notes": "28d live",
+      "total_units": "25",
+      "total_rev": "4,673",
+      "branch_split": "PKT 25",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "GRAPE CLEAR PROTEIN",
+      "launch": "25 Jun 2026",
+      "notes": "7d live",
+      "total_units": "24",
+      "total_rev": "3,365",
+      "branch_split": "MW1 12 · SE3 12",
+      "yest_units": "1",
+      "status_badge": "🟢 on target"
+     },
+     {
+      "memo": "LYCHEE CLEAR PROTEIN",
+      "launch": "25 Jun 2026",
+      "notes": "7d live",
+      "total_units": "22",
+      "total_rev": "3,084",
+      "branch_split": "MW1 14 · SE3 8",
+      "yest_units": "0",
+      "status_badge": "🟢 on target"
+     },
+     {
+      "memo": "MANGOSTEEN SMOOTHIE",
+      "launch": "1 Jul 2026",
+      "notes": "1d live",
+      "total_units": "15",
+      "total_rev": "2,905",
+      "branch_split": "MW1 5 · SE3 10",
+      "yest_units": "15",
+      "status_badge": "🟡 below target"
+     },
+     {
+      "memo": "Mango Passion Smoothie 22oz",
+      "launch": "25 Jun 2026",
+      "notes": "7d live",
+      "total_units": "14",
+      "total_rev": "2,421",
+      "branch_split": "PKT 14",
+      "yest_units": "0",
+      "status_badge": "🟡 below target"
+     },
+     {
+      "memo": "MANGOSTEEN SMOOTHIE WITH O-AEW JELLY",
+      "launch": "1 Jul 2026",
+      "notes": "1d live",
+      "total_units": "12",
+      "total_rev": "2,355",
+      "branch_split": "MW1 6 · SE3 6",
+      "yest_units": "12",
+      "status_badge": "🟡 below target"
+     },
+     {
+      "memo": "Fanta Strawberry 450 ml. (Bottle)",
+      "launch": "1 Jun 2026",
+      "notes": "31d live",
+      "total_units": "30",
+      "total_rev": "2,243",
+      "branch_split": "PKT 30",
+      "yest_units": "1",
+      "status_badge": "🔴 waste risk"
+     },
+     {
+      "memo": "Pride Parrot Yellow Smoothie 22 oz.",
+      "launch": "7 Jun 2026",
+      "notes": "25d live",
+      "total_units": "11",
+      "total_rev": "2,056",
+      "branch_split": "PKT 11",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "Mango Smoothie 22oz",
+      "launch": "24 Jun 2026",
+      "notes": "8d live",
+      "total_units": "9",
+      "total_rev": "1,539",
+      "branch_split": "PKT 9",
+      "yest_units": "0",
+      "status_badge": "🔴 waste risk"
+     },
+     {
+      "memo": "Watermelon Smoothie 22oz",
+      "launch": "23 Jun 2026",
+      "notes": "9d live",
+      "total_units": "7",
+      "total_rev": "1,210",
+      "branch_split": "PKT 7",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "Mango Passion Cold Pressed 22oz",
+      "launch": "25 Jun 2026",
+      "notes": "7d live",
+      "total_units": "4",
+      "total_rev": "785",
+      "branch_split": "PKT 4",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "Orange Cold Pressed 22oz",
+      "launch": "24 Jun 2026",
+      "notes": "8d live",
+      "total_units": "4",
+      "total_rev": "785",
+      "branch_split": "PKT 4",
+      "yest_units": "1",
+      "status_badge": "🔴 waste risk"
+     },
+     {
+      "memo": "Mango Yoghurt Smoothie 22 oz",
+      "launch": "23 Jun 2026",
+      "notes": "9d live",
+      "total_units": "4",
+      "total_rev": "748",
+      "branch_split": "PKT 4",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "Pineapple & Green Apple Cold Pressed 22oz",
+      "launch": "26 Jun 2026",
+      "notes": "6d live",
+      "total_units": "3",
+      "total_rev": "589",
+      "branch_split": "PKT 3",
+      "yest_units": "1",
+      "status_badge": "🔴 waste risk"
+     },
+     {
+      "memo": "Coconut Smoothie 22oz",
+      "launch": "25 Jun 2026",
+      "notes": "7d live",
+      "total_units": "3",
+      "total_rev": "556",
+      "branch_split": "PKT 3",
+      "yest_units": "1",
+      "status_badge": "🔴 waste risk"
+     },
+     {
+      "memo": "Pineapple Smoothie 22oz",
+      "launch": "27 Jun 2026",
+      "notes": "5d live",
+      "total_units": "3",
+      "total_rev": "519",
+      "branch_split": "PKT 3",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "Iced Cappuccino 22oz",
+      "launch": "25 Jun 2026",
+      "notes": "7d live",
+      "total_units": "3",
+      "total_rev": "497",
+      "branch_split": "PKT 3",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "Iced Thai Milk Tea 22oz",
+      "launch": "25 Jun 2026",
+      "notes": "7d live",
+      "total_units": "3",
+      "total_rev": "491",
+      "branch_split": "PKT 3",
+      "yest_units": "1",
+      "status_badge": "🔴 waste risk"
+     },
+     {
+      "memo": "Strawberry Yoghurt Smoothie 22 oz",
+      "launch": "25 Jun 2026",
+      "notes": "7d live",
+      "total_units": "2",
+      "total_rev": "374",
+      "branch_split": "PKT 2",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "Mixberry Smoothie 22oz",
+      "launch": "24 Jun 2026",
+      "notes": "8d live",
+      "total_units": "2",
+      "total_rev": "346",
+      "branch_split": "PKT 2",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "Hot Tea Green Tea 12oz",
+      "launch": "18 Jun 2026",
+      "notes": "14d live",
+      "total_units": "3",
+      "total_rev": "306",
+      "branch_split": "PKT 3",
+      "yest_units": "0",
+      "status_badge": "🔴 waste risk"
+     },
+     {
+      "memo": "Mango, Passion Fruit Pure Pressed 22oz",
+      "launch": "27 Jun 2026",
+      "notes": "5d live",
+      "total_units": "1",
+      "total_rev": "210",
+      "branch_split": "PKT 1",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "Pineapple, Kale Pure Pressed 22oz",
+      "launch": "26 Jun 2026",
+      "notes": "6d live",
+      "total_units": "1",
+      "total_rev": "210",
+      "branch_split": "PKT 1",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "Carrot & Celery & Red Apple & Pineapple Cold Pressed 22oz",
+      "launch": "29 Jun 2026",
+      "notes": "3d live",
+      "total_units": "1",
+      "total_rev": "196",
+      "branch_split": "PKT 1",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "Guava & Green apple & Red apple Cold Pressed 22oz",
+      "launch": "29 Jun 2026",
+      "notes": "3d live",
+      "total_units": "1",
+      "total_rev": "196",
+      "branch_split": "PKT 1",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "Mangosteen Smoothie 22oz",
+      "launch": "1 Jul 2026",
+      "notes": "1d live",
+      "total_units": "1",
+      "total_rev": "196",
+      "branch_split": "PKT 1",
+      "yest_units": "1",
+      "status_badge": "🔴 waste risk"
+     },
+     {
+      "memo": "Watermelon Cold Pressed 22oz",
+      "launch": "28 Jun 2026",
+      "notes": "4d live",
+      "total_units": "1",
+      "total_rev": "196",
+      "branch_split": "PKT 1",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "Iced Latte 22oz",
+      "launch": "23 Jun 2026",
+      "notes": "9d live",
+      "total_units": "1",
+      "total_rev": "182",
+      "branch_split": "PKT 1",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "Ice 16oz",
+      "launch": "18 Jun 2026",
+      "notes": "14d live",
+      "total_units": "6",
+      "total_rev": "168",
+      "branch_split": "PKT 6",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "Iced Thai Tea With Lime 22oz",
+      "launch": "25 Jun 2026",
+      "notes": "7d live",
+      "total_units": "1",
+      "total_rev": "164",
+      "branch_split": "PKT 1",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     }
+    ]
+   },
+   {
+    "type_bg": "#AD1457",
+    "type_fg": "#fff",
+    "type_icon": "🍉",
+    "type_label": "Seasonal Fruits",
+    "np_rows": [
+     {
+      "memo": "Orange 400 g (Pack)",
+      "launch": "18 Jun 2026",
+      "notes": "14d live",
+      "total_units": "18",
+      "total_rev": "2,523",
+      "branch_split": "SE3 18",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "LYCHEE 800G (PACK)",
+      "launch": "1 Jul 2026",
+      "notes": "1d live",
+      "total_units": "1",
+      "total_rev": "318",
+      "branch_split": "SE3 1",
+      "yest_units": "1",
+      "status_badge": "🔴 waste risk"
+     }
+    ]
+   },
+   {
+    "type_bg": "#2E7D32",
+    "type_fg": "#fff",
+    "type_icon": "⭐",
+    "type_label": "New Category",
+    "np_rows": [
+     {
+      "memo": "BANANA TOPPING",
+      "launch": "12 Jun 2026",
+      "notes": "20d live",
+      "total_units": "1",
+      "total_rev": "23",
+      "branch_split": "MW1 1",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "DRAGON FRUIT TOPPING",
+      "launch": "19 Jun 2026",
+      "notes": "13d live",
+      "total_units": "1",
+      "total_rev": "23",
+      "branch_split": "MW1 1",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "PINEAPPLE TOPPING",
+      "launch": "29 Jun 2026",
+      "notes": "3d live",
+      "total_units": "1",
+      "total_rev": "23",
+      "branch_split": "MW1 1",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     },
+     {
+      "memo": "SEEDLESS GRAPE TOPPING",
+      "launch": "5 Jun 2026",
+      "notes": "27d live",
+      "total_units": "1",
+      "total_rev": "23",
+      "branch_split": "MW1 1",
+      "yest_units": "0",
+      "status_badge": "🟠 stock-out suspect"
+     }
+    ]
+   }
+  ],
+  "am_items": [
+   {
+    "memo": "MOOVE CLEAR PROTEIN",
+    "last_sold": "24 Jun",
+    "gap_days": "7",
+    "velocity_7d": "0.0",
+    "target": "3",
+    "branch_split": "MW1 40",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 7d"
+   },
+   {
+    "memo": "Pride Parrot Red Smoothie 22 oz.",
+    "last_sold": "29 Jun",
+    "gap_days": "2",
+    "velocity_7d": "0.7",
+    "target": "3",
+    "branch_split": "PKT 25",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 2d"
+   },
+   {
+    "memo": "Orange 400 g (Pack)",
+    "last_sold": "23 Jun",
+    "gap_days": "8",
+    "velocity_7d": "0.0",
+    "target": "1",
+    "branch_split": "SE3 18",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 8d"
+   },
+   {
+    "memo": "Fanta Strawberry 450 ml. (Bottle)",
+    "last_sold": "1 Jul",
+    "gap_days": "0",
+    "velocity_7d": "0.9",
+    "target": "3",
+    "branch_split": "PKT 30",
+    "hypothesis_color": "#C62828",
+    "hypothesis_text": "Waste risk — 7d velocity 0.9/day vs target 3/day"
+   },
+   {
+    "memo": "Pride Parrot Yellow Smoothie 22 oz.",
+    "last_sold": "29 Jun",
+    "gap_days": "2",
+    "velocity_7d": "0.1",
+    "target": "3",
+    "branch_split": "PKT 11",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 2d"
+   },
+   {
+    "memo": "Mango Smoothie 22oz",
+    "last_sold": "30 Jun",
+    "gap_days": "1",
+    "velocity_7d": "1.0",
+    "target": "3",
+    "branch_split": "PKT 9",
+    "hypothesis_color": "#C62828",
+    "hypothesis_text": "Waste risk — 7d velocity 1.0/day vs target 3/day"
+   },
+   {
+    "memo": "Watermelon Smoothie 22oz",
+    "last_sold": "29 Jun",
+    "gap_days": "2",
+    "velocity_7d": "0.6",
+    "target": "3",
+    "branch_split": "PKT 7",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 2d"
+   },
+   {
+    "memo": "Mango Passion Cold Pressed 22oz",
+    "last_sold": "29 Jun",
+    "gap_days": "2",
+    "velocity_7d": "0.6",
+    "target": "3",
+    "branch_split": "PKT 4",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 2d"
+   },
+   {
+    "memo": "Orange Cold Pressed 22oz",
+    "last_sold": "1 Jul",
+    "gap_days": "0",
+    "velocity_7d": "0.4",
+    "target": "3",
+    "branch_split": "PKT 4",
+    "hypothesis_color": "#C62828",
+    "hypothesis_text": "Waste risk — 7d velocity 0.4/day vs target 3/day"
+   },
+   {
+    "memo": "Mango Yoghurt Smoothie 22 oz",
+    "last_sold": "25 Jun",
+    "gap_days": "6",
+    "velocity_7d": "0.3",
+    "target": "3",
+    "branch_split": "PKT 4",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 6d"
+   },
+   {
+    "memo": "Pineapple & Green Apple Cold Pressed 22oz",
+    "last_sold": "1 Jul",
+    "gap_days": "0",
+    "velocity_7d": "0.4",
+    "target": "3",
+    "branch_split": "PKT 3",
+    "hypothesis_color": "#C62828",
+    "hypothesis_text": "Waste risk — 7d velocity 0.4/day vs target 3/day"
+   },
+   {
+    "memo": "Coconut Smoothie 22oz",
+    "last_sold": "1 Jul",
+    "gap_days": "0",
+    "velocity_7d": "0.4",
+    "target": "3",
+    "branch_split": "PKT 3",
+    "hypothesis_color": "#C62828",
+    "hypothesis_text": "Waste risk — 7d velocity 0.4/day vs target 3/day"
+   },
+   {
+    "memo": "Pineapple Smoothie 22oz",
+    "last_sold": "29 Jun",
+    "gap_days": "2",
+    "velocity_7d": "0.4",
+    "target": "3",
+    "branch_split": "PKT 3",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 2d"
+   },
+   {
+    "memo": "Iced Cappuccino 22oz",
+    "last_sold": "29 Jun",
+    "gap_days": "2",
+    "velocity_7d": "0.4",
+    "target": "3",
+    "branch_split": "PKT 3",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 2d"
+   },
+   {
+    "memo": "Iced Thai Milk Tea 22oz",
+    "last_sold": "1 Jul",
+    "gap_days": "0",
+    "velocity_7d": "0.4",
+    "target": "3",
+    "branch_split": "PKT 3",
+    "hypothesis_color": "#C62828",
+    "hypothesis_text": "Waste risk — 7d velocity 0.4/day vs target 3/day"
+   },
+   {
+    "memo": "Strawberry Yoghurt Smoothie 22 oz",
+    "last_sold": "27 Jun",
+    "gap_days": "4",
+    "velocity_7d": "0.3",
+    "target": "3",
+    "branch_split": "PKT 2",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 4d"
+   },
+   {
+    "memo": "Mixberry Smoothie 22oz",
+    "last_sold": "24 Jun",
+    "gap_days": "7",
+    "velocity_7d": "0.0",
+    "target": "3",
+    "branch_split": "PKT 2",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 7d"
+   },
+   {
+    "memo": "LYCHEE 800G (PACK)",
+    "last_sold": "1 Jul",
+    "gap_days": "0",
+    "velocity_7d": "0.1",
+    "target": "1",
+    "branch_split": "SE3 1",
+    "hypothesis_color": "#C62828",
+    "hypothesis_text": "Waste risk — 7d velocity 0.1/day vs target 1/day"
+   },
+   {
+    "memo": "Hot Tea Green Tea 12oz",
+    "last_sold": "30 Jun",
+    "gap_days": "1",
+    "velocity_7d": "0.3",
+    "target": "3",
+    "branch_split": "PKT 3",
+    "hypothesis_color": "#C62828",
+    "hypothesis_text": "Waste risk — 7d velocity 0.3/day vs target 3/day"
+   },
+   {
+    "memo": "Mango, Passion Fruit Pure Pressed 22oz",
+    "last_sold": "27 Jun",
+    "gap_days": "4",
+    "velocity_7d": "0.1",
+    "target": "3",
+    "branch_split": "PKT 1",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 4d"
+   },
+   {
+    "memo": "Pineapple, Kale Pure Pressed 22oz",
+    "last_sold": "26 Jun",
+    "gap_days": "5",
+    "velocity_7d": "0.1",
+    "target": "3",
+    "branch_split": "PKT 1",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 5d"
+   },
+   {
+    "memo": "Carrot & Celery & Red Apple & Pineapple Cold Pressed 22oz",
+    "last_sold": "29 Jun",
+    "gap_days": "2",
+    "velocity_7d": "0.1",
+    "target": "3",
+    "branch_split": "PKT 1",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 2d"
+   },
+   {
+    "memo": "Guava & Green apple & Red apple Cold Pressed 22oz",
+    "last_sold": "29 Jun",
+    "gap_days": "2",
+    "velocity_7d": "0.1",
+    "target": "3",
+    "branch_split": "PKT 1",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 2d"
+   },
+   {
+    "memo": "Mangosteen Smoothie 22oz",
+    "last_sold": "1 Jul",
+    "gap_days": "0",
+    "velocity_7d": "0.1",
+    "target": "3",
+    "branch_split": "PKT 1",
+    "hypothesis_color": "#C62828",
+    "hypothesis_text": "Waste risk — 7d velocity 0.1/day vs target 3/day"
+   },
+   {
+    "memo": "Watermelon Cold Pressed 22oz",
+    "last_sold": "28 Jun",
+    "gap_days": "3",
+    "velocity_7d": "0.1",
+    "target": "3",
+    "branch_split": "PKT 1",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 3d"
+   },
+   {
+    "memo": "Iced Latte 22oz",
+    "last_sold": "23 Jun",
+    "gap_days": "8",
+    "velocity_7d": "0.0",
+    "target": "3",
+    "branch_split": "PKT 1",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 8d"
+   },
+   {
+    "memo": "Ice 16oz",
+    "last_sold": "25 Jun",
+    "gap_days": "6",
+    "velocity_7d": "0.1",
+    "target": "3",
+    "branch_split": "PKT 6",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 6d"
+   },
+   {
+    "memo": "Iced Thai Tea With Lime 22oz",
+    "last_sold": "25 Jun",
+    "gap_days": "6",
+    "velocity_7d": "0.1",
+    "target": "3",
+    "branch_split": "PKT 1",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 6d"
+   },
+   {
+    "memo": "BANANA TOPPING",
+    "last_sold": "12 Jun",
+    "gap_days": "19",
+    "velocity_7d": "0.0",
+    "target": "2",
+    "branch_split": "MW1 1",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 19d"
+   },
+   {
+    "memo": "DRAGON FRUIT TOPPING",
+    "last_sold": "19 Jun",
+    "gap_days": "12",
+    "velocity_7d": "0.0",
+    "target": "2",
+    "branch_split": "MW1 1",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 12d"
+   },
+   {
+    "memo": "PINEAPPLE TOPPING",
+    "last_sold": "29 Jun",
+    "gap_days": "2",
+    "velocity_7d": "0.1",
+    "target": "2",
+    "branch_split": "MW1 1",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 2d"
+   },
+   {
+    "memo": "SEEDLESS GRAPE TOPPING",
+    "last_sold": "5 Jun",
+    "gap_days": "26",
+    "velocity_7d": "0.0",
+    "target": "2",
+    "branch_split": "MW1 1",
+    "hypothesis_color": "#E65100",
+    "hypothesis_text": "Stock-out suspect — sold before, nothing for 26d"
+   }
+  ],
+  "seasonal_skus": [
+   {
+    "fruit_emoji": "🍊",
+    "memo": "Orange 400 g (Pack)",
+    "launch": "18 Jun 2026",
+    "mw1_units": "—",
+    "mw1_per_day": "0",
+    "se3_units": "18",
+    "se3_per_day": "84"
+   },
+   {
+    "fruit_emoji": "🍈",
+    "memo": "LYCHEE 800G (PACK)",
+    "launch": "1 Jul 2026",
+    "mw1_units": "—",
+    "mw1_per_day": "0",
+    "se3_units": "1",
+    "se3_per_day": "11"
+   }
+  ],
+  "seasonal_coverage": [
+   {
+    "branch_label": "MW1 (Suvarnabhumi T1)",
+    "branch_color": "#5551FE",
+    "grape_baseline": "339",
+    "new_fruit_per_day": "0",
+    "coverage_pct": "0",
+    "coverage_color": "#721C24",
+    "daily_gap": "฿339/d",
+    "monthly_impact": "-฿10,170/month",
+    "badge_bg": "#F8D7DA",
+    "badge_text": "🔴 Large gap — push promotion or add SKU"
+   },
+   {
+    "branch_label": "SE3 (Suvarnabhumi T1)",
+    "branch_color": "#F27061",
+    "grape_baseline": "251",
+    "new_fruit_per_day": "95",
+    "coverage_pct": "38",
+    "coverage_color": "#721C24",
+    "daily_gap": "฿156/d",
+    "monthly_impact": "-฿4,689/month",
+    "badge_bg": "#F8D7DA",
+    "badge_text": "🔴 Large gap — push promotion or add SKU"
+   }
+  ],
+  "dormant_branches": [
+   {
+    "branch": "MW1",
+    "header_color": "#5551FE",
+    "branch_count": "5",
+    "dormant_rows": [
+     {
+      "memo_display": "MOOVE CLEAR PROTEIN",
+      "memo_full": "MOOVE CLEAR PROTEIN",
+      "qty_30d": "40",
+      "days_sold_30d": 12,
+      "rev_30d": "5,608",
+      "gap_days": 7,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "MAEVAREE MANGO STICKY RICE SMOOTHI…",
+      "memo_full": "MAEVAREE MANGO STICKY RICE SMOOTHIE 22OZ",
+      "qty_30d": "10",
+      "days_sold_30d": 5,
+      "rev_30d": "2,128",
+      "gap_days": 23,
+      "gap_color": "#C62828"
+     },
+     {
+      "memo_display": "Overnight Oat mango 16 oz",
+      "memo_full": "Overnight Oat mango 16 oz",
+      "qty_30d": "6",
+      "days_sold_30d": 5,
+      "rev_30d": "1,508",
+      "gap_days": 25,
+      "gap_color": "#C62828"
+     },
+     {
+      "memo_display": "GRANOLA TOPPING",
+      "memo_full": "GRANOLA TOPPING",
+      "qty_30d": "3",
+      "days_sold_30d": 3,
+      "rev_30d": "70",
+      "gap_days": 7,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "MANGOSTEEN 400g.",
+      "memo_full": "MANGOSTEEN 400g.",
+      "qty_30d": "3",
+      "days_sold_30d": 2,
+      "rev_30d": "701",
+      "gap_days": 8,
+      "gap_color": "#E65100"
+     }
+    ]
+   },
+   {
+    "branch": "SE3",
+    "header_color": "#F27061",
+    "branch_count": "17",
+    "dormant_rows": [
+     {
+      "memo_display": "MANGO (1 PCS.) 380 G.",
+      "memo_full": "MANGO (1 PCS.) 380 G.",
+      "qty_30d": "22",
+      "days_sold_30d": 11,
+      "rev_30d": "3,084",
+      "gap_days": 13,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "S6 BANANA SMOOTHIE 22OZ",
+      "memo_full": "S6 BANANA SMOOTHIE 22OZ",
+      "qty_30d": "18",
+      "days_sold_30d": 13,
+      "rev_30d": "3,112",
+      "gap_days": 8,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "ROSE APPLE 400G.",
+      "memo_full": "ROSE APPLE 400G.",
+      "qty_30d": "17",
+      "days_sold_30d": 9,
+      "rev_30d": "2,542",
+      "gap_days": 9,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "Orange 400 g (Pack)",
+      "memo_full": "Orange 400 g (Pack)",
+      "qty_30d": "17",
+      "days_sold_30d": 6,
+      "rev_30d": "2,383",
+      "gap_days": 8,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "MAEVAREE MANGO STICKY RICE SMOOTHI…",
+      "memo_full": "MAEVAREE MANGO STICKY RICE SMOOTHIE 22OZ",
+      "qty_30d": "14",
+      "days_sold_30d": 8,
+      "rev_30d": "3,009",
+      "gap_days": 19,
+      "gap_color": "#C62828"
+     },
+     {
+      "memo_display": "MANGO (2 PCS.) 760 G.",
+      "memo_full": "MANGO (2 PCS.) 760 G.",
+      "qty_30d": "13",
+      "days_sold_30d": 7,
+      "rev_30d": "3,645",
+      "gap_days": 13,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "S6 BANANA SMOOTHIE 16OZ",
+      "memo_full": "S6 BANANA SMOOTHIE 16OZ",
+      "qty_30d": "12",
+      "days_sold_30d": 10,
+      "rev_30d": "1,794",
+      "gap_days": 7,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "Cantaloupe 400 g (Pack)",
+      "memo_full": "Cantaloupe 400 g (Pack)",
+      "qty_30d": "11",
+      "days_sold_30d": 7,
+      "rev_30d": "1,542",
+      "gap_days": 22,
+      "gap_color": "#C62828"
+     },
+     {
+      "memo_display": "ORANGE JUICE BOTTLE",
+      "memo_full": "ORANGE JUICE BOTTLE",
+      "qty_30d": "10",
+      "days_sold_30d": 7,
+      "rev_30d": "1,729",
+      "gap_days": 21,
+      "gap_color": "#C62828"
+     },
+     {
+      "memo_display": "MAEVAREE MANGO YOGHURT STICKY RICE…",
+      "memo_full": "MAEVAREE MANGO YOGHURT STICKY RICE SMOTHIE 22OZ",
+      "qty_30d": "10",
+      "days_sold_30d": 6,
+      "rev_30d": "2,150",
+      "gap_days": 19,
+      "gap_color": "#C62828"
+     },
+     {
+      "memo_display": "CI2 ICED ESPRESSO COCONUT 16OZ",
+      "memo_full": "CI2 ICED ESPRESSO COCONUT 16OZ",
+      "qty_30d": "5",
+      "days_sold_30d": 3,
+      "rev_30d": "935",
+      "gap_days": 8,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "T2 ICED THAI TEA WITH LIME 16OZ",
+      "memo_full": "T2 ICED THAI TEA WITH LIME 16OZ",
+      "qty_30d": "5",
+      "days_sold_30d": 5,
+      "rev_30d": "701",
+      "gap_days": 8,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "SEEDLESS GRAPE 400G.",
+      "memo_full": "SEEDLESS GRAPE 400G.",
+      "qty_30d": "5",
+      "days_sold_30d": 2,
+      "rev_30d": "748",
+      "gap_days": 23,
+      "gap_color": "#C62828"
+     },
+     {
+      "memo_display": "YS1 MANGO YOGHURT SMOOTHIE 16OZ",
+      "memo_full": "YS1 MANGO YOGHURT SMOOTHIE 16OZ",
+      "qty_30d": "4",
+      "days_sold_30d": 3,
+      "rev_30d": "654",
+      "gap_days": 7,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "Up size Smoothie & Cold Press",
+      "memo_full": "Up size Smoothie & Cold Press",
+      "qty_30d": "4",
+      "days_sold_30d": 4,
+      "rev_30d": "93",
+      "gap_days": 11,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "Overnight Oat mango 16 oz",
+      "memo_full": "Overnight Oat mango 16 oz",
+      "qty_30d": "3",
+      "days_sold_30d": 3,
+      "rev_30d": "754",
+      "gap_days": 27,
+      "gap_color": "#C62828"
+     },
+     {
+      "memo_display": "MANGO (2 PCS.) 760 G.",
+      "memo_full": "MANGO (2 PCS.) 760 G.",
+      "qty_30d": "3",
+      "days_sold_30d": 1,
+      "rev_30d": "841",
+      "gap_days": 25,
+      "gap_color": "#C62828"
+     }
+    ]
+   },
+   {
+    "branch": "PKT",
+    "header_color": "#2E7D32",
+    "branch_count": "12",
+    "dormant_rows": [
+     {
+      "memo_display": "Up size Smoothie & Cold Press Juic…",
+      "memo_full": "Up size Smoothie & Cold Press Juice 16 oz. to 22 oz .",
+      "qty_30d": "131",
+      "days_sold_30d": 21,
+      "rev_30d": "3,058",
+      "gap_days": 8,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "P1 Mango passion fruit cold presse…",
+      "memo_full": "P1 Mango passion fruit cold pressed 16oz",
+      "qty_30d": "19",
+      "days_sold_30d": 12,
+      "rev_30d": "3,551",
+      "gap_days": 9,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "Indian Tea Ginger Chai 12oz",
+      "memo_full": "Indian Tea Ginger Chai 12oz",
+      "qty_30d": "15",
+      "days_sold_30d": 9,
+      "rev_30d": "1,682",
+      "gap_days": 14,
+      "gap_color": "#C62828"
+     },
+     {
+      "memo_display": "Evian 500ml. (Bottle)",
+      "memo_full": "Evian 500ml. (Bottle)",
+      "qty_30d": "6",
+      "days_sold_30d": 4,
+      "rev_30d": "673",
+      "gap_days": 11,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "CH3 Espresso (hot) 4oz",
+      "memo_full": "CH3 Espresso (hot) 4oz",
+      "qty_30d": "5",
+      "days_sold_30d": 4,
+      "rev_30d": "584",
+      "gap_days": 10,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "Mango Berry Smoothie 16oz",
+      "memo_full": "Mango Berry Smoothie 16oz",
+      "qty_30d": "5",
+      "days_sold_30d": 3,
+      "rev_30d": "864",
+      "gap_days": 20,
+      "gap_color": "#C62828"
+     },
+     {
+      "memo_display": "Mango 400 g. (Pack)",
+      "memo_full": "Mango 400 g. (Pack)",
+      "qty_30d": "5",
+      "days_sold_30d": 4,
+      "rev_30d": "748",
+      "gap_days": 10,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "C7 Green Apple & Celery & Pineappl…",
+      "memo_full": "C7 Green Apple & Celery & Pineapple Cold Pressed 16 oz.",
+      "qty_30d": "4",
+      "days_sold_30d": 4,
+      "rev_30d": "692",
+      "gap_days": 13,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "Watermelon 400 g. (Pack)",
+      "memo_full": "Watermelon 400 g. (Pack)",
+      "qty_30d": "4",
+      "days_sold_30d": 2,
+      "rev_30d": "561",
+      "gap_days": 11,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "Pride Parrot Red Smoothie 22 oz.",
+      "memo_full": "Pride Parrot Red Smoothie 22 oz.",
+      "qty_30d": "4",
+      "days_sold_30d": 2,
+      "rev_30d": "748",
+      "gap_days": 26,
+      "gap_color": "#C62828"
+     },
+     {
+      "memo_display": "Up size Smoothie & Cold Press Juic…",
+      "memo_full": "Up size Smoothie & Cold Press Juice 16 oz. to 22 oz .",
+      "qty_30d": "3",
+      "days_sold_30d": 3,
+      "rev_30d": "70",
+      "gap_days": 9,
+      "gap_color": "#E65100"
+     },
+     {
+      "memo_display": "S5 mango smoothie  16oz",
+      "memo_full": "S5 mango smoothie  16oz",
+      "qty_30d": "3",
+      "days_sold_30d": 3,
+      "rev_30d": "449",
+      "gap_days": 10,
+      "gap_color": "#E65100"
+     }
+    ]
+   }
+  ],
+  "anomaly_items": [
+   {
+    "anomaly_text": "PKT net ฿6,888 yesterday — the lowest day in the 30-day window (-39.2% vs avg).",
+    "anomaly_section_ref": "30-Day Trend Chart §3"
+   },
+   {
+    "anomaly_text": "AM Review flags 32 new-product SKUs (stock-out suspect / waste risk) — mostly one-off PKT custom cold-pressed & smoothie combinations sold once and not repeated.",
+    "anomaly_section_ref": "New Products §4"
+   },
+   {
+    "anomaly_text": "34 SKUs across all three branches have not sold in 7+ days (SE3 has 17).",
+    "anomaly_section_ref": "Dormant SKUs §7"
+   },
+   {
+    "anomaly_text": "Seasonal fruit coverage: SE3 at 38% of grape baseline, MW1 at 0% — note MW1’s Shine Muscat Grapes are still active (sold again yesterday), so the \"season ended\" framing may not apply there.",
+    "anomaly_section_ref": "Seasonal Tracker §6"
+   }
+  ]
+ },
+ "sections": {
+  "am_review": true,
+  "seasonal": true,
+  "dormant": true,
+  "forecast_shown": true,
+  "forecast_suppressed": false,
+  "anomaly_shown": true
+ }
+}
