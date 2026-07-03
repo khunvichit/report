@@ -38,17 +38,18 @@ def render_repeats(html, repeats):
         items = repeats.get(name, [])
         out = []
         for item in items:
-            block = inner
+            # Scope any list-valued keys on this item (nested REPEATs, e.g.
+            # dormant_rows inside dormant_branches) so the recursive call below
+            # resolves them against THIS item, not a same-named global list.
+            local_repeats = dict(repeats)
+            local_repeats.update({k: v for k, v in item.items() if isinstance(v, list)})
+            block = render_repeats(inner, local_repeats)
             for k, v in item.items():
-                block = block.replace("{{" + k + "}}", str(v))
+                if not isinstance(v, list):
+                    block = block.replace("{{" + k + "}}", str(v))
             out.append(block)
         return "".join(out)
-    # Loop until no nested REPEATs remain (handles REPEAT inside REPEAT).
-    prev = None
-    while prev != html:
-        prev = html
-        html = pattern.sub(repl, html)
-    return html
+    return pattern.sub(repl, html)
 
 def render_sections(html, sections):
     pattern = re.compile(r"<!--\s*SECTION:(\w+)[\s\S]*?-->(.*?)<!--\s*/SECTION:\1\s*-->", re.DOTALL)
