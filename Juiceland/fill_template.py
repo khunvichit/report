@@ -32,23 +32,28 @@ import sys, json, re
 
 def render_repeats(html, repeats):
     # Process each REPEAT block. Non-greedy, DOTALL so it spans newlines.
+    # Nested REPEATs (e.g. dormant_rows inside dormant_branches) are scoped per-item:
+    # if an item's value for a key is a list, that list is used for the nested REPEAT
+    # of the same name within that item's block, instead of falling back to the global
+    # (branch-shared) list. Without this, every branch would render the same nested rows.
     pattern = re.compile(r"<!--\s*REPEAT:(\w+)[\s\S]*?-->(.*?)<!--\s*/REPEAT:\1\s*-->", re.DOTALL)
     def repl(m):
         name, inner = m.group(1), m.group(2)
         items = repeats.get(name, [])
         out = []
         for item in items:
+            local = dict(repeats)
+            for k, v in item.items():
+                if isinstance(v, list):
+                    local[k] = v
             block = inner
             for k, v in item.items():
-                block = block.replace("{{" + k + "}}", str(v))
+                if not isinstance(v, list):
+                    block = block.replace("{{" + k + "}}", str(v))
+            block = render_repeats(block, local)
             out.append(block)
         return "".join(out)
-    # Loop until no nested REPEATs remain (handles REPEAT inside REPEAT).
-    prev = None
-    while prev != html:
-        prev = html
-        html = pattern.sub(repl, html)
-    return html
+    return pattern.sub(repl, html)
 
 def render_sections(html, sections):
     pattern = re.compile(r"<!--\s*SECTION:(\w+)[\s\S]*?-->(.*?)<!--\s*/SECTION:\1\s*-->", re.DOTALL)
