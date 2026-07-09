@@ -32,23 +32,31 @@ import sys, json, re
 
 def render_repeats(html, repeats):
     # Process each REPEAT block. Non-greedy, DOTALL so it spans newlines.
+    # Each item's dict may itself hold list-valued keys (e.g. "dormant_rows": [...]) —
+    # those scope a nested REPEAT of the same name to just that parent item, instead of
+    # falling back to one global list shared by every parent (which would make every
+    # branch/type render identical child rows).
     pattern = re.compile(r"<!--\s*REPEAT:(\w+)[\s\S]*?-->(.*?)<!--\s*/REPEAT:\1\s*-->", re.DOTALL)
-    def repl(m):
-        name, inner = m.group(1), m.group(2)
-        items = repeats.get(name, [])
-        out = []
-        for item in items:
-            block = inner
-            for k, v in item.items():
-                block = block.replace("{{" + k + "}}", str(v))
-            out.append(block)
-        return "".join(out)
-    # Loop until no nested REPEATs remain (handles REPEAT inside REPEAT).
-    prev = None
-    while prev != html:
-        prev = html
-        html = pattern.sub(repl, html)
-    return html
+    def render(html, local_repeats):
+        def repl(m):
+            name, inner = m.group(1), m.group(2)
+            items = local_repeats.get(name, [])
+            out = []
+            for item in items:
+                child_repeats = {k: v for k, v in item.items() if isinstance(v, list)}
+                block = render(inner, {**local_repeats, **child_repeats}) if child_repeats else inner
+                for k, v in item.items():
+                    if isinstance(v, list):
+                        continue
+                    block = block.replace("{{" + k + "}}", str(v))
+                out.append(block)
+            return "".join(out)
+        prev = None
+        while prev != html:
+            prev = html
+            html = pattern.sub(repl, html)
+        return html
+    return render(html, repeats)
 
 def render_sections(html, sections):
     pattern = re.compile(r"<!--\s*SECTION:(\w+)[\s\S]*?-->(.*?)<!--\s*/SECTION:\1\s*-->", re.DOTALL)
