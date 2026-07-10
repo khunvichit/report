@@ -28,22 +28,33 @@ data.json shape (the model produces this — small, well under the token limit):
               once per list item (substituting that item's keys), then drop the markers.
 - sections -> for each <!-- SECTION:name --> .. <!-- /SECTION:name -->, keep inner if True else remove.
 """
-import sys, json, re
+import sys, json, re, os
 
 def render_repeats(html, repeats):
     # Process each REPEAT block. Non-greedy, DOTALL so it spans newlines.
+    # Nested-aware: an item's own list-valued keys are added to a LOCAL repeat
+    # scope (shadowing the global one) before recursing, so e.g. REPEAT:dormant_rows
+    # nested inside REPEAT:dormant_branches picks up THAT branch's rows, not a
+    # (nonexistent) top-level "dormant_rows" list.
     pattern = re.compile(r"<!--\s*REPEAT:(\w+)[\s\S]*?-->(.*?)<!--\s*/REPEAT:\1\s*-->", re.DOTALL)
     def repl(m):
         name, inner = m.group(1), m.group(2)
         items = repeats.get(name, [])
         out = []
         for item in items:
+            local = dict(repeats)
+            for k, v in item.items():
+                if isinstance(v, list):
+                    local[k] = v
             block = inner
             for k, v in item.items():
-                block = block.replace("{{" + k + "}}", str(v))
+                if not isinstance(v, list):
+                    block = block.replace("{{" + k + "}}", str(v))
+            block = render_repeats(block, local)
             out.append(block)
         return "".join(out)
-    # Loop until no nested REPEATs remain (handles REPEAT inside REPEAT).
+    # Loop until no (remaining, non-nested) REPEATs change (handles multiple
+    # sibling blocks at the same level).
     prev = None
     while prev != html:
         prev = html
@@ -72,6 +83,17 @@ def main():
         html = f.read()
     with open(data_path, encoding="utf-8") as f:
         data = json.load(f)
+    # The 🔮 AI Estimate block lives in a separate file (juiceland-prediction.md
+    # requires it render at the TOP of the body). Inject its raw markup at the
+    # fixed anchor before rendering, so its own SECTION/REPEAT markers resolve
+    # in the same pass as the main template's.
+    pred_path = os.path.join(os.path.dirname(os.path.abspath(template_path)),
+                              "juiceland-prediction-section.html")
+    anchor = '<div style="padding:24px;">'
+    if os.path.exists(pred_path) and anchor in html:
+        with open(pred_path, encoding="utf-8") as f:
+            pred_html = f.read()
+        html = html.replace(anchor, anchor + "\n" + pred_html, 1)
     # Order matters: sections first (so dropped sections remove their REPEATs too),
     # then repeats, then scalars (scalars may appear inside repeated blocks already handled).
     html = render_sections(html, data.get("sections", {}))
