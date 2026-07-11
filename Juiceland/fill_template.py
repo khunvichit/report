@@ -31,24 +31,34 @@ data.json shape (the model produces this — small, well under the token limit):
 import sys, json, re
 
 def render_repeats(html, repeats):
-    # Process each REPEAT block. Non-greedy, DOTALL so it spans newlines.
+    """Expand REPEAT blocks, nesting-aware: a list-valued key on an item (e.g.
+    top20_rows inside a top20_branches item) becomes the repeat context for any
+    REPEAT block nested inside that item's own block, instead of falling back to
+    the (usually absent) top-level list of the same name."""
     pattern = re.compile(r"<!--\s*REPEAT:(\w+)[\s\S]*?-->(.*?)<!--\s*/REPEAT:\1\s*-->", re.DOTALL)
-    def repl(m):
-        name, inner = m.group(1), m.group(2)
-        items = repeats.get(name, [])
-        out = []
-        for item in items:
-            block = inner
-            for k, v in item.items():
-                block = block.replace("{{" + k + "}}", str(v))
-            out.append(block)
-        return "".join(out)
-    # Loop until no nested REPEATs remain (handles REPEAT inside REPEAT).
-    prev = None
-    while prev != html:
-        prev = html
-        html = pattern.sub(repl, html)
-    return html
+    def expand(html, context):
+        def repl(m):
+            name, inner = m.group(1), m.group(2)
+            items = context.get(name, [])
+            out = []
+            for item in items:
+                local = dict(context)
+                for k, v in item.items():
+                    if isinstance(v, list):
+                        local[k] = v
+                block = inner
+                for k, v in item.items():
+                    if not isinstance(v, list):
+                        block = block.replace("{{" + k + "}}", str(v))
+                block = expand(block, local)
+                out.append(block)
+            return "".join(out)
+        prev = None
+        while prev != html:
+            prev = html
+            html = pattern.sub(repl, html)
+        return html
+    return expand(html, repeats)
 
 def render_sections(html, sections):
     pattern = re.compile(r"<!--\s*SECTION:(\w+)[\s\S]*?-->(.*?)<!--\s*/SECTION:\1\s*-->", re.DOTALL)
@@ -78,6 +88,7 @@ def main():
     html = render_repeats(html, data.get("repeats", {}))
     html = render_scalars(html, data.get("scalars", {}))
     # Strip the template's how-to comment header and any leftover REPEAT/SECTION markers.
+    html = re.sub(r"<!--\s*={10,}[\s\S]*?={10,}\s*-->", "", html)
     html = re.sub(r"<!--\s*/?(?:REPEAT|SECTION):\w+[\s\S]*?-->", "", html)
     # Warn (to stderr) if any placeholder survived — never block the send.
     leftovers = sorted(set(re.findall(r"\{\{(\w+)\}\}", html)))
