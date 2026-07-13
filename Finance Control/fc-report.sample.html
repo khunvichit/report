@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<!-- fc-template.html — CHAW Finance Control FULL HTML report / email body. LOCKED layout.
+     Filled by fill_template.py from render.json (produced by fc_build_data.py). Never regenerate as model output.
+     Scalars use double-brace names; variable-count rows use REPEAT; conditional blocks use SECTION.
+     CHAW CI: PRIMARY #5551FE · SECONDARY #F27061 · TERTIARY #F5EDE4 · Poppins + Thai fallback. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+Thai:wght@400;600;700&display=swap');
+    body { margin:0; background:#F5EDE4;
+      font-family:'Poppins','Noto Sans Thai','Sarabun',Tahoma,Arial,sans-serif; }
+    table { border-collapse:collapse; width:100%; }
+    th,td { padding:6px; }
+    th { background:#5551FE; color:#fff; text-align:left; }
+    .thai, td, th { font-family:'Poppins','Noto Sans Thai','Sarabun',Tahoma,Arial,sans-serif; }
+  </style>
+</head>
+<body>
+<div style="max-width:880px;margin:0 auto;background:#F5EDE4;color:#1B2A4A;font-size:13px;font-family:'Poppins','Noto Sans Thai','Sarabun',Tahoma,Arial,sans-serif;padding:16px;">
+
+  <div style="background:#5551FE;color:#fff;padding:18px 22px;border-radius:8px 8px 0 0;">
+    <div style="font-size:20px;font-weight:700;letter-spacing:.5px;">CHAW · Weekly Finance Control</div>
+    <div style="font-size:12px;opacity:.9;margin-top:2px;">22 Jun 2026 · SFB · Vending · ActionCity · all amounts THB · source: NetSuite SuiteQL (ns_runReport 412/273 preferred; SuiteQL fallback)</div>
+  </div>
+  <div style="background:#fff;border:1px solid #E0DCD3;border-top:none;padding:20px 22px;border-radius:0 0 8px 8px;">
+
+    <!-- ===== 1. EXECUTIVE SUMMARY ===== -->
+    <h2 style="color:#5551FE;border-bottom:2px solid #5551FE;padding-bottom:4px;">1 · Executive Summary</h2>
+    <h3 style="color:#5551FE;margin:8px 0;">Cash &amp; Receivables</h3>
+    <table>
+      <tr><th>Subsidiary</th><th style="text-align:right;">Cash</th><th style="text-align:right;">Total AR</th>
+        <th style="text-align:right;">Current</th><th style="text-align:right;">Overdue</th>
+        <th style="text-align:right;">% O/D</th><th style="text-align:right;">Sub-Acct</th><th>Bank Recon</th></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;">
+        <td style="font-weight:600;">SFB</td><td align="right">15,106,488</td>
+        <td align="right">975,263</td><td align="right">40,577</td>
+        <td align="right" style="color:#F27061;">934,686</td><td align="right">95.8%</td>
+        <td align="right">400,850</td><td style="background:#E8F5E9;">31/05/2026 (22d)</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;">
+        <td style="font-weight:600;">Vending</td><td align="right">3,971,449</td>
+        <td align="right">4,863</td><td align="right">1,927</td>
+        <td align="right" style="color:#F27061;">2,935</td><td align="right">60.4%</td>
+        <td align="right">305,852</td><td style="background:#E8F5E9;">15/06/2026 (7d)</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;">
+        <td style="font-weight:600;">ActionCity</td><td align="right">2,788,331</td>
+        <td align="right">165,512</td><td align="right">41,112</td>
+        <td align="right" style="color:#F27061;">124,400</td><td align="right">75.2%</td>
+        <td align="right">294,465</td><td style="background:#E8F5E9;">15/06/2026 (7d)</td></tr>
+      
+      <tr style="background:#5551FE;color:#fff;font-weight:700;">
+        <td>TOTAL</td><td align="right">21,866,268</td><td align="right">1,145,638</td>
+        <td align="right">83,616</td><td align="right">1,062,021</td><td></td>
+        <td align="right">1,001,167</td><td></td></tr>
+    </table>
+
+    
+    <div style="background:#F8C8C0;border:1px solid #F27061;padding:10px;margin:12px 0;border-radius:4px;">⚠ Bank recon: Bank recon OK (SFB KBANK/SCB at 22d, monitor)</div>
+    
+
+    <h3 style="color:#5551FE;margin:14px 0 6px;">Undue VAT Position (account balances)</h3>
+    <table>
+      <tr><th>Account</th><th>Description</th><th style="text-align:right;">Balance</th></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11101003</td><td class="thai">ภาษีซื้อ-ยังไม่ถึงกำหนด (Input VAT Undue, asset)</td><td align="right">1,791,029.49</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>21026002</td><td class="thai">ภาษีขายยังไม่ถึงกำหนด (Output VAT Undue, liability)</td><td align="right">-27,116.40</td></tr>
+      
+    </table>
+    <p style="font-size:12px;color:#555;">Vendor reversal check: 38 vendors NOT reversed (+325,492),
+      54 vendors OVER-reversed (-3,920,832). Detail in §5.
+      Note: V-00313 (Revenue Dept) behaves like a VAT clearing vendor — verify before treating as staff error.</p>
+
+    <h3 style="color:#5551FE;margin:14px 0 6px;">Top 10 Risk Items</h3>
+    <table>
+      <tr><th>#</th><th>Area</th><th>Item</th><th>Detail</th><th style="text-align:right;">Amount</th><th>Severity</th></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>1</td><td>Memorized Txn</td><td class="thai">[VEN] Management fee from Chaw (id93)</td>
+        <td style="font-size:12px;" class="thai">OVERDUE 21d — recurring BILL did not fire</td><td align="right">1,198,400</td>
+        <td style="background:#FBE4E0;font-weight:700;">CRITICAL</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>2</td><td>Memorized Txn</td><td class="thai">Pending-approval recurring INV (18 defs)</td>
+        <td style="font-size:12px;" class="thai">Will NOT execute until approved; incl. 2× CHAW INV @1.73M</td><td align="right">4,486,000</td>
+        <td style="background:#FBE4E0;font-weight:700;">CRITICAL</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>3</td><td>Undue VAT</td><td class="thai">V-00040 King Power (SFB)</td>
+        <td style="font-size:12px;" class="thai">Over-reversed -989,454; tax/landlord — verify double JV</td><td align="right">989,454</td>
+        <td style="background:#F8C8C0;font-weight:700;">HIGH</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>4</td><td>AR</td><td class="thai">แอลที โซลูชั่นส์ (C-7492305, SFB)</td>
+        <td style="font-size:12px;" class="thai">435,487 overdue, oldest due 28/04 (>2× 30d term)</td><td align="right">435,487</td>
+        <td style="background:#FBE4E0;font-weight:700;">CRITICAL</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>5</td><td>Undue VAT</td><td class="thai">V-00656 (Vending)</td>
+        <td style="font-size:12px;" class="thai">Over-reversed -632,175 across 2 txns — likely double JV</td><td align="right">632,175</td>
+        <td style="background:#F8C8C0;font-weight:700;">HIGH</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>6</td><td>Memorized Txn</td><td class="thai">V-00401 (id170, SFB)</td>
+        <td style="font-size:12px;" class="thai">OVERDUE 10d, 22 remaining — BILL not firing</td><td align="right">68,687</td>
+        <td style="background:#F8C8C0;font-weight:700;">HIGH</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>7</td><td>AR</td><td class="thai">มาสเตอร์ มายนด์ (C-00277, SFB)</td>
+        <td style="font-size:12px;" class="thai">302,213 fully overdue (due 01/06, past 30d term)</td><td align="right">302,213</td>
+        <td style="background:#FFF3E0;font-weight:700;">PAST TERMS</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>8</td><td>Cash Deposit</td><td class="thai">Multiple stale sub-accounts</td>
+        <td style="font-size:12px;" class="thai">JV stopped >14d: SFB Ksher Alipay, OCG; ACT LINEPAY/TRUEMONEY/WECHATPAY</td><td align="right">—</td>
+        <td style="background:#FBE4E0;font-weight:700;">CRITICAL</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>9</td><td>AR</td><td class="thai">ชุติมา แซ่หลิ่ว (C-7493244, ACT)</td>
+        <td style="font-size:12px;" class="thai">77,900 overdue since 21/02 — far past 30d term</td><td align="right">77,900</td>
+        <td style="background:#FBE4E0;font-weight:700;">CRITICAL</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>10</td><td>Undue VAT</td><td class="thai">V-00656 not reversed (SFB)</td>
+        <td style="font-size:12px;" class="thai">55,863 positive, oldest 29/08/2025 — reversal missed</td><td align="right">55,863</td>
+        <td style="background:#F8C8C0;font-weight:700;">HIGH</td></tr>
+      
+    </table>
+
+    <h3 style="color:#5551FE;margin:14px 0 6px;">Priority Actions</h3>
+    <table>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td style="background:#FBE4E0;font-weight:700;white-space:nowrap;">URGENT</td>
+        <td class="thai">Investigate & re-fire OVERDUE memorized txns — esp. [VEN] Mgmt fee (id93, 1.2M, 21d) and V-00401 (id170).</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td style="background:#FBE4E0;font-weight:700;white-space:nowrap;">URGENT</td>
+        <td class="thai">Approve the 18 pending-approval recurring INV/JE (incl. 2× CHAW 1.73M, Vending Nestlé 500K) — they will not post until approved.</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td style="background:#FBE4E0;font-weight:700;white-space:nowrap;">CRITICAL</td>
+        <td class="thai">Restart/verify automated JV on stale deposit sub-accounts (SFB Ksher Alipay 31/03/25, OCG 17/03/26; ACT LINEPAY/TRUEMONEY/WECHATPAY).</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td style="background:#FBE4E0;font-weight:700;white-space:nowrap;">CRITICAL</td>
+        <td class="thai">Chase SFB overdue AR: แอลที 435K, มาสเตอร์มายนด์ 302K, King Power 99.5K (95.8% of SFB AR overdue).</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td style="background:#F5EDE4;font-weight:700;white-space:nowrap;">ACTION</td>
+        <td class="thai">Reconcile SFB KBANK & SCB (last 31/05) before 30-day breach; confirm 261B KTB Cash 143,874 transfer.</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td style="background:#F5EDE4;font-weight:700;white-space:nowrap;">ACTION</td>
+        <td class="thai">Review undue-VAT over-reversals (V-00040, V-00656, V-00516, V-00284) for duplicate reversal JVs; post missing reversals for positive vendors >180d.</td></tr>
+      
+    </table>
+
+    <!-- ===== 2. AR DETAIL ===== -->
+    <h2 style="color:#5551FE;border-bottom:2px solid #5551FE;padding-bottom:4px;margin-top:24px;">2 · AR Detail &amp; Credit-Term Cross-Check</h2>
+    <table>
+      <tr><th>Subsidiary</th><th>Customer</th><th style="text-align:right;">Term</th><th style="text-align:right;">Open</th>
+        <th style="text-align:right;">Current</th><th style="text-align:right;">Overdue</th><th style="text-align:right;">Days O/D</th><th>Status</th></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>SFB</td><td class="thai">บ.แอลที โซลูชั่นส์ แอนด์ เทคโนโลยี จำกัด</td><td align="right">30</td><td align="right">458,066</td>
+        <td align="right">22,579</td><td align="right" style="color:#F27061;">435,487</td>
+        <td align="right">55</td><td style="background:#F8C8C0;">PAST TERMS</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>SFB</td><td class="thai">บ.มาสเตอร์ มายนด์ คอนซัลแตนท์ จำกัด</td><td align="right">30</td><td align="right">302,213</td>
+        <td align="right">0</td><td align="right" style="color:#F27061;">302,213</td>
+        <td align="right">21</td><td style="background:#E8F5E9;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>SFB</td><td class="thai">บ.คิง เพาเวอร์ คอร์ปอเรชั่น จำกัด</td><td align="right">30</td><td align="right">99,600</td>
+        <td align="right">100</td><td align="right" style="color:#F27061;">99,500</td>
+        <td align="right">55</td><td style="background:#F8C8C0;">PAST TERMS</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>SFB</td><td class="thai">THAI AIRASIA X CO.,LTD.</td><td align="right">30</td><td align="right">40,708</td>
+        <td align="right">0</td><td align="right" style="color:#F27061;">40,708</td>
+        <td align="right">89</td><td style="background:#FBE4E0;">CRITICAL</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>SFB</td><td class="thai">BANGKOK AIRWAYS PUBLIC COMPANY LIMITED.</td><td align="right">30</td><td align="right">36,935</td>
+        <td align="right">1,900</td><td align="right" style="color:#F27061;">35,035</td>
+        <td align="right">64</td><td style="background:#FBE4E0;">CRITICAL</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>SFB</td><td class="thai">SINGAPORE AIRLINES LTD.</td><td align="right">30</td><td align="right">18,234</td>
+        <td align="right">15,298</td><td align="right" style="color:#F27061;">2,936</td>
+        <td align="right">43</td><td style="background:#F8C8C0;">PAST TERMS</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>SFB</td><td class="thai">QANTAS AIRWAYS LIMITED</td><td align="right">30</td><td align="right">6,862</td>
+        <td align="right">0</td><td align="right" style="color:#F27061;">6,862</td>
+        <td align="right">31</td><td style="background:#F8C8C0;">PAST TERMS</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>SFB</td><td class="thai">VIETJET AVIATION JOINT STOCK COMPANY</td><td align="right">30</td><td align="right">4,562</td>
+        <td align="right">0</td><td align="right" style="color:#F27061;">4,562</td>
+        <td align="right">33</td><td style="background:#F8C8C0;">PAST TERMS</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>SFB</td><td class="thai">MYANMAR AIRWAYS INTERNATIONAL COMPANY LIMITED</td><td align="right">30</td><td align="right">1,956</td>
+        <td align="right">0</td><td align="right" style="color:#F27061;">1,956</td>
+        <td align="right">24</td><td style="background:#E8F5E9;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>SFB</td><td class="thai">AIR FRANCE</td><td align="right">30</td><td align="right">1,554</td>
+        <td align="right">0</td><td align="right" style="color:#F27061;">1,554</td>
+        <td align="right">1</td><td style="background:#E8F5E9;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>SFB</td><td class="thai">EMIRATES</td><td align="right">30</td><td align="right">1,193</td>
+        <td align="right">0</td><td align="right" style="color:#F27061;">1,193</td>
+        <td align="right">38</td><td style="background:#F8C8C0;">PAST TERMS</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>SFB</td><td class="thai">บ.ธนาคารกรุงศรีอยุธยา จำกัด (มหาชน)</td><td align="right">30</td><td align="right">900</td>
+        <td align="right">0</td><td align="right" style="color:#F27061;">900</td>
+        <td align="right">3</td><td style="background:#E8F5E9;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>SFB</td><td class="thai">EL AL ISRAEL AIRLINES</td><td align="right">30</td><td align="right">700</td>
+        <td align="right">700</td><td align="right" style="color:#F27061;">0</td>
+        <td align="right">0</td><td style="background:#E8F5E9;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>SFB</td><td class="thai">INDIGO AIRLINES</td><td align="right">30</td><td align="right">600</td>
+        <td align="right">0</td><td align="right" style="color:#F27061;">600</td>
+        <td align="right">32</td><td style="background:#F8C8C0;">PAST TERMS</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>SFB</td><td class="thai">JETSTAR AIRWAYS PTY LIMITED.</td><td align="right">30</td><td align="right">580</td>
+        <td align="right">0</td><td align="right" style="color:#F27061;">580</td>
+        <td align="right">24</td><td style="background:#E8F5E9;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>SFB</td><td class="thai">ASIANA AIRLINES</td><td align="right">30</td><td align="right">300</td>
+        <td align="right">0</td><td align="right" style="color:#F27061;">300</td>
+        <td align="right">38</td><td style="background:#F8C8C0;">PAST TERMS</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>SFB</td><td class="thai">SIBERIA AIRLINES, JSC.</td><td align="right">30</td><td align="right">300</td>
+        <td align="right">0</td><td align="right" style="color:#F27061;">300</td>
+        <td align="right">5</td><td style="background:#E8F5E9;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#F5EDE4;font-weight:bold;">
+        <td>SFB TOTAL</td><td class="thai"></td><td align="right"></td><td align="right">975,263</td>
+        <td align="right">40,577</td><td align="right" style="color:#F27061;">934,686</td>
+        <td align="right"></td><td style="background:#F5EDE4;"></td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>Vending</td><td class="thai">บริษัท ดิจิเพย์ จำกัด</td><td align="right">30</td><td align="right">4,863</td>
+        <td align="right">1,927</td><td align="right" style="color:#F27061;">2,935</td>
+        <td align="right">23</td><td style="background:#E8F5E9;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#F5EDE4;font-weight:bold;">
+        <td>Vending TOTAL</td><td class="thai"></td><td align="right"></td><td align="right">4,863</td>
+        <td align="right">1,927</td><td align="right" style="color:#F27061;">2,935</td>
+        <td align="right"></td><td style="background:#F5EDE4;"></td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>ActionCity</td><td class="thai">ชุติมา แซ่หลิ่ว</td><td align="right">30</td><td align="right">77,900</td>
+        <td align="right">0</td><td align="right" style="color:#F27061;">77,900</td>
+        <td align="right">121</td><td style="background:#FBE4E0;">CRITICAL</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>ActionCity</td><td class="thai">ACTIONCITY PTE.LTD.</td><td align="right">30</td><td align="right">46,500</td>
+        <td align="right">0</td><td align="right" style="color:#F27061;">46,500</td>
+        <td align="right">5</td><td style="background:#E8F5E9;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFFFFF;font-weight:normal;">
+        <td>ActionCity</td><td class="thai">(+60 current retail invoices, due Jul)</td><td align="right">30</td><td align="right">41,112</td>
+        <td align="right">41,112</td><td align="right" style="color:#F27061;">0</td>
+        <td align="right">0</td><td style="background:#E8F5E9;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#F5EDE4;font-weight:bold;">
+        <td>ActionCity TOTAL</td><td class="thai"></td><td align="right"></td><td align="right">165,512</td>
+        <td align="right">41,112</td><td align="right" style="color:#F27061;">124,400</td>
+        <td align="right"></td><td style="background:#F5EDE4;"></td></tr>
+      
+    </table>
+
+    <!-- ===== 3. BANK RECONCILIATION ===== -->
+    <h2 style="color:#5551FE;border-bottom:2px solid #5551FE;padding-bottom:4px;margin-top:24px;">3 · Bank Reconciliation</h2>
+    <table>
+      <tr><th>Acct No.</th><th>Account</th><th>Subsidiary</th><th style="text-align:right;">Balance</th>
+        <th>Last Recon</th><th style="text-align:right;">Days</th><th>Status</th></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013001</td><td>SFB SAVINGS KBANK 0852571217</td><td>SFB</td>
+        <td align="right">8,662,167.32</td><td>31/05/2026</td><td align="right">22</td>
+        <td style="background:#E8F5E9;font-weight:600;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013004</td><td>SFB SAVINGS SCB 0172624625</td><td>SFB</td>
+        <td align="right">4,838,795.88</td><td>31/05/2026</td><td align="right">22</td>
+        <td style="background:#E8F5E9;font-weight:600;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013005</td><td>SFB SAVINGS KTB 0460616978</td><td>SFB</td>
+        <td align="right">1,204,674.15</td><td>15/06/2026</td><td align="right">7</td>
+        <td style="background:#E8F5E9;font-weight:600;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013007</td><td>VENDING SAVING KBANK 0852606630</td><td>Vending</td>
+        <td align="right">3,665,597.31</td><td>15/06/2026</td><td align="right">7</td>
+        <td style="background:#E8F5E9;font-weight:600;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013036</td><td>ACT SAVINGS KBANK 2093307898</td><td>ActionCity</td>
+        <td align="right">2,493,866.16</td><td>15/06/2026</td><td align="right">7</td>
+        <td style="background:#E8F5E9;font-weight:600;">OK</td></tr>
+      
+    </table>
+    <p style="font-size:12px;color:#555;">Balance on accounts not reconciled within 30 days: 0.00 THB.
+      Recon date = latest cleared transaction per main bank account; sub-accounts assessed in §4.</p>
+
+    <!-- ===== 4. CASH DEPOSIT VERIFICATION ===== -->
+    <h2 style="color:#5551FE;border-bottom:2px solid #5551FE;padding-bottom:4px;margin-top:24px;">4 · Cash Deposit Verification (T+2 / T+3)</h2>
+    <p style="font-size:12px;color:#555;">Flow: Invoice → Sub-account → bank statement imported → automated JV → main account.
+      Cash Sales = T+2, all other channels = T+3. A sub-account should hold only deposits inside that window.
+      Verdict counts: OK:5 · LATE:4 · OVERDUE:2 · CRITICAL:8 · NEGATIVE:8.</p>
+    <table>
+      <tr><th>Acct No.</th><th>Channel</th><th>Subsidiary</th><th style="text-align:right;">Balance</th>
+        <th>Last JV</th><th style="text-align:right;">Days</th><th>Bench</th><th>Verdict</th></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013001A</td><td>Cash Sales</td><td>SFB</td>
+        <td align="right">296,200.42</td><td>21/06/2026</td><td align="right">1</td><td>T+2</td>
+        <td style="background:#E8F5E9;font-weight:600;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013001B</td><td>Master Card / Visa</td><td>SFB</td>
+        <td align="right">-89,092.04</td><td>21/06/2026</td><td align="right">1</td><td>T+3</td>
+        <td style="background:#FBE4E0;font-weight:600;">NEGATIVE</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013001C</td><td>Union Pay</td><td>SFB</td>
+        <td align="right">64,729.80</td><td>31/05/2026</td><td align="right">22</td><td>T+3</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013001D</td><td>Alipay/Wechat</td><td>SFB</td>
+        <td align="right">-159,832.46</td><td>21/06/2026</td><td align="right">1</td><td>T+3</td>
+        <td style="background:#FBE4E0;font-weight:600;">NEGATIVE</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013001E</td><td>Prompt Pay</td><td>SFB</td>
+        <td align="right">-5,060.20</td><td>21/06/2026</td><td align="right">1</td><td>T+3</td>
+        <td style="background:#FBE4E0;font-weight:600;">NEGATIVE</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013001G</td><td>Wechat</td><td>SFB</td>
+        <td align="right">182,124.40</td><td>31/05/2026</td><td align="right">22</td><td>T+3</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013001I</td><td>KCC</td><td>SFB</td>
+        <td align="right">-32,093.73</td><td>20/06/2026</td><td align="right">2</td><td>T+3</td>
+        <td style="background:#FBE4E0;font-weight:600;">NEGATIVE</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013005B</td><td>Cash</td><td>SFB</td>
+        <td align="right">143,874.00</td><td>—</td><td align="right">—</td><td>T+3</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013007A</td><td>Cash Sales</td><td>Vending</td>
+        <td align="right">90,251.38</td><td>21/06/2026</td><td align="right">1</td><td>T+2</td>
+        <td style="background:#E8F5E9;font-weight:600;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013007B</td><td>Master Card / Visa</td><td>Vending</td>
+        <td align="right">492.08</td><td>21/06/2026</td><td align="right">1</td><td>T+3</td>
+        <td style="background:#E8F5E9;font-weight:600;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013007C</td><td>Alipay/Wechat</td><td>Vending</td>
+        <td align="right">-68,510.03</td><td>21/06/2026</td><td align="right">1</td><td>T+3</td>
+        <td style="background:#FBE4E0;font-weight:600;">NEGATIVE</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013007D</td><td>Union Pay</td><td>Vending</td>
+        <td align="right">2,241.00</td><td>31/05/2026</td><td align="right">22</td><td>T+3</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013007E</td><td>Prompt Pay / KPLUS</td><td>Vending</td>
+        <td align="right">-10,708.00</td><td>21/06/2026</td><td align="right">1</td><td>T+3</td>
+        <td style="background:#FBE4E0;font-weight:600;">NEGATIVE</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013007F</td><td>Ksher Alipay</td><td>Vending</td>
+        <td align="right">80,204.00</td><td>31/05/2026</td><td align="right">22</td><td>T+3</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013007I</td><td>Ksher Truemoney</td><td>Vending</td>
+        <td align="right">40.00</td><td>30/04/2026</td><td align="right">53</td><td>T+3</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013007L</td><td>CASHLESS</td><td>Vending</td>
+        <td align="right">211,841.50</td><td>18/06/2026</td><td align="right">4</td><td>T+3</td>
+        <td style="background:#FFF3E0;font-weight:600;">LATE</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013036A</td><td>Master / Visa</td><td>ActionCity</td>
+        <td align="right">-2,630.44</td><td>21/06/2026</td><td align="right">1</td><td>T+3</td>
+        <td style="background:#FBE4E0;font-weight:600;">NEGATIVE</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013036B</td><td>Promptpay</td><td>ActionCity</td>
+        <td align="right">4,635.15</td><td>21/06/2026</td><td align="right">1</td><td>T+3</td>
+        <td style="background:#E8F5E9;font-weight:600;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013036C</td><td>Alipay / Wechat</td><td>ActionCity</td>
+        <td align="right">479.57</td><td>21/06/2026</td><td align="right">1</td><td>T+3</td>
+        <td style="background:#E8F5E9;font-weight:600;">OK</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013036F</td><td>Cash Sales</td><td>ActionCity</td>
+        <td align="right">-4,140.41</td><td>21/06/2026</td><td align="right">1</td><td>T+2</td>
+        <td style="background:#FBE4E0;font-weight:600;">NEGATIVE</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013036G</td><td>Omise</td><td>ActionCity</td>
+        <td align="right">36,125.91</td><td>18/06/2026</td><td align="right">4</td><td>T+3</td>
+        <td style="background:#FFF3E0;font-weight:600;">LATE</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013036I</td><td>Shopee</td><td>ActionCity</td>
+        <td align="right">9,803.00</td><td>15/06/2026</td><td align="right">7</td><td>T+3</td>
+        <td style="background:#FBE4E0;font-weight:600;">OVERDUE</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013036J</td><td>Lazada</td><td>ActionCity</td>
+        <td align="right">550.00</td><td>31/05/2026</td><td align="right">22</td><td>T+3</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013036K</td><td>TikTok</td><td>ActionCity</td>
+        <td align="right">1,369.03</td><td>17/06/2026</td><td align="right">5</td><td>T+3</td>
+        <td style="background:#FFF3E0;font-weight:600;">LATE</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013036L</td><td>Consignment</td><td>ActionCity</td>
+        <td align="right">203,161.00</td><td>29/05/2026</td><td align="right">24</td><td>T+3</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013036P</td><td>KSher</td><td>ActionCity</td>
+        <td align="right">16,118.50</td><td>18/06/2026</td><td align="right">4</td><td>T+3</td>
+        <td style="background:#FFF3E0;font-weight:600;">LATE</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>11013036R</td><td>NAYAX</td><td>ActionCity</td>
+        <td align="right">28,993.30</td><td>10/06/2026</td><td align="right">12</td><td>T+3</td>
+        <td style="background:#FBE4E0;font-weight:600;">OVERDUE</td></tr>
+      
+    </table>
+
+    <!-- ===== 5. UNDUE VAT ===== -->
+    <h2 style="color:#5551FE;border-bottom:2px solid #5551FE;padding-bottom:4px;margin-top:24px;">5 · Undue VAT — Staff Reversal Check by Vendor</h2>
+    <p style="font-size:12px;color:#555;">Positive = NOT yet reversed (reversal JV not posted). Negative = OVER-reversed.
+      Excludes Tax Agency &amp; unlinked entries. Input VAT Undue acct balance 1,791,029.49; Output -27,116.40.</p>
+    <div style="background:#F27061;color:#fff;padding:6px 10px;font-weight:700;border-radius:4px;">NOT YET REVERSED — staff action required (38 vendors, +325,492)</div>
+    <table>
+      <tr><th>Sub</th><th>Vendor ID</th><th>Vendor</th><th style="text-align:right;">Balance</th>
+        <th>Oldest</th><th style="text-align:right;">Age(d)</th><th>Urgency</th><th>Action</th></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00656</td><td class="thai" style="font-size:12px;">(V-00656 — No Entities)</td>
+        <td align="right">55,863.48</td><td>29/08/2025</td><td align="right">297</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00369</td><td class="thai" style="font-size:12px;">ORACLE CORPORATION SINGAPORE PTE.LTD.</td>
+        <td align="right">37,735.82</td><td>09/06/2025</td><td align="right">378</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00596</td><td class="thai" style="font-size:12px;">บ.ดีคอน65 จำกัด</td>
+        <td align="right">4,900.00</td><td>01/07/2025</td><td align="right">356</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00314</td><td class="thai" style="font-size:12px;">คุณ ณัฐพร แซ่ตัน</td>
+        <td align="right">2,823.96</td><td>03/09/2025</td><td align="right">292</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00241</td><td class="thai" style="font-size:12px;">บ.ธนาคารกสิกรไทย จำกัด (มหาชน)</td>
+        <td align="right">2,753.38</td><td>10/01/2025</td><td align="right">528</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00716</td><td class="thai" style="font-size:12px;">บ.เอส ซี ที โลจิสติก จำกัด</td>
+        <td align="right">2,734.00</td><td>16/09/2025</td><td align="right">279</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00001</td><td class="thai" style="font-size:12px;">บ.ไทยน้ำทิพย์ คอร์ปอเรชั่น จำกัด (มหาชน)</td>
+        <td align="right">1,034.27</td><td>09/11/2024</td><td align="right">590</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00431</td><td class="thai" style="font-size:12px;">บ.บรรจงคิด จำกัด</td>
+        <td align="right">523.25</td><td>22/07/2025</td><td align="right">335</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00003</td><td class="thai" style="font-size:12px;">ห้างหุ้นส่วนจำกัด ไนน์ตี้ไนน์ เบเกอรี่</td>
+        <td align="right">511.00</td><td>28/02/2025</td><td align="right">479</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00042</td><td class="thai" style="font-size:12px;">V-00042</td>
+        <td align="right">301.00</td><td>04/03/2025</td><td align="right">475</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00163</td><td class="thai" style="font-size:12px;">บ.ปตท. น้ำมันและการค้าปลีก จำกัด(มหาชน)</td>
+        <td align="right">276.73</td><td>31/05/2025</td><td align="right">387</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00345</td><td class="thai" style="font-size:12px;">บ.ล็อคตั้น วัฒนา อินชัวรันส์ โบรคเกอร์ส (ไทย) จำกัด</td>
+        <td align="right">252.07</td><td>01/11/2025</td><td align="right">233</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00230</td><td class="thai" style="font-size:12px;">(V-00230)</td>
+        <td align="right">160.15</td><td>16/09/2024</td><td align="right">644</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00149</td><td class="thai" style="font-size:12px;">V-00149</td>
+        <td align="right">106.50</td><td>30/05/2025</td><td align="right">388</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00006</td><td class="thai" style="font-size:12px;">บ.ซุปเปอร์ชีป จำกัด</td>
+        <td align="right">104.28</td><td>01/01/2025</td><td align="right">537</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00210</td><td class="thai" style="font-size:12px;">V-00210</td>
+        <td align="right">68.17</td><td>10/11/2024</td><td align="right">589</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00246</td><td class="thai" style="font-size:12px;">V-00246</td>
+        <td align="right">43.85</td><td>30/05/2025</td><td align="right">388</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00308</td><td class="thai" style="font-size:12px;">คุณ พรศรี ศรีทับทิม</td>
+        <td align="right">16.10</td><td>09/03/2026</td><td align="right">105</td>
+        <td style="background:#FFF3E0;font-weight:600;">MEDIUM</td><td style="font-size:12px;">Monitor</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00357</td><td class="thai" style="font-size:12px;">V-00357</td>
+        <td align="right">5.95</td><td>30/09/2024</td><td align="right">630</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00313</td><td class="thai" style="font-size:12px;">กรมสรรพากร (Revenue Department) — TAX CLEARING</td>
+        <td align="right">101,852.02</td><td>31/08/2024</td><td align="right">660</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00686</td><td class="thai" style="font-size:12px;">บ.มาสเตอร์คูล อินเตอร์เนชั่นแนล ซีแอล จำกัด</td>
+        <td align="right">9,660.00</td><td>15/09/2025</td><td align="right">280</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00051</td><td class="thai" style="font-size:12px;">บ.เจ้าพระยาคอมพิวเทค จำกัด</td>
+        <td align="right">1,575.00</td><td>21/07/2025</td><td align="right">336</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00230</td><td class="thai" style="font-size:12px;">(V-00230)</td>
+        <td align="right">676.87</td><td>25/12/2025</td><td align="right">179</td>
+        <td style="background:#FFF3E0;font-weight:600;">MEDIUM</td><td style="font-size:12px;">Monitor</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00015</td><td class="thai" style="font-size:12px;">บ.เอ็ม วอร์เตอร์ จำกัด</td>
+        <td align="right">481.76</td><td>01/07/2024</td><td align="right">721</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00026</td><td class="thai" style="font-size:12px;">บ.ออฟฟิศเมท (ไทย) จำกัด</td>
+        <td align="right">40.56</td><td>31/07/2024</td><td align="right">691</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00156</td><td class="thai" style="font-size:12px;">บ.ซีพี แอ็กซ์ตร้า จำกัด(มหาชน)</td>
+        <td align="right">15.11</td><td>01/12/2025</td><td align="right">203</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00274</td><td class="thai" style="font-size:12px;">สำนักงานจัดการทรัพย์สิน (ค่าบริหารจัดการสยามสแควร์วัน)</td>
+        <td align="right">41,971.58</td><td>01/07/2025</td><td align="right">356</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00326</td><td class="thai" style="font-size:12px;">Zoku Pte. Ltd.</td>
+        <td align="right">13,490.40</td><td>31/12/2025</td><td align="right">173</td>
+        <td style="background:#FFF3E0;font-weight:600;">MEDIUM</td><td style="font-size:12px;">Monitor</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00695</td><td class="thai" style="font-size:12px;">บ.คิงดอม คัม จำกัด</td>
+        <td align="right">11,531.48</td><td>31/08/2025</td><td align="right">295</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00237</td><td class="thai" style="font-size:12px;">บ.สยาม รีเทล ดีเวลล็อปเม้นท์ จำกัด</td>
+        <td align="right">8,779.05</td><td>01/07/2025</td><td align="right">356</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>C-00006</td><td class="thai" style="font-size:12px;">C-00006</td>
+        <td align="right">8,682.38</td><td>16/06/2025</td><td align="right">371</td>
+        <td style="background:#FBE4E0;font-weight:600;">CRITICAL</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00230</td><td class="thai" style="font-size:12px;">(V-00230)</td>
+        <td align="right">7,853.53</td><td>31/08/2025</td><td align="right">295</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00452</td><td class="thai" style="font-size:12px;">PONY ON WHEEL (THAILAND) CO.,LTD. (INTERCOMPANY)</td>
+        <td align="right">2,742.15</td><td>01/11/2025</td><td align="right">233</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00308</td><td class="thai" style="font-size:12px;">คุณ พรศรี ศรีทับทิม</td>
+        <td align="right">2,262.19</td><td>30/01/2026</td><td align="right">143</td>
+        <td style="background:#FFF3E0;font-weight:600;">MEDIUM</td><td style="font-size:12px;">Monitor</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00297</td><td class="thai" style="font-size:12px;">V-00297</td>
+        <td align="right">1,528.94</td><td>01/08/2025</td><td align="right">325</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00659</td><td class="thai" style="font-size:12px;">บ.เทคแฮงค์เอ้าท์ กรุ๊ป จำกัด</td>
+        <td align="right">1,050.00</td><td>04/09/2025</td><td align="right">291</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00656</td><td class="thai" style="font-size:12px;">(V-00656 — No Entities)</td>
+        <td align="right">1,005.60</td><td>31/10/2025</td><td align="right">234</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00151</td><td class="thai" style="font-size:12px;">V-00151</td>
+        <td align="right">79.61</td><td>01/09/2025</td><td align="right">294</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Post reversal JV</td></tr>
+      
+    </table>
+    <div style="background:#5551FE;color:#fff;padding:6px 10px;font-weight:700;margin-top:10px;border-radius:4px;">OVER-REVERSED — correction required (54 vendors, -3,920,832)</div>
+    <table>
+      <tr><th>Sub</th><th>Vendor ID</th><th>Vendor</th><th style="text-align:right;">Balance</th>
+        <th>Oldest</th><th style="text-align:right;">Age(d)</th><th>Urgency</th><th>Action</th></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00040</td><td class="thai" style="font-size:12px;">บ.คิง เพาเวอร์ สุวรรณภูมิ จำกัด (King Power)</td>
+        <td align="right" style="color:#F27061;">-989,454.26</td><td>25/10/2024</td><td align="right">605</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Review double JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00313</td><td class="thai" style="font-size:12px;">กรมสรรพากร (Revenue Department) — TAX CLEARING</td>
+        <td align="right" style="color:#F27061;">-761,445.22</td><td>05/08/2024</td><td align="right">686</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Review double JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00315</td><td class="thai" style="font-size:12px;">บ.เดอะมอลล์ กรุ๊ป จำกัด</td>
+        <td align="right" style="color:#F27061;">-102,410.16</td><td>02/12/2024</td><td align="right">567</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Review double JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00202</td><td class="thai" style="font-size:12px;">เจ้าหนี้ ทั่วไป</td>
+        <td align="right" style="color:#F27061;">-97,351.88</td><td>01/01/2025</td><td align="right">537</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Review double JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00052</td><td class="thai" style="font-size:12px;">บ.เพอร์เฟค คอมพาเนียน กรุ๊ป จำกัด</td>
+        <td align="right" style="color:#F27061;">-90,517.96</td><td>22/07/2024</td><td align="right">700</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Review double JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00245</td><td class="thai" style="font-size:12px;">บ.มาสเตอร์ มายนด์ คอนซัลแตนท์ จำกัด</td>
+        <td align="right" style="color:#F27061;">-20,020.68</td><td>09/12/2024</td><td align="right">560</td>
+        <td style="background:#FFF3E0;font-weight:600;">MEDIUM</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00260</td><td class="thai" style="font-size:12px;">บ.ลีสซิ่งกสิกรไทย จำกัด</td>
+        <td align="right" style="color:#F27061;">-19,056.24</td><td>10/02/2025</td><td align="right">497</td>
+        <td style="background:#FFF3E0;font-weight:600;">MEDIUM</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00095</td><td class="thai" style="font-size:12px;">V-00095</td>
+        <td align="right" style="color:#F27061;">-15,190.00</td><td>20/11/2024</td><td align="right">579</td>
+        <td style="background:#FFF3E0;font-weight:600;">MEDIUM</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00516</td><td class="thai" style="font-size:12px;">กรมศุลกากร (Customs Dept)</td>
+        <td align="right" style="color:#F27061;">-6,737.08</td><td>14/02/2025</td><td align="right">493</td>
+        <td style="background:#FFF3E0;font-weight:600;">MEDIUM</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00194</td><td class="thai" style="font-size:12px;">บ.ชอ แมเนจเม้นท์ จำกัด</td>
+        <td align="right" style="color:#F27061;">-2,019.23</td><td>24/09/2024</td><td align="right">636</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00282</td><td class="thai" style="font-size:12px;">V-00282</td>
+        <td align="right" style="color:#F27061;">-1,822.62</td><td>14/02/2025</td><td align="right">493</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00155</td><td class="thai" style="font-size:12px;">V-00155</td>
+        <td align="right" style="color:#F27061;">-1,821.31</td><td>31/03/2025</td><td align="right">448</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00080</td><td class="thai" style="font-size:12px;">V-00080</td>
+        <td align="right" style="color:#F27061;">-924.00</td><td>01/11/2025</td><td align="right">233</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00017</td><td class="thai" style="font-size:12px;">V-00017</td>
+        <td align="right" style="color:#F27061;">-911.74</td><td>31/12/2024</td><td align="right">538</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00068</td><td class="thai" style="font-size:12px;">V-00068</td>
+        <td align="right" style="color:#F27061;">-658.13</td><td>01/01/2025</td><td align="right">537</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00026</td><td class="thai" style="font-size:12px;">บ.ออฟฟิศเมท (ไทย) จำกัด</td>
+        <td align="right" style="color:#F27061;">-657.26</td><td>11/10/2024</td><td align="right">619</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00454</td><td class="thai" style="font-size:12px;">V-00454</td>
+        <td align="right" style="color:#F27061;">-613.20</td><td>01/01/2025</td><td align="right">537</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00220</td><td class="thai" style="font-size:12px;">V-00220</td>
+        <td align="right" style="color:#F27061;">-430.50</td><td>01/01/2025</td><td align="right">537</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00558</td><td class="thai" style="font-size:12px;">V-00558</td>
+        <td align="right" style="color:#F27061;">-307.48</td><td>01/05/2025</td><td align="right">417</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00021</td><td class="thai" style="font-size:12px;">V-00021</td>
+        <td align="right" style="color:#F27061;">-295.05</td><td>30/08/2024</td><td align="right">661</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00528</td><td class="thai" style="font-size:12px;">V-00528</td>
+        <td align="right" style="color:#F27061;">-294.39</td><td>31/08/2025</td><td align="right">295</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00010</td><td class="thai" style="font-size:12px;">V-00010</td>
+        <td align="right" style="color:#F27061;">-256.62</td><td>31/01/2025</td><td align="right">507</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00044</td><td class="thai" style="font-size:12px;">V-00044</td>
+        <td align="right" style="color:#F27061;">-196.26</td><td>03/12/2024</td><td align="right">566</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00362</td><td class="thai" style="font-size:12px;">V-00362</td>
+        <td align="right" style="color:#F27061;">-64.96</td><td>11/12/2024</td><td align="right">558</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00025</td><td class="thai" style="font-size:12px;">V-00025</td>
+        <td align="right" style="color:#F27061;">-45.53</td><td>05/08/2024</td><td align="right">686</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00151</td><td class="thai" style="font-size:12px;">V-00151</td>
+        <td align="right" style="color:#F27061;">-1.36</td><td>10/03/2025</td><td align="right">469</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00656</td><td class="thai" style="font-size:12px;">(V-00656 — No Entities)</td>
+        <td align="right" style="color:#F27061;">-632,175.18</td><td>31/12/2025</td><td align="right">173</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Review double JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00040</td><td class="thai" style="font-size:12px;">บ.คิง เพาเวอร์ สุวรรณภูมิ จำกัด (King Power)</td>
+        <td align="right" style="color:#F27061;">-235,017.00</td><td>15/07/2024</td><td align="right">707</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Review double JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00029</td><td class="thai" style="font-size:12px;">บ.กราฟ เอ็กซ์ จำกัด</td>
+        <td align="right" style="color:#F27061;">-53,926.02</td><td>30/07/2024</td><td align="right">692</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Review double JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00284</td><td class="thai" style="font-size:12px;">บ.โสตถิกุลชัย 2009 จำกัด</td>
+        <td align="right" style="color:#F27061;">-48,440.41</td><td>31/12/2024</td><td align="right">538</td>
+        <td style="background:#FFF3E0;font-weight:600;">MEDIUM</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00014</td><td class="thai" style="font-size:12px;">บ.ซีโน-แปซิฟิคเทรดดิ้ง (ไทยแลนด์) จำกัด</td>
+        <td align="right" style="color:#F27061;">-31,834.45</td><td>23/07/2024</td><td align="right">699</td>
+        <td style="background:#FFF3E0;font-weight:600;">MEDIUM</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00194</td><td class="thai" style="font-size:12px;">บ.ชอ แมเนจเม้นท์ จำกัด</td>
+        <td align="right" style="color:#F27061;">-11,516.15</td><td>15/08/2024</td><td align="right">676</td>
+        <td style="background:#FFF3E0;font-weight:600;">MEDIUM</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00320</td><td class="thai" style="font-size:12px;">บ.ดิจิเพย์ จำกัด</td>
+        <td align="right" style="color:#F27061;">-7,329.29</td><td>01/11/2024</td><td align="right">598</td>
+        <td style="background:#FFF3E0;font-weight:600;">MEDIUM</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00095</td><td class="thai" style="font-size:12px;">V-00095</td>
+        <td align="right" style="color:#F27061;">-4,200.00</td><td>01/08/2024</td><td align="right">690</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00010</td><td class="thai" style="font-size:12px;">V-00010</td>
+        <td align="right" style="color:#F27061;">-2,727.61</td><td>31/07/2024</td><td align="right">691</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00210</td><td class="thai" style="font-size:12px;">V-00210</td>
+        <td align="right" style="color:#F27061;">-1,095.21</td><td>30/07/2024</td><td align="right">692</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00151</td><td class="thai" style="font-size:12px;">V-00151</td>
+        <td align="right" style="color:#F27061;">-923.09</td><td>01/11/2025</td><td align="right">233</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00296</td><td class="thai" style="font-size:12px;">V-00296</td>
+        <td align="right" style="color:#F27061;">-651.59</td><td>01/06/2025</td><td align="right">386</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00386</td><td class="thai" style="font-size:12px;">V-00386</td>
+        <td align="right" style="color:#F27061;">-639.78</td><td>02/11/2024</td><td align="right">597</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00355</td><td class="thai" style="font-size:12px;">V-00355</td>
+        <td align="right" style="color:#F27061;">-485.79</td><td>01/01/2025</td><td align="right">537</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00335</td><td class="thai" style="font-size:12px;">V-00335</td>
+        <td align="right" style="color:#F27061;">-440.28</td><td>01/02/2025</td><td align="right">506</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00163</td><td class="thai" style="font-size:12px;">บ.ปตท. น้ำมันและการค้าปลีก จำกัด(มหาชน)</td>
+        <td align="right" style="color:#F27061;">-412.65</td><td>31/08/2025</td><td align="right">295</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00159</td><td class="thai" style="font-size:12px;">V-00159</td>
+        <td align="right" style="color:#F27061;">-273.54</td><td>01/04/2025</td><td align="right">447</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00313</td><td class="thai" style="font-size:12px;">กรมสรรพากร (Revenue Department) — TAX CLEARING</td>
+        <td align="right" style="color:#F27061;">-192.81</td><td>01/03/2026</td><td align="right">113</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00460</td><td class="thai" style="font-size:12px;">V-00460</td>
+        <td align="right" style="color:#F27061;">-115.50</td><td>01/04/2025</td><td align="right">447</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00502</td><td class="thai" style="font-size:12px;">V-00502</td>
+        <td align="right" style="color:#F27061;">-70.00</td><td>01/04/2025</td><td align="right">447</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00500</td><td class="thai" style="font-size:12px;">V-00500</td>
+        <td align="right" style="color:#F27061;">-56.52</td><td>01/04/2025</td><td align="right">447</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00489</td><td class="thai" style="font-size:12px;">V-00489</td>
+        <td align="right" style="color:#F27061;">-35.33</td><td>01/04/2025</td><td align="right">447</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00313</td><td class="thai" style="font-size:12px;">กรมสรรพากร (Revenue Department) — TAX CLEARING</td>
+        <td align="right" style="color:#F27061;">-460,234.10</td><td>16/06/2025</td><td align="right">371</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Review double JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00516</td><td class="thai" style="font-size:12px;">กรมศุลกากร (Customs Dept)</td>
+        <td align="right" style="color:#F27061;">-282,050.00</td><td>20/06/2025</td><td align="right">367</td>
+        <td style="background:#F8C8C0;font-weight:600;">HIGH</td><td style="font-size:12px;">Review double JV</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00030</td><td class="thai" style="font-size:12px;">บ.เฟอร์นเม็ท จำกัด</td>
+        <td align="right" style="color:#F27061;">-23,787.47</td><td>22/05/2025</td><td align="right">396</td>
+        <td style="background:#FFF3E0;font-weight:600;">MEDIUM</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00366</td><td class="thai" style="font-size:12px;">V-00366</td>
+        <td align="right" style="color:#F27061;">-8,682.38</td><td>16/06/2025</td><td align="right">371</td>
+        <td style="background:#FFF3E0;font-weight:600;">MEDIUM</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00455</td><td class="thai" style="font-size:12px;">V-00455</td>
+        <td align="right" style="color:#F27061;">-11.22</td><td>10/12/2025</td><td align="right">194</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00450</td><td class="thai" style="font-size:12px;">V-00450</td>
+        <td align="right" style="color:#F27061;">-5.39</td><td>01/10/2025</td><td align="right">264</td>
+        <td style="background:#E8F5E9;font-weight:600;">LOW</td><td style="font-size:12px;">Review</td></tr>
+      
+    </table>
+
+    <!-- ===== 6. MEMORIZED TRANSACTIONS ===== -->
+    <h2 style="color:#5551FE;border-bottom:2px solid #5551FE;padding-bottom:4px;margin-top:24px;">6 · Memorized Transactions Control</h2>
+    <p style="font-size:12px;color:#555;">Active 64 · OVERDUE 7 · PENDING APPROVAL 18 · DUE THIS WEEK 5 · ON TRACK 35.</p>
+    <div style="background:#F27061;color:#fff;padding:6px 10px;font-weight:700;border-radius:4px;">OVERDUE — failed to execute</div>
+    <table>
+      <tr><th>ID</th><th>Name</th><th>Sub</th><th>Type</th><th>Next Date</th><th style="text-align:right;">Days O/D</th>
+        <th style="text-align:right;">Amount</th><th style="text-align:right;">Rem.</th></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>93</td><td class="thai" style="font-size:12px;">[VEN] Management fee from Chaw</td>
+        <td>Vending</td><td>BILL</td><td>01/06/2026</td><td align="right">21</td>
+        <td align="right">-1,198,400.00</td><td align="right">indef</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>222</td><td class="thai" style="font-size:12px;">V-00135 บ.ไวท์ แซนด์ กระบี่ โฮเต็ล</td>
+        <td>CHAW</td><td>BILL</td><td>03/06/2026</td><td align="right">19</td>
+        <td align="right">-43,861.44</td><td align="right">indef</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>221</td><td class="thai" style="font-size:12px;">V-00135 บ.ไวท์ แซนด์ กระบี่ โฮเต็ล</td>
+        <td>CHAW</td><td>BILL</td><td>10/06/2026</td><td align="right">12</td>
+        <td align="right">-27,875.64</td><td align="right">indef</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>149</td><td class="thai" style="font-size:12px;">V-00242 บ.ไอคอนสยาม จำกัด (สำนักงานใหญ่)</td>
+        <td>TOYzINBOX</td><td>BILL</td><td>11/06/2026</td><td align="right">11</td>
+        <td align="right">-10,700.00</td><td align="right">3</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>170</td><td class="thai" style="font-size:12px;">V-00401 ไพบูลย์ พายัพวัฒนวงษ์</td>
+        <td>SFB</td><td>BILL</td><td>12/06/2026</td><td align="right">10</td>
+        <td align="right">-68,686.87</td><td align="right">22</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>299</td><td class="thai" style="font-size:12px;">Journal Entry Inbox ค่าธรรมเนียมบัตรเครดิต</td>
+        <td>ActionCity</td><td>GENJRNL</td><td>15/06/2026</td><td align="right">7</td>
+        <td align="right">—</td><td align="right">indef</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>311</td><td class="thai" style="font-size:12px;">V-00304 คุณ พิจิตร จักรทอง</td>
+        <td>SFB</td><td>BILL</td><td>15/06/2026</td><td align="right">7</td>
+        <td align="right">-7,133.00</td><td align="right">indef</td></tr>
+      
+    </table>
+    <div style="background:#F8C8C0;color:#5b2b24;padding:6px 10px;font-weight:700;margin-top:10px;border-radius:4px;">PENDING APPROVAL — will not fire until approved</div>
+    <table>
+      <tr><th>ID</th><th>Name</th><th>Sub</th><th>Type</th><th>Next Date</th><th style="text-align:right;">Amount</th><th style="text-align:right;">Rem.</th></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>299</td><td class="thai" style="font-size:12px;">Journal Entry Inbox ค่าธรรมเนียมบัตรเครดิต</td>
+        <td>ActionCity</td><td>GENJRNL</td><td>15/06/2026</td><td align="right">—</td><td align="right">indef</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>292</td><td class="thai" style="font-size:12px;">C-07246 บ.คิดซ์ แอนด์ คิทซ์ จำกัด</td>
+        <td>Inbox</td><td>INV</td><td>01/07/2026</td><td align="right">25,680.00</td><td align="right">3</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>304</td><td class="thai" style="font-size:12px;">C-00002 บ.สยาม เเฟรนไชส์ ธุรกิจ จำกั</td>
+        <td>CHAW</td><td>INV</td><td>01/07/2026</td><td align="right">1,733,400.00</td><td align="right">6</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>283</td><td class="thai" style="font-size:12px;">C-07246 บ.คิดซ์ แอนด์ คิทซ์ จำกัด</td>
+        <td>Inbox</td><td>INV</td><td>01/07/2026</td><td align="right">16,050.00</td><td align="right">3</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>306</td><td class="thai" style="font-size:12px;">C-74240 บ.แอ็คชั่นซิตี้ (ประเทศไทย) จ</td>
+        <td>CHAW</td><td>INV</td><td>01/07/2026</td><td align="right">214,000.00</td><td align="right">6</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>157</td><td class="thai" style="font-size:12px;">C-00360 บ.เนสท์เล่ (ไทย) จำกัด</td>
+        <td>Vending</td><td>INV</td><td>01/07/2026</td><td align="right">500,000.00</td><td align="right">5</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>303</td><td class="thai" style="font-size:12px;">C-00003 บ.เวนดิ้ง เซอร์วิสเซส จำกัด</td>
+        <td>CHAW</td><td>INV</td><td>01/07/2026</td><td align="right">1,733,400.00</td><td align="right">6</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>305</td><td class="thai" style="font-size:12px;">C-00005 บ.อินบ๊อกซ์ คอปอเรชั่น จำกั</td>
+        <td>CHAW</td><td>INV</td><td>01/07/2026</td><td align="right">107,000.00</td><td align="right">6</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>296</td><td class="thai" style="font-size:12px;">C-072489 ธนากฤช คุณาจิระกุล</td>
+        <td>Inbox</td><td>INV</td><td>05/07/2026</td><td align="right">25,680.00</td><td align="right">1</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>205</td><td class="thai" style="font-size:12px;">C-00421 บ.ยูไนเต็ด แดรี่ฟูดส์ จำกัด</td>
+        <td>Inbox</td><td>INV</td><td>07/07/2026</td><td align="right">5,350.00</td><td align="right">4</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>200</td><td class="thai" style="font-size:12px;">C-07196 มงคล พุทธพงษ์</td>
+        <td>Inbox</td><td>INV</td><td>07/07/2026</td><td align="right">5,350.00</td><td align="right">4</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>313</td><td class="thai" style="font-size:12px;">C-00177 บ.สยาม โอเชี่ยน เวิร์ล กรุงเ</td>
+        <td>Inbox</td><td>INV</td><td>09/07/2026</td><td align="right">6,420.00</td><td align="right">8</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>272</td><td class="thai" style="font-size:12px;">C-00087 ศิริรัตน์ ศิวินา</td>
+        <td>Inbox</td><td>INV</td><td>12/07/2026</td><td align="right">6,955.00</td><td align="right">8</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>273</td><td class="thai" style="font-size:12px;">C-00087 ศิริรัตน์ ศิวินา</td>
+        <td>Inbox</td><td>INV</td><td>12/07/2026</td><td align="right">6,955.00</td><td align="right">8</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>301</td><td class="thai" style="font-size:12px;">C-00174 บ.วี ฟิตเนส จำกัด</td>
+        <td>Inbox</td><td>INV</td><td>20/07/2026</td><td align="right">26,750.00</td><td align="right">4</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>183</td><td class="thai" style="font-size:12px;">C-00144 บ.ที.ยู.เค แลนด์ จำกัด</td>
+        <td>Inbox</td><td>INV</td><td>22/08/2026</td><td align="right">6,420.00</td><td align="right">2</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>184</td><td class="thai" style="font-size:12px;">C-00144 บ.ที.ยู.เค แลนด์ จำกัด</td>
+        <td>Inbox</td><td>INV</td><td>22/08/2026</td><td align="right">5,350.00</td><td align="right">2</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>243</td><td class="thai" style="font-size:12px;">C-00156 บ.บีเอ็นเอช เมดิเคิล เซ็นเต</td>
+        <td>Inbox</td><td>INV</td><td>05/09/2026</td><td align="right">7,490.00</td><td align="right">5</td></tr>
+      
+    </table>
+    <div style="background:#5551FE;color:#fff;padding:6px 10px;font-weight:700;margin-top:10px;border-radius:4px;">DUE THIS WEEK — approved</div>
+    <table>
+      <tr><th>ID</th><th>Name</th><th>Sub</th><th>Type</th><th>Next Date</th><th style="text-align:right;">Amount</th><th style="text-align:right;">Rem.</th></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#F5EDE4;"><td>92</td><td class="thai" style="font-size:12px;">V-00151 บ.แอดวานซ์ ไวร์เลส เน็ทเวอร์</td>
+        <td>Vending</td><td>BILL</td><td>22/06/2026</td><td align="right">-11,987.96</td><td align="right">12</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#F5EDE4;"><td>270</td><td class="thai" style="font-size:12px;">[CHAW]E นิติบุคคลอาคารชุด เดอะ เฮริเทจ</td>
+        <td>CHAW</td><td>BILL</td><td>22/06/2026</td><td align="right">-530.50</td><td align="right">9</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#F5EDE4;"><td>232</td><td class="thai" style="font-size:12px;">ACT-SQ1 ทรู อินเทอร์เน็ต คอร์ปอเรชั่น</td>
+        <td>ActionCity</td><td>BILL</td><td>25/06/2026</td><td align="right">-2,031.93</td><td align="right">7</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#F5EDE4;"><td>266</td><td class="thai" style="font-size:12px;">[CHAW] ค่าน้ำมันตัดบัตรเครดิต</td>
+        <td>CHAW</td><td>BILL</td><td>25/06/2026</td><td align="right">-12,760.00</td><td align="right">indef</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;background:#F5EDE4;"><td>289</td><td class="thai" style="font-size:12px;">CHAW บ.พาร์ค ออริจิ้น ที2 จำกัด</td>
+        <td>CHAW</td><td>BILL</td><td>25/06/2026</td><td align="right">-59,000.00</td><td align="right">5</td></tr>
+      
+    </table>
+
+    <!-- ===== 7. DUPLICATE TRANSACTIONS ===== -->
+    <h2 style="color:#5551FE;border-bottom:2px solid #5551FE;padding-bottom:4px;margin-top:24px;">7 · Duplicate Transaction Check</h2>
+    <div style="background:#E8F5E9;border:1px solid #27AE60;padding:8px 10px;margin-bottom:8px;border-radius:4px;">
+      Exact test (vendor + amount + invoice reference): <b>0</b> duplicates — PASS.
+      Same vendor+amount+date heuristic: 386 clusters (mostly recurring/multi-branch). Curated review below.</div>
+    <table>
+      <tr><th>Sub</th><th>Vendor ID</th><th>Vendor</th><th style="text-align:right;">Amount</th><th>Date</th>
+        <th style="text-align:right;">Count</th><th>Bill No(s)</th><th>Assessment</th><th>Priority</th></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00255</td><td class="thai" style="font-size:12px;">One Time Vendor (ห้ามใช้ / do-not-use)</td>
+        <td align="right">500,000.00</td><td>06/01/2025</td><td align="right">2</td>
+        <td style="font-size:11px;font-family:monospace;">VEN202501-002, VEN202501-003</td><td style="font-size:12px;" class="thai">One-time vendor double-billed — investigate</td>
+        <td style="background:#FBE4E0;font-weight:700;">HIGH</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00255</td><td class="thai" style="font-size:12px;">One Time Vendor (ห้ามใช้ / do-not-use)</td>
+        <td align="right">50,000.00</td><td>03/02/2025</td><td align="right">2</td>
+        <td style="font-size:11px;font-family:monospace;">03022025, 03022025.</td><td style="font-size:12px;" class="thai">One-time vendor double-billed — investigate</td>
+        <td style="background:#FBE4E0;font-weight:700;">HIGH</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>Vending</td><td>V-00209</td><td class="thai" style="font-size:12px;">คิง เพาเวอร์ สุวรรณภูมิ (สาขา00001)</td>
+        <td align="right">695,367.86</td><td>30/01/2025</td><td align="right">5</td>
+        <td style="font-size:11px;font-family:monospace;">IV-DR25010430/432/434/436/438</td><td style="font-size:12px;" class="thai">5 identical bills same day — verify not double-posted</td>
+        <td style="background:#FFF3E0;font-weight:700;">REVIEW</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00040</td><td class="thai" style="font-size:12px;">คิง เพาเวอร์ สุวรรณภูมิ</td>
+        <td align="right">703,139.80</td><td>01/11/2025</td><td align="right">2</td>
+        <td style="font-size:11px;font-family:monospace;">IV-DR25110107, IV-DR25110116</td><td style="font-size:12px;" class="thai">Large pair same day — likely monthly rent, confirm</td>
+        <td style="background:#FFF3E0;font-weight:700;">REVIEW</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00194</td><td class="thai" style="font-size:12px;">ชอ แมเนจเม้นท์ จำกัด</td>
+        <td align="right">267,500.00</td><td>31/07/2025</td><td align="right">2</td>
+        <td style="font-size:11px;font-family:monospace;">IVCHA250600004., IVCHA250700004</td><td style="font-size:12px;" class="thai">Mgmt fee pair same day — confirm</td>
+        <td style="background:#FFF3E0;font-weight:700;">REVIEW</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00021</td><td class="thai" style="font-size:12px;">ท่าอากาศยานไทย (AOT)</td>
+        <td align="right">173,017.00</td><td>01/04/2026</td><td align="right">2</td>
+        <td style="font-size:11px;font-family:monospace;">8520011642, 8520011811</td><td style="font-size:12px;" class="thai">Pair same day — confirm</td>
+        <td style="background:#FFF3E0;font-weight:700;">REVIEW</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00452</td><td class="thai" style="font-size:12px;">PONY ON WHEEL (intercompany)</td>
+        <td align="right">118,314.68</td><td>12/06/2025</td><td align="right">2</td>
+        <td style="font-size:11px;font-family:monospace;">IGPOW250600097, IGPOW250600098</td><td style="font-size:12px;" class="thai">Intercompany pair same day — confirm</td>
+        <td style="background:#FFF3E0;font-weight:700;">REVIEW</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00017</td><td class="thai" style="font-size:12px;">โกลัค จำกัด</td>
+        <td align="right">9,041.50</td><td>01/04/2025</td><td align="right">12</td>
+        <td style="font-size:11px;font-family:monospace;">ETIV34202503000020-027,042,051,053,054</td><td style="font-size:12px;" class="thai">12 identical bills one day — verify batch not duplicated</td>
+        <td style="background:#FFF3E0;font-weight:700;">REVIEW</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00220</td><td class="thai" style="font-size:12px;">คอฟฟี่เวิร์คส์ จำกัด</td>
+        <td align="right">7,885.90</td><td>13/01/2025</td><td align="right">12</td>
+        <td style="font-size:11px;font-family:monospace;">IR2025/0350-0361</td><td style="font-size:12px;" class="thai">12 identical bills one day — verify</td>
+        <td style="background:#FFF3E0;font-weight:700;">REVIEW</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00021</td><td class="thai" style="font-size:12px;">ท่าอากาศยานไทย (AOT)</td>
+        <td align="right">13,140.53</td><td>09/10/2025</td><td align="right">6</td>
+        <td style="font-size:11px;font-family:monospace;">8520000986/1058/1132/1206/1451/1526</td><td style="font-size:12px;" class="thai">6 identical bills one day — verify</td>
+        <td style="background:#FFF3E0;font-weight:700;">REVIEW</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>SFB</td><td>V-00040</td><td class="thai" style="font-size:12px;">คิง เพาเวอร์ สุวรรณภูมิ</td>
+        <td align="right">214,000.00</td><td>01/01/2025</td><td align="right">3</td>
+        <td style="font-size:11px;font-family:monospace;">IV-DR25010126/127/168</td><td style="font-size:12px;" class="thai">3 identical (also Feb & Mar) — recurring rent, confirm</td>
+        <td style="background:#FFF3E0;font-weight:700;">REVIEW</td></tr>
+      
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>ActionCity</td><td>V-00295</td><td class="thai" style="font-size:12px;">เดอะมอลล์ บางกะปิ คอมเพล็กซ์</td>
+        <td align="right">8,881.00</td><td>01/01/2026</td><td align="right">2</td>
+        <td style="font-size:11px;font-family:monospace;">2026/IN20000570, 2026/IN20000571</td><td style="font-size:12px;" class="thai">Monthly pair (recurs Jan–Jun) — recurring, confirm</td>
+        <td style="background:#E8F5E9;font-weight:700;">LOW</td></tr>
+      
+    </table>
+
+    <div style="margin-top:20px;padding-top:10px;border-top:1px solid #E0DCD3;font-size:11px;color:#777;">
+      CHAW Management · Finance Control · automated weekly routine · 22 Jun 2026 · all amounts THB · source: NetSuite SuiteQL (ns_runReport 412/273 preferred; SuiteQL fallback).
+    </div>
+  </div>
+</div>
+</body>
+</html>

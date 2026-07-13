@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHAW · Approved bills missing a due date — AP action</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;700&display=swap');
+  * { box-sizing:border-box; }
+  body { margin:0; background:#F5EDE4; font-family:'Poppins','Noto Sans Thai','Sarabun',Tahoma,sans-serif; color:#1B2A4A; line-height:1.5; }
+  .wrap { max-width:1040px; margin:0 auto; padding:20px; }
+  .head { background:#5551FE; color:#fff; border-radius:14px; padding:22px 24px; }
+  .head h1 { margin:0 0 6px; font-size:21px; font-weight:700; }
+  .head p { margin:0; font-size:13.5px; opacity:.92; }
+  .kpis { display:flex; gap:12px; flex-wrap:wrap; margin:16px 0 8px; }
+  .kpi { flex:1 1 150px; background:#fff; border-radius:12px; padding:14px 16px; border-top:4px solid #5551FE; }
+  .kpi .num { font-size:26px; font-weight:700; color:#5551FE; }
+  .kpi.coral { border-top-color:#F27061; } .kpi.coral .num { color:#F27061; }
+  .kpi .lbl { font-size:12px; color:#555; }
+  .note { background:#fff; border-left:4px solid #F27061; border-radius:10px; padding:14px 16px; margin:14px 0; font-size:13.5px; }
+  .note b { color:#5551FE; }
+  table { width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; font-size:13px; }
+  thead th { background:#1B2A4A; color:#fff; text-align:left; padding:10px 12px; font-weight:600; font-size:12.5px; }
+  tbody td { padding:10px 12px; border-bottom:1px solid #EFE9DF; vertical-align:top; }
+  td.v { font-weight:500; min-width:160px; }
+  td.n { text-align:right; white-space:nowrap; }
+  td.amt { font-weight:600; }
+  td.c { white-space:nowrap; color:#555; }
+  td.bills { font-size:11.5px; color:#444; font-family:ui-monospace,Menlo,Consolas,monospace; }
+  tbody tr:nth-child(even) { background:#FBF8F2; }
+  .badge { display:inline-block; padding:3px 9px; border-radius:20px; font-size:11px; font-weight:600; white-space:nowrap; }
+  .badge-fix { background:#E8EAFF; color:#5551FE; }
+  .badge-prepay { background:#FFF3E0; color:#B26A00; }
+  .badge-res { background:#EFEFEF; color:#666; }
+  .total td { background:#F5EDE4; font-weight:700; border-top:2px solid #1B2A4A; }
+  .foot { color:#777; font-size:11.5px; margin-top:16px; text-align:center; }
+  .steps { background:#fff; border-radius:12px; padding:16px 20px; margin:14px 0; font-size:13.5px; }
+  .steps h3 { margin:0 0 8px; color:#5551FE; font-size:15px; }
+  .steps ol { margin:0; padding-left:20px; } .steps li { margin:5px 0; }
+  @media (max-width:640px) {
+    .wrap { padding:12px; }
+    .head h1 { font-size:18px; }
+    table { display:block; overflow-x:auto; white-space:nowrap; }
+    td.bills { white-space:normal; min-width:200px; }
+  }
+</style></head>
+<body><div class="wrap">
+  <div class="head">
+    <h1>Approved bills missing a due date — please set the due date</h1>
+    <p>CHAW Finance Control · SFB · Vending · ActionCity · as of 27 Jun 2026 · all amounts THB</p>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="num">44</div><div class="lbl">bills, all Open + Approved</div></div>
+    <div class="kpi"><div class="num">13</div><div class="lbl">vendors affected</div></div>
+    <div class="kpi coral"><div class="num">298,427.71</div><div class="lbl">total value waiting</div></div>
+  </div>
+
+  <div class="note">
+    <b>What's happening:</b> these bills are <b>fully approved and open</b> — nothing is stuck in the approval workflow.
+    The only problem is the <b>Due Date field is blank</b>, even though a payment term is assigned. Our KBank payment run
+    selects bills by due date, so with no due date these are silently skipped and never get paid.
+  </div>
+
+  <div class="steps">
+    <h3>What the team needs to do</h3>
+    <ol>
+      <li><b>Set due date (badge):</b> open each bill, re-apply the term so the Due Date populates, save. It then drops into the next KBank payment run — no re-approval needed.</li>
+      <li><b>Apply deposit (Prepayment):</b> the เติร์ด แอนด์ เติร์ด bill is on Prepayment terms — clear it by applying the existing deposit, not a bank transfer.</li>
+      <li><b>Close out (residuals):</b> the 12 โกลัค e-invoices are ฿0.01–0.16 each — write off / close, don't pay.</li>
+    </ol>
+  </div>
+
+  <table>
+    <thead><tr>
+      <th>Vendor</th><th>Term</th><th>Bills</th><th>Open (THB)</th><th>Bill numbers</th><th>Action</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+      <td class="v">V-00698 Big Box International Pte Ltd.</td>
+      <td class="c">30 Days</td>
+      <td class="n">4</td>
+      <td class="n amt">128,748.56</td>
+      <td class="bills">INV0168/2025, IRACT250700011, IRACT250700067, 260300033</td>
+      <td><span class="badge badge-fix">Set due date</span></td>
+    </tr>
+<tr>
+      <td class="v">V-00928 บริษัท เซ็น ซัพพลาย เชน แมเนจเม้นท์ จำกัด</td>
+      <td class="c">Due 15th</td>
+      <td class="n">9</td>
+      <td class="n amt">71,381.69</td>
+      <td class="bills">HSI26-0014203, HSI26-0017030, HSI26-0018024, HSI26-0017400, HSI26-0018081, ESHSI26-0017317, PSM-ZSM00-26040012, PST-38-HO-26040007, ESHSI26-0020952</td>
+      <td><span class="badge badge-fix">Set due date</span></td>
+    </tr>
+<tr>
+      <td class="v">V-00530 บริษัท สยาม แฟรนไชส์ ธุรกิจ จำกัด</td>
+      <td class="c">30 Days</td>
+      <td class="n">3</td>
+      <td class="n amt">52,246.51</td>
+      <td class="bills">SUBDR26-0009316, SR26-019939, SR26-018630</td>
+      <td><span class="badge badge-fix">Set due date</span></td>
+    </tr>
+<tr>
+      <td class="v">V-00695 บริษัท คิงดอม คัม จำกัด</td>
+      <td class="c">30 Days</td>
+      <td class="n">1</td>
+      <td class="n amt">17,160.00</td>
+      <td class="bills">26021201</td>
+      <td><span class="badge badge-fix">Set due date</span></td>
+    </tr>
+<tr>
+      <td class="v">V-00732 บริษัท พีโอซี จำกัด</td>
+      <td class="c">30 Days</td>
+      <td class="n">1</td>
+      <td class="n amt">9,220.75</td>
+      <td class="bills">V40320105</td>
+      <td><span class="badge badge-fix">Set due date</span></td>
+    </tr>
+<tr>
+      <td class="v">V-00738 บริษัท มาลี เอ็นเตอร์ไพรส์ จำกัด</td>
+      <td class="c">Due 30th</td>
+      <td class="n">1</td>
+      <td class="n amt">6,617.42</td>
+      <td class="bills">1020003114</td>
+      <td><span class="badge badge-fix">Set due date</span></td>
+    </tr>
+<tr>
+      <td class="v">V-00010 บริษัท เมชิยะ จำกัด</td>
+      <td class="c">30 Days</td>
+      <td class="n">2</td>
+      <td class="n amt">4,962.66</td>
+      <td class="bills">INV2026030597, INV2026030200</td>
+      <td><span class="badge badge-fix">Set due date</span></td>
+    </tr>
+<tr>
+      <td class="v">V-00821 บริษัท เนเจอร์ไฟว์ เฟรชมาร์ท จำกัด</td>
+      <td class="c">Due 15th</td>
+      <td class="n">4</td>
+      <td class="n amt">4,514.30</td>
+      <td class="bills">SR26-019516, SR28-018432, SR26-016467, SR26-018008</td>
+      <td><span class="badge badge-fix">Set due date</span></td>
+    </tr>
+<tr>
+      <td class="v">V-00003 ห้างหุ้นส่วนจำกัด ไนน์ตี้ไนน์ เบเกอรี่</td>
+      <td class="c">30 Days</td>
+      <td class="n">2</td>
+      <td class="n amt">2,407.50</td>
+      <td class="bills">MT-20260400063, VT-20260400157</td>
+      <td><span class="badge badge-fix">Set due date</span></td>
+    </tr>
+<tr>
+      <td class="v">V-00857 บริษัท ไทยเฟรชฟาร์ม จำกัด</td>
+      <td class="c">Due 15th</td>
+      <td class="n">3</td>
+      <td class="n amt">503.93</td>
+      <td class="bills">SR26-023156, SR26-021905, SR26-022620</td>
+      <td><span class="badge badge-fix">Set due date</span></td>
+    </tr>
+<tr>
+      <td class="v">V-00026 บริษัท ออฟฟิศเมท (ไทย) จำกัด</td>
+      <td class="c">30 Days</td>
+      <td class="n">1</td>
+      <td class="n amt">360.00</td>
+      <td class="bills">000251022604102252</td>
+      <td><span class="badge badge-fix">Set due date</span></td>
+    </tr>
+<tr>
+      <td class="v">V-00931 บริษัท เติร์ด แอนด์ เติร์ด จำกัด</td>
+      <td class="c">Prepayment</td>
+      <td class="n">1</td>
+      <td class="n amt">303.00</td>
+      <td class="bills">INV2026030050</td>
+      <td><span class="badge badge-prepay">Apply deposit</span></td>
+    </tr>
+<tr>
+      <td class="v">V-00017 บริษัท โกลัค จำกัด</td>
+      <td class="c">Due 20th</td>
+      <td class="n">12</td>
+      <td class="n amt">1.39</td>
+      <td class="bills">EINV34202604000133, EINV34202604000127, EINV34202604000148, EINV34202604000126, EINV34202604000132, EINV34202604000130, EINV34202604000131, EINV34202604000128, EINV34202604000129, EINV34202604000095, EINV34202604000020, EINV34202604000091</td>
+      <td><span class="badge badge-res">Close out</span></td>
+    </tr>
+      <tr class="total"><td>TOTAL</td><td></td><td class="n">44</td><td class="n">298,427.71</td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div class="foot">CHAW Management · Finance Control · generated 27 Jun 2026 · source: NetSuite (live)</div>
+</div></body></html>

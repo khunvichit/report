@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!-- fc-template.html — CHAW Finance Control FULL HTML report / email body. LOCKED layout.
+     Filled by fill_template.py from render.json (produced by fc_build_data.py). Never regenerate as model output.
+     Scalars use double-brace names; variable-count rows use REPEAT; conditional blocks use SECTION.
+     CHAW CI: PRIMARY #5551FE · SECONDARY #F27061 · TERTIARY #F5EDE4 · Poppins + Thai fallback. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+Thai:wght@400;600;700&display=swap');
+    body { margin:0; background:#F5EDE4;
+      font-family:'Poppins','Noto Sans Thai','Sarabun',Tahoma,Arial,sans-serif; }
+    table { border-collapse:collapse; width:100%; }
+    th,td { padding:6px; }
+    th { background:#5551FE; color:#fff; text-align:left; }
+    .thai, td, th { font-family:'Poppins','Noto Sans Thai','Sarabun',Tahoma,Arial,sans-serif; }
+    @media (max-width:640px){
+      .wrap{padding:8px !important;}
+      body{font-size:12px;}
+      h2{font-size:16px;} h3{font-size:14px;}
+      table.kpi{display:block;} table.kpi tr{display:flex;flex-wrap:wrap;}
+      table.kpi td{display:block;width:46% !important;box-sizing:border-box;margin:1%;}
+      table:not(.kpi){display:block;width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;}
+    }
+  </style>
+</head>
+<body>
+<div class="wrap" style="max-width:880px;margin:0 auto;background:#F5EDE4;color:#1B2A4A;font-size:13px;font-family:'Poppins','Noto Sans Thai','Sarabun',Tahoma,Arial,sans-serif;padding:16px;">
+
+  <div style="background:#5551FE;color:#fff;padding:18px 22px;border-radius:8px 8px 0 0;">
+    <div style="font-size:20px;font-weight:700;letter-spacing:.5px;">CHAW · Weekly Finance Control</div>
+    <div style="font-size:12px;opacity:.9;margin-top:2px;">{{date_str}} · SFB · Vending · ActionCity · all amounts THB · source: {{source}}</div>
+  </div>
+  <div style="background:#fff;border:1px solid #E0DCD3;border-top:none;padding:20px 22px;border-radius:0 0 8px 8px;">
+
+    <div style="font-size:13px;font-weight:700;color:#5551FE;margin:0 0 6px;">Issues by section</div>
+    <table class="kpi" style="margin-bottom:16px;"><tr>
+      <!-- REPEAT:kpi_cards -->
+      <td style="width:{{cardw}};background:{{bg}};border-top:3px solid {{color}};border-bottom:none;padding:8px 4px;text-align:center;">
+        <div style="font-size:23px;font-weight:700;color:{{color}};">{{value}}</div>
+        <div style="font-size:11px;font-weight:600;color:#1B2A4A;">{{label}}</div>
+        <div style="font-size:9px;color:#777;">{{detail}}</div>
+        <div style="font-size:8.5px;font-weight:700;color:{{wcolor}};">{{wow}}</div>
+      </td>
+      <!-- /REPEAT:kpi_cards -->
+    </tr></table>
+
+    <!-- ===== 1. EXECUTIVE SUMMARY ===== -->
+    <h2 style="color:#5551FE;border-bottom:2px solid #5551FE;padding-bottom:4px;">1 · Executive Summary</h2>
+    <h3 style="color:#5551FE;margin:8px 0;">Cash &amp; Receivables</h3>
+    <table>
+      <tr><th>Subsidiary</th><th style="text-align:right;">Cash</th><th style="text-align:right;">Total AR</th>
+        <th style="text-align:right;">Current</th><th style="text-align:right;">Overdue</th>
+        <th style="text-align:right;">% O/D</th><th style="text-align:right;">Sub-Acct</th><th>Bank Recon</th></tr>
+      <!-- REPEAT:overview_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;">
+        <td style="font-weight:600;">{{sub_name}}</td><td align="right">{{cash}}</td>
+        <td align="right">{{ar_total}}</td><td align="right">{{ar_current}}</td>
+        <td align="right" style="color:#F27061;">{{ar_overdue}}</td><td align="right">{{pct}}%</td>
+        <td align="right">{{subacct}}</td><td style="background:{{recon_bg}};">{{recon_txt}}</td></tr>
+      <!-- /REPEAT:overview_rows -->
+      <tr style="background:#5551FE;color:#fff;font-weight:700;">
+        <td>TOTAL</td><td align="right">{{cash_total}}</td><td align="right">{{ar_total_all}}</td>
+        <td align="right">{{ar_current_all}}</td><td align="right">{{ar_overdue_all}}</td><td></td>
+        <td align="right">{{subacct_total}}</td><td></td></tr>
+    </table>
+
+    <!-- SECTION:recon_alert -->
+    <div style="background:#F8C8C0;border:1px solid #F27061;padding:10px;margin:12px 0;border-radius:4px;">⚠ Bank recon: {{recon_note}}</div>
+    <!-- /SECTION:recon_alert -->
+
+    <h3 style="color:#5551FE;margin:14px 0 6px;">Undue VAT Position (account balances)</h3>
+    <table>
+      <tr><th>Account</th><th>Description</th><th style="text-align:right;">Balance</th></tr>
+      <!-- REPEAT:vat_acct_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>{{acct}}</td><td class="thai">{{desc}}</td><td align="right">{{bal}}</td></tr>
+      <!-- /REPEAT:vat_acct_rows -->
+    </table>
+    <p style="font-size:12px;color:#555;">Vendor reversal check: {{vat_notrev_n}} vendors NOT reversed (+{{vat_notrev_amt}}),
+      {{vat_overrev_n}} vendors OVER-reversed ({{vat_overrev_amt}}). Detail in §5.
+      Note: V-00313 (Revenue Dept) behaves like a VAT clearing vendor — verify before treating as staff error.</p>
+
+    <h3 style="color:#5551FE;margin:14px 0 6px;">Top 10 Risk Items</h3>
+    <table>
+      <tr><th>#</th><th>Area</th><th>Item</th><th>Detail</th><th style="text-align:right;">Amount</th><th>Severity</th></tr>
+      <!-- REPEAT:risk_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>{{n}}</td><td>{{area}}</td><td class="thai">{{item}}</td>
+        <td style="font-size:12px;" class="thai">{{detail}}</td><td align="right">{{amount}}</td>
+        <td style="background:{{sev_bg}};font-weight:700;">{{severity}}</td></tr>
+      <!-- /REPEAT:risk_rows -->
+    </table>
+
+    <h3 style="color:#5551FE;margin:14px 0 6px;">Priority Actions</h3>
+    <table>
+      <!-- REPEAT:action_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;"><td style="background:{{sev_bg}};font-weight:700;white-space:nowrap;">{{sev}}</td>
+        <td class="thai">{{text}}</td></tr>
+      <!-- /REPEAT:action_rows -->
+    </table>
+
+    <!-- ===== 2. AR DETAIL ===== -->
+    <h2 style="color:#5551FE;border-bottom:2px solid #5551FE;padding-bottom:4px;margin-top:24px;">2 · AR Detail &amp; Credit-Term Cross-Check</h2>
+    <table>
+      <tr><th>Subsidiary</th><th>Customer</th><th style="text-align:right;">Term</th><th style="text-align:right;">Open</th>
+        <th style="text-align:right;">Current</th><th style="text-align:right;">Overdue</th><th style="text-align:right;">Days O/D</th><th>Status</th></tr>
+      <!-- REPEAT:ar_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;background:{{row_bg}};font-weight:{{weight}};">
+        <td>{{sub_name}}</td><td class="thai">{{customer}}</td><td align="right">{{term_days}}</td><td align="right">{{open}}</td>
+        <td align="right">{{current}}</td><td align="right" style="color:#F27061;">{{overdue}}</td>
+        <td align="right">{{days_od}}</td><td style="background:{{status_bg}};">{{status}}</td></tr>
+      <!-- /REPEAT:ar_rows -->
+    </table>
+
+    <!-- ===== 3. BANK RECONCILIATION ===== -->
+    <h2 style="color:#5551FE;border-bottom:2px solid #5551FE;padding-bottom:4px;margin-top:24px;">3 · Bank Reconciliation</h2>
+    <table>
+      <tr><th>Acct No.</th><th>Account</th><th>Subsidiary</th><th style="text-align:right;">Balance</th>
+        <th>Last Recon</th><th style="text-align:right;">Days</th><th>Status</th></tr>
+      <!-- REPEAT:recon_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>{{acctno}}</td><td>{{name}}</td><td>{{sub_name}}</td>
+        <td align="right">{{balance}}</td><td>{{last_recon}}</td><td align="right">{{days_since}}</td>
+        <td style="background:{{status_bg}};font-weight:600;">{{status}}</td></tr>
+      <!-- /REPEAT:recon_rows -->
+    </table>
+    <p style="font-size:12px;color:#555;">Balance on accounts not reconciled within 30 days: {{recon_unverified}} THB.
+      Recon date = latest cleared transaction per main bank account; sub-accounts assessed in §4.</p>
+
+    <!-- ===== 4. CASH DEPOSIT VERIFICATION ===== -->
+    <h2 style="color:#5551FE;border-bottom:2px solid #5551FE;padding-bottom:4px;margin-top:24px;">4 · Cash Deposit Verification (T+2 / T+3)</h2>
+    <p style="font-size:12px;color:#555;">Flow: Invoice → Sub-account → bank statement imported → automated JV → main account.
+      Cash Sales = T+2, all other channels = T+3. A sub-account should hold only deposits inside that window.
+      Verdict counts: {{dep_counts}}.</p>
+    <table>
+      <tr><th>Acct No.</th><th>Channel</th><th>Subsidiary</th><th style="text-align:right;">Balance</th>
+        <th>Last JV</th><th style="text-align:right;">Days</th><th>Bench</th><th>Verdict</th></tr>
+      <!-- REPEAT:deposit_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>{{acctno}}</td><td>{{channel}}</td><td>{{sub_name}}</td>
+        <td align="right">{{balance}}</td><td>{{last_jv}}</td><td align="right">{{days_since}}</td><td>{{benchmark}}</td>
+        <td style="background:{{verdict_bg}};font-weight:600;">{{verdict}}</td></tr>
+      <!-- /REPEAT:deposit_rows -->
+    </table>
+
+    <!-- ===== 5. UNDUE VAT ===== -->
+    <h2 style="color:#5551FE;border-bottom:2px solid #5551FE;padding-bottom:4px;margin-top:24px;">5 · Undue VAT — Staff Reversal Check by Vendor</h2>
+    <p style="font-size:12px;color:#555;">Positive = NOT yet reversed (reversal JV not posted). Negative = OVER-reversed.
+      Excludes Tax Agency &amp; unlinked entries. Input VAT Undue acct balance {{vat_acct_input}}; Output {{vat_acct_output}}.</p>
+    <div style="background:#F27061;color:#fff;padding:6px 10px;font-weight:700;border-radius:4px;">NOT YET REVERSED — staff action required ({{vat_notrev_n}} vendors, +{{vat_notrev_amt}})</div>
+    <table>
+      <tr><th>Sub</th><th>Vendor ID</th><th>Vendor</th><th style="text-align:right;">Balance</th>
+        <th>Oldest</th><th style="text-align:right;">Age(d)</th><th>Urgency</th><th>Action</th></tr>
+      <!-- REPEAT:vat_pos_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>{{sub_name}}</td><td>{{vendor_id}}</td><td class="thai" style="font-size:12px;">{{vendor_name}}</td>
+        <td align="right">{{balance}}</td><td>{{oldest}}</td><td align="right">{{age}}</td>
+        <td style="background:{{urg_bg}};font-weight:600;">{{urgency}}</td><td style="font-size:12px;">{{action}}</td></tr>
+      <!-- /REPEAT:vat_pos_rows -->
+    </table>
+    <div style="background:#5551FE;color:#fff;padding:6px 10px;font-weight:700;margin-top:10px;border-radius:4px;">OVER-REVERSED — correction required ({{vat_overrev_n}} vendors, {{vat_overrev_amt}})</div>
+    <table>
+      <tr><th>Sub</th><th>Vendor ID</th><th>Vendor</th><th style="text-align:right;">Balance</th>
+        <th>Oldest</th><th style="text-align:right;">Age(d)</th><th>Urgency</th><th>Action</th></tr>
+      <!-- REPEAT:vat_neg_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>{{sub_name}}</td><td>{{vendor_id}}</td><td class="thai" style="font-size:12px;">{{vendor_name}}</td>
+        <td align="right" style="color:#F27061;">{{balance}}</td><td>{{oldest}}</td><td align="right">{{age}}</td>
+        <td style="background:{{urg_bg}};font-weight:600;">{{urgency}}</td><td style="font-size:12px;">{{action}}</td></tr>
+      <!-- /REPEAT:vat_neg_rows -->
+    </table>
+
+    <!-- ===== 6. MEMORIZED TRANSACTIONS ===== -->
+    <h2 style="color:#5551FE;border-bottom:2px solid #5551FE;padding-bottom:4px;margin-top:24px;">6 · Memorized Transactions Control</h2>
+    <p style="font-size:12px;color:#555;">Active {{memo_total}} · OVERDUE {{memo_overdue}} · PENDING APPROVAL {{memo_pending}} · DUE THIS WEEK {{memo_dueweek}} · ON TRACK {{memo_ontrack}}.</p>
+    <div style="background:#F27061;color:#fff;padding:6px 10px;font-weight:700;border-radius:4px;">OVERDUE — failed to execute</div>
+    <table>
+      <tr><th>ID</th><th>Name</th><th>Sub</th><th>Type</th><th>Next Date</th><th style="text-align:right;">Days O/D</th>
+        <th style="text-align:right;">Amount</th><th style="text-align:right;">Rem.</th></tr>
+      <!-- REPEAT:memo_overdue_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;background:{{row_bg}};"><td>{{id}}</td><td class="thai" style="font-size:12px;">{{name}}</td>
+        <td>{{sub_name}}</td><td>{{type}}</td><td>{{next_date}}</td><td align="right">{{days_overdue}}</td>
+        <td align="right">{{amount}}</td><td align="right">{{remaining}}</td></tr>
+      <!-- /REPEAT:memo_overdue_rows -->
+    </table>
+    <div style="background:#F8C8C0;color:#5b2b24;padding:6px 10px;font-weight:700;margin-top:10px;border-radius:4px;">PENDING APPROVAL — will not fire until approved</div>
+    <table>
+      <tr><th>ID</th><th>Name</th><th>Sub</th><th>Type</th><th>Next Date</th><th style="text-align:right;">Amount</th><th style="text-align:right;">Rem.</th></tr>
+      <!-- REPEAT:memo_pending_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;background:#FFF3E0;"><td>{{id}}</td><td class="thai" style="font-size:12px;">{{name}}</td>
+        <td>{{sub_name}}</td><td>{{type}}</td><td>{{next_date}}</td><td align="right">{{amount}}</td><td align="right">{{remaining}}</td></tr>
+      <!-- /REPEAT:memo_pending_rows -->
+    </table>
+    <div style="background:#5551FE;color:#fff;padding:6px 10px;font-weight:700;margin-top:10px;border-radius:4px;">DUE THIS WEEK — approved</div>
+    <table>
+      <tr><th>ID</th><th>Name</th><th>Sub</th><th>Type</th><th>Next Date</th><th style="text-align:right;">Amount</th><th style="text-align:right;">Rem.</th></tr>
+      <!-- REPEAT:memo_dueweek_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;background:#F5EDE4;"><td>{{id}}</td><td class="thai" style="font-size:12px;">{{name}}</td>
+        <td>{{sub_name}}</td><td>{{type}}</td><td>{{next_date}}</td><td align="right">{{amount}}</td><td align="right">{{remaining}}</td></tr>
+      <!-- /REPEAT:memo_dueweek_rows -->
+    </table>
+
+    <!-- ===== 7. DUPLICATE TRANSACTIONS ===== -->
+    <h2 style="color:#5551FE;border-bottom:2px solid #5551FE;padding-bottom:4px;margin-top:24px;">7 · Duplicate Transaction Check</h2>
+    <div style="background:#E8F5E9;border:1px solid #27AE60;padding:8px 10px;margin-bottom:8px;border-radius:4px;">
+      Exact test (vendor + amount + invoice reference): <b>{{dup_exact}}</b> duplicates — PASS.
+      Same vendor+amount+date heuristic: {{dup_clusters}} clusters (mostly recurring/multi-branch). Curated review below.</div>
+    <table>
+      <tr><th>Sub</th><th>Vendor ID</th><th>Vendor</th><th style="text-align:right;">Amount</th><th>Date</th>
+        <th style="text-align:right;">Count</th><th>Bill No(s)</th><th>Assessment</th><th>Priority</th></tr>
+      <!-- REPEAT:dup_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>{{sub_name}}</td><td>{{vendor_id}}</td><td class="thai" style="font-size:12px;">{{vendor_name}}</td>
+        <td align="right">{{amount}}</td><td>{{date}}</td><td align="right">{{count}}</td>
+        <td style="font-size:11px;font-family:monospace;">{{bills}}</td><td style="font-size:12px;" class="thai">{{assessment}}</td>
+        <td style="background:{{pri_bg}};font-weight:700;">{{priority}}</td></tr>
+      <!-- /REPEAT:dup_rows -->
+    </table>
+
+    <!-- ===== 8. APPROVALS & WORKFLOW ===== -->
+    <h2 style="color:#5551FE;border-bottom:2px solid #5551FE;padding-bottom:4px;margin-top:24px;">8 · Approvals &amp; Workflow</h2>
+    <div style="background:#F8C8C0;border:1px solid #F27061;padding:10px;margin:8px 0;border-radius:4px;font-size:12px;">
+      <b>Why bills aren't being paid:</b> {{appr_root_cause}}</div>
+    <p style="font-size:12px;color:#555;">{{bills_open}} vendor bills are <b>Open</b> (entered/approved, awaiting payment), oldest {{bills_open_oldest}} — the hold-up is the payment-approval step below, not the bills.</p>
+    <h3 style="color:#5551FE;margin:12px 0 6px;">Approved &amp; Open — but no due date ({{nodue_bills}} bills, ฿{{nodue_amt}})</h3>
+    <div style="background:#E8EAFF;border:1px solid #5551FE;padding:10px;margin:8px 0;border-radius:4px;font-size:12px;" class="thai">
+      <b>Approved + Open, NOT stuck in approval</b> — skipped by the KBank run because Due Date is blank. {{nodue_note}}</div>
+    <p style="font-size:12px;color:#555;"><b style="color:#F27061;">{{nodue_fix_bills}} bills (฿{{nodue_fix_amt}}) just need a due date set</b> → re-apply the term, save, and they enter the next payment run. ({{nodue_prepay_bills}} Prepayment ฿{{nodue_prepay_amt}} = apply deposit; {{nodue_residual_bills}} residuals ฿{{nodue_residual_amt}} = close out.)</p>
+    <table>
+      <tr><th>Vendor</th><th>Term</th><th style="text-align:right;">Bills</th><th style="text-align:right;">Open (THB)</th><th>Action</th></tr>
+      <!-- REPEAT:appr_nodue_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;"><td class="thai">{{vendor}}</td><td>{{term}}</td><td align="right">{{bills}}</td><td align="right" style="color:#F27061;">{{amt}}</td><td>{{action}}</td></tr>
+      <!-- /REPEAT:appr_nodue_rows -->
+    </table>
+    <h3 style="color:#5551FE;margin:12px 0 6px;">Transactions pending approval</h3>
+    <table>
+      <tr><th>Type</th><th style="text-align:right;">Count</th><th>Oldest</th><th>Note / cause</th></tr>
+      <!-- REPEAT:appr_txn_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;background:{{bg}};"><td>{{type}}</td><td align="right">{{count}}</td><td>{{oldest}}</td><td class="thai" style="font-size:12px;">{{note}}</td></tr>
+      <!-- /REPEAT:appr_txn_rows -->
+    </table>
+    <h3 style="color:#5551FE;margin:12px 0 6px;">Vendor payments stuck — by subsidiary</h3>
+    <table>
+      <tr><th>Subsidiary</th><th style="text-align:right;">Stuck</th><th>Oldest</th></tr>
+      <!-- REPEAT:appr_pymt_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>{{sub}}</td><td align="right">{{count}}</td><td>{{oldest}}</td></tr>
+      <!-- /REPEAT:appr_pymt_rows -->
+    </table>
+    <h3 style="color:#5551FE;margin:12px 0 6px;">Largest stuck payments</h3>
+    <table>
+      <tr><th>Subsidiary</th><th>Date</th><th style="text-align:right;">Amount</th></tr>
+      <!-- REPEAT:appr_top_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>{{sub}}</td><td>{{date}}</td><td align="right" style="color:#F27061;">{{amt}}</td></tr>
+      <!-- /REPEAT:appr_top_rows -->
+    </table>
+    <h3 style="color:#5551FE;margin:12px 0 6px;">Master-data approvals — {{appr_master_pending}} pending, {{appr_cust_rejected}} rejected</h3>
+    <table>
+      <tr><th>Kind</th><th>ID</th><th>Name</th><th>Status</th><th>Pending since</th></tr>
+      <!-- REPEAT:appr_master_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;background:{{bg}};"><td>{{kind}}</td><td>{{id}}</td><td class="thai" style="font-size:12px;">{{name}}</td><td style="font-size:12px;">{{status}}</td><td>{{since}}</td></tr>
+      <!-- /REPEAT:appr_master_rows -->
+    </table>
+
+    <!-- ===== 9. PREPAYMENT BILLS CONTROL ===== -->
+    <h2 style="color:#5551FE;border-bottom:2px solid #5551FE;padding-bottom:4px;margin-top:24px;">9 · Prepayment Bills Control</h2>
+    <div style="background:#FFF3E0;border:1px solid #E6A23C;padding:10px;margin:8px 0;border-radius:4px;font-size:12px;">{{prepay_note}}</div>
+    <p style="font-size:12px;color:#555;"><b>{{prepay_bills}}</b> open Prepayment bills, total <b>{{prepay_amt}}</b> THB. <b style="color:#F27061;">30-day control: {{prepay_over30_bills}} bills (฿{{prepay_over30_amt}}) are &gt;30 days old — apply the deposit now.</b></p>
+    <table>
+      <tr><th>Vendor</th><th style="text-align:right;">Open bills</th><th style="text-align:right;">Amount</th><th>Oldest</th><th style="text-align:right;">&gt;30d</th><th>Status</th><th>Action</th></tr>
+      <!-- REPEAT:prepay_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;background:{{row_bg}};"><td class="thai">{{vendor}}</td><td align="right">{{bills}}</td>
+        <td align="right">{{amt}}</td><td>{{oldest}}</td><td align="right">{{over30}}</td><td style="font-weight:600;">{{status}}</td><td style="font-size:12px;">{{action}}</td></tr>
+      <!-- /REPEAT:prepay_rows -->
+      <tr style="background:#F5EDE4;font-weight:700;"><td>TOTAL</td><td align="right">{{prepay_bills}}</td><td align="right">{{prepay_amt}}</td><td></td><td align="right">{{prepay_over30_bills}}</td><td></td><td></td></tr>
+    </table>
+
+    <div style="margin-top:20px;padding-top:10px;border-top:1px solid #E0DCD3;font-size:11px;color:#777;">
+      CHAW Management · Finance Control · automated weekly routine · {{date_str}} · all amounts THB · source: {{source}}.
+    </div>
+  </div>
+</div>
+</body>
+</html>

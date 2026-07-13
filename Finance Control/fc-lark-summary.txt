@@ -1,0 +1,33 @@
+<!-- Finance Control — Lark group message template. Filled by fill_template.py from data.json -> scalars.
+     Keep emoji + line breaks verbatim. Lines that vary in count use REPEAT; never regenerate this file. -->
+📊 Weekly Finance Control — {{date_str}}
+
+💰 Cash Position:
+• SFB: {{cash_sfb}} | Vending: {{cash_ven}} | ACT: {{cash_act}}
+• Total: {{cash_total}} — {{recon_note}}
+
+💳 Deposit Verification (T+2/T+3):
+• {{subacct_total}} THB in sub-accounts
+• {{dep_critical}} channels CRITICAL (no JV 14+ days): {{dep_critical_list}}
+
+📋 AR Highlights:
+• Total AR: {{ar_total}} | Overdue: {{ar_overdue}} ({{ar_pct}}%)
+• Top risk: {{ar_top}}
+
+💰 Undue VAT — Staff Reversal Check:
+• {{vat_notrev_n}} vendors NOT reversed: {{vat_notrev_amt}} THB
+• {{vat_overrev_n}} vendors OVER-reversed: {{vat_overrev_amt}} THB
+• Top: {{vat_top}}
+
+🔄 Memorized Transactions:
+• {{memo_overdue}} OVERDUE (not firing) | {{memo_pending}} PENDING APPROVAL
+• Top issue: {{memo_top}}
+
+🔁 Duplicate Bills: {{dup_line}}
+
+🔴 Priority Actions:
+1. {{action1}}
+2. {{action2}}
+3. {{action3}}
+
+📎 Full workbook attached / in working folder

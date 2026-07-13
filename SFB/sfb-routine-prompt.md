@@ -30,7 +30,7 @@ Default when unspecified: `scheduled`. No further confirmation is requested in a
 - `SFB/sfb-prediction.md`  — severity / MTD flags / heatmap / insight method
 - `SFB/sfb-delivery.md`    — channels (email + group; task OFF), recipients, subject, group message
 - `SFB/fill_template.py`   — HTML assembler
-- root `sender.md`, `method.md`, `branding.md` — shared mechanics/routing/CI
+- `SFB/sender.md`, `SFB/method.md`, `SFB/branding.md` — mechanics/routing/CI (SFB-local copies)
 
 ## Modes (from method.md)
 `scheduled` (default; email to recipients + group), `manual-test` (email to OWNER_EMAIL only, skip
