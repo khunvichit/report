@@ -1,6 +1,7 @@
 # Per-run output — regenerated live every run, must NOT be committed (stale-data trap)
 data.json
 email.html
+email_draft*.html
 actioncity-email-*.html
 
 # OS / scratch
