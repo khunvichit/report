@@ -1,3 +1,8 @@
 khiang-sample.html
 sample-data.json
 make_sample_data.py
+
+# Per-run intermediates (regenerated daily by the routine; never a deliverable — see sender.md)
+data.json
+email.html
+fill_stderr.txt
