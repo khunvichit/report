@@ -11,7 +11,9 @@ Resolve each once; delivery files reference by name. Edit here to update everywh
 - panu@chaw.co.th
 
 ## actioncity_ops_group (Lark group for the daily card + failure notices)
-- **chat_id:** `<TO RESOLVE>` — run `lark_list_chats`, find the ActionCity ops/management group, paste the `chat_id`.
+- **chat_id:** `oc_4dabe0f3436e1201813c8cea6e38dbb1` — "ActionCity TH" (resolved via `lark_list_chats` on 24 Jul 2026).
+  Note: the bot currently lacks `im:message.group_msg` read scope, so it can post but cannot read this
+  chat's history (relevant if group history is ever used as an idempotency proxy).
 - **fallback chat_id:** `<TO RESOLVE>` — a second group or owner DM as backup.
 
 ## Notes
