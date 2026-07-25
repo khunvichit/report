@@ -34,6 +34,7 @@ PREV_DATE          = REPORT_DATE − 1
 14D_START          = REPORT_DATE − 13        # 14-day window: feeds Query J (prior week = WoW baseline)
 D30_START          = REPORT_DATE − 29        # 30-day window: D30_START .. REPORT_DATE inclusive
 W35_START          = REPORT_DATE − 34        # 35-day window: Query H (5 full weeks for the weekly table)
+PW_START           = REPORT_DATE − 28        # 28-day benchmark window for Price Watch (ends PREV_DATE)
 MTD_START          = first day of REPORT_DATE's month (e.g. 2026-05-01)
 mtd_days           = REPORT_DATE.day          # number of days elapsed in month incl. REPORT_DATE
 mtd_month          = "May 2026"               # Mon YYYY of REPORT_DATE
@@ -359,6 +360,64 @@ Derive: `net_mtd = net_sales`; `mtd_days = days` (actual trading days MTD);
 (prefix '+' if ≥ 0). If MTD has 0 trading days (1st of month before close) → render all three as `—`.
 
 ---
+
+## Query K1 — Price-Watch benchmark: 28-day segment tickets
+```sql
+SELECT CASE WHEN t.entity = 51407 THEN 'Staff' ELSE 'Walk-In' END AS segment,
+  SUM(CASE WHEN t.type='CustInvc' THEN ABS(tl.netamount) ELSE 0 END) -
+  SUM(CASE WHEN t.type='CustCred' THEN ABS(tl.netamount) ELSE 0 END) AS net_sales,
+  COUNT(DISTINCT CASE WHEN t.type='CustInvc' THEN t.id END) AS bills
+FROM transaction t
+JOIN transactionline tl ON t.id = tl.transaction AND tl.mainline = 'T'
+WHERE t.trandate BETWEEN TO_DATE('{PW_START}','YYYY-MM-DD') AND TO_DATE('{PREV_DATE}','YYYY-MM-DD')
+  AND t.type IN ('CustInvc','CustCred')
+  AND tl.subsidiary = 12
+  AND EXISTS (SELECT 1 FROM transactionline tl2 WHERE tl2.transaction = t.id AND tl2.location = 27 AND tl2.mainline = 'F')
+GROUP BY CASE WHEN t.entity = 51407 THEN 'Staff' ELSE 'Walk-In' END
+```
+Derive: `pw_walk_bench = round(walk net/bills)`; `pw_staff_bench = round(staff net/bills)`.
+
+## Query K2 — Price-Watch benchmark: 28-day night window (22:00–06:00)
+```sql
+SELECT COUNT(DISTINCT t.trandate) AS days, SUM(ABS(tl.netamount)) AS night_rev
+FROM transaction t
+JOIN transactionline tl ON t.id = tl.transaction AND tl.mainline = 'T'
+WHERE t.trandate BETWEEN TO_DATE('{PW_START}','YYYY-MM-DD') AND TO_DATE('{PREV_DATE}','YYYY-MM-DD')
+  AND t.type = 'CustInvc'
+  AND tl.subsidiary = 12
+  AND TO_CHAR(t.createddate,'HH24') IN ('22','23','00','01','02','03','04','05')
+  AND EXISTS (SELECT 1 FROM transactionline tl2 WHERE tl2.transaction = t.id AND tl2.location = 27 AND tl2.mainline = 'F')
+```
+Derive: `pw_night_bench = round(night_rev / days)`.
+
+## Query K3 — Price-Watch benchmark: 28-day mains sold at 12:00
+```sql
+SELECT COUNT(DISTINCT t.trandate) AS days, SUM(ABS(tl.quantity)) AS noon_qty
+FROM transaction t
+JOIN transactionline tl ON t.id = tl.transaction
+JOIN item i ON tl.item = i.id
+WHERE t.trandate BETWEEN TO_DATE('{PW_START}','YYYY-MM-DD') AND TO_DATE('{PREV_DATE}','YYYY-MM-DD')
+  AND t.type = 'CustInvc' AND tl.mainline = 'F' AND tl.location = 27 AND tl.subsidiary = 12
+  AND tl.netamount < 0
+  AND TO_CHAR(t.createddate,'HH24') = '12'
+  AND i.itemid IN ('K008','K013','K014','K015','K016','K017','K018','K019','K037','K038','K039','K040','K041','K042','K043','K044','K045','K046','K047')
+```
+Derive: `pw_noon_bench = round(noon_qty / days)`.
+
+### Price-Watch derivation (yesterday values — NO new queries, reuse A / D / E2)
+```
+pw_walk_ticket  = round(walk_in_revenue / walk_in_bills)          # from Query A
+pw_staff_ticket = round(staff_revenue / staff_bills)              # from Query A
+pw_night_rev    = sum of Query D revenue for hours 22,23,00–05    # thousands-separated
+pw_noon_plates  = sum of Query E2 qty at hour '12' for the mains allow-list (same list as K3)
+for each pair (value, bench) in [walk, staff, night]:
+    pct   = (value − bench)/bench × 100
+    arrow = "▲ +x.x%" if pct >= 0 else "▼ -x.x%"                  → pw_*_arrow
+    color = '#27AE60' if pct >= 0 else '#E74C3C'                  → pw_*_color
+pw_noon_color = '#E74C3C' if pw_noon_plates >= 35 else '#2C3E50'  # 35 = add-8th-staff trigger
+```
+Tokens (11 scalars): `pw_walk_ticket/bench/arrow/color`, `pw_staff_ticket/bench/arrow/color`,
+`pw_night_rev/bench/arrow/color`, `pw_noon_plates/bench/color`.
 
 ## KPI derivations (in the routine, after queries)
 ```

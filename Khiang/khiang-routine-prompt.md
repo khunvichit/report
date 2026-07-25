@@ -28,7 +28,8 @@ Retry a failed query ONCE (wait 20–90s); do not restart. Pin Sub 12 / loc 27 /
 Queries H (30-day per-day) and I (month-to-date) feed the period strip + bar chart;
 Query J (14-day per-day) feeds the heatmap table — last 7 days displayed, prior 7 = WoW baseline;
 Query E2 feeds the Top-3-items-per-hour column in the hourly comparison;
-Query G2 (35-day daily promo bills) feeds the Promotion Trend by Week table.
+Query G2 (35-day daily promo bills) feeds the Promotion Trend by Week table;
+Queries K1–K3 (28-day benchmarks) feed the Price Watch strip — yesterday's values come from A/D/E2.
 
 ## 4. Completeness — HARD STOP
 Run the 5 checks in `khiang-queries.md`. Any hard-stop failure → do NOT send; go to step 10 (fail loud).
@@ -43,6 +44,11 @@ Run the 5 checks in `khiang-queries.md`. Any hard-stop failure → do NOT send; 
 - For each hourly row, build `top3` from Query E2 (menu NAME `displayname` ×qty, top 3,
   "<br>"-separated one per line; strip code prefixes, truncate ~22 chars, fallback itemid; "—" if none).
 - Build `rice_top10_lines` for the group digest from the same `top10_rice` data (see `khiang-delivery.md`).
+- Price Watch: compute the 11 `pw_*` scalars per the Price-Watch derivation in `khiang-queries.md`
+  (yesterday's segment tickets from Query A, night 22:00–06:00 from Query D buckets, 12:00 mains
+  from Query E2; benchmarks from K1–K3). These monitor the price change: Walk-In ticket
+  (downtrade detector), Staff ticket (discount check), night window (night-shift viability),
+  noon plates (staffing trigger ≥35).
 - Sections: `alert_banner = (anomaly_count > 0)`; `promo = (staff10_bills + set50_bills > 0)`.
 
 ## 6. Build data.json (NOT html)

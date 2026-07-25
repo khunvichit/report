@@ -187,6 +187,46 @@
   </table>
 </td></tr>
 
+<!-- ── PRICE WATCH (post-price-change monitors: segment tickets, night window, peak plates) ── -->
+<tr><td style="padding:18px 32px 8px;">
+  <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:4px;border-left:3px solid #E67E22;padding-left:10px;">Price Watch — เฝ้าดูผลหลังปรับราคา</div>
+  <div style="font-size:11px;color:#888;margin-bottom:12px;padding-left:13px;">เทียบค่าเฉลี่ย 4 สัปดาห์ล่าสุด &nbsp;·&nbsp; เงื่อนไข action กำกับใต้ตัวเลข</div>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td width="24%" style="padding-right:5px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#EEF8FF;border-radius:8px;"><tr><td style="padding:12px 12px;">
+        <div style="font-size:10px;color:#888;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;">Ticket Walk-In</div>
+        <div style="font-size:20px;font-weight:700;color:#2C3E50;">฿{{pw_walk_ticket}}</div>
+        <div style="font-size:10px;font-weight:700;color:{{pw_walk_color}};margin-top:3px;">{{pw_walk_arrow}} vs ฿{{pw_walk_bench}} (4wk)</div>
+        <div style="font-size:9px;color:#999;margin-top:4px;">ราคาขึ้นแต่ ticket ไม่ขึ้น = ลูกค้า downtrade</div>
+      </td></tr></table>
+    </td>
+    <td width="24%" style="padding:0 5px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFF0EE;border-radius:8px;"><tr><td style="padding:12px 12px;">
+        <div style="font-size:10px;color:#888;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;">Ticket Staff</div>
+        <div style="font-size:20px;font-weight:700;color:#2C3E50;">฿{{pw_staff_ticket}}</div>
+        <div style="font-size:10px;font-weight:700;color:{{pw_staff_color}};margin-top:3px;">{{pw_staff_arrow}} vs ฿{{pw_staff_bench}} (4wk)</div>
+        <div style="font-size:9px;color:#999;margin-top:4px;">เช็คส่วนลดทำงานถูกต้อง</div>
+      </td></tr></table>
+    </td>
+    <td width="24%" style="padding:0 5px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#EEECFF;border-radius:8px;"><tr><td style="padding:12px 12px;">
+        <div style="font-size:10px;color:#888;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;">Night 22:00–06:00</div>
+        <div style="font-size:20px;font-weight:700;color:#2C3E50;">฿{{pw_night_rev}}</div>
+        <div style="font-size:10px;font-weight:700;color:{{pw_night_color}};margin-top:3px;">{{pw_night_arrow}} vs ฿{{pw_night_bench}} (4wk)</div>
+        <div style="font-size:9px;color:#999;margin-top:4px;">ฐานความคุ้มของกะดึก</div>
+      </td></tr></table>
+    </td>
+    <td width="24%" style="padding-left:5px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F5EDE4;border-radius:8px;"><tr><td style="padding:12px 12px;">
+        <div style="font-size:10px;color:#888;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;">จานหลัก 12:00</div>
+        <div style="font-size:20px;font-weight:700;color:{{pw_noon_color}};">{{pw_noon_plates}} จาน</div>
+        <div style="font-size:10px;color:#888;margin-top:3px;">avg 4wk: {{pw_noon_bench}} จาน/ชม.</div>
+        <div style="font-size:9px;color:#999;margin-top:4px;">🚨 เกิน 35 ติดกัน 2 สัปดาห์ = เพิ่มพนักงานคนที่ 8</div>
+      </td></tr></table>
+    </td>
+  </tr></table>
+</td></tr>
+
 <!-- ── TOP 10 ALL MENU ── -->
 <tr><td style="padding:18px 32px 8px;">
   <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:11px;border-left:3px solid #F27061;padding-left:10px;">Top 10 เมนู (All Items)</div>

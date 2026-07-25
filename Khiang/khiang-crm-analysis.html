@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khiang — CRM Segment Analysis for Price Decision — 19 Jul 2026</title>
+<style>
+  body{margin:0;padding:24px;background:#F0F2F5;font-family:Arial,Helvetica,sans-serif;color:#2C3E50;}
+  .wrap{max-width:860px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+  .hd{background:#5551FE;padding:28px 36px;color:#fff;}
+  .hd .k{font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,.6);text-transform:uppercase;}
+  .hd h1{font-size:22px;margin:6px 0 4px;}
+  .hd .sub{font-size:12px;color:rgba(255,255,255,.75);}
+  .sec{padding:22px 36px 6px;}
+  .sec h2{font-size:15px;border-left:4px solid #5551FE;padding-left:10px;margin:0 0 4px;}
+  .sec .cap{font-size:11px;color:#888;margin:0 0 12px 14px;}
+  table{width:100%;border-collapse:collapse;border:1px solid #E8E8E8;border-radius:8px;overflow:hidden;font-size:12px;}
+  th{background:#F8F9FA;padding:8px 10px;font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.5px;text-align:left;}
+  td{padding:8px 10px;border-top:1px solid #E8E8E8;}
+  .r{text-align:right;} .c{text-align:center;}
+  .verdict{background:#EEECFF;border-left:4px solid #5551FE;border-radius:8px;padding:16px 18px;font-size:13px;line-height:1.55;}
+  .warn{background:#FFF0EE;border-left:4px solid #F27061;border-radius:8px;padding:12px 16px;font-size:12px;line-height:1.5;margin-top:10px;}
+  .ok{color:#27AE60;font-weight:700;} .bad{color:#E74C3C;font-weight:700;} .mid{color:#E67E22;font-weight:700;}
+  .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;}
+  .t-low{background:#D4EDDA;color:#155724;} .t-mid{background:#FEF3CD;color:#856404;} .t-high{background:#F8D7DA;color:#721C24;}
+  .foot{padding:16px 36px 26px;font-size:10px;color:#AAA;border-top:1px solid #E8E8E8;margin-top:18px;}
+  .note{font-size:11px;color:#888;line-height:1.5;}
+  .big{font-size:20px;font-weight:700;}
+</style>
+</head>
+<body><div class="wrap">
+
+<div class="hd">
+  <div class="k">CHAW MANAGEMENT GROUP · CONFIDENTIAL</div>
+  <h1>Khiang — CRM Segment Analysis: Price Increase Decision</h1>
+  <div class="sub">Suvarnabhumi T1 · ข้อมูลบิลจริงจาก NetSuite/Zoku POS · หน้าต่างวิเคราะห์ 21 มิ.ย.–18 ก.ค. 2026 (4 สัปดาห์, 4,903 บิล, ฿919,907 ex-VAT) · จัดทำ 19 ก.ค. 2026</div>
+</div>
+
+<div class="sec">
+  <h2>1) คำตอบ: ขึ้นราคาได้ — ถ้าทำตามโครงสร้างนี้</h2>
+  <div class="verdict">
+    <b>58.7% ของรายได้มาจาก segment ที่ความไวต่อราคาต่ำ</b> (นักท่องเที่ยวกลุ่ม, set-meal, เส้น/ซุป, เครื่องดื่ม)
+    ขณะที่กลุ่มเปราะบางจริง (Staff กินเดี่ยว A1+A2) มีสัดส่วนรายได้เพียง <b>16.6%</b> และป้องกันได้ทั้งก้อนด้วยส่วนลด Staff 40%
+    ที่มีต้นทุนราว ฿24K/สัปดาห์ — เทียบกับรายได้ที่คาดว่าจะเพิ่ม ฿30–77K/สัปดาห์<br><br>
+    <b>เงื่อนไข 3 ข้อ:</b> (1) ตรึงราคาที่ Staff จ่ายจริงด้วยส่วนลด 40% (2) คงราคา ฿50 set เป็นกันชนฝั่ง Walk-In
+    (3) ขึ้นแบบ 2 จังหวะ: Premium ก่อน → เมนูหลักตามใน 3–4 สัปดาห์ พร้อม guardrail KPI ตามข้อ 7
+  </div>
+</div>
+
+<div class="sec">
+  <h2>2) แผนที่ลูกค้าทั้งหมด — 13 segments จากบิลจริง 4 สัปดาห์</h2>
+  <div class="cap">ทุกบิลถูกจัดเข้ากลุ่มเดียวเท่านั้น (mutually exclusive) · ยอด ex-VAT · ตัด POS_SUBTOTAL แล้ว</div>
+  <table>
+    <tr><th>Segment</th><th>นิยาม (จากบิล)</th><th class="r">บิล/4wk</th><th class="r">฿/บิล</th><th class="r">รายได้/4wk</th><th class="r">% รายได้รวม</th><th class="c">ความไวต่อราคา</th></tr>
+    <tr><td colspan="7" style="background:#EEF8FF;font-weight:700;">WALK-IN — 3,233 บิล · ฿687,261 · 74.7% ของรายได้</td></tr>
+    <tr><td><b>W4 กลุ่ม/ครอบครัว</b></td><td>ข้าว ≥2 จาน, 6.2 items, เครื่องดื่ม 1.5</td><td class="r">600</td><td class="r">397.0</td><td class="r">238,217</td><td class="r"><b>25.9%</b></td><td class="c"><span class="tag t-low">ต่ำสุด</span></td></tr>
+    <tr><td><b>W1 เดี่ยว + ฿50 set</b></td><td>ข้าว 1 จาน + set (ดื่ม+ไข่)</td><td class="r">972</td><td class="r">197.2</td><td class="r">191,683</td><td class="r"><b>20.8%</b></td><td class="c"><span class="tag t-low">ต่ำ (set กันชน)</span></td></tr>
+    <tr><td>W3 เดี่ยว minimal</td><td>ข้าว 1 จาน ไม่ไข่ ไม่ set</td><td class="r">574</td><td class="r">162.7</td><td class="r">93,393</td><td class="r">10.2%</td><td class="c"><span class="tag t-mid">กลาง</span></td></tr>
+    <tr><td>W5 เส้น/ซุปเป็นหลัก</td><td>มาม่า/ต้มยำ ไม่มีข้าว</td><td class="r">330</td><td class="r">236.0</td><td class="r">77,883</td><td class="r">8.5%</td><td class="c"><span class="tag t-low">ไม่โดนราคาข้าว</span></td></tr>
+    <tr><td>W2 เดี่ยว + ไข่</td><td>ข้าว 1 จาน + ไข่ (ไม่เอา set)</td><td class="r">273</td><td class="r">169.0</td><td class="r">46,138</td><td class="r">5.0%</td><td class="c"><span class="tag t-mid">กลาง</span></td></tr>
+    <tr><td>W6 ของทานเล่น</td><td>คาราเกะ/กุยช่าย/K057</td><td class="r">204</td><td class="r">93.1</td><td class="r">18,997</td><td class="r">2.1%</td><td class="c"><span class="tag t-low">ไม่โดน</span></td></tr>
+    <tr><td>W7 เครื่องดื่มล้วน</td><td>grab-and-go</td><td class="r">247</td><td class="r">52.2</td><td class="r">12,890</td><td class="r">1.4%</td><td class="c"><span class="tag t-low">ไม่โดน</span></td></tr>
+    <tr><td>W8 อื่นๆ</td><td>SE-7000001 ฯลฯ (ดูข้อ 8)</td><td class="r">33</td><td class="r">244.3</td><td class="r">8,060</td><td class="r">0.9%</td><td class="c">—</td></tr>
+    <tr><td colspan="7" style="background:#FFF0EE;font-weight:700;">AIRPORT STAFF — 1,670 บิล · ฿232,646 · 25.3% ของรายได้ · ใช้ส่วนลด 95%+</td></tr>
+    <tr><td><b>A2 เดี่ยว ไม่ไข่ + ลด10%</b></td><td>ข้าวจานเดียวจบ, ดื่ม 3%</td><td class="r">674</td><td class="r">111.3</td><td class="r">74,983</td><td class="r">8.2%</td><td class="c"><span class="tag t-high">สูงสุด 🚩</span></td></tr>
+    <tr><td><b>A1 เดี่ยว + ไข่ + ลด10%</b></td><td>ข้าว 1 จาน + ไข่, ดื่ม 9%</td><td class="r">601</td><td class="r">129.6</td><td class="r">77,865</td><td class="r">8.5%</td><td class="c"><span class="tag t-high">สูง</span></td></tr>
+    <tr><td>B ซื้อหลายรายการ + ลด10%</td><td>3.3 items — น่าจะซื้อฝากทีม</td><td class="r">334</td><td class="r">210.6</td><td class="r">70,356</td><td class="r">7.6%</td><td class="c"><span class="tag t-mid">กลาง</span></td></tr>
+    <tr><td>C ใช้ ฿50 set</td><td>ยอมสละส่วนลดเพื่อ set</td><td class="r">59</td><td class="r">154.9</td><td class="r">9,140</td><td class="r">1.0%</td><td class="c"><span class="tag t-mid">กลาง</span></td></tr>
+    <tr><td>D ไม่ใช้อะไรเลย</td><td>—</td><td class="r">2</td><td class="r">150.9</td><td class="r">302</td><td class="r">0.0%</td><td class="c">—</td></tr>
+  </table>
+</div>
+
+<div class="sec">
+  <h2>3) หลักฐาน 5 ข้อที่บอกว่าขึ้นราคาได้</h2>
+  <table>
+    <tr><th style="width:34%">หลักฐาน</th><th>ตัวเลข</th></tr>
+    <tr><td><b>1. รายได้กระจุกในกลุ่มไม่ไวราคา</b></td><td>W4+W1+W5+W6+W7 = <span class="ok">58.7% ของรายได้</span> — นักท่องเที่ยว one-time, หารบิลกลุ่ม, หรือไม่ซื้อข้าวเลย</td></tr>
+    <tr><td><b>2. Walk-In 63% จ่ายเต็มราคา</b></td><td>ไม่ใช้โปรใดๆ ทั้งที่มี set ให้ — ราคาปัจจุบันยังไม่ใช่เพดาน; เมนูขายจริงยังเป็นราคาเก่า (K037 ฿105 ทั้งที่อนุมัติ ฿119 แล้ว)</td></tr>
+    <tr><td><b>3. Volume กำลังขึ้น</b></td><td>บิลรวม 6 สัปดาห์: 1,182 → <span class="ok">1,314 (+11%)</span> สัปดาห์ล่าสุดสูงสุด — ขึ้นราคาตอนขาขึ้นกลบ churn signal ได้ดีที่สุด</td></tr>
+    <tr><td><b>4. Premium ถูกซื้อโดยคนไม่สนราคา</b></td><td>โคขุน ฿195 / คาราเกะ ฿160: Walk-In ซื้อ <span class="ok">82–87%</span> — ขึ้น Premium แทบไม่แตะ Staff</td></tr>
+    <tr><td><b>5. กลุ่มเสี่ยงถูกระบุตัวได้และป้องกันได้</b></td><td>A1+A2 = 1,275 บิล/4wk = <span class="bad">16.6% ของรายได้</span> — ล็อคได้ทั้งก้อนด้วยส่วนลด 40% (ต้นทุน ~฿24K/สัปดาห์)</td></tr>
+  </table>
+  <div class="warn"><b>ข้อควรระวังที่ต้องพูดตรงๆ:</b> ยอดขายปัจจุบัน ฿33–38K/วัน <b>ต่ำกว่า break-even ฿38.9K/วัน</b> และต่ำกว่ายุค เม.ย. (฿54.8K/วัน) มาก — การขึ้นราคาจึง "จำเป็น" ไม่ใช่แค่ "ทำได้" แต่ตัวเลข retention ในเอกสารนี้เป็นสมมติฐาน ของจริงต้องวัดผ่าน guardrail ข้อ 7 · ราคาสนามบิน (AOT) และ franchisor (Zoku) ต้องอนุมัติก่อน · Staff bills เคยไหลลง 512→389 ช่วง มิ.ย. แม้เพิ่งฟื้นเป็น 468</div>
+</div>
+
+<div class="sec">
+  <h2>4) ผลกระทบต่อแต่ละ segment เมื่อขึ้นราคา (฿159 base / ฿245–295 premium)</h2>
+  <table>
+    <tr><th>Segment</th><th class="r">% รายได้</th><th>โดนอะไร</th><th>ตัวป้องกัน</th></tr>
+    <tr><td>W4 กลุ่ม/ครอบครัว</td><td class="r">25.9%</td><td>จ่ายเพิ่มเต็ม แต่หารกันหลายคน, มาครั้งเดียว</td><td>ไม่ต้องทำอะไร — absorber หลัก</td></tr>
+    <tr><td>W1 เดี่ยว + set</td><td class="r">20.8%</td><td>จานหลักแพงขึ้น</td><td><b>คงราคา set ฿50</b> → value ของ set ดีขึ้นเชิงเปรียบเทียบ</td></tr>
+    <tr><td>W3/W2 เดี่ยวไม่มี set</td><td class="r">15.2%</td><td>โดนเต็มที่สุดใน Walk-In</td><td>ดัน set conversion (50% ของกลุ่มเดี่ยวเอา set อยู่แล้ว)</td></tr>
+    <tr><td>W5 เส้น/ซุป</td><td class="r">8.5%</td><td>ไม่โดน ถ้าไม่ขึ้นราคาเส้น</td><td>แนะนำขึ้น K015/K019 พร้อมกัน (FC 35–39%)</td></tr>
+    <tr><td>A1+A2 Staff เดี่ยว</td><td class="r">16.6%</td><td>ถ้าไม่เพิ่มส่วนลด = จ่าย +51% ทั้งที่ตัดทุกอย่างแล้ว (A2 ไม่ซื้อแม้แต่ไข่)</td><td><b>ส่วนลด 40% → จ่ายเท่าเดิม ฿95/บิลข้าว</b> หรือ Staff Set ข้าว+ไข่ ราคาเดียว</td></tr>
+    <tr><td>B Staff ซื้อหลายรายการ</td><td class="r">7.6%</td><td>โดนแรงสุดเชิงบาท (฿211/บิล)</td><td>ได้ประโยชน์จากส่วนลด 40% มากสุด — กลุ่มนี้จะชอบแผนนี้</td></tr>
+  </table>
+</div>
+
+<div class="sec">
+  <h2>5) Scenario ยอดขาย (ฐาน: ฿245,934/สัปดาห์, 5–11 ก.ค.)</h2>
+  <div class="cap">ราคาปรับเฉพาะเมนูข้าว · retention = สมมติฐาน ระบุไว้ชัดเพื่อให้เถียงกันได้</div>
+  <table>
+    <tr><th>Scenario</th><th>โครงสร้าง</th><th class="c">Retention W/S</th><th class="r">ยอด/สัปดาห์</th><th class="r">Δ</th><th class="r">เฉลี่ย/วัน</th></tr>
+    <tr><td>S1 แผนเดิม</td><td>+13% (฿119), ลด 10%</td><td class="c">98%/95%</td><td class="r">256,282</td><td class="r">+4.2%</td><td class="r">36,612</td></tr>
+    <tr><td>S2 กลาง</td><td>+30% (฿139), ลด 20%</td><td class="c">95%/85%</td><td class="r">259,354</td><td class="r">+5.5%</td><td class="r">37,051</td></tr>
+    <tr><td>S3 แรง</td><td>+51% (฿159), ลด 25%</td><td class="c">92%/75%</td><td class="r">267,830</td><td class="r">+8.9%</td><td class="r">38,261</td></tr>
+    <tr><td><b>S4 แรง + ตรึง Staff</b></td><td><b>+51% (฿159), ลด 40% (Staff จ่ายเท่าเดิม)</b></td><td class="c">92%/100%</td><td class="r"><b>275,487</b></td><td class="r"><b>+12.0%</b></td><td class="r"><b>39,355</b></td></tr>
+    <tr><td><b>S5 Premium ก่อน</b></td><td><b>Premium +50% (฿245/295), base ฿119, ลด 10%</b></td><td class="c">96%/98%</td><td class="r"><b>270,413</b></td><td class="r"><b>+10.0%</b></td><td class="r"><b>38,630</b></td></tr>
+  </table>
+  <div class="note" style="margin-top:8px;">Downside protection: ที่ราคาใหม่ ต่อให้ Staff หายหมด 100% ยอดยังเหลือ ~฿239K/สัปดาห์ ≈ ยอดปัจจุบัน แต่ต้นทุนต่ำกว่า (จานหายไป ~390/สัปดาห์) · FC% เมนูข้าวจะลดจาก 28.5% → 18–20%</div>
+</div>
+
+<div class="sec">
+  <h2>6) แผนที่แนะนำ: 2 จังหวะ</h2>
+  <table>
+    <tr><th style="width:18%">จังหวะ</th><th>ทำอะไร</th><th>คาดผล</th></tr>
+    <tr><td><b>Phase 1 — ทันที</b></td><td>กดราคา ฿119 ที่อนุมัติแล้วเข้า Zoku POS + ขึ้น Premium: โคขุน ฿295, เทพหมู/คาราเกะ ฿245, เป็ดย่าง ฿175 + ขึ้นของหวาน FC>60% (สละ/ลูกตาล → ฿75) + เส้น K015 → ฿330</td><td>≈ S5: +10% · ความเสี่ยงต่ำสุด · ไม่ต้องแตะระบบส่วนลด</td></tr>
+    <tr><td><b>Phase 2 — หลัง 3–4 สัปดาห์สะอาด</b></td><td>Base → ฿159 ทั้งกระดาน + ส่วนลด Staff 10%→40% + คง set ฿50 + Staff Set ข้าว+ไข่</td><td>≈ S4: +12% · ต้องประสาน Zoku POS เรื่อง rate ใหม่ + แก้ Query G/G2 ในรายงาน</td></tr>
+  </table>
+</div>
+
+<div class="sec">
+  <h2>7) Guardrail KPIs — ดูจากตาราง Customer Trend by Week ในรายงานประจำวัน</h2>
+  <table>
+    <tr><th>ตัวชี้วัด</th><th>ปกติ (ฐาน 4 สัปดาห์)</th><th>จุด action</th><th>Action</th></tr>
+    <tr><td>Staff bills/สัปดาห์</td><td>389–482</td><td class="bad">&lt; 400 ติดกัน 2 สัปดาห์</td><td>เร่ง Phase 2 (ส่วนลด 40%) หรือเพิ่มส่วนลด</td></tr>
+    <tr><td>Walk-In bills/สัปดาห์</td><td>760–846</td><td class="bad">ลด &gt; 8% จากฐาน</td><td>ชะลอ Phase 2 · เช็ค AOT footfall ก่อนสรุปว่าเป็นเพราะราคา</td></tr>
+    <tr><td>Set attachment (% ของบิล Walk-In)</td><td>35–39%</td><td class="bad">&lt; 30%</td><td>ตรวจ value perception ของ set · พิจารณา set ฿59 พร้อมของเพิ่ม</td></tr>
+    <tr><td>สัดส่วนบิล A2 (Staff เดี่ยวไม่ไข่)</td><td>~40% ของ Staff</td><td class="bad">พุ่งขึ้น &gt; 50%</td><td>สัญญาณ Staff รัดเข็มขัด — ทบทวนราคา Staff Set</td></tr>
+    <tr><td>Avg ticket Walk-In</td><td>฿218–232</td><td class="mid">ไม่ขึ้นตามราคา</td><td>แปลว่า downtrade เมนูถูกลง — ดู mix ใน Top 10</td></tr>
+  </table>
+</div>
+
+<div class="sec">
+  <h2>8) Data notes — ความสะอาดของข้อมูลชุดนี้</h2>
+  <div class="note">
+    • ตัด <b>POS_SUBTOTAL</b> ออกจากยอดต่อบิลแล้ว (บรรทัดเทคนิคของ POS ที่เคยทำให้ ฿/บิล สูงเกินจริง ~15%) — ตารางรายงานรายวัน/สัปดาห์ไม่เคยกระทบเพราะใช้ยอด header<br>
+    • ส่วนลด Staff จับจาก POS_DISCOUNT <b>ทุก rate</b> ในตระกูล 10% (ไม่ใช่แค่ -9.81) — Staff ใช้ส่วนลดจริง 95%+ ของบิล<br>
+    • <b>K057 กุยช่ายแซ่บ</b> (เมนูใหม่ ~27 ชิ้น/สัปดาห์) ถูกรวมในหมวดของทานเล่นแล้ว แต่ยังไม่มี cost ใน NetSuite และยังไม่อยู่ในไฟล์เมนูหลัก<br>
+    • <b>SE-7000001 "อาหารและเครื่องดื่ม"</b> ~6 บิล/สัปดาห์ × ฿764 คีย์แบบ free-form — ควร audit: ไม่ตัด stock, ไม่เข้า food cost, เลี่ยงการวิเคราะห์<br>
+    • Walk-In = ทุก entity ที่ไม่ใช่ 51407 · ยอด ex-VAT ทั้งเอกสาร · CustCred ไม่ได้หักในตาราง segment (ผลกระทบ &lt; 1%)
+  </div>
+</div>
+
+<div class="foot">
+  CHAW Analytics · Khiang Restaurant · Suvarnabhumi T1 · Source: NetSuite (Sub 12, Loc 27) via SuiteQL, 21 Jun–18 Jul 2026 · Scenario retention rates are assumptions, not measurements · Generated 19 Jul 2026
+</div>
+
+</div></body>
+</html>
