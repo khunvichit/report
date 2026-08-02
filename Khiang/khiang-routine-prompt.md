@@ -37,7 +37,7 @@ Run the 5 checks in `khiang-queries.md`. Any hard-stop failure → do NOT send; 
 ## 5. Compute KPIs & prediction
 - **VAT conversion FIRST:** every revenue figure from a mainline-T query (A, F, H, I, J, K1, K2,
   and the hourly D/E revenue) is INC-VAT — divide by 1.07 after aggregation, before any KPI math
-  or display. Item-line figures (B, C, E2, G, G2) are already ex-VAT. Target = ฿37,400/day ex-VAT.
+  or display. Item-line figures (B, C, E2, G, G2) are already ex-VAT. Target = ฿40,000/day ex-VAT.
 - KPI derivations per `khiang-queries.md` (net_sales, total_bills, avg_ticket, pcts, target_icon, arrows).
 - Period metrics: `net_30d` / `avg_30d` (Query H) and `net_mtd` / `avg_mtd` / `mtd_days` /
   `mtd_signed_pct` (Query I). Use ACTUAL trading days for the averages, not calendar days.
