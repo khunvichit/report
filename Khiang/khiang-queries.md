@@ -9,7 +9,13 @@ or forecasting here (that lives in `khiang-prediction.md`).
 - Revenue stored negative → net = `-SUM(netamount)` or `SUM(ABS(netamount))`.
 - `mainline='T'` = header/totals; `'F'` = item lines.
 - No `ORDER BY` on `GROUP BY` queries (400 error) — sort client-side in the routine.
-- Amounts are ex-VAT. Display ex-VAT (the rendered email shows ex-VAT figures).
+- **VAT rule (verified 2026-07-30):** `mainline='T'` header totals are **INC-VAT** — exactly
+  item net + 7% tax lines. The routine MUST divide every revenue figure that comes from a
+  mainline-T query by **1.07** (after aggregation) before display. The rendered email shows
+  **ex-VAT** figures and says so in the footer.
+- Item-line (`mainline='F'`) netamounts are already ex-VAT AND net of discounts — POS_DISCOUNT
+  lines carry the promo `rate` only with `netamount = 0`; the discount value is embedded in the
+  item lines' prices. Never "deduct discounts" a second time.
 
 ## Fixed params (pinned — do not let these wander)
 | Param | Value |
@@ -22,7 +28,7 @@ or forecasting here (that lives in `khiang-prediction.md`).
 | POS discount item | `POS_DISCOUNT` |
 | Staff-10% promo rate | `-9.81` (rice) ; egg add-on `-1.68` |
 | ฿50 drink-set promo rate | `-16.20` (drink) ; egg add-on `-5.30` |
-| Target | ฿40,000 / day |
+| Target | **฿37,400 / day ex-VAT** (≡ ฿40,000 inc-VAT — re-based 2026-07-30) |
 
 ## Date tokens (computed at runtime — NEVER queried, NEVER hardcoded)
 Compute in **Asia/Bangkok**, then format. Honour a manual `REPORT_DATE` override for back-fills.
@@ -305,7 +311,7 @@ mtd_avg       = avg_mtd (from Query I) — the horizontal reference line
 mtd_line_px   = round(min(mtd_avg, chart_max) / chart_max * bar_px_max)   # line offset from baseline
 for each day d:
     bar_px    = max(2, round(d.net_sales / chart_max * bar_px_max))   # ≥2px so zero-ish days show
-    bar_color = '#27AE60' if d.net_sales >= 40000 else '#E74C3C'      # green ≥target / red below
+    bar_color = '#27AE60' if d.net_sales >= 37400 else '#E74C3C'      # green ≥target / red below (ex-VAT)
     day_label = d.trandate day-of-month as 2 chars (e.g. '14','15'… )
     is_report_day = (d.trandate == REPORT_DATE)            # bold/marker the latest day
 ```
@@ -356,7 +362,7 @@ WHERE t.trandate BETWEEN TO_DATE('{MTD_START}','YYYY-MM-DD') AND TO_DATE('{REPOR
   AND EXISTS (SELECT 1 FROM transactionline tl2 WHERE tl2.transaction = t.id AND tl2.location = 27 AND tl2.mainline = 'F')
 ```
 Derive: `net_mtd = net_sales`; `mtd_days = days` (actual trading days MTD);
-`avg_mtd = round(net_sales / days)`; `mtd_signed_pct = round((avg_mtd − 40000)/40000 × 100, 1)`
+`avg_mtd = round(net_sales / days)`; `mtd_signed_pct = round((avg_mtd − 37400)/37400 × 100, 1)`
 (prefix '+' if ≥ 0). If MTD has 0 trading days (1st of month before close) → render all three as `—`.
 
 ---
@@ -424,10 +430,10 @@ Tokens (11 scalars): `pw_walk_ticket/bench/arrow/color`, `pw_staff_ticket/bench/
 net_sales        = walk_in_revenue + staff_revenue − credit_notes
 total_bills      = walk_in_bills + staff_bills
 avg_ticket       = round(net_sales / total_bills)
-signed_pct       = round((net_sales − 40000) / 40000 × 100, 1)   # prefix '+' if ≥ 0
+signed_pct       = round((net_sales − 37400) / 37400 × 100, 1)   # prefix '+' if ≥ 0 (net_sales already ÷1.07)
 walk_in_pct      = round(walk_in_bills / total_bills × 100, 1)
 staff_pct        = round(staff_bills  / total_bills × 100, 1)
-target_icon      = 🔥 if net≥50000 | ✅ if 40000–50000 | ⚠️ if <40000
+target_icon      = 🔥 if net≥46700 | ✅ if 37400–46700 | ⚠️ if <37400   # ex-VAT thresholds
 bills_arrow / ticket_arrow = ↑ if ≥ benchmark else ↓
 ```
 
