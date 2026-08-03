@@ -258,7 +258,11 @@ A=D["approvals"]
 appr_txn=sum(r[1] for r in A["txn_summary"])
 appr_master=A["master_vendor_pending"]+A["master_cust_pending"]
 appr_total=appr_txn+appr_master
-repeats["kpi_cards"].append(_card("Approvals",appr_total,str(appr_txn)+" txn / "+str(appr_master)+" mstr", KRED if appr_total else KGREEN))
+# KPI counts the ACTIONABLE blockers: stuck vendor bill-payments + master-data pending
+# (the full pending-by-type table, incl. auto intercompany JEs, is shown in the tab for context)
+appr_pymt_ct=A["txn_summary"][0][1] if A.get("txn_summary") else 0
+appr_block=appr_pymt_ct+appr_master
+repeats["kpi_cards"].append(_card("Approvals",appr_block,str(appr_pymt_ct)+" stuck pymt / "+str(appr_master)+" mstr", KRED if appr_block else KGREEN))
 for _c in repeats["kpi_cards"]:
     _c["cardw"]="%.1f%%" % (100.0/len(repeats["kpi_cards"]))
 repeats["appr_txn_rows"]=[{"type":r[0],"count":str(r[1]),"oldest":r[2],"note":r[3],
@@ -280,6 +284,16 @@ if ND:
         nodue_prepay_bills=str(ND["prepay_bills"]),nodue_prepay_amt=money(ND["prepay_amt"]),
         nodue_residual_bills=str(ND["residual_bills"]),nodue_residual_amt=money(ND["residual_amt"]),
         nodue_note=ND["note"])
+    # JVs pending approval > 30 days (oldest first)
+    JE30=A.get("je_over30")
+    if JE30:
+        _subof=lambda tid:("SFB" if "SFB" in tid else "Vending" if "VEN" in tid else "ActionCity" if "ACT" in tid else "-")
+        _r=sorted(JE30["rows"], key=lambda r: dp(r[1]))
+        repeats["appr_je30_rows"]=[{"n":str(i+1),"tranid":r[0],"dt":r[1],"sub":_subof(r[0]),
+            "age":str((TODAY-dp(r[1])).days),"creator":r[2],"memo":r[3] or "—"} for i,r in enumerate(_r)]
+        scalars.update(je30_count=str(JE30["count"]),je30_oldest=_r[0][1],je30_bench=str(JE30.get("bench_days",30)))
+    else:
+        repeats["appr_je30_rows"]=[]; scalars.update(je30_count="0",je30_oldest="—",je30_bench="30")
 else:
     repeats["appr_nodue_rows"]=[]
     scalars.update(nodue_bills="0",nodue_amt="0.00",nodue_fix_bills="0",nodue_fix_amt="0.00",
@@ -332,6 +346,16 @@ for c in repeats["kpi_cards"]:
         if dlt>0:   c["wow"]="last wk %d ▲%d"%(int(p),dlt);      c["wcolor"]=DRED
         elif dlt<0: c["wow"]="last wk %d ▼%d"%(int(p),abs(dlt)); c["wcolor"]=DGRN
         else:       c["wow"]="last wk %d –"%int(p);              c["wcolor"]=GREY
+    # ---- recolor KPI card by week-over-week PROGRESS ----
+    # green = fully resolved (0) · yellow = progress (fewer than last wk) · red = no progress / worse / not comparable
+    pnum = int(p) if isinstance(p,(int,float)) else None
+    if cur==0:
+        col=KGREEN
+    elif pnum is not None and cur<pnum:
+        col=KAMBER
+    else:
+        col=KRED
+    c["color"]=col; c["bg"]={KGREEN:"#E8F5E9",KAMBER:"#FFF3E0",KRED:"#FBE4E0"}[col]
 scalars["kpi_prior_asof"]=PRIOR.get("_asof","")
 
 # ---------- meta ----------

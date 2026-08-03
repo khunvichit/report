@@ -1,62 +1,65 @@
 {
  "scalars": {
-  "cash_total": "28,364,788",
-  "subacct_total": "1,257,675",
-  "ar_total_all": "1,163,219",
-  "ar_current_all": "128,687",
-  "ar_overdue_all": "1,034,532",
-  "cash_sfb": "22,736,809",
-  "cash_ven": "3,218,846",
-  "cash_act": "2,409,133",
-  "ar_total": "1,163,219",
-  "ar_overdue": "1,034,532",
-  "ar_pct": "88.9",
-  "recon_note": "Bank recon OVERDUE on one or more accounts (>30d)",
-  "action1": "Reconcile SFB KBANK (11013001) & SFB SCB (11013004) — both last reconciled 31 May, now 37 days past the 30-day control.",
-  "action2": "Release the 133 stuck vendor bill-payments (System-created, no approver) so due AP can reach the KBank file.",
-  "action3": "Chase LT Solutions ฿484,566 (60-day, oldest 28 Apr) and Master Mind ฿289,529 (now rising) — the two largest SFB overdue AR.",
-  "recon_unverified": "7,969,944.69",
-  "dep_counts": "OK:12 · OVERDUE:3 · CRITICAL:7 · NEGATIVE:5",
-  "dep_critical": "7",
-  "dep_critical_list": "SFB Union Pay, SFB Wechat, Vending Union Pay, Vending Ksher Alipay, Vending Ksher Truemoney …",
+  "cash_total": "28,852,874",
+  "subacct_total": "-1,160,323",
+  "ar_total_all": "958,246",
+  "ar_current_all": "62,418",
+  "ar_overdue_all": "895,828",
+  "cash_sfb": "24,070,147",
+  "cash_ven": "2,524,319",
+  "cash_act": "2,258,408",
+  "ar_total": "958,246",
+  "ar_overdue": "895,828",
+  "ar_pct": "93.5",
+  "recon_note": "Bank recon OK (SFB KBANK/SCB at 15d, monitor)",
+  "action1": "Release the 155 stuck vendor bill-payments (System-created, no approver) — up from 133; this is the main blocker to paying due AP via KBank.",
+  "action2": "Chase LT Solutions ฿435,863 (60-day, oldest 28 Apr) and King Power Corp ฿99,500 — largest SFB overdue AR.",
+  "action3": "Work the 348 due/overdue vendor bills (฿13.1M): exclude intercompany, then pay eligible via KBank.",
+  "recon_unverified": "0.00",
+  "dep_counts": "OK:4 · LATE:1 · OVERDUE:6 · CRITICAL:2 · NEGATIVE:12",
+  "dep_critical": "2",
+  "dep_critical_list": "SFB OCG, ActionCity Consignment",
   "vat_notrev_n": "37",
   "vat_notrev_amt": "223,640",
   "vat_overrev_n": "55",
   "vat_overrev_amt": "-3,489,341",
-  "vat_acct_input": "2,295,805.46",
-  "vat_acct_output": "-21,837.05",
+  "vat_acct_input": "2,953,329.76",
+  "vat_acct_output": "-16,216.06",
   "vat_top": "บ.คิง เพาเวอร์ สุวรรณภูมิ จำกัด 989,454 (over-reversed)",
   "memo_total": "53",
-  "memo_overdue": "15",
+  "memo_overdue": "21",
   "memo_pending": "18",
   "memo_dueweek": "0",
-  "memo_ontrack": "22",
+  "memo_ontrack": "17",
   "memo_top": "[VEN] Mgmt fee 1.2M overdue 21d; 2× CHAW INV @1.73M await approval",
   "dup_exact": "0",
   "dup_clusters": "483",
   "dup_line": "0 exact (PASS); 483 same-day clusters; top: One Time Vendor billed twice (500K+50K)",
-  "ar_top": "บริษัท แอลที โซลูชั่นส์ แอนด์ เทคโนโลยี จำกัด (SFB) 484,566 — 70d past 60d term",
-  "kpi_total": "65",
-  "appr_txn_total": "327",
-  "appr_master_pending": "14",
-  "appr_cust_rejected": "8",
-  "bills_open": "1435",
+  "ar_top": "บริษัท แอลที โซลูชั่นส์ แอนด์ เทคโนโลยี จำกัด (SFB) 435,863 — 78d past 60d term",
+  "kpi_total": "68",
+  "appr_txn_total": "290",
+  "appr_master_pending": "0",
+  "appr_cust_rejected": "0",
+  "bills_open": "1454",
   "bills_open_oldest": "04/07/2024",
-  "appr_root_cause": "Stuck bill-payments are auto-generated (createdby = System) with nextApprover unassigned (-1): the approval workflow created the payment but never routed it to an approver, so it sits in 'Pending Approval' indefinitely. The bills themselves are Open (entered/approved) and awaiting these payments.",
-  "nodue_bills": "14",
-  "nodue_amt": "221,152",
-  "nodue_fix_bills": "14",
-  "nodue_fix_amt": "221,152",
+  "appr_root_cause": "Stuck bill-payments are auto-generated (createdby = System) with nextApprover unassigned (-1): the workflow created the payment but never routed it to an approver, so it sits in 'Pending Approval' indefinitely. The bills themselves are Open/approved and awaiting these payments. Master-data: as of 15 Jul ALL active customers (14,356) and vendors (1,035) are Approved — 0 pending. The 27 Jun pending list has since been approved; C-02347 & C-7492369 are Rejected / pending-but-inactive, not live approvals. Separately, 129 Journal Entries sit in Pending Approval (mostly AUTO intercompany Inbox/ACT recharges) — a systemic auto-JE backlog to review, not a payment blocker.",
+  "nodue_bills": "16",
+  "nodue_amt": "250,042",
+  "nodue_fix_bills": "16",
+  "nodue_fix_amt": "250,042",
   "nodue_prepay_bills": "0",
   "nodue_prepay_amt": "0",
   "nodue_residual_bills": "0",
   "nodue_residual_amt": "0",
-  "nodue_note": "As of 04 Jul 2026 the no-due-date backlog is down to 14 bills (from 44 on 27 Jun) — the team fixed 30. All 14 remaining are Open + Approved, just missing a due date, so the KBank run skips them. Fix = re-apply the term to populate the due date; no re-approval needed.",
-  "prepay_bills": "36",
-  "prepay_amt": "1,033,484",
-  "prepay_note": "Open bills on Prepayment terms — clear by applying the deposit, not the bank run. 8 bills (฿145,854) are >30 days past the bill date (ณัฐพล วันริโก ฿130k is the bulk).",
-  "prepay_over30_bills": "8",
-  "prepay_over30_amt": "145,854",
+  "nodue_note": "16 bills Open + Approved but missing a due date, so the KBank run skips them. Fix = re-apply the term to populate the due date; no re-approval needed.",
+  "je30_count": "39",
+  "je30_oldest": "01/10/2025",
+  "je30_bench": "30",
+  "prepay_bills": "33",
+  "prepay_amt": "584,128",
+  "prepay_note": "Open bills on Prepayment terms — clear by applying the deposit, not the bank run. 13 bills (฿59,148) are >30 days past the bill date; โอซูก้า (9 bills ฿51,809) is the bulk.",
+  "prepay_over30_bills": "13",
+  "prepay_over30_amt": "59,148",
   "prepay_bench": "30",
   "pm_total_bills": "93",
   "pm_total_amt": "10,484,048",
@@ -66,43 +69,43 @@
   "pm_jv_amt": "6,311,286",
   "pm_window": "Jan 2025 – Jun 2026",
   "pm_note": "This account has NO NetSuite Vendor Prepayment (VPrep) module. Vendor deposits are booked to GL 11037002 เงินมัดจำ and cleared against bills two ways: netted inside the vendor bill, or applied to an AP bill via Journal. Both = a bill paid by prepayment (not by bank/KBank). Mostly fit-out/construction deposits (Subway, Juice Land, Very Thai, Pony On Wheel).",
-  "kpi_prior_asof": "27 Jun 2026",
-  "date_str": "07 Jul 2026",
-  "source": "NetSuite SuiteQL (live pull 07 Jul 2026)"
+  "kpi_prior_asof": "07 Jul 2026",
+  "date_str": "15 Jul 2026",
+  "source": "NetSuite SuiteQL (live pull 15 Jul 2026)"
  },
  "repeats": {
   "overview_rows": [
    {
     "sub_name": "SFB",
-    "cash": "22,736,809",
-    "ar_total": "932,648",
-    "ar_current": "22,516",
-    "ar_overdue": "910,132",
-    "pct": "97.6",
-    "subacct": "592,388",
-    "recon_txt": "31/05/2026 (37d)",
-    "recon_bg": "#FBE4E0"
+    "cash": "24,070,147",
+    "ar_total": "806,562",
+    "ar_current": "35,134",
+    "ar_overdue": "771,428",
+    "pct": "95.6",
+    "subacct": "-842,017",
+    "recon_txt": "30/06/2026 (15d)",
+    "recon_bg": "#E8F5E9"
    },
    {
     "sub_name": "Vending",
-    "cash": "3,218,846",
+    "cash": "2,524,319",
     "ar_total": "1,591",
     "ar_current": "1,591",
     "ar_overdue": "0",
     "pct": "0.0",
-    "subacct": "246,983",
-    "recon_txt": "30/06/2026 (7d)",
+    "subacct": "-591,233",
+    "recon_txt": "30/06/2026 (15d)",
     "recon_bg": "#E8F5E9"
    },
    {
     "sub_name": "ActionCity",
-    "cash": "2,409,133",
-    "ar_total": "228,980",
-    "ar_current": "104,580",
+    "cash": "2,258,408",
+    "ar_total": "150,093",
+    "ar_current": "25,693",
     "ar_overdue": "124,400",
-    "pct": "54.3",
-    "subacct": "418,304",
-    "recon_txt": "30/06/2026 (7d)",
+    "pct": "82.9",
+    "subacct": "272,927",
+    "recon_txt": "30/06/2026 (15d)",
     "recon_bg": "#E8F5E9"
    }
   ],
@@ -110,57 +113,57 @@
    {
     "acct": "11101003",
     "desc": "ภาษีซื้อ-ยังไม่ถึงกำหนด (Input VAT Undue, asset)",
-    "bal": "2,295,805.46"
+    "bal": "2,953,329.76"
    },
    {
     "acct": "21026002",
     "desc": "ภาษีขายยังไม่ถึงกำหนด (Output VAT Undue, liability)",
-    "bal": "-21,837.05"
+    "bal": "-16,216.06"
    }
   ],
   "risk_rows": [
    {
     "n": "1",
-    "area": "Bank Recon",
-    "item": "SFB KBANK & SCB not reconciled since 31 May",
-    "detail": "37 days — past the 30-day control on 2 SFB main accounts",
-    "amount": "—",
+    "area": "AR Overdue",
+    "item": "LT Solutions & Technology (C-7492305)",
+    "detail": "฿435,863 overdue on 60-day terms; oldest 28 Apr",
+    "amount": "435,863",
     "severity": "CRITICAL",
     "sev_bg": "#FBE4E0"
    },
    {
     "n": "2",
-    "area": "AR Overdue",
-    "item": "LT Solutions & Technology (C-7492305)",
-    "detail": "฿484,566 overdue on 60-day terms; oldest 28 Apr",
-    "amount": "484,566",
-    "severity": "CRITICAL",
-    "sev_bg": "#FBE4E0"
-   },
-   {
-    "n": "3",
     "area": "Approvals",
-    "item": "133 vendor bill-payments stuck in approval",
-    "detail": "System-created, nextApprover unassigned — never reach KBank",
+    "item": "155 vendor bill-payments stuck in approval",
+    "detail": "System-created, nextApprover unassigned — never reach KBank (up from 133)",
     "amount": "—",
     "severity": "CRITICAL",
     "sev_bg": "#FBE4E0"
    },
    {
-    "n": "4",
+    "n": "3",
     "area": "AP Payments",
-    "item": "281 bills due/overdue not yet paid",
-    "detail": "฿15.2M due now sitting unpaid — release via KBank run",
-    "amount": "15,196,549",
+    "item": "348 bills due/overdue not yet paid",
+    "detail": "฿13.1M due now sitting unpaid — release via KBank run",
+    "amount": "13,117,381",
+    "severity": "HIGH",
+    "sev_bg": "#F8C8C0"
+   },
+   {
+    "n": "4",
+    "area": "AR Overdue",
+    "item": "Master Mind Consultant (C-00277)",
+    "detail": "฿203,383 overdue (was ฿289k — partly paid)",
+    "amount": "203,383",
     "severity": "HIGH",
     "sev_bg": "#F8C8C0"
    },
    {
     "n": "5",
-    "area": "AR Overdue",
-    "item": "Master Mind Consultant (C-00277)",
-    "detail": "฿289,529 fully overdue (30-day term), up from ฿237k",
-    "amount": "289,529",
+    "area": "Undue VAT",
+    "item": "Input VAT undue rose to ฿2.95M",
+    "detail": "up ฿0.66M in a week — 129 'Undue Tax Adjustment' JEs stuck pending approval, so undue VAT isn't clearing",
+    "amount": "2,953,330",
     "severity": "HIGH",
     "sev_bg": "#F8C8C0"
    },
@@ -175,24 +178,15 @@
    },
    {
     "n": "7",
-    "area": "Prepayment",
-    "item": "ณัฐพล วันริโก (Prepayment terms)",
-    "detail": "฿130,000 open >30d — apply deposit, not a bank payment",
-    "amount": "130,000",
-    "severity": "HIGH",
-    "sev_bg": "#F8C8C0"
-   },
-   {
-    "n": "8",
-    "area": "AR Overdue",
-    "item": "ActionCity ชุติมา แซ่หลิ่ว",
-    "detail": "฿77,900 overdue since 21 Feb (ActionCity)",
+    "area": "ActionCity AR",
+    "item": "ชุติมา แซ่หลิ่ว",
+    "detail": "฿77,900 overdue since 21 Feb",
     "amount": "77,900",
     "severity": "HIGH",
     "sev_bg": "#F8C8C0"
    },
    {
-    "n": "9",
+    "n": "8",
     "area": "Memorized Txn",
     "item": "recurring bills/invoices overdue or pending approval",
     "detail": "incl. ฿1.2M mgmt fee + 2× ฿1.73M pending INV",
@@ -201,11 +195,20 @@
     "sev_bg": "#F8C8C0"
    },
    {
+    "n": "9",
+    "area": "Prepayment",
+    "item": "โอซูก้า + others (Prepayment terms)",
+    "detail": "฿59,148 open >30d — apply deposit, not a bank payment",
+    "amount": "59,148",
+    "severity": "MEDIUM",
+    "sev_bg": "#F5F5F5"
+   },
+   {
     "n": "10",
     "area": "No-due-date bills",
-    "item": "14 approved bills missing a due date",
-    "detail": "฿221,152 skipped by KBank run — set due date",
-    "amount": "221,152",
+    "item": "16 approved bills missing a due date",
+    "detail": "฿250,042 skipped by KBank run — set due date",
+    "amount": "250,042",
     "severity": "WATCH",
     "sev_bg": "#FFF3E0"
    }
@@ -214,32 +217,32 @@
    {
     "sev": "URGENT",
     "sev_bg": "#FBE4E0",
-    "text": "Reconcile SFB KBANK (11013001) & SFB SCB (11013004) — both last reconciled 31 May, now 37 days past the 30-day control."
+    "text": "Release the 155 stuck vendor bill-payments (System-created, no approver) — up from 133; this is the main blocker to paying due AP via KBank."
    },
    {
     "sev": "URGENT",
     "sev_bg": "#FBE4E0",
-    "text": "Release the 133 stuck vendor bill-payments (System-created, no approver) so due AP can reach the KBank file."
-   },
-   {
-    "sev": "URGENT",
-    "sev_bg": "#FBE4E0",
-    "text": "Chase LT Solutions ฿484,566 (60-day, oldest 28 Apr) and Master Mind ฿289,529 (now rising) — the two largest SFB overdue AR."
+    "text": "Chase LT Solutions ฿435,863 (60-day, oldest 28 Apr) and King Power Corp ฿99,500 — largest SFB overdue AR."
    },
    {
     "sev": "ACTION",
     "sev_bg": "#F5EDE4",
-    "text": "Work the 281 due/overdue vendor bills (฿15.2M): confirm intercompany/duplicates excluded, then pay eligible via KBank."
+    "text": "Work the 348 due/overdue vendor bills (฿13.1M): exclude intercompany, then pay eligible via KBank."
    },
    {
     "sev": "ACTION",
     "sev_bg": "#F5EDE4",
-    "text": "Set due dates on the 14 no-due-date bills (฿221K) — Big Box, ZEN, คิงดอม คัม — so they enter the next payment run."
+    "text": "Investigate the ฿0.66M week-on-week rise in Input VAT undue (now ฿2.95M) — confirm staff undue-VAT reversals are posting."
    },
    {
     "sev": "ACTION",
     "sev_bg": "#F5EDE4",
-    "text": "Apply deposits on the 8 Prepayment-terms bills >30d (฿145,854), led by ณัฐพล วันริโก ฿130K."
+    "text": "Set due dates on the 16 no-due-date bills (฿250K) — Big Box, ZEN, พีเอช, คิงดอม คัม."
+   },
+   {
+    "sev": "ACTION",
+    "sev_bg": "#F5EDE4",
+    "text": "Apply deposits on the 13 Prepayment-terms bills >30d (฿59,148), led by โอซูก้า ฿51,809."
    }
   ],
   "ar_rows": [
@@ -250,7 +253,7 @@
     "open": "99,600",
     "current": "100",
     "overdue": "99,500",
-    "days_od": "70",
+    "days_od": "78",
     "status": "CRITICAL",
     "status_bg": "#FBE4E0",
     "row_bg": "#FFFFFF",
@@ -260,10 +263,10 @@
     "sub_name": "SFB",
     "customer": "บริษัท แอลที โซลูชั่นส์ แอนด์ เทคโนโลยี จำกัด",
     "term_days": "60",
-    "open": "489,084",
-    "current": "4,518",
-    "overdue": "484,566",
-    "days_od": "70",
+    "open": "442,087",
+    "current": "6,224",
+    "overdue": "435,863",
+    "days_od": "78",
     "status": "PAST TERMS",
     "status_bg": "#F8C8C0",
     "row_bg": "#FFFFFF",
@@ -273,101 +276,10 @@
     "sub_name": "SFB",
     "customer": "BANGKOK AIRWAYS PUBLIC COMPANY LIMITED.",
     "term_days": "30",
-    "open": "18,268",
-    "current": "1,900",
-    "overdue": "16,368",
-    "days_od": "31",
-    "status": "PAST TERMS",
-    "status_bg": "#F8C8C0",
-    "row_bg": "#FFFFFF",
-    "weight": "normal"
-   },
-   {
-    "sub_name": "SFB",
-    "customer": "QANTAS AIRWAYS LIMITED",
-    "term_days": "30",
-    "open": "6,862",
-    "current": "0",
-    "overdue": "6,862",
-    "days_od": "46",
-    "status": "PAST TERMS",
-    "status_bg": "#F8C8C0",
-    "row_bg": "#FFFFFF",
-    "weight": "normal"
-   },
-   {
-    "sub_name": "SFB",
-    "customer": "VIETJET AVIATION JOINT STOCK COMPANY",
-    "term_days": "30",
-    "open": "4,562",
-    "current": "0",
-    "overdue": "4,562",
-    "days_od": "48",
-    "status": "PAST TERMS",
-    "status_bg": "#F8C8C0",
-    "row_bg": "#FFFFFF",
-    "weight": "normal"
-   },
-   {
-    "sub_name": "SFB",
-    "customer": "MYANMAR AIRWAYS INTERNATIONAL CO. LTD",
-    "term_days": "30",
-    "open": "1,956",
-    "current": "0",
-    "overdue": "1,956",
-    "days_od": "39",
-    "status": "PAST TERMS",
-    "status_bg": "#F8C8C0",
-    "row_bg": "#FFFFFF",
-    "weight": "normal"
-   },
-   {
-    "sub_name": "SFB",
-    "customer": "EMIRATES",
-    "term_days": "30",
-    "open": "1,193",
-    "current": "0",
-    "overdue": "1,193",
-    "days_od": "53",
-    "status": "PAST TERMS",
-    "status_bg": "#F8C8C0",
-    "row_bg": "#FFFFFF",
-    "weight": "normal"
-   },
-   {
-    "sub_name": "SFB",
-    "customer": "INDIGO AIRLINES",
-    "term_days": "30",
-    "open": "600",
-    "current": "0",
-    "overdue": "600",
-    "days_od": "47",
-    "status": "PAST TERMS",
-    "status_bg": "#F8C8C0",
-    "row_bg": "#FFFFFF",
-    "weight": "normal"
-   },
-   {
-    "sub_name": "SFB",
-    "customer": "JETSTAR AIRWAYS PTY LIMITED.",
-    "term_days": "30",
-    "open": "580",
-    "current": "0",
-    "overdue": "580",
-    "days_od": "39",
-    "status": "PAST TERMS",
-    "status_bg": "#F8C8C0",
-    "row_bg": "#FFFFFF",
-    "weight": "normal"
-   },
-   {
-    "sub_name": "SFB",
-    "customer": "ASIANA AIRLINES",
-    "term_days": "30",
-    "open": "300",
-    "current": "0",
-    "overdue": "300",
-    "days_od": "53",
+    "open": "40,002",
+    "current": "12,812",
+    "overdue": "27,190",
+    "days_od": "33",
     "status": "PAST TERMS",
     "status_bg": "#F8C8C0",
     "row_bg": "#FFFFFF",
@@ -377,10 +289,10 @@
     "sub_name": "SFB",
     "customer": "บริษัท มาสเตอร์ มายนด์ คอนซัลแตนท์ จำกัด",
     "term_days": "30",
-    "open": "289,529",
+    "open": "203,382",
     "current": "0",
-    "overdue": "289,529",
-    "days_od": "21",
+    "overdue": "203,382",
+    "days_od": "14",
     "status": "OK",
     "status_bg": "#E8F5E9",
     "row_bg": "#FFFFFF",
@@ -390,10 +302,10 @@
     "sub_name": "SFB",
     "customer": "AIR FRANCE",
     "term_days": "30",
-    "open": "3,616",
+    "open": "5,145",
     "current": "0",
-    "overdue": "3,616",
-    "days_od": "5",
+    "overdue": "5,145",
+    "days_od": "13",
     "status": "OK",
     "status_bg": "#E8F5E9",
     "row_bg": "#FFFFFF",
@@ -401,12 +313,12 @@
    },
    {
     "sub_name": "SFB",
-    "customer": "บริษัท ธนาคารกรุงศรีอยุธยา จำกัด (มหาชน)",
+    "customer": "EL AL ISRAEL AIRLINES",
     "term_days": "30",
-    "open": "500",
-    "current": "0",
-    "overdue": "500",
-    "days_od": "2",
+    "open": "1,047",
+    "current": "700",
+    "overdue": "347",
+    "days_od": "1",
     "status": "OK",
     "status_bg": "#E8F5E9",
     "row_bg": "#FFFFFF",
@@ -426,25 +338,12 @@
     "weight": "normal"
    },
    {
-    "sub_name": "SFB",
-    "customer": "EL AL ISRAEL AIRLINES",
-    "term_days": "30",
-    "open": "700",
-    "current": "700",
-    "overdue": "0",
-    "days_od": "0",
-    "status": "OK",
-    "status_bg": "#E8F5E9",
-    "row_bg": "#FFFFFF",
-    "weight": "normal"
-   },
-   {
     "sub_name": "SFB TOTAL",
     "customer": "",
     "term_days": "",
-    "open": "932,648",
-    "current": "22,516",
-    "overdue": "910,132",
+    "open": "806,562",
+    "current": "35,134",
+    "overdue": "771,428",
     "days_od": "",
     "status": "",
     "status_bg": "#F5EDE4",
@@ -484,7 +383,7 @@
     "open": "77,900",
     "current": "0",
     "overdue": "77,900",
-    "days_od": "136",
+    "days_od": "144",
     "status": "CRITICAL",
     "status_bg": "#FBE4E0",
     "row_bg": "#FFFFFF",
@@ -497,18 +396,18 @@
     "open": "46,500",
     "current": "0",
     "overdue": "46,500",
-    "days_od": "20",
-    "status": "OK",
-    "status_bg": "#E8F5E9",
+    "days_od": "28",
+    "status": "WATCH",
+    "status_bg": "#FFF3E0",
     "row_bg": "#FFFFFF",
     "weight": "normal"
    },
    {
     "sub_name": "ActionCity",
-    "customer": "(+57 current retail invoices, due Jul)",
+    "customer": "(+34 current retail invoices, due Jul)",
     "term_days": "30",
-    "open": "104,580",
-    "current": "104,580",
+    "open": "25,693",
+    "current": "25,693",
     "overdue": "0",
     "days_od": "0",
     "status": "OK",
@@ -520,8 +419,8 @@
     "sub_name": "ActionCity TOTAL",
     "customer": "",
     "term_days": "",
-    "open": "228,980",
-    "current": "104,580",
+    "open": "150,093",
+    "current": "25,693",
     "overdue": "124,400",
     "days_od": "",
     "status": "",
@@ -535,29 +434,29 @@
     "acctno": "11013001",
     "name": "SFB SAVINGS KBANK 0852571217",
     "sub_name": "SFB",
-    "balance": "3,970,382.53",
-    "last_recon": "31/05/2026",
-    "days_since": "37",
-    "status": "OVERDUE",
-    "status_bg": "#FBE4E0"
+    "balance": "6,683,340.60",
+    "last_recon": "30/06/2026",
+    "days_since": "15",
+    "status": "OK",
+    "status_bg": "#E8F5E9"
    },
    {
     "acctno": "11013004",
     "name": "SFB SAVINGS SCB 0172624625",
     "sub_name": "SFB",
-    "balance": "3,999,562.16",
-    "last_recon": "31/05/2026",
-    "days_since": "37",
-    "status": "OVERDUE",
-    "status_bg": "#FBE4E0"
+    "balance": "3,737,507.16",
+    "last_recon": "30/06/2026",
+    "days_since": "15",
+    "status": "OK",
+    "status_bg": "#E8F5E9"
    },
    {
     "acctno": "11013005",
     "name": "SFB SAVINGS KTB 0460616978",
     "sub_name": "SFB",
-    "balance": "14,174,476.65",
+    "balance": "14,491,316.65",
     "last_recon": "30/06/2026",
-    "days_since": "7",
+    "days_since": "15",
     "status": "OK",
     "status_bg": "#E8F5E9"
    },
@@ -565,9 +464,9 @@
     "acctno": "11013007",
     "name": "VENDING SAVING KBANK 0852606630",
     "sub_name": "Vending",
-    "balance": "2,971,862.88",
+    "balance": "3,115,551.43",
     "last_recon": "30/06/2026",
-    "days_since": "7",
+    "days_since": "15",
     "status": "OK",
     "status_bg": "#E8F5E9"
    },
@@ -575,42 +474,42 @@
     "acctno": "11013036",
     "name": "ACT SAVINGS KBANK 2093307898",
     "sub_name": "ActionCity",
-    "balance": "1,990,828.50",
+    "balance": "1,985,481.05",
     "last_recon": "30/06/2026",
-    "days_since": "7",
+    "days_since": "15",
     "status": "OK",
     "status_bg": "#E8F5E9"
    }
   ],
   "deposit_rows": [
    {
-    "acctno": "11013001C",
-    "channel": "Union Pay",
+    "acctno": "11013001H",
+    "channel": "OCG",
     "sub_name": "SFB",
-    "balance": "80,215.80",
-    "last_jv": "31/05/2026",
-    "days_since": "37",
+    "balance": "5,643.00",
+    "last_jv": "17/03/2026",
+    "days_since": "120",
     "benchmark": "T+3",
     "verdict": "CRITICAL",
     "verdict_bg": "#FBE4E0"
    },
    {
-    "acctno": "11013001G",
-    "channel": "Wechat",
+    "acctno": "11013001A",
+    "channel": "Cash Sales",
     "sub_name": "SFB",
-    "balance": "276,209.30",
-    "last_jv": "31/05/2026",
-    "days_since": "37",
-    "benchmark": "T+3",
-    "verdict": "CRITICAL",
+    "balance": "-398,018.30",
+    "last_jv": "14/07/2026",
+    "days_since": "1",
+    "benchmark": "T+2",
+    "verdict": "NEGATIVE",
     "verdict_bg": "#FBE4E0"
    },
    {
     "acctno": "11013001B",
     "channel": "Master Card / Visa",
     "sub_name": "SFB",
-    "balance": "-45,425.62",
-    "last_jv": "06/07/2026",
+    "balance": "-464,017.27",
+    "last_jv": "14/07/2026",
     "days_since": "1",
     "benchmark": "T+3",
     "verdict": "NEGATIVE",
@@ -620,8 +519,19 @@
     "acctno": "11013001D",
     "channel": "Alipay/Wechat",
     "sub_name": "SFB",
-    "balance": "-258,912.14",
-    "last_jv": "06/07/2026",
+    "balance": "-21,335.76",
+    "last_jv": "14/07/2026",
+    "days_since": "1",
+    "benchmark": "T+3",
+    "verdict": "NEGATIVE",
+    "verdict_bg": "#FBE4E0"
+   },
+   {
+    "acctno": "11013001E",
+    "channel": "Prompt Pay",
+    "sub_name": "SFB",
+    "balance": "-210,416.70",
+    "last_jv": "14/07/2026",
     "days_since": "1",
     "benchmark": "T+3",
     "verdict": "NEGATIVE",
@@ -631,152 +541,119 @@
     "acctno": "11013001I",
     "channel": "KCC",
     "sub_name": "SFB",
-    "balance": "-2,101.00",
-    "last_jv": "06/07/2026",
+    "balance": "-2,601.00",
+    "last_jv": "14/07/2026",
     "days_since": "1",
     "benchmark": "T+3",
     "verdict": "NEGATIVE",
+    "verdict_bg": "#FBE4E0"
+   },
+   {
+    "acctno": "11013001C",
+    "channel": "Union Pay",
+    "sub_name": "SFB",
+    "balance": "1,352.00",
+    "last_jv": "30/06/2026",
+    "days_since": "15",
+    "benchmark": "T+3",
+    "verdict": "OVERDUE",
+    "verdict_bg": "#FBE4E0"
+   },
+   {
+    "acctno": "11013001G",
+    "channel": "Wechat",
+    "sub_name": "SFB",
+    "balance": "6,381.00",
+    "last_jv": "30/06/2026",
+    "days_since": "15",
+    "benchmark": "T+3",
+    "verdict": "OVERDUE",
     "verdict_bg": "#FBE4E0"
    },
    {
     "acctno": "11013005B",
     "channel": "CASH",
     "sub_name": "SFB",
-    "balance": "250,993.00",
+    "balance": "240,996.00",
     "last_jv": "30/06/2026",
-    "days_since": "7",
+    "days_since": "15",
     "benchmark": "T+3",
     "verdict": "OVERDUE",
-    "verdict_bg": "#FBE4E0"
-   },
-   {
-    "acctno": "11013001A",
-    "channel": "Cash Sales",
-    "sub_name": "SFB",
-    "balance": "266,198.02",
-    "last_jv": "06/07/2026",
-    "days_since": "1",
-    "benchmark": "T+2",
-    "verdict": "OK",
-    "verdict_bg": "#E8F5E9"
-   },
-   {
-    "acctno": "11013001E",
-    "channel": "Prompt Pay",
-    "sub_name": "SFB",
-    "balance": "25,210.60",
-    "last_jv": "06/07/2026",
-    "days_since": "1",
-    "benchmark": "T+3",
-    "verdict": "OK",
-    "verdict_bg": "#E8F5E9"
-   },
-   {
-    "acctno": "11013007D",
-    "channel": "Union Pay",
-    "sub_name": "Vending",
-    "balance": "3,655.00",
-    "last_jv": "31/05/2026",
-    "days_since": "37",
-    "benchmark": "T+3",
-    "verdict": "CRITICAL",
-    "verdict_bg": "#FBE4E0"
-   },
-   {
-    "acctno": "11013007F",
-    "channel": "Ksher Alipay",
-    "sub_name": "Vending",
-    "balance": "150,710.00",
-    "last_jv": "31/05/2026",
-    "days_since": "37",
-    "benchmark": "T+3",
-    "verdict": "CRITICAL",
-    "verdict_bg": "#FBE4E0"
-   },
-   {
-    "acctno": "11013007I",
-    "channel": "Ksher Truemoney",
-    "sub_name": "Vending",
-    "balance": "40.00",
-    "last_jv": "30/04/2026",
-    "days_since": "68",
-    "benchmark": "T+3",
-    "verdict": "CRITICAL",
-    "verdict_bg": "#FBE4E0"
-   },
-   {
-    "acctno": "11013007C",
-    "channel": "Alipay/Wechat",
-    "sub_name": "Vending",
-    "balance": "-138,417.76",
-    "last_jv": "06/07/2026",
-    "days_since": "1",
-    "benchmark": "T+3",
-    "verdict": "NEGATIVE",
     "verdict_bg": "#FBE4E0"
    },
    {
     "acctno": "11013007A",
     "channel": "Cash Sales",
     "sub_name": "Vending",
-    "balance": "12,741.99",
-    "last_jv": "06/07/2026",
+    "balance": "-411,284.47",
+    "last_jv": "14/07/2026",
     "days_since": "1",
     "benchmark": "T+2",
-    "verdict": "OK",
-    "verdict_bg": "#E8F5E9"
+    "verdict": "NEGATIVE",
+    "verdict_bg": "#FBE4E0"
    },
    {
     "acctno": "11013007B",
     "channel": "Master Card / Visa",
     "sub_name": "Vending",
-    "balance": "7,696.30",
-    "last_jv": "06/07/2026",
+    "balance": "-216,248.72",
+    "last_jv": "14/07/2026",
     "days_since": "1",
     "benchmark": "T+3",
-    "verdict": "OK",
-    "verdict_bg": "#E8F5E9"
+    "verdict": "NEGATIVE",
+    "verdict_bg": "#FBE4E0"
+   },
+   {
+    "acctno": "11013007C",
+    "channel": "Alipay/Wechat",
+    "sub_name": "Vending",
+    "balance": "-79,392.40",
+    "last_jv": "14/07/2026",
+    "days_since": "1",
+    "benchmark": "T+3",
+    "verdict": "NEGATIVE",
+    "verdict_bg": "#FBE4E0"
    },
    {
     "acctno": "11013007E",
     "channel": "Prompt Pay / KPLUS",
     "sub_name": "Vending",
-    "balance": "3,983.00",
-    "last_jv": "06/07/2026",
+    "balance": "-58,427.00",
+    "last_jv": "14/07/2026",
     "days_since": "1",
     "benchmark": "T+3",
-    "verdict": "OK",
-    "verdict_bg": "#E8F5E9"
+    "verdict": "NEGATIVE",
+    "verdict_bg": "#FBE4E0"
+   },
+   {
+    "acctno": "11013007F",
+    "channel": "Ksher",
+    "sub_name": "Vending",
+    "balance": "67,143.00",
+    "last_jv": "30/06/2026",
+    "days_since": "15",
+    "benchmark": "T+3",
+    "verdict": "OVERDUE",
+    "verdict_bg": "#FBE4E0"
    },
    {
     "acctno": "11013007L",
     "channel": "CASHLESS",
     "sub_name": "Vending",
-    "balance": "206,574.59",
-    "last_jv": "06/07/2026",
-    "days_since": "1",
+    "balance": "106,976.72",
+    "last_jv": "13/07/2026",
+    "days_since": "2",
     "benchmark": "T+3",
     "verdict": "OK",
     "verdict_bg": "#E8F5E9"
    },
    {
-    "acctno": "11013036J",
-    "channel": "Lazada",
+    "acctno": "11013036L",
+    "channel": "Consignment",
     "sub_name": "ActionCity",
-    "balance": "550.00",
-    "last_jv": "31/05/2026",
-    "days_since": "37",
-    "benchmark": "T+3",
-    "verdict": "CRITICAL",
-    "verdict_bg": "#FBE4E0"
-   },
-   {
-    "acctno": "11013036R",
-    "channel": "NAYAX",
-    "sub_name": "ActionCity",
-    "balance": "45,384.30",
-    "last_jv": "10/06/2026",
-    "days_since": "27",
+    "balance": "261,159.70",
+    "last_jv": "26/06/2026",
+    "days_since": "19",
     "benchmark": "T+3",
     "verdict": "CRITICAL",
     "verdict_bg": "#FBE4E0"
@@ -785,74 +662,74 @@
     "acctno": "11013036A",
     "channel": "Master / Visa",
     "sub_name": "ActionCity",
-    "balance": "-7,253.64",
-    "last_jv": "06/07/2026",
+    "balance": "-37,667.86",
+    "last_jv": "14/07/2026",
     "days_since": "1",
     "benchmark": "T+3",
     "verdict": "NEGATIVE",
     "verdict_bg": "#FBE4E0"
    },
    {
-    "acctno": "11013036K",
-    "channel": "TikTok",
-    "sub_name": "ActionCity",
-    "balance": "206.62",
-    "last_jv": "01/07/2026",
-    "days_since": "6",
-    "benchmark": "T+3",
-    "verdict": "OVERDUE",
-    "verdict_bg": "#FBE4E0"
-   },
-   {
-    "acctno": "11013036L",
-    "channel": "Consignment",
-    "sub_name": "ActionCity",
-    "balance": "261,159.70",
-    "last_jv": "26/06/2026",
-    "days_since": "11",
-    "benchmark": "T+3",
-    "verdict": "OVERDUE",
-    "verdict_bg": "#FBE4E0"
-   },
-   {
     "acctno": "11013036B",
     "channel": "Promptpay",
     "sub_name": "ActionCity",
-    "balance": "7,788.00",
-    "last_jv": "06/07/2026",
+    "balance": "-21,322.95",
+    "last_jv": "14/07/2026",
     "days_since": "1",
     "benchmark": "T+3",
-    "verdict": "OK",
-    "verdict_bg": "#E8F5E9"
-   },
-   {
-    "acctno": "11013036C",
-    "channel": "Alipay / Wechat",
-    "sub_name": "ActionCity",
-    "balance": "0.00",
-    "last_jv": "05/07/2026",
-    "days_since": "2",
-    "benchmark": "T+3",
-    "verdict": "OK",
-    "verdict_bg": "#E8F5E9"
+    "verdict": "NEGATIVE",
+    "verdict_bg": "#FBE4E0"
    },
    {
     "acctno": "11013036F",
     "channel": "Cash Sales",
     "sub_name": "ActionCity",
-    "balance": "13,735.00",
-    "last_jv": "06/07/2026",
+    "balance": "-68,208.85",
+    "last_jv": "14/07/2026",
     "days_since": "1",
     "benchmark": "T+2",
-    "verdict": "OK",
-    "verdict_bg": "#E8F5E9"
+    "verdict": "NEGATIVE",
+    "verdict_bg": "#FBE4E0"
+   },
+   {
+    "acctno": "11013036C",
+    "channel": "Alipay / Wechat",
+    "sub_name": "ActionCity",
+    "balance": "1,449.00",
+    "last_jv": "05/07/2026",
+    "days_since": "10",
+    "benchmark": "T+3",
+    "verdict": "OVERDUE",
+    "verdict_bg": "#FBE4E0"
+   },
+   {
+    "acctno": "11013036K",
+    "channel": "TikTok",
+    "sub_name": "ActionCity",
+    "balance": "504.52",
+    "last_jv": "08/07/2026",
+    "days_since": "7",
+    "benchmark": "T+3",
+    "verdict": "OVERDUE",
+    "verdict_bg": "#FBE4E0"
+   },
+   {
+    "acctno": "11013036R",
+    "channel": "NAYAX",
+    "sub_name": "ActionCity",
+    "balance": "18,959.00",
+    "last_jv": "10/07/2026",
+    "days_since": "5",
+    "benchmark": "T+3",
+    "verdict": "LATE",
+    "verdict_bg": "#FFF3E0"
    },
    {
     "acctno": "11013036G",
     "channel": "Omise",
     "sub_name": "ActionCity",
-    "balance": "70,265.65",
-    "last_jv": "05/07/2026",
+    "balance": "106,055.04",
+    "last_jv": "13/07/2026",
     "days_since": "2",
     "benchmark": "T+3",
     "verdict": "OK",
@@ -862,9 +739,9 @@
     "acctno": "11013036I",
     "channel": "Shopee",
     "sub_name": "ActionCity",
-    "balance": "19,157.00",
-    "last_jv": "06/07/2026",
-    "days_since": "1",
+    "balance": "9,062.00",
+    "last_jv": "13/07/2026",
+    "days_since": "2",
     "benchmark": "T+3",
     "verdict": "OK",
     "verdict_bg": "#E8F5E9"
@@ -873,9 +750,9 @@
     "acctno": "11013036P",
     "channel": "KSher",
     "sub_name": "ActionCity",
-    "balance": "7,311.50",
-    "last_jv": "06/07/2026",
-    "days_since": "1",
+    "balance": "2,937.00",
+    "last_jv": "13/07/2026",
+    "days_since": "2",
     "benchmark": "T+3",
     "verdict": "OK",
     "verdict_bg": "#E8F5E9"
@@ -889,7 +766,7 @@
     "balance": "481.76",
     "oldest": "01/07/2024",
     "newest": "31/07/2024",
-    "age": "736",
+    "age": "744",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -901,7 +778,7 @@
     "balance": "40.56",
     "oldest": "31/07/2024",
     "newest": "31/07/2024",
-    "age": "706",
+    "age": "714",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -913,7 +790,7 @@
     "balance": "160.15",
     "oldest": "16/09/2024",
     "newest": "16/09/2024",
-    "age": "659",
+    "age": "667",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -925,7 +802,7 @@
     "balance": "5.95",
     "oldest": "30/09/2024",
     "newest": "30/09/2024",
-    "age": "645",
+    "age": "653",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -937,7 +814,7 @@
     "balance": "1,034.27",
     "oldest": "09/11/2024",
     "newest": "31/03/2025",
-    "age": "605",
+    "age": "613",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -949,7 +826,7 @@
     "balance": "68.17",
     "oldest": "10/11/2024",
     "newest": "01/01/2025",
-    "age": "604",
+    "age": "612",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -961,7 +838,7 @@
     "balance": "104.28",
     "oldest": "01/01/2025",
     "newest": "28/02/2025",
-    "age": "552",
+    "age": "560",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -973,7 +850,7 @@
     "balance": "2,753.38",
     "oldest": "10/01/2025",
     "newest": "25/02/2025",
-    "age": "543",
+    "age": "551",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -985,7 +862,7 @@
     "balance": "511.00",
     "oldest": "28/02/2025",
     "newest": "28/02/2025",
-    "age": "494",
+    "age": "502",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -997,7 +874,7 @@
     "balance": "301.00",
     "oldest": "04/03/2025",
     "newest": "04/03/2025",
-    "age": "490",
+    "age": "498",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -1009,7 +886,7 @@
     "balance": "106.50",
     "oldest": "30/05/2025",
     "newest": "30/05/2025",
-    "age": "403",
+    "age": "411",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -1021,7 +898,7 @@
     "balance": "43.85",
     "oldest": "30/05/2025",
     "newest": "27/10/2025",
-    "age": "403",
+    "age": "411",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -1033,7 +910,7 @@
     "balance": "276.73",
     "oldest": "31/05/2025",
     "newest": "31/05/2025",
-    "age": "402",
+    "age": "410",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -1045,7 +922,7 @@
     "balance": "37,735.82",
     "oldest": "09/06/2025",
     "newest": "09/06/2025",
-    "age": "393",
+    "age": "401",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -1057,7 +934,7 @@
     "balance": "8,682.38",
     "oldest": "16/06/2025",
     "newest": "16/06/2025",
-    "age": "386",
+    "age": "394",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -1069,7 +946,7 @@
     "balance": "4,900.00",
     "oldest": "01/07/2025",
     "newest": "01/07/2025",
-    "age": "371",
+    "age": "379",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -1081,7 +958,7 @@
     "balance": "41,971.58",
     "oldest": "01/07/2025",
     "newest": "01/07/2025",
-    "age": "371",
+    "age": "379",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -1093,7 +970,7 @@
     "balance": "8,779.05",
     "oldest": "01/07/2025",
     "newest": "01/07/2025",
-    "age": "371",
+    "age": "379",
     "urgency": "CRITICAL",
     "urg_bg": "#FBE4E0",
     "action": "Post reversal JV"
@@ -1105,7 +982,7 @@
     "balance": "1,575.00",
     "oldest": "21/07/2025",
     "newest": "21/07/2025",
-    "age": "351",
+    "age": "359",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Post reversal JV"
@@ -1117,7 +994,7 @@
     "balance": "523.25",
     "oldest": "22/07/2025",
     "newest": "15/08/2025",
-    "age": "350",
+    "age": "358",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Post reversal JV"
@@ -1129,7 +1006,7 @@
     "balance": "1,528.94",
     "oldest": "01/08/2025",
     "newest": "01/10/2025",
-    "age": "340",
+    "age": "348",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Post reversal JV"
@@ -1141,7 +1018,7 @@
     "balance": "55,863.48",
     "oldest": "29/08/2025",
     "newest": "01/01/2026",
-    "age": "312",
+    "age": "320",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Post reversal JV"
@@ -1153,7 +1030,7 @@
     "balance": "11,531.48",
     "oldest": "31/08/2025",
     "newest": "15/09/2025",
-    "age": "310",
+    "age": "318",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Post reversal JV"
@@ -1165,7 +1042,7 @@
     "balance": "7,853.53",
     "oldest": "31/08/2025",
     "newest": "31/05/2026",
-    "age": "310",
+    "age": "318",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Post reversal JV"
@@ -1177,7 +1054,7 @@
     "balance": "79.61",
     "oldest": "01/09/2025",
     "newest": "01/09/2025",
-    "age": "309",
+    "age": "317",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Post reversal JV"
@@ -1189,7 +1066,7 @@
     "balance": "2,823.96",
     "oldest": "03/09/2025",
     "newest": "03/09/2025",
-    "age": "307",
+    "age": "315",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Post reversal JV"
@@ -1201,7 +1078,7 @@
     "balance": "1,050.00",
     "oldest": "04/09/2025",
     "newest": "04/09/2025",
-    "age": "306",
+    "age": "314",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Post reversal JV"
@@ -1213,7 +1090,7 @@
     "balance": "9,660.00",
     "oldest": "15/09/2025",
     "newest": "15/09/2025",
-    "age": "295",
+    "age": "303",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Post reversal JV"
@@ -1225,7 +1102,7 @@
     "balance": "2,734.00",
     "oldest": "16/09/2025",
     "newest": "16/09/2025",
-    "age": "294",
+    "age": "302",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Post reversal JV"
@@ -1237,7 +1114,7 @@
     "balance": "1,005.60",
     "oldest": "31/10/2025",
     "newest": "01/01/2026",
-    "age": "249",
+    "age": "257",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Post reversal JV"
@@ -1249,7 +1126,7 @@
     "balance": "252.07",
     "oldest": "01/11/2025",
     "newest": "01/11/2025",
-    "age": "248",
+    "age": "256",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Post reversal JV"
@@ -1261,7 +1138,7 @@
     "balance": "2,742.15",
     "oldest": "01/11/2025",
     "newest": "10/12/2025",
-    "age": "248",
+    "age": "256",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Post reversal JV"
@@ -1273,7 +1150,7 @@
     "balance": "15.11",
     "oldest": "01/12/2025",
     "newest": "01/12/2025",
-    "age": "218",
+    "age": "226",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Post reversal JV"
@@ -1285,7 +1162,7 @@
     "balance": "676.87",
     "oldest": "25/12/2025",
     "newest": "25/12/2025",
-    "age": "194",
+    "age": "202",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Post reversal JV"
@@ -1297,7 +1174,7 @@
     "balance": "13,490.40",
     "oldest": "31/12/2025",
     "newest": "31/12/2025",
-    "age": "188",
+    "age": "196",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Post reversal JV"
@@ -1309,7 +1186,7 @@
     "balance": "2,262.19",
     "oldest": "30/01/2026",
     "newest": "28/02/2026",
-    "age": "158",
+    "age": "166",
     "urgency": "MEDIUM",
     "urg_bg": "#FFF3E0",
     "action": "Monitor"
@@ -1321,7 +1198,7 @@
     "balance": "16.10",
     "oldest": "09/03/2026",
     "newest": "09/03/2026",
-    "age": "120",
+    "age": "128",
     "urgency": "MEDIUM",
     "urg_bg": "#FFF3E0",
     "action": "Monitor"
@@ -1335,7 +1212,7 @@
     "balance": "-235,017.00",
     "oldest": "15/07/2024",
     "newest": "31/12/2024",
-    "age": "722",
+    "age": "730",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Review double JV"
@@ -1347,7 +1224,7 @@
     "balance": "-90,517.96",
     "oldest": "22/07/2024",
     "newest": "31/07/2024",
-    "age": "715",
+    "age": "723",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Review double JV"
@@ -1359,7 +1236,7 @@
     "balance": "-31,834.45",
     "oldest": "23/07/2024",
     "newest": "23/07/2024",
-    "age": "714",
+    "age": "722",
     "urgency": "MEDIUM",
     "urg_bg": "#FFF3E0",
     "action": "Review"
@@ -1371,7 +1248,7 @@
     "balance": "-53,926.02",
     "oldest": "30/07/2024",
     "newest": "31/07/2024",
-    "age": "707",
+    "age": "715",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Review double JV"
@@ -1383,7 +1260,7 @@
     "balance": "-1,095.21",
     "oldest": "30/07/2024",
     "newest": "01/02/2025",
-    "age": "707",
+    "age": "715",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1395,7 +1272,7 @@
     "balance": "-2,727.61",
     "oldest": "31/07/2024",
     "newest": "01/04/2025",
-    "age": "706",
+    "age": "714",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1407,7 +1284,7 @@
     "balance": "-4,200.00",
     "oldest": "01/08/2024",
     "newest": "08/01/2025",
-    "age": "705",
+    "age": "713",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1419,7 +1296,7 @@
     "balance": "-247,827.15",
     "oldest": "05/08/2024",
     "newest": "30/06/2026",
-    "age": "701",
+    "age": "709",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Review double JV"
@@ -1431,7 +1308,7 @@
     "balance": "-45.53",
     "oldest": "05/08/2024",
     "newest": "05/08/2024",
-    "age": "701",
+    "age": "709",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1443,7 +1320,7 @@
     "balance": "-11,516.15",
     "oldest": "15/08/2024",
     "newest": "01/01/2025",
-    "age": "691",
+    "age": "699",
     "urgency": "MEDIUM",
     "urg_bg": "#FFF3E0",
     "action": "Review"
@@ -1455,7 +1332,7 @@
     "balance": "-295.05",
     "oldest": "30/08/2024",
     "newest": "01/01/2025",
-    "age": "676",
+    "age": "684",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1467,7 +1344,7 @@
     "balance": "-87,545.42",
     "oldest": "31/08/2024",
     "newest": "26/06/2026",
-    "age": "675",
+    "age": "683",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Review double JV"
@@ -1479,7 +1356,7 @@
     "balance": "-2,019.23",
     "oldest": "24/09/2024",
     "newest": "24/09/2024",
-    "age": "651",
+    "age": "659",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1491,7 +1368,7 @@
     "balance": "-657.26",
     "oldest": "11/10/2024",
     "newest": "31/08/2025",
-    "age": "634",
+    "age": "642",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1503,7 +1380,7 @@
     "balance": "-989,454.26",
     "oldest": "25/10/2024",
     "newest": "30/04/2025",
-    "age": "620",
+    "age": "628",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Review double JV"
@@ -1515,7 +1392,7 @@
     "balance": "-7,329.29",
     "oldest": "01/11/2024",
     "newest": "01/04/2025",
-    "age": "613",
+    "age": "621",
     "urgency": "MEDIUM",
     "urg_bg": "#FFF3E0",
     "action": "Review"
@@ -1527,7 +1404,7 @@
     "balance": "-639.78",
     "oldest": "02/11/2024",
     "newest": "01/01/2025",
-    "age": "612",
+    "age": "620",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1539,7 +1416,7 @@
     "balance": "-15,190.00",
     "oldest": "20/11/2024",
     "newest": "31/12/2024",
-    "age": "594",
+    "age": "602",
     "urgency": "MEDIUM",
     "urg_bg": "#FFF3E0",
     "action": "Review"
@@ -1551,7 +1428,7 @@
     "balance": "-102,410.16",
     "oldest": "02/12/2024",
     "newest": "30/06/2025",
-    "age": "582",
+    "age": "590",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Review double JV"
@@ -1563,7 +1440,7 @@
     "balance": "-196.26",
     "oldest": "03/12/2024",
     "newest": "03/12/2024",
-    "age": "581",
+    "age": "589",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1575,7 +1452,7 @@
     "balance": "-20,020.68",
     "oldest": "09/12/2024",
     "newest": "31/10/2025",
-    "age": "575",
+    "age": "583",
     "urgency": "MEDIUM",
     "urg_bg": "#FFF3E0",
     "action": "Review"
@@ -1587,7 +1464,7 @@
     "balance": "-64.96",
     "oldest": "11/12/2024",
     "newest": "11/12/2024",
-    "age": "573",
+    "age": "581",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1599,7 +1476,7 @@
     "balance": "-911.74",
     "oldest": "31/12/2024",
     "newest": "28/02/2025",
-    "age": "553",
+    "age": "561",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1611,7 +1488,7 @@
     "balance": "-48,440.41",
     "oldest": "31/12/2024",
     "newest": "31/12/2024",
-    "age": "553",
+    "age": "561",
     "urgency": "MEDIUM",
     "urg_bg": "#FFF3E0",
     "action": "Review"
@@ -1623,7 +1500,7 @@
     "balance": "-97,351.88",
     "oldest": "01/01/2025",
     "newest": "31/07/2025",
-    "age": "552",
+    "age": "560",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Review double JV"
@@ -1635,7 +1512,7 @@
     "balance": "-658.13",
     "oldest": "01/01/2025",
     "newest": "01/01/2025",
-    "age": "552",
+    "age": "560",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1647,7 +1524,7 @@
     "balance": "-613.20",
     "oldest": "01/01/2025",
     "newest": "03/02/2025",
-    "age": "552",
+    "age": "560",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1659,7 +1536,7 @@
     "balance": "-430.50",
     "oldest": "01/01/2025",
     "newest": "01/01/2025",
-    "age": "552",
+    "age": "560",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1671,7 +1548,7 @@
     "balance": "-485.79",
     "oldest": "01/01/2025",
     "newest": "01/01/2025",
-    "age": "552",
+    "age": "560",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1683,7 +1560,7 @@
     "balance": "-256.62",
     "oldest": "31/01/2025",
     "newest": "28/02/2025",
-    "age": "522",
+    "age": "530",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1695,7 +1572,7 @@
     "balance": "-440.28",
     "oldest": "01/02/2025",
     "newest": "01/11/2025",
-    "age": "521",
+    "age": "529",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1707,7 +1584,7 @@
     "balance": "-19,056.24",
     "oldest": "10/02/2025",
     "newest": "10/06/2026",
-    "age": "512",
+    "age": "520",
     "urgency": "MEDIUM",
     "urg_bg": "#FFF3E0",
     "action": "Review"
@@ -1719,7 +1596,7 @@
     "balance": "-6,737.08",
     "oldest": "14/02/2025",
     "newest": "14/02/2025",
-    "age": "508",
+    "age": "516",
     "urgency": "MEDIUM",
     "urg_bg": "#FFF3E0",
     "action": "Review"
@@ -1731,7 +1608,7 @@
     "balance": "-1,822.62",
     "oldest": "14/02/2025",
     "newest": "14/02/2025",
-    "age": "508",
+    "age": "516",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1743,7 +1620,7 @@
     "balance": "-1.36",
     "oldest": "10/03/2025",
     "newest": "10/03/2025",
-    "age": "484",
+    "age": "492",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1755,7 +1632,7 @@
     "balance": "-1,821.31",
     "oldest": "31/03/2025",
     "newest": "01/05/2025",
-    "age": "463",
+    "age": "471",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1767,7 +1644,7 @@
     "balance": "-273.54",
     "oldest": "01/04/2025",
     "newest": "01/04/2025",
-    "age": "462",
+    "age": "470",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1779,7 +1656,7 @@
     "balance": "-115.50",
     "oldest": "01/04/2025",
     "newest": "01/04/2025",
-    "age": "462",
+    "age": "470",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1791,7 +1668,7 @@
     "balance": "-70.00",
     "oldest": "01/04/2025",
     "newest": "01/04/2025",
-    "age": "462",
+    "age": "470",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1803,7 +1680,7 @@
     "balance": "-56.52",
     "oldest": "01/04/2025",
     "newest": "01/04/2025",
-    "age": "462",
+    "age": "470",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1815,7 +1692,7 @@
     "balance": "-35.33",
     "oldest": "01/04/2025",
     "newest": "01/04/2025",
-    "age": "462",
+    "age": "470",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1827,7 +1704,7 @@
     "balance": "-307.48",
     "oldest": "01/05/2025",
     "newest": "01/05/2025",
-    "age": "432",
+    "age": "440",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1839,7 +1716,7 @@
     "balance": "-23,787.47",
     "oldest": "22/05/2025",
     "newest": "01/09/2025",
-    "age": "411",
+    "age": "419",
     "urgency": "MEDIUM",
     "urg_bg": "#FFF3E0",
     "action": "Review"
@@ -1851,7 +1728,7 @@
     "balance": "-651.59",
     "oldest": "01/06/2025",
     "newest": "28/10/2025",
-    "age": "401",
+    "age": "409",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1863,7 +1740,7 @@
     "balance": "-454,815.65",
     "oldest": "16/06/2025",
     "newest": "01/07/2026",
-    "age": "386",
+    "age": "394",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Review double JV"
@@ -1875,7 +1752,7 @@
     "balance": "-8,682.38",
     "oldest": "16/06/2025",
     "newest": "16/06/2025",
-    "age": "386",
+    "age": "394",
     "urgency": "MEDIUM",
     "urg_bg": "#FFF3E0",
     "action": "Review"
@@ -1887,7 +1764,7 @@
     "balance": "-282,050.00",
     "oldest": "20/06/2025",
     "newest": "20/06/2025",
-    "age": "382",
+    "age": "390",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Review double JV"
@@ -1899,7 +1776,7 @@
     "balance": "-294.39",
     "oldest": "31/08/2025",
     "newest": "31/08/2025",
-    "age": "310",
+    "age": "318",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1911,7 +1788,7 @@
     "balance": "-412.65",
     "oldest": "31/08/2025",
     "newest": "31/10/2025",
-    "age": "310",
+    "age": "318",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1923,7 +1800,7 @@
     "balance": "-5.39",
     "oldest": "01/10/2025",
     "newest": "01/10/2025",
-    "age": "279",
+    "age": "287",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1935,7 +1812,7 @@
     "balance": "-924.00",
     "oldest": "01/11/2025",
     "newest": "01/11/2025",
-    "age": "248",
+    "age": "256",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1947,7 +1824,7 @@
     "balance": "-923.09",
     "oldest": "01/11/2025",
     "newest": "01/11/2025",
-    "age": "248",
+    "age": "256",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1959,7 +1836,7 @@
     "balance": "-11.22",
     "oldest": "10/12/2025",
     "newest": "10/12/2025",
-    "age": "209",
+    "age": "217",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1971,7 +1848,7 @@
     "balance": "-632,175.18",
     "oldest": "31/12/2025",
     "newest": "31/03/2026",
-    "age": "188",
+    "age": "196",
     "urgency": "HIGH",
     "urg_bg": "#F8C8C0",
     "action": "Review double JV"
@@ -1983,7 +1860,7 @@
     "balance": "-192.81",
     "oldest": "01/03/2026",
     "newest": "01/03/2026",
-    "age": "128",
+    "age": "136",
     "urgency": "LOW",
     "urg_bg": "#E8F5E9",
     "action": "Review"
@@ -1998,7 +1875,7 @@
     "next_date": "01/06/2026",
     "amount": "-1,198,400.00",
     "remaining": "indef",
-    "days_overdue": "36",
+    "days_overdue": "44",
     "row_bg": "#FFF3E0"
    },
    {
@@ -2009,7 +1886,7 @@
     "next_date": "03/06/2026",
     "amount": "-43,861.44",
     "remaining": "indef",
-    "days_overdue": "34",
+    "days_overdue": "42",
     "row_bg": "#FFF3E0"
    },
    {
@@ -2020,7 +1897,7 @@
     "next_date": "10/06/2026",
     "amount": "-27,875.64",
     "remaining": "indef",
-    "days_overdue": "27",
+    "days_overdue": "35",
     "row_bg": "#FFF3E0"
    },
    {
@@ -2031,7 +1908,7 @@
     "next_date": "11/06/2026",
     "amount": "-10,700.00",
     "remaining": "3",
-    "days_overdue": "26",
+    "days_overdue": "34",
     "row_bg": "#FFF3E0"
    },
    {
@@ -2042,7 +1919,7 @@
     "next_date": "12/06/2026",
     "amount": "-68,686.87",
     "remaining": "22",
-    "days_overdue": "25",
+    "days_overdue": "33",
     "row_bg": "#FFF3E0"
    },
    {
@@ -2053,7 +1930,7 @@
     "next_date": "15/06/2026",
     "amount": "-7,133.00",
     "remaining": "indef",
-    "days_overdue": "22",
+    "days_overdue": "30",
     "row_bg": "#FFF3E0"
    },
    {
@@ -2064,7 +1941,7 @@
     "next_date": "15/06/2026",
     "amount": "—",
     "remaining": "indef",
-    "days_overdue": "22",
+    "days_overdue": "30",
     "row_bg": "#FFF3E0"
    },
    {
@@ -2075,7 +1952,7 @@
     "next_date": "22/06/2026",
     "amount": "-11,987.96",
     "remaining": "12",
-    "days_overdue": "15",
+    "days_overdue": "23",
     "row_bg": "#FFF3E0"
    },
    {
@@ -2086,7 +1963,7 @@
     "next_date": "22/06/2026",
     "amount": "-530.50",
     "remaining": "9",
-    "days_overdue": "15",
+    "days_overdue": "23",
     "row_bg": "#FFF3E0"
    },
    {
@@ -2097,7 +1974,7 @@
     "next_date": "25/06/2026",
     "amount": "-12,760.00",
     "remaining": "indef",
-    "days_overdue": "12",
+    "days_overdue": "20",
     "row_bg": "#FFF3E0"
    },
    {
@@ -2108,7 +1985,7 @@
     "next_date": "01/07/2026",
     "amount": "500,000.00",
     "remaining": "5",
-    "days_overdue": "6",
+    "days_overdue": "14",
     "row_bg": "#FFF3E0"
    },
    {
@@ -2119,7 +1996,7 @@
     "next_date": "05/07/2026",
     "amount": "—",
     "remaining": "6",
-    "days_overdue": "2",
+    "days_overdue": "10",
     "row_bg": "#FFF3E0"
    },
    {
@@ -2130,7 +2007,7 @@
     "next_date": "05/07/2026",
     "amount": "-6,420.00",
     "remaining": "6",
-    "days_overdue": "2",
+    "days_overdue": "10",
     "row_bg": "#FFF3E0"
    },
    {
@@ -2141,7 +2018,7 @@
     "next_date": "05/07/2026",
     "amount": "—",
     "remaining": "6",
-    "days_overdue": "2",
+    "days_overdue": "10",
     "row_bg": "#FFF3E0"
    },
    {
@@ -2152,7 +2029,73 @@
     "next_date": "05/07/2026",
     "amount": "-14,445.00",
     "remaining": "6",
-    "days_overdue": "2",
+    "days_overdue": "10",
+    "row_bg": "#FFF3E0"
+   },
+   {
+    "id": "313",
+    "name": "C-00177 บริษัท สยาม โอเชี่ยน เวิร์ล กรุงเทพ",
+    "sub_name": "Inbox",
+    "type": "INV",
+    "next_date": "09/07/2026",
+    "amount": "6,420.00",
+    "remaining": "8",
+    "days_overdue": "6",
+    "row_bg": "#FFF3E0"
+   },
+   {
+    "id": "136",
+    "name": "CRT 7653 - Journal Entry",
+    "sub_name": "CRT",
+    "type": "GENJRNL",
+    "next_date": "10/07/2026",
+    "amount": "—",
+    "remaining": "6",
+    "days_overdue": "5",
+    "row_bg": "#FFF3E0"
+   },
+   {
+    "id": "315",
+    "name": "Chaw - กรุ๊ปรวม 8เบอร์ AIS",
+    "sub_name": "CHAW",
+    "type": "BILL",
+    "next_date": "10/07/2026",
+    "amount": "-6,756.52",
+    "remaining": "indef",
+    "days_overdue": "5",
+    "row_bg": "#FFF3E0"
+   },
+   {
+    "id": "308",
+    "name": "CHO การไฟฟ้านครหลวง",
+    "sub_name": "CHAW Mgmt",
+    "type": "BILL",
+    "next_date": "10/07/2026",
+    "amount": "-9,242.25",
+    "remaining": "indef",
+    "days_overdue": "5",
+    "row_bg": "#FFF3E0"
+   },
+   {
+    "id": "314",
+    "name": "Toy- AIS กรุ๊ปรวม 3เบอร์",
+    "sub_name": "TOYzINBOX",
+    "type": "BILL",
+    "next_date": "10/07/2026",
+    "amount": "-1,365.77",
+    "remaining": "6",
+    "days_overdue": "5",
+    "row_bg": "#FFF3E0"
+   },
+   {
+    "id": "137",
+    "name": "CRT 0871 - Journal Entry",
+    "sub_name": "CRT",
+    "type": "GENJRNL",
+    "next_date": "10/07/2026",
+    "amount": "—",
+    "remaining": "6",
+    "days_overdue": "5",
     "row_bg": "#FFF3E0"
    }
   ],
@@ -2325,33 +2268,33 @@
   "kpi_cards": [
    {
     "label": "Bank Recon",
-    "value": "2",
+    "value": "0",
     "detail": "acct >30d",
-    "color": "#F27061",
-    "bg": "#FBE4E0",
+    "color": "#27AE60",
+    "bg": "#E8F5E9",
     "cardw": "12.5%",
-    "wow": "last wk 0 ▲2",
-    "wcolor": "#F27061"
+    "wow": "last wk 2 ▼2",
+    "wcolor": "#2E9E5B"
    },
    {
     "label": "AR Overdue",
-    "value": "15",
+    "value": "8",
     "detail": "customers",
-    "color": "#F27061",
-    "bg": "#FBE4E0",
+    "color": "#E6A23C",
+    "bg": "#FFF3E0",
     "cardw": "12.5%",
-    "wow": "baseline",
-    "wcolor": "#777777"
+    "wow": "last wk 15 ▼7",
+    "wcolor": "#2E9E5B"
    },
    {
     "label": "Cash Deposit",
-    "value": "15",
+    "value": "21",
     "detail": "off-benchmark",
     "color": "#F27061",
     "bg": "#FBE4E0",
     "cardw": "12.5%",
-    "wow": "baseline",
-    "wcolor": "#777777"
+    "wow": "last wk 15 ▲6",
+    "wcolor": "#F27061"
    },
    {
     "label": "Undue VAT",
@@ -2365,12 +2308,12 @@
    },
    {
     "label": "Memorized",
-    "value": "33",
-    "detail": "15 od / 18 pend",
+    "value": "39",
+    "detail": "21 od / 18 pend",
     "color": "#F27061",
     "bg": "#FBE4E0",
     "cardw": "12.5%",
-    "wow": "last wk 27 ▲6",
+    "wow": "last wk 33 ▲6",
     "wcolor": "#F27061"
    },
    {
@@ -2380,13 +2323,13 @@
     "color": "#27AE60",
     "bg": "#E8F5E9",
     "cardw": "12.5%",
-    "wow": "baseline",
+    "wow": "last wk 0 –",
     "wcolor": "#777777"
    },
    {
     "label": "Approvals",
-    "value": "341",
-    "detail": "327 txn / 14 mstr",
+    "value": "156",
+    "detail": "156 stuck pymt / 0 mstr",
     "color": "#F27061",
     "bg": "#FBE4E0",
     "cardw": "12.5%",
@@ -2395,71 +2338,71 @@
    },
    {
     "label": "Prepayment >30d",
-    "value": "8",
-    "detail": "145,854 to clear",
+    "value": "13",
+    "detail": "59,148 to clear",
     "color": "#F27061",
     "bg": "#FBE4E0",
     "cardw": "12.5%",
-    "wow": "last wk 8 –",
-    "wcolor": "#777777"
+    "wow": "last wk 8 ▲5",
+    "wcolor": "#F27061"
    }
   ],
   "appr_txn_rows": [
    {
     "type": "Vendor Payments",
-    "count": "133",
-    "oldest": "27/02/2025",
-    "note": "auto-generated; nextApprover unassigned (-1)",
+    "count": "156",
+    "oldest": "28/06/2025",
+    "note": "auto-generated; nextApprover unassigned (-1) — blocks KBank",
     "bg": "#FBE4E0"
    },
    {
     "type": "Journal Entries",
-    "count": "185",
+    "count": "129",
     "oldest": "01/10/2025",
-    "note": "mostly AUTO- intercompany (Inbox/ACT)",
+    "note": "'Undue Tax Adjustment' auto-JEs (Pornsri) awaiting approval — likely why Input VAT-undue keeps rising",
     "bg": "#FBE4E0"
    },
    {
     "type": "Purchase Orders",
-    "count": "6",
+    "count": "5",
     "oldest": "09/04/2026",
-    "note": "SFB 5, ACT 1",
+    "note": "SFB / ActionCity",
     "bg": "#FBE4E0"
    },
    {
     "type": "Customer Invoices",
-    "count": "3",
-    "oldest": "24/06/2026",
-    "note": "Inbox (recurring)",
-    "bg": "#FBE4E0"
+    "count": "0",
+    "oldest": "—",
+    "note": "none pending in subs 12/13/22",
+    "bg": "#E8F5E9"
    },
    {
     "type": "Vendor Bills (IR)",
     "count": "0",
     "oldest": "—",
-    "note": "none pending — bills post as Open then await payment",
+    "note": "bills post as Open then await payment",
     "bg": "#E8F5E9"
    }
   ],
   "appr_pymt_rows": [
    {
     "sub": "SFB",
-    "count": "71",
+    "count": "110",
     "oldest": "26/12/2025"
    },
    {
     "sub": "Vending",
-    "count": "27",
-    "oldest": "15/09/2025"
+    "count": "38",
+    "oldest": "19/01/2026"
    },
    {
     "sub": "ActionCity",
-    "count": "18",
+    "count": "8",
     "oldest": "28/06/2025"
    },
    {
-    "sub": "CHAW/Inbox/TOYz/others",
-    "count": "28",
+    "sub": "CHAW/Inbox/others",
+    "count": "26",
     "oldest": "27/02/2025"
    }
   ],
@@ -2476,8 +2419,13 @@
    },
    {
     "sub": "Vending",
-    "date": "15/09/2025",
-    "amt": "1,684,800"
+    "date": "31/07/2026",
+    "amt": "1,870,947"
+   },
+   {
+    "sub": "Vending",
+    "date": "20/07/2026",
+    "amt": "1,200,303"
    },
    {
     "sub": "ActionCity",
@@ -2485,130 +2433,12 @@
     "amt": "665,946"
    },
    {
-    "sub": "TOYzINBOX",
-    "date": "31/03/2025",
-    "amt": "399,031"
-   },
-   {
-    "sub": "TOYzINBOX",
-    "date": "27/02/2025",
-    "amt": "217,085"
+    "sub": "SFB",
+    "date": "05/04/2026",
+    "amt": "599,200"
    }
   ],
-  "appr_master_rows": [
-   {
-    "kind": "Vendor",
-    "id": "V-01035",
-    "name": "(new vendor record)",
-    "status": "Pending Purchase Mgr/GM/CEO",
-    "since": "10/06/2026",
-    "bg": "#FBE4E0"
-   },
-   {
-    "kind": "Customer",
-    "id": "C-00178",
-    "name": "สันธิญา เกาะยาวใหญ่ รีสอร์ท",
-    "status": "Pending Accounting Mgr",
-    "since": "01/08/2024",
-    "bg": "#FFF3E0"
-   },
-   {
-    "kind": "Customer",
-    "id": "C-00322",
-    "name": "GREATER BAY AIRLINES",
-    "status": "Pending Retail Sales/GM/CEO",
-    "since": "02/08/2024",
-    "bg": "#FFF3E0"
-   },
-   {
-    "kind": "Customer",
-    "id": "C-00396",
-    "name": "บ.ไรซ์โนวา กรุ๊ป",
-    "status": "Pending Retail Sales/GM/CEO",
-    "since": "06/09/2024",
-    "bg": "#FFF3E0"
-   },
-   {
-    "kind": "Customer",
-    "id": "C-00407",
-    "name": "ลูกค้าทั่วไป",
-    "status": "Pending Retail Sales/GM/CEO",
-    "since": "17/09/2024",
-    "bg": "#FFF3E0"
-   },
-   {
-    "kind": "Customer",
-    "id": "C-02347",
-    "name": "บ.บาโฟ แพลเนท",
-    "status": "Pending Retail Sales/GM/CEO",
-    "since": "25/11/2024",
-    "bg": "#FFF3E0"
-   },
-   {
-    "kind": "Customer",
-    "id": "C-07169",
-    "name": "บ.ไต้เต็ก",
-    "status": "Pending Retail Sales/GM/CEO",
-    "since": "01/08/2025",
-    "bg": "#FFF3E0"
-   },
-   {
-    "kind": "Customer",
-    "id": "C-7491710",
-    "name": "บ.ไฮป์ทอย",
-    "status": "Pending Retail Sales/GM/CEO",
-    "since": "11/09/2025",
-    "bg": "#FFF3E0"
-   },
-   {
-    "kind": "Customer",
-    "id": "C-7492369",
-    "name": "คุณ สาวิณี บุตรชีวปรีชา",
-    "status": "Pending Retail Sales/GM/CEO",
-    "since": "11/11/2025",
-    "bg": "#FFF3E0"
-   },
-   {
-    "kind": "Customer",
-    "id": "C-7492485",
-    "name": "ไอศวรรย์ เตโชสกุลพาณิชย์",
-    "status": "Pending Retail Sales/GM/CEO",
-    "since": "25/11/2025",
-    "bg": "#FFF3E0"
-   },
-   {
-    "kind": "Customer",
-    "id": "C-7493782",
-    "name": "Shopee",
-    "status": "Pending Accounting Mgr",
-    "since": "07/04/2026",
-    "bg": "#FFF3E0"
-   },
-   {
-    "kind": "Customer",
-    "id": "C-7493783",
-    "name": "Shopify",
-    "status": "Pending Accounting Mgr",
-    "since": "07/04/2026",
-    "bg": "#FFF3E0"
-   },
-   {
-    "kind": "Customer",
-    "id": "C-7493784",
-    "name": "Tiktok",
-    "status": "Pending Accounting Mgr",
-    "since": "07/04/2026",
-    "bg": "#FFF3E0"
-   },
-   {
-    "kind": "Customer",
-    "id": "C-7493785",
-    "name": "Lazada",
-    "status": "Pending Accounting Mgr",
-    "since": "07/04/2026",
-    "bg": "#FFF3E0"
-   }
-  ],
+  "appr_master_rows": [],
   "appr_nodue_rows": [
    {
     "vendor": "V-00698 Big Box International",
@@ -2625,11 +2455,371 @@
     "action": "Set due date"
    },
    {
+    "vendor": "V-00042 พีเอช ปริ้นติ้ง 2020",
+    "term": "30 Days",
+    "bills": "2",
+    "amt": "28,890",
+    "action": "Set due date"
+   },
+   {
     "vendor": "V-00695 คิงดอม คัม",
     "term": "30 Days",
     "bills": "1",
     "amt": "17,160",
     "action": "Set due date"
+   }
+  ],
+  "appr_je30_rows": [
+   {
+    "n": "1",
+    "tranid": "AUTO-ACT000900192",
+    "dt": "01/10/2025",
+    "sub": "ActionCity",
+    "age": "287",
+    "creator": "Pimchanok Karam",
+    "memo": "—"
+   },
+   {
+    "n": "2",
+    "tranid": "AUTO-SFB000901621",
+    "dt": "22/04/2026",
+    "sub": "SFB",
+    "age": "84",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "3",
+    "tranid": "AUTO-VEN000901051",
+    "dt": "25/04/2026",
+    "sub": "Vending",
+    "age": "81",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "4",
+    "tranid": "AUTO-SFB000901490",
+    "dt": "30/04/2026",
+    "sub": "SFB",
+    "age": "76",
+    "creator": "Attaphol Pakdeebanchasak",
+    "memo": "กลับรายการภาษี APSFB251100607"
+   },
+   {
+    "n": "5",
+    "tranid": "AUTO-ACT000900471",
+    "dt": "01/05/2026",
+    "sub": "ActionCity",
+    "age": "75",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "6",
+    "tranid": "AUTO-ACT000900603",
+    "dt": "05/05/2026",
+    "sub": "ActionCity",
+    "age": "71",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "7",
+    "tranid": "AUTO-SFB000901738",
+    "dt": "05/05/2026",
+    "sub": "SFB",
+    "age": "71",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "8",
+    "tranid": "AUTO-SFB000902000",
+    "dt": "15/05/2026",
+    "sub": "SFB",
+    "age": "61",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "9",
+    "tranid": "AUTO-ACT000900630",
+    "dt": "15/05/2026",
+    "sub": "ActionCity",
+    "age": "61",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "10",
+    "tranid": "AUTO-SFB000902001",
+    "dt": "15/05/2026",
+    "sub": "SFB",
+    "age": "61",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "11",
+    "tranid": "AUTO-SFB000901796",
+    "dt": "15/05/2026",
+    "sub": "SFB",
+    "age": "61",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "12",
+    "tranid": "AUTO-SFB000901825",
+    "dt": "20/05/2026",
+    "sub": "SFB",
+    "age": "56",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "13",
+    "tranid": "AUTO-SFB000901826",
+    "dt": "20/05/2026",
+    "sub": "SFB",
+    "age": "56",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "14",
+    "tranid": "AUTO-SFB000901829",
+    "dt": "20/05/2026",
+    "sub": "SFB",
+    "age": "56",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "15",
+    "tranid": "AUTO-SFB000901828",
+    "dt": "20/05/2026",
+    "sub": "SFB",
+    "age": "56",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "16",
+    "tranid": "AUTO-SFB000901827",
+    "dt": "20/05/2026",
+    "sub": "SFB",
+    "age": "56",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "17",
+    "tranid": "AUTO-SFB000902019",
+    "dt": "20/05/2026",
+    "sub": "SFB",
+    "age": "56",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "18",
+    "tranid": "AUTO-SFB000901923",
+    "dt": "25/05/2026",
+    "sub": "SFB",
+    "age": "51",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "19",
+    "tranid": "AUTO-SFB000901885",
+    "dt": "25/05/2026",
+    "sub": "SFB",
+    "age": "51",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "20",
+    "tranid": "AUTO-SFB000901864",
+    "dt": "25/05/2026",
+    "sub": "SFB",
+    "age": "51",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "21",
+    "tranid": "AUTO-VEN000901155",
+    "dt": "25/05/2026",
+    "sub": "Vending",
+    "age": "51",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "22",
+    "tranid": "AUTO-ACT000900652",
+    "dt": "25/05/2026",
+    "sub": "ActionCity",
+    "age": "51",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "23",
+    "tranid": "AUTO-SFB000901960",
+    "dt": "29/05/2026",
+    "sub": "SFB",
+    "age": "47",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "24",
+    "tranid": "AUTO-SFB000901992",
+    "dt": "31/05/2026",
+    "sub": "SFB",
+    "age": "45",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "25",
+    "tranid": "AUTO-SFB000901956",
+    "dt": "31/05/2026",
+    "sub": "SFB",
+    "age": "45",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "26",
+    "tranid": "AUTO-SFB000901955",
+    "dt": "31/05/2026",
+    "sub": "SFB",
+    "age": "45",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "27",
+    "tranid": "AUTO-SFB000901957",
+    "dt": "31/05/2026",
+    "sub": "SFB",
+    "age": "45",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "28",
+    "tranid": "AUTO-ACT000900629",
+    "dt": "01/06/2026",
+    "sub": "ActionCity",
+    "age": "44",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "29",
+    "tranid": "AUTO-SFB000901685",
+    "dt": "01/06/2026",
+    "sub": "SFB",
+    "age": "44",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "30",
+    "tranid": "AUTO-SFB000901959",
+    "dt": "01/06/2026",
+    "sub": "SFB",
+    "age": "44",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "31",
+    "tranid": "AUTO-SFB000902007",
+    "dt": "02/06/2026",
+    "sub": "SFB",
+    "age": "43",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "32",
+    "tranid": "AUTO-ACT000900694",
+    "dt": "05/06/2026",
+    "sub": "ActionCity",
+    "age": "40",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "33",
+    "tranid": "AUTO-ACT000900693",
+    "dt": "05/06/2026",
+    "sub": "ActionCity",
+    "age": "40",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "34",
+    "tranid": "AUTO-SFB000902005",
+    "dt": "05/06/2026",
+    "sub": "SFB",
+    "age": "40",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "35",
+    "tranid": "AUTO-SFB000902003",
+    "dt": "05/06/2026",
+    "sub": "SFB",
+    "age": "40",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "36",
+    "tranid": "AUTO-SFB000902004",
+    "dt": "05/06/2026",
+    "sub": "SFB",
+    "age": "40",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "37",
+    "tranid": "AUTO-SFB000902018",
+    "dt": "08/06/2026",
+    "sub": "SFB",
+    "age": "37",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "38",
+    "tranid": "AUTO-SFB000902029",
+    "dt": "10/06/2026",
+    "sub": "SFB",
+    "age": "35",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
+   },
+   {
+    "n": "39",
+    "tranid": "AUTO-SFB000902040",
+    "dt": "12/06/2026",
+    "sub": "SFB",
+    "age": "33",
+    "creator": "Pornsri Sritubtim",
+    "memo": "Undue Tax Adjustment"
    }
   ],
   "prepay_rows": [
@@ -2648,37 +2838,7 @@
     "bills": "5",
     "amt": "11,016",
     "oldest": "01/05/2026",
-    "over30": "2",
-    "status": "BREACH >30d",
-    "row_bg": "#FBE4E0",
-    "action": "Apply deposit NOW"
-   },
-   {
-    "vendor": "V-00390 ณัฐพล วันริโก",
-    "bills": "3",
-    "amt": "130,000",
-    "oldest": "01/06/2026",
     "over30": "3",
-    "status": "BREACH >30d",
-    "row_bg": "#FBE4E0",
-    "action": "Apply deposit NOW"
-   },
-   {
-    "vendor": "V-00240 HEYCIAO INTERNATIONAL GROUP LIMITED",
-    "bills": "1",
-    "amt": "9,841",
-    "oldest": "01/06/2026",
-    "over30": "1",
-    "status": "BREACH >30d",
-    "row_bg": "#FBE4E0",
-    "action": "Apply deposit NOW"
-   },
-   {
-    "vendor": "V-01081 บริษัท เค.พี.กมลกิจ อินเตอร์เทรด จำกัด",
-    "bills": "1",
-    "amt": "1,521",
-    "oldest": "01/06/2026",
-    "over30": "1",
     "status": "BREACH >30d",
     "row_bg": "#FBE4E0",
     "action": "Apply deposit NOW"
@@ -2688,10 +2848,10 @@
     "bills": "9",
     "amt": "51,809",
     "oldest": "13/06/2026",
-    "over30": "0",
-    "status": "OK <=30d",
-    "row_bg": "#FFFFFF",
-    "action": "Apply within 30d"
+    "over30": "9",
+    "status": "BREACH >30d",
+    "row_bg": "#FBE4E0",
+    "action": "Apply deposit NOW"
    },
    {
     "vendor": "V-00296 บริษัท ฟู้ดแพชชั่น จำกัด",
@@ -2715,29 +2875,39 @@
    },
    {
     "vendor": "V-00040 บริษัท คิง เพาเวอร์ สุวรรณภูมิ จำกัด",
+    "bills": "2",
+    "amt": "320,636",
+    "oldest": "30/06/2026",
+    "over30": "0",
+    "status": "OK <=30d",
+    "row_bg": "#FFFFFF",
+    "action": "Apply within 30d"
+   },
+   {
+    "vendor": "V-00273 บริษัท เมอร์เซเดส-เบนซ์ ลีสซิ่ง (ประเทศไทย) จำกัด",
+    "bills": "1",
+    "amt": "41,695",
+    "oldest": "09/07/2026",
+    "over30": "0",
+    "status": "OK <=30d",
+    "row_bg": "#FFFFFF",
+    "action": "Apply within 30d"
+   },
+   {
+    "vendor": "V-00694 บริษัท โอมิเซะ จำกัด",
     "bills": "3",
-    "amt": "798,733",
-    "oldest": "30/06/2026",
+    "amt": "727",
+    "oldest": "09/07/2026",
     "over30": "0",
     "status": "OK <=30d",
     "row_bg": "#FFFFFF",
     "action": "Apply within 30d"
    },
    {
-    "vendor": "V-00457 GUANGZHOU MENGSHEWAN CULTURE",
+    "vendor": "V-00484 บริษัท 2 สิงหา จำกัด",
     "bills": "1",
-    "amt": "4,061",
-    "oldest": "30/06/2026",
-    "over30": "0",
-    "status": "OK <=30d",
-    "row_bg": "#FFFFFF",
-    "action": "Apply within 30d"
-   },
-   {
-    "vendor": "V-00922 Guangzhou Xinqi Animation Culture Co., Ltd.",
-    "bills": "1",
-    "amt": "4,968",
-    "oldest": "06/07/2026",
+    "amt": "136,710",
+    "oldest": "13/07/2026",
     "over30": "0",
     "status": "OK <=30d",
     "row_bg": "#FFFFFF",
@@ -2844,6 +3014,6 @@
   ]
  },
  "sections": {
-  "recon_alert": true
+  "recon_alert": false
  }
 }

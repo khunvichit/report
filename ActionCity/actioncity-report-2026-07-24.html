@@ -1,0 +1,371 @@
+<!--
+  actioncity-template.html — LOCKED daily-dashboard email template.
+  The routine FILLS this with fill_template.py from data.json. It NEVER regenerates this HTML.
+  Mechanisms: double-brace scalar token | REPEAT:name rows | SECTION:name conditional block
+  Keep every colour/size/inline style exactly — email-client tested. This comment header is stripped on fill.
+-->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ActionCity Daily Sales &amp; Stock Dashboard</title>
+<style>body{margin:0;padding:0;}</style></head>
+<body style="margin:0;padding:0;background:#F5EDE4;font-family:'Poppins',Arial,Helvetica,sans-serif;color:#2b2b33;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F5EDE4;padding:24px 0;"><tr><td align="center">
+<table role="presentation" width="920" cellpadding="0" cellspacing="0" style="max-width:920px;width:100%;">
+
+<!-- HEADER -->
+<tr><td style="background:#5551FE;border-radius:14px;padding:26px 30px;">
+  <table role="presentation" width="100%"><tr>
+    <td style="vertical-align:middle;">
+      <div style="font-size:13px;font-weight:600;letter-spacing:2px;color:#C9C7FF;text-transform:uppercase;">ActionCity (Thailand) &middot; Sub 22 &middot; Retail / Art Toy</div>
+      <div style="font-size:27px;font-weight:700;color:#ffffff;line-height:1.15;margin-top:4px;">Daily Sales &amp; Stock Dashboard</div>
+      <div style="font-size:15px;color:#E6E5FF;margin-top:3px;">24 Jul 2026 (Fri · intraday) &middot; end-of-day close &middot; week-to-date W30</div>
+    </td>
+    <td align="right" style="vertical-align:middle;">
+      <div style="display:inline-block;background:#b5740a;color:#ffffff;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;">AS-OF NOW</div>
+    </td>
+  </tr></table>
+</td></tr>
+<tr><td style="height:14px;"></td></tr>
+
+<!-- EXEC INSIGHT (generative; omitted if no insight rows) -->
+
+<tr><td style="background:#ffffff;border-radius:12px;padding:18px 22px;border-left:4px solid #F27061;">
+  <div style="font-size:15px;font-weight:600;margin-bottom:8px;">&#128202; Executive Insight <span style="font-size:11px;font-weight:400;color:#8a8a93;">&middot; AI summary of the numbers below</span></div>
+  <div style="font-size:13px;line-height:1.7;color:#4a4640;">
+    
+    &bull; <b>Day just opened (Fri)</b> — ฿9,425 on 11 bills so far; live numbers build through the day. The substance is the week-to-date W30 review below.<br>
+    
+    &bull; <b>W30 week-to-date ฿206,023 (5 days, ~฿41k/day).</b> Tuesday was the standout at ฿82k (Siam-led, premium figures). Solid week overall.<br>
+    
+    &bull; <b>Retail by channel (W30 WTD):</b> Stores ฿128,805 (63%), <b>Shopee/marketplaces ฿55,775 (27% — a big Shopee week</b>, vs ฿2k in W29), Vending ฿12,358 (6%), Online/HQ web ฿9,085 (4%).<br>
+    
+    &bull; &#9888; <b>Central Ladprao is DARK for all of W30 (฿0 across 5 days)</b> — on top of a three-week slide (฿51k→39k→18k). Likely a closed store or POS/sync failure — check today.<br>
+    
+    &bull; &#9888; <b>Margin:</b> Rainbowkido Origins (−119% GP) and Diesel × Dolores (−75%) still selling below cost — reprice/pull.<br>
+    
+    &bull; <b>Reorder still tight:</b> Ghody Behold My Cat (0.7w, 68% GP), Lollipoppi Bag Charm (0.8w), Upset Duck Status (1.1w). Collectables GP strong at 56.2%.<br>
+    
+  </div>
+</td></tr>
+<tr><td style="height:14px;"></td></tr>
+
+
+<!-- KPI HEADLINE -->
+<tr><td>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0"><tr>
+    <td width="25%" style="padding-right:9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Net sales &middot; today (retail)</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">&#3647;9,425</div>
+      <div style="font-size:13px;color:#8a8a93;font-weight:600;margin-top:2px;"> day just opened vs same day last wk (retail)</div>
+    </div></td>
+    <td width="25%" style="padding:0 9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Bills &middot; today</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">11</div>
+      <div style="font-size:13px;color:#8a8a93;font-weight:500;margin-top:2px;">11 retail bills · 29 units · day just opened</div>
+    </div></td>
+    <td width="25%" style="padding:0 9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Avg ticket &middot; today (retail)</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">&#3647;857</div>
+      <div style="font-size:13px;color:#8a8a93;font-weight:500;margin-top:2px;">retail only &middot; excl. wholesale</div>
+    </div></td>
+    <td width="25%" style="padding-left:9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Week-to-date &middot; W30</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">&#3647;206,023</div>
+      <div style="font-size:13px;color:#8a8a93;font-weight:500;margin-top:2px;">5 days &middot; ~&#3647;41,205/day</div>
+    </div></td>
+  </tr></table>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- DAILY SALES BY BRANCH (today) -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:18px 22px;">
+  <div style="font-size:15px;font-weight:600;margin-bottom:2px;">Daily sales by branch <span style="font-size:11px;font-weight:400;color:#8a8a93;">&middot; 24 Jul 2026 (Fri · intraday)</span></div>
+  <div style="font-size:11px;color:#8a8a93;margin-bottom:10px;">Today's net &amp; bills per branch. Ticket = retail only (excludes wholesale).</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:10px;"><td style="padding-bottom:3px;">Branch</td><td align="right" style="padding-bottom:3px;">Net &#3647;</td><td align="right" style="padding-bottom:3px;">Bills</td><td align="right" style="padding-bottom:3px;">Ticket</td><td align="right" style="padding-bottom:3px;">&nbsp;</td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Siam Square One</td><td align="right" style="font-weight:600;color:#2b2b33;">7,937</td><td align="right">8</td><td align="right">992</td><td align="right"></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Fashion Island</td><td align="right" style="font-weight:600;color:#2b2b33;">1,488</td><td align="right">3</td><td align="right">496</td><td align="right"></td></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#b3261e;">Central Ladprao</td><td align="right" style="font-weight:600;color:#b3261e;">0</td><td align="right">0</td><td align="right">0</td><td align="right"><span style="background:#d6453a;color:#fff;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;">DARK 5d</span></td></tr>
+    
+  </table>
+  <div style="font-size:11px;color:#8a8a93;margin-top:7px;">Day just opened (Fri) — only Siam Square One (฿7.9k) and Fashion Island (฿1.5k) have posted so far; live numbers build through the day. The substance below is the week-to-date W30 review.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- BEST SELLERS TODAY (omit if none >=5) -->
+
+<tr><td style="background:#e1f5ee;border:1px solid #5DCAA5;border-radius:12px;padding:14px 20px;">
+  <div style="font-size:12px;color:#0f6e56;"><b>Best sellers today</b> (5+ pieces): &mdash; day just opened; Upset Duck Stop The Spiral 3 so far &mdash;</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+
+<!-- NET SALES BY WEEK -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;">Net sales by week</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:16px;">Net = invoices &minus; returns (inventory items, wash-lines excluded). W30 is week-to-date.</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:13px;">
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:500;">W24</td><td><div style="background:#C9C7FF;height:18px;width:48%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:500;color:#2b2b33;">&#3647;367,254</td></tr>
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:500;">W25</td><td><div style="background:#C9C7FF;height:18px;width:46%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:500;color:#2b2b33;">&#3647;355,410</td></tr>
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:500;">W26</td><td><div style="background:#C9C7FF;height:18px;width:41%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:500;color:#2b2b33;">&#3647;319,150</td></tr>
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:500;">W27</td><td><div style="background:#C9C7FF;height:18px;width:60%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:500;color:#2b2b33;">&#3647;462,418</td></tr>
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:600;">W28</td><td><div style="background:#C9C7FF;height:18px;width:100%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:600;color:#1f7a55;">&#3647;772,616</td></tr>
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:600;">W29</td><td><div style="background:#C9C7FF;height:18px;width:50%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:600;color:#2b2b33;">&#3647;384,550</td></tr>
+    
+    <tr><td width="60" style="color:#2b2b33;padding:5px 0;font-weight:600;">W30 (WTD 5d)</td><td><div style="background:#F27061;height:18px;width:27%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:600;color:#F27061;">&#3647;206,023</td></tr>
+    
+  </table>
+  <div style="background:#F5EDE4;border-radius:8px;padding:12px 14px;margin-top:14px;font-size:12px;color:#5b5547;line-height:1.6;"><b>Retail basis</b> (wholesale excluded). <b>W30 week-to-date ฿206,023 over 5 days (~฿41k/day)</b> — Tuesday was the standout (฿82k). Notable: <b>Shopee surged to ฿55,775 this week</b> (27% of retail, vs ฿2k in W29). W28 remains the settled peak (฿772,616, one-off online-settlement spike). Today's bar is 5-day WTD and will keep building.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REVENUE BY BUSINESS UNIT -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Revenue by business unit <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; W30 to date (7 units)</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;">
+    <tr style="color:#8a8a93;font-size:10px;"><td>BU</td><td></td><td align="right">Net &#3647;</td><td align="right">Share</td><td align="right">WoW</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">SQ1 (Siam Square One)</td><td style="width:40%;"><span style="background:#5551FE;height:13px;width:100%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">90,537</td><td align="right">43.9%</td><td align="right" style="color:#8a8a93;">W29 ฿208,224</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">Fashion Island</td><td style="width:40%;"><span style="background:#7d79ff;height:13px;width:32%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">28,737</td><td align="right">13.9%</td><td align="right" style="color:#8a8a93;">W29 ฿100,027</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">Vending Machines</td><td style="width:40%;"><span style="background:#f5a623;height:13px;width:14%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">12,358</td><td align="right">6.0%</td><td align="right" style="color:#8a8a93;">W29 ฿24,966</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">Shopify (own web)</td><td style="width:40%;"><span style="background:#1f7a55;height:13px;width:13%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">11,896</td><td align="right">5.8%</td><td align="right" style="color:#8a8a93;">W29 ฿6,467</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">Shopee</td><td style="width:40%;"><span style="background:#1f9d57;height:13px;width:62%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">55,775</td><td align="right">27.1%</td><td align="right" style="color:#1f9d57;">&#9650; W29 ฿2,598</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">TikTok Shop</td><td style="width:40%;"><span style="background:#d6453a;height:13px;width:1%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">0</td><td align="right">0.0%</td><td align="right" style="color:#8a8a93;">W29 ฿0</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">B2B / Wholesale</td><td style="width:40%;"><span style="background:#b5740a;height:13px;width:1%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">0</td><td align="right">0.0%</td><td align="right" style="color:#8a8a93;">W29 ฿63,811</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">Other (Warehouse HQ / Ladprao)</td><td style="width:40%;"><span style="background:#8a8a93;height:13px;width:7%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">6,720</td><td align="right">3.3%</td><td align="right" style="color:#8a8a93;">W29 ฿62,963</td></tr>
+    
+  </table>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REVENUE BY BRANCH -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Revenue by business unit &mdash; weekly trend <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; last 3 weeks (W27&ndash;W29, net &#3647;)</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:11px;">
+    <tr style="color:#8a8a93;font-size:10px;"><td>Business unit</td><td align="right">W27</td><td align="right">W28</td><td align="right">W29</td><td align="right">Trend</td><td align="right">Flag</td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">SQ1 (Siam Square One)</td><td align="right">216,428</td><td align="right">209,545</td><td align="right" style="font-weight:600;color:#2b2b33;">208,224</td><td align="right" style="color:#8a8a93;">&#9644;</td><td align="right">store</td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Fashion Island</td><td align="right">84,059</td><td align="right">108,315</td><td align="right" style="font-weight:600;color:#c43b27;">100,027</td><td align="right" style="color:#d6453a;">&#9660;</td><td align="right">store</td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#6a665e;">Vending Machines &#9881;</td><td align="right">29,268</td><td align="right">25,683</td><td align="right" style="font-weight:600;color:#2b2b33;">24,966</td><td align="right" style="color:#8a8a93;">&#9660;</td><td align="right">vending</td></tr>
+    
+    <tr style="background:#eafaf3;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#0f6e56;">Shopify (own web)</td><td align="right">44,785</td><td align="right">74,505</td><td align="right" style="font-weight:600;color:#b3261e;">6,467</td><td align="right" style="color:#b3261e;">&#9660;&#9660;</td><td align="right"><span style="background:#e1f5ee;color:#0f6e56;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;">WEB</span></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Shopee</td><td align="right">26,310</td><td align="right">28,266</td><td align="right" style="font-weight:600;color:#b3261e;">2,598</td><td align="right" style="color:#b3261e;">&#9660;&#9660;</td><td align="right">marketplace</td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">TikTok Shop</td><td align="right">1,327</td><td align="right">1,671</td><td align="right" style="font-weight:600;color:#b3261e;">0</td><td align="right" style="color:#d6453a;">&#9660;</td><td align="right">marketplace</td></tr>
+    
+    <tr style="background:#fff8ec;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">B2B / Wholesale</td><td align="right">0</td><td align="right">123,096</td><td align="right" style="font-weight:600;color:#2b2b33;">63,811</td><td align="right" style="color:#8a8a93;">&#9660;</td><td align="right"><span style="background:#fdf1df;color:#b5740a;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;">B2B</span></td></tr>
+    
+    <tr style="background:#f7f7f9;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#6a665e;">Other (Warehouse HQ / Ladprao / Westgate)</td><td align="right">60,017</td><td align="right">298,892</td><td align="right" style="font-weight:600;color:#2b2b33;">62,963</td><td align="right" style="color:#8a8a93;">&#9660;</td><td align="right"><span style="background:#eeedfe;color:#5551FE;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;">W28 SPIKE</span></td></tr>
+    
+  </table>
+  <div style="font-size:11px;color:#8a8a93;margin-top:8px;">Seven business units, last 3 complete weeks (net ฿, each sale counted once). <b>SQ1 is the anchor (฿208k)</b>; Fashion Island ฿100k. &#9888; <b>Shopify crashed W28→W29 (฿74.5k → ฿6.5k)</b> and <b>Shopee too (฿28k → ฿2.6k)</b> — both online channels fell off a cliff in W29 (then Shopee rebounded to ฿55.8k in W30). B2B is lumpy (W28 ฿123k, W29 ฿64k). 'Other' = Warehouse HQ/online, Central Ladprao &amp; Westgate — the W28 ฿299k includes the one-off online-settlement spike. Shopify = E-Commerce dept, own-web (non-marketplace).</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REVENUE BY MARKETPLACE -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Revenue by marketplace <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; last 3 weeks (W27&ndash;W29, net &#3647;; online channels)</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:11px;">
+    <tr style="color:#8a8a93;font-size:10px;"><td>Marketplace</td><td align="right">W27</td><td align="right">W28</td><td align="right">W29</td><td align="right">Trend</td><td align="right">Orders</td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Shopee</td><td align="right">26,310</td><td align="right">28,266</td><td align="right" style="font-weight:600;color:#c43b27;">2,598</td><td align="right" style="color:#d6453a;">&#9660;</td><td align="right">4</td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">TikTok Shop</td><td align="right">1,327</td><td align="right">1,671</td><td align="right" style="font-weight:600;color:#b3261e;">0</td><td align="right" style="color:#d6453a;">&#9660;</td><td align="right">0</td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#8a8a93;">Lazada</td><td align="right">0</td><td align="right">0</td><td align="right" style="font-weight:600;color:#8a8a93;">0</td><td align="right" style="color:#8a8a93;">—</td><td align="right">0</td></tr>
+    
+  </table>
+  <div style="font-size:11px;color:#8a8a93;margin-top:8px;">Online marketplaces (Shopee/Lazada/TikTok), retail. <b>Shopee dipped in W29 (฿2.6k) then surged to ฿55,775 in W30 to date</b> — the current week's standout (worth understanding what drove it). TikTok minimal; Lazada inactive. Separate from the Warehouse HQ/online web channel in Revenue by branch.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- CATEGORY MIX -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;">Category mix &middot; Collectables vs the rest</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:14px;">Collectables = premium 100/200/300/400/1000% figures. Trailing 4 weeks.</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:13px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left" style="padding:6px 0;">Category</th><th align="right">SKUs</th><th align="right">Units</th><th align="right">Net</th><th align="right">% sales</th><th align="right">ASP</th><th align="right">GP%</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Collectables (100/200/400%)</td><td align="right">39</td><td align="right">106</td><td align="right" style="font-weight:600;">&#3647;354,295</td><td align="right">18.3%</td><td align="right">&#3647;3,342</td><td align="right" style="color:#1f7a55;">56.2%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">The rest (blind box / plush / KC)</td><td align="right">370</td><td align="right">4,814</td><td align="right" style="font-weight:600;">&#3647;1,584,440</td><td align="right">81.7%</td><td align="right">&#3647;329</td><td align="right" style="color:#c43b27;">45.5%</td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:10px;"><b>Collectables GP strong at 56.2%</b> (18% of revenue, ASP ฿3,342). The Rest at 45.5% is dragged by below-cost items (Rainbowkido −119%, Diesel × Dolores −75%) — fix those and blended margin lifts.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REORDER NOW -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;border:2px solid #F27061;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;"><span style="display:inline-block;width:9px;height:9px;background:#F27061;border-radius:50%;vertical-align:middle;"></span> Reorder now: fast movers, low stock, nothing on order</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:14px;">Retail/e-commerce velocity over the last 5 weeks (W26&ndash;W30). Cover = stock &divide; 4-wk weekly avg.</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="right">W26</th><th align="right">W27</th><th align="right">W28</th><th align="right">W29</th><th align="right">W30</th><th align="right">Stock</th><th align="right">Cover</th><th align="right">Action</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Ghody Behold My Cat Mini Figure BB (68% GP)</td><td align="right">—</td><td align="right">0</td><td align="right">14</td><td align="right">33</td><td align="right">10</td><td align="right" style="color:#c43b27;">15</td><td align="right">0.7w</td><td align="right"><span style="background:#e3f5ec;color:#1f9d57;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">REORDER</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Lollipoppi Bag Charm Plush KC BB</td><td align="right">6</td><td align="right">30</td><td align="right">29</td><td align="right">39</td><td align="right">17</td><td align="right" style="color:#c43b27;">23</td><td align="right">0.8w</td><td align="right"><span style="background:#e3f5ec;color:#1f9d57;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">REORDER</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Upset Duck Status Display BB</td><td align="right">64</td><td align="right">83</td><td align="right">85</td><td align="right">28</td><td align="right">23</td><td align="right" style="color:#c43b27;">27</td><td align="right">1.1w</td><td align="right"><span style="background:#e3f5ec;color:#1f9d57;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">REORDER</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Rainbowkido Origins Figure BB (below cost!)</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">30</td><td align="right">3</td><td align="right" style="color:#c43b27;">73</td><td align="right">—</td><td align="right"><span style="background:#fde3df;color:#c43b27;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">FIX PRICE</span></td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:12px;">Retail velocity W28–W29. <b>Ghody Behold My Cat</b> (15 stock, 0.7w, 68% GP), <b>Lollipoppi Bag Charm</b> (23, 0.8w) and <b>Upset Duck Status</b> (27, 1.1w) all near stockout — reorder now. <b>Rainbowkido Origins</b> sells BELOW COST — reprice before reordering.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- TOP MOVERS -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Top 20 sellers by units &middot; last 2 weeks (W28 + W29) <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; retail only, wholesale excluded</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;table-layout:fixed;">
+    <colgroup><col style="width:34%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:7%"><col style="width:9%"><col style="width:9%"><col style="width:9%"></colgroup>
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="right">Stock</th><th align="right">W28</th><th align="right">W29</th><th align="right">2-wk</th><th align="right">/day</th><th align="right">Net &#3647;</th><th align="right">GP &#3647;</th><th align="right">GP%</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Fuggler Alley Cat Plush KC</td><td align="right" style="color:#2b2b33;">94</td><td align="right">62</td><td align="right" style="color:#2b2b33;">38</td><td align="right" style="font-weight:600;">100</td><td align="right" style="font-weight:600;">7.1</td><td align="right">38,699</td><td align="right">20,882</td><td align="right" style="color:#1f7a55;">54.0%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Upset Duck Stop The Spiral</td><td align="right" style="color:#2b2b33;">253</td><td align="right">57</td><td align="right" style="color:#2b2b33;">25</td><td align="right" style="font-weight:600;">82</td><td align="right" style="font-weight:600;">5.9</td><td align="right">14,176</td><td align="right">6,988</td><td align="right" style="color:#c43b27;">49.3%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Lollipoppi Bag Charm Plush KC</td><td align="right" style="color:#c43b27;">23</td><td align="right">39</td><td align="right" style="color:#2b2b33;">17</td><td align="right" style="font-weight:600;">56</td><td align="right" style="font-weight:600;">4.0</td><td align="right">31,421</td><td align="right">16,135</td><td align="right" style="color:#1f7a55;">51.4%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Upset Duck Mini Wishlist</td><td align="right" style="color:#2b2b33;">69</td><td align="right">29</td><td align="right" style="color:#2b2b33;">26</td><td align="right" style="font-weight:600;">55</td><td align="right" style="font-weight:600;">3.9</td><td align="right">19,166</td><td align="right">9,754</td><td align="right" style="color:#1f7a55;">50.9%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Upset Duck Status Display</td><td align="right" style="color:#c43b27;">27</td><td align="right">28</td><td align="right" style="color:#2b2b33;">23</td><td align="right" style="font-weight:600;">51</td><td align="right" style="font-weight:600;">3.6</td><td align="right">8,819</td><td align="right">4,342</td><td align="right" style="color:#c43b27;">49.2%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Opandee Zombie Party S4</td><td align="right" style="color:#b5740a;">449</td><td align="right">31</td><td align="right" style="color:#2b2b33;">18</td><td align="right" style="font-weight:600;">49</td><td align="right" style="font-weight:600;">3.5</td><td align="right">18,050</td><td align="right">6,417</td><td align="right" style="color:#c43b27;">35.6%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Ghody Behold My Cat Mini Figure</td><td align="right" style="color:#c43b27;">15</td><td align="right">33</td><td align="right" style="color:#2b2b33;">10</td><td align="right" style="font-weight:600;">43</td><td align="right" style="font-weight:600;">3.1</td><td align="right">7,896</td><td align="right">5,350</td><td align="right" style="color:#1f7a55;">67.8%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Oyo Portable Bag Mini Plush</td><td align="right" style="color:#2b2b33;">76</td><td align="right">20</td><td align="right" style="color:#1f7a55;">21</td><td align="right" style="font-weight:600;">41</td><td align="right" style="font-weight:600;">2.9</td><td align="right">9,206</td><td align="right">4,844</td><td align="right" style="color:#1f7a55;">52.6%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Fuggler Sassy Cuties Squad KC</td><td align="right" style="color:#c43b27;">48</td><td align="right">23</td><td align="right" style="color:#2b2b33;">17</td><td align="right" style="font-weight:600;">40</td><td align="right" style="font-weight:600;">2.9</td><td align="right">16,528</td><td align="right">8,979</td><td align="right" style="color:#1f7a55;">54.3%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Oyo Constellation Story V.2</td><td align="right" style="color:#2b2b33;">83</td><td align="right">16</td><td align="right" style="color:#1f7a55;">24</td><td align="right" style="font-weight:600;">40</td><td align="right" style="font-weight:600;">2.9</td><td align="right">5,776</td><td align="right">2,698</td><td align="right" style="color:#c43b27;">46.7%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Mr. Bone Strange Alliance 3.0</td><td align="right" style="color:#b5740a;">323</td><td align="right">12</td><td align="right" style="color:#1f7a55;">25</td><td align="right" style="font-weight:600;">37</td><td align="right" style="font-weight:600;">2.6</td><td align="right">14,593</td><td align="right">6,012</td><td align="right" style="color:#c43b27;">41.2%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Mr. Bone Agent Plush KC</td><td align="right" style="color:#2b2b33;">205</td><td align="right">25</td><td align="right" style="color:#2b2b33;">9</td><td align="right" style="font-weight:600;">34</td><td align="right" style="font-weight:600;">2.4</td><td align="right">16,341</td><td align="right">6,446</td><td align="right" style="color:#c43b27;">39.4%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Rainbowkido Origins Figure (BELOW COST)</td><td align="right" style="color:#c43b27;">73</td><td align="right">30</td><td align="right" style="color:#2b2b33;">3</td><td align="right" style="font-weight:600;">33</td><td align="right" style="font-weight:600;">2.4</td><td align="right">2,570</td><td align="right">-3,048</td><td align="right" style="color:#c43b27;">-118.6%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Sup. Pro. Manekineko Figure</td><td align="right" style="color:#2b2b33;">117</td><td align="right">21</td><td align="right" style="color:#2b2b33;">12</td><td align="right" style="font-weight:600;">33</td><td align="right" style="font-weight:600;">2.4</td><td align="right">11,613</td><td align="right">2,814</td><td align="right" style="color:#c43b27;">24.2%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Cat Hug Plush Keychain</td><td align="right" style="color:#2b2b33;">210</td><td align="right">19</td><td align="right" style="color:#2b2b33;">14</td><td align="right" style="font-weight:600;">33</td><td align="right" style="font-weight:600;">2.4</td><td align="right">13,753</td><td align="right">7,085</td><td align="right" style="color:#1f7a55;">51.5%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Bearbrick Series 50</td><td align="right" style="color:#b5740a;">798</td><td align="right">14</td><td align="right" style="color:#1f7a55;">19</td><td align="right" style="font-weight:600;">33</td><td align="right" style="font-weight:600;">2.4</td><td align="right">4,997</td><td align="right">2,119</td><td align="right" style="color:#c43b27;">42.4%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Fuggler Baby Pinkles Plush KC</td><td align="right" style="color:#2b2b33;">266</td><td align="right">16</td><td align="right" style="color:#1f7a55;">16</td><td align="right" style="font-weight:600;">32</td><td align="right" style="font-weight:600;">2.3</td><td align="right">10,882</td><td align="right">5,882</td><td align="right" style="color:#1f7a55;">54.1%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Fuggler 6th Generation Plush KC</td><td align="right" style="color:#2b2b33;">193</td><td align="right">26</td><td align="right" style="color:#2b2b33;">5</td><td align="right" style="font-weight:600;">31</td><td align="right" style="font-weight:600;">2.2</td><td align="right">9,048</td><td align="right">3,619</td><td align="right" style="color:#c43b27;">40.0%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Bearbrick Series 51</td><td align="right" style="color:#b5740a;">400</td><td align="right">15</td><td align="right" style="color:#1f7a55;">15</td><td align="right" style="font-weight:600;">30</td><td align="right" style="font-weight:600;">2.1</td><td align="right">5,486</td><td align="right">2,961</td><td align="right" style="color:#1f7a55;">54.0%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Diesel × Dolores Collab (BELOW COST)</td><td align="right" style="color:#b5740a;">5,254</td><td align="right">23</td><td align="right" style="color:#2b2b33;">6</td><td align="right" style="font-weight:600;">29</td><td align="right" style="font-weight:600;">2.1</td><td align="right">3,121</td><td align="right">-2,335</td><td align="right" style="color:#c43b27;">-74.8%</td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:12px;"><b>Retail only, last 2 complete weeks (W28+W29); wholesale excluded.</b> &#9888; <b>Two items sold BELOW COST: Rainbowkido Origins (GP −119%) and Diesel × Dolores (−75%)</b> — urgent pricing fix. Also thin: Sup. Pro. Manekineko 24%, Opandee S4 36%, Mr. Bone Agent 39%. Heroes solid: Fuggler Alley Cat #1 (54% GP), Lollipoppi #3 (51%), Ghody (68% GP).</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- NEW ARRIVALS -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">New-arrival performance <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; recent launches (overstock judged on on-hand)</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Wk</th><th align="left">Product</th><th align="right">Recvd</th><th align="right">Sold</th><th align="right">On hand</th><th align="right">Read</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:6px 4px;font-weight:600;color:#5551FE;">W24</td><td style="padding:6px 0;font-weight:500;">Lollipoppi Bag Charm Plush KC BB</td><td align="right">120</td><td align="right">115</td><td align="right" style="color:#c43b27;">23</td><td align="right"><span style="background:#e3f5ec;color:#1f7a55;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">HOT</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:6px 4px;font-weight:600;color:#5551FE;">W27</td><td style="padding:6px 0;font-weight:500;">Ghody Behold My Cat Mini Figure BB</td><td align="right">72</td><td align="right">57</td><td align="right" style="color:#c43b27;">15</td><td align="right"><span style="background:#e3f5ec;color:#1f7a55;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">HOT</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:6px 4px;font-weight:600;color:#5551FE;">W26</td><td style="padding:6px 0;font-weight:500;">Shiba Macarons Figure BB</td><td align="right">24</td><td align="right">0</td><td align="right" style="color:#c43b27;">24</td><td align="right"><span style="background:#fde3df;color:#c43b27;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">SLOW START</span></td></tr>
+    
+  </table>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- PURCHASING: OPEN POs -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Purchasing &mdash; on the way <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; approved POs only, FX-converted</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="left">PO</th><th align="right">Qty</th><th align="right">THB value</th><th align="right">Flag</th></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Bearbrick Series 44 / 49 BB</td><td style="padding:5px 2px;">POACT250800059</td><td align="right">192</td><td align="right">consignment</td><td align="right"><span style="background:#fde3df;color:#c43b27;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">OLD · CONSIGN</span></td></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Sanrio Fluffy / Kuromi Cable Phone-chain BB</td><td style="padding:5px 2px;">POACT260300012</td><td align="right">240</td><td align="right">~฿58,000</td><td align="right"><span style="background:#fde3df;color:#c43b27;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">0 SOLD</span></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Mr. Bone Strange Alliance 3.0 BB</td><td style="padding:5px 2px;">POACT260500020</td><td align="right">324</td><td align="right">฿74,729</td><td align="right"><span style="background:#e3f5ec;color:#1f7a55;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">OK</span></td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:12px;">Approved POs only. Return the old Bearbrick Series 44/49 consignment; hold the zero-selling Sanrio/Kuromi PO. (Open-PO pull: carried, refresh weekly.)</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- DEAD STOCK -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;">Dead stock &mdash; 0 sales in 4 weeks</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:12px;">Owned (clear) first; consignment &amp; intercompany (return) summarised below.</div>
+
+  <div style="font-size:13px;font-weight:600;color:#5551FE;margin:4px 0 8px;">1. Owned / bought &mdash; to clear (5 ≥10u (61 total) SKUs &middot; ~&#3647;฿35K shown · ฿611K all owned dead at cost)</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;table-layout:fixed;">
+    <colgroup><col style="width:52%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col style="width:12%"></colgroup>
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="right">On hand</th><th align="right">Cost</th><th align="right">Price</th><th align="right">Stock &#3647;</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">ActionCity × Poyunwang CNY 2026 Phone Straps BB</td><td align="right">104</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">seasonal</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Liiaocao Mini Blessing Golden Plush KC (TH Ltd)</td><td align="right">76</td><td align="right">293</td><td align="right">—</td><td align="right" style="font-weight:600;">22,253</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Laura Wood Elves Series BB</td><td align="right">51</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Panpan Mini 4th Anniversary BB</td><td align="right">48</td><td align="right">—</td><td align="right">—</td><td align="right" style="font-weight:600;">—</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Penguin Canvas Bag</td><td align="right">37</td><td align="right">89</td><td align="right">—</td><td align="right" style="font-weight:600;">3,287</td></tr>
+    
+  </table>
+
+  <div style="font-size:13px;font-weight:600;color:#5551FE;margin:18px 0 8px;">2. Consignment &amp; intercompany &mdash; send back</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:13px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Type</th><th align="left">Supplier</th><th align="right">SKUs</th><th align="right">Units</th><th align="right">Action</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;"><span style="background:#e1f5ee;color:#0f6e56;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">CONSIGN</span></td><td style="padding:7px 0;font-weight:500;">Big Box International (Bearbrick/Astro Boy/Jelilo — ~฿3.6M)</td><td align="right" style="font-weight:600;">76</td><td align="right" style="font-weight:600;">461</td><td align="right"><span style="background:#fdf1df;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">RETURN</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;"><span style="background:#e1f5ee;color:#0f6e56;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">CONSIGN</span></td><td style="padding:7px 0;font-weight:500;">MNT series (via V-00654)</td><td align="right" style="font-weight:600;">46</td><td align="right" style="font-weight:600;">3,700</td><td align="right"><span style="background:#fdf1df;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">RETURN</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;"><span style="background:#eeedfe;color:#5551FE;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">INTERCO</span></td><td style="padding:7px 0;font-weight:500;">Pony on Wheel TH / Toysinbox</td><td align="right" style="font-weight:600;">12</td><td align="right" style="font-weight:600;">687</td><td align="right"><span style="background:#fdf1df;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">RETURN</span></td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:10px;">Carried from last week (refresh weekly). Owned dead ≥10u is <b>5 SKUs / ฿35K</b> (shown). Full owned-dead is <b>61 SKUs / ฿611K</b> — a long 1–9u premium tail, biggest <b>Mr. Bone Christmas 200% (8u / ฿61K)</b>. Big Box ฿3.6M is consignment (return). Fashion Island alone holds ~35 non-selling SKUs incl. a 104-unit CNY seasonal — clear it.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- FOOTER -->
+<tr><td style="background:#efe7dc;border-radius:12px;padding:18px 24px;">
+  <div style="font-size:12px;color:#7a7468;line-height:1.7;">
+    <b style="color:#5b5547;">Channel tags.</b> INTERCO = intercompany to ACTIONCITY PTE (Singapore) &mdash; transfers, not retail demand, excluded from reorder velocity. WHOLESALE = B2B (Siam Specialty). Retail = POS + marketplaces.<br><br>
+    <b style="color:#5b5547;">Data accuracy.</b> Net sales = invoices &minus; returns (<code>-SUM(netamount)</code>); vending/marketplace cost-wash lines excluded so units, ASP and GP% are clean. GP% uses item average cost (THB base). Prices net of 7% VAT.<br><br>
+    <b style="color:#5b5547;">Source.</b> NetSuite Sub 22 (ACTIONCITY THAILAND), generated 24 Jul 2026 — intraday snapshot (as-of-now), trading day Fri 24 Jul (Asia/Bangkok) for trading day 24 Jul 2026. Sales = posted CustInvc/CustCred, inventory items only.<br>
+    CHAW Retailing Co., Ltd. · Internal management report · Intraday snapshot (as-of-now, on-demand).
+  </div>
+</td></tr>
+
+</table>
+</td></tr></table>
+</body></html>

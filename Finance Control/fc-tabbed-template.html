@@ -264,6 +264,14 @@
           <tr><td>{{vendor}}</td><td>{{term}}</td><td align="right">{{bills}}</td><td align="right" style="color:#F27061;">{{amt}}</td><td>{{action}}</td></tr>
           <!-- /REPEAT:appr_nodue_rows -->
         </table>
+        <h3>Journal entries pending approval &gt; {{je30_bench}} days ({{je30_count}} JVs, oldest {{je30_oldest}})</h3>
+        <div class="band" style="background:#F27061;">Un-posted (posting=F) — they have NOT hit the GL; approving posts them. The "Undue Tax Adjustment" run is why Input-VAT-undue keeps rising.</div>
+        <table>
+          <tr><th>#</th><th>Journal</th><th>Date</th><th>Sub</th><th style="text-align:right;">Age (d)</th><th>Created by</th><th>Memo</th></tr>
+          <!-- REPEAT:appr_je30_rows -->
+          <tr><td>{{n}}</td><td>{{tranid}}</td><td>{{dt}}</td><td>{{sub}}</td><td align="right" style="color:#F27061;font-weight:600;">{{age}}</td><td>{{creator}}</td><td style="font-size:12px;">{{memo}}</td></tr>
+          <!-- /REPEAT:appr_je30_rows -->
+        </table>
         <h3>Transactions pending approval</h3>
         <table>
           <tr><th>Type</th><th style="text-align:right;">Count</th><th>Oldest</th><th>Note / cause</th></tr>

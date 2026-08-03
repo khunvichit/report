@@ -104,11 +104,11 @@
 
 <!-- REVENUE BY BUSINESS UNIT -->
 <tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
-  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Revenue by business unit <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; W{{iso_week}} to date vs prior week</span></div>
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Revenue by business unit <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; W{{iso_week}} to date (7 units)</span></div>
   <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;">
-    <tr style="color:#8a8a93;font-size:10px;"><td>BU</td><td></td><td align="right">Net &#3647;</td><td align="right">Share</td><td align="right">WoW</td></tr>
+    <tr style="color:#8a8a93;font-size:10px;"><td>BU</td><td></td><td align="right">Net &#3647;</td><td align="right">Txns</td><td align="right">Share</td><td align="right">WoW</td></tr>
     <!-- REPEAT:bu_rows -->
-    <tr><td style="width:22%;font-weight:600;padding:3px 0;">{{bu_name}}</td><td style="width:40%;"><span style="background:{{bu_bar_color}};height:13px;width:{{bu_bar_pct}}%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">{{bu_net}}</td><td align="right">{{bu_share}}%</td><td align="right" style="color:{{bu_wow_color}};">{{bu_wow}}</td></tr>
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">{{bu_name}}</td><td style="width:32%;"><span style="background:{{bu_bar_color}};height:13px;width:{{bu_bar_pct}}%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">{{bu_net}}</td><td align="right">{{bu_orders}}</td><td align="right">{{bu_share}}%</td><td align="right" style="color:{{bu_wow_color}};">{{bu_wow}}</td></tr>
     <!-- /REPEAT:bu_rows -->
   </table>
 </td></tr>
@@ -116,14 +116,27 @@
 
 <!-- REVENUE BY BRANCH -->
 <tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
-  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Revenue by branch <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; last 3 weeks ({{br_w2_label}}&ndash;{{br_w0_label}}, net &#3647;; &#9881; = vending)</span></div>
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Revenue by business unit &mdash; weekly trend <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; last 3 weeks ({{br_w2_label}}&ndash;{{br_w0_label}}, net &#3647;)</span></div>
   <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:11px;">
-    <tr style="color:#8a8a93;font-size:10px;"><td>Branch</td><td align="right">{{br_w2_label}}</td><td align="right">{{br_w1_label}}</td><td align="right">{{br_w0_label}}</td><td align="right">Trend</td><td align="right">Flag</td></tr>
+    <tr style="color:#8a8a93;font-size:10px;"><td>Business unit</td><td align="right">{{br_w2_label}}</td><td align="right">{{br_w1_label}}</td><td align="right">{{br_w0_label}}</td><td align="right">Trend</td><td align="right">Flag</td></tr>
     <!-- REPEAT:branch_rows -->
     <tr style="background:{{br_row_bg}};border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:{{br_name_color}};">{{br_name}}</td><td align="right">{{br_w2}}</td><td align="right">{{br_w1}}</td><td align="right" style="font-weight:600;color:{{br_w0_color}};">{{br_w0}}</td><td align="right" style="color:{{br_trend_color}};">{{br_trend}}</td><td align="right">{{br_flag}}</td></tr>
     <!-- /REPEAT:branch_rows -->
   </table>
   <div style="font-size:11px;color:#8a8a93;margin-top:8px;">{{branch_note}}</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REVENUE BY MARKETPLACE -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Revenue by marketplace <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; last 3 weeks ({{br_w2_label}}&ndash;{{br_w0_label}}, net &#3647;; online channels)</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:11px;">
+    <tr style="color:#8a8a93;font-size:10px;"><td>Marketplace</td><td align="right">{{br_w2_label}}</td><td align="right">{{br_w1_label}}</td><td align="right">{{br_w0_label}}</td><td align="right">Trend</td><td align="right">Orders</td></tr>
+    <!-- REPEAT:marketplace_rows -->
+    <tr style="background:{{mp_row_bg}};border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:{{mp_name_color}};">{{mp_name}}</td><td align="right">{{mp_w2}}</td><td align="right">{{mp_w1}}</td><td align="right" style="font-weight:600;color:{{mp_w0_color}};">{{mp_w0}}</td><td align="right" style="color:{{mp_trend_color}};">{{mp_trend}}</td><td align="right">{{mp_orders}}</td></tr>
+    <!-- /REPEAT:marketplace_rows -->
+  </table>
+  <div style="font-size:11px;color:#8a8a93;margin-top:8px;">{{marketplace_note}}</div>
 </td></tr>
 <tr><td style="height:18px;"></td></tr>
 

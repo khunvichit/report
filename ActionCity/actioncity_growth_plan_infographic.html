@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ActionCity — Path to +฿1M/Month</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2b2b33; --muted:#6a665e; --line:#e7e3dc;
+    --brand:#5551FE; --brandsoft:#eeedfe; --brandlite:#C9C7FF;
+    --coral:#F27061; --coralsoft:#fde8e4;
+    --cream:#F5EDE4; --green:#1f9d57; --greensoft:#e4f5ec;
+    --amber:#b5740a; --ambersoft:#fbeecf; --red:#d6453a;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--ink);
+    line-height:1.5;-webkit-font-smoothing:antialiased;padding:28px 16px}
+  .wrap{max-width:1060px;margin:0 auto}
+  .sheet{background:var(--card);border-radius:22px;overflow:hidden;
+    box-shadow:0 18px 50px rgba(43,43,51,.10);}
+  /* HEADER */
+  .hero{background:linear-gradient(135deg,#5551FE 0%,#6f6bff 55%,#8f8bff 100%);
+    color:#fff;padding:38px 40px 34px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;
+    background:radial-gradient(circle,rgba(255,255,255,.16),transparent 70%);border-radius:50%}
+  .kicker{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    opacity:.85;margin-bottom:10px}
+  .hero h1{font-size:34px;font-weight:800;letter-spacing:-.5px;line-height:1.12;max-width:760px}
+  .hero p{margin-top:12px;font-size:14.5px;opacity:.92;max-width:720px;font-weight:300}
+  .hero .meta{margin-top:16px;font-size:11.5px;opacity:.8;font-weight:400}
+  /* KPI STRIP */
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+  .kpi{background:#fff;padding:18px 20px}
+  .kpi .n{font-size:23px;font-weight:800;color:var(--brand);letter-spacing:-.5px}
+  .kpi .l{font-size:11px;color:var(--muted);font-weight:500;margin-top:3px}
+  .kpi.coral .n{color:var(--coral)}
+  /* SECTIONS */
+  .body{padding:30px 40px 40px}
+  .sec{margin-top:34px}
+  .sec:first-child{margin-top:4px}
+  .sec h2{font-size:17px;font-weight:700;letter-spacing:-.2px;display:flex;align-items:center;gap:10px}
+  .sec h2 .dot{width:9px;height:9px;border-radius:50%;background:var(--coral);display:inline-block}
+  .sec .sub{font-size:12.5px;color:var(--muted);margin:5px 0 16px;font-weight:400}
+  /* LEVER BARS */
+  .lever{margin-bottom:12px}
+  .lever .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
+  .lever .name{font-size:13.5px;font-weight:600}
+  .lever .val{font-size:13px;font-weight:700;color:var(--brand)}
+  .track{height:26px;background:var(--cream);border-radius:8px;overflow:hidden;position:relative}
+  .fill{height:100%;border-radius:8px;display:flex;align-items:center;padding-left:12px;
+    color:#fff;font-size:11px;font-weight:500}
+  .fill.b{background:linear-gradient(90deg,#5551FE,#7d79ff)}
+  .fill.c{background:linear-gradient(90deg,#F27061,#f79385)}
+  .fill.g{background:linear-gradient(90deg,#1f9d57,#37bd6f)}
+  .fill.a{background:linear-gradient(90deg,#b5740a,#d8971f)}
+  /* GRID CARDS */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px}
+  .card h3{font-size:13.5px;font-weight:700;margin-bottom:4px}
+  .card .tag{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    padding:3px 9px;border-radius:20px;display:inline-block;margin-bottom:9px}
+  .tag.fund{background:var(--greensoft);color:var(--green)}
+  .tag.fix{background:var(--ambersoft);color:var(--amber)}
+  .tag.no{background:var(--coralsoft);color:var(--coral)}
+  .card ul{list-style:none;font-size:12px;color:var(--muted)}
+  .card ul li{padding:3px 0 3px 15px;position:relative}
+  .card ul li::before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;
+    border-radius:50%;background:var(--brandlite)}
+  .card ul li b{color:var(--ink);font-weight:600}
+  /* MARKETING SPLIT */
+  .mk{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .mkcard{border-radius:14px;padding:20px;color:#fff;position:relative;overflow:hidden}
+  .mkcard.shopee{background:linear-gradient(135deg,#F27061,#f89184)}
+  .mkcard.fb{background:linear-gradient(135deg,#5551FE,#807cff)}
+  .mkcard .ch{font-size:15px;font-weight:700}
+  .mkcard .goal{font-size:12px;opacity:.92;margin-top:6px;font-weight:300;min-height:34px}
+  .mkcard .arrow{font-size:11.5px;font-weight:600;margin-top:10px;
+    background:rgba(255,255,255,.18);display:inline-block;padding:4px 11px;border-radius:20px}
+  .mkcard .spend{font-size:22px;font-weight:800;margin-top:12px}
+  .mknote{font-size:11.5px;color:var(--muted);margin-top:12px;font-weight:400}
+  /* MACHINES TABLE */
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;
+    color:var(--muted);font-weight:600;padding:8px 10px;border-bottom:2px solid var(--line)}
+  td{padding:9px 10px;border-bottom:1px solid var(--line)}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+  tr:last-child td{border-bottom:none}
+  .pill{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px}
+  .pill.keep{background:var(--brandsoft);color:var(--brand)}
+  .pill.grow{background:var(--greensoft);color:var(--green)}
+  .pill.close{background:var(--coralsoft);color:var(--coral)}
+  /* OWNERS */
+  .owners{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .owner{border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;gap:14px;align-items:flex-start}
+  .owner .av{width:44px;height:44px;border-radius:12px;flex-shrink:0;display:flex;
+    align-items:center;justify-content:center;font-weight:800;font-size:16px;color:#fff}
+  .owner .av.n{background:var(--brand)}
+  .owner .av.m{background:var(--coral)}
+  .owner .who{font-size:14px;font-weight:700}
+  .owner .role{font-size:11px;color:var(--muted);font-weight:500;margin-bottom:6px}
+  .owner p{font-size:12px;color:var(--muted)}
+  /* ACTIONS */
+  .steps{counter-reset:s;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
+  .step{counter-increment:s;position:relative;padding:8px 0 8px 40px;font-size:12.5px;
+    border-bottom:1px solid var(--line)}
+  .step::before{content:counter(s);position:absolute;left:0;top:7px;width:26px;height:26px;
+    background:var(--brandsoft);color:var(--brand);border-radius:8px;font-weight:700;font-size:12px;
+    display:flex;align-items:center;justify-content:center}
+  .step b{font-weight:600}
+  /* MARGIN CALLOUT */
+  .callout{background:var(--cream);border-radius:14px;padding:18px 20px;border-left:4px solid var(--coral)}
+  .callout h3{font-size:13.5px;font-weight:700;margin-bottom:8px}
+  .callout ul{list-style:none;font-size:12.5px;color:var(--ink)}
+  .callout ul li{padding:4px 0 4px 16px;position:relative}
+  .callout ul li::before{content:"→";position:absolute;left:0;color:var(--coral);font-weight:700}
+  /* FOOTER */
+  .foot{background:var(--ink);color:#cfcdd6;padding:20px 40px;font-size:11px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+  .foot b{color:#fff}
+  @media(max-width:720px){
+    .kpis,.grid2,.grid3,.mk,.owners,.steps{grid-template-columns:1fr}
+    .hero h1{font-size:26px}.body{padding:24px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="sheet">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="kicker">ActionCity · Growth Strategy</div>
+    <h1>The path to <span style="text-decoration:underline;text-decoration-color:#F27061;text-decoration-thickness:4px;text-underline-offset:6px">+฿1M / month</span> — reaching breakeven</h1>
+    <p>Retail is running ~฿1.8M/mo and climbing (W27–W28 hit ฿520k → ฿589k). +฿1M/mo means ~฿2.8–3.4M — about +40%. A sub-฿100k ad budget can't do it alone: the target must be <b>stacked</b> from structural levers. Ads go where they already convert; spaces are options we exercise only when they pay.</p>
+    <div class="meta">Basis: retail (wholesale shown separately) · NetSuite Sub 22 · Window W23–W28 (1 Jun–12 Jul 2026)</div>
+  </div>
+
+  <!-- KPI STRIP -->
+  <div class="kpis">
+    <div class="kpi"><div class="n">~฿1.8M</div><div class="l">Current monthly run-rate</div></div>
+    <div class="kpi coral"><div class="n">+฿1.0M</div><div class="l">Gap to breakeven / month</div></div>
+    <div class="kpi"><div class="n">&lt;฿100k</div><div class="l">Marketing budget</div></div>
+    <div class="kpi coral"><div class="n">~+40%</div><div class="l">Sales lift required</div></div>
+  </div>
+
+  <div class="body">
+
+    <!-- LEVERS -->
+    <div class="sec">
+      <h2><span class="dot"></span>Where the upside is — stacked to the target</h2>
+      <div class="sub">Ranked by ฿/month potential. Realistic stacked total ≈ ฿700k–1.4M/month. Bar width = mid-point of the range.</div>
+
+      <div class="lever"><div class="top"><span class="name">Scale online — Shopee ads + FB/IG → own Shopify</span><span class="val">+฿200–400k</span></div>
+        <div class="track"><div class="fill b" style="width:100%">Best proven ROAS · the ฿100k goes here</div></div></div>
+
+      <div class="lever"><div class="top"><span class="name">Open 2 popup stores (Central Ladprao + Pinklao)</span><span class="val">+฿160–400k</span></div>
+        <div class="track"><div class="fill b" style="width:93%">Short lease · redeploy Westgate stock</div></div></div>
+
+      <div class="lever"><div class="top"><span class="name">B2B — open a Central Group account</span><span class="val">+฿150–400k</span></div>
+        <div class="track"><div class="fill a" style="width:90%">New wholesale channel · lumpy but large</div></div></div>
+
+      <div class="lever"><div class="top"><span class="name">Refill stockouts of proven sellers</span><span class="val">+฿100–200k</span></div>
+        <div class="track"><div class="fill g" style="width:56%">Demand you already earned</div></div></div>
+
+      <div class="lever"><div class="top"><span class="name">Monthly drop cadence behind hero IPs</span><span class="val">+฿100–200k</span></div>
+        <div class="track"><div class="fill c" style="width:56%">Organic hype · low cost</div></div></div>
+
+      <div class="lever"><div class="top"><span class="name">Small-format / machines (IconSiam-led)</span><span class="val">+฿130–240k</span></div>
+        <div class="track"><div class="fill a" style="width:62%">Mostly self-funding</div></div></div>
+    </div>
+
+    <!-- MARKETING -->
+    <div class="sec">
+      <h2><span class="dot"></span>Marketing plan — two fronts, hero IPs only</h2>
+      <div class="sub">Owner: Marketing · ~฿60k of the budget · all behind Fuggler / Upset Duck / Lollipoppi + a drop.</div>
+      <div class="mk">
+        <div class="mkcard shopee">
+          <div class="ch">Shopee Ads</div>
+          <div class="goal">Capture demand where buyers already search — bid hero-IP keywords + product ads.</div>
+          <div class="arrow">→ Shopee listings</div>
+          <div class="spend">~฿30k</div>
+        </div>
+        <div class="mkcard fb">
+          <div class="ch">Facebook / Instagram Ads</div>
+          <div class="goal">Create demand &amp; own the customer — best margin, we keep the retargeting list.</div>
+          <div class="arrow">→ our own Shopify</div>
+          <div class="spend">~฿30k</div>
+        </div>
+      </div>
+      <div class="mknote"><b>Rule:</b> tag every campaign, read ROAS per channel weekly, shift budget to the winner. Shopee usually wins cost-per-order early; Shopify wins on margin + repeat. Spend until ROAS falls toward ~2–3×, then stop — that's the natural cap, not a fixed %.</div>
+    </div>
+
+    <!-- IP FUNDING -->
+    <div class="sec">
+      <h2><span class="dot"></span>Which IPs get the money</h2>
+      <div class="sub">IP P&amp;L, last 6 weeks (retail). Concentrate — don't spread thin across 20 IPs.</div>
+      <div class="grid3">
+        <div class="card">
+          <span class="tag fund">Fund</span>
+          <h3>Volume + margin heroes</h3>
+          <ul>
+            <li><b>Upset Duck</b> — ฿357k · 50% GP · 1,183u</li>
+            <li><b>Fuggler</b> — ฿315k · 53% GP · 861u</li>
+            <li><b>Bearbrick</b> — ฿180k · 65% GP (consignment)</li>
+            <li><b>Lollipoppi</b> — ฿58k from 1 SKU · expand</li>
+            <li>Small bets: Ghody 67%, Snoopy 62%</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="tag fix">Fix first</span>
+          <h3>Big revenue, thin margin</h3>
+          <ul>
+            <li><b>Mr. Bone</b> — ฿162k but only 42% GP</li>
+            <li>Renegotiate cost / lift price before spending ad money</li>
+            <li>Astro Boy — niche premium; collector marketing only</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="tag no">Don't fund</span>
+          <h3>Sub-40% GP — fix pricing</h3>
+          <ul>
+            <li>Disney 39% · One Piece 34%</li>
+            <li>Lulu 33% · Panpan 37% · Gundam 40%</li>
+            <li><b>Below cost:</b> Rainbowkido −118%, Diesel×Dolores −71% — reprice today</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SMALL FORMAT -->
+    <div class="sec">
+      <h2><span class="dot"></span>Small-format / machines — decisions</h2>
+      <div class="sub">Last 4 weeks (W25–W28, retail). Cheap, reversible, mostly self-funding.</div>
+      <table>
+        <thead><tr><th>Machine</th><th style="text-align:right">฿ / month</th><th style="text-align:right">Bills / 4wk</th><th>Move</th></tr></thead>
+        <tbody>
+          <tr><td>IconSiam 6F</td><td class="num">~฿58k</td><td class="num">190</td><td><span class="pill grow">Expand · add units</span></td></tr>
+          <tr><td>Bangkapi 1</td><td class="num">~฿19k</td><td class="num">61</td><td><span class="pill keep">Keep · light push</span></td></tr>
+          <tr><td>Rama 9</td><td class="num">~฿15.5k</td><td class="num">58</td><td><span class="pill keep">Keep · light push</span></td></tr>
+          <tr><td>Bangkapi 2</td><td class="num">~฿15.5k</td><td class="num">37</td><td><span class="pill close">Close → redeploy to IconSiam</span></td></tr>
+        </tbody>
+      </table>
+      <div class="mknote"><b>Smartest single move:</b> redeploy the closed Bangkapi 2 machine to IconSiam — same asset, ฿15.5k → ~฿58k/mo ≈ <b>+฿40k/mo swing, zero capex</b>. Office popup: pilot at Liberty (own building), then Empire Tower.</div>
+    </div>
+
+    <!-- OWNERS -->
+    <div class="sec">
+      <h2><span class="dot"></span>Who owns what</h2>
+      <div class="owners">
+        <div class="owner">
+          <div class="av n">N</div>
+          <div><div class="who">North (Panu)</div><div class="role">Mall &amp; location negotiations</div>
+          <p>IconSiam (machines), Central Pinklao (popup), Central Ladprao (event popup), Empire Tower (office popup) + scout other malls. Bring the popup spec (15–30 sqm, 1–3 mo lease); report space, rent &amp; start date per site.</p></div>
+        </div>
+        <div class="owner">
+          <div class="av m">M</div>
+          <div><div class="who">Marketing</div><div class="role">Online paid — Shopee + FB/IG → Shopify</div>
+          <p>Run both channels behind the hero IPs, ~฿30k/฿30k. Tag campaigns, prep Shopify pages before pushing FB traffic, retarget non-buyers, and report ROAS per channel weekly.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARGIN -->
+    <div class="sec">
+      <h2><span class="dot"></span>Breakeven is also a margin problem — free wins</h2>
+      <div class="callout">
+        <ul>
+          <li><b>Stop the bleed:</b> reprice Rainbowkido (−118%) &amp; Diesel×Dolores (−71%) — selling below cost today.</li>
+          <li><b>Lift low-margin IPs</b> (Disney, Lulu, Mr. Bone, Panpan, One Piece) 5–10 pts via cost/price — contribution with zero new sales.</li>
+          <li><b>Free the cash:</b> return ฿3.6M Big Box consignment dead + clear ฿611k owned dead → funds the stockout refills without new borrowing.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 30 DAY ACTIONS -->
+    <div class="sec">
+      <h2><span class="dot"></span>Next 30 days</h2>
+      <div class="steps">
+        <div class="step"><b>North opens mall talks</b> — IconSiam, Pinklao, Ladprao, Empire Tower + scout others.</div>
+        <div class="step"><b>Sign popups</b> Ladprao + Pinklao (firm), Westgate (test); close Bangkapi 2, redeploy to IconSiam.</div>
+        <div class="step"><b>Open Central Group B2B</b> — lead with consignment-counter pitch + hero IPs.</div>
+        <div class="step"><b>Run the ฿100k online</b> — Shopee + FB/IG → Shopify, hero-IP creative.</div>
+        <div class="step"><b>Reorder stocked-out heroes</b> — Upset Duck Status, Lollipoppi, Ghody, Manekineko.</div>
+        <div class="step"><b>Reprice</b> the two below-cost items + the sub-40% IPs.</div>
+        <div class="step"><b>Schedule one hyped drop</b> on a hero IP — use it to launch the popups.</div>
+        <div class="step"><b>4-week kill/renew gate</b> per popup (~฿80–120k/mo to beat rent); re-measure weekly.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="foot">
+    <span><b>ActionCity</b> · CHAW Retailing Co., Ltd. — Internal strategy summary</span>
+    <span>Generated 13 Jul 2026 · retail basis, wholesale shown separately</span>
+  </div>
+
+ </div>
+</div>
+</body>
+</html>

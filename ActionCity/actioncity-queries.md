@@ -124,6 +124,18 @@ GROUP BY tl.location;   -- sort by w0 desc client-side
 -- Current week's live (WTD) per-branch sits in the Daily-sales-by-branch section, not here.
 ```
 
+### D2. Revenue by marketplace — `marketplace_rows[] (mp_name, mp_w2, mp_w1, mp_w0, mp_w0_color, mp_trend, mp_trend_color, mp_orders, mp_row_bg, mp_name_color)` + `marketplace_note`
+Shown directly under Revenue by branch. Same 3 complete weeks as §D (labels reuse `br_w2/w1/w0_label`). Online marketplace BU classes only: **126 Shopee, 127 Lazada, 128 TikTok**.
+```sql
+SELECT tl.class AS cls, TO_CHAR(t.trandate,'IYYY-IW') AS isowk, -SUM(tl.netamount) AS net, COUNT(DISTINCT t.id) AS orders
+FROM transaction t JOIN transactionline tl ON tl.transaction=t.id
+WHERE <universal filters> AND tl.class IN (126,127,128) AND t.trandate BETWEEN :w2s AND :w0e
+GROUP BY tl.class, TO_CHAR(t.trandate,'IYYY-IW');
+-- Map class id→name (126 Shopee, 127 Lazada, 128 TikTok Shop). One row per marketplace, w2/w1/w0 = the 3 full weeks.
+-- mp_w0_color: green if w0>=w1 else red; grey (#8a8a93) + trend "—" for an inactive channel (all zero).
+-- mp_orders = order count in w0. NOTE: own-website (Shopify) is NOT here — it rides class 8 into Revenue by branch (Warehouse HQ/online). Flag that in marketplace_note.
+```
+
 ### E. Category mix (4-wk) — `cat_rows[]`
 ```sql
 SELECT CASE WHEN REGEXP_LIKE(i.displayname,'[0-9]00%') THEN 'Collectable' ELSE 'Rest' END AS cat,
@@ -234,7 +246,12 @@ WHERE o.oh>0 AND o.itm NOT IN (SELECT itm FROM sold);   -- <-- the dead set; nev
 -- STEP 2 (route) — tag each dead SKU OWNED vs CONSIGN vs INTERCO with light, scoped EXISTS lookups
 --   (MNT prefix; Big Box vendor; interco vendor ids 5735/3655/43623/12380). If the route join is slow,
 --   only fetch the Big Box + interco SKU id lists and classify in code — do NOT re-add sold/route into one mega-query.
--- Owned rows = route OWNED, ORDER BY on_hand DESC (highest units first).
+-- Owned rows (the DISPLAYED / GATED list) = route OWNED with **on_hand >= 10**, ORDER BY on_hand DESC.
+--   (Any-on_hand owned dead is normally 50–80 SKUs — a long 1–9u premium-figure tail — so the list and
+--    the gate use the >=10u MATERIAL view, ~5–25 SKUs. Do NOT gate on the any-on_hand count.)
+-- ALSO compute two context scalars from the FULL owned set (any on_hand):
+--   dead_owned_total_skus / dead_owned_total_value  (e.g. 61 SKUs / ~฿611k on 12 Jul — mostly the 1–9u tail).
+--   High-VALUE exceptions (stock_value >= ฿20k even at <10u, e.g. Mr. Bone Christmas 200% 8u/฿61k) — surface in dead_note.
 ```
 **Consignment/intercompany summary — compute units PER SUPPLIER, not pooled.** Each supplier row's
 units = `SUM(on_hand)` of ONLY the dead items routed to THAT supplier. Run one scoped query per bucket
@@ -249,10 +266,13 @@ FROM dead d WHERE EXISTS (SELECT 1 FROM transactionline ptl JOIN transaction po 
 -- MNT bucket = items where itemid LIKE 'MNT%'.  Interco = PO vendor IN (5735,3655,43623,12380).
 ```
 > **Sanity gates (HARD-STOP — add to completeness checks):**
-> 1. **Sold-exclusion working:** OWNED dead stock ≈ **10–20 SKUs / ~฿80–130k**. If it's >40 SKUs (e.g. ~96),
->    the "sold in 4 weeks" filter almost certainly failed — STOP, do not send.
-> 2. **No active seller in dead stock:** none of the current **Top-20 sellers** (query G) may appear in the
->    dead-stock list. If any does (e.g. Fuggler Sassy Cuties, Disney On The Run), the exclusion broke — STOP.
+> 1. **No active seller in dead stock (PRIMARY bug check):** none of the current **Top-20 sellers** (query G)
+>    may appear in the dead-stock list. If any does (e.g. Fuggler Sassy Cuties, Disney On The Run), the
+>    sold-exclusion broke — STOP. *(This is the reliable signal; use it over raw counts.)*
+> 2. **Material owned count (gate on the >=10u view, NOT any-on_hand):** OWNED dead at **on_hand>=10**
+>    ≈ **5–25 SKUs**. Only STOP if this jumps far above (e.g. >40) AND gate #1 also flags — that combination
+>    means the filter failed. Do NOT stop on the any-on_hand count (50–80 SKUs is the normal premium tail — the
+>    12 Jul run false-stopped on 61 any-on_hand vs 5 material; that was a mis-calibrated gate, not a bug).
 > 3. **Big Box units** must be low hundreds (~400–600), NOT thousands; >2,000 for one consignment supplier =
 >    pooling bug — STOP. Known-good magnitudes: Big Box ≈ 460–480u / ~฿3.6M · MNT ≈ 3,700u · Pony/Toysinbox ≈ 700u.
 

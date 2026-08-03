@@ -1,0 +1,141 @@
+{
+  "scalars": {
+    "report_date_display": "26 Jul 2026",
+    "report_weekday": "Sun · W30",
+    "iso_week": "30",
+    "w_minus1": "29",
+    "w_minus2": "28",
+    "w_minus3": "27",
+    "w_minus4": "26",
+    "mode_badge": "PROVISIONAL",
+    "mode_badge_color": "#b5740a",
+    "day_net": "102,514",
+    "day_wow_pct": "21.1%",
+    "day_wow_arrow": "&#9650;",
+    "day_wow_color": "#1f9d57",
+    "day_bills": "91",
+    "day_bills_split": "91 retail bills · 170 units",
+    "day_ticket": "1,127",
+    "wtd_net": "448,990",
+    "wtd_days": "7",
+    "wtd_per_day": "64,141",
+    "best_today_list": "Fuggler Keyboard Cap 10 · Ozai Where The Heart Lands 9 · Fuggler Alley Cat 8 · Fuggler Sassy Cuties 7 · Upset Duck Stop The Spiral 6 · Lulu Holiday Light-Up 6",
+    "today_branch_note": "Sunday retail by branch. <b>SQ1 finished strong at ฿83.4k (50 bills, ฿1,668 ticket)</b>; Fashion Island ฿16.7k. Vending steady. &#9888; <b>Central Ladprao still ฿0</b> — dark for the whole of W30.",
+    "week_note": "<b>Retail basis</b> (wholesale excluded). &#9888; <b>W30 is PROVISIONAL — ฿448,990 and still climbing</b> as online/marketplace orders keep posting late (Shopee gained ~฿14k across today's rechecks; transactions carry today's modified date). <b>Physical stores are stable</b> (SQ1 ฿222.5k, Fashion ฿93.9k); the moving part is online. Even provisional, W30 is +11% vs W29 (฿405k). W28 remains the peak (฿772,616, also settlement-inflated). Sunday 26 Jul ฿102,514 (+21% vs last Sunday).",
+    "branch_note": "Seven business units, last 3 complete weeks (net ฿; <b>W30 provisional / still settling</b>). <b>SQ1 the anchor at ฿222.5k.</b> <b>Shopee rebounded ฿2.6k → ฿69.8k</b> and <b>Shopify ฿6.5k → ฿31.1k</b> after the W29 dip — both still posting late. Fashion Island eased to ฿93.9k. No B2B in W30 (lumpy). 'Other' (Warehouse HQ / Ladprao / Westgate) shrank to ฿6.7k. &#9888; Central Ladprao dark all week. Shopify = E-Commerce dept, own-web (non-marketplace).",
+    "marketplace_note": "Online marketplaces (Shopee/Lazada/TikTok), retail. <b>Shopee roared back in W30 — ฿2.6k → ฿69,810 (112 orders)</b>, its best week — still settling upward. TikTok ฿0; Lazada inactive. Separate from Shopify own-web (E-Commerce dept) in the business-unit view.",
+    "cat_note": "<b>Collectables GP strong at 56.2%</b> (18% of revenue, ASP ฿3,342). The Rest at 45.5% is dragged by below-cost items (Rainbowkido −119%, Diesel × Dolores −75%) — fix those and blended margin lifts. (Category/stock sections carried through W29 — refresh weekly.)",
+    "reorder_note": "Retail velocity (carried through W29). <b>Ghody Behold My Cat</b> (15 stock, 0.7w, 68% GP), <b>Lollipoppi Bag Charm</b> (23, 0.8w) and <b>Upset Duck Status</b> (27, 1.1w) all near stockout — reorder now. <b>Rainbowkido Origins</b> sells BELOW COST — reprice before reordering.",
+    "top_w1_label": "W28",
+    "top_w0_label": "W29",
+    "top_note": "<b>Retail only, last 2 complete weeks (W28+W29); wholesale excluded. Carried — refresh for W29–W30 pending.</b> &#9888; <b>Two items sold BELOW COST: Rainbowkido Origins (−119%) and Diesel × Dolores (−75%)</b> — urgent pricing fix. Heroes solid: Fuggler Alley Cat (54% GP), Lollipoppi (51%), Ghody (68% GP).",
+    "po_note": "Approved POs only. Return the old Bearbrick Series 44/49 consignment; hold the zero-selling Sanrio/Kuromi PO. (Carried, refresh weekly.)",
+    "dead_owned_skus": "5 ≥10u (61 total)",
+    "dead_owned_value": "฿35K shown · ฿611K all owned dead",
+    "dead_note": "Carried (refresh weekly). Owned dead ≥10u is <b>5 SKUs / ฿35K</b> (shown); full owned-dead <b>61 SKUs / ฿611K</b>. Big Box ฿3.6M is consignment (return). Fashion Island alone holds ~35 non-selling SKUs incl. a 104-unit CNY seasonal — clear it.",
+    "generated_at": "27 Jul 2026 (as-of now) — for trading week W30 (Sun 26 Jul close). PROVISIONAL: online orders still settling.",
+    "footer_cchaw": "CHAW Retailing Co., Ltd. · Internal management report · Provisional (W30 online still settling).",
+    "br_w2_label": "W28",
+    "br_w1_label": "W29",
+    "br_w0_label": "W30"
+  },
+  "sections": {
+    "exec_insight": true,
+    "best_today": true
+  },
+  "repeats": {
+    "today_branch_rows": [
+      { "tb_bg": "#ffffff", "tb_color": "#2b2b33", "tb_name": "SQ1 (Siam Square One)", "tb_net": "83,410", "tb_bills": "50", "tb_ticket": "1,668", "tb_flag": "" },
+      { "tb_bg": "#ffffff", "tb_color": "#2b2b33", "tb_name": "Fashion Island", "tb_net": "16,725", "tb_bills": "34", "tb_ticket": "492", "tb_flag": "" },
+      { "tb_bg": "#ffffff", "tb_color": "#6a665e", "tb_name": "IconSiam 6F &#9881;", "tb_net": "1,448", "tb_bills": "4", "tb_ticket": "362", "tb_flag": "" },
+      { "tb_bg": "#ffffff", "tb_color": "#6a665e", "tb_name": "Bangkapi 1 + Rama 9 &#9881;", "tb_net": "932", "tb_bills": "3", "tb_ticket": "311", "tb_flag": "" },
+      { "tb_bg": "#fdeeec", "tb_color": "#b3261e", "tb_name": "Central Ladprao", "tb_net": "0", "tb_bills": "0", "tb_ticket": "0", "tb_flag": "<span style=\"background:#d6453a;color:#fff;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;\">DARK W30</span>" }
+    ],
+    "insight_rows": [
+      { "insight": "<b>Sunday ฿102,514 retail</b> (91 bills, ฿1,127 ticket) — <b>up +21.1% vs last Sunday</b>. SQ1 carried it at ฿83.4k." },
+      { "insight": "&#9888; <b>W30 is PROVISIONAL — ฿448,990 and still rising</b> as online/marketplace orders settle late (Shopee posting through today). Physical stores are stable; the online tail is the moving part." },
+      { "insight": "<b>By business unit (W30, provisional):</b> SQ1 ฿222.5k (50%, 242 txns), Fashion ฿93.9k (21%, 156), <b>Shopee ฿69.8k (16%, 112)</b>, Shopify ฿31.1k (7%, 34), Vending ฿25.0k (6%, 85). No B2B this week." },
+      { "insight": "<b>Online rebounded hard</b> from the W29 dip: Shopee ฿2.6k → ฿69.8k and Shopify ฿6.5k → ฿31.1k — and both are still settling upward." },
+      { "insight": "&#9888; <b>Central Ladprao dark for all of W30 (฿0)</b> — a full week lost. Escalate: closed store or POS/sync failure." },
+      { "insight": "&#9888; <b>Margin:</b> Rainbowkido Origins (−119% GP) and Diesel × Dolores (−75%) still below cost. (Stock/Top-20 sections carried through W29.)" }
+    ],
+    "week_rows": [
+      { "wk_label": "W24", "wk_label_color": "#8a8a93", "wk_weight": "500", "wk_bar_color": "#C9C7FF", "wk_bar_pct": "48", "wk_val_color": "#2b2b33", "wk_net": "367,254" },
+      { "wk_label": "W25", "wk_label_color": "#8a8a93", "wk_weight": "500", "wk_bar_color": "#C9C7FF", "wk_bar_pct": "46", "wk_val_color": "#2b2b33", "wk_net": "355,410" },
+      { "wk_label": "W26", "wk_label_color": "#8a8a93", "wk_weight": "500", "wk_bar_color": "#C9C7FF", "wk_bar_pct": "41", "wk_val_color": "#2b2b33", "wk_net": "319,150" },
+      { "wk_label": "W27", "wk_label_color": "#8a8a93", "wk_weight": "500", "wk_bar_color": "#C9C7FF", "wk_bar_pct": "60", "wk_val_color": "#2b2b33", "wk_net": "462,194" },
+      { "wk_label": "W28", "wk_label_color": "#8a8a93", "wk_weight": "600", "wk_bar_color": "#C9C7FF", "wk_bar_pct": "100", "wk_val_color": "#1f7a55", "wk_net": "772,616" },
+      { "wk_label": "W29", "wk_label_color": "#8a8a93", "wk_weight": "500", "wk_bar_color": "#C9C7FF", "wk_bar_pct": "52", "wk_val_color": "#2b2b33", "wk_net": "405,246" },
+      { "wk_label": "W30 *", "wk_label_color": "#b5740a", "wk_weight": "600", "wk_bar_color": "#F27061", "wk_bar_pct": "58", "wk_val_color": "#b5740a", "wk_net": "448,990" }
+    ],
+    "bu_rows": [
+      { "bu_name": "SQ1 (Siam Square One)", "bu_bar_color": "#5551FE", "bu_bar_pct": "100", "bu_net": "222,502", "bu_orders": "242", "bu_share": "49.6", "bu_wow_color": "#1f9d57", "bu_wow": "&#9650; W29 ฿208,224" },
+      { "bu_name": "Fashion Island", "bu_bar_color": "#7d79ff", "bu_bar_pct": "42", "bu_net": "93,931", "bu_orders": "156", "bu_share": "20.9", "bu_wow_color": "#d6453a", "bu_wow": "&#9660; W29 ฿100,027" },
+      { "bu_name": "Vending Machines", "bu_bar_color": "#f5a623", "bu_bar_pct": "11", "bu_net": "24,962", "bu_orders": "85", "bu_share": "5.6", "bu_wow_color": "#8a8a93", "bu_wow": "&#9644; W29 ฿24,966" },
+      { "bu_name": "Shopify (own web)", "bu_bar_color": "#1f7a55", "bu_bar_pct": "14", "bu_net": "31,064", "bu_orders": "34", "bu_share": "6.9", "bu_wow_color": "#1f9d57", "bu_wow": "&#9650; W29 ฿6,467" },
+      { "bu_name": "Shopee", "bu_bar_color": "#1f9d57", "bu_bar_pct": "31", "bu_net": "69,810", "bu_orders": "112", "bu_share": "15.5", "bu_wow_color": "#1f9d57", "bu_wow": "&#9650;&#9650; W29 ฿2,598" },
+      { "bu_name": "TikTok Shop", "bu_bar_color": "#d6453a", "bu_bar_pct": "1", "bu_net": "0", "bu_orders": "0", "bu_share": "0.0", "bu_wow_color": "#8a8a93", "bu_wow": "W29 ฿0" },
+      { "bu_name": "B2B / Wholesale", "bu_bar_color": "#b5740a", "bu_bar_pct": "1", "bu_net": "0", "bu_orders": "0", "bu_share": "0.0", "bu_wow_color": "#8a8a93", "bu_wow": "&#9660; W29 ฿63,811" },
+      { "bu_name": "Other (Warehouse HQ / Ladprao)", "bu_bar_color": "#8a8a93", "bu_bar_pct": "3", "bu_net": "6,720", "bu_orders": "14", "bu_share": "1.5", "bu_wow_color": "#8a8a93", "bu_wow": "&#9660; W29 ฿62,963" }
+    ],
+    "branch_rows": [
+      { "br_row_bg": "#ffffff", "br_name_color": "#2b2b33", "br_name": "SQ1 (Siam Square One)", "br_w2": "209,545", "br_w1": "208,224", "br_w0": "222,502", "br_w0_color": "#1f7a55", "br_trend": "&#9650;", "br_trend_color": "#1f9d57", "br_flag": "store" },
+      { "br_row_bg": "#ffffff", "br_name_color": "#2b2b33", "br_name": "Fashion Island", "br_w2": "108,315", "br_w1": "100,027", "br_w0": "93,931", "br_w0_color": "#c43b27", "br_trend": "&#9660;", "br_trend_color": "#d6453a", "br_flag": "store" },
+      { "br_row_bg": "#ffffff", "br_name_color": "#6a665e", "br_name": "Vending Machines &#9881;", "br_w2": "25,683", "br_w1": "24,966", "br_w0": "24,962", "br_w0_color": "#2b2b33", "br_trend": "&#9644;", "br_trend_color": "#8a8a93", "br_flag": "vending" },
+      { "br_row_bg": "#eafaf3", "br_name_color": "#0f6e56", "br_name": "Shopify (own web)", "br_w2": "74,505", "br_w1": "6,467", "br_w0": "31,064", "br_w0_color": "#1f7a55", "br_trend": "&#9650;", "br_trend_color": "#1f9d57", "br_flag": "<span style=\"background:#e1f5ee;color:#0f6e56;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;\">WEB *</span>" },
+      { "br_row_bg": "#ffffff", "br_name_color": "#2b2b33", "br_name": "Shopee", "br_w2": "28,266", "br_w1": "2,598", "br_w0": "69,810", "br_w0_color": "#1f7a55", "br_trend": "&#9650;&#9650;", "br_trend_color": "#1f9d57", "br_flag": "<span style=\"background:#fbeecf;color:#b5740a;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;\">MKT *</span>" },
+      { "br_row_bg": "#ffffff", "br_name_color": "#2b2b33", "br_name": "TikTok Shop", "br_w2": "1,671", "br_w1": "0", "br_w0": "0", "br_w0_color": "#b3261e", "br_trend": "—", "br_trend_color": "#b3261e", "br_flag": "marketplace" },
+      { "br_row_bg": "#fff8ec", "br_name_color": "#2b2b33", "br_name": "B2B / Wholesale", "br_w2": "123,096", "br_w1": "63,811", "br_w0": "0", "br_w0_color": "#b3261e", "br_trend": "&#9660;", "br_trend_color": "#b3261e", "br_flag": "<span style=\"background:#fdf1df;color:#b5740a;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;\">B2B</span>" },
+      { "br_row_bg": "#f7f7f9", "br_name_color": "#6a665e", "br_name": "Other (Warehouse HQ / Ladprao / Westgate)", "br_w2": "298,892", "br_w1": "62,963", "br_w0": "6,720", "br_w0_color": "#2b2b33", "br_trend": "&#9660;", "br_trend_color": "#8a8a93", "br_flag": "" }
+    ],
+    "marketplace_rows": [
+      { "mp_row_bg": "#ffffff", "mp_name_color": "#2b2b33", "mp_name": "Shopee", "mp_w2": "28,266", "mp_w1": "2,598", "mp_w0": "69,810", "mp_w0_color": "#1f7a55", "mp_trend": "&#9650;&#9650;", "mp_trend_color": "#1f9d57", "mp_orders": "112" },
+      { "mp_row_bg": "#ffffff", "mp_name_color": "#2b2b33", "mp_name": "TikTok Shop", "mp_w2": "1,671", "mp_w1": "0", "mp_w0": "0", "mp_w0_color": "#b3261e", "mp_trend": "—", "mp_trend_color": "#b3261e", "mp_orders": "0" },
+      { "mp_row_bg": "#ffffff", "mp_name_color": "#8a8a93", "mp_name": "Lazada", "mp_w2": "0", "mp_w1": "0", "mp_w0": "0", "mp_w0_color": "#8a8a93", "mp_trend": "—", "mp_trend_color": "#8a8a93", "mp_orders": "0" }
+    ],
+    "cat_rows": [
+      { "cat_name": "Collectables (100/200/400%)", "cat_skus": "39", "cat_units": "106", "cat_net": "354,295", "cat_share": "18.3", "cat_asp": "3,342", "cat_gp_color": "#1f7a55", "cat_gp": "56.2" },
+      { "cat_name": "The rest (blind box / plush / KC)", "cat_skus": "370", "cat_units": "4,814", "cat_net": "1,584,440", "cat_share": "81.7", "cat_asp": "329", "cat_gp_color": "#c43b27", "cat_gp": "45.5" }
+    ],
+    "reorder_rows": [
+      { "ro_name": "Ghody Behold My Cat Mini Figure BB (68% GP)", "ro_w4": "—", "ro_w3": "0", "ro_w2": "14", "ro_w1": "33", "ro_w0": "10", "ro_stock_color": "#c43b27", "ro_stock": "15", "ro_cover": "0.7w", "ro_act_bg": "#e3f5ec", "ro_act_color": "#1f9d57", "ro_action": "REORDER" },
+      { "ro_name": "Lollipoppi Bag Charm Plush KC BB", "ro_w4": "6", "ro_w3": "30", "ro_w2": "29", "ro_w1": "39", "ro_w0": "17", "ro_stock_color": "#c43b27", "ro_stock": "23", "ro_cover": "0.8w", "ro_act_bg": "#e3f5ec", "ro_act_color": "#1f9d57", "ro_action": "REORDER" },
+      { "ro_name": "Upset Duck Status Display BB", "ro_w4": "64", "ro_w3": "83", "ro_w2": "85", "ro_w1": "28", "ro_w0": "23", "ro_stock_color": "#c43b27", "ro_stock": "27", "ro_cover": "1.1w", "ro_act_bg": "#e3f5ec", "ro_act_color": "#1f9d57", "ro_action": "REORDER" },
+      { "ro_name": "Rainbowkido Origins Figure BB (below cost!)", "ro_w4": "0", "ro_w3": "0", "ro_w2": "0", "ro_w1": "30", "ro_w0": "3", "ro_stock_color": "#c43b27", "ro_stock": "73", "ro_cover": "—", "ro_act_bg": "#fde3df", "ro_act_color": "#c43b27", "ro_action": "FIX PRICE" }
+    ],
+    "top_rows": [
+      { "tp_name": "Fuggler Alley Cat Plush KC", "tp_stock_color": "#2b2b33", "tp_stock": "94", "tp_w1": "62", "tp_w0_color": "#2b2b33", "tp_w0": "38", "tp_2wk": "100", "tp_day": "7.1", "tp_net": "38,699", "tp_gp": "20,882", "tp_gp_color": "#1f7a55", "tp_gp_pct": "54.0" },
+      { "tp_name": "Upset Duck Stop The Spiral", "tp_stock_color": "#2b2b33", "tp_stock": "253", "tp_w1": "57", "tp_w0_color": "#2b2b33", "tp_w0": "25", "tp_2wk": "82", "tp_day": "5.9", "tp_net": "14,176", "tp_gp": "6,988", "tp_gp_color": "#c43b27", "tp_gp_pct": "49.3" },
+      { "tp_name": "Lollipoppi Bag Charm Plush KC", "tp_stock_color": "#c43b27", "tp_stock": "23", "tp_w1": "39", "tp_w0_color": "#2b2b33", "tp_w0": "17", "tp_2wk": "56", "tp_day": "4.0", "tp_net": "31,421", "tp_gp": "16,135", "tp_gp_color": "#1f7a55", "tp_gp_pct": "51.4" },
+      { "tp_name": "Upset Duck Mini Wishlist", "tp_stock_color": "#2b2b33", "tp_stock": "69", "tp_w1": "29", "tp_w0_color": "#2b2b33", "tp_w0": "26", "tp_2wk": "55", "tp_day": "3.9", "tp_net": "19,166", "tp_gp": "9,754", "tp_gp_color": "#1f7a55", "tp_gp_pct": "50.9" },
+      { "tp_name": "Upset Duck Status Display", "tp_stock_color": "#c43b27", "tp_stock": "27", "tp_w1": "28", "tp_w0_color": "#2b2b33", "tp_w0": "23", "tp_2wk": "51", "tp_day": "3.6", "tp_net": "8,819", "tp_gp": "4,342", "tp_gp_color": "#c43b27", "tp_gp_pct": "49.2" },
+      { "tp_name": "Ghody Behold My Cat Mini Figure", "tp_stock_color": "#c43b27", "tp_stock": "15", "tp_w1": "33", "tp_w0_color": "#2b2b33", "tp_w0": "10", "tp_2wk": "43", "tp_day": "3.1", "tp_net": "7,896", "tp_gp": "5,350", "tp_gp_color": "#1f7a55", "tp_gp_pct": "67.8" },
+      { "tp_name": "Fuggler Sassy Cuties Squad KC", "tp_stock_color": "#c43b27", "tp_stock": "48", "tp_w1": "23", "tp_w0_color": "#2b2b33", "tp_w0": "17", "tp_2wk": "40", "tp_day": "2.9", "tp_net": "16,528", "tp_gp": "8,979", "tp_gp_color": "#1f7a55", "tp_gp_pct": "54.3" },
+      { "tp_name": "Cat Hug Plush Keychain", "tp_stock_color": "#2b2b33", "tp_stock": "210", "tp_w1": "19", "tp_w0_color": "#2b2b33", "tp_w0": "14", "tp_2wk": "33", "tp_day": "2.4", "tp_net": "13,753", "tp_gp": "7,085", "tp_gp_color": "#1f7a55", "tp_gp_pct": "51.5" },
+      { "tp_name": "Mr. Bone Agent Plush KC", "tp_stock_color": "#2b2b33", "tp_stock": "205", "tp_w1": "25", "tp_w0_color": "#2b2b33", "tp_w0": "9", "tp_2wk": "34", "tp_day": "2.4", "tp_net": "16,341", "tp_gp": "6,446", "tp_gp_color": "#c43b27", "tp_gp_pct": "39.4" },
+      { "tp_name": "Rainbowkido Origins Figure (BELOW COST)", "tp_stock_color": "#c43b27", "tp_stock": "73", "tp_w1": "30", "tp_w0_color": "#2b2b33", "tp_w0": "3", "tp_2wk": "33", "tp_day": "2.4", "tp_net": "2,570", "tp_gp": "-3,048", "tp_gp_color": "#c43b27", "tp_gp_pct": "-118.6" }
+    ],
+    "arrival_rows": [
+      { "na_wk": "W24", "na_name": "Lollipoppi Bag Charm Plush KC BB", "na_recvd": "120", "na_sold": "115", "na_oh_color": "#c43b27", "na_onhand": "23", "na_read_bg": "#e3f5ec", "na_read_color": "#1f7a55", "na_read": "HOT" },
+      { "na_wk": "W27", "na_name": "Ghody Behold My Cat Mini Figure BB", "na_recvd": "72", "na_sold": "57", "na_oh_color": "#c43b27", "na_onhand": "15", "na_read_bg": "#e3f5ec", "na_read_color": "#1f7a55", "na_read": "HOT" },
+      { "na_wk": "W26", "na_name": "Shiba Macarons Figure BB", "na_recvd": "24", "na_sold": "0", "na_oh_color": "#c43b27", "na_onhand": "24", "na_read_bg": "#fde3df", "na_read_color": "#c43b27", "na_read": "SLOW START" }
+    ],
+    "po_rows": [
+      { "po_row_bg": "#fdeeec", "po_name": "Bearbrick Series 44 / 49 BB", "po_num": "POACT250800059", "po_qty": "192", "po_value": "consignment", "po_flag_bg": "#fde3df", "po_flag_color": "#c43b27", "po_flag": "OLD · CONSIGN" },
+      { "po_row_bg": "#fdeeec", "po_name": "Sanrio Fluffy / Kuromi Cable Phone-chain BB", "po_num": "POACT260300012", "po_qty": "240", "po_value": "~฿58,000", "po_flag_bg": "#fde3df", "po_flag_color": "#c43b27", "po_flag": "0 SOLD" },
+      { "po_row_bg": "#ffffff", "po_name": "Mr. Bone Strange Alliance 3.0 BB", "po_num": "POACT260500020", "po_qty": "324", "po_value": "฿74,729", "po_flag_bg": "#e3f5ec", "po_flag_color": "#1f7a55", "po_flag": "OK" }
+    ],
+    "dead_owned_rows": [
+      { "do_name": "ActionCity × Poyunwang CNY 2026 Phone Straps BB", "do_onhand": "104", "do_cost": "—", "do_price": "—", "do_value": "seasonal" },
+      { "do_name": "Liiaocao Mini Blessing Golden Plush KC (TH Ltd)", "do_onhand": "76", "do_cost": "293", "do_price": "—", "do_value": "22,253" },
+      { "do_name": "Laura Wood Elves Series BB", "do_onhand": "51", "do_cost": "—", "do_price": "—", "do_value": "—" },
+      { "do_name": "Panpan Mini 4th Anniversary BB", "do_onhand": "48", "do_cost": "—", "do_price": "—", "do_value": "—" },
+      { "do_name": "Penguin Canvas Bag", "do_onhand": "37", "do_cost": "89", "do_price": "—", "do_value": "3,287" }
+    ],
+    "dead_consign_rows": [
+      { "dc_tag_bg": "#e1f5ee", "dc_tag_color": "#0f6e56", "dc_tag": "CONSIGN", "dc_supplier": "Big Box International (Bearbrick/Astro Boy/Jelilo — ~฿3.6M)", "dc_skus": "76", "dc_units": "461", "dc_action": "RETURN" },
+      { "dc_tag_bg": "#e1f5ee", "dc_tag_color": "#0f6e56", "dc_tag": "CONSIGN", "dc_supplier": "MNT series (via V-00654)", "dc_skus": "46", "dc_units": "3,700", "dc_action": "RETURN" },
+      { "dc_tag_bg": "#eeedfe", "dc_tag_color": "#5551FE", "dc_tag": "INTERCO", "dc_supplier": "Pony on Wheel TH / Toysinbox", "dc_skus": "12", "dc_units": "687", "dc_action": "RETURN" }
+    ]
+  }
+}

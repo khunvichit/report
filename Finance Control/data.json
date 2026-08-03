@@ -1,44 +1,44 @@
 {
  "meta": {
-  "report_date": "2026-07-07",
-  "date_str": "07 Jul 2026",
+  "report_date": "2026-07-15",
+  "date_str": "15 Jul 2026",
   "subsidiaries": {
    "12": "SFB",
    "13": "Vending",
    "22": "ActionCity"
   },
-  "source": "NetSuite SuiteQL (live pull 07 Jul 2026)"
+  "source": "NetSuite SuiteQL (live pull 15 Jul 2026)"
  },
  "banks": [
   [
    257,
    "11013001",
    "SFB SAVINGS KBANK 0852571217",
-   3970382.53
+   6683340.6
   ],
   [
    260,
    "11013004",
    "SFB SAVINGS SCB 0172624625",
-   3999562.16
+   3737507.16
   ],
   [
    261,
    "11013005",
    "SFB SAVINGS KTB 0460616978",
-   14174476.65
+   14491316.65
   ],
   [
    263,
    "11013007",
    "VENDING SAVING KBANK 0852606630",
-   2971862.88
+   3115551.43
   ],
   [
    984,
    "11013036",
    "ACT SAVINGS KBANK 2093307898",
-   1990828.5
+   1985481.05
   ]
  ],
  "subs": [
@@ -46,31 +46,31 @@
    "11013001A",
    "Cash Sales",
    257,
-   266198.02
+   -398018.3
   ],
   [
    "11013001B",
    "Master Card / Visa",
    257,
-   -45425.62
+   -464017.27
   ],
   [
    "11013001C",
    "Union Pay",
    257,
-   80215.8
+   1352
   ],
   [
    "11013001D",
    "Alipay/Wechat",
    257,
-   -258912.14
+   -21335.76
   ],
   [
    "11013001E",
    "Prompt Pay",
    257,
-   25210.6
+   -210416.7
   ],
   [
    "11013001F",
@@ -82,19 +82,19 @@
    "11013001G",
    "Wechat",
    257,
-   276209.3
+   6381
   ],
   [
    "11013001H",
    "OCG",
    257,
-   0
+   5643
   ],
   [
    "11013001I",
    "KCC",
    257,
-   -2101
+   -2601
   ],
   [
    "11013004A",
@@ -112,43 +112,43 @@
    "11013005B",
    "CASH",
    261,
-   250993
+   240996
   ],
   [
    "11013007A",
    "Cash Sales",
    263,
-   12741.99
+   -411284.47
   ],
   [
    "11013007B",
    "Master Card / Visa",
    263,
-   7696.3
+   -216248.72
   ],
   [
    "11013007C",
    "Alipay/Wechat",
    263,
-   -138417.76
+   -79392.4
   ],
   [
    "11013007D",
    "Union Pay",
    263,
-   3655
+   0
   ],
   [
    "11013007E",
    "Prompt Pay / KPLUS",
    263,
-   3983
+   -58427
   ],
   [
    "11013007F",
-   "Ksher Alipay",
+   "Ksher",
    263,
-   150710
+   67143
   ],
   [
    "11013007G",
@@ -166,7 +166,7 @@
    "11013007I",
    "Ksher Truemoney",
    263,
-   40
+   0
   ],
   [
    "11013007J",
@@ -184,7 +184,7 @@
    "11013007L",
    "CASHLESS",
    263,
-   206574.59
+   106976.72
   ],
   [
    "11013007M",
@@ -196,19 +196,19 @@
    "11013036A",
    "Master / Visa",
    984,
-   -7253.64
+   -37667.86
   ],
   [
    "11013036B",
    "Promptpay",
    984,
-   7788
+   -21322.95
   ],
   [
    "11013036C",
    "Alipay / Wechat",
    984,
-   0
+   1449
   ],
   [
    "11013036D",
@@ -226,13 +226,13 @@
    "11013036F",
    "Cash Sales",
    984,
-   13735
+   -68208.85
   ],
   [
    "11013036G",
    "Omise",
    984,
-   70265.65
+   106055.04
   ],
   [
    "11013036H",
@@ -244,19 +244,19 @@
    "11013036I",
    "Shopee",
    984,
-   19157
+   9062
   ],
   [
    "11013036J",
    "Lazada",
    984,
-   550
+   0
   ],
   [
    "11013036K",
    "TikTok",
    984,
-   206.62
+   504.52
   ],
   [
    "11013036L",
@@ -280,7 +280,7 @@
    "11013036P",
    "KSher",
    984,
-   7311.5
+   2937
   ],
   [
    "11013036Q",
@@ -292,46 +292,46 @@
    "11013036R",
    "NAYAX",
    984,
-   45384.3
+   18959
   ]
  ],
  "transfer": {
-  "11013001A": "06/07/2026",
-  "11013001B": "06/07/2026",
-  "11013001C": "31/05/2026",
-  "11013001D": "06/07/2026",
-  "11013001E": "06/07/2026",
+  "11013001A": "14/07/2026",
+  "11013001B": "14/07/2026",
+  "11013001C": "30/06/2026",
+  "11013001D": "14/07/2026",
+  "11013001E": "14/07/2026",
   "11013001F": "31/03/2025",
-  "11013001G": "31/05/2026",
+  "11013001G": "30/06/2026",
   "11013001H": "17/03/2026",
-  "11013001I": "06/07/2026",
+  "11013001I": "14/07/2026",
   "11013005A": "07/11/2025",
   "11013005B": "30/06/2026",
-  "11013007A": "06/07/2026",
-  "11013007B": "06/07/2026",
-  "11013007C": "06/07/2026",
-  "11013007D": "31/05/2026",
-  "11013007E": "06/07/2026",
-  "11013007F": "31/05/2026",
+  "11013007A": "14/07/2026",
+  "11013007B": "14/07/2026",
+  "11013007C": "14/07/2026",
+  "11013007D": "30/06/2026",
+  "11013007E": "14/07/2026",
+  "11013007F": "30/06/2026",
   "11013007G": "30/04/2025",
-  "11013007I": "30/04/2026",
+  "11013007I": "30/06/2026",
   "11013007K": "31/05/2026",
-  "11013007L": "06/07/2026",
-  "11013036A": "06/07/2026",
-  "11013036B": "06/07/2026",
+  "11013007L": "13/07/2026",
+  "11013036A": "14/07/2026",
+  "11013036B": "14/07/2026",
   "11013036C": "05/07/2026",
   "11013036E": "31/05/2026",
-  "11013036F": "06/07/2026",
-  "11013036G": "05/07/2026",
-  "11013036I": "06/07/2026",
-  "11013036J": "31/05/2026",
-  "11013036K": "01/07/2026",
+  "11013036F": "14/07/2026",
+  "11013036G": "13/07/2026",
+  "11013036I": "13/07/2026",
+  "11013036J": "30/06/2026",
+  "11013036K": "08/07/2026",
   "11013036L": "26/06/2026",
   "11013036M": "26/02/2026",
   "11013036N": "06/03/2026",
-  "11013036P": "06/07/2026",
+  "11013036P": "13/07/2026",
   "11013036Q": "06/03/2026",
-  "11013036R": "10/06/2026"
+  "11013036R": "10/07/2026"
  },
  "parent_sub": {
   "257": 12,
@@ -341,8 +341,8 @@
   "984": 22
  },
  "recon": {
-  "11013001": "31/05/2026",
-  "11013004": "31/05/2026",
+  "11013001": "30/06/2026",
+  "11013004": "30/06/2026",
   "11013005": "30/06/2026",
   "11013007": "30/06/2026",
   "11013036": "30/06/2026"
@@ -355,7 +355,7 @@
   "11013036": 22
  },
  "recon_oldest": {
-  "12": "31/05/2026",
+  "12": "30/06/2026",
   "13": "30/06/2026",
   "22": "30/06/2026"
  },
@@ -366,9 +366,9 @@
     "บริษัท แอลที โซลูชั่นส์ แอนด์ เทคโนโลยี จำกัด",
     "60 Days",
     60,
-    489084,
-    4518,
-    484566,
+    442087,
+    6224,
+    435863,
     "28/04/2026"
    ],
    [
@@ -376,10 +376,10 @@
     "บริษัท มาสเตอร์ มายนด์ คอนซัลแตนท์ จำกัด",
     "30 Days",
     30,
-    289529.1,
+    203382.5,
     0,
-    289529.1,
-    "16/06/2026"
+    203382.5,
+    "01/07/2026"
    ],
    [
     "C-7491903",
@@ -396,10 +396,10 @@
     "BANGKOK AIRWAYS PUBLIC COMPANY LIMITED.",
     "30 Days",
     30,
-    18268,
-    1900,
-    16368,
-    "06/06/2026"
+    40002,
+    12812,
+    27190,
+    "12/06/2026"
    ],
    [
     "C-00297",
@@ -412,104 +412,24 @@
     "19/07/2026"
    ],
    [
-    "C-00300",
-    "QANTAS AIRWAYS LIMITED",
-    "30 Days",
-    30,
-    6862,
-    0,
-    6862,
-    "22/05/2026"
-   ],
-   [
-    "C-00354",
-    "VIETJET AVIATION JOINT STOCK COMPANY",
-    "30 Days",
-    30,
-    4562,
-    0,
-    4562,
-    "20/05/2026"
-   ],
-   [
     "C-00335",
     "AIR FRANCE",
     "30 Days",
     30,
-    3616,
+    5145,
     0,
-    3616,
+    5145,
     "02/07/2026"
-   ],
-   [
-    "C-00307",
-    "MYANMAR AIRWAYS INTERNATIONAL CO. LTD",
-    "30 Days",
-    30,
-    1956,
-    0,
-    1956,
-    "29/05/2026"
-   ],
-   [
-    "C-00324",
-    "EMIRATES",
-    "30 Days",
-    30,
-    1193,
-    0,
-    1193,
-    "15/05/2026"
    ],
    [
     "C-00325",
     "EL AL ISRAEL AIRLINES",
     "30 Days",
     30,
+    1047,
     700,
-    700,
-    0,
-    "19/07/2026"
-   ],
-   [
-    "C-00345",
-    "INDIGO AIRLINES",
-    "30 Days",
-    30,
-    600,
-    0,
-    600,
-    "21/05/2026"
-   ],
-   [
-    "C-00314",
-    "JETSTAR AIRWAYS PTY LIMITED.",
-    "30 Days",
-    30,
-    580,
-    0,
-    580,
-    "29/05/2026"
-   ],
-   [
-    "C-70336",
-    "บริษัท ธนาคารกรุงศรีอยุธยา จำกัด (มหาชน)",
-    "30 Days",
-    30,
-    500,
-    0,
-    500,
-    "05/07/2026"
-   ],
-   [
-    "C-00332",
-    "ASIANA AIRLINES",
-    "30 Days",
-    30,
-    300,
-    0,
-    300,
-    "15/05/2026"
+    347,
+    "14/07/2026"
    ]
   ],
   "13": [
@@ -547,16 +467,16 @@
    ]
   ]
  },
- "ACT_other_count": 57,
- "ACT_other_amt": 104580.0,
+ "ACT_other_count": 34,
+ "ACT_other_amt": 25693.4,
  "vat_acct": {
   "11101003": [
    "ภาษีซื้อ-ยังไม่ถึงกำหนด (Input VAT Undue, asset)",
-   2295805.46
+   2953329.76
   ],
   "21026002": [
    "ภาษีขายยังไม่ถึงกำหนด (Output VAT Undue, liability)",
-   -21837.05
+   -16216.06
   ]
  },
  "vname": {
@@ -1791,39 +1711,39 @@
  },
  "exec_risks": [
   [
-   "Bank Recon",
-   "SFB KBANK & SCB not reconciled since 31 May",
-   "37 days — past the 30-day control on 2 SFB main accounts",
+   "AR Overdue",
+   "LT Solutions & Technology (C-7492305)",
+   "฿435,863 overdue on 60-day terms; oldest 28 Apr",
+   435863,
+   "CRITICAL"
+  ],
+  [
+   "Approvals",
+   "155 vendor bill-payments stuck in approval",
+   "System-created, nextApprover unassigned — never reach KBank (up from 133)",
    0,
    "CRITICAL"
   ],
   [
-   "AR Overdue",
-   "LT Solutions & Technology (C-7492305)",
-   "฿484,566 overdue on 60-day terms; oldest 28 Apr",
-   484566,
-   "CRITICAL"
-  ],
-  [
    "AP Payments",
-   "281 bills due/overdue not yet paid",
-   "฿15.2M due now sitting unpaid — release via KBank run",
-   15196549,
+   "348 bills due/overdue not yet paid",
+   "฿13.1M due now sitting unpaid — release via KBank run",
+   13117381,
    "HIGH"
   ],
   [
    "AR Overdue",
    "Master Mind Consultant (C-00277)",
-   "฿289,529 fully overdue (30-day term), up from ฿237k",
-   289529,
+   "฿203,383 overdue (was ฿289k — partly paid)",
+   203383,
    "HIGH"
   ],
   [
-   "Approvals",
-   "133 vendor bill-payments stuck in approval",
-   "System-created, nextApprover unassigned — never reach KBank",
-   0,
-   "CRITICAL"
+   "Undue VAT",
+   "Input VAT undue rose to ฿2.95M",
+   "up ฿0.66M in a week — 129 'Undue Tax Adjustment' JEs stuck pending approval, so undue VAT isn't clearing",
+   2953330,
+   "HIGH"
   ],
   [
    "AR Overdue",
@@ -1833,24 +1753,24 @@
    "HIGH"
   ],
   [
-   "Prepayment",
-   "ณัฐพล วันริโก (Prepayment terms)",
-   "฿130,000 open >30d — apply deposit, not a bank payment",
-   130000,
-   "HIGH"
-  ],
-  [
-   "AR Overdue",
-   "ActionCity ชุติมา แซ่หลิ่ว",
-   "฿77,900 overdue since 21 Feb (ActionCity)",
+   "ActionCity AR",
+   "ชุติมา แซ่หลิ่ว",
+   "฿77,900 overdue since 21 Feb",
    77900,
    "HIGH"
   ],
   [
+   "Prepayment",
+   "โอซูก้า + others (Prepayment terms)",
+   "฿59,148 open >30d — apply deposit, not a bank payment",
+   59148,
+   "MEDIUM"
+  ],
+  [
    "No-due-date bills",
-   "14 approved bills missing a due date",
-   "฿221,152 skipped by KBank run — set due date",
-   221152,
+   "16 approved bills missing a due date",
+   "฿250,042 skipped by KBank run — set due date",
+   250042,
    "WATCH"
   ],
   [
@@ -1864,27 +1784,27 @@
  "priority_actions": [
   [
    "URGENT",
-   "Reconcile SFB KBANK (11013001) & SFB SCB (11013004) — both last reconciled 31 May, now 37 days past the 30-day control."
+   "Release the 155 stuck vendor bill-payments (System-created, no approver) — up from 133; this is the main blocker to paying due AP via KBank."
   ],
   [
    "URGENT",
-   "Release the 133 stuck vendor bill-payments (System-created, no approver) so due AP can reach the KBank file."
-  ],
-  [
-   "URGENT",
-   "Chase LT Solutions ฿484,566 (60-day, oldest 28 Apr) and Master Mind ฿289,529 (now rising) — the two largest SFB overdue AR."
+   "Chase LT Solutions ฿435,863 (60-day, oldest 28 Apr) and King Power Corp ฿99,500 — largest SFB overdue AR."
   ],
   [
    "ACTION",
-   "Work the 281 due/overdue vendor bills (฿15.2M): confirm intercompany/duplicates excluded, then pay eligible via KBank."
+   "Work the 348 due/overdue vendor bills (฿13.1M): exclude intercompany, then pay eligible via KBank."
   ],
   [
    "ACTION",
-   "Set due dates on the 14 no-due-date bills (฿221K) — Big Box, ZEN, คิงดอม คัม — so they enter the next payment run."
+   "Investigate the ฿0.66M week-on-week rise in Input VAT undue (now ฿2.95M) — confirm staff undue-VAT reversals are posting."
   ],
   [
    "ACTION",
-   "Apply deposits on the 8 Prepayment-terms bills >30d (฿145,854), led by ณัฐพล วันริโก ฿130K."
+   "Set due dates on the 16 no-due-date bills (฿250K) — Big Box, ZEN, พีเอช, คิงดอม คัม."
+  ],
+  [
+   "ACTION",
+   "Apply deposits on the 13 Prepayment-terms bills >30d (฿59,148), led by โอซูก้า ฿51,809."
   ]
  ],
  "deposit_actions": [
@@ -1897,56 +1817,56 @@
   "txn_summary": [
    [
     "Vendor Payments",
-    133,
-    "27/02/2025",
-    "auto-generated; nextApprover unassigned (-1)"
+    156,
+    "28/06/2025",
+    "auto-generated; nextApprover unassigned (-1) — blocks KBank"
    ],
    [
     "Journal Entries",
-    185,
+    129,
     "01/10/2025",
-    "mostly AUTO- intercompany (Inbox/ACT)"
+    "'Undue Tax Adjustment' auto-JEs (Pornsri) awaiting approval — likely why Input VAT-undue keeps rising"
    ],
    [
     "Purchase Orders",
-    6,
+    5,
     "09/04/2026",
-    "SFB 5, ACT 1"
+    "SFB / ActionCity"
    ],
    [
     "Customer Invoices",
-    3,
-    "24/06/2026",
-    "Inbox (recurring)"
+    0,
+    "—",
+    "none pending in subs 12/13/22"
    ],
    [
     "Vendor Bills (IR)",
     0,
     "—",
-    "none pending — bills post as Open then await payment"
+    "bills post as Open then await payment"
    ]
   ],
-  "bills_open": 1435,
+  "bills_open": 1454,
   "bills_open_oldest": "04/07/2024",
   "pymt_by_sub": [
    [
     "SFB",
-    71,
+    110,
     "26/12/2025"
    ],
    [
     "Vending",
-    27,
-    "15/09/2025"
+    38,
+    "19/01/2026"
    ],
    [
     "ActionCity",
-    18,
+    8,
     "28/06/2025"
    ],
    [
-    "CHAW/Inbox/TOYz/others",
-    28,
+    "CHAW/Inbox/others",
+    26,
     "27/02/2025"
    ]
   ],
@@ -1963,8 +1883,13 @@
    ],
    [
     "Vending",
-    "15/09/2025",
-    1684800
+    "31/07/2026",
+    1870947.43
+   ],
+   [
+    "Vending",
+    "20/07/2026",
+    1200303.17
    ],
    [
     "ActionCity",
@@ -1972,125 +1897,21 @@
     665945.57
    ],
    [
-    "TOYzINBOX",
-    "31/03/2025",
-    399031.4
-   ],
-   [
-    "TOYzINBOX",
-    "27/02/2025",
-    217085.1
+    "SFB",
+    "05/04/2026",
+    599200
    ]
   ],
-  "master_vendor_pending": 1,
-  "master_cust_pending": 13,
-  "master_cust_rejected": 8,
-  "master_detail": [
-   [
-    "V-01035",
-    "(new vendor record)",
-    "Pending Purchase Mgr/GM/CEO",
-    "10/06/2026",
-    "Vendor"
-   ],
-   [
-    "C-00178",
-    "สันธิญา เกาะยาวใหญ่ รีสอร์ท",
-    "Pending Accounting Mgr",
-    "01/08/2024",
-    "Customer"
-   ],
-   [
-    "C-00322",
-    "GREATER BAY AIRLINES",
-    "Pending Retail Sales/GM/CEO",
-    "02/08/2024",
-    "Customer"
-   ],
-   [
-    "C-00396",
-    "บ.ไรซ์โนวา กรุ๊ป",
-    "Pending Retail Sales/GM/CEO",
-    "06/09/2024",
-    "Customer"
-   ],
-   [
-    "C-00407",
-    "ลูกค้าทั่วไป",
-    "Pending Retail Sales/GM/CEO",
-    "17/09/2024",
-    "Customer"
-   ],
-   [
-    "C-02347",
-    "บ.บาโฟ แพลเนท",
-    "Pending Retail Sales/GM/CEO",
-    "25/11/2024",
-    "Customer"
-   ],
-   [
-    "C-07169",
-    "บ.ไต้เต็ก",
-    "Pending Retail Sales/GM/CEO",
-    "01/08/2025",
-    "Customer"
-   ],
-   [
-    "C-7491710",
-    "บ.ไฮป์ทอย",
-    "Pending Retail Sales/GM/CEO",
-    "11/09/2025",
-    "Customer"
-   ],
-   [
-    "C-7492369",
-    "คุณ สาวิณี บุตรชีวปรีชา",
-    "Pending Retail Sales/GM/CEO",
-    "11/11/2025",
-    "Customer"
-   ],
-   [
-    "C-7492485",
-    "ไอศวรรย์ เตโชสกุลพาณิชย์",
-    "Pending Retail Sales/GM/CEO",
-    "25/11/2025",
-    "Customer"
-   ],
-   [
-    "C-7493782",
-    "Shopee",
-    "Pending Accounting Mgr",
-    "07/04/2026",
-    "Customer"
-   ],
-   [
-    "C-7493783",
-    "Shopify",
-    "Pending Accounting Mgr",
-    "07/04/2026",
-    "Customer"
-   ],
-   [
-    "C-7493784",
-    "Tiktok",
-    "Pending Accounting Mgr",
-    "07/04/2026",
-    "Customer"
-   ],
-   [
-    "C-7493785",
-    "Lazada",
-    "Pending Accounting Mgr",
-    "07/04/2026",
-    "Customer"
-   ]
-  ],
-  "root_cause": "Stuck bill-payments are auto-generated (createdby = System) with nextApprover unassigned (-1): the approval workflow created the payment but never routed it to an approver, so it sits in 'Pending Approval' indefinitely. The bills themselves are Open (entered/approved) and awaiting these payments.",
+  "master_vendor_pending": 0,
+  "master_cust_pending": 0,
+  "master_cust_rejected": 0,
+  "master_detail": [],
+  "root_cause": "Stuck bill-payments are auto-generated (createdby = System) with nextApprover unassigned (-1): the workflow created the payment but never routed it to an approver, so it sits in 'Pending Approval' indefinitely. The bills themselves are Open/approved and awaiting these payments. Master-data: as of 15 Jul ALL active customers (14,356) and vendors (1,035) are Approved — 0 pending. The 27 Jun pending list has since been approved; C-02347 & C-7492369 are Rejected / pending-but-inactive, not live approvals. Separately, 129 Journal Entries sit in Pending Approval (mostly AUTO intercompany Inbox/ACT recharges) — a systemic auto-JE backlog to review, not a payment blocker.",
   "nodue": {
-   "total_bills": 14,
-   "total_amt": 221151.59,
-   "fix_bills": 14,
-   "fix_amt": 221151.59,
+   "total_bills": 16,
+   "total_amt": 250041.59,
+   "fix_bills": 16,
+   "fix_amt": 250041.59,
    "prepay_bills": 0,
    "prepay_amt": 0.0,
    "residual_bills": 0,
@@ -2109,58 +1930,313 @@
      64452.51
     ],
     [
+     "V-00042 พีเอช ปริ้นติ้ง 2020",
+     "30 Days",
+     2,
+     28890.0
+    ],
+    [
      "V-00695 คิงดอม คัม",
      "30 Days",
      1,
      17160.0
     ]
    ],
-   "note": "As of 04 Jul 2026 the no-due-date backlog is down to 14 bills (from 44 on 27 Jun) — the team fixed 30. All 14 remaining are Open + Approved, just missing a due date, so the KBank run skips them. Fix = re-apply the term to populate the due date; no re-approval needed."
+   "note": "16 bills Open + Approved but missing a due date, so the KBank run skips them. Fix = re-apply the term to populate the due date; no re-approval needed."
   },
   "due_buckets": {
    "nodue": [
-    14,
-    221151.59
+    16,
+    250041.59
    ],
    "due": [
-    281,
-    15196548.88
+    348,
+    13117380.52
    ],
    "notdue": [
-    1140,
-    8449872.29
+    1090,
+    19144322.01
    ],
    "total": [
-    1435,
-    23867572.76
+    1454,
+    32511744.12
+   ]
+  },
+  "je_over30": {
+   "bench_days": 30,
+   "count": 39,
+   "oldest": "01/10/2025",
+   "rows": [
+    [
+     "AUTO-ACT000900192",
+     "01/10/2025",
+     "Pimchanok Karam",
+     ""
+    ],
+    [
+     "AUTO-SFB000901621",
+     "22/04/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-VEN000901051",
+     "25/04/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901490",
+     "30/04/2026",
+     "Attaphol Pakdeebanchasak",
+     "กลับรายการภาษี APSFB251100607"
+    ],
+    [
+     "AUTO-ACT000900471",
+     "01/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-ACT000900603",
+     "05/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901738",
+     "05/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000902000",
+     "15/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-ACT000900630",
+     "15/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000902001",
+     "15/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901796",
+     "15/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901825",
+     "20/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901826",
+     "20/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901829",
+     "20/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901828",
+     "20/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901827",
+     "20/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000902019",
+     "20/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901923",
+     "25/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901885",
+     "25/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901864",
+     "25/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-VEN000901155",
+     "25/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-ACT000900652",
+     "25/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901960",
+     "29/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901992",
+     "31/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901956",
+     "31/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901955",
+     "31/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901957",
+     "31/05/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-ACT000900629",
+     "01/06/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901685",
+     "01/06/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000901959",
+     "01/06/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000902007",
+     "02/06/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-ACT000900694",
+     "05/06/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-ACT000900693",
+     "05/06/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000902005",
+     "05/06/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000902003",
+     "05/06/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000902004",
+     "05/06/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000902018",
+     "08/06/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000902029",
+     "10/06/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ],
+    [
+     "AUTO-SFB000902040",
+     "12/06/2026",
+     "Pornsri Sritubtim",
+     "Undue Tax Adjustment"
+    ]
    ]
   }
  },
  "prepayment": {
-  "total_bills": 36,
-  "total_amt": 1033484.26,
+  "total_bills": 33,
+  "total_amt": 584128.39,
   "vendors": [
    [
     "V-00040 บริษัท คิง เพาเวอร์ สุวรรณภูมิ จำกัด",
-    3,
-    798733.21,
+    2,
+    320635.81,
     "30/06/2026",
     0,
     0.0
    ],
    [
-    "V-00390 ณัฐพล วันริโก",
-    3,
-    130000,
-    "01/06/2026",
-    3,
-    130000.0
+    "V-00484 บริษัท 2 สิงหา จำกัด",
+    1,
+    136710.28,
+    "13/07/2026",
+    0,
+    0.0
    ],
    [
     "V-00584 บริษัท โอซูก้า นิวทราซูติคอล (ประเทศไทย) จำกัด",
     9,
     51809.4,
     "13/06/2026",
+    9,
+    51809.4
+   ],
+   [
+    "V-00273 บริษัท เมอร์เซเดส-เบนซ์ ลีสซิ่ง (ประเทศไทย) จำกัด",
+    1,
+    41695,
+    "09/07/2026",
     0,
     0.0
    ],
@@ -2169,8 +2245,8 @@
     5,
     11015.65,
     "01/05/2026",
-    2,
-    2862.25
+    3,
+    5708.45
    ],
    [
     "V-00980 บริษัท คิงส์ วิช จำกัด",
@@ -2181,34 +2257,10 @@
     0.0
    ],
    [
-    "V-00240 HEYCIAO INTERNATIONAL GROUP LIMITED",
-    1,
-    9841.2,
-    "01/06/2026",
-    1,
-    9841.2
-   ],
-   [
     "V-00296 บริษัท ฟู้ดแพชชั่น จำกัด",
     7,
     9740,
     "22/06/2026",
-    0,
-    0.0
-   ],
-   [
-    "V-00922 Guangzhou Xinqi Animation Culture Co., Ltd.",
-    1,
-    4968,
-    "06/07/2026",
-    0,
-    0.0
-   ],
-   [
-    "V-00457 GUANGZHOU MENGSHEWAN CULTURE",
-    1,
-    4060.8,
-    "30/06/2026",
     0,
     0.0
    ],
@@ -2221,18 +2273,18 @@
     1630.0
    ],
    [
-    "V-01081 บริษัท เค.พี.กมลกิจ อินเตอร์เทรด จำกัด",
-    1,
-    1521,
-    "01/06/2026",
-    1,
-    1521.0
+    "V-00694 บริษัท โอมิเซะ จำกัด",
+    3,
+    727.25,
+    "09/07/2026",
+    0,
+    0.0
    ]
   ],
-  "note": "Open bills on Prepayment terms — clear by applying the deposit, not the bank run. 8 bills (฿145,854) are >30 days past the bill date (ณัฐพล วันริโก ฿130k is the bulk).",
+  "note": "Open bills on Prepayment terms — clear by applying the deposit, not the bank run. 13 bills (฿59,148) are >30 days past the bill date; โอซูก้า (9 bills ฿51,809) is the bulk.",
   "benchmark_days": 30,
-  "over30_bills": 8,
-  "over30_amt": 145854.45
+  "over30_bills": 13,
+  "over30_amt": 59147.85
  },
  "prepay_module": {
   "window": "Jan 2025 – Jun 2026",
@@ -2343,13 +2395,13 @@
   "note": "This account has NO NetSuite Vendor Prepayment (VPrep) module. Vendor deposits are booked to GL 11037002 เงินมัดจำ and cleared against bills two ways: netted inside the vendor bill, or applied to an AP bill via Journal. Both = a bill paid by prepayment (not by bank/KBank). Mostly fit-out/construction deposits (Subway, Juice Land, Very Thai, Pony On Wheel)."
  },
  "kpi_prior": {
-  "_asof": "27 Jun 2026",
-  "Bank Recon": 0,
-  "AR Overdue": null,
-  "Cash Deposit": null,
+  "_asof": "07 Jul 2026",
+  "Bank Recon": 2,
+  "AR Overdue": 15,
+  "Cash Deposit": 15,
   "Undue VAT": "carried",
-  "Memorized": 27,
-  "Duplicates": null,
+  "Memorized": 33,
+  "Duplicates": 0,
   "Approvals": null,
   "Prepayment >30d": 8
  }

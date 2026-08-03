@@ -227,6 +227,15 @@
       <tr style="border-bottom:1px solid #E0DCD3;"><td class="thai">{{vendor}}</td><td>{{term}}</td><td align="right">{{bills}}</td><td align="right" style="color:#F27061;">{{amt}}</td><td>{{action}}</td></tr>
       <!-- /REPEAT:appr_nodue_rows -->
     </table>
+    <h3 style="color:#5551FE;margin:12px 0 6px;">Journal entries pending approval &gt; {{je30_bench}} days ({{je30_count}} JVs, oldest {{je30_oldest}})</h3>
+    <div style="background:#F8C8C0;border:1px solid #F27061;padding:8px;margin:6px 0;border-radius:4px;font-size:12px;">
+      Un-posted (posting=F) — NOT yet in the GL; approving posts them. Mostly the "Undue Tax Adjustment" run, which is why Input-VAT-undue keeps rising.</div>
+    <table>
+      <tr><th>#</th><th>Journal</th><th>Date</th><th>Sub</th><th style="text-align:right;">Age (d)</th><th>Created by</th><th>Memo</th></tr>
+      <!-- REPEAT:appr_je30_rows -->
+      <tr style="border-bottom:1px solid #E0DCD3;"><td>{{n}}</td><td>{{tranid}}</td><td>{{dt}}</td><td>{{sub}}</td><td align="right" style="color:#F27061;font-weight:600;">{{age}}</td><td class="thai">{{creator}}</td><td class="thai" style="font-size:12px;">{{memo}}</td></tr>
+      <!-- /REPEAT:appr_je30_rows -->
+    </table>
     <h3 style="color:#5551FE;margin:12px 0 6px;">Transactions pending approval</h3>
     <table>
       <tr><th>Type</th><th style="text-align:right;">Count</th><th>Oldest</th><th>Note / cause</th></tr>
