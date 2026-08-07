@@ -1,3 +1,7 @@
 khiang-sample.html
 sample-data.json
 make_sample_data.py
+
+# Per-run output — regenerated live every run, must NOT be committed (stale-data trap)
+data.json
+email.html
