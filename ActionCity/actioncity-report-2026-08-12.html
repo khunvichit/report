@@ -1,0 +1,399 @@
+<!--
+  actioncity-template.html — LOCKED daily-dashboard email template.
+  The routine FILLS this with fill_template.py from data.json. It NEVER regenerates this HTML.
+  Mechanisms: double-brace scalar token | REPEAT:name rows | SECTION:name conditional block
+  Keep every colour/size/inline style exactly — email-client tested. This comment header is stripped on fill.
+-->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ActionCity Daily Sales &amp; Stock Dashboard</title>
+<style>body{margin:0;padding:0;}</style></head>
+<body style="margin:0;padding:0;background:#F5EDE4;font-family:'Poppins',Arial,Helvetica,sans-serif;color:#2b2b33;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F5EDE4;padding:24px 0;"><tr><td align="center">
+<table role="presentation" width="920" cellpadding="0" cellspacing="0" style="max-width:920px;width:100%;">
+
+<!-- HEADER -->
+<tr><td style="background:#5551FE;border-radius:14px;padding:26px 30px;">
+  <table role="presentation" width="100%"><tr>
+    <td style="vertical-align:middle;">
+      <div style="font-size:13px;font-weight:600;letter-spacing:2px;color:#C9C7FF;text-transform:uppercase;">ActionCity (Thailand) &middot; Sub 22 &middot; Retail / Art Toy</div>
+      <div style="font-size:27px;font-weight:700;color:#ffffff;line-height:1.15;margin-top:4px;">Daily Sales &amp; Stock Dashboard</div>
+      <div style="font-size:15px;color:#E6E5FF;margin-top:3px;">12 Aug 2026 (Wed) &middot; end-of-day close &middot; week-to-date W33</div>
+    </td>
+    <td align="right" style="vertical-align:middle;">
+      <div style="display:inline-block;background:#F27061;color:#ffffff;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;">DAILY</div>
+    </td>
+  </tr></table>
+</td></tr>
+<tr><td style="height:14px;"></td></tr>
+
+<!-- EXEC INSIGHT (generative; omitted if no insight rows) -->
+
+<tr><td style="background:#ffffff;border-radius:12px;padding:18px 22px;border-left:4px solid #F27061;">
+  <div style="font-size:15px;font-weight:600;margin-bottom:8px;">&#128202; Executive Insight <span style="font-size:11px;font-weight:400;color:#8a8a93;">&middot; AI summary of the numbers below</span></div>
+  <div style="font-size:13px;line-height:1.7;color:#4a4640;">
+    
+    &bull; <b>Today's retail net &#3647;58,452</b> (94 bills, &#3647;622 ticket) &mdash; 3.0% below the same Wednesday last week (&#3647;60,261). Week-to-date W33: &#3647;230,499 over 3 days (~&#3647;76,833/day).<br>
+    
+    &bull; <b>By business unit WTD:</b> Retails &#3647;146,672 (+16.2% WoW) is carrying the week; Wholesale &#3647;54,724 is down 67.8% WoW on a smaller order than last week; Shopee &#3647;10,318 (&minus;8.2%); Vending &#3647;11,103 (&minus;26.7%).<br>
+    
+    &bull; <b>Siam Square One leads</b> at &#3647;271,723 (last complete week), essentially flat vs the week before; Fashion Island eased 6% to &#3647;157,877.<br>
+    
+    &bull; &#9888; <b>Central Ladprao recorded &#3647;0 for a 4th straight week</b> &mdash; check store/POS status. ACT Westgate has not traded since 31 May.<br>
+    
+    &bull; <b>Fuggler Keyboard Cap</b> has just 0.3 weeks of cover against triple-digit weekly demand &mdash; reorder immediately (a PO is already in flight).<br>
+    
+    &bull; <b>Dead stock:</b> Big Box consignment carries ~&#3647;3.19M / 409 units to return; owned stock to clear is a smaller 71 SKUs / ~&#3647;618K, with 5 SKUs (&ge;10u) worth &#3647;38K shown below.<br>
+    
+  </div>
+</td></tr>
+<tr><td style="height:14px;"></td></tr>
+
+
+<!-- KPI HEADLINE -->
+<tr><td>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0"><tr>
+    <td width="25%" style="padding-right:9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Net sales &middot; today (retail)</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">&#3647;58,452</div>
+      <div style="font-size:13px;color:#d6453a;font-weight:600;margin-top:2px;">&#9660; 3.0% vs same day last wk (retail)</div>
+    </div></td>
+    <td width="25%" style="padding:0 9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Bills &middot; today</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">94</div>
+      <div style="font-size:13px;color:#8a8a93;font-weight:500;margin-top:2px;">94 retail bills &middot; 165 units</div>
+    </div></td>
+    <td width="25%" style="padding:0 9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Avg ticket &middot; today (retail)</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">&#3647;622</div>
+      <div style="font-size:13px;color:#8a8a93;font-weight:500;margin-top:2px;">retail only &middot; excl. wholesale</div>
+    </div></td>
+    <td width="25%" style="padding-left:9px;"><div style="background:#ffffff;border-radius:12px;padding:16px 18px;">
+      <div style="font-size:12px;color:#8a8a93;font-weight:500;">Week-to-date &middot; W33</div>
+      <div style="font-size:24px;font-weight:700;margin-top:4px;">&#3647;230,499</div>
+      <div style="font-size:13px;color:#8a8a93;font-weight:500;margin-top:2px;">3 days &middot; ~&#3647;76,833/day</div>
+    </div></td>
+  </tr></table>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- DAILY SALES BY BRANCH (today) -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:18px 22px;">
+  <div style="font-size:15px;font-weight:600;margin-bottom:2px;">Daily sales by branch <span style="font-size:11px;font-weight:400;color:#8a8a93;">&middot; 12 Aug 2026 (Wed)</span></div>
+  <div style="font-size:11px;color:#8a8a93;margin-bottom:10px;">Today's net &amp; bills per branch. Ticket = retail only (excludes wholesale).</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:10px;"><td style="padding-bottom:3px;">Branch</td><td align="right" style="padding-bottom:3px;">Net &#3647;</td><td align="right" style="padding-bottom:3px;">Bills</td><td align="right" style="padding-bottom:3px;">Ticket</td><td align="right" style="padding-bottom:3px;">&nbsp;</td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Siam Square One</td><td align="right" style="font-weight:600;color:#2b2b33;">32,658</td><td align="right">46</td><td align="right">710</td><td align="right"></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Fashion Island</td><td align="right" style="font-weight:600;color:#2b2b33;">25,794</td><td align="right">48</td><td align="right">537</td><td align="right"></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#6a665e;">Warehouse HQ / Online &#9881;</td><td align="right" style="font-weight:600;color:#6a665e;">0</td><td align="right">0</td><td align="right">0</td><td align="right"></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#6a665e;">Vending machines &#9881;</td><td align="right" style="font-weight:600;color:#6a665e;">0</td><td align="right">0</td><td align="right">0</td><td align="right"></td></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#b3261e;">Central Ladprao</td><td align="right" style="font-weight:600;color:#b3261e;">0</td><td align="right">0</td><td align="right">0</td><td align="right"><span style="background:#d6453a;color:#fff;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;">DARK W33</span></td></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#b3261e;">ACT Westgate</td><td align="right" style="font-weight:600;color:#b3261e;">0</td><td align="right">0</td><td align="right">0</td><td align="right"><span style="background:#d6453a;color:#fff;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;">DARK</span></td></tr>
+    
+  </table>
+  <div style="font-size:11px;color:#8a8a93;margin-top:7px;">SQ1 led at &#3647;32,658 (46 bills); Fashion Island &#3647;25,794 (48 bills, lower ticket). Warehouse HQ, Vending and both flagged stores posted &#3647;0 today &mdash; vending settles in batches (not necessarily dark). &#9888; <b>Central Ladprao &#3647;0 for a 4th straight week</b> &mdash; escalate store/POS status. ACT Westgate has not traded since 31 May.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- BEST SELLERS TODAY (omit if none >=5) -->
+
+<tr><td style="background:#e1f5ee;border:1px solid #5DCAA5;border-radius:12px;padding:14px 20px;">
+  <div style="font-size:12px;color:#0f6e56;"><b>Best sellers today</b> (5+ pieces): Fuggler Alley Cat 11 &middot; Picoco Cat Cuddle Hipper 9 &middot; Upset Duck Status Display 9 &middot; Fuggler 6th Generation 8 &middot; Mr. Bone Agent 6 &middot; Garfield Loves Fruits 6</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+
+<!-- NET SALES BY WEEK -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;">Net sales by week</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:16px;">Net = invoices &minus; returns (inventory items, wash-lines excluded). W33 is week-to-date.</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:13px;">
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:500;">W27</td><td><div style="background:#C9C7FF;height:18px;width:53%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:500;color:#2b2b33;">&#3647;462,194</td></tr>
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:600;">W28</td><td><div style="background:#C9C7FF;height:18px;width:100%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:600;color:#1f7a55;">&#3647;869,973</td></tr>
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:500;">W29</td><td><div style="background:#C9C7FF;height:18px;width:54%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:500;color:#2b2b33;">&#3647;469,057</td></tr>
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:500;">W30</td><td><div style="background:#C9C7FF;height:18px;width:52%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:500;color:#2b2b33;">&#3647;450,560</td></tr>
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:500;">W31</td><td><div style="background:#C9C7FF;height:18px;width:56%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:500;color:#2b2b33;">&#3647;489,665</td></tr>
+    
+    <tr><td width="60" style="color:#8a8a93;padding:5px 0;font-weight:500;">W32</td><td><div style="background:#C9C7FF;height:18px;width:82%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:500;color:#2b2b33;">&#3647;712,247</td></tr>
+    
+    <tr><td width="60" style="color:#b5740a;padding:5px 0;font-weight:600;">W33 *</td><td><div style="background:#F27061;height:18px;width:26%;border-radius:4px;display:inline-block;"></div></td><td width="90" align="right" style="font-weight:600;color:#b5740a;">&#3647;230,499</td></tr>
+    
+  </table>
+  <div style="background:#F5EDE4;border-radius:8px;padding:12px 14px;margin-top:14px;font-size:12px;color:#5b5547;line-height:1.6;"><b>W33 is week-to-date</b> (3 days, &#3647;230,499). W32 was the strongest full week at &#3647;712,247 (+45% vs W31). W28 remains the 7-week peak at &#3647;869,973. All channels included; a single wholesale order can swing a week (see Revenue by branch).</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REVENUE BY BUSINESS UNIT -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Revenue by business unit <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; W33 to date (7 units)</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;">
+    <tr style="color:#8a8a93;font-size:10px;"><td>BU</td><td></td><td align="right">Net &#3647;</td><td align="right">Txns</td><td align="right">Share</td><td align="right">WoW</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">Retails</td><td style="width:32%;"><span style="background:#5551FE;height:13px;width:100%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">146,672</td><td align="right">223</td><td align="right">63.6%</td><td align="right" style="color:#1f9d57;">&#9650; W32 &#3647;126,226</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">Wholesale</td><td style="width:32%;"><span style="background:#b5740a;height:13px;width:37%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">54,724</td><td align="right">1</td><td align="right">23.7%</td><td align="right" style="color:#d6453a;">&#9660; W32 &#3647;170,141</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">Vending</td><td style="width:32%;"><span style="background:#f5a623;height:13px;width:8%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">11,103</td><td align="right">32</td><td align="right">4.8%</td><td align="right" style="color:#d6453a;">&#9660; W32 &#3647;15,156</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">Shopee</td><td style="width:32%;"><span style="background:#1f9d57;height:13px;width:7%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">10,318</td><td align="right">15</td><td align="right">4.5%</td><td align="right" style="color:#d6453a;">&#9660; W32 &#3647;11,243</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">E-Commerce</td><td style="width:32%;"><span style="background:#1f7a55;height:13px;width:5%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">7,682</td><td align="right">11</td><td align="right">3.3%</td><td align="right" style="color:#1f9d57;">&#9650; W32 &#3647;7,643</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">TikTok Shop</td><td style="width:32%;"><span style="background:#8a8a93;height:13px;width:0%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">0</td><td align="right">0</td><td align="right">0.0%</td><td align="right" style="color:#8a8a93;">&#9644; W32 &#3647;0</td></tr>
+    
+    <tr><td style="width:22%;font-weight:600;padding:3px 0;">Lazada</td><td style="width:32%;"><span style="background:#8a8a93;height:13px;width:0%;border-radius:3px;display:inline-block;vertical-align:middle;"></span></td><td align="right" style="font-weight:600;">0</td><td align="right">0</td><td align="right">0.0%</td><td align="right" style="color:#8a8a93;">&#9644; W32 &#3647;0</td></tr>
+    
+  </table>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REVENUE BY BRANCH -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Revenue by business unit &mdash; weekly trend <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; last 3 weeks (W30&ndash;W32, net &#3647;)</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:11px;">
+    <tr style="color:#8a8a93;font-size:10px;"><td>Business unit</td><td align="right">W30</td><td align="right">W31</td><td align="right">W32</td><td align="right">Trend</td><td align="right">Flag</td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Siam Square One</td><td align="right">303,704</td><td align="right">269,983</td><td align="right" style="font-weight:600;color:#1f7a55;">271,723</td><td align="right" style="color:#1f9d57;">&#9650;</td><td align="right">store</td></tr>
+    
+    <tr style="background:#fff8ec;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Warehouse HQ / Online</td><td align="right">26,075</td><td align="right">25,589</td><td align="right" style="font-weight:600;color:#1f7a55;">248,977</td><td align="right" style="color:#1f9d57;">&#9650;&#9650;</td><td align="right"><span style="background:#fdf1df;color:#b5740a;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;">WHOLESALE</span></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Fashion Island</td><td align="right">95,819</td><td align="right">167,740</td><td align="right" style="font-weight:600;color:#c43b27;">157,877</td><td align="right" style="color:#d6453a;">&#9660;</td><td align="right">store</td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#6a665e;">Vending machines &#9881;</td><td align="right">24,962</td><td align="right">26,353</td><td align="right" style="font-weight:600;color:#1f7a55;">33,670</td><td align="right" style="color:#1f9d57;">&#9650;</td><td align="right">vending</td></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#b3261e;">Central Ladprao</td><td align="right">0</td><td align="right">0</td><td align="right" style="font-weight:600;color:#b3261e;">0</td><td align="right" style="color:#b3261e;">&mdash;</td><td align="right"><span style="background:#d6453a;color:#fff;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;">DARK</span></td></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#b3261e;">ACT Westgate</td><td align="right">0</td><td align="right">0</td><td align="right" style="font-weight:600;color:#b3261e;">0</td><td align="right" style="color:#b3261e;">&mdash;</td><td align="right"><span style="background:#d6453a;color:#fff;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;">DARK</span></td></tr>
+    
+  </table>
+  <div style="font-size:11px;color:#8a8a93;margin-top:8px;">Six active locations, last 3 complete weeks (W30&ndash;W32, net &#3647;). <b>SQ1 the anchor at &#3647;271.7k</b>, essentially flat. <b>Warehouse HQ spiked to &#3647;249.0k</b> in W32 &mdash; &#3647;170.1k of that is the Siam Specialty wholesale order, not retail demand. Fashion Island eased to &#3647;157.9k (&minus;6% vs W31). Vending ticked up modestly. &#9888; <b>Central Ladprao and ACT Westgate both posted &#3647;0 across all three weeks</b> &mdash; Ladprao has been dark since mid-July; Westgate hasn't traded since 31 May.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REVENUE BY MARKETPLACE -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Revenue by marketplace <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; last 3 weeks (W30&ndash;W32, net &#3647;; online channels)</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:11px;">
+    <tr style="color:#8a8a93;font-size:10px;"><td>Marketplace</td><td align="right">W30</td><td align="right">W31</td><td align="right">W32</td><td align="right">Trend</td><td align="right">Orders</td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">Shopee</td><td align="right">71,380</td><td align="right">23,742</td><td align="right" style="font-weight:600;color:#1f7a55;">56,414</td><td align="right" style="color:#1f9d57;">&#9650;</td><td align="right">90</td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#2b2b33;">TikTok Shop</td><td align="right">0</td><td align="right">1,308</td><td align="right" style="font-weight:600;color:#b3261e;">514</td><td align="right" style="color:#d6453a;">&#9660;</td><td align="right">1</td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #f0eee9;"><td style="padding:4px 2px;font-weight:600;color:#8a8a93;">Lazada</td><td align="right">0</td><td align="right">0</td><td align="right" style="font-weight:600;color:#8a8a93;">0</td><td align="right" style="color:#8a8a93;">&mdash;</td><td align="right">0</td></tr>
+    
+  </table>
+  <div style="font-size:11px;color:#8a8a93;margin-top:8px;">Shopee rebounded to &#3647;56,414 in W32 (90 orders) after a soft W31. TikTok Shop stayed thin (&#3647;514, 1 order) and trending down. Lazada remains inactive (&#3647;0 all 3 weeks). Own-website/Shopify orders ride into the Warehouse HQ branch row above, not shown here.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- CATEGORY MIX -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;">Category mix &middot; Collectables vs the rest</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:14px;">Collectables = premium 100/200/300/400/1000% figures. Trailing 4 weeks.</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:13px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left" style="padding:6px 0;">Category</th><th align="right">SKUs</th><th align="right">Units</th><th align="right">Net</th><th align="right">% sales</th><th align="right">ASP</th><th align="right">GP%</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Collectables (100/200/400%)</td><td align="right">23</td><td align="right">110</td><td align="right" style="font-weight:600;">&#3647;233,850</td><td align="right">10.3%</td><td align="right">&#3647;2,126</td><td align="right" style="color:#c43b27;">40.2%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">The rest (blind box / plush / KC)</td><td align="right">297</td><td align="right">6,684</td><td align="right" style="font-weight:600;">&#3647;2,042,433</td><td align="right">89.7%</td><td align="right">&#3647;306</td><td align="right" style="color:#c43b27;">48.6%</td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:10px;">Trailing 4 weeks (15 Jul&ndash;12 Aug). Collectables are 10.3% of revenue but carry the <b>lower margin this period</b> (40.2% vs 48.6% for the rest) &mdash; both segments sit below the 50% GP watch line.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- REORDER NOW -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;border:2px solid #F27061;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;"><span style="display:inline-block;width:9px;height:9px;background:#F27061;border-radius:50%;vertical-align:middle;"></span> Reorder now: fast movers, low stock, nothing on order</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:14px;">Retail/e-commerce velocity over the last 5 weeks (W29&ndash;W33). Cover = stock &divide; 4-wk weekly avg.</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="right">W29</th><th align="right">W30</th><th align="right">W31</th><th align="right">W32</th><th align="right">W33</th><th align="right">Stock</th><th align="right">Cover</th><th align="right">Action</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Fuggler Keyboard Cap Blind Box</td><td align="right">0</td><td align="right">30</td><td align="right">77</td><td align="right">298</td><td align="right">35</td><td align="right" style="color:#c43b27;">30</td><td align="right">0.3w</td><td align="right"><span style="background:#e3f5ec;color:#1f9d57;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">REORDER&#8593;</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Fun Cube Squishy [ Blue ]</td><td align="right">0</td><td align="right">5</td><td align="right">27</td><td align="right">17</td><td align="right">4</td><td align="right" style="color:#c43b27;">10</td><td align="right">0.8w</td><td align="right"><span style="background:#e3f5ec;color:#1f9d57;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">REORDER</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Lollipoppi Bag Charm Plush Keychain Blind Box</td><td align="right">17</td><td align="right">12</td><td align="right">3</td><td align="right">27</td><td align="right">9</td><td align="right" style="color:#2b2b33;">20</td><td align="right">1.6w</td><td align="right"><span style="background:#e3f5ec;color:#1f9d57;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">REORDER</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Squeezy Bear Squishy [ Pink ]</td><td align="right">4</td><td align="right">4</td><td align="right">25</td><td align="right">13</td><td align="right">8</td><td align="right" style="color:#2b2b33;">20</td><td align="right">1.6w</td><td align="right"><span style="background:#e3f5ec;color:#1f9d57;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">REORDER</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Fuggler Sassy Cuties Squad Plush Keychain Blind Box</td><td align="right">19</td><td align="right">33</td><td align="right">41</td><td align="right">32</td><td align="right">0</td><td align="right" style="color:#2b2b33;">45</td><td align="right">1.7w</td><td align="right"><span style="background:#e3f5ec;color:#1f9d57;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">REORDER</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Lulu The Piggy Holiday Lu Light Up Figure Blind Box</td><td align="right">0</td><td align="right">36</td><td align="right">75</td><td align="right">45</td><td align="right">25</td><td align="right" style="color:#2b2b33;">82</td><td align="right">1.8w</td><td align="right"><span style="background:#fbeecd;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">SMALL BUY</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Monday Bruce Cuddle Hipper Figure Blind Box</td><td align="right">0</td><td align="right">0</td><td align="right">15</td><td align="right">57</td><td align="right">4</td><td align="right" style="color:#2b2b33;">37</td><td align="right">1.9w</td><td align="right"><span style="background:#fbeecd;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">SMALL BUY</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Lulu The Piggy Decorative Mini Figure Blind Box ( 3 Pieces )</td><td align="right">21</td><td align="right">15</td><td align="right">15</td><td align="right">17</td><td align="right">10</td><td align="right" style="color:#2b2b33;">34</td><td align="right">2.4w</td><td align="right"><span style="background:#fbeecd;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">SMALL BUY</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Cat Hug Plush Keychain Blind Box</td><td align="right">14</td><td align="right">25</td><td align="right">28</td><td align="right">43</td><td align="right">5</td><td align="right" style="color:#2b2b33;">61</td><td align="right">2.4w</td><td align="right"><span style="background:#fbeecd;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">SMALL BUY</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Naruto Shippudan Swift Wind Cute Ninja Sitting Figure Blind Box</td><td align="right">0</td><td align="right">8</td><td align="right">28</td><td align="right">28</td><td align="right">7</td><td align="right" style="color:#2b2b33;">43</td><td align="right">2.4w</td><td align="right"><span style="background:#fbeecd;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">SMALL BUY</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;font-weight:500;">Upset Duck Stop The Spiral Duck Blind Box</td><td align="right">29</td><td align="right">51</td><td align="right">46</td><td align="right">24</td><td align="right">6</td><td align="right" style="color:#2b2b33;">85</td><td align="right">2.7w</td><td align="right"><span style="background:#fbeecd;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">WATCH</span></td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:12px;">Retail/e-com velocity, W29&ndash;W33 (W33 partial). <b>Fuggler Keyboard Cap is the standout</b> &mdash; 0.3-week cover against triple-digit weekly demand; a PO is already in flight (POACT260800004, see Purchasing below). Fun Cube Squishy [Blue] is also under 1 week. Lollipoppi Bag Charm and Squeezy Bear [Pink] both sit near 1.6 weeks.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- TOP MOVERS -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Top 20 sellers by units &middot; last 2 weeks (W31 + W32) <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; retail only, wholesale excluded</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;table-layout:fixed;">
+    <colgroup><col style="width:34%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:7%"><col style="width:9%"><col style="width:9%"><col style="width:9%"></colgroup>
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="right">Stock</th><th align="right">W31</th><th align="right">W32</th><th align="right">2-wk</th><th align="right">/day</th><th align="right">Net &#3647;</th><th align="right">GP &#3647;</th><th align="right">GP%</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Fuggler Keyboard Cap Blind Box</td><td align="right" style="color:#c43b27;">30</td><td align="right">77</td><td align="right" style="color:#1f7a55;">298</td><td align="right" style="font-weight:600;">375</td><td align="right" style="font-weight:600;">26.8</td><td align="right">68,061</td><td align="right">27,953</td><td align="right" style="color:#c43b27;">41.1%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Lulu The Piggy Holiday Lu Light Up Figure Blind Box</td><td align="right" style="color:#2b2b33;">82</td><td align="right">75</td><td align="right" style="color:#b3261e;">45</td><td align="right" style="font-weight:600;">120</td><td align="right" style="font-weight:600;">8.6</td><td align="right">41,806</td><td align="right">20,421</td><td align="right" style="color:#c43b27;">48.8%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Fuggler Alley Cat Plush Keychain Blind Box</td><td align="right" style="color:#2b2b33;">96</td><td align="right">63</td><td align="right" style="color:#b3261e;">51</td><td align="right" style="font-weight:600;">114</td><td align="right" style="font-weight:600;">8.1</td><td align="right">43,569</td><td align="right">22,602</td><td align="right" style="color:#1f7a55;">51.9%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Upset Duck X Care Bears By Your Side Hipper Blind Box</td><td align="right" style="color:#2b2b33;">187</td><td align="right">21</td><td align="right" style="color:#1f7a55;">87</td><td align="right" style="font-weight:600;">108</td><td align="right" style="font-weight:600;">7.7</td><td align="right">21,373</td><td align="right">10,674</td><td align="right" style="color:#c43b27;">49.9%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Upset Duck Status Display Duck Hipper Blind Box</td><td align="right" style="color:#2b2b33;">175</td><td align="right">47</td><td align="right" style="color:#b3261e;">46</td><td align="right" style="font-weight:600;">93</td><td align="right" style="font-weight:600;">6.6</td><td align="right">17,157</td><td align="right">9,447</td><td align="right" style="color:#1f7a55;">55.1%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Fuggler Sassy Cuties Squad Plush Keychain Blind Box</td><td align="right" style="color:#c43b27;">45</td><td align="right">41</td><td align="right" style="color:#b3261e;">32</td><td align="right" style="font-weight:600;">73</td><td align="right" style="font-weight:600;">5.2</td><td align="right">30,587</td><td align="right">16,930</td><td align="right" style="color:#1f7a55;">55.4%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Monday Bruce Cuddle Hipper Figure Blind Box</td><td align="right" style="color:#c43b27;">37</td><td align="right">15</td><td align="right" style="color:#1f7a55;">57</td><td align="right" style="font-weight:600;">72</td><td align="right" style="font-weight:600;">5.1</td><td align="right">13,019</td><td align="right">7,185</td><td align="right" style="color:#1f7a55;">55.2%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Cat Hug Plush Keychain Blind Box</td><td align="right" style="color:#2b2b33;">61</td><td align="right">28</td><td align="right" style="color:#1f7a55;">43</td><td align="right" style="font-weight:600;">71</td><td align="right" style="font-weight:600;">5.1</td><td align="right">33,673</td><td align="right">19,323</td><td align="right" style="color:#1f7a55;">57.4%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Upset Duck Stop The Spiral Duck Blind Box</td><td align="right" style="color:#2b2b33;">85</td><td align="right">46</td><td align="right" style="color:#b3261e;">24</td><td align="right" style="font-weight:600;">70</td><td align="right" style="font-weight:600;">5.0</td><td align="right">12,945</td><td align="right">6,815</td><td align="right" style="color:#1f7a55;">52.6%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Upset Duck X Care Bears Heartful Moments Plush Keychain Blind Box</td><td align="right" style="color:#2b2b33;">339</td><td align="right">31</td><td align="right" style="color:#b3261e;">28</td><td align="right" style="font-weight:600;">59</td><td align="right" style="font-weight:600;">4.2</td><td align="right">22,751</td><td align="right">12,141</td><td align="right" style="color:#1f7a55;">53.4%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Naruto Shippudan Swift Wind Cute Ninja Sitting Figure Blind Box</td><td align="right" style="color:#c43b27;">43</td><td align="right">28</td><td align="right" style="color:#1f7a55;">28</td><td align="right" style="font-weight:600;">56</td><td align="right" style="font-weight:600;">4.0</td><td align="right">18,706</td><td align="right">8,980</td><td align="right" style="color:#c43b27;">48.0%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Fuggler 6th Generation Plush Keychain Blind Box</td><td align="right" style="color:#2b2b33;">121</td><td align="right">26</td><td align="right" style="color:#b3261e;">19</td><td align="right" style="font-weight:600;">45</td><td align="right" style="font-weight:600;">3.2</td><td align="right">15,846</td><td align="right">7,965</td><td align="right" style="color:#1f7a55;">50.3%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Fun Cube Squishy [ Blue ]</td><td align="right" style="color:#c43b27;">10</td><td align="right">27</td><td align="right" style="color:#b3261e;">17</td><td align="right" style="font-weight:600;">44</td><td align="right" style="font-weight:600;">3.1</td><td align="right">12,131</td><td align="right">7,353</td><td align="right" style="color:#1f7a55;">60.6%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Squeezy Bear Squishy [ Purple ]</td><td align="right" style="color:#c43b27;">15</td><td align="right">32</td><td align="right" style="color:#b3261e;">11</td><td align="right" style="font-weight:600;">43</td><td align="right" style="font-weight:600;">3.1</td><td align="right">16,447</td><td align="right">11,777</td><td align="right" style="color:#1f7a55;">71.6%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Opandee Zombie Party Series 4 Figures Blind Box</td><td align="right" style="color:#2b2b33;">365</td><td align="right">7</td><td align="right" style="color:#1f7a55;">34</td><td align="right" style="font-weight:600;">41</td><td align="right" style="font-weight:600;">2.9</td><td align="right">18,180</td><td align="right">8,447</td><td align="right" style="color:#c43b27;">46.5%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Ozai Where The Heart Lands Plush Keychain Blind Box</td><td align="right" style="color:#2b2b33;">90</td><td align="right">17</td><td align="right" style="color:#1f7a55;">23</td><td align="right" style="font-weight:600;">40</td><td align="right" style="font-weight:600;">2.9</td><td align="right">14,523</td><td align="right">6,928</td><td align="right" style="color:#c43b27;">47.7%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Bearbrick Series 50 Figure Blind Box</td><td align="right" style="color:#b5740a;">711</td><td align="right">16</td><td align="right" style="color:#1f7a55;">23</td><td align="right" style="font-weight:600;">39</td><td align="right" style="font-weight:600;">2.8</td><td align="right">6,794</td><td align="right">3,392</td><td align="right" style="color:#c43b27;">49.9%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Naruto Kittenland Plush Keychain Blind Box</td><td align="right" style="color:#c43b27;">22</td><td align="right">27</td><td align="right" style="color:#b3261e;">12</td><td align="right" style="font-weight:600;">39</td><td align="right" style="font-weight:600;">2.8</td><td align="right">14,857</td><td align="right">8,418</td><td align="right" style="color:#1f7a55;">56.7%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Squeezy Bear Squishy [ Pink ]</td><td align="right" style="color:#c43b27;">20</td><td align="right">25</td><td align="right" style="color:#b3261e;">13</td><td align="right" style="font-weight:600;">38</td><td align="right" style="font-weight:600;">2.7</td><td align="right">14,834</td><td align="right">10,707</td><td align="right" style="color:#1f7a55;">72.2%</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Mr. Bone Strange Alliance Mini 3.0 Figure Blind Box</td><td align="right" style="color:#2b2b33;">274</td><td align="right">22</td><td align="right" style="color:#b3261e;">15</td><td align="right" style="font-weight:600;">37</td><td align="right" style="font-weight:600;">2.6</td><td align="right">14,657</td><td align="right">6,077</td><td align="right" style="color:#c43b27;">41.5%</td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:12px;">Retail only, last 2 complete weeks (W31+W32); wholesale (&#3647;170,141 / 705 units / 39 SKUs / 6 orders) excluded &mdash; see reorder/purchasing context. <b>Fuggler Keyboard Cap nearly quadrupled week-on-week</b> (77&rarr;298 units) and is also this week's tightest reorder. Six of the twenty carry sub-50% GP, incl. Fuggler Keyboard Cap itself (41.1%) and Mr. Bone Strange Alliance 3.0 (41.5%).</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- NEW ARRIVALS -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">New-arrival performance <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; recent launches (overstock judged on on-hand)</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Wk</th><th align="left">Product</th><th align="right">Recvd</th><th align="right">Sold</th><th align="right">On hand</th><th align="right">Read</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:6px 4px;font-weight:600;color:#5551FE;">W31</td><td style="padding:6px 0;font-weight:500;">Picoco Cat Cuddle Hipper Blind Box</td><td align="right">216</td><td align="right">55</td><td align="right" style="color:#2b2b33;">134</td><td align="right"><span style="background:#e3f5ec;color:#1f7a55;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">HOT</span></td></tr>
+    
+  </table>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- PURCHASING: OPEN POs -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:14px;">Purchasing &mdash; on the way <span style="font-size:12px;font-weight:400;color:#8a8a93;">&middot; approved POs only, FX-converted</span></div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="left">PO</th><th align="right">Qty</th><th align="right">THB value</th><th align="right">Flag</th></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Upset Duck Status Display Duck Hipper Blind Box</td><td style="padding:5px 2px;">POACT251200065</td><td align="right">384</td><td align="right">217,836</td><td align="right"><span style="background:#e3f5ec;color:#1f7a55;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">OK</span></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Lollipoppi Bag Charm Plush Keychain Blind Box</td><td style="padding:5px 2px;">POACT260800008</td><td align="right">640</td><td align="right">153,303</td><td align="right"><span style="background:#e3f5ec;color:#1f7a55;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">OK</span></td></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Qmsv Mini Hi-&nu; Gundam Figure Blind Box</td><td style="padding:5px 2px;">POACT260800005</td><td align="right">320</td><td align="right">86,210</td><td align="right"><span style="background:#fde3df;color:#c43b27;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">0 SOLD</span></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Fuggler Keyboard Cap Blind Box</td><td style="padding:5px 2px;">POACT260800004</td><td align="right">384</td><td align="right">41,308</td><td align="right"><span style="background:#e3f5ec;color:#1f7a55;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">OK</span></td></tr>
+    
+    <tr style="background:#fff8ec;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Bearbrick Oscar The Grouch 400%</td><td style="padding:5px 2px;">POACT260400017</td><td align="right">10</td><td align="right">40,686</td><td align="right"><span style="background:#fbeecd;color:#b5740a;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">NEW</span></td></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">[ Preorder ] Squidward Costume Plush Keychain Blind Box</td><td style="padding:5px 2px;">POACT260800006</td><td align="right">144</td><td align="right">39,863</td><td align="right"><span style="background:#fde3df;color:#c43b27;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">0 SOLD</span></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Naruto Shippuden Cute Animal Sit In Party Plush Keychain Blind Box</td><td style="padding:5px 2px;">POACT260800002</td><td align="right">144</td><td align="right">39,831</td><td align="right"><span style="background:#e3f5ec;color:#1f7a55;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">OK</span></td></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Upset Duck X Care Bears Secret Wish Duck Mini Figure Blind Box</td><td style="padding:5px 2px;">POACT260800010</td><td align="right">384</td><td align="right">37,552</td><td align="right"><span style="background:#fde3df;color:#c43b27;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">0 SOLD</span></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Lulu The Piggy Holiday Lu Light Up Figure Blind Box</td><td style="padding:5px 2px;">POACT260800005</td><td align="right">192</td><td align="right">34,086</td><td align="right"><span style="background:#e3f5ec;color:#1f7a55;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">OK</span></td></tr>
+    
+    <tr style="background:#ffffff;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Diesel X Dolores Collaboration Figure Blind Box</td><td style="padding:5px 2px;">POACT251200030</td><td align="right">168</td><td align="right">32,498</td><td align="right"><span style="background:#e3f5ec;color:#1f7a55;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">OK</span></td></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Miffy Raincoat Plush Keychain Blind Box</td><td style="padding:5px 2px;">POACT260800003</td><td align="right">144</td><td align="right">32,147</td><td align="right"><span style="background:#fde3df;color:#c43b27;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">0 SOLD</span></td></tr>
+    
+    <tr style="background:#fdeeec;border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Chaosbaby Bright Arbiter</td><td style="padding:5px 2px;">POACT250600020</td><td align="right">5</td><td align="right">24,869</td><td align="right"><span style="background:#fde3df;color:#c43b27;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">OLD &middot; CONSIGN</span></td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:12px;">Approved POs only, FX-converted at PO exchange rate; showing the 12 highest-value of 811 open PO lines (&#3647;3.76M total open). &#9888; <b>4 lines above have ZERO lifetime sales</b> on the item (Qmsv Gundam, Squidward Costume, Care Bears Secret Wish, Miffy Raincoat) &mdash; reconsider before these land. <b>Chaosbaby Bright Arbiter</b> (POACT250600020, Pony on Wheel intercompany) has sat open since mid-2025 with just 1 unit ever sold &mdash; cancel or return candidate.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- DEAD STOCK -->
+<tr><td style="background:#ffffff;border-radius:12px;padding:22px 26px;">
+  <div style="font-size:17px;font-weight:600;margin-bottom:4px;">Dead stock &mdash; 0 sales in 4 weeks</div>
+  <div style="font-size:13px;color:#8a8a93;margin-bottom:12px;">Owned (clear) first; consignment &amp; intercompany (return) summarised below.</div>
+
+  <div style="font-size:13px;font-weight:600;color:#5551FE;margin:4px 0 8px;">1. Owned / bought &mdash; to clear (5 (&ge;10u; 71 total) SKUs &middot; ~&#3647;38K shown &middot; &#3647;618K all owned dead at cost)</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:12px;border-collapse:collapse;table-layout:fixed;">
+    <colgroup><col style="width:52%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col style="width:12%"></colgroup>
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Product</th><th align="right">On hand</th><th align="right">Cost</th><th align="right">Price</th><th align="right">Stock &#3647;</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Liiaocao Mini Blessing Golden Plush Keychain (TH Ltd)</td><td align="right">76</td><td align="right">293</td><td align="right">&mdash;</td><td align="right" style="font-weight:600;">22,253</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Penguin Canvas Bag</td><td align="right">37</td><td align="right">89</td><td align="right">&mdash;</td><td align="right" style="font-weight:600;">3,287</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Momo Bunny Vibrant Wardrobe Plush Keychain Blind Box</td><td align="right">25</td><td align="right">171</td><td align="right">&mdash;</td><td align="right" style="font-weight:600;">4,282</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Panpan Mango Panpan Buddy Bag</td><td align="right">19</td><td align="right">283</td><td align="right">&mdash;</td><td align="right" style="font-weight:600;">5,381</td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:5px 2px;font-weight:500;">Disney Winnie The Pooh Happy Moment Figures</td><td align="right">14</td><td align="right">221</td><td align="right">&mdash;</td><td align="right" style="font-weight:600;">3,087</td></tr>
+    
+  </table>
+
+  <div style="font-size:13px;font-weight:600;color:#5551FE;margin:18px 0 8px;">2. Consignment &amp; intercompany &mdash; send back</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="font-size:13px;border-collapse:collapse;">
+    <tr style="color:#8a8a93;font-size:11px;"><th align="left">Type</th><th align="left">Supplier</th><th align="right">SKUs</th><th align="right">Units</th><th align="right">Action</th></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;"><span style="background:#e1f5ee;color:#0f6e56;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">CONSIGN</span></td><td style="padding:7px 0;font-weight:500;">Big Box International (Bearbrick / Astro Boy &mdash; ~&#3647;3.19M)</td><td align="right" style="font-weight:600;">86</td><td align="right" style="font-weight:600;">409</td><td align="right"><span style="background:#fdf1df;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">RETURN</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;"><span style="background:#e1f5ee;color:#0f6e56;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">CONSIGN</span></td><td style="padding:7px 0;font-weight:500;">MNT series (via V-00654)</td><td align="right" style="font-weight:600;">64</td><td align="right" style="font-weight:600;">990</td><td align="right"><span style="background:#fdf1df;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">RETURN</span></td></tr>
+    
+    <tr style="border-top:1px solid #eee;"><td style="padding:7px 0;"><span style="background:#eeedfe;color:#5551FE;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9px;">INTERCO</span></td><td style="padding:7px 0;font-weight:500;">Pony on Wheel / Toysinbox / Chaw Retailing (transfer network)</td><td align="right" style="font-weight:600;">184</td><td align="right" style="font-weight:600;">2,543</td><td align="right"><span style="background:#fdf1df;color:#b5740a;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;">RETURN</span></td></tr>
+    
+  </table>
+  <div style="font-size:12px;color:#8a8a93;margin-top:10px;">Owned dead (&ge;10u) is <b>5 SKUs / &#3647;38K</b>; full owned-dead (any on-hand) is <b>71 SKUs / ~&#3647;618K</b> &mdash; mostly a 66-SKU tail under 10 units each. Big Box consignment (~&#3647;3.19M, 409u) and MNT consignment (990u) are the largest return opportunities. &#9888; 8 single-unit premium Bearbrick/Mr. Bone pieces (~&#3647;243K combined, incl. Mr. Bone Christmas 200% at 8u/&#3647;61K) sit outside the &ge;10u table but are individually high-value.</div>
+</td></tr>
+<tr><td style="height:18px;"></td></tr>
+
+<!-- FOOTER -->
+<tr><td style="background:#efe7dc;border-radius:12px;padding:18px 24px;">
+  <div style="font-size:12px;color:#7a7468;line-height:1.7;">
+    <b style="color:#5b5547;">Channel tags.</b> INTERCO = intercompany to ACTIONCITY PTE (Singapore) &mdash; transfers, not retail demand, excluded from reorder velocity. WHOLESALE = B2B (Siam Specialty). Retail = POS + marketplaces.<br><br>
+    <b style="color:#5b5547;">Data accuracy.</b> Net sales = invoices &minus; returns (<code>-SUM(netamount)</code>); vending/marketplace cost-wash lines excluded so units, ASP and GP% are clean. GP% uses item average cost (THB base). Prices net of 7% VAT.<br><br>
+    <b style="color:#5b5547;">Source.</b> NetSuite Sub 22 (ACTIONCITY THAILAND), generated 12 Aug 2026 22:31 (Asia/Bangkok) for trading day 12 Aug 2026. Sales = posted CustInvc/CustCred, inventory items only.<br>
+    CHAW Retailing Co., Ltd. &middot; Internal management report &middot; Generated by automated routine.
+  </div>
+</td></tr>
+
+</table>
+</td></tr></table>
+</body></html>
