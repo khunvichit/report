@@ -24,10 +24,12 @@ or forecasting here (that lives in `khiang-prediction.md`).
 | Location (Khiang) | **27** — filter on `tl.location` |
 | Airport Staff entity | **51407** |
 | Walk-In entity | **48709** (everything not 51407 = Walk-In) |
-| Rice menu allow-list | `K008, K013, K016, K017, K037, K038, K039, K040, K041, K042, K043, K044, K045, K046, K047` |
+| Rice menu allow-list | `K008, K013, K016, K017, K037, K038, K039, K040, K041, K042, K043, K044, K045, K046, K047` **+ soup-bundle SKUs (live 2026-08-16): `K064, K065, K066, K067, K068, K069, K070, K071, K072, K073, K074, K075, K076, K077`** |
+| Noodle mains | `K014, K015, K062` + bundles `K078, K079` |
+| New snacks (Aug-16 menu) | `K057, K060, K061` |
 | POS discount item | `POS_DISCOUNT` |
-| Staff-10% promo rate | `-9.81` (rice) ; egg add-on `-1.68` |
-| ฿50 drink-set promo rate | `-16.20` (drink) ; egg add-on `-5.30` |
+| Staff-10% promo rate | `-9.81` (OLD-price rice) ; egg add-on `-1.68` — **new bundle prices produce NEW rate values; until re-pinned, classify staff-discount as: any negative POS_DISCOUNT rate NOT in the set family** |
+| ฿50 drink-set promo rate | `-16.20` (drink) ; egg add-on `-5.30` ; multi-set `-32.39/-48.59/...` — **re-verify against bundle pricing after 2026-08-16** |
 | Target | **฿40,000 / day ex-VAT** (confirmed 2026-07-30 — VAT excluded, discounts already net) |
 
 ## Date tokens (computed at runtime — NEVER queried, NEVER hardcoded)
@@ -406,9 +408,13 @@ WHERE t.trandate BETWEEN TO_DATE('{PW_START}','YYYY-MM-DD') AND TO_DATE('{PREV_D
   AND t.type = 'CustInvc' AND tl.mainline = 'F' AND tl.location = 27 AND tl.subsidiary = 12
   AND tl.netamount < 0
   AND TO_CHAR(t.createddate,'HH24') = '12'
-  AND i.itemid IN ('K008','K013','K014','K015','K016','K017','K018','K019','K037','K038','K039','K040','K041','K042','K043','K044','K045','K046','K047')
+  AND i.itemid IN ('K008','K013','K014','K015','K016','K017','K018','K019','K037','K038','K039','K040','K041','K042','K043','K044','K045','K046','K047','K062','K064','K065','K066','K067','K068','K069','K070','K071','K072','K073','K074','K075','K076','K077','K078','K079')
 ```
-Derive: `pw_noon_bench = round(noon_qty / days)`.
+Derive: `pw_noon_bench = round(noon_qty / days)`. Same mains list applies to the yesterday value
+from Query E2 (E2 uses LIKE 'K%' so bundles are already included — filter to this list client-side).
+> NOTE 2026-08-16: soup-bundle SKUs K064–K079 went live (price increase packaged as
+> "dish + clear soup"). Old codes still sell in parallel (mostly staff). FC% static table does not
+> yet cover bundles — treat FC as TBC until bundle costs (dish + ~฿4 soup portion) are added.
 
 ### Price-Watch derivation (yesterday values — NO new queries, reuse A / D / E2)
 ```
