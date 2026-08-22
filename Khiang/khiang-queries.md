@@ -24,7 +24,7 @@ or forecasting here (that lives in `khiang-prediction.md`).
 | Location (Khiang) | **27** — filter on `tl.location` |
 | Airport Staff entity | **51407** |
 | Walk-In entity | **48709** (everything not 51407 = Walk-In) |
-| Rice menu allow-list | `K008, K013, K016, K017, K037, K038, K039, K040, K041, K042, K043, K044, K045, K046, K047` **+ soup-bundle SKUs (live 2026-08-16): `K064, K065, K066, K067, K068, K069, K070, K071, K072, K073, K074, K075, K076, K077`** |
+| Rice menu allow-list | **ONE list, use ALL of it everywhere "rice" is filtered (incl. top10_rice + group digest):** `K008, K013, K016, K017, K037, K038, K039, K040, K041, K042, K043, K044, K045, K046, K047, K064, K065, K066, K067, K068, K069, K070, K071, K072, K073, K074, K075, K076, K077` (K064–K077 = soup bundles, live 2026-08-16 — these are now the MAIN sellers) |
 | Noodle mains | `K014, K015, K062` + bundles `K078, K079` |
 | New snacks (Aug-16 menu) | `K057, K060, K061` |
 | POS discount item | `POS_DISCOUNT` |

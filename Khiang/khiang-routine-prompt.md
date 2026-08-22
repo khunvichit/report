@@ -90,8 +90,9 @@ Do NOT send with unresolved tokens.
 ## 8. Send
 - EMAIL: always (after completeness). manual-test → owner only. Body = contents of `email.html`.
 - GROUP: fires DAILY (not anomaly-gated), scheduled mode only. Primary chat_id (Khiang), fallback
-  (Quality) on failure. Daily sales digest: net sales, avg ticket, MTD avg, 30d avg, Top 10 rice menu
-  (per `khiang-delivery.md`). No CCTV framing, no task.
+  (Quality) on failure. Daily sales digest: net sales, avg ticket, MTD avg, 30d avg, **Top 10 rice
+  menu — MANDATORY section, rice list INCLUDES soup bundles K064–K077** (per `khiang-delivery.md`
+  hard rule: verify the 🍚 block exists with ≥1 line before sending; never send the digest without it).
 
 ## 9. Failure path (fail loud)
 On any hard stop or channel hard-failure: DM owner (vichit@chaw.co.th) / post failure group with which

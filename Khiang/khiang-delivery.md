@@ -47,9 +47,16 @@ MTD avg: ฿{avg_mtd}/day  ·  30d avg: ฿{avg_30d}/day
 ขอบคุณครับ 🙏
 ```
 - `rice_top10_lines`: one line per rice-menu item from the Top-10 Rice list, e.g.
-  `1. K037 ข้าวผัดกะเพราหมูสับ — 77 (-28%)` → `{rank}. {itemid} {name} — {qty} ({badge_label})`.
-  Build from the SAME data as the email's `top10_rice` repeat (Query B filtered to the rice allow-list,
-  ranked by qty). If fewer than 10 rice items sold, list what exists; if none, `"— ไม่มีข้อมูล"`.
+  `1. K064 ข้าวกะเพราหมูสับ+ซุปใส — 37 (+12%)` → `{rank}. {itemid} {name} — {qty} ({badge_label})`.
+  Build from the SAME data as the email's `top10_rice` repeat: Query B filtered to the FULL rice
+  allow-list in `khiang-queries.md` — which INCLUDES the soup bundles K064–K077 (the main sellers
+  since 2026-08-16) — ranked by qty. If fewer than 10 rice items sold, list what exists; if none,
+  `"— ไม่มีข้อมูล"`.
+- **HARD RULE: the 🍚 Top 10 block is REQUIRED in every group message.** Never omit the section.
+  Before sending, verify the message contains the `🍚 Top 10 เมนูข้าว` header AND at least 1 line
+  under it (or the explicit `— ไม่มีข้อมูล`). If `rice_top10_lines` came out empty while `top10_rice`
+  in the email has rows, the filter list is wrong — rebuild from the full allow-list, do not send
+  the digest without it.
 - Fires every day regardless of `anomaly_count`. If the digest send fails on primary, retry fallback.
 
 > NOTE: `report_day_th` (Thai weekday) is derived from REPORT_DATE in the routine.
