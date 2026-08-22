@@ -1,118 +1,1462 @@
 {
-  "scalars": {
-    "report_date_display": "10 Jun 2026", "report_weekday": "Wed", "iso_week": "24",
-    "w_minus1": "23", "w_minus2": "22", "w_minus3": "21", "w_minus4": "20",
-    "mode_badge": "AS-OF NOW", "mode_badge_color": "#b5740a",
-    "day_net": "99,211", "day_wow_pct": "65.8% (wholesale-driven)", "day_wow_arrow": "&#9650;", "day_wow_color": "#1f9d57",
-    "day_bills": "54", "day_units": "390", "day_bills_split": "50 retail + 4 wholesale · 390 units", "day_ticket": "535",
-    "wtd_net": "188,832", "wtd_days": "3", "wtd_per_day": "62,944",
-    "best_today_list": "Retail: Lipu Friends Make My Day 6 · Upset Duck Status 5  —  plus a Siam Specialty WHOLESALE order (309 units, ฿72,439)",
-    "today_branch_note": "Warehouse HQ ฿73,691 is the Siam Specialty wholesale order — retail there was only ฿1,252 (3 bills). Vending machines, E-Commerce & ACT Westgate: no sales posted today yet.",
-    "week_note": "W24 is week-to-date (3 days, incl. today's ฿72.4K wholesale). W22 ฿356,866 reflects ฿48K of returns booked that week; the underlying retail run-rate is ~฿380–410k/week (W23 ฿382,774).",
-    "branch_note": "Warehouse HQ ฿80,682 is the Siam Specialty wholesale order booking (19 bills, ฿4,247 ticket) — not a store surge. Real store leader = Siam Square One. Bangkapi 2 vending and ACT Westgate dark this week.",
-    "cat_note": "Collectables ~9% of revenue from ~1% of units (ASP ฿2,496); episodic, spikes only on premium drops. GP slipping under 50% — watch premium pricing.",
-    "reorder_note": "W24 is a 3-day partial, retail-only. Lulu Scented is critical — 8 units, 0.3w cover, sustained 20–35/wk. Disney Pony cover easing as it cools.",
-    "top_note": "W24 column includes today's Siam Specialty wholesale drop — Opandee S4, Upset Duck Status, Oyo and Opandee Lucky are inflated by it. True retail velocity is in the reorder section (wholesale excluded).",
-    "po_note": "Approved POs only — pending-approval &amp; rejected POs are excluded. (The earlier Upset Duck Mini Wishlist PO POACT260500021 is no longer an open approved PO — dropped.) Action: return the old Bearbrick Series 44/49 consignment; hold the zero-selling Sanrio/Kuromi PO POACT260300012. THB values FX-converted; see data-accuracy note.",
-    "dead_owned_skus": "12", "dead_owned_value": "96K",
-    "dead_note": "Big Box ฿3.5M is consignment (not ActionCity cash) but holds shelf/display space — priority return. (Dead-stock pull: 8 Jun; stable.)",
-    "generated_at": "10 Jun 2026, intraday", "footer_cchaw": "CHAW Retailing Co., Ltd. · Internal management report · Automated routine (manual generation, intraday)."
-  },
-  "sections": { "exec_insight": true, "best_today": true },
-  "repeats": {
-    "today_branch_rows": [
-      {"tb_bg": "#fff8ec", "tb_color": "#2b2b33", "tb_name": "Warehouse HQ (Liberty)", "tb_net": "73,691", "tb_bills": "7", "tb_ticket": "417", "tb_flag": "<span style=\"background:#fbeecd;color:#b5740a;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;\">WHOLESALE</span>"},
-      {"tb_bg": "#ffffff", "tb_color": "#2b2b33", "tb_name": "Siam Square One", "tb_net": "12,538", "tb_bills": "23", "tb_ticket": "545", "tb_flag": ""},
-      {"tb_bg": "#ffffff", "tb_color": "#2b2b33", "tb_name": "Fashion Island", "tb_net": "6,884", "tb_bills": "12", "tb_ticket": "574", "tb_flag": ""},
-      {"tb_bg": "#ffffff", "tb_color": "#2b2b33", "tb_name": "Central Ladprao", "tb_net": "6,097", "tb_bills": "12", "tb_ticket": "508", "tb_flag": ""}
-    ],
-    "insight_rows": [
-      {"insight": "<b>Today ฿99,211 is mostly wholesale:</b> ฿72,439 was a Siam Specialty B2B order (4 bills, 309 units) booked to Warehouse HQ; retail store demand was ฿26,772 across 50 bills. The day's spike is a drop-ship, not a store surge."},
-      {"insight": "<b>W24 week-to-date ฿188,832</b> (3 days). W23 closed clean at ฿382,774; W22 ฿356,866 was depressed by ฿48K of returns — underlying retail run-rate is steady ~฿380–410k/wk."},
-      {"insight": "Real store leader = <b>Siam Square One ฿56,409</b> (78 bills). Fashion Island and Central Ladprao both mid-week soft; online quiet so far this week (Shopee ฿8.2K, Vending ฿3.2K)."},
-      {"insight": "&#9888; <b>ACT Westgate and Bangkapi 2 vending recorded zero this week</b> — check store status / POS feed."},
-      {"insight": "<b>Reorder critical:</b> Lulu Scented down to 8 units (0.3 weeks cover) on sustained 20–35/wk demand."},
-      {"insight": "<b>Dead stock:</b> Big Box consignment ฿3.5M (78 SKUs) to return; ฿96K owned-to-clear."}
-    ],
-    "week_rows": [
-      {"wk_label": "W18", "wk_label_color": "#8a8a93", "wk_weight": "500", "wk_bar_color": "#C9C7FF", "wk_bar_pct": "68", "wk_val_color": "#2b2b33", "wk_net": "516,218"},
-      {"wk_label": "W19", "wk_label_color": "#8a8a93", "wk_weight": "500", "wk_bar_color": "#C9C7FF", "wk_bar_pct": "62", "wk_val_color": "#2b2b33", "wk_net": "468,288"},
-      {"wk_label": "W20", "wk_label_color": "#8a8a93", "wk_weight": "500", "wk_bar_color": "#C9C7FF", "wk_bar_pct": "48", "wk_val_color": "#2b2b33", "wk_net": "362,936"},
-      {"wk_label": "W21", "wk_label_color": "#8a8a93", "wk_weight": "600", "wk_bar_color": "#5551FE", "wk_bar_pct": "100", "wk_val_color": "#5551FE", "wk_net": "755,367"},
-      {"wk_label": "W22", "wk_label_color": "#8a8a93", "wk_weight": "500", "wk_bar_color": "#C9C7FF", "wk_bar_pct": "47", "wk_val_color": "#2b2b33", "wk_net": "356,866"},
-      {"wk_label": "W23", "wk_label_color": "#8a8a93", "wk_weight": "500", "wk_bar_color": "#C9C7FF", "wk_bar_pct": "51", "wk_val_color": "#2b2b33", "wk_net": "382,774"},
-      {"wk_label": "W24 (WTD)", "wk_label_color": "#2b2b33", "wk_weight": "600", "wk_bar_color": "#F27061", "wk_bar_pct": "25", "wk_val_color": "#F27061", "wk_net": "188,832"}
-    ],
-    "bu_rows": [
-      {"bu_name": "Retails", "bu_bar_color": "#5551FE", "bu_bar_pct": "100", "bu_net": "177,371", "bu_share": "93.9", "bu_wow_color": "#1f9d57", "bu_wow": "&#9650;38% *wholesale"},
-      {"bu_name": "Shopee", "bu_bar_color": "#1f9d57", "bu_bar_pct": "5", "bu_net": "8,243", "bu_share": "4.4", "bu_wow_color": "#d6453a", "bu_wow": "&#9660;2%"},
-      {"bu_name": "Vending", "bu_bar_color": "#f5a623", "bu_bar_pct": "2", "bu_net": "3,219", "bu_share": "1.7", "bu_wow_color": "#d6453a", "bu_wow": "&#9660;73%"}
-    ],
-    "branch_rows": [
-      {"br_row_bg": "#fff8ec", "br_name_color": "#2b2b33", "br_name": "Warehouse HQ (Liberty)", "br_net": "80,682", "br_bills": "19", "br_ticket": "4,247", "br_wow_color": "#8a8a93", "br_wow": "&#9650;wholesale", "br_flag": "<span style=\"background:#fbeecd;color:#b5740a;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;\">WHOLESALE</span>"},
-      {"br_row_bg": "#ffffff", "br_name_color": "#2b2b33", "br_name": "Siam Square One", "br_net": "56,409", "br_bills": "78", "br_ticket": "723", "br_wow_color": "#d6453a", "br_wow": "&#9660;25.8%", "br_flag": "store"},
-      {"br_row_bg": "#ffffff", "br_name_color": "#2b2b33", "br_name": "Central Ladprao", "br_net": "25,577", "br_bills": "35", "br_ticket": "731", "br_wow_color": "#1f9d57", "br_wow": "&#9650;18.8%", "br_flag": "store"},
-      {"br_row_bg": "#ffffff", "br_name_color": "#2b2b33", "br_name": "Fashion Island", "br_net": "22,946", "br_bills": "43", "br_ticket": "534", "br_wow_color": "#d6453a", "br_wow": "&#9660;25.3%", "br_flag": "store"},
-      {"br_row_bg": "#ffffff", "br_name_color": "#6a665e", "br_name": "IconSiam 6F &#9881;", "br_net": "1,501", "br_bills": "6", "br_ticket": "250", "br_wow_color": "#d6453a", "br_wow": "&#9660;79%", "br_flag": "vending"},
-      {"br_row_bg": "#fde7e4", "br_name_color": "#b3261e", "br_name": "Bangkapi 2 &#9881; / ACT Westgate", "br_net": "0", "br_bills": "0", "br_ticket": "—", "br_wow_color": "#b3261e", "br_wow": "0 this wk", "br_flag": "<span style=\"background:#d6453a;color:#fff;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;\">DARK</span>"}
-    ],
-    "cat_rows": [
-      {"cat_name": "Collectables (100/200/400%)", "cat_skus": "12", "cat_units": "69", "cat_net": "172,214", "cat_share": "9.1", "cat_asp": "2,496", "cat_gp_color": "#c43b27", "cat_gp": "45.8"},
-      {"cat_name": "The rest (blind box / plush / KC)", "cat_skus": "261", "cat_units": "5,956", "cat_net": "1,723,405", "cat_share": "90.9", "cat_asp": "289", "cat_gp_color": "#c43b27", "cat_gp": "39.4"}
-    ],
-    "reorder_rows": [
-      {"ro_name": "Lulu The Piggy Scented Decorative Mini BB", "ro_w4": "8", "ro_w3": "34", "ro_w2": "35", "ro_w1": "21", "ro_w0": "2", "ro_stock_color": "#c43b27", "ro_stock": "8", "ro_cover": "0.3w", "ro_act_bg": "#e3f5ec", "ro_act_color": "#1f9d57", "ro_action": "REORDER&#8593;"},
-      {"ro_name": "Disney Princess Pony Plush KC BB", "ro_w4": "14", "ro_w3": "17", "ro_w2": "26", "ro_w1": "20", "ro_w0": "4", "ro_stock_color": "#2b2b33", "ro_stock": "57", "ro_cover": "3.4w", "ro_act_bg": "#fbeecd", "ro_act_color": "#b5740a", "ro_action": "WATCH"}
-    ],
-    "top_rows": [
-      {"tp_name": "Upset Duck Status Display", "tp_stock_color": "#2b2b33", "tp_stock": "388", "tp_w1": "72", "tp_w0_color": "#8a8a93", "tp_w0": "66", "tp_2wk": "138", "tp_day": "13.8", "tp_net": "23,214", "tp_gp": "11,118", "tp_gp_color": "#c43b27", "tp_gp_pct": "47.9"},
-      {"tp_name": "Opandee Zombie Party S4", "tp_stock_color": "#b5740a", "tp_stock": "621", "tp_w1": "53", "tp_w0_color": "#8a8a93", "tp_w0": "64", "tp_2wk": "117", "tp_day": "11.7", "tp_net": "46,037", "tp_gp": "18,260", "tp_gp_color": "#c43b27", "tp_gp_pct": "39.7"},
-      {"tp_name": "Fuggler Alley Cat Plush KC", "tp_stock_color": "#2b2b33", "tp_stock": "232", "tp_w1": "62", "tp_w0_color": "#8a8a93", "tp_w0": "45", "tp_2wk": "107", "tp_day": "10.7", "tp_net": "39,264", "tp_gp": "18,734", "tp_gp_color": "#c43b27", "tp_gp_pct": "47.7"},
-      {"tp_name": "Upset Duck Stop The Spiral", "tp_stock_color": "#2b2b33", "tp_stock": "524", "tp_w1": "34", "tp_w0_color": "#8a8a93", "tp_w0": "42", "tp_2wk": "76", "tp_day": "7.6", "tp_net": "12,795", "tp_gp": "6,133", "tp_gp_color": "#c43b27", "tp_gp_pct": "47.9"},
-      {"tp_name": "Oyo Constellation Story V.2", "tp_stock_color": "#2b2b33", "tp_stock": "196", "tp_w1": "20", "tp_w0_color": "#8a8a93", "tp_w0": "53", "tp_2wk": "73", "tp_day": "7.3", "tp_net": "12,531", "tp_gp": "6,916", "tp_gp_color": "#1f7a55", "tp_gp_pct": "55.2"},
-      {"tp_name": "Upset Duck Mini Wishlist", "tp_stock_color": "#2b2b33", "tp_stock": "298", "tp_w1": "51", "tp_w0_color": "#2b2b33", "tp_w0": "8", "tp_2wk": "59", "tp_day": "5.9", "tp_net": "21,514", "tp_gp": "11,418", "tp_gp_color": "#1f7a55", "tp_gp_pct": "53.1"},
-      {"tp_name": "Opandee Lucky Zombie 13 Orphans", "tp_stock_color": "#2b2b33", "tp_stock": "271", "tp_w1": "5", "tp_w0_color": "#8a8a93", "tp_w0": "53", "tp_2wk": "58", "tp_day": "5.8", "tp_net": "12,037", "tp_gp": "4,507", "tp_gp_color": "#c43b27", "tp_gp_pct": "37.4"},
-      {"tp_name": "Upset Duck X Care Bears Be Rainbow", "tp_stock_color": "#2b2b33", "tp_stock": "120", "tp_w1": "12", "tp_w0_color": "#8a8a93", "tp_w0": "27", "tp_2wk": "39", "tp_day": "3.9", "tp_net": "17,237", "tp_gp": "6,194", "tp_gp_color": "#c43b27", "tp_gp_pct": "35.9"},
-      {"tp_name": "Fuggler Heart Care Bear Monster KC", "tp_stock_color": "#2b2b33", "tp_stock": "90", "tp_w1": "34", "tp_w0_color": "#2b2b33", "tp_w0": "3", "tp_2wk": "37", "tp_day": "3.7", "tp_net": "14,897", "tp_gp": "6,912", "tp_gp_color": "#c43b27", "tp_gp_pct": "46.4"},
-      {"tp_name": "Panpan Mini 4th Anniversary", "tp_stock_color": "#2b2b33", "tp_stock": "138", "tp_w1": "17", "tp_w0_color": "#8a8a93", "tp_w0": "19", "tp_2wk": "36", "tp_day": "3.6", "tp_net": "15,421", "tp_gp": "5,106", "tp_gp_color": "#c43b27", "tp_gp_pct": "33.1"},
-      {"tp_name": "Cat Hug Plush Keychain", "tp_stock_color": "#2b2b33", "tp_stock": "301", "tp_w1": "23", "tp_w0_color": "#2b2b33", "tp_w0": "9", "tp_2wk": "32", "tp_day": "3.2", "tp_net": "14,449", "tp_gp": "7,982", "tp_gp_color": "#1f7a55", "tp_gp_pct": "55.2"},
-      {"tp_name": "Mr. Bone Strange Alliance 3.0", "tp_stock_color": "#2b2b33", "tp_stock": "97", "tp_w1": "25", "tp_w0_color": "#2b2b33", "tp_w0": "5", "tp_2wk": "30", "tp_day": "3.0", "tp_net": "12,617", "tp_gp": "5,789", "tp_gp_color": "#c43b27", "tp_gp_pct": "45.9"},
-      {"tp_name": "Fuggler Sassy Cuties Squad KC", "tp_stock_color": "#2b2b33", "tp_stock": "101", "tp_w1": "24", "tp_w0_color": "#2b2b33", "tp_w0": "6", "tp_2wk": "30", "tp_day": "3.0", "tp_net": "12,554", "tp_gp": "6,904", "tp_gp_color": "#1f7a55", "tp_gp_pct": "55.0"},
-      {"tp_name": "Mr. Bone Agent Plush KC", "tp_stock_color": "#2b2b33", "tp_stock": "340", "tp_w1": "23", "tp_w0_color": "#2b2b33", "tp_w0": "7", "tp_2wk": "30", "tp_day": "3.0", "tp_net": "15,626", "tp_gp": "6,893", "tp_gp_color": "#c43b27", "tp_gp_pct": "44.1"},
-      {"tp_name": "Grogu Chubby Planet Series KC", "tp_stock_color": "#c43b27", "tp_stock": "43", "tp_w1": "16", "tp_w0_color": "#2b2b33", "tp_w0": "13", "tp_2wk": "29", "tp_day": "2.9", "tp_net": "10,243", "tp_gp": "5,248", "tp_gp_color": "#1f7a55", "tp_gp_pct": "51.2"},
-      {"tp_name": "Qmsv Strike & Destiny Gundam", "tp_stock_color": "#2b2b33", "tp_stock": "116", "tp_w1": "24", "tp_w0_color": "#2b2b33", "tp_w0": "1", "tp_2wk": "25", "tp_day": "2.5", "tp_net": "11,308", "tp_gp": "4,885", "tp_gp_color": "#c43b27", "tp_gp_pct": "43.2"},
-      {"tp_name": "Upset Duck X Care Bears Neon Sweetheart", "tp_stock_color": "#2b2b33", "tp_stock": "64", "tp_w1": "21", "tp_w0_color": "#2b2b33", "tp_w0": "3", "tp_2wk": "24", "tp_day": "2.4", "tp_net": "13,658", "tp_gp": "6,879", "tp_gp_color": "#1f7a55", "tp_gp_pct": "50.4"},
-      {"tp_name": "Disney Princess Pony Plush KC", "tp_stock_color": "#2b2b33", "tp_stock": "57", "tp_w1": "20", "tp_w0_color": "#2b2b33", "tp_w0": "4", "tp_2wk": "24", "tp_day": "2.4", "tp_net": "10,093", "tp_gp": "4,622", "tp_gp_color": "#c43b27", "tp_gp_pct": "45.8"},
-      {"tp_name": "Lulu Scented Decorative Mini", "tp_stock_color": "#c43b27", "tp_stock": "8", "tp_w1": "21", "tp_w0_color": "#2b2b33", "tp_w0": "2", "tp_2wk": "23", "tp_day": "2.3", "tp_net": "6,234", "tp_gp": "3,521", "tp_gp_color": "#1f7a55", "tp_gp_pct": "56.5"},
-      {"tp_name": "Cat Hug Figure Blind Box", "tp_stock_color": "#2b2b33", "tp_stock": "131", "tp_w1": "19", "tp_w0_color": "#2b2b33", "tp_w0": "3", "tp_2wk": "22", "tp_day": "2.2", "tp_net": "4,064", "tp_gp": "2,221", "tp_gp_color": "#1f7a55", "tp_gp_pct": "54.7"}
-    ],
-    "arrival_rows": [
-      {"na_wk": "W21", "na_name": "Fuggler Sassy Cuties Squad Plush KC BB", "na_recvd": "240", "na_sold": "53", "na_oh_color": "#2b2b33", "na_onhand": "101", "na_read_bg": "#e3f5ec", "na_read_color": "#1f7a55", "na_read": "PICKING UP"},
-      {"na_wk": "W20", "na_name": "Grogu Chubby Planet Series Plush KC BB", "na_recvd": "72", "na_sold": "29", "na_oh_color": "#c43b27", "na_onhand": "43", "na_read_bg": "#e3f5ec", "na_read_color": "#1f7a55", "na_read": "SELLING"},
-      {"na_wk": "W19", "na_name": "Lulu Scented Decorative Mini BB", "na_recvd": "108", "na_sold": "117", "na_oh_color": "#c43b27", "na_onhand": "8", "na_read_bg": "#e3f5ec", "na_read_color": "#1f7a55", "na_read": "HOT"},
-      {"na_wk": "W18", "na_name": "Upset Duck Mini Wishlist Plush KC BB", "na_recvd": "1,440", "na_sold": "184", "na_oh_color": "#c43b27", "na_onhand": "298", "na_read_bg": "#fde3df", "na_read_color": "#c43b27", "na_read": "OVERSTOCK"},
-      {"na_wk": "W16", "na_name": "Mr. Bone Agent Plush KC BB", "na_recvd": "864", "na_sold": "243", "na_oh_color": "#b5740a", "na_onhand": "340", "na_read_bg": "#fbeecd", "na_read_color": "#b5740a", "na_read": "WATCH"},
-      {"na_wk": "W13", "na_name": "Qmsv Strike & Destiny Gundam Figure BB", "na_recvd": "480", "na_sold": "199", "na_oh_color": "#2b2b33", "na_onhand": "116", "na_read_bg": "#fbeecd", "na_read_color": "#b5740a", "na_read": "BUILDING"}
-    ],
-    "po_rows": [
-      {"po_row_bg": "#fdeeec", "po_name": "Bearbrick Series 44 / 49 BB", "po_num": "POACT250800059", "po_qty": "192", "po_value": "consignment", "po_flag_bg": "#fde3df", "po_flag_color": "#c43b27", "po_flag": "OLD · CONSIGN"},
-      {"po_row_bg": "#fdeeec", "po_name": "Sanrio Fluffy / Kuromi Cable Phone-chain BB", "po_num": "POACT260300012", "po_qty": "240", "po_value": "~฿58,000", "po_flag_bg": "#fde3df", "po_flag_color": "#c43b27", "po_flag": "0 SOLD"},
-      {"po_row_bg": "#ffffff", "po_name": "Mr. Bone Strange Alliance 3.0 BB", "po_num": "POACT260500020", "po_qty": "324", "po_value": "฿74,729", "po_flag_bg": "#e3f5ec", "po_flag_color": "#1f7a55", "po_flag": "OK"},
-      {"po_row_bg": "#ffffff", "po_name": "Fuggler 6th Generation Plush KC BB", "po_num": "POACT260300042", "po_qty": "216", "po_value": "฿36,814", "po_flag_bg": "#e3f5ec", "po_flag_color": "#1f7a55", "po_flag": "OK"},
-      {"po_row_bg": "#ffffff", "po_name": "Panpan Bear Cafe Stories Figure BB", "po_num": "POACT260500011/012", "po_qty": "240", "po_value": "฿57,278", "po_flag_bg": "#fbeecd", "po_flag_color": "#b5740a", "po_flag": "NEW"}
-    ],
-    "dead_owned_rows": [
-      {"do_name": "Fluffy Meatball (Chaw Retailing)", "do_onhand": "78", "do_cost": "285", "do_price": "449", "do_value": "22,253"},
-      {"do_name": "Sanrio Childlike Swing Phone Chain Mini BB", "do_onhand": "96", "do_cost": "128", "do_price": "299", "do_value": "12,303"},
-      {"do_name": "Mika Planting Diary (Chaw Retailing)", "do_onhand": "76", "do_cost": "148", "do_price": "280", "do_value": "11,211"},
-      {"do_name": "Sanrio Doggie Friends Mini Phone Chain BB", "do_onhand": "96", "do_cost": "104", "do_price": "206", "do_value": "10,006"},
-      {"do_name": "Taiyaki Plush Keychain (Huizhou Baixiong)", "do_onhand": "37", "do_cost": "281", "do_price": "463", "do_value": "10,386"},
-      {"do_name": "Luna Pillow (Huizhou Baixiong)", "do_onhand": "10", "do_cost": "814", "do_price": "1,401", "do_value": "8,137"}
-    ],
-    "dead_consign_rows": [
-      {"dc_tag_bg": "#e1f5ee", "dc_tag_color": "#0f6e56", "dc_tag": "CONSIGN", "dc_supplier": "Big Box International (Bearbrick/Astro Boy/Jelilo — ~฿3.5M)", "dc_skus": "78", "dc_units": "482", "dc_action": "RETURN"},
-      {"dc_tag_bg": "#e1f5ee", "dc_tag_color": "#0f6e56", "dc_tag": "CONSIGN", "dc_supplier": "MNT series (via V-00654)", "dc_skus": "46", "dc_units": "3,713", "dc_action": "RETURN"},
-      {"dc_tag_bg": "#eeedfe", "dc_tag_color": "#5551FE", "dc_tag": "INTERCO", "dc_supplier": "Pony on Wheel TH / Toysinbox", "dc_skus": "12", "dc_units": "687", "dc_action": "RETURN"}
-    ]
-  }
+ "scalars": {
+  "report_date_display": "22 Aug 2026",
+  "report_weekday": "Sat",
+  "iso_week": "34",
+  "w_minus1": "33",
+  "w_minus2": "32",
+  "w_minus3": "31",
+  "w_minus4": "30",
+  "mode_badge": "DAILY",
+  "mode_badge_color": "#F27061",
+  "generated_at": "22 Aug 2026 22:30",
+  "day_net": "69,754",
+  "day_wow_pct": "18.4%",
+  "day_wow_arrow": "&#9660;",
+  "day_wow_color": "#d6453a",
+  "day_bills": "109",
+  "day_bills_split": "109 retail bills &middot; 214 units",
+  "day_ticket": "640",
+  "wtd_net": "677,106",
+  "wtd_days": "6",
+  "wtd_per_day": "112,851",
+  "today_branch_note": "Central Ladprao, ACT Westgate and E-Commerce posted no sales today (no rows). Central Ladprao last sold on 20 Aug (a &#3647;326k B2B order, wholesale &mdash; see BU mix note); ACT Westgate has had no sale since 31 May; E-Commerce location is no longer used (Shopify sales ride Warehouse HQ / class 8).",
+  "best_today_list": "Fuggler Keyboard Cap Blind Box (33u); Upset Duck Status Display Duck Hipper Blind Box (20u); Fuggler Alley Cat Plush Keychain Blind Box (14u); Ghody Behold My Cat Mini Figure Blind Box (12u); Monday Bruce Cuddle Hipper Figure Blind Box (11u); Lulu The Piggy Holiday Lu Light Up Figure Blind Box (8u); Mr. Bone Agent Plush Keychain Blind Box (6u); Upset Duck X Care Bears Heartful Moments Plush Keychain Blind Box (6u); Lulu The Piggy Teddy Mini Whispers Of Nature Plush Phone Charm Blind Box (6u); Fuggler Series 3 Figure Blind Box (5u)",
+  "week_note": "W28's &#3647;870k remains the outlier high (early-Jul mix); the last full week (W33) closed at &#3647;520,734 and W34 is running week-to-date at &#3647;677,106 over 6 days &mdash; but see the BU-mix note: one &#3647;326,220 wholesale invoice (20 Aug, booked to Central Ladprao, class Wholesale) accounts for most of that WTD total; underlying retail run-rate this week is materially lower once that single order is set aside.",
+  "br_w2_label": "W31",
+  "br_w1_label": "W32",
+  "br_w0_label": "W33",
+  "branch_note": "Last 3 complete weeks (W31&ndash;W33, net &#3647;). <b>Warehouse HQ's W32 spike</b> (&#3647;248,977 vs &#3647;71,432 in W33) is a &#3647;170,141 Siam Specialty wholesale order booked to that location, not store demand &mdash; stripped out, HQ ran roughly flat (~&#3647;79k W32 vs &#3647;71k W33). <b>Central Ladprao (198) and ACT Westgate (235) posted zero net sales across all three weeks.</b> Ladprao did trade &#3647;38.8k/&#3647;18.2k in the two weeks before this window (W28/W29) then went dark W30&ndash;W33, before a single &#3647;326,220 wholesale invoice landed there on 20 Aug (current WTD, outside this table). Westgate has not posted a sale since 31 May 2026 and remains an open item. E-Commerce (177) is not shown &mdash; the location has had no activity since Apr 2026; Shopify sales are booked to Warehouse HQ / class Retails instead.",
+  "marketplace_note": "Shopee growing steadily (&#3647;23.7k&rarr;57.6k&rarr;60.1k). Lazada inactive (no orders in any of the 3 weeks). TikTok Shop small and lumpy (2 orders W31, none W32, 6 orders W33). Own-website (Shopify) sales are not broken out here &mdash; they ride BU class Retails into Warehouse HQ in Revenue by branch above.",
+  "cat_note": "Collectables ~5.4% of revenue from ~0.5% of units (ASP &#3647;3,521 vs &#3647;292) &mdash; episodic, high-ticket. Both categories sit just under 50% GP (Collectables 39.7%, Rest 46.6%) &mdash; below the 50% line on both, worth a pricing/cost review trailing 4 weeks (25 Jul&ndash;22 Aug).",
+  "reorder_note": "Retail/e-commerce velocity W30&ndash;W33 plus WTD (W34, partial). <b>Fools Garden Tomato Soup</b> and <b>Sup. Pro. Manekineko</b> show NEGATIVE on-hand (&minus;32 / &minus;30) while still selling &mdash; both are oversold; treat as urgent backorders, not standard reorders, and check the inventory count. <b>Mr.pa Small Pa Waiting</b> and <b>Rilakkuma Delicious</b> sold 0 in W30&ndash;W33 then jumped to 70 / 36 units this week &mdash; likely a promo or restock event, watch before over-ordering.",
+  "top_w1_label": "W32",
+  "top_w0_label": "W33",
+  "top_note": "<b>Retail only &mdash; wholesale excluded.</b> Wholesale this period (W32+W33): <b>Siam Specialty &#3647;224,865 / 950 units across 39 SKUs</b> (7 orders) &mdash; shown here, not in the ranking. GP% below 50% on Fuggler Keyboard Cap (42.9%), Lulu Piggy Holiday Lu (48.8%), Opandee S4 (47.7%), Naruto Shippudan (48.5%) and Fuggler 6th Gen (50.0%) &mdash; worth a pricing look given their high volume.",
+  "po_note": "Approved POs only (690 open lines &middot; ~&#3647;3.60M total across all approved POs; top lines by value shown). <b>Upset Duck Status Display</b> (POACT251200065, &#3647;217,836) is booked in USD to a China vendor (Fujian 1983) that normally trades CNY &mdash; verify currency before it lands, ~6.8&times; overstatement risk if it should have been CNY. <b>Panpan Bear Cafe Stories</b> (2 POs, &#3647;57,278 combined) is booked in THB to a China vendor (Huizhou Baixiong) with zero lifetime sales &mdash; same FX-check plus reconsider need. <b>Bearbrick Godzilla</b> (Big Box, 13 Jan 2026) is 7+ months old, consignment. Five lines are brand-new SKUs with 0 lifetime sales (expected for this week's launches) &mdash; watch after first receipt. Two POs from Pony on Wheel are 8&ndash;14 months old and still open (Diesel X Dolores &#3647;32,498; Mimi Leisurely Elf &#3647;64,240) &mdash; worth a closure/cancel review regardless of category.",
+  "dead_owned_skus": "7",
+  "dead_owned_value": "41,383",
+  "dead_note": "Owned-to-clear list gated at on-hand&ge;10u (7 SKUs, ~&#3647;41,383 at cost); the full owned dead set at any on-hand is 85 SKUs / ~&#3647;666,990 (mostly a 1&ndash;9-unit premium-figure tail, see high-value exceptions below). <b>High-value exceptions</b> (&#3647;20k+ stock value despite &lt;10 units on hand): 7 single-piece Bearbrick 1000% figures (&#3647;20.8k&ndash;&#3647;67.5k each) plus <b>Mr. Bone Christmas 200%</b> (8u / &#3647;61,168). Big Box consignment (&#3647;3.10M) is the largest return opportunity and holds shelf space, not ActionCity cash. Pony on Wheel / Toysinbox intercompany dead units (2,340u / &#3647;1.16M) are pooled here because every dead SKU with Toysinbox purchase history also has Pony-on-Wheel history in this data (100% overlap) &mdash; treat as one combined intercompany bucket, notably higher than a prior ~700u reference point and worth a follow-up check with the intercompany team. No current Top-20 seller appears in the dead-stock list (sold-in-4-weeks exclusion verified).",
+  "footer_cchaw": "CHAW Retailing Co., Ltd. &middot; Internal management report &middot; Generated by automated routine."
+ },
+ "repeats": {
+  "today_branch_rows": [
+   {
+    "tb_bg": "#ffffff",
+    "tb_color": "#2b2b33",
+    "tb_name": "Siam Square One",
+    "tb_net": "40,500",
+    "tb_bills": "56",
+    "tb_ticket": "723",
+    "tb_flag": ""
+   },
+   {
+    "tb_bg": "#ffffff",
+    "tb_color": "#2b2b33",
+    "tb_name": "Fashion Island",
+    "tb_net": "27,927",
+    "tb_bills": "50",
+    "tb_ticket": "559",
+    "tb_flag": ""
+   },
+   {
+    "tb_bg": "#ffffff",
+    "tb_color": "#2b2b33",
+    "tb_name": "Warehouse HQ (Liberty)",
+    "tb_net": "1,327",
+    "tb_bills": "3",
+    "tb_ticket": "442",
+    "tb_flag": ""
+   }
+  ],
+  "week_rows": [
+   {
+    "wk_label": "W28",
+    "wk_label_color": "#8a8a93",
+    "wk_weight": "500",
+    "wk_bar_color": "#C9C7FF",
+    "wk_bar_pct": "100.0",
+    "wk_val_color": "#2b2b33",
+    "wk_net": "869,973"
+   },
+   {
+    "wk_label": "W29",
+    "wk_label_color": "#8a8a93",
+    "wk_weight": "500",
+    "wk_bar_color": "#C9C7FF",
+    "wk_bar_pct": "53.9",
+    "wk_val_color": "#2b2b33",
+    "wk_net": "469,057"
+   },
+   {
+    "wk_label": "W30",
+    "wk_label_color": "#8a8a93",
+    "wk_weight": "500",
+    "wk_bar_color": "#C9C7FF",
+    "wk_bar_pct": "51.8",
+    "wk_val_color": "#2b2b33",
+    "wk_net": "450,560"
+   },
+   {
+    "wk_label": "W31",
+    "wk_label_color": "#8a8a93",
+    "wk_weight": "500",
+    "wk_bar_color": "#C9C7FF",
+    "wk_bar_pct": "56.3",
+    "wk_val_color": "#2b2b33",
+    "wk_net": "489,665"
+   },
+   {
+    "wk_label": "W32",
+    "wk_label_color": "#8a8a93",
+    "wk_weight": "500",
+    "wk_bar_color": "#C9C7FF",
+    "wk_bar_pct": "82.0",
+    "wk_val_color": "#2b2b33",
+    "wk_net": "712,948"
+   },
+   {
+    "wk_label": "W33",
+    "wk_label_color": "#8a8a93",
+    "wk_weight": "500",
+    "wk_bar_color": "#C9C7FF",
+    "wk_bar_pct": "59.9",
+    "wk_val_color": "#2b2b33",
+    "wk_net": "520,734"
+   },
+   {
+    "wk_label": "W34 (WTD)",
+    "wk_label_color": "#2b2b33",
+    "wk_weight": "700",
+    "wk_bar_color": "#F27061",
+    "wk_bar_pct": "77.8",
+    "wk_val_color": "#2b2b33",
+    "wk_net": "677,106"
+   }
+  ],
+  "bu_rows": [
+   {
+    "bu_name": "Retails",
+    "bu_bar_color": "#5551FE",
+    "bu_bar_pct": "49.9",
+    "bu_net": "197,358",
+    "bu_orders": "325",
+    "bu_share": "29.1",
+    "bu_wow_color": "#d6453a",
+    "bu_wow": "&#9660;41.6%"
+   },
+   {
+    "bu_name": "Vending",
+    "bu_bar_color": "#8a8a93",
+    "bu_bar_pct": "5.5",
+    "bu_net": "21,572",
+    "bu_orders": "63",
+    "bu_share": "3.2",
+    "bu_wow_color": "#d6453a",
+    "bu_wow": "&#9660;55.8%"
+   },
+   {
+    "bu_name": "Wholesale",
+    "bu_bar_color": "#b5740a",
+    "bu_bar_pct": "100.0",
+    "bu_net": "395,781",
+    "bu_orders": "6",
+    "bu_share": "58.5",
+    "bu_wow_color": "#1f9d57",
+    "bu_wow": "&#9650;623.2%"
+   },
+   {
+    "bu_name": "E-Commerce",
+    "bu_bar_color": "#C9C7FF",
+    "bu_bar_pct": "2.4",
+    "bu_net": "9,538",
+    "bu_orders": "20",
+    "bu_share": "1.4",
+    "bu_wow_color": "#d6453a",
+    "bu_wow": "&#9660;42.9%"
+   },
+   {
+    "bu_name": "Shopee",
+    "bu_bar_color": "#7d79ff",
+    "bu_bar_pct": "12.2",
+    "bu_net": "48,351",
+    "bu_orders": "74",
+    "bu_share": "7.1",
+    "bu_wow_color": "#d6453a",
+    "bu_wow": "&#9660;19.6%"
+   },
+   {
+    "bu_name": "TikTok Shop",
+    "bu_bar_color": "#C9C7FF",
+    "bu_bar_pct": "1.1",
+    "bu_net": "4,505",
+    "bu_orders": "16",
+    "bu_share": "0.7",
+    "bu_wow_color": "#1f9d57",
+    "bu_wow": "&#9650;85.4%"
+   }
+  ],
+  "branch_rows": [
+   {
+    "br_row_bg": "#ffffff",
+    "br_name_color": "#2b2b33",
+    "br_name": "Siam Square One",
+    "br_w2": "269,983",
+    "br_w1": "272,424",
+    "br_w0_color": "#c43b27",
+    "br_w0": "268,606",
+    "br_trend_color": "#d6453a",
+    "br_trend": "&#9660;",
+    "br_flag": ""
+   },
+   {
+    "br_row_bg": "#ffffff",
+    "br_name_color": "#2b2b33",
+    "br_name": "Fashion Island",
+    "br_w2": "167,740",
+    "br_w1": "157,877",
+    "br_w0_color": "#c43b27",
+    "br_w0": "131,918",
+    "br_trend_color": "#d6453a",
+    "br_trend": "&#9660;",
+    "br_flag": ""
+   },
+   {
+    "br_row_bg": "#ffffff",
+    "br_name_color": "#2b2b33",
+    "br_name": "Warehouse HQ (Liberty)",
+    "br_w2": "25,589",
+    "br_w1": "248,977",
+    "br_w0_color": "#c43b27",
+    "br_w0": "71,432",
+    "br_trend_color": "#d6453a",
+    "br_trend": "&#9660;",
+    "br_flag": "<span style=\"background:#fdf1df;color:#b5740a;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;\">WHOLESALE (W32)</span>"
+   },
+   {
+    "br_row_bg": "#ffffff",
+    "br_name_color": "#2b2b33",
+    "br_name": "IconSiam 6F",
+    "br_w2": "12,579",
+    "br_w1": "18,977",
+    "br_w0_color": "#1f7a55",
+    "br_w0": "29,992",
+    "br_trend_color": "#1f9d57",
+    "br_trend": "&#9650;",
+    "br_flag": "vending"
+   },
+   {
+    "br_row_bg": "#ffffff",
+    "br_name_color": "#2b2b33",
+    "br_name": "Bangkapi 2",
+    "br_w2": "4,174",
+    "br_w1": "4,960",
+    "br_w0_color": "#1f7a55",
+    "br_w0": "7,362",
+    "br_trend_color": "#1f9d57",
+    "br_trend": "&#9650;",
+    "br_flag": "vending"
+   },
+   {
+    "br_row_bg": "#ffffff",
+    "br_name_color": "#2b2b33",
+    "br_name": "Rama 9",
+    "br_w2": "4,935",
+    "br_w1": "5,293",
+    "br_w0_color": "#1f7a55",
+    "br_w0": "6,992",
+    "br_trend_color": "#1f9d57",
+    "br_trend": "&#9650;",
+    "br_flag": "vending"
+   },
+   {
+    "br_row_bg": "#ffffff",
+    "br_name_color": "#2b2b33",
+    "br_name": "Bangkapi 1",
+    "br_w2": "4,664",
+    "br_w1": "4,235",
+    "br_w0_color": "#1f7a55",
+    "br_w0": "4,433",
+    "br_trend_color": "#1f9d57",
+    "br_trend": "&#9650;",
+    "br_flag": "vending"
+   },
+   {
+    "br_row_bg": "#fdeeec",
+    "br_name_color": "#2b2b33",
+    "br_name": "Central Ladprao",
+    "br_w2": "0",
+    "br_w1": "0",
+    "br_w0_color": "#1f7a55",
+    "br_w0": "0",
+    "br_trend_color": "#1f9d57",
+    "br_trend": "&#9650;",
+    "br_flag": "<span style=\"background:#fde3df;color:#c43b27;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;\">DARK</span>"
+   },
+   {
+    "br_row_bg": "#fdeeec",
+    "br_name_color": "#2b2b33",
+    "br_name": "ACT Westgate",
+    "br_w2": "0",
+    "br_w1": "0",
+    "br_w0_color": "#1f7a55",
+    "br_w0": "0",
+    "br_trend_color": "#1f9d57",
+    "br_trend": "&#9650;",
+    "br_flag": "<span style=\"background:#fde3df;color:#c43b27;font-size:9px;font-weight:600;padding:1px 6px;border-radius:9px;\">DARK</span>"
+   },
+   {
+    "br_row_bg": "#ffffff",
+    "br_name_color": "#2b2b33",
+    "br_name": "ActionCityHQ",
+    "br_w2": "0",
+    "br_w1": "206",
+    "br_w0_color": "#c43b27",
+    "br_w0": "0",
+    "br_trend_color": "#d6453a",
+    "br_trend": "&#9660;",
+    "br_flag": "vending"
+   }
+  ],
+  "marketplace_rows": [
+   {
+    "mp_row_bg": "#ffffff",
+    "mp_name_color": "#2b2b33",
+    "mp_name": "Shopee",
+    "mp_w2": "23,742",
+    "mp_w1": "57,629",
+    "mp_w0_color": "#1f7a55",
+    "mp_w0": "60,109",
+    "mp_trend_color": "#1f9d57",
+    "mp_trend": "&#9650;",
+    "mp_orders": "99"
+   },
+   {
+    "mp_row_bg": "#ffffff",
+    "mp_name_color": "#8a8a93",
+    "mp_name": "Lazada",
+    "mp_w2": "0",
+    "mp_w1": "0",
+    "mp_w0_color": "#8a8a93",
+    "mp_w0": "0",
+    "mp_trend_color": "#8a8a93",
+    "mp_trend": "&mdash;",
+    "mp_orders": "0"
+   },
+   {
+    "mp_row_bg": "#ffffff",
+    "mp_name_color": "#2b2b33",
+    "mp_name": "TikTok Shop",
+    "mp_w2": "1,308",
+    "mp_w1": "0",
+    "mp_w0_color": "#1f7a55",
+    "mp_w0": "2,430",
+    "mp_trend_color": "#1f9d57",
+    "mp_trend": "&#9650;",
+    "mp_orders": "6"
+   }
+  ],
+  "cat_rows": [
+   {
+    "cat_name": "Collectables (100/200/300/400/1000%)",
+    "cat_skus": "17",
+    "cat_units": "40",
+    "cat_net": "140,849",
+    "cat_share": "5.4",
+    "cat_asp": "3,521",
+    "cat_gp_color": "#c43b27",
+    "cat_gp": "39.7"
+   },
+   {
+    "cat_name": "Rest of range",
+    "cat_skus": "272",
+    "cat_units": "8435",
+    "cat_net": "2,459,810",
+    "cat_share": "94.6",
+    "cat_asp": "292",
+    "cat_gp_color": "#c43b27",
+    "cat_gp": "46.6"
+   }
+  ],
+  "reorder_rows": [
+   {
+    "ro_name": "Mr.pa Small Pa Waiting For The Tile A Stroke Of Luck  Series",
+    "ro_w4": "0",
+    "ro_w3": "0",
+    "ro_w2": "0",
+    "ro_w1": "0",
+    "ro_w0": "70",
+    "ro_stock_color": "#c43b27",
+    "ro_stock": "6",
+    "ro_cover": "0.3w",
+    "ro_act_bg": "#e3f5ec",
+    "ro_act_color": "#1f9d57",
+    "ro_action": "REORDER"
+   },
+   {
+    "ro_name": "Upset Duck Status Display Duck Hipper Blind Box",
+    "ro_w4": "44",
+    "ro_w3": "47",
+    "ro_w2": "46",
+    "ro_w1": "61",
+    "ro_w0": "69",
+    "ro_stock_color": "#2b2b33",
+    "ro_stock": "74",
+    "ro_cover": "1.3w",
+    "ro_act_bg": "#e3f5ec",
+    "ro_act_color": "#1f9d57",
+    "ro_action": "REORDER"
+   },
+   {
+    "ro_name": "Fuggler 6th Generation Plush Keychain Blind Box",
+    "ro_w4": "9",
+    "ro_w3": "26",
+    "ro_w2": "19",
+    "ro_w1": "18",
+    "ro_w0": "52",
+    "ro_stock_color": "#2b2b33",
+    "ro_stock": "63",
+    "ro_cover": "2.2w",
+    "ro_act_bg": "#fdf1df",
+    "ro_act_color": "#b5740a",
+    "ro_action": "SMALL BUY"
+   },
+   {
+    "ro_name": "Upset Duck X Care Bears By Your Side Hipper Blind Box",
+    "ro_w4": "0",
+    "ro_w3": "21",
+    "ro_w2": "87",
+    "ro_w1": "75",
+    "ro_w0": "46",
+    "ro_stock_color": "#2b2b33",
+    "ro_stock": "79",
+    "ro_cover": "1.4w",
+    "ro_act_bg": "#e3f5ec",
+    "ro_act_color": "#1f9d57",
+    "ro_action": "REORDER"
+   },
+   {
+    "ro_name": "Picoco Cat Cuddle Hipper Blind Box",
+    "ro_w4": "0",
+    "ro_w3": "0",
+    "ro_w2": "30",
+    "ro_w1": "65",
+    "ro_w0": "45",
+    "ro_stock_color": "#2b2b33",
+    "ro_stock": "39",
+    "ro_cover": "1.1w",
+    "ro_act_bg": "#e3f5ec",
+    "ro_act_color": "#1f9d57",
+    "ro_action": "REORDER"
+   },
+   {
+    "ro_name": "Ozai Where The Heart Lands Plush Keychain Blind Box",
+    "ro_w4": "13",
+    "ro_w3": "17",
+    "ro_w2": "23",
+    "ro_w1": "5",
+    "ro_w0": "44",
+    "ro_stock_color": "#2b2b33",
+    "ro_stock": "42",
+    "ro_cover": "1.9w",
+    "ro_act_bg": "#fdf1df",
+    "ro_act_color": "#b5740a",
+    "ro_action": "SMALL BUY"
+   },
+   {
+    "ro_name": "Cat Hug Plush Keychain Blind Box",
+    "ro_w4": "25",
+    "ro_w3": "28",
+    "ro_w2": "42",
+    "ro_w1": "9",
+    "ro_w0": "38",
+    "ro_stock_color": "#2b2b33",
+    "ro_stock": "22",
+    "ro_cover": "0.8w",
+    "ro_act_bg": "#e3f5ec",
+    "ro_act_color": "#1f9d57",
+    "ro_action": "REORDER"
+   },
+   {
+    "ro_name": "Rilakkuma Delicious Blind Box",
+    "ro_w4": "0",
+    "ro_w3": "0",
+    "ro_w2": "0",
+    "ro_w1": "0",
+    "ro_w0": "36",
+    "ro_stock_color": "#c43b27",
+    "ro_stock": "14",
+    "ro_cover": "1.6w",
+    "ro_act_bg": "#e3f5ec",
+    "ro_act_color": "#1f9d57",
+    "ro_action": "REORDER"
+   },
+   {
+    "ro_name": "Fools Garden Tomato Soup Figure Blind Box",
+    "ro_w4": "4",
+    "ro_w3": "5",
+    "ro_w2": "1",
+    "ro_w1": "2",
+    "ro_w0": "35",
+    "ro_stock_color": "#c43b27",
+    "ro_stock": "-32",
+    "ro_cover": "-3.0w",
+    "ro_act_bg": "#e3f5ec",
+    "ro_act_color": "#1f9d57",
+    "ro_action": "REORDER&#8593;"
+   },
+   {
+    "ro_name": "Sup. Pro. Manekineko Figure Blind Box",
+    "ro_w4": "2",
+    "ro_w3": "3",
+    "ro_w2": "5",
+    "ro_w1": "4",
+    "ro_w0": "33",
+    "ro_stock_color": "#c43b27",
+    "ro_stock": "-30",
+    "ro_cover": "-2.7w",
+    "ro_act_bg": "#e3f5ec",
+    "ro_act_color": "#1f9d57",
+    "ro_action": "REORDER&#8593;"
+   },
+   {
+    "ro_name": "Upset Duck Stop The Spiral Duck Blind Box",
+    "ro_w4": "51",
+    "ro_w3": "46",
+    "ro_w2": "24",
+    "ro_w1": "25",
+    "ro_w0": "29",
+    "ro_stock_color": "#2b2b33",
+    "ro_stock": "38",
+    "ro_cover": "1.2w",
+    "ro_act_bg": "#e3f5ec",
+    "ro_act_color": "#1f9d57",
+    "ro_action": "REORDER"
+   },
+   {
+    "ro_name": "Mr. Pa No Work Today Figure Blind Box",
+    "ro_w4": "5",
+    "ro_w3": "3",
+    "ro_w2": "3",
+    "ro_w1": "1",
+    "ro_w0": "26",
+    "ro_stock_color": "#c43b27",
+    "ro_stock": "13",
+    "ro_cover": "1.6w",
+    "ro_act_bg": "#e3f5ec",
+    "ro_act_color": "#1f9d57",
+    "ro_action": "REORDER"
+   },
+   {
+    "ro_name": "Grogu Chubby Planet Series Plush Keychain Blind Box",
+    "ro_w4": "9",
+    "ro_w3": "7",
+    "ro_w2": "8",
+    "ro_w1": "7",
+    "ro_w0": "24",
+    "ro_stock_color": "#c43b27",
+    "ro_stock": "10",
+    "ro_cover": "0.9w",
+    "ro_act_bg": "#e3f5ec",
+    "ro_act_color": "#1f9d57",
+    "ro_action": "REORDER"
+   },
+   {
+    "ro_name": "Naruto Shippudan Swift Wind Cute Ninja Sitting Figure Blind Box",
+    "ro_w4": "8",
+    "ro_w3": "28",
+    "ro_w2": "28",
+    "ro_w1": "11",
+    "ro_w0": "19",
+    "ro_stock_color": "#2b2b33",
+    "ro_stock": "19",
+    "ro_cover": "0.9w",
+    "ro_act_bg": "#e3f5ec",
+    "ro_act_color": "#1f9d57",
+    "ro_action": "REORDER"
+   },
+   {
+    "ro_name": "The Powerpuff Girls Cozy Moment Plush Keychain Blind Box",
+    "ro_w4": "20",
+    "ro_w3": "13",
+    "ro_w2": "9",
+    "ro_w1": "3",
+    "ro_w0": "18",
+    "ro_stock_color": "#2b2b33",
+    "ro_stock": "25",
+    "ro_cover": "2.3w",
+    "ro_act_bg": "#fdf1df",
+    "ro_act_color": "#b5740a",
+    "ro_action": "SMALL BUY"
+   },
+   {
+    "ro_name": "Fuggler X Spongebob Squarepants ( Spongebob ) Plush Keychain",
+    "ro_w4": "5",
+    "ro_w3": "5",
+    "ro_w2": "6",
+    "ro_w1": "3",
+    "ro_w0": "17",
+    "ro_stock_color": "#2b2b33",
+    "ro_stock": "17",
+    "ro_cover": "2.2w",
+    "ro_act_bg": "#fdf1df",
+    "ro_act_color": "#b5740a",
+    "ro_action": "SMALL BUY"
+   },
+   {
+    "ro_name": "Sanrio Family & Friends Series Plush Blind Box",
+    "ro_w4": "13",
+    "ro_w3": "1",
+    "ro_w2": "4",
+    "ro_w1": "4",
+    "ro_w0": "16",
+    "ro_stock_color": "#c43b27",
+    "ro_stock": "14",
+    "ro_cover": "2.2w",
+    "ro_act_bg": "#fdf1df",
+    "ro_act_color": "#b5740a",
+    "ro_action": "SMALL BUY"
+   },
+   {
+    "ro_name": "Sanrio Characters Sweet Style Phone Chain Mini Blind Box",
+    "ro_w4": "6",
+    "ro_w3": "2",
+    "ro_w2": "5",
+    "ro_w1": "14",
+    "ro_w0": "12",
+    "ro_stock_color": "#2b2b33",
+    "ro_stock": "19",
+    "ro_cover": "2.3w",
+    "ro_act_bg": "#fdf1df",
+    "ro_act_color": "#b5740a",
+    "ro_action": "SMALL BUY"
+   },
+   {
+    "ro_name": "Fuggler Heart Care Bear Monster Plush Keychain Blind Box",
+    "ro_w4": "21",
+    "ro_w3": "5",
+    "ro_w2": "24",
+    "ro_w1": "30",
+    "ro_w0": "5",
+    "ro_stock_color": "#2b2b33",
+    "ro_stock": "26",
+    "ro_cover": "1.6w",
+    "ro_act_bg": "#e3f5ec",
+    "ro_act_color": "#1f9d57",
+    "ro_action": "REORDER"
+   },
+   {
+    "ro_name": "Lulu The Piggy Decorative Mini Figure Blind Box ( 3 Pieces )",
+    "ro_w4": "15",
+    "ro_w3": "15",
+    "ro_w2": "17",
+    "ro_w1": "16",
+    "ro_w0": "4",
+    "ro_stock_color": "#2b2b33",
+    "ro_stock": "24",
+    "ro_cover": "1.9w",
+    "ro_act_bg": "#fdf1df",
+    "ro_act_color": "#b5740a",
+    "ro_action": "SMALL BUY"
+   }
+  ],
+  "top_rows": [
+   {
+    "tp_name": "Fuggler Keyboard Cap Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "156",
+    "tp_w1": "298",
+    "tp_w0_color": "#c43b27",
+    "tp_w0": "146",
+    "tp_2wk": "444",
+    "tp_day": "31.7",
+    "tp_net": "82,731",
+    "tp_gp": "35,528",
+    "tp_gp_color": "#c43b27",
+    "tp_gp_pct": "42.9"
+   },
+   {
+    "tp_name": "Upset Duck X Care Bears By Your Side Hipper Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "79",
+    "tp_w1": "87",
+    "tp_w0_color": "#c43b27",
+    "tp_w0": "75",
+    "tp_2wk": "162",
+    "tp_day": "11.6",
+    "tp_net": "33,185",
+    "tp_gp": "17,137",
+    "tp_gp_color": "#1f7a55",
+    "tp_gp_pct": "51.6"
+   },
+   {
+    "tp_name": "Lulu The Piggy Holiday Lu Light Up Figure Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "147",
+    "tp_w1": "45",
+    "tp_w0_color": "#1f7a55",
+    "tp_w0": "72",
+    "tp_2wk": "117",
+    "tp_day": "8.4",
+    "tp_net": "40,129",
+    "tp_gp": "19,586",
+    "tp_gp_color": "#c43b27",
+    "tp_gp_pct": "48.8"
+   },
+   {
+    "tp_name": "Upset Duck Status Display Duck Hipper Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "74",
+    "tp_w1": "46",
+    "tp_w0_color": "#1f7a55",
+    "tp_w0": "61",
+    "tp_2wk": "107",
+    "tp_day": "7.6",
+    "tp_net": "19,997",
+    "tp_gp": "11,122",
+    "tp_gp_color": "#1f7a55",
+    "tp_gp_pct": "55.6"
+   },
+   {
+    "tp_name": "Fuggler Alley Cat Plush Keychain Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "128",
+    "tp_w1": "51",
+    "tp_w0_color": "#c43b27",
+    "tp_w0": "48",
+    "tp_2wk": "99",
+    "tp_day": "7.1",
+    "tp_net": "37,650",
+    "tp_gp": "19,458",
+    "tp_gp_color": "#1f7a55",
+    "tp_gp_pct": "51.7"
+   },
+   {
+    "tp_name": "Picoco Cat Cuddle Hipper Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "39",
+    "tp_w1": "30",
+    "tp_w0_color": "#1f7a55",
+    "tp_w0": "65",
+    "tp_2wk": "95",
+    "tp_day": "6.8",
+    "tp_net": "18,071",
+    "tp_gp": "10,530",
+    "tp_gp_color": "#1f7a55",
+    "tp_gp_pct": "58.3"
+   },
+   {
+    "tp_name": "Upset Duck X Care Bears Heartful Moments Plush Keychain Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "186",
+    "tp_w1": "28",
+    "tp_w0_color": "#1f7a55",
+    "tp_w0": "54",
+    "tp_2wk": "82",
+    "tp_day": "5.9",
+    "tp_net": "32,979",
+    "tp_gp": "18,233",
+    "tp_gp_color": "#1f7a55",
+    "tp_gp_pct": "55.3"
+   },
+   {
+    "tp_name": "Monday Bruce Cuddle Hipper Figure Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "155",
+    "tp_w1": "63",
+    "tp_w0_color": "#c43b27",
+    "tp_w0": "12",
+    "tp_2wk": "75",
+    "tp_day": "5.4",
+    "tp_net": "15,027",
+    "tp_gp": "9,098",
+    "tp_gp_color": "#1f7a55",
+    "tp_gp_pct": "60.5"
+   },
+   {
+    "tp_name": "Bearbrick Series 50 Figure Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "604",
+    "tp_w1": "23",
+    "tp_w0_color": "#1f7a55",
+    "tp_w0": "47",
+    "tp_2wk": "70",
+    "tp_day": "5.0",
+    "tp_net": "12,564",
+    "tp_gp": "6,458",
+    "tp_gp_color": "#1f7a55",
+    "tp_gp_pct": "51.4"
+   },
+   {
+    "tp_name": "Opandee Zombie Party Series 4 Figures Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "339",
+    "tp_w1": "34",
+    "tp_w0_color": "#1f7a55",
+    "tp_w0": "34",
+    "tp_2wk": "68",
+    "tp_day": "4.9",
+    "tp_net": "30,853",
+    "tp_gp": "14,712",
+    "tp_gp_color": "#c43b27",
+    "tp_gp_pct": "47.7"
+   },
+   {
+    "tp_name": "Fuggler Heart Care Bear Monster Plush Keychain Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "26",
+    "tp_w1": "24",
+    "tp_w0_color": "#1f7a55",
+    "tp_w0": "30",
+    "tp_2wk": "54",
+    "tp_day": "3.9",
+    "tp_net": "22,515",
+    "tp_gp": "12,472",
+    "tp_gp_color": "#1f7a55",
+    "tp_gp_pct": "55.4"
+   },
+   {
+    "tp_name": "Lollipoppi Bag Charm Plush Keychain Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "612",
+    "tp_w1": "27",
+    "tp_w0_color": "#c43b27",
+    "tp_w0": "25",
+    "tp_2wk": "52",
+    "tp_day": "3.7",
+    "tp_net": "30,346",
+    "tp_gp": "17,725",
+    "tp_gp_color": "#1f7a55",
+    "tp_gp_pct": "58.4"
+   },
+   {
+    "tp_name": "Cat Hug Plush Keychain Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "22",
+    "tp_w1": "42",
+    "tp_w0_color": "#c43b27",
+    "tp_w0": "9",
+    "tp_2wk": "51",
+    "tp_day": "3.6",
+    "tp_net": "24,138",
+    "tp_gp": "13,830",
+    "tp_gp_color": "#1f7a55",
+    "tp_gp_pct": "57.3"
+   },
+   {
+    "tp_name": "Upset Duck Stop The Spiral Duck Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "38",
+    "tp_w1": "24",
+    "tp_w0_color": "#1f7a55",
+    "tp_w0": "25",
+    "tp_2wk": "49",
+    "tp_day": "3.5",
+    "tp_net": "9,077",
+    "tp_gp": "4,794",
+    "tp_gp_color": "#1f7a55",
+    "tp_gp_pct": "52.8"
+   },
+   {
+    "tp_name": "Fuggler Sassy Cuties Squad Plush Keychain Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "150",
+    "tp_w1": "32",
+    "tp_w0_color": "#c43b27",
+    "tp_w0": "7",
+    "tp_2wk": "39",
+    "tp_day": "2.8",
+    "tp_net": "16,351",
+    "tp_gp": "9,180",
+    "tp_gp_color": "#1f7a55",
+    "tp_gp_pct": "56.1"
+   },
+   {
+    "tp_name": "Naruto Shippudan Swift Wind Cute Ninja Sitting Figure Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "19",
+    "tp_w1": "28",
+    "tp_w0_color": "#c43b27",
+    "tp_w0": "11",
+    "tp_2wk": "39",
+    "tp_day": "2.8",
+    "tp_net": "13,137",
+    "tp_gp": "6,364",
+    "tp_gp_color": "#c43b27",
+    "tp_gp_pct": "48.4"
+   },
+   {
+    "tp_name": "Fuggler 6th Generation Plush Keychain Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "63",
+    "tp_w1": "19",
+    "tp_w0_color": "#c43b27",
+    "tp_w0": "18",
+    "tp_2wk": "37",
+    "tp_day": "2.6",
+    "tp_net": "12,987",
+    "tp_gp": "6,488",
+    "tp_gp_color": "#c43b27",
+    "tp_gp_pct": "50.0"
+   },
+   {
+    "tp_name": "Lulu The Piggy Greenhouse Mini Figure Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "177",
+    "tp_w1": "16",
+    "tp_w0_color": "#1f7a55",
+    "tp_w0": "18",
+    "tp_2wk": "34",
+    "tp_day": "2.4",
+    "tp_net": "10,458",
+    "tp_gp": "5,339",
+    "tp_gp_color": "#1f7a55",
+    "tp_gp_pct": "51.1"
+   },
+   {
+    "tp_name": "Lulu The Piggy Decorative Mini Figure Blind Box ( 3 Pieces )",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "24",
+    "tp_w1": "17",
+    "tp_w0_color": "#c43b27",
+    "tp_w0": "16",
+    "tp_2wk": "33",
+    "tp_day": "2.4",
+    "tp_net": "8,325",
+    "tp_gp": "4,297",
+    "tp_gp_color": "#1f7a55",
+    "tp_gp_pct": "51.6"
+   },
+   {
+    "tp_name": "Fuggler Baby Pinkles Series Plush Keychain Blind Box",
+    "tp_stock_color": "#2b2b33",
+    "tp_stock": "157",
+    "tp_w1": "18",
+    "tp_w0_color": "#c43b27",
+    "tp_w0": "15",
+    "tp_2wk": "33",
+    "tp_day": "2.4",
+    "tp_net": "11,595",
+    "tp_gp": "6,439",
+    "tp_gp_color": "#1f7a55",
+    "tp_gp_pct": "55.5"
+   }
+  ],
+  "arrival_rows": [
+   {
+    "na_wk": "W30",
+    "na_name": "Gum Droppable Squishy [ Blue ]",
+    "na_recvd": "264",
+    "na_sold": "49",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "31",
+    "na_read_bg": "#e3f5ec",
+    "na_read_color": "#1f9d57",
+    "na_read": "SELLING"
+   },
+   {
+    "na_wk": "W31",
+    "na_name": "Picoco Cat Cuddle Hipper Blind Box",
+    "na_recvd": "766",
+    "na_sold": "140",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "39",
+    "na_read_bg": "#fde3df",
+    "na_read_color": "#c43b27",
+    "na_read": "HOT"
+   },
+   {
+    "na_wk": "W31",
+    "na_name": "Miffy Raincoat Plush Keychain Blind Box",
+    "na_recvd": "0",
+    "na_sold": "0",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "0",
+    "na_read_bg": "#eeedfe",
+    "na_read_color": "#5551FE",
+    "na_read": "JUST IN"
+   },
+   {
+    "na_wk": "W31",
+    "na_name": "Opandee Zombie Party The Seasons Figures Blind Box",
+    "na_recvd": "184",
+    "na_sold": "14",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "13",
+    "na_read_bg": "#fdf1df",
+    "na_read_color": "#b5740a",
+    "na_read": "SLOW"
+   },
+   {
+    "na_wk": "W32",
+    "na_name": "Jujutsu Sitting Figure Blind Box",
+    "na_recvd": "0",
+    "na_sold": "0",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "0",
+    "na_read_bg": "#eeedfe",
+    "na_read_color": "#5551FE",
+    "na_read": "JUST IN"
+   },
+   {
+    "na_wk": "W32",
+    "na_name": "Jujutsu Sitting Cat Party Plush Blind Box",
+    "na_recvd": "0",
+    "na_sold": "0",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "0",
+    "na_read_bg": "#eeedfe",
+    "na_read_color": "#5551FE",
+    "na_read": "JUST IN"
+   },
+   {
+    "na_wk": "W32",
+    "na_name": "Qmsv Mini Hi-ν Gundam Figure Blind Box",
+    "na_recvd": "1000",
+    "na_sold": "26",
+    "na_oh_color": "#b5740a",
+    "na_onhand": "294",
+    "na_read_bg": "#fdf1df",
+    "na_read_color": "#b5740a",
+    "na_read": "OVERSTOCK"
+   },
+   {
+    "na_wk": "W32",
+    "na_name": "Squidward Costume Plush Keychain Blind Box",
+    "na_recvd": "472",
+    "na_sold": "13",
+    "na_oh_color": "#b5740a",
+    "na_onhand": "131",
+    "na_read_bg": "#fdf1df",
+    "na_read_color": "#b5740a",
+    "na_read": "OVERSTOCK"
+   },
+   {
+    "na_wk": "W32",
+    "na_name": "Fuggler Giant Nugget Dunkie Plush Doll",
+    "na_recvd": "18",
+    "na_sold": "0",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "6",
+    "na_read_bg": "#fdf1df",
+    "na_read_color": "#b5740a",
+    "na_read": "SLOW"
+   },
+   {
+    "na_wk": "W32",
+    "na_name": "Fuggler Giant Cod Father Plush Doll",
+    "na_recvd": "18",
+    "na_sold": "2",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "4",
+    "na_read_bg": "#fdf1df",
+    "na_read_color": "#b5740a",
+    "na_read": "SLOW"
+   },
+   {
+    "na_wk": "W32",
+    "na_name": "Fuggler Giant 3 Eyed Alien Plush Doll",
+    "na_recvd": "18",
+    "na_sold": "0",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "6",
+    "na_read_bg": "#fdf1df",
+    "na_read_color": "#b5740a",
+    "na_read": "SLOW"
+   },
+   {
+    "na_wk": "W32",
+    "na_name": "Fuggler Giant Elephant Plush Doll",
+    "na_recvd": "18",
+    "na_sold": "0",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "6",
+    "na_read_bg": "#fdf1df",
+    "na_read_color": "#b5740a",
+    "na_read": "SLOW"
+   },
+   {
+    "na_wk": "W32",
+    "na_name": "Upset Duck X Care Bears Secret Wish Duck Mini Figure Blind Box",
+    "na_recvd": "0",
+    "na_sold": "0",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "0",
+    "na_read_bg": "#eeedfe",
+    "na_read_color": "#5551FE",
+    "na_read": "JUST IN"
+   },
+   {
+    "na_wk": "W34",
+    "na_name": "Fuggler Series 4 Figure Blind Box",
+    "na_recvd": "0",
+    "na_sold": "0",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "0",
+    "na_read_bg": "#eeedfe",
+    "na_read_color": "#5551FE",
+    "na_read": "JUST IN"
+   },
+   {
+    "na_wk": "W34",
+    "na_name": "Lulu The Piggy Animal Party Series 2 Cuddly Face Plush Keychain Blind Box",
+    "na_recvd": "0",
+    "na_sold": "0",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "0",
+    "na_read_bg": "#eeedfe",
+    "na_read_color": "#5551FE",
+    "na_read": "JUST IN"
+   },
+   {
+    "na_wk": "W34",
+    "na_name": "Sanrio Overjoyed Plush Keychain Blind Box",
+    "na_recvd": "0",
+    "na_sold": "0",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "0",
+    "na_read_bg": "#eeedfe",
+    "na_read_color": "#5551FE",
+    "na_read": "JUST IN"
+   },
+   {
+    "na_wk": "W34",
+    "na_name": "Disney Cats And Dogs Good Friends Plush Keychain Blind Box",
+    "na_recvd": "0",
+    "na_sold": "0",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "0",
+    "na_read_bg": "#eeedfe",
+    "na_read_color": "#5551FE",
+    "na_read": "JUST IN"
+   },
+   {
+    "na_wk": "W34",
+    "na_name": "Magic Orb Squishy [ Orange / Purple / Blue ] (3 SKUs)",
+    "na_recvd": "0",
+    "na_sold": "0",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "0",
+    "na_read_bg": "#eeedfe",
+    "na_read_color": "#5551FE",
+    "na_read": "JUST IN"
+   },
+   {
+    "na_wk": "W34",
+    "na_name": "Astro Boy Feat. Blackpearls 200% [ Glow In The Dark ]",
+    "na_recvd": "20",
+    "na_sold": "0",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "0",
+    "na_read_bg": "#eeedfe",
+    "na_read_color": "#5551FE",
+    "na_read": "JUST IN"
+   },
+   {
+    "na_wk": "W34",
+    "na_name": "Bikini Bottom Beach Holiday Plush Keychain Blind Box",
+    "na_recvd": "0",
+    "na_sold": "0",
+    "na_oh_color": "#2b2b33",
+    "na_onhand": "0",
+    "na_read_bg": "#eeedfe",
+    "na_read_color": "#5551FE",
+    "na_read": "JUST IN"
+   }
+  ],
+  "po_rows": [
+   {
+    "po_row_bg": "#fdeeec",
+    "po_name": "Upset Duck Status Display Duck Hipper Blind Box",
+    "po_num": "POACT251200065",
+    "po_qty": "384",
+    "po_value": "217,836",
+    "po_flag_bg": "#fde3df",
+    "po_flag_color": "#c43b27",
+    "po_flag": "FX + CANCEL?"
+   },
+   {
+    "po_row_bg": "#ffffff",
+    "po_name": "Fuggler Keyboard Cap Blind Box",
+    "po_num": "POACT260800016",
+    "po_qty": "512",
+    "po_value": "55,571",
+    "po_flag_bg": "#e3f5ec",
+    "po_flag_color": "#1f9d57",
+    "po_flag": "OK"
+   },
+   {
+    "po_row_bg": "#ffffff",
+    "po_name": "Opandee Zombie Party The Seasons Figures Blind Box",
+    "po_num": "POACT260800021",
+    "po_qty": "192",
+    "po_value": "48,180",
+    "po_flag_bg": "#fdf1df",
+    "po_flag_color": "#b5740a",
+    "po_flag": "NEW"
+   },
+   {
+    "po_row_bg": "#ffffff",
+    "po_name": "Lulu The Piggy Office Series Figure Blind Box",
+    "po_num": "POACT260800018",
+    "po_qty": "192",
+    "po_value": "44,838",
+    "po_flag_bg": "#fdf1df",
+    "po_flag_color": "#b5740a",
+    "po_flag": "NEW"
+   },
+   {
+    "po_row_bg": "#ffffff",
+    "po_name": "Fuggler Heart Care Bear Monster Plush Keychain Blind Box",
+    "po_num": "POACT260800023",
+    "po_qty": "240",
+    "po_value": "44,607",
+    "po_flag_bg": "#e3f5ec",
+    "po_flag_color": "#1f9d57",
+    "po_flag": "OK"
+   },
+   {
+    "po_row_bg": "#ffffff",
+    "po_name": "Bearbrick Oscar The Grouch (Orange Fur) 400%",
+    "po_num": "POACT260400017",
+    "po_qty": "10",
+    "po_value": "40,686",
+    "po_flag_bg": "#e3f5ec",
+    "po_flag_color": "#1f9d57",
+    "po_flag": "OK"
+   },
+   {
+    "po_row_bg": "#fdeeec",
+    "po_name": "Disney Cats And Dogs Good Friends Plush Keychain Blind Box",
+    "po_num": "POACT260800022",
+    "po_qty": "144",
+    "po_value": "38,756",
+    "po_flag_bg": "#fde3df",
+    "po_flag_color": "#c43b27",
+    "po_flag": "0 SOLD"
+   },
+   {
+    "po_row_bg": "#fdeeec",
+    "po_name": "Upset Duck X Care Bears Secret Wish Duck Mini Figure Blind Box",
+    "po_num": "POACT260800010",
+    "po_qty": "384",
+    "po_value": "37,552",
+    "po_flag_bg": "#fde3df",
+    "po_flag_color": "#c43b27",
+    "po_flag": "0 SOLD"
+   },
+   {
+    "po_row_bg": "#ffffff",
+    "po_name": "Diesel X Dolores Collaboration Figure Blind Box",
+    "po_num": "POACT251200030",
+    "po_qty": "168",
+    "po_value": "32,498",
+    "po_flag_bg": "#e3f5ec",
+    "po_flag_color": "#1f9d57",
+    "po_flag": "OK"
+   },
+   {
+    "po_row_bg": "#fdeeec",
+    "po_name": "Miffy Raincoat Plush Keychain Blind Box",
+    "po_num": "POACT260800003",
+    "po_qty": "144",
+    "po_value": "32,147",
+    "po_flag_bg": "#fde3df",
+    "po_flag_color": "#c43b27",
+    "po_flag": "0 SOLD"
+   },
+   {
+    "po_row_bg": "#ffffff",
+    "po_name": "Mimi Leisurely Elf Vinyl Plush (2 POs, 10 Jun 2025)",
+    "po_num": "POACT250600009/010",
+    "po_qty": "180",
+    "po_value": "64,240",
+    "po_flag_bg": "#e3f5ec",
+    "po_flag_color": "#1f9d57",
+    "po_flag": "OK"
+   },
+   {
+    "po_row_bg": "#fdeeec",
+    "po_name": "Spiderman Brand New Day Plush Keychain Blind Box",
+    "po_num": "POACT260200033",
+    "po_qty": "96",
+    "po_value": "32,075",
+    "po_flag_bg": "#fde3df",
+    "po_flag_color": "#c43b27",
+    "po_flag": "0 SOLD"
+   },
+   {
+    "po_row_bg": "#fdeeec",
+    "po_name": "Fuggler Series 4 Figure Blind Box",
+    "po_num": "POACT260800019",
+    "po_qty": "384",
+    "po_value": "30,371",
+    "po_flag_bg": "#fde3df",
+    "po_flag_color": "#c43b27",
+    "po_flag": "0 SOLD"
+   },
+   {
+    "po_row_bg": "#ffffff",
+    "po_name": "Bearbrick x Van Gogh Museum Potato Eaters 100%&400%",
+    "po_num": "POACT260400017",
+    "po_qty": "10",
+    "po_value": "29,582",
+    "po_flag_bg": "#e3f5ec",
+    "po_flag_color": "#1f9d57",
+    "po_flag": "OK"
+   },
+   {
+    "po_row_bg": "#fdeeec",
+    "po_name": "Jujutsu Sitting Cat Party Plush Blind Box",
+    "po_num": "POACT260800029",
+    "po_qty": "144",
+    "po_value": "28,895",
+    "po_flag_bg": "#fde3df",
+    "po_flag_color": "#c43b27",
+    "po_flag": "0 SOLD"
+   },
+   {
+    "po_row_bg": "#fdeeec",
+    "po_name": "Panpan Bear Cafe Stories Figure Blind Box (2 POs)",
+    "po_num": "POACT260500011/012",
+    "po_qty": "240",
+    "po_value": "57,278",
+    "po_flag_bg": "#fde3df",
+    "po_flag_color": "#c43b27",
+    "po_flag": "FX + CANCEL?"
+   },
+   {
+    "po_row_bg": "#fdeeec",
+    "po_name": "Bearbrick Godzilla 2023 (Minus One) 100%&400%",
+    "po_num": "POACT260400016",
+    "po_qty": "10",
+    "po_value": "24,983",
+    "po_flag_bg": "#fde3df",
+    "po_flag_color": "#c43b27",
+    "po_flag": "OLD &middot; CONSIGN"
+   }
+  ],
+  "dead_owned_rows": [
+   {
+    "do_name": "Liiaocao Mini Blessing Golden Plush Keychain Thailand Limited",
+    "do_onhand": "76",
+    "do_cost": "293",
+    "do_price": "&mdash;",
+    "do_value": "22,253"
+   },
+   {
+    "do_name": "Penguin Canvas Bag",
+    "do_onhand": "37",
+    "do_cost": "89",
+    "do_price": "&mdash;",
+    "do_value": "3,287"
+   },
+   {
+    "do_name": "Fat Tiger Horse Fortune Figure Blind Box",
+    "do_onhand": "22",
+    "do_cost": "199",
+    "do_price": "&mdash;",
+    "do_value": "4,372"
+   },
+   {
+    "do_name": "Panpan Mango Panpan Buddy Bag",
+    "do_onhand": "19",
+    "do_cost": "283",
+    "do_price": "&mdash;",
+    "do_value": "5,381"
+   },
+   {
+    "do_name": "Fuggler Funny Ugly Monster Blind Box",
+    "do_onhand": "15",
+    "do_cost": "69",
+    "do_price": "&mdash;",
+    "do_value": "1,029"
+   },
+   {
+    "do_name": "Disney Winnie The Pooh Happy Moment Figures",
+    "do_onhand": "14",
+    "do_cost": "221",
+    "do_price": "&mdash;",
+    "do_value": "3,087"
+   },
+   {
+    "do_name": "Stitch Galactic Ace Wind Up Toy Figure Blind Box",
+    "do_onhand": "10",
+    "do_cost": "197",
+    "do_price": "&mdash;",
+    "do_value": "1,974"
+   }
+  ],
+  "dead_consign_rows": [
+   {
+    "dc_tag_bg": "#e1f5ee",
+    "dc_tag_color": "#0f6e56",
+    "dc_tag": "CONSIGN",
+    "dc_supplier": "Big Box International Pte Ltd (Bearbrick / premium figures) (~&#3647;3,102,308)",
+    "dc_skus": "85",
+    "dc_units": "394",
+    "dc_action": "RETURN"
+   },
+   {
+    "dc_tag_bg": "#e1f5ee",
+    "dc_tag_color": "#0f6e56",
+    "dc_tag": "CONSIGN",
+    "dc_supplier": "MNT-series SKUs (multiple consignment suppliers) (~&#3647;399,157)",
+    "dc_skus": "61",
+    "dc_units": "1393",
+    "dc_action": "RETURN"
+   },
+   {
+    "dc_tag_bg": "#eeedfe",
+    "dc_tag_color": "#5551FE",
+    "dc_tag": "INTERCO",
+    "dc_supplier": "Pony on Wheel (Thailand) / Toysinbox (intercompany) (~&#3647;1,158,538)",
+    "dc_skus": "184",
+    "dc_units": "2340",
+    "dc_action": "RETURN"
+   },
+   {
+    "dc_tag_bg": "#eeedfe",
+    "dc_tag_color": "#5551FE",
+    "dc_tag": "INTERCO",
+    "dc_supplier": "Chaw Retailing (intercompany) (~&#3647;20,180)",
+    "dc_skus": "16",
+    "dc_units": "87",
+    "dc_action": "RETURN"
+   },
+   {
+    "dc_tag_bg": "#eeedfe",
+    "dc_tag_color": "#5551FE",
+    "dc_tag": "INTERCO",
+    "dc_supplier": "ACTIONCITY PTE Singapore (intercompany) (~&#3647;4,554)",
+    "dc_skus": "2",
+    "dc_units": "24",
+    "dc_action": "RETURN"
+   }
+  ],
+  "insight_rows": [
+   {
+    "insight": "<b>Today (Sat 22 Aug):</b> retail net &#3647;69,754 on 109 bills, &#9660; 18.4% vs the same weekday last week (&#3647;85,458). WTD (W34, 6 days): &#3647;677,106, but see below &mdash; most of that WTD total is one wholesale invoice, not organic growth."
+   },
+   {
+    "insight": "<b>Mix driver:</b> BU class Wholesale swung from &#3647;54,724 (last full week) to &#3647;395,781 this WTD (&#9650;623%) &mdash; &#3647;326,220 of that is a single customer invoice (C-7495111) booked to Central Ladprao on 20 Aug. Retails (&#9660;41.6%), Vending (&#9660;55.8%) and E-Commerce (&#9660;42.9%) are all down WTD vs the prior full week, though the WTD window is only 6 of 7 days so far. Shopee is the bright spot, up steadily each of the last 3 complete weeks (&#3647;23.7k&rarr;57.6k&rarr;60.1k)."
+   },
+   {
+    "insight": "<b>Branch:</b> Siam Square One leads at &#3647;268,606 (W33) though slightly below its W32 pace. Central Ladprao and ACT Westgate posted zero net sales in all of the last 3 complete weeks &mdash; Ladprao only via the single wholesale invoice landing outside that window, Westgate with no sale at all since 31 May."
+   },
+   {
+    "insight": "<b>Reorder:</b> tightest-cover items are Fools Garden Tomato Soup and Sup. Pro. Manekineko, both showing NEGATIVE on-hand (&minus;32 / &minus;30 units) while still selling &mdash; check the inventory count and treat as urgent backorders."
+   },
+   {
+    "insight": "<b>Dead stock:</b> Big Box consignment (&#3647;3.10M, 394 units) is the largest return opportunity; owned stock to clear is 7 SKUs / ~&#3647;41,383 at the material (&ge;10u) gate, plus 7 high-value single-piece Bearbrick 1000% figures and Mr. Bone Christmas 200% (8u/&#3647;61,168) outside that gate."
+   },
+   {
+    "insight": "<b>Purchasing:</b> Upset Duck Status Display's largest open PO (&#3647;217,836) is booked in USD to a China vendor that normally trades CNY &mdash; verify before it lands; two Pony on Wheel POs (Diesel X Dolores, Mimi Leisurely Elf) have sat open for 8&ndash;14 months."
+   }
+  ]
+ },
+ "sections": {
+  "best_today": true,
+  "exec_insight": true
+ }
 }
