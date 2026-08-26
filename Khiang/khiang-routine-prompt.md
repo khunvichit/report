@@ -88,7 +88,12 @@ If stderr prints `WARNING unresolved placeholders` for money/date tokens → fix
 Do NOT send with unresolved tokens.
 
 ## 8. Send
-- EMAIL: always (after completeness). manual-test → owner only. Body = contents of `email.html`.
+- EMAIL: always (after completeness). manual-test → owner only. **Body = the LITERAL contents of
+  `email.html` — READ the file and paste the whole HTML into the tool's `body` argument. The send
+  tool cannot read files; never pass a path or placeholder (see `sender.md`). Pre-send check: body
+  starts with `<!DOCTYPE`/`<html` and >20k chars, else fix before sending. Send exactly once — no
+  CORRECTION emails.** (Tool arguments don't count toward the 32K output limit; the no-HTML-output
+  rule applies to assistant text only.)
 - GROUP: fires DAILY (not anomaly-gated), scheduled mode only. Primary chat_id (Khiang), fallback
   (Quality) on failure. Daily sales digest: net sales, avg ticket, MTD avg, 30d avg, **Top 10 rice
   menu — MANDATORY section, rice list INCLUDES soup bundles K064–K077** (per `khiang-delivery.md`

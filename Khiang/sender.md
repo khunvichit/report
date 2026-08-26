@@ -5,8 +5,18 @@ All three channels use the Lark MCP server (prefix `mcp__7de72e5f-3664-41c0-9775
 
 ## Email — `lark_send_email`
 - `body` accepts full inline HTML; JS is stripped by clients — never rely on scripts.
-- HTML comes from a FILE (`email.html` produced by `fill_template.py`), never from model output.
-- Do NOT write the HTML to disk as a *deliverable*; the file is an intermediate the routine reads.
+- **THE TOOL CANNOT READ FILES.** `body` must contain the LITERAL FULL CONTENTS of `email.html`:
+  READ the file first, then paste the entire HTML string into the `body` argument of the tool
+  call. Tool-call arguments do NOT count against the output-token limit — only assistant text
+  does. The "never output the full HTML" rule means: don't print it as chat/text output; passing
+  it inside a tool argument is required and correct.
+- **NEVER put a file path, `FILE:...`, or any placeholder in `body`.** (This bug shipped 3 days
+  in a row: recipients got an email whose entire body was `FILE_CONTENT_PLACEHOLDER`, followed
+  by a CORRECTION email.)
+- **Pre-send check (hard):** the `body` string must start with `<!DOCTYPE` or `<html` and be
+  >20,000 characters. If not, DO NOT send — re-read `email.html` and rebuild the call.
+- Send EXACTLY ONCE. Never send a broken email "to fix later" and never follow up with a
+  CORRECTION email — a failed pre-send check means fix first, then send the one good email.
 - Lark auto-appends an AI disclaimer — do not add your own.
 
 ## Task — `lark_create_task` (+ `lark_add_task_members`)

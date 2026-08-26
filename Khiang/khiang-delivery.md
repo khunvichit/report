@@ -18,6 +18,10 @@ Delivery:
 
 ## EMAIL
 - html_body source: `email.html` (output of `fill_template.py khiang-template.html data.json`).
+  **READ the file and paste its FULL contents into the send tool's `body` argument** — the tool
+  cannot open files; a path or placeholder string gets sent to recipients verbatim. Verify the
+  body starts with `<!DOCTYPE`/`<html` and is >20k chars BEFORE sending. One email only — no
+  CORRECTION follow-ups (see `sender.md` Email rules).
 - `to`:
   ```json
   [ {"address":"management@chaw.co.th","name":"CHAW Management"},
