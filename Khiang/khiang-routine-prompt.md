@@ -30,8 +30,9 @@ Query J (14-day per-day) feeds the heatmap table — last 7 days displayed, prio
 Query E2 feeds the Top-3-items-per-hour column in the hourly comparison;
 Query G2 (35-day daily promo bills) feeds the Promotion Trend by Week table;
 Queries K1–K3 (28-day benchmarks) feed the Price Watch strip — yesterday's values come from A/D/E2;
-Queries L1–L3 (location 452) feed the Khiang Liberty Square section — soft-fail: if Liberty data
-is missing/zero, render the section with "— ไม่มีข้อมูล" and continue (never hard-stop the airport report).
+Queries L1–L4 (location 452) feed the Liberty data (header COMBINED box, paired chart bars,
+Last-7-days branch table, LIB branch card) — soft-fail: if Liberty data is missing/zero, render
+zeros/"— ไม่มีข้อมูล" and continue (never hard-stop the airport report).
 
 ## 4. Completeness — HARD STOP
 Run the 5 checks in `khiang-queries.md`. Any hard-stop failure → do NOT send; go to step 10 (fail loud).
@@ -55,14 +56,18 @@ Run the 5 checks in `khiang-queries.md`. Any hard-stop failure → do NOT send; 
   (downtrade detector), Staff ticket (discount check), night window (night-shift viability),
   noon plates (staffing trigger ≥35).
 - Sections: `alert_banner = (anomaly_count > 0)`; `promo = (staff10_bills + set50_bills > 0)`.
-- Liberty scalars per `khiang-queries.md` L1–L3: `lib_net_sales`, `lib_bills`, `lib_avg_ticket`,
-  `lib_avg_7d`, `lib_signed_pct`, `lib_pct_color` + repeat `lib_top5` (rank/itemid/name/qty/row_bg).
+- Liberty scalars per `khiang-queries.md` L1–L4: `lib_net_sales`, `lib_bills`, `lib_avg_ticket`,
+  `lib_avg_7d`, `lib_signed_pct`, `lib_pct_color`, `comb_net_sales`, `apt_7d_total`, `lib_7d_total`,
+  `comb_7d_total`, `comb_7d_avg` + repeats `lib_top5`, `apt_top5` (rank/itemid/name/qty/row_bg),
+  `last7_headers`, `last7_apt`, `last7_lib`, `last7_comb` (Juiceland-style branch table).
   All Liberty revenue from mainline-T is INC-VAT → ÷1.07 like the airport numbers.
 
 ## 6. Build data.json (NOT html)
 Write `data.json` with `scalars`, `repeats` (`top10_all`, `top10_rice`, `hourly_rows`,
 `chart_days`, `chart_labels`, `week_headers`, `walk_cells`, `staff_cells`, `total_cells`,
-`staff10_cells`, `set50_cells`, `heatmap_rows`, `lib_top5`), and `sections`. `week_headers` renders above
+`staff10_cells`, `set50_cells`, `heatmap_rows`, `lib_top5`, `apt_top5`, `last7_headers`,
+`last7_apt`, `last7_lib`, `last7_comb`), and `sections`. Each `chart_days` item now ALSO carries
+`lib_bar_px`/`lib_bar_title` (paired branch bars; 0 before 2026-08-20; chart_max spans both branches). `week_headers` renders above
 BOTH weekly tables (customer + promotion) — same 5 weeks. Every scalar token in the template must
 have a key —
 including the period-strip tokens `net_30d`, `avg_30d`, `d30_start`, `net_mtd`, `avg_mtd`, `mtd_days`,

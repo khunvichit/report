@@ -474,6 +474,33 @@ Derive: `lib_avg_7d = round(gross_inc / 1.07 / days)` (use ACTUAL trading days �
 > If L1 returns 0 bills → lib_net_sales "0", lib_top5 = one row "— ไม่มีข้อมูล", DO NOT hard-stop
 > (Liberty missing must never block the airport report).
 
+## Query L4 — Liberty 30-day per-day net (paired chart bars + Last-7-days branch table)
+```sql
+SELECT TO_CHAR(t.trandate,'YYYY-MM-DD') AS d, SUM(ABS(tl.netamount)) AS gross_inc
+FROM transaction t
+JOIN transactionline tl ON t.id = tl.transaction
+WHERE t.trandate BETWEEN TO_DATE('{D30_START}','YYYY-MM-DD') AND TO_DATE('{REPORT_DATE}','YYYY-MM-DD')
+  AND t.type = 'CustInvc' AND tl.mainline = 'T' AND tl.location = 452
+  AND NVL(t.memo,'x') != 'VOID'
+GROUP BY TO_CHAR(t.trandate,'YYYY-MM-DD') ORDER BY d
+```
+Per day: `lib_net(d) = round(gross_inc/1.07)`. Days with no row (incl. all days before 2026-08-20) → 0.
+
+### Branch-table & combined derivations (Juiceland-style — from Query H (APT) + L4 (LIB))
+```
+comb_net_sales = net_sales + lib_net_sales                     # header COMBINED box (thousands-sep)
+# chart: each chart_days item ALSO carries lib bars
+lib_bar_px    = round(lib_net(d) / chart_max * 90)             # chart_max = max over BOTH branches
+lib_bar_title = "LIB {d}: ฿{lib_net}"                          # 0-height bar (0px) when no data
+# Last-7-days table (7 columns = REPORT_DATE-6 … REPORT_DATE, oldest→newest):
+last7_headers = [{col_date:'26/8', col_weekday_th:'อ.', header_bg:'' | 'background:#4744CD;'(last col)}]
+last7_apt / last7_lib = [{net:'34,243' or '—', cell_style:'' | 'background:#FFF3E0;font-weight:700;'(last col)}]
+last7_comb            = same shape, net = apt+lib per day
+apt_7d_total / lib_7d_total / comb_7d_total = sums (thousands-sep)
+comb_7d_avg = round(comb_7d_total / 7)
+apt_top5 = first 5 rows of Query B (same fields as lib_top5: rank/itemid/name/qty/row_bg)
+```
+
 ## KPI derivations (in the routine, after queries)
 ```
 net_sales        = walk_in_revenue + staff_revenue − credit_notes
