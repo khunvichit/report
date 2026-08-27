@@ -45,6 +45,8 @@ Delivery:
 Avg ticket: ฿{avg_ticket} ({total_bills} bills)
 MTD avg: ฿{avg_mtd}/day  ·  30d avg: ฿{avg_30d}/day
 
+🏙 Liberty Square: ฿{lib_net_sales} ({lib_signed_pct}% vs 7d avg) · {lib_bills} bills · ฿{lib_avg_ticket}/bill
+
 🍚 Top 10 เมนูข้าว (วาน):
 {rice_top10_lines}
 

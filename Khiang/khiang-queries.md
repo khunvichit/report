@@ -431,6 +431,49 @@ pw_noon_color = '#E74C3C' if pw_noon_plates >= 35 else '#2C3E50'  # 35 = add-8th
 Tokens (11 scalars): `pw_walk_ticket/bench/arrow/color`, `pw_staff_ticket/bench/arrow/color`,
 `pw_night_rev/bench/arrow/color`, `pw_noon_plates/bench/color`.
 
+## Query L1 — Khiang LIBERTY SQUARE daily header (loc 452 — mainline-T = INC-VAT, ÷1.07)
+```sql
+SELECT COUNT(DISTINCT t.id) AS lib_bills, SUM(ABS(tl.netamount)) AS lib_gross_inc
+FROM transaction t
+JOIN transactionline tl ON t.id = tl.transaction
+WHERE t.trandate = TO_DATE('{REPORT_DATE}','YYYY-MM-DD')
+  AND t.type = 'CustInvc' AND tl.mainline = 'T' AND tl.location = 452
+  AND NVL(t.memo,'x') != 'VOID'
+```
+Derive: `lib_net_sales = round(lib_gross_inc / 1.07)` · `lib_avg_ticket = round(lib_net_sales / lib_bills)`.
+
+## Query L2 — Liberty Top 5 items yesterday (item lines = ex-VAT; exclude ฿0 add-on markers)
+```sql
+SELECT i.itemid, i.displayname, SUM(ABS(tl.quantity)) AS qty
+FROM transaction t
+JOIN transactionline tl ON t.id = tl.transaction
+JOIN item i ON tl.item = i.id
+WHERE t.trandate = TO_DATE('{REPORT_DATE}','YYYY-MM-DD')
+  AND t.type = 'CustInvc' AND tl.mainline = 'F' AND tl.location = 452
+  AND tl.netamount < 0
+  AND i.itemid LIKE 'K%' AND i.itemid NOT LIKE 'K-AO%'
+  AND i.itemid NOT IN ('K027','K135','K136','K137','K138','K056')  -- exclude water/coke/glass
+GROUP BY i.itemid, i.displayname ORDER BY qty DESC
+```
+Take top 5 → `lib_top5` repeat ({rank},{itemid},{name},{qty},{row_bg} alternating #FFFFFF/#FAFAFA).
+Truncate name ~28 chars.
+
+## Query L3 — Liberty 7-day average (for lib_signed_pct)
+```sql
+SELECT COUNT(DISTINCT t.trandate) AS days, SUM(ABS(tl.netamount)) AS gross_inc
+FROM transaction t
+JOIN transactionline tl ON t.id = tl.transaction
+WHERE t.trandate BETWEEN TO_DATE('{REPORT_DATE}','YYYY-MM-DD') - 7 AND TO_DATE('{REPORT_DATE}','YYYY-MM-DD') - 1
+  AND t.type = 'CustInvc' AND tl.mainline = 'T' AND tl.location = 452
+  AND NVL(t.memo,'x') != 'VOID'
+```
+Derive: `lib_avg_7d = round(gross_inc / 1.07 / days)` (use ACTUAL trading days — store opened
+2026-08-20). `lib_signed_pct = round((lib_net_sales − lib_avg_7d)/lib_avg_7d × 100, 1)` prefixed
+'+' if ≥0. `lib_pct_color = '#27AE60'` if ≥0 else `'#E74C3C'`.
+> Liberty has NO daily target yet (new store, ramping) — compare vs its own 7-day average only.
+> If L1 returns 0 bills → lib_net_sales "0", lib_top5 = one row "— ไม่มีข้อมูล", DO NOT hard-stop
+> (Liberty missing must never block the airport report).
+
 ## KPI derivations (in the routine, after queries)
 ```
 net_sales        = walk_in_revenue + staff_revenue − credit_notes
