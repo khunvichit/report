@@ -30,9 +30,10 @@ Query J (14-day per-day) feeds the heatmap table — last 7 days displayed, prio
 Query E2 feeds the Top-3-items-per-hour column in the hourly comparison;
 Query G2 (35-day daily promo bills) feeds the Promotion Trend by Week table;
 Queries K1–K3 (28-day benchmarks) feed the Price Watch strip — yesterday's values come from A/D/E2;
-Queries L1–L4 (location 452) feed the Liberty data (header COMBINED box, paired chart bars,
-Last-7-days branch table, LIB branch card) — soft-fail: if Liberty data is missing/zero, render
-zeros/"— ไม่มีข้อมูล" and continue (never hard-stop the airport report).
+Queries L1–L8 (location 452) feed the Liberty data: header COMBINED box, paired chart bars,
+Last-7-days branch table, LIB branch card, AND the Liberty deep-dive (Liberty Watch strip,
+LIB 7-day heatmap, LIB hourly comparison, LIB promo weekly trend) — soft-fail: if Liberty data
+is missing/zero, render zeros/"— ไม่มีข้อมูล" and continue (never hard-stop the airport report).
 
 ## 4. Completeness — HARD STOP
 Run the 5 checks in `khiang-queries.md`. Any hard-stop failure → do NOT send; go to step 10 (fail loud).
@@ -66,8 +67,10 @@ Run the 5 checks in `khiang-queries.md`. Any hard-stop failure → do NOT send; 
 Write `data.json` with `scalars`, `repeats` (`top10_all`, `top10_rice`, `hourly_rows`,
 `chart_days`, `chart_labels`, `week_headers`, `walk_cells`, `staff_cells`, `total_cells`,
 `staff10_cells`, `set50_cells`, `heatmap_rows`, `lib_top5`, `apt_top5`, `last7_headers`,
-`last7_apt`, `last7_lib`, `last7_comb`), and `sections`. Each `chart_days` item now ALSO carries
-`lib_bar_px`/`lib_bar_title` (paired branch bars; 0 before 2026-08-20; chart_max spans both branches). `week_headers` renders above
+`last7_apt`, `last7_lib`, `last7_comb`, `lib_heatmap_rows`, `lib_hourly_rows`, `lib_promo_cells`),
+and `sections`. Each `chart_days` item now ALSO carries `lib_bar_px`/`lib_bar_title` (paired
+branch bars; 0 before 2026-08-20; chart_max spans both branches). Liberty Watch adds 16 scalars
+(`lw_ticket/peak/eve/egg_attach` + bench/arrow/color each — see khiang-queries.md L5–L8 section). `week_headers` renders above
 BOTH weekly tables (customer + promotion) — same 5 weeks. Every scalar token in the template must
 have a key —
 including the period-strip tokens `net_30d`, `avg_30d`, `d30_start`, `net_mtd`, `avg_mtd`, `mtd_days`,
@@ -105,9 +108,12 @@ Do NOT send with unresolved tokens.
   CORRECTION emails.** (Tool arguments don't count toward the 32K output limit; the no-HTML-output
   rule applies to assistant text only.)
 - GROUP: fires DAILY (not anomaly-gated), scheduled mode only. Primary chat_id (Khiang), fallback
-  (Quality) on failure. Daily sales digest: net sales, avg ticket, MTD avg, 30d avg, **Top 10 rice
-  menu — MANDATORY section, rice list INCLUDES soup bundles K064–K077** (per `khiang-delivery.md`
-  hard rule: verify the 🍚 block exists with ≥1 line before sending; never send the digest without it).
+  (Quality) on failure. **TWO separate messages, in order:** (1) Airport digest: net sales, avg
+  ticket, MTD avg, 30d avg, **Top 10 rice menu — MANDATORY section, rice list INCLUDES soup
+  bundles K064–K077** (per `khiang-delivery.md` hard rule: verify the 🍚 block exists with ≥1 line
+  before sending); (2) Liberty digest per `khiang-delivery.md` GROUP message 2 (sales, ticket,
+  peak/evening, egg attach, Top 5). Both messages required daily — Liberty zero-data → send with
+  "— ไม่มีข้อมูล", never skip.
 
 ## 9. Failure path (fail loud)
 On any hard stop or channel hard-failure: DM owner (vichit@chaw.co.th) / post failure group with which

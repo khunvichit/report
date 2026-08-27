@@ -501,6 +501,57 @@ comb_7d_avg = round(comb_7d_total / 7)
 apt_top5 = first 5 rows of Query B (same fields as lib_top5: rank/itemid/name/qty/row_bg)
 ```
 
+## Query L5 — Liberty 14-day per-day rev+bills (LIB heatmap + WoW baseline)
+```sql
+SELECT TO_CHAR(t.trandate,'YYYY-MM-DD') AS d, COUNT(DISTINCT t.id) AS bills, SUM(ABS(tl.netamount)) AS gross_inc
+FROM transaction t JOIN transactionline tl ON t.id = tl.transaction
+WHERE t.trandate BETWEEN TO_DATE('{REPORT_DATE}','YYYY-MM-DD') - 13 AND TO_DATE('{REPORT_DATE}','YYYY-MM-DD')
+  AND t.type='CustInvc' AND tl.mainline='T' AND tl.location=452 AND NVL(t.memo,'x') != 'VOID'
+GROUP BY TO_CHAR(t.trandate,'YYYY-MM-DD') ORDER BY d
+```
+Build `lib_heatmap_rows` exactly like the APT heatmap (last 7 days displayed, prior 7 = WoW
+baseline; rev = ÷1.07; shade each column within its own 7-day min→max; WoW "—" grey if the
+baseline day has no data — normal until the store is 2 weeks old).
+
+## Query L6 — Liberty hourly (yesterday + day-before + 7-day hourly bench in ONE query)
+```sql
+SELECT TO_CHAR(t.trandate,'YYYY-MM-DD') AS d, TO_CHAR(t.createddate,'HH24') AS hr,
+       COUNT(DISTINCT t.id) AS bills, SUM(ABS(tl.netamount)) AS gross_inc
+FROM transaction t JOIN transactionline tl ON t.id = tl.transaction
+WHERE t.trandate BETWEEN TO_DATE('{REPORT_DATE}','YYYY-MM-DD') - 7 AND TO_DATE('{REPORT_DATE}','YYYY-MM-DD')
+  AND t.type='CustInvc' AND tl.mainline='T' AND tl.location=452 AND NVL(t.memo,'x') != 'VOID'
+GROUP BY TO_CHAR(t.trandate,'YYYY-MM-DD'), TO_CHAR(t.createddate,'HH24') ORDER BY d, hr
+```
+`lib_hourly_rows`: hours 08–21 (store hours) — cur = REPORT_DATE, prev = REPORT_DATE−1,
+bench = avg of prior 7 days for that hour (÷1.07 everywhere). Same tokens as APT hourly_rows.
+No anomaly flagging yet (no stable bench) — hour_flag always "".
+
+## Query L7 — Liberty Top 3 items per hour (yesterday; same shape as E2 but location 452)
+Same SQL as Query E2 with `tl.location = 452`. Build `top3` per hour exactly like APT
+(displayname ×qty, "<br>"-separated, truncate ~22 chars, exclude K-AO-% and ฿0 lines, "—" if none).
+
+## Query L8 — Liberty promo bills per day, last 35 days (LIB promo weekly trend)
+Same SQL as Query G2 with `tl.location = 452`, but count ANY negative POS_DISCOUNT rate as one
+"discount bill" (no staff-10% / ฿50-set split at Liberty). Build `lib_promo_cells` (5 weekly
+cells, same shape/derivation as staff10_cells, aligned to the SAME `week_headers`). Weeks before
+2026-08-20 → val "—".
+
+### Liberty Watch derivation (lw_* — from L1/L6 + egg-attach query below)
+```
+lw_ticket        = lib_avg_ticket (yesterday) ; bench = round(7d net ÷ 7d bills) from L5 prior-7
+lw_peak_rev      = sum L6 rev hours 11–13 for REPORT_DATE (÷1.07) ; bench = 7d avg of same hours
+lw_eve_rev       = sum L6 rev hours 17–21 for REPORT_DATE (÷1.07) ; bench = 7d avg of same hours
+lw_egg_attach    = % of REPORT_DATE bills containing K-AO-023 or K-AO-134 (egg add-on):
+    SELECT COUNT(DISTINCT tl.transaction) FROM transactionline tl JOIN item i ON i.id=tl.item
+    JOIN transaction t ON t.id=tl.transaction
+    WHERE t.trandate = TO_DATE('{REPORT_DATE}','YYYY-MM-DD') AND t.type='CustInvc'
+      AND tl.location=452 AND i.itemid IN ('K-AO-023','K-AO-134')
+    ÷ lib_bills × 100 ; bench = same over prior 7 days
+arrows/colors same rule as pw_*: ▲ green if ≥ bench else ▼ red.
+Tokens (16): lw_ticket/bench/arrow/color · lw_peak_rev/bench/arrow/color ·
+lw_eve_rev/bench/arrow/color · lw_egg_attach/bench/arrow/color.
+```
+
 ## KPI derivations (in the routine, after queries)
 ```
 net_sales        = walk_in_revenue + staff_revenue − credit_notes

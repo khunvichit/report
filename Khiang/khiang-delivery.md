@@ -45,8 +45,6 @@ Delivery:
 Avg ticket: ฿{avg_ticket} ({total_bills} bills)
 MTD avg: ฿{avg_mtd}/day  ·  30d avg: ฿{avg_30d}/day
 
-🏙 Liberty Square: ฿{lib_net_sales} ({lib_signed_pct}% vs 7d avg) · {lib_bills} bills · ฿{lib_avg_ticket}/bill
-
 🍚 Top 10 เมนูข้าว (วาน):
 {rice_top10_lines}
 
@@ -64,6 +62,25 @@ MTD avg: ฿{avg_mtd}/day  ·  30d avg: ฿{avg_30d}/day
   in the email has rows, the filter list is wrong — rebuild from the full allow-list, do not send
   the digest without it.
 - Fires every day regardless of `anomaly_count`. If the digest send fails on primary, retry fallback.
+
+### GROUP message 2 — Liberty digest (send as a SEPARATE second message, same chat, right after msg 1)
+```
+🏙 Khiang Liberty Square — {report_date_display} ({report_day_th})
+
+ยอดขาย: ฿{lib_net_sales} ({lib_signed_pct}% vs 7d avg ฿{lib_avg_7d})
+Avg ticket: ฿{lib_avg_ticket} ({lib_bills} bills)
+Peak 11–14: ฿{lw_peak_rev}  ·  Evening 17–21: ฿{lw_eve_rev}
+ไข่ add-on: {lw_egg_attach}% ของบิล
+
+🍽 Top 5 เมนู (วาน):
+{lib_top5_lines}
+
+ขอบคุณครับ 🙏
+```
+- `lib_top5_lines`: same format as rice_top10_lines, built from the `lib_top5` repeat
+  (`{rank}. {itemid} {name} — {qty}`). If none, `"— ไม่มีข้อมูล"`.
+- Both group messages are REQUIRED daily. If Liberty has zero data, still send message 2 with
+  "— ไม่มีข้อมูล" (soft-fail rule) — never skip silently.
 
 > NOTE: `report_day_th` (Thai weekday) is derived from REPORT_DATE in the routine.
 > Anomalies are NOT mentioned in this message anymore — they live in the email (alert banner + hourly

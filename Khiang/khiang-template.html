@@ -429,6 +429,116 @@
   </tr></table>
 </td></tr>
 
+<!-- ══════════ LIBERTY DEEP-DIVE (loc 452) ══════════ -->
+<tr><td style="padding:24px 32px 4px;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#1B7837;border-radius:8px;"><tr>
+    <td style="padding:10px 16px;font-size:14px;font-weight:700;color:#fff;">🏙 Liberty Square — Deep Dive</td>
+    <td align="right" style="padding:10px 16px;font-size:10px;color:#CFE8D6;">เปิด 20 ส.ค. 2026 · Silom · ไม่มี target (ramping)</td>
+  </tr></table>
+</td></tr>
+
+<!-- ── LIB WATCH (strip: ticket / peak / evening / egg attach — vs 7d avg) ── -->
+<tr><td style="padding:14px 32px 8px;">
+  <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:4px;border-left:3px solid #1B7837;padding-left:10px;">Liberty Watch — จับชีพจรร้านใหม่</div>
+  <div style="font-size:11px;color:#888;margin-bottom:12px;padding-left:13px;">เทียบค่าเฉลี่ย 7 วันล่าสุด</div>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td width="24%" style="padding-right:5px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#EEF8EF;border-radius:8px;"><tr><td style="padding:12px 12px;">
+        <div style="font-size:10px;color:#888;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;">Avg Ticket</div>
+        <div style="font-size:20px;font-weight:700;color:#2C3E50;">฿{{lw_ticket}}</div>
+        <div style="font-size:10px;font-weight:700;color:{{lw_ticket_color}};margin-top:3px;">{{lw_ticket_arrow}} vs ฿{{lw_ticket_bench}} (7d)</div>
+        <div style="font-size:9px;color:#999;margin-top:4px;">วัด upsell พนักงานรับ order ที่โต๊ะ</div>
+      </td></tr></table>
+    </td>
+    <td width="24%" style="padding:0 5px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#EEF8FF;border-radius:8px;"><tr><td style="padding:12px 12px;">
+        <div style="font-size:10px;color:#888;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;">Peak 11:00–14:00</div>
+        <div style="font-size:20px;font-weight:700;color:#2C3E50;">฿{{lw_peak_rev}}</div>
+        <div style="font-size:10px;font-weight:700;color:{{lw_peak_color}};margin-top:3px;">{{lw_peak_arrow}} vs ฿{{lw_peak_bench}} (7d)</div>
+        <div style="font-size:9px;color:#999;margin-top:4px;">เครื่องยนต์หลักของร้าน (~60% ของยอด)</div>
+      </td></tr></table>
+    </td>
+    <td width="24%" style="padding:0 5px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFF6E8;border-radius:8px;"><tr><td style="padding:12px 12px;">
+        <div style="font-size:10px;color:#888;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;">Evening 17:00–21:00</div>
+        <div style="font-size:20px;font-weight:700;color:#2C3E50;">฿{{lw_eve_rev}}</div>
+        <div style="font-size:10px;font-weight:700;color:{{lw_eve_color}};margin-top:3px;">{{lw_eve_arrow}} vs ฿{{lw_eve_bench}} (7d)</div>
+        <div style="font-size:9px;color:#999;margin-top:4px;">daypart ที่ต้องปั้น (เบียร์+ลูกชิ้น)</div>
+      </td></tr></table>
+    </td>
+    <td width="24%" style="padding-left:5px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFF9E0;border-radius:8px;"><tr><td style="padding:12px 12px;">
+        <div style="font-size:10px;color:#888;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;">Egg Attach Rate</div>
+        <div style="font-size:20px;font-weight:700;color:#2C3E50;">{{lw_egg_attach}}%</div>
+        <div style="font-size:10px;font-weight:700;color:{{lw_egg_color}};margin-top:3px;">{{lw_egg_arrow}} vs {{lw_egg_bench}}% (7d)</div>
+        <div style="font-size:9px;color:#999;margin-top:4px;">% บิลที่มีไข่ add-on · สนามบิน ~55%</div>
+      </td></tr></table>
+    </td>
+  </tr></table>
+</td></tr>
+
+<!-- ── LIB 7-DAY HEATMAP (same shading rules as APT heatmap) ── -->
+<tr><td style="padding:18px 32px 8px;">
+  <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:4px;border-left:3px solid #1B7837;padding-left:10px;">Liberty — 7-Day Performance</div>
+  <div style="font-size:11px;color:#888;margin-bottom:12px;padding-left:13px;">สีเข้ม = สูงสุดในคอลัมน์ &nbsp;·&nbsp; WoW = เทียบวันเดียวกันสัปดาห์ก่อน ("—" ถ้ายังไม่มีฐาน)</div>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E8E8E8;border-radius:8px;overflow:hidden;">
+    <tr style="background:#F8F9FA;">
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" width="22%">วัน</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="26%">Revenue</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="16%">Bills</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="20%">Avg Ticket</td>
+      <td style="padding:8px 12px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="16%">WoW</td>
+    </tr>
+    <!-- REPEAT:lib_heatmap_rows -->
+    <tr style="border-top:1px solid #E8E8E8;">
+      <td style="padding:9px 12px;font-size:11px;font-weight:{{day_weight}};color:#2C3E50;">{{day_label_th}}</td>
+      <td style="padding:9px 12px;font-size:11px;font-weight:{{rev_weight}};color:{{rev_fg}};background:{{rev_bg}};" align="right">฿{{rev}}</td>
+      <td style="padding:9px 12px;font-size:11px;font-weight:{{bills_weight}};color:{{bills_fg}};background:{{bills_bg}};" align="right">{{bills}}</td>
+      <td style="padding:9px 12px;font-size:11px;font-weight:{{ticket_weight}};color:{{ticket_fg}};background:{{ticket_bg}};" align="right">฿{{ticket}}</td>
+      <td style="padding:9px 12px;font-size:11px;font-weight:{{wow_weight}};color:{{wow_color}};" align="right">{{wow_pct}}</td>
+    </tr>
+    <!-- /REPEAT:lib_heatmap_rows -->
+  </table>
+</td></tr>
+
+<!-- ── LIB HOURLY COMPARISON (store hours only — hours with data) ── -->
+<tr><td style="padding:18px 32px 8px;">
+  <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:6px;border-left:3px solid #1B7837;padding-left:10px;">Liberty — Hourly Comparison {{prev_date_short}} vs {{report_date_short}}</div>
+  <div style="font-size:11px;color:#888;margin-bottom:10px;padding-left:13px;">avg ปกติ = เฉลี่ย 7 วันของชั่วโมงนั้น</div>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E8E8E8;border-radius:8px;overflow:hidden;">
+    <tr style="background:#F8F9FA;">
+      <td style="padding:8px 10px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" width="9%">ชั่วโมง</td>
+      <td style="padding:8px 10px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="16%">{{prev_date_short}}</td>
+      <td style="padding:8px 10px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="16%">{{report_date_short}}</td>
+      <td style="padding:8px 10px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="12%">เปลี่ยน</td>
+      <td style="padding:8px 10px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" align="right" width="13%">avg ปกติ</td>
+      <td style="padding:8px 10px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" width="34%">Top 3 เมนู (ชม.นี้)</td>
+    </tr>
+    <!-- REPEAT:lib_hourly_rows -->
+    <tr style="border-top:1px solid #E8E8E8;background:{{row_bg}};"><td style="padding:7px 10px;font-size:11px;font-weight:700;color:{{hour_color}};">{{hour}}{{hour_flag}}</td><td style="padding:7px 10px;font-size:11px;color:{{prev_color}};" align="right">{{prev_rev}}</td><td style="padding:7px 10px;font-size:11px;color:{{cur_color}};" align="right">{{cur_rev}}</td><td style="padding:7px 10px;font-size:10px;" align="right"><span style="color:{{change_color}};font-weight:{{change_weight}};">{{change_pct}}</span></td><td style="padding:7px 10px;font-size:10px;color:#888;" align="right">฿{{bench}}</td><td style="padding:7px 10px;font-size:10px;color:#555;line-height:1.4;">{{top3}}</td></tr>
+    <!-- /REPEAT:lib_hourly_rows -->
+  </table>
+</td></tr>
+
+<!-- ── LIB PROMOTION TREND BY WEEK (any POS discount at loc 452; mostly 0 until promos launch) ── -->
+<tr><td style="padding:18px 32px 8px;">
+  <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:4px;border-left:3px solid #1B7837;padding-left:10px;">Liberty — Promotion Trend by Week (Bills)</div>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E8E8E8;border-radius:8px;overflow:hidden;">
+    <tr style="background:#F8F9FA;">
+      <td style="padding:8px 10px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;" width="15%">โปรโมชั่น</td>
+      <!-- REPEAT:week_headers -->
+      <td style="padding:8px 6px;font-size:10px;font-weight:700;color:{{head_color}};background:{{head_bg}};" align="center">{{label}}</td>
+      <!-- /REPEAT:week_headers -->
+    </tr>
+    <tr style="border-top:1px solid #E8E8E8;">
+      <td style="padding:9px 10px;font-size:11px;font-weight:700;color:#1B7837;">ส่วนลดทั้งหมด (LIB)</td>
+      <!-- REPEAT:lib_promo_cells -->
+      <td style="padding:9px 6px;background:{{bg}};" align="center"><div style="font-size:12px;font-weight:{{weight}};color:#2C3E50;">{{val}}</div><div style="font-size:9px;font-weight:700;color:{{color}};margin-top:1px;">{{pct}}</div></td>
+      <!-- /REPEAT:lib_promo_cells -->
+    </tr>
+  </table>
+</td></tr>
+
 <!-- ── FOOTER ── -->
 <tr><td style="padding:18px 32px 26px;">
   <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #E8E8E8;">
