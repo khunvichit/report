@@ -196,37 +196,6 @@
   </tr></table>
 </td></tr>
 
-<!-- ── 30-DAY DAILY SALES CHART (bars green≥target / red<target, MTD-avg line) ── -->
-<tr><td style="padding:18px 32px 8px;">
-  <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:4px;border-left:3px solid #5551FE;padding-left:10px;">Daily Net Sales — Last 30 Days</div>
-  <div style="font-size:11px;color:#888;margin-bottom:12px;padding-left:13px;">APT: 🟢 ≥ ฿40,000 target (ex-VAT) · 🔴 below target &nbsp;·&nbsp; <span style="display:inline-block;width:9px;height:9px;background:#1B7837;border-radius:2px;vertical-align:middle;"></span> Liberty &nbsp;·&nbsp; เส้นประ = APT MTD avg ฿{{avg_mtd}}/day</div>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E8E8E8;border-radius:8px;overflow:hidden;"><tr><td style="padding:16px 14px 10px;">
-    <!-- plot area: relative box holding the MTD line + the bars table -->
-    <div style="position:relative;height:90px;">
-      <!-- MTD average reference line (offset from baseline) -->
-      <div style="position:absolute;left:0;right:0;bottom:{{mtd_line_px}}px;border-top:2px dashed #F27061;height:0;line-height:0;font-size:0;">&nbsp;</div>
-      <div style="position:absolute;right:0;bottom:{{mtd_line_px}}px;transform:translateY(-100%);font-size:9px;color:#F27061;font-weight:700;background:#fff;padding:0 3px;">MTD ฿{{avg_mtd}}</div>
-      <!-- bars: one bottom-aligned cell per day -->
-      <table width="100%" height="90" cellpadding="0" cellspacing="0" border="0" style="height:90px;"><tr style="vertical-align:bottom;">
-        <!-- REPEAT:chart_days  — paired bars per day: APT (target-coloured) + LIB (#1B7837, 0px before 2026-08-20) -->
-        <td align="center" valign="bottom" style="vertical-align:bottom;padding:0 1px;">
-          <table cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;"><tr style="vertical-align:bottom;">
-            <td valign="bottom" style="vertical-align:bottom;"><div style="width:7px;height:{{bar_px}}px;background:{{bar_color}};border-radius:2px 2px 0 0;" title="{{bar_title}}">&nbsp;</div></td>
-            <td valign="bottom" style="vertical-align:bottom;padding-left:1px;"><div style="width:7px;height:{{lib_bar_px}}px;background:#1B7837;border-radius:2px 2px 0 0;" title="{{lib_bar_title}}">&nbsp;</div></td>
-          </tr></table>
-        </td>
-        <!-- /REPEAT:chart_days -->
-      </tr></table>
-    </div>
-    <!-- day-of-month labels under the bars -->
-    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:4px;border-top:1px solid #E8E8E8;padding-top:3px;"><tr>
-      <!-- REPEAT:chart_labels -->
-      <td align="center" style="font-size:7px;color:{{label_color}};font-weight:{{label_weight}};padding:0 1px;">{{day_label}}</td>
-      <!-- /REPEAT:chart_labels -->
-    </tr></table>
-  </td></tr></table>
-</td></tr>
-
 <!-- ── CUSTOMER TREND BY WEEK (transposed: columns = 5 weeks, rows = Walk-In / Staff / Total) ── -->
 <tr><td style="padding:18px 32px 8px;">
   <div style="font-size:13px;font-weight:700;color:#2C3E50;margin-bottom:4px;border-left:3px solid #5551FE;padding-left:10px;">Customer Trend by Week — Bills</div>

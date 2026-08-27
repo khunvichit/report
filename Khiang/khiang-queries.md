@@ -224,7 +224,7 @@ else:
 ```
 > WoW compares revenue only (not bills/ticket) and is NOT shaded — it sits outside the
 > per-column min→max shading scheme.
-> Shade only — no green/red target logic here (that lives in the 30-day chart). The point of the
+> Shade only — no green/red target logic here. The point of the
 > heatmap is relative intensity across the week, per metric. Provide `lerp_hex(a,b,t)` in the routine
 > (linear interpolate each RGB channel, return `#RRGGBB`).
 
@@ -276,9 +276,9 @@ val "0" (and pct blank if prev = 0).
 
 ---
 
-## Query H — Last-35-Day Net Sales + Bills PER DAY × SEGMENT (strip, sales chart, weekly table)
+## Query H — Last-35-Day Net Sales + Bills PER DAY × SEGMENT (strip, weekly table)
 > Returns one row per trading day per segment (Walk-In / Airport Staff) over 35 days = 5 full
-> weeks. Feeds the 30d strip totals + daily sales bar chart (most recent 30 days, segments
+> weeks. Feeds the 30d strip totals (most recent 30 days, segments
 > summed) AND the weekly customer table (all 35 days, segments kept apart). Single window;
 > narrow if rate-limited. Inclusive of REPORT_DATE.
 ```sql
@@ -298,28 +298,13 @@ GROUP BY t.trandate, CASE WHEN t.entity = 51407 THEN 'Staff' ELSE 'Walk-In' END
 Sort rows by `trandate` ascending client-side (no ORDER BY on GROUP BY). Collapse per day:
 `net_sales(day) = sum over segments`; `walk_bills(day)` / `staff_bills(day)` = segment bills
 (missing segment → 0); `bills(day) = walk_bills + staff_bills`.
-Strip + sales chart use ONLY the most recent 30 days (`D30_START..REPORT_DATE`):
+Strip uses ONLY the most recent 30 days (`D30_START..REPORT_DATE`):
 `days = count(distinct trandate in 30d)`; `net_30d = sum(net_sales over 30d)`;
 `avg_30d = round(net_30d / days)`.
-Build the chart `chart_days` list from those 30 per-day totals (see "Chart derivation" below);
 the weekly table uses the full 35 days (see "Weekly table derivation").
 
-### Chart derivation (30-day daily bar chart with MTD-average line)
-For the bar chart `chart_days` repeat block, from the sorted Query H rows:
-```
-chart_max     = max(net_sales over the 30 rows)           # tallest bar = 100% height
-bar_px_max    = 90                                         # max bar height in px (matches template)
-mtd_avg       = avg_mtd (from Query I) — the horizontal reference line
-mtd_line_px   = round(min(mtd_avg, chart_max) / chart_max * bar_px_max)   # line offset from baseline
-for each day d:
-    bar_px    = max(2, round(d.net_sales / chart_max * bar_px_max))   # ≥2px so zero-ish days show
-    bar_color = '#27AE60' if d.net_sales >= 40000 else '#E74C3C'      # green ≥target / red below (ex-VAT)
-    day_label = d.trandate day-of-month as 2 chars (e.g. '14','15'… )
-    is_report_day = (d.trandate == REPORT_DATE)            # bold/marker the latest day
-```
-> The MTD-average line is drawn as a thin absolutely-positioned rule at `mtd_line_px` from the
-> baseline, spanning the plot width, labelled `MTD avg ฿{avg_mtd}`. Bars shorter than the line read
-> as below-month-average days at a glance; colour still encodes vs-target.
+> RETIRED 2026-08-27: the 30-day daily bar chart was removed from the template — do not build
+> `chart_days` / `chart_labels` / `mtd_line_px` / `lib_bar_*`.
 
 ### Customer-trend WEEKLY table derivation (TRANSPOSED: columns = 5 weeks, rows = segments)
 From Query H's per-day SEGMENT data (full 35 days), aggregate into 5 trailing weeks aligned to
@@ -474,7 +459,7 @@ Derive: `lib_avg_7d = round(gross_inc / 1.07 / days)` (use ACTUAL trading days �
 > If L1 returns 0 bills → lib_net_sales "0", lib_top5 = one row "— ไม่มีข้อมูล", DO NOT hard-stop
 > (Liberty missing must never block the airport report).
 
-## Query L4 — Liberty 30-day per-day net (paired chart bars + Last-7-days branch table)
+## Query L4 — Liberty per-day net (Last-7-days branch table)
 ```sql
 SELECT TO_CHAR(t.trandate,'YYYY-MM-DD') AS d, SUM(ABS(tl.netamount)) AS gross_inc
 FROM transaction t
@@ -489,9 +474,6 @@ Per day: `lib_net(d) = round(gross_inc/1.07)`. Days with no row (incl. all days 
 ### Branch-table & combined derivations (Juiceland-style — from Query H (APT) + L4 (LIB))
 ```
 comb_net_sales = net_sales + lib_net_sales                     # header COMBINED box (thousands-sep)
-# chart: each chart_days item ALSO carries lib bars
-lib_bar_px    = round(lib_net(d) / chart_max * 90)             # chart_max = max over BOTH branches
-lib_bar_title = "LIB {d}: ฿{lib_net}"                          # 0-height bar (0px) when no data
 # Last-7-days table (7 columns = REPORT_DATE-6 … REPORT_DATE, oldest→newest):
 last7_headers = [{col_date:'26/8', col_weekday_th:'อ.', header_bg:'' | 'background:#4744CD;'(last col)}]
 last7_apt / last7_lib = [{net:'34,243' or '—', cell_style:'' | 'background:#FFF3E0;font-weight:700;'(last col)}]
