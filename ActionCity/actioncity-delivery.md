@@ -6,7 +6,8 @@ Declares this report's channels and content into the shared `method.md` / `sende
 Delivery:
   Channels: email + group
   Fire group: always (daily close summary)
-  Email key: [ActionCity] Daily Sales & Stock — {report_date_display}
+  Email key (idempotency): actioncity-daily-{report_date_iso}    # report_date_iso = YYYY-MM-DD (date-keyed, format/timezone-proof)
+  Full subject: [ActionCity] Daily Sales & Stock — {report_date_display} ({report_weekday})
   Mode default: scheduled   (first 1–2 weeks: manual-test)
 ```
 
@@ -17,7 +18,10 @@ Delivery:
   - panu@chaw.co.th
 - **subject:** `[ActionCity] Daily Sales & Stock — {report_date_display} ({report_weekday})`
 - **html_body:** contents of `email.html` (produced by `fill_template.py`; never model output)
-- **idempotency:** before sending, search sent mail for the exact Email key subject; if found, skip (no double-send).
+- **idempotency (two guards — EITHER one stops the send; one report_date → at most one email, ever):**
+  1. **Sent-flag file (primary, no mail-search dependency):** before sending, check for `sent/actioncity-daily-{report_date_iso}.sent`. If it exists → already sent, STOP. **After a successful send, write that file** (timestamp + subject). Keyed on `report_date_iso` (YYYY-MM-DD) — never the display date/weekday, so formatting or a timezone edge can't produce a false "not sent".
+  2. **Sent-mail search (secondary):** search sent mail for the **EXACT full subject string that is actually sent** — including the ` ({report_weekday})` suffix. (The old key omitted the weekday, so the exact search never matched the real subject and the guard never fired — that was the duplicate-send bug.) If found → STOP.
+- **no correction emails:** a re-run for a report_date that was already sent MUST stop at the guard above — never send a second/"corrected" email for the same day. (Because we report the *settled* prior day, the first send is already final.)
 - **manual-test mode:** send ONLY to the owner (vichit@sfb.co.th); skip group.
 
 ## GROUP (Lark)

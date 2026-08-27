@@ -19,10 +19,12 @@ that same folder. Run unattended — no approval prompts. Use the attached NetSu
 
 ## Routine configuration (set once)
 - **Connectors:** attach **NetSuite** (read-only SuiteQL) and **Lark** (mail + messaging) to the routine itself — not just your chat session.
-- **Schedule:** daily, **22:00 Asia/Bangkok** (end-of-day close).
+- **Schedule:** daily, **09:00 Asia/Bangkok**, reporting **yesterday** (the fully-settled day).
+  - NOT 22:00 same-day: at 22:00 the online/marketplace orders have not settled yet (they invoice when the payment gateway clears, 1–2 days later), so the numbers are provisional and a **correction email** follows. Reporting yesterday at 09:00 = one clean, final send.
+- **ONE trigger only.** This routine must have a single schedule. Remove any duplicate cron, and make sure the `data-now-*` / `email-now-*` intraday snapshots are **manual-only (never auto-emailed)** — a second auto-send is the other reason two emails go out per day.
 - **Env / mode:**
   - First 1–2 weeks: `MODE=manual-test` → emails the owner only, skips the group. Validate, then switch.
   - Live: `MODE=scheduled`.
   - Back-fill a past day: `MODE=manual-live` and `REPORT_DATE=YYYY-MM-DD`.
 - **Before first run:** fill the Lark group `chat_id` in `contacts.md` and confirm the footer in `branding.md`.
-- **Validate (manual-test):** Run-now → check the email arrives, dates = today (BKK), no `{{tokens}}` left, branch rows fill, group skipped. Only then enable the schedule.
+- **Validate (manual-test):** Run-now → check the email arrives, dates = **yesterday** (BKK), no `{{tokens}}` left, branch rows fill, group skipped, and a `sent/actioncity-daily-<date>.sent` marker is written. Run it a **second time** and confirm it STOPS at the idempotency guard (no duplicate email). Only then enable the schedule.
