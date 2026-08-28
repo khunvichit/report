@@ -70,6 +70,8 @@ def main():
     template_path, data_path = sys.argv[1], sys.argv[2]
     with open(template_path, encoding="utf-8") as f:
         html = f.read()
+    # Strip the template's leading how-to comment header (the block before <!DOCTYPE).
+    html = re.sub(r"^\s*<!--(?:(?!-->).)*?-->\s*", "", html, count=1, flags=re.DOTALL)
     with open(data_path, encoding="utf-8") as f:
         data = json.load(f)
     # Order matters: sections first (so dropped sections remove their REPEATs too),
