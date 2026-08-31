@@ -77,7 +77,9 @@ def main():
     html = render_sections(html, data.get("sections", {}))
     html = render_repeats(html, data.get("repeats", {}))
     html = render_scalars(html, data.get("scalars", {}))
-    # Strip the template's how-to comment header and any leftover REPEAT/SECTION markers.
+    # Strip the template's leading how-to comment header (the one before <!DOCTYPE),
+    # then any leftover REPEAT/SECTION markers.
+    html = re.sub(r"^\s*<!--(?!\s*(?:REPEAT|SECTION):).*?-->\s*", "", html, count=1, flags=re.DOTALL)
     html = re.sub(r"<!--\s*/?(?:REPEAT|SECTION):\w+[\s\S]*?-->", "", html)
     # Warn (to stderr) if any placeholder survived — never block the send.
     leftovers = sorted(set(re.findall(r"\{\{(\w+)\}\}", html)))
