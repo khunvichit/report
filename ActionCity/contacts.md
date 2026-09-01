@@ -9,6 +9,7 @@ Resolve each once; delivery files reference by name. Edit here to update everywh
 - management@actioncity.co.th
 - may@chaw.co.th
 - panu@chaw.co.th
+- jakkraphan@chaw.co.th
 
 ## actioncity_ops_group (Lark group for the daily card + failure notices)
 - **chat_id:** `<TO RESOLVE>` — run `lark_list_chats`, find the ActionCity ops/management group, paste the `chat_id`.

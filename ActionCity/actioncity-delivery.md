@@ -16,6 +16,7 @@ Delivery:
   - management@actioncity.co.th
   - may@chaw.co.th
   - panu@chaw.co.th
+  - jakkraphan@chaw.co.th
 - **subject:** `[ActionCity] Daily Sales & Stock — {report_date_display} ({report_weekday})`
 - **html_body:** contents of `email.html` (produced by `fill_template.py`; never model output)
 - **idempotency (two guards — EITHER one stops the send; one report_date → at most one email, ever):**

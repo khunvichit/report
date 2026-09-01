@@ -85,6 +85,18 @@ GROUP BY tl.location;   -- order by net desc client-side
 -- Branches with no rows today → omit (or list under today_branch_note as "no sales posted yet").
 ```
 
+### A3. Month-to-date vs target — `mtd_rows[] (mt_unit, mt_mtd, mt_target, mt_pct, mt_pct_color, mt_bar_pct, mt_bar_color)` + `mtd_label`, `mtd_note`
+MTD net (1st of report_date's month → report_date) for four target units. **Targets: SQ1 ฿1,000,000 · Fashion ฿600,000 · E-commerce ฿1,000,000 · B2B ฿500,000.**
+- SQ1 = location 176 (retail), Fashion = location 174, B2B = class 12 OR entity IN (132,14186), E-commerce = class IN (107,126,128) OR dept 103.
+- `mt_pct` = MTD / target. Colour: ≥100% green #1f7a55, 85–99% amber #b5740a, <85% red #c43b27. `mt_bar_pct` = pct capped at 100.
+- Mid-month, optionally add a pace note (MTD vs target×days_elapsed/days_in_month) in `mtd_note`. E-commerce invoiced lags — note the SO figure alongside.
+```sql
+SELECT <unit CASE> AS unit, -SUM(tl.netamount) net
+FROM transaction t JOIN transactionline tl ON tl.transaction=t.id
+WHERE <universal filters> AND t.trandate BETWEEN :month_start AND :report_date
+GROUP BY <unit CASE>;  -- unit CASE = SQ1/Fashion/E-commerce/B2B per the rules above.
+```
+
 ### B. Net sales by week — `week_rows[] (wk_label, wk_net, wk_bar_pct, wk_bar_color, ...)`
 ```sql
 SELECT TO_CHAR(t.trandate,'IYYY-IW') AS isowk, -SUM(tl.netamount) AS net, SUM(ABS(tl.quantity)) AS units
@@ -134,6 +146,31 @@ GROUP BY tl.class, TO_CHAR(t.trandate,'IYYY-IW');
 -- Map class id→name (126 Shopee, 127 Lazada, 128 TikTok Shop). One row per marketplace, w2/w1/w0 = the 3 full weeks.
 -- mp_w0_color: green if w0>=w1 else red; grey (#8a8a93) + trend "—" for an inactive channel (all zero).
 -- mp_orders = order count in w0. NOTE: own-website (Shopify) is NOT here — it rides class 8 into Revenue by branch (Warehouse HQ/online). Flag that in marketplace_note.
+```
+
+### D3. Daily sales by CLASS — last 7 days — `bu7_rows[] (b7_name, b7_d1..b7_d7, b7_total, b7_color)` + day labels `d7_lab1..d7_lab7`, column totals `d7_t1..d7_t7`, grand `d7_grand`, `bu7_note`
+7-day **class-group × day** matrix ending on `report_date` (d1=oldest … d7=report_date). **Rows, fixed order: Retails · E-commerce (subtotal) · ↳ Shopee · ↳ Shopify · ↳ TikTok · Vending · Wholesale (B2B).** The three indented rows are the E-commerce breakdown (Shopee=126, Shopify=107/dept103, TikTok=128, all on SO) — the **Total row counts the E-commerce subtotal once, NOT the indented rows again**.
+- **Retails** = class 8 (all physical store counters) — **invoice** basis.
+- **E-commerce** = Shopee + Shopify + TikTok, i.e. class IN (107,126,128) OR department=103 — **Sales Order (order date)** basis so recent days aren't falsely 0 (online invoices lag payment-gateway settlement). Use `SUM(ABS(netamount))` on `SalesOrd` (status<>'C').
+- **Vending** = class 10 — invoice.
+- **Wholesale (B2B)** = class 12 OR entity IN (132,14186) — invoice (can be 0 or negative in a returns-only week; show as-is).
+```sql
+-- invoice-basis groups (Retails/Vending/Wholesale)
+SELECT CASE WHEN tl.class=12 THEN 'Wholesale' WHEN tl.class=10 THEN 'Vending' ELSE 'Retails' END AS grp,
+  TO_CHAR(t.trandate,'YYYY-MM-DD') d, -SUM(tl.netamount) net
+FROM transaction t JOIN transactionline tl ON tl.transaction=t.id
+WHERE <universal filters> AND tl.class IN (8,10,12) AND t.trandate BETWEEN :report_date-6 AND :report_date
+GROUP BY 1, TO_CHAR(t.trandate,'YYYY-MM-DD')
+UNION ALL  -- E-commerce on Sales Order basis
+SELECT 'E-commerce', TO_CHAR(t.trandate,'YYYY-MM-DD'), SUM(ABS(tl.netamount))
+FROM transaction t JOIN transactionline tl ON tl.transaction=t.id
+WHERE t.type='SalesOrd' AND t.status<>'C' AND tl.subsidiary=22 AND tl.mainline='F' AND tl.itemtype='InvtPart'
+  AND tl.netamount<>0 AND (tl.class IN (107,126,128) OR tl.department=103)
+  AND t.trandate BETWEEN :report_date-6 AND :report_date
+GROUP BY TO_CHAR(t.trandate,'YYYY-MM-DD');
+-- Pivot to 7 day columns; missing cells = 0. b7_total = row sum; d7_t* = column totals; d7_grand = all.
+-- d7_lab* = "{weekday3} {DD}" (e.g. "Mon 31"). b7_color: #1f7a55 E-commerce, #f5a623 Vending, #b5740a Wholesale, else #2b2b33.
+-- bu7_note: state the basis (Retails/Vending/B2B invoiced; E-commerce = orders placed/SO).
 ```
 
 ### E. Category mix (4-wk) — `cat_rows[]`
