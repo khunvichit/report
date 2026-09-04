@@ -427,20 +427,32 @@ WHERE t.trandate = TO_DATE('{REPORT_DATE}','YYYY-MM-DD')
 ```
 Derive: `lib_net_sales = round(lib_gross_inc / 1.07)` · `lib_avg_ticket = round(lib_net_sales / lib_bills)`.
 
-## Query L2 — Liberty Top 5 items yesterday (item lines = ex-VAT; exclude ฿0 add-on markers)
+## Query L2 — Liberty Top 20 items yesterday + 7d avg (feeds lib_top20; first 5 rows = lib_top5)
 ```sql
-SELECT i.itemid, i.displayname, SUM(ABS(tl.quantity)) AS qty
+SELECT i.itemid, i.displayname,
+  SUM(CASE WHEN t.trandate = TO_DATE('{REPORT_DATE}','YYYY-MM-DD') THEN ABS(tl.quantity) ELSE 0 END) AS qty,
+  ROUND(SUM(CASE WHEN t.trandate < TO_DATE('{REPORT_DATE}','YYYY-MM-DD') THEN ABS(tl.quantity) ELSE 0 END) / 7, 1) AS avg7d
 FROM transaction t
 JOIN transactionline tl ON t.id = tl.transaction
 JOIN item i ON tl.item = i.id
-WHERE t.trandate = TO_DATE('{REPORT_DATE}','YYYY-MM-DD')
+WHERE t.trandate BETWEEN TO_DATE('{REPORT_DATE}','YYYY-MM-DD') - 7 AND TO_DATE('{REPORT_DATE}','YYYY-MM-DD')
   AND t.type = 'CustInvc' AND tl.mainline = 'F' AND tl.location = 452
-  AND tl.netamount < 0
-  AND i.itemid LIKE 'K%' AND i.itemid NOT LIKE 'K-AO%'
-  AND i.itemid NOT IN ('K027','K135','K136','K137','K138','K056')  -- exclude water/coke/glass
-GROUP BY i.itemid, i.displayname ORDER BY qty DESC
+  AND i.itemid LIKE 'K%' AND i.itemid NOT LIKE 'POS_%'
+  AND i.itemid NOT IN ('K138','K137')          -- exclude empty glass / plain ice (service items)
+GROUP BY i.itemid, i.displayname
 ```
-Take top 5 → `lib_top5` repeat ({rank},{itemid},{name},{qty},{row_bg} alternating #FFFFFF/#FAFAFA).
+**EGG GROUPING (client-side, before ranking)** — merge add-on rows into their parent egg so eggs
+rank at their true volume (add-on lines are ฿0 but real consumption):
+- `K023 + K-AO-023 + K-AO-135` → one row `K023 ไข่ดาว (รวม add-on)`
+- `K024 + K-AO-024` → `K024 ไข่เจียว (รวม add-on)`
+- `K133 + K-AO-133` → `K133 ไข่ต้มยางมะตูม (รวม add-on)`
+- `K134 + K-AO-134` → `K134 ไข่เค็ม (รวม add-on)`
+- Any other `K-AO-%` rows: drop (already represented by their parent).
+Then rank by yesterday qty DESC → take 20 → `lib_top20` repeat:
+`{rank},{itemid},{name},{qty},{avg7d},{badge_bg},{badge_fg},{badge_label},{row_bg}` — badge = Δ% of
+qty vs avg7d using the SAME colour rules as top10_all (≥+15% green / −10..+15% amber / ≤−10% red /
+avg7d 0 → "New" blue). Rows with qty 0 yesterday are excluded.
+`lib_top5` = first 5 rows of lib_top20 ({rank},{itemid},{name},{qty},{row_bg}).
 Truncate name ~28 chars.
 
 ## Query L3 — Liberty 7-day average (for lib_signed_pct)

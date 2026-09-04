@@ -67,7 +67,9 @@ Run the 5 checks in `khiang-queries.md`. Any hard-stop failure → do NOT send; 
 Write `data.json` with `scalars`, `repeats` (`top10_all`, `top10_rice`, `hourly_rows`,
 `week_headers`, `walk_cells`, `staff_cells`, `total_cells`,
 `staff10_cells`, `set50_cells`, `heatmap_rows`, `lib_top5`, `apt_top5`, `last7_headers`,
-`last7_apt`, `last7_lib`, `last7_comb`, `lib_heatmap_rows`, `lib_hourly_rows`, `lib_promo_cells`),
+`last7_apt`, `last7_lib`, `last7_comb`, `lib_heatmap_rows`, `lib_hourly_rows`, `lib_promo_cells`,
+`lib_top20` — Liberty Top 20 with EGGS GROUPED (standalone + K-AO add-ons merged per khiang-queries.md
+L2) and badge vs 7d avg; `lib_top5` = first 5 rows of lib_top20),
 and `sections`. (RETIRED 2026-08-27: the 30-day chart — `chart_days`, `chart_labels`,
 `mtd_line_px`, `lib_bar_*` — do NOT build these.) Liberty Watch adds 16 scalars
 (`lw_ticket/peak/eve/egg_attach` + bench/arrow/color each — see khiang-queries.md L5–L8 section). `week_headers` renders above
