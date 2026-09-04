@@ -79,6 +79,7 @@ def main():
     html = render_scalars(html, data.get("scalars", {}))
     # Strip the template's how-to comment header and any leftover REPEAT/SECTION markers.
     html = re.sub(r"<!--\s*/?(?:REPEAT|SECTION):\w+[\s\S]*?-->", "", html)
+    html = re.sub(r"^\s*<!--.*?-->\s*", "", html, count=1, flags=re.DOTALL)
     # Warn (to stderr) if any placeholder survived — never block the send.
     leftovers = sorted(set(re.findall(r"\{\{(\w+)\}\}", html)))
     if leftovers:
