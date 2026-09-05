@@ -12,8 +12,8 @@ Resolve each once; delivery files reference by name. Edit here to update everywh
 - jakkraphan@chaw.co.th
 
 ## actioncity_ops_group (Lark group for the daily card + failure notices)
-- **chat_id:** `<TO RESOLVE>` — run `lark_list_chats`, find the ActionCity ops/management group, paste the `chat_id`.
-- **fallback chat_id:** `<TO RESOLVE>` — a second group or owner DM as backup.
+- **chat_id:** `oc_4dabe0f3436e1201813c8cea6e38dbb1` — "ActionCity TH" (resolved via `lark_list_chats`).
+- **fallback chat_id:** `oc_e253dcc37d240dd674b18ee613e46ab2` — "Ops Board: Notification" (backup / failure notices).
 
 ## Notes
 - Open IDs / chat IDs are resolved with `lark_batch_get_user_id` (email→open_id) and `lark_list_chats`.
