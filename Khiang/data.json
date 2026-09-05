@@ -1,0 +1,1619 @@
+{
+ "scalars": {
+  "report_date_display": "4 Sep 2026",
+  "report_day_en": "Friday",
+  "generated_date": "5 Sep 2026",
+  "chaw_values": "Curious · Team · Act Fast · Empowered · Simple",
+  "net_sales": "44,742",
+  "signed_pct": "+11.9",
+  "target_icon": "✅",
+  "lib_net_sales": "18,726",
+  "lib_signed_pct": "+23.7",
+  "avg_5d": "35,620",
+  "total_bills": "191",
+  "avg_bills": "160",
+  "bills_arrow": "↑",
+  "walk_in_bills": "125",
+  "walk_in_revenue": "31,521",
+  "walk_in_pct": "65.4",
+  "staff_bills": "66",
+  "staff_revenue": "13,220",
+  "staff_pct": "34.6",
+  "avg_ticket": "234",
+  "avg_ticket_bench": "223",
+  "ticket_arrow": "↑",
+  "net_30d": "1,102,890",
+  "d30_start": "6 ส.ค.",
+  "report_date_short": "4 ก.ย.",
+  "avg_30d": "36,763",
+  "mtd_month": "September 2026",
+  "avg_mtd": "36,988",
+  "net_mtd": "147,951",
+  "mtd_days": "4",
+  "mtd_signed_pct": "-7.5",
+  "avg_bills_30d": "172",
+  "pw_walk_ticket": "252",
+  "pw_walk_bench": "238",
+  "pw_walk_arrow": "▲ +5.9%",
+  "pw_walk_color": "#27AE60",
+  "pw_staff_ticket": "200",
+  "pw_staff_bench": "161",
+  "pw_staff_arrow": "▲ +24.2%",
+  "pw_staff_color": "#27AE60",
+  "pw_night_rev": "3,252",
+  "pw_night_bench": "3,695",
+  "pw_night_arrow": "▼ 12.0%",
+  "pw_night_color": "#E74C3C",
+  "pw_noon_plates": "16",
+  "pw_noon_bench": "18",
+  "pw_noon_color": "#2C3E50",
+  "prev_date_short": "3 ก.ย.",
+  "anomaly_count": "5",
+  "staff10_bills": "2",
+  "set50_bills": "44",
+  "staff10_status": "Active",
+  "set50_status": "Active",
+  "staff10_badge_bg": "#D4EDDA",
+  "staff10_badge_fg": "#155724",
+  "set50_badge_bg": "#D4EDDA",
+  "set50_badge_fg": "#155724",
+  "lib_bills": "73",
+  "lib_avg_ticket": "257",
+  "lib_pct_color": "#27AE60",
+  "comb_7d_total": "366,574",
+  "comb_7d_avg": "52,368",
+  "apt_7d_total": "262,316",
+  "lib_7d_total": "104,258",
+  "lw_ticket": "257",
+  "lw_ticket_bench": "266",
+  "lw_ticket_arrow": "▼ 3.4%",
+  "lw_ticket_color": "#E74C3C",
+  "lw_peak_rev": "10,334",
+  "lw_peak_bench": "8,835",
+  "lw_peak_arrow": "▲ +17.0%",
+  "lw_peak_color": "#27AE60",
+  "lw_eve_rev": "4,449",
+  "lw_eve_bench": "3,738",
+  "lw_eve_arrow": "▲ +19.0%",
+  "lw_eve_color": "#27AE60",
+  "lw_egg_attach": "13.7",
+  "lw_egg_bench": "20.6",
+  "lw_egg_arrow": "▼ 33.5%",
+  "lw_egg_color": "#E74C3C"
+ },
+ "repeats": {
+  "apt_top5": [
+   {
+    "rank": 1,
+    "itemid": "K023",
+    "name": "ไข่ดาว",
+    "qty": 117,
+    "row_bg": "#FFFFFF"
+   },
+   {
+    "rank": 2,
+    "itemid": "K064",
+    "name": "ข้าวกะเพราหมูสับ + ซุปใส",
+    "qty": 65,
+    "row_bg": "#FAFAFA"
+   },
+   {
+    "rank": 3,
+    "itemid": "K028",
+    "name": "โค้ก",
+    "qty": 64,
+    "row_bg": "#FFFFFF"
+   },
+   {
+    "rank": 4,
+    "itemid": "K056",
+    "name": "Minere Mineral Water 500 Ml",
+    "qty": 34,
+    "row_bg": "#FAFAFA"
+   },
+   {
+    "rank": 5,
+    "itemid": "K021",
+    "name": "กุยช่ายกรอบ",
+    "qty": 27,
+    "row_bg": "#FFFFFF"
+   }
+  ],
+  "lib_top5": [
+   {
+    "rank": 1,
+    "itemid": "K121",
+    "name": "กะเพรามาม่าหมูสามชั้นทอด",
+    "qty": 18,
+    "row_bg": "#FFFFFF"
+   },
+   {
+    "rank": 2,
+    "itemid": "K037",
+    "name": "ข้าวกะเพราหมูสับ",
+    "qty": 11,
+    "row_bg": "#FAFAFA"
+   },
+   {
+    "rank": 3,
+    "itemid": "K038",
+    "name": "ข้าวกะเพราไก่ชิ้น",
+    "qty": 9,
+    "row_bg": "#FFFFFF"
+   },
+   {
+    "rank": 4,
+    "itemid": "K014",
+    "name": "มาม่าผัดกะเพราไก่",
+    "qty": 8,
+    "row_bg": "#FAFAFA"
+   },
+   {
+    "rank": 5,
+    "itemid": "K034",
+    "name": "ชาดำเย็น (แก้ว)",
+    "qty": 8,
+    "row_bg": "#FFFFFF"
+   }
+  ],
+  "last7_headers": [
+   {
+    "col_date": "29/8",
+    "col_weekday_th": "ส",
+    "header_bg": ""
+   },
+   {
+    "col_date": "30/8",
+    "col_weekday_th": "อา",
+    "header_bg": ""
+   },
+   {
+    "col_date": "31/8",
+    "col_weekday_th": "จ",
+    "header_bg": ""
+   },
+   {
+    "col_date": "1/9",
+    "col_weekday_th": "อ",
+    "header_bg": ""
+   },
+   {
+    "col_date": "2/9",
+    "col_weekday_th": "พ",
+    "header_bg": ""
+   },
+   {
+    "col_date": "3/9",
+    "col_weekday_th": "พฤ",
+    "header_bg": ""
+   },
+   {
+    "col_date": "4/9",
+    "col_weekday_th": "ศ",
+    "header_bg": "background:#4744CD;"
+   }
+  ],
+  "last7_apt": [
+   {
+    "net": "39,475",
+    "cell_style": ""
+   },
+   {
+    "net": "36,399",
+    "cell_style": ""
+   },
+   {
+    "net": "38,490",
+    "cell_style": ""
+   },
+   {
+    "net": "32,827",
+    "cell_style": ""
+   },
+   {
+    "net": "33,813",
+    "cell_style": ""
+   },
+   {
+    "net": "36,570",
+    "cell_style": ""
+   },
+   {
+    "net": "44,742",
+    "cell_style": "background:#FFF3E0;font-weight:700;"
+   }
+  ],
+  "last7_lib": [
+   {
+    "net": "6,270",
+    "cell_style": ""
+   },
+   {
+    "net": "6,194",
+    "cell_style": ""
+   },
+   {
+    "net": "22,727",
+    "cell_style": ""
+   },
+   {
+    "net": "19,692",
+    "cell_style": ""
+   },
+   {
+    "net": "16,927",
+    "cell_style": ""
+   },
+   {
+    "net": "13,722",
+    "cell_style": ""
+   },
+   {
+    "net": "18,726",
+    "cell_style": "background:#FFF3E0;font-weight:700;"
+   }
+  ],
+  "last7_comb": [
+   {
+    "net": "45,745",
+    "cell_style": ""
+   },
+   {
+    "net": "42,593",
+    "cell_style": ""
+   },
+   {
+    "net": "61,217",
+    "cell_style": ""
+   },
+   {
+    "net": "52,519",
+    "cell_style": ""
+   },
+   {
+    "net": "50,740",
+    "cell_style": ""
+   },
+   {
+    "net": "50,292",
+    "cell_style": ""
+   },
+   {
+    "net": "63,468",
+    "cell_style": "background:#FFF3E0;font-weight:700;"
+   }
+  ],
+  "week_headers": [
+   {
+    "label": "1–7 ส.ค.",
+    "head_color": "#888",
+    "head_bg": "#F8F9FA"
+   },
+   {
+    "label": "8–14 ส.ค.",
+    "head_color": "#888",
+    "head_bg": "#F8F9FA"
+   },
+   {
+    "label": "15–21 ส.ค.",
+    "head_color": "#888",
+    "head_bg": "#F8F9FA"
+   },
+   {
+    "label": "22–28 ส.ค.",
+    "head_color": "#888",
+    "head_bg": "#F8F9FA"
+   },
+   {
+    "label": "29 ส.ค.–4 ก.ย.",
+    "head_color": "#5551FE",
+    "head_bg": "#EEECFF"
+   }
+  ],
+  "walk_cells": [
+   {
+    "val": "839",
+    "pct": "",
+    "color": "#888",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "875",
+    "pct": "▲+4.3%",
+    "color": "#27AE60",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "853",
+    "pct": "▼-2.5%",
+    "color": "#E74C3C",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "739",
+    "pct": "▼-13.4%",
+    "color": "#E74C3C",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "764",
+    "pct": "▲+3.4%",
+    "color": "#27AE60",
+    "weight": 700,
+    "bg": "#EEECFF"
+   }
+  ],
+  "staff_cells": [
+   {
+    "val": "415",
+    "pct": "",
+    "color": "#888",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "405",
+    "pct": "▼-2.4%",
+    "color": "#E74C3C",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "422",
+    "pct": "▲+4.2%",
+    "color": "#27AE60",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "337",
+    "pct": "▼-20.1%",
+    "color": "#E74C3C",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "398",
+    "pct": "▲+18.1%",
+    "color": "#27AE60",
+    "weight": 700,
+    "bg": "#EEECFF"
+   }
+  ],
+  "total_cells": [
+   {
+    "val": "1,254",
+    "pct": "",
+    "color": "#888",
+    "weight": 700,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "1,280",
+    "pct": "▲+2.1%",
+    "color": "#27AE60",
+    "weight": 700,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "1,275",
+    "pct": "▼-0.4%",
+    "color": "#E74C3C",
+    "weight": 700,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "1,076",
+    "pct": "▼-15.6%",
+    "color": "#E74C3C",
+    "weight": 700,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "1,162",
+    "pct": "▲+8.0%",
+    "color": "#27AE60",
+    "weight": 700,
+    "bg": "#EEECFF"
+   }
+  ],
+  "heatmap_rows": [
+   {
+    "day_label_th": "ส 29/8",
+    "day_weight": 400,
+    "rev": "39,475",
+    "rev_bg": "#DFDAF6",
+    "rev_fg": "#2C3E50",
+    "rev_weight": 400,
+    "bills": "172",
+    "bills_bg": "#DCD8F7",
+    "bills_fg": "#2C3E50",
+    "bills_weight": 400,
+    "ticket": "230",
+    "ticket_bg": "#D2CFFB",
+    "ticket_fg": "#2C3E50",
+    "ticket_weight": 400,
+    "wow_pct": "+35.2%",
+    "wow_color": "#27AE60",
+    "wow_weight": 700
+   },
+   {
+    "day_label_th": "อา 30/8",
+    "day_weight": 400,
+    "rev": "36,399",
+    "rev_bg": "#ECE6F0",
+    "rev_fg": "#2C3E50",
+    "rev_weight": 400,
+    "bills": "155",
+    "bills_bg": "#EDE7F0",
+    "bills_fg": "#2C3E50",
+    "bills_weight": 400,
+    "ticket": "235",
+    "ticket_bg": "#C9C7FF",
+    "ticket_fg": "#2C3E50",
+    "ticket_weight": 700,
+    "wow_pct": "-19.6%",
+    "wow_color": "#E74C3C",
+    "wow_weight": 700
+   },
+   {
+    "day_label_th": "จ 31/8",
+    "day_weight": 400,
+    "rev": "38,490",
+    "rev_bg": "#E3DEF4",
+    "rev_fg": "#2C3E50",
+    "rev_weight": 400,
+    "bills": "177",
+    "bills_bg": "#D7D3F9",
+    "bills_fg": "#2C3E50",
+    "bills_weight": 400,
+    "ticket": "217",
+    "ticket_bg": "#E7E1F3",
+    "ticket_fg": "#2C3E50",
+    "ticket_weight": 400,
+    "wow_pct": "-7.4%",
+    "wow_color": "#E74C3C",
+    "wow_weight": 400
+   },
+   {
+    "day_label_th": "อ 1/9",
+    "day_weight": 400,
+    "rev": "32,827",
+    "rev_bg": "#FBF3EA",
+    "rev_fg": "#2C3E50",
+    "rev_weight": 400,
+    "bills": "141",
+    "bills_bg": "#FBF3EA",
+    "bills_fg": "#2C3E50",
+    "bills_weight": 400,
+    "ticket": "233",
+    "ticket_bg": "#CCCAFE",
+    "ticket_fg": "#2C3E50",
+    "ticket_weight": 400,
+    "wow_pct": "+10.4%",
+    "wow_color": "#27AE60",
+    "wow_weight": 700
+   },
+   {
+    "day_label_th": "พ 2/9",
+    "day_weight": 400,
+    "rev": "33,813",
+    "rev_bg": "#F7EFEC",
+    "rev_fg": "#2C3E50",
+    "rev_weight": 400,
+    "bills": "148",
+    "bills_bg": "#F4EDED",
+    "bills_fg": "#2C3E50",
+    "bills_weight": 400,
+    "ticket": "228",
+    "ticket_bg": "#D4D1FA",
+    "ticket_fg": "#2C3E50",
+    "ticket_weight": 400,
+    "wow_pct": "+15.9%",
+    "wow_color": "#27AE60",
+    "wow_weight": 700
+   },
+   {
+    "day_label_th": "พฤ 3/9",
+    "day_weight": 400,
+    "rev": "36,570",
+    "rev_bg": "#EBE5F1",
+    "rev_fg": "#2C3E50",
+    "rev_weight": 400,
+    "bills": "178",
+    "bills_bg": "#D6D2FA",
+    "bills_fg": "#2C3E50",
+    "bills_weight": 400,
+    "ticket": "205",
+    "ticket_bg": "#FBF3EA",
+    "ticket_fg": "#2C3E50",
+    "ticket_weight": 400,
+    "wow_pct": "+13.0%",
+    "wow_color": "#27AE60",
+    "wow_weight": 700
+   },
+   {
+    "day_label_th": "ศ 4/9",
+    "day_weight": 700,
+    "rev": "44,742",
+    "rev_bg": "#C9C7FF",
+    "rev_fg": "#2C3E50",
+    "rev_weight": 700,
+    "bills": "191",
+    "bills_bg": "#C9C7FF",
+    "bills_fg": "#2C3E50",
+    "bills_weight": 700,
+    "ticket": "234",
+    "ticket_bg": "#CAC8FF",
+    "ticket_fg": "#2C3E50",
+    "ticket_weight": 400,
+    "wow_pct": "+22.0%",
+    "wow_color": "#27AE60",
+    "wow_weight": 700
+   }
+  ],
+  "top10_all": [
+   {
+    "rank": 1,
+    "itemid": "K023",
+    "name": "ไข่ดาว",
+    "qty": 117,
+    "avg5d": "85",
+    "badge_label": "▲+37.0%",
+    "badge_bg": "#D4EDDA",
+    "badge_fg": "#155724",
+    "row_bg": "#FFFFFF"
+   },
+   {
+    "rank": 2,
+    "itemid": "K064",
+    "name": "⭐ ข้าวกะเพราหมูสับ + ซุปใส",
+    "qty": 65,
+    "avg5d": "53",
+    "badge_label": "▲+23.1%",
+    "badge_bg": "#D4EDDA",
+    "badge_fg": "#155724",
+    "row_bg": "#FAFAFA"
+   },
+   {
+    "rank": 3,
+    "itemid": "K028",
+    "name": "โค้ก",
+    "qty": 64,
+    "avg5d": "45",
+    "badge_label": "▲+42.9%",
+    "badge_bg": "#D4EDDA",
+    "badge_fg": "#155724",
+    "row_bg": "#FFFFFF"
+   },
+   {
+    "rank": 4,
+    "itemid": "K056",
+    "name": "Minere Mineral Water 500 Ml",
+    "qty": 34,
+    "avg5d": "27",
+    "badge_label": "▲+26.9%",
+    "badge_bg": "#D4EDDA",
+    "badge_fg": "#155724",
+    "row_bg": "#FAFAFA"
+   },
+   {
+    "rank": 5,
+    "itemid": "K021",
+    "name": "กุยช่ายกรอบ",
+    "qty": 27,
+    "avg5d": "19",
+    "badge_label": "▲+45.2%",
+    "badge_bg": "#D4EDDA",
+    "badge_fg": "#155724",
+    "row_bg": "#FFFFFF"
+   },
+   {
+    "rank": 6,
+    "itemid": "K065",
+    "name": "⭐ ข้าวกะเพราไก่ + ซุปใส",
+    "qty": 20,
+    "avg5d": "18",
+    "badge_label": "▲+12.4%",
+    "badge_bg": "#FEF3CD",
+    "badge_fg": "#856404",
+    "row_bg": "#FAFAFA"
+   },
+   {
+    "rank": 7,
+    "itemid": "K075",
+    "name": "⭐ ข้าวกะเพราดิบเถื่อน (เนื้อโคขุน) + ซุปใส",
+    "qty": 20,
+    "avg5d": "13",
+    "badge_label": "▲+51.5%",
+    "badge_bg": "#D4EDDA",
+    "badge_fg": "#155724",
+    "row_bg": "#FFFFFF"
+   },
+   {
+    "rank": 8,
+    "itemid": "K029",
+    "name": "โค้ก ซีโร่",
+    "qty": 19,
+    "avg5d": "16",
+    "badge_label": "▲+18.8%",
+    "badge_bg": "#D4EDDA",
+    "badge_fg": "#155724",
+    "row_bg": "#FAFAFA"
+   },
+   {
+    "rank": 9,
+    "itemid": "K071",
+    "name": "⭐ ข้าวผัดโบราณ + ซุปใส",
+    "qty": 18,
+    "avg5d": "11",
+    "badge_label": "▲+60.7%",
+    "badge_bg": "#D4EDDA",
+    "badge_fg": "#155724",
+    "row_bg": "#FFFFFF"
+   },
+   {
+    "rank": 10,
+    "itemid": "K072",
+    "name": "⭐ ข้าวกะเพราเป็ดย่าง + ซุปใส",
+    "qty": 15,
+    "avg5d": "14",
+    "badge_label": "▲+10.3%",
+    "badge_bg": "#FEF3CD",
+    "badge_fg": "#856404",
+    "row_bg": "#FAFAFA"
+   }
+  ],
+  "top10_rice": [
+   {
+    "rank": 1,
+    "itemid": "K064",
+    "name": "⭐ ข้าวกะเพราหมูสับ + ซุปใส",
+    "qty": 65,
+    "avg5d": "53",
+    "badge_label": "▲+23.1%",
+    "badge_bg": "#D4EDDA",
+    "badge_fg": "#155724",
+    "row_bg": "#FFFFFF",
+    "fc_pct": "—"
+   },
+   {
+    "rank": 2,
+    "itemid": "K065",
+    "name": "⭐ ข้าวกะเพราไก่ + ซุปใส",
+    "qty": 20,
+    "avg5d": "18",
+    "badge_label": "▲+12.4%",
+    "badge_bg": "#FEF3CD",
+    "badge_fg": "#856404",
+    "row_bg": "#FAFAFA",
+    "fc_pct": "—"
+   },
+   {
+    "rank": 3,
+    "itemid": "K075",
+    "name": "⭐ ข้าวกะเพราดิบเถื่อน (เนื้อโคขุน) + ซุปใส",
+    "qty": 20,
+    "avg5d": "13",
+    "badge_label": "▲+51.5%",
+    "badge_bg": "#D4EDDA",
+    "badge_fg": "#155724",
+    "row_bg": "#FFFFFF",
+    "fc_pct": "—"
+   },
+   {
+    "rank": 4,
+    "itemid": "K071",
+    "name": "⭐ ข้าวผัดโบราณ + ซุปใส",
+    "qty": 18,
+    "avg5d": "11",
+    "badge_label": "▲+60.7%",
+    "badge_bg": "#D4EDDA",
+    "badge_fg": "#155724",
+    "row_bg": "#FAFAFA",
+    "fc_pct": "—"
+   },
+   {
+    "rank": 5,
+    "itemid": "K072",
+    "name": "⭐ ข้าวกะเพราเป็ดย่าง + ซุปใส",
+    "qty": 15,
+    "avg5d": "14",
+    "badge_label": "▲+10.3%",
+    "badge_bg": "#FEF3CD",
+    "badge_fg": "#856404",
+    "row_bg": "#FFFFFF",
+    "fc_pct": "—"
+   },
+   {
+    "rank": 6,
+    "itemid": "K073",
+    "name": "⭐ ข้าวกะเพราเทพหมู + ซุปใส",
+    "qty": 13,
+    "avg5d": "10",
+    "badge_label": "▲+30.0%",
+    "badge_bg": "#D4EDDA",
+    "badge_fg": "#155724",
+    "row_bg": "#FAFAFA",
+    "fc_pct": "—"
+   },
+   {
+    "rank": 7,
+    "itemid": "K070",
+    "name": "⭐ ข้าวหมูน้ำมันหอย + ซุปใส",
+    "qty": 10,
+    "avg5d": "6",
+    "badge_label": "▲+72.4%",
+    "badge_bg": "#D4EDDA",
+    "badge_fg": "#155724",
+    "row_bg": "#FFFFFF",
+    "fc_pct": "—"
+   },
+   {
+    "rank": 8,
+    "itemid": "K066",
+    "name": "⭐ ข้าวไข่ยู่ยี่ + ซุปใส",
+    "qty": 9,
+    "avg5d": "9",
+    "badge_label": "▼-2.2%",
+    "badge_bg": "#FEF3CD",
+    "badge_fg": "#856404",
+    "row_bg": "#FAFAFA",
+    "fc_pct": "—"
+   },
+   {
+    "rank": 9,
+    "itemid": "K067",
+    "name": "⭐ ข้าวไก่กระเทียม + ซุปใส",
+    "qty": 7,
+    "avg5d": "6",
+    "badge_label": "▲+25.0%",
+    "badge_bg": "#D4EDDA",
+    "badge_fg": "#155724",
+    "row_bg": "#FFFFFF",
+    "fc_pct": "—"
+   },
+   {
+    "rank": 10,
+    "itemid": "K068",
+    "name": "⭐ ข้าวไก่น้ำมันหอย + ซุปใส",
+    "qty": 7,
+    "avg5d": "4",
+    "badge_label": "▲+94.4%",
+    "badge_bg": "#D4EDDA",
+    "badge_fg": "#155724",
+    "row_bg": "#FAFAFA",
+    "fc_pct": "—"
+   }
+  ],
+  "hourly_rows": [
+   {
+    "row_bg": "#FFFFFF",
+    "hour_color": "#2C3E50",
+    "hour": "00:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "98",
+    "cur_color": "#2C3E50",
+    "cur_rev": "493",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+402.9%",
+    "bench": "1,149",
+    "top3": "แกงจืดเต้าหู้หมูสับ ×1<br>กุยช่ายกรอบ ×1<br>ไข่ดาว ×1"
+   },
+   {
+    "row_bg": "#FAFAFA",
+    "hour_color": "#2C3E50",
+    "hour": "01:00",
+    "hour_flag": "",
+    "prev_color": "#AAA",
+    "prev_rev": "—",
+    "cur_color": "#2C3E50",
+    "cur_rev": "350",
+    "change_color": "#17A2B8",
+    "change_weight": 700,
+    "change_pct": "New",
+    "bench": "763",
+    "top3": "ข้าวกะเพราหมูสับ + ซุ… ×2<br>กุยช่ายกรอบ ×1<br>ไข่ดาว ×1"
+   },
+   {
+    "row_bg": "#FFFFFF",
+    "hour_color": "#2C3E50",
+    "hour": "02:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "37",
+    "cur_color": "#2C3E50",
+    "cur_rev": "177",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+372.5%",
+    "bench": "373",
+    "top3": "ไข่ดาว ×1<br>โค้ก ×1<br>ข้าวกะเพราไก่ + ซุปใส ×1"
+   },
+   {
+    "row_bg": "#FAFAFA",
+    "hour_color": "#2C3E50",
+    "hour": "03:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "299",
+    "cur_color": "#2C3E50",
+    "cur_rev": "365",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+22.3%",
+    "bench": "356",
+    "top3": "หมูยอทอด ×1<br>ไข่ดาว ×1<br>ไข่เจียว ×1"
+   },
+   {
+    "row_bg": "#FFEBEE",
+    "hour_color": "#C62828",
+    "hour": "04:00",
+    "hour_flag": " 🚨",
+    "prev_color": "#AAA",
+    "prev_rev": "—",
+    "cur_color": "#AAA",
+    "cur_rev": "—",
+    "change_color": "#888",
+    "change_weight": 400,
+    "change_pct": "—",
+    "bench": "240",
+    "top3": "—"
+   },
+   {
+    "row_bg": "#FFEBEE",
+    "hour_color": "#C62828",
+    "hour": "05:00",
+    "hour_flag": " 🚨",
+    "prev_color": "#2C3E50",
+    "prev_rev": "147",
+    "cur_color": "#AAA",
+    "cur_rev": "—",
+    "change_color": "#E74C3C",
+    "change_weight": 700,
+    "change_pct": "-100.0%",
+    "bench": "166",
+    "top3": "—"
+   },
+   {
+    "row_bg": "#FFEBEE",
+    "hour_color": "#C62828",
+    "hour": "06:00",
+    "hour_flag": " 🚨",
+    "prev_color": "#2C3E50",
+    "prev_rev": "1,410",
+    "cur_color": "#2C3E50",
+    "cur_rev": "186",
+    "change_color": "#E74C3C",
+    "change_weight": 700,
+    "change_pct": "-86.8%",
+    "bench": "538",
+    "top3": "ข้าวกะเพราเทพหมู + ซุ… ×1"
+   },
+   {
+    "row_bg": "#FAFAFA",
+    "hour_color": "#2C3E50",
+    "hour": "07:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "1,811",
+    "cur_color": "#2C3E50",
+    "cur_rev": "1,629",
+    "change_color": "#E74C3C",
+    "change_weight": 400,
+    "change_pct": "-10.1%",
+    "bench": "1,636",
+    "top3": "ไข่ดาว ×5<br>ข้าวผัดโบราณ + ซุปใส ×5<br>โค้ก ×2"
+   },
+   {
+    "row_bg": "#FFFFFF",
+    "hour_color": "#2C3E50",
+    "hour": "08:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "1,080",
+    "cur_color": "#2C3E50",
+    "cur_rev": "1,697",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+57.1%",
+    "bench": "1,910",
+    "top3": "ไข่ดาว ×4<br>Minere Mineral Water … ×4<br>โค้ก ×2"
+   },
+   {
+    "row_bg": "#FAFAFA",
+    "hour_color": "#2C3E50",
+    "hour": "09:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "1,499",
+    "cur_color": "#2C3E50",
+    "cur_rev": "1,828",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+22.0%",
+    "bench": "3,223",
+    "top3": "โค้ก ซีโร่ ×9<br>ไข่ดาว ×7<br>ข้าวกะเพราหมูสับ + ซุ… ×4"
+   },
+   {
+    "row_bg": "#FFFFFF",
+    "hour_color": "#2C3E50",
+    "hour": "10:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "1,027",
+    "cur_color": "#2C3E50",
+    "cur_rev": "3,178",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+209.4%",
+    "bench": "3,827",
+    "top3": "ข้าวกะเพราหมูสับ + ซุ… ×7<br>ไข่ดาว ×4<br>Minere Mineral Water … ×4"
+   },
+   {
+    "row_bg": "#FAFAFA",
+    "hour_color": "#2C3E50",
+    "hour": "11:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "3,256",
+    "cur_color": "#2C3E50",
+    "cur_rev": "3,182",
+    "change_color": "#E74C3C",
+    "change_weight": 400,
+    "change_pct": "-2.3%",
+    "bench": "4,673",
+    "top3": "ไข่ดาว ×13<br>ข้าวกะเพราหมูสับ + ซุ… ×8<br>โค้ก ×5"
+   },
+   {
+    "row_bg": "#FFEBEE",
+    "hour_color": "#C62828",
+    "hour": "12:00",
+    "hour_flag": " 🚨",
+    "prev_color": "#2C3E50",
+    "prev_rev": "3,441",
+    "cur_color": "#2C3E50",
+    "cur_rev": "3,076",
+    "change_color": "#E74C3C",
+    "change_weight": 400,
+    "change_pct": "-10.6%",
+    "bench": "5,768",
+    "top3": "ไข่ดาว ×13<br>โค้ก ×11<br>ข้าวกะเพราหมูสับ + ซุ… ×6"
+   },
+   {
+    "row_bg": "#FAFAFA",
+    "hour_color": "#2C3E50",
+    "hour": "13:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "4,189",
+    "cur_color": "#2C3E50",
+    "cur_rev": "4,867",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+16.2%",
+    "bench": "3,631",
+    "top3": "ไข่ดาว ×12<br>ข้าวกะเพราหมูสับ + ซุ… ×6<br>กุยช่ายกรอบ ×5"
+   },
+   {
+    "row_bg": "#FFFFFF",
+    "hour_color": "#2C3E50",
+    "hour": "14:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "2,316",
+    "cur_color": "#2C3E50",
+    "cur_rev": "3,210",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+38.6%",
+    "bench": "4,196",
+    "top3": "ไข่ดาว ×5<br>ข้าวกะเพราหมูสับ + ซุ… ×5<br>โค้ก ×3"
+   },
+   {
+    "row_bg": "#FAFAFA",
+    "hour_color": "#2C3E50",
+    "hour": "15:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "1,604",
+    "cur_color": "#2C3E50",
+    "cur_rev": "2,048",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+27.7%",
+    "bench": "3,000",
+    "top3": "โค้ก ×4<br>ไข่ดาว ×3<br>Minere Mineral Water … ×3"
+   },
+   {
+    "row_bg": "#FFFFFF",
+    "hour_color": "#2C3E50",
+    "hour": "16:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "1,021",
+    "cur_color": "#2C3E50",
+    "cur_rev": "3,033",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+197.0%",
+    "bench": "3,813",
+    "top3": "โค้ก ×7<br>กุยช่ายกรอบ ×4<br>ไข่ดาว ×3"
+   },
+   {
+    "row_bg": "#FAFAFA",
+    "hour_color": "#2C3E50",
+    "hour": "17:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "4,381",
+    "cur_color": "#2C3E50",
+    "cur_rev": "3,709",
+    "change_color": "#E74C3C",
+    "change_weight": 700,
+    "change_pct": "-15.3%",
+    "bench": "2,969",
+    "top3": "ไข่ดาว ×5<br>ข้าวกะเพราหมูสับ + ซุ… ×4<br>กุยช่ายกรอบ ×3"
+   },
+   {
+    "row_bg": "#FFFFFF",
+    "hour_color": "#2C3E50",
+    "hour": "18:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "1,145",
+    "cur_color": "#2C3E50",
+    "cur_rev": "2,367",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+106.6%",
+    "bench": "3,641",
+    "top3": "ไข่ดาว ×6<br>ข้าวกะเพราหมูสับ + ซุ… ×4<br>กุยช่ายกรอบ ×2"
+   },
+   {
+    "row_bg": "#FAFAFA",
+    "hour_color": "#2C3E50",
+    "hour": "19:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "2,098",
+    "cur_color": "#2C3E50",
+    "cur_rev": "2,450",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+16.8%",
+    "bench": "3,069",
+    "top3": "ไข่ดาว ×8<br>โค้ก ×5<br>Minere Mineral Water … ×2"
+   },
+   {
+    "row_bg": "#FFFFFF",
+    "hour_color": "#2C3E50",
+    "hour": "20:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "2,444",
+    "cur_color": "#2C3E50",
+    "cur_rev": "3,605",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+47.5%",
+    "bench": "3,080",
+    "top3": "ไข่ดาว ×14<br>ข้าวกะเพราหมูสับ + ซุ… ×6<br>Minere Mineral Water … ×4"
+   },
+   {
+    "row_bg": "#FAFAFA",
+    "hour_color": "#2C3E50",
+    "hour": "21:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "2,101",
+    "cur_color": "#2C3E50",
+    "cur_rev": "1,744",
+    "change_color": "#E74C3C",
+    "change_weight": 700,
+    "change_pct": "-17.0%",
+    "bench": "2,162",
+    "top3": "ไข่ดาว ×5<br>โค้ก ×4<br>กุยช่ายกรอบ ×2"
+   },
+   {
+    "row_bg": "#FFFFFF",
+    "hour_color": "#2C3E50",
+    "hour": "22:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "850",
+    "cur_color": "#2C3E50",
+    "cur_rev": "1,815",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+113.4%",
+    "bench": "1,562",
+    "top3": "ไข่ดาว ×6<br>โค้ก ×3<br>ข้าวกะเพราหมูสับ + ซุ… ×3"
+   },
+   {
+    "row_bg": "#FFEBEE",
+    "hour_color": "#C62828",
+    "hour": "23:00",
+    "hour_flag": " 🚨",
+    "prev_color": "#2C3E50",
+    "prev_rev": "316",
+    "cur_color": "#2C3E50",
+    "cur_rev": "51",
+    "change_color": "#E74C3C",
+    "change_weight": 700,
+    "change_pct": "-83.7%",
+    "bench": "553",
+    "top3": "ชามะนาว ×1"
+   }
+  ],
+  "staff10_cells": [
+   {
+    "val": "168",
+    "pct": "",
+    "color": "#888",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "158",
+    "pct": "▼-6.0%",
+    "color": "#E74C3C",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "73",
+    "pct": "▼-53.8%",
+    "color": "#E74C3C",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "13",
+    "pct": "▼-82.2%",
+    "color": "#E74C3C",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "20",
+    "pct": "▲+53.8%",
+    "color": "#27AE60",
+    "weight": 700,
+    "bg": "#EEECFF"
+   }
+  ],
+  "set50_cells": [
+   {
+    "val": "317",
+    "pct": "",
+    "color": "#888",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "304",
+    "pct": "▼-4.1%",
+    "color": "#E74C3C",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "245",
+    "pct": "▼-19.4%",
+    "color": "#E74C3C",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "241",
+    "pct": "▼-1.6%",
+    "color": "#E74C3C",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "239",
+    "pct": "▼-0.8%",
+    "color": "#E74C3C",
+    "weight": 700,
+    "bg": "#EEECFF"
+   }
+  ],
+  "lib_heatmap_rows": [
+   {
+    "day_label_th": "ส 29/8",
+    "day_weight": 400,
+    "rev": "6,270",
+    "rev_bg": "#FBF3EA",
+    "rev_fg": "#2C3E50",
+    "rev_weight": 400,
+    "bills": "30",
+    "bills_bg": "#F5EEEC",
+    "bills_fg": "#2C3E50",
+    "bills_weight": 400,
+    "ticket": "209",
+    "ticket_bg": "#FBF3EA",
+    "ticket_fg": "#2C3E50",
+    "ticket_weight": 400,
+    "wow_pct": "+67.1%",
+    "wow_color": "#27AE60",
+    "wow_weight": 700
+   },
+   {
+    "day_label_th": "อา 30/8",
+    "day_weight": 400,
+    "rev": "6,194",
+    "rev_bg": "#FBF3EA",
+    "rev_fg": "#2C3E50",
+    "rev_weight": 400,
+    "bills": "21",
+    "bills_bg": "#FBF3EA",
+    "bills_fg": "#2C3E50",
+    "bills_weight": 400,
+    "ticket": "295",
+    "ticket_bg": "#CAC8FF",
+    "ticket_fg": "#2C3E50",
+    "ticket_weight": 400,
+    "wow_pct": "-16.3%",
+    "wow_color": "#E74C3C",
+    "wow_weight": 700
+   },
+   {
+    "day_label_th": "จ 31/8",
+    "day_weight": 400,
+    "rev": "22,727",
+    "rev_bg": "#C9C7FF",
+    "rev_fg": "#2C3E50",
+    "rev_weight": 700,
+    "bills": "99",
+    "bills_bg": "#C9C7FF",
+    "bills_fg": "#2C3E50",
+    "bills_weight": 700,
+    "ticket": "230",
+    "ticket_bg": "#EFE9EF",
+    "ticket_fg": "#2C3E50",
+    "ticket_weight": 400,
+    "wow_pct": "+37.7%",
+    "wow_color": "#27AE60",
+    "wow_weight": 700
+   },
+   {
+    "day_label_th": "อ 1/9",
+    "day_weight": 400,
+    "rev": "19,692",
+    "rev_bg": "#D2CFFB",
+    "rev_fg": "#2C3E50",
+    "rev_weight": 400,
+    "bills": "70",
+    "bills_bg": "#DCD7F7",
+    "bills_fg": "#2C3E50",
+    "bills_weight": 400,
+    "ticket": "281",
+    "ticket_bg": "#D2CFFB",
+    "ticket_fg": "#2C3E50",
+    "ticket_weight": 400,
+    "wow_pct": "-2.3%",
+    "wow_color": "#E74C3C",
+    "wow_weight": 400
+   },
+   {
+    "day_label_th": "พ 2/9",
+    "day_weight": 400,
+    "rev": "16,927",
+    "rev_bg": "#DBD6F8",
+    "rev_fg": "#2C3E50",
+    "rev_weight": 400,
+    "bills": "57",
+    "bills_bg": "#E4DFF4",
+    "bills_fg": "#2C3E50",
+    "bills_weight": 400,
+    "ticket": "297",
+    "ticket_bg": "#C9C7FF",
+    "ticket_fg": "#2C3E50",
+    "ticket_weight": 700,
+    "wow_pct": "-15.4%",
+    "wow_color": "#E74C3C",
+    "wow_weight": 700
+   },
+   {
+    "day_label_th": "พฤ 3/9",
+    "day_weight": 400,
+    "rev": "13,722",
+    "rev_bg": "#E4DFF4",
+    "rev_fg": "#2C3E50",
+    "rev_weight": 400,
+    "bills": "54",
+    "bills_bg": "#E6E0F3",
+    "bills_fg": "#2C3E50",
+    "bills_weight": 400,
+    "ticket": "254",
+    "ticket_bg": "#E1DCF5",
+    "ticket_fg": "#2C3E50",
+    "ticket_weight": 400,
+    "wow_pct": "-53.0%",
+    "wow_color": "#E74C3C",
+    "wow_weight": 700
+   },
+   {
+    "day_label_th": "ศ 4/9",
+    "day_weight": 700,
+    "rev": "18,726",
+    "rev_bg": "#D5D2FA",
+    "rev_fg": "#2C3E50",
+    "rev_weight": 400,
+    "bills": "73",
+    "bills_bg": "#DAD6F8",
+    "bills_fg": "#2C3E50",
+    "bills_weight": 400,
+    "ticket": "257",
+    "ticket_bg": "#E0DBF5",
+    "ticket_fg": "#2C3E50",
+    "ticket_weight": 400,
+    "wow_pct": "-8.2%",
+    "wow_color": "#E74C3C",
+    "wow_weight": 400
+   }
+  ],
+  "lib_hourly_rows": [
+   {
+    "row_bg": "#FFFFFF",
+    "hour_color": "#2C3E50",
+    "hour": "08:00",
+    "hour_flag": "",
+    "prev_color": "#AAA",
+    "prev_rev": "—",
+    "cur_color": "#AAA",
+    "cur_rev": "—",
+    "change_color": "#888",
+    "change_weight": 400,
+    "change_pct": "—",
+    "bench": "0",
+    "top3": "—"
+   },
+   {
+    "row_bg": "#FAFAFA",
+    "hour_color": "#2C3E50",
+    "hour": "09:00",
+    "hour_flag": "",
+    "prev_color": "#AAA",
+    "prev_rev": "—",
+    "cur_color": "#AAA",
+    "cur_rev": "—",
+    "change_color": "#888",
+    "change_weight": 400,
+    "change_pct": "—",
+    "bench": "235",
+    "top3": "—"
+   },
+   {
+    "row_bg": "#FFFFFF",
+    "hour_color": "#2C3E50",
+    "hour": "10:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "252",
+    "cur_color": "#2C3E50",
+    "cur_rev": "1,056",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+318.5%",
+    "bench": "249",
+    "top3": "(2รัก)ข้าวกะเพราหมูสั… ×3<br>มาม่าผัดกะเพราไก่ ×1<br>กุยช่ายกรอบ ×1"
+   },
+   {
+    "row_bg": "#FAFAFA",
+    "hour_color": "#2C3E50",
+    "hour": "11:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "734",
+    "cur_color": "#2C3E50",
+    "cur_rev": "1,080",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+47.3%",
+    "bench": "964",
+    "top3": "K027 ×2<br>ข้าวกะเพราหมูสับ ×2<br>ชาดำเย็น (แก้ว) ×1"
+   },
+   {
+    "row_bg": "#FFFFFF",
+    "hour_color": "#2C3E50",
+    "hour": "12:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "3,911",
+    "cur_color": "#2C3E50",
+    "cur_rev": "7,615",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+94.7%",
+    "bench": "4,555",
+    "top3": "K027 ×22<br>กะเพรามาม่าหมูสามชั้น… ×11<br>ข้าวกะเพราหมูสับ ×5"
+   },
+   {
+    "row_bg": "#FAFAFA",
+    "hour_color": "#2C3E50",
+    "hour": "13:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "3,707",
+    "cur_color": "#2C3E50",
+    "cur_rev": "1,638",
+    "change_color": "#E74C3C",
+    "change_weight": 700,
+    "change_pct": "-55.8%",
+    "bench": "3,315",
+    "top3": "K027 ×4<br>กะเพรามาม่าหมูสามชั้น… ×2<br>ข้าวกะเพราหมูกรอบ ×2"
+   },
+   {
+    "row_bg": "#FFFFFF",
+    "hour_color": "#2C3E50",
+    "hour": "14:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "645",
+    "cur_color": "#2C3E50",
+    "cur_rev": "1,014",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+57.2%",
+    "bench": "545",
+    "top3": "K027 ×4<br>ข้าวกะเพราไก่ชิ้น ×2<br>ข้าวผัดโบราณ ×1"
+   },
+   {
+    "row_bg": "#FAFAFA",
+    "hour_color": "#2C3E50",
+    "hour": "15:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "182",
+    "cur_color": "#2C3E50",
+    "cur_rev": "1,178",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+546.2%",
+    "bench": "855",
+    "top3": "K027 ×3<br>ชาดำเย็น (แก้ว) ×2<br>ก๋วยเตี๋ยวคั่วไก่ ×2"
+   },
+   {
+    "row_bg": "#FFFFFF",
+    "hour_color": "#2C3E50",
+    "hour": "16:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "745",
+    "cur_color": "#2C3E50",
+    "cur_rev": "696",
+    "change_color": "#E74C3C",
+    "change_weight": 400,
+    "change_pct": "-6.5%",
+    "bench": "677",
+    "top3": "K027 ×2<br>มาม่าผัดกะเพราไก่ ×1<br>ไข่เจียว ×1"
+   },
+   {
+    "row_bg": "#FAFAFA",
+    "hour_color": "#2C3E50",
+    "hour": "17:00",
+    "hour_flag": "",
+    "prev_color": "#AAA",
+    "prev_rev": "—",
+    "cur_color": "#2C3E50",
+    "cur_rev": "1,623",
+    "change_color": "#17A2B8",
+    "change_weight": 700,
+    "change_pct": "New",
+    "bench": "715",
+    "top3": "K027 ×3<br>เบียร์สิงห์ ×3<br>ข้าวกะเพราโคตรเจ้าสมุ… ×2"
+   },
+   {
+    "row_bg": "#FFFFFF",
+    "hour_color": "#2C3E50",
+    "hour": "18:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "341",
+    "cur_color": "#2C3E50",
+    "cur_rev": "145",
+    "change_color": "#E74C3C",
+    "change_weight": 700,
+    "change_pct": "-57.5%",
+    "bench": "748",
+    "top3": "ข้าวเนื้อโคขุนกะเทียม ×1"
+   },
+   {
+    "row_bg": "#FAFAFA",
+    "hour_color": "#2C3E50",
+    "hour": "19:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "668",
+    "cur_color": "#2C3E50",
+    "cur_rev": "1,462",
+    "change_color": "#27AE60",
+    "change_weight": 700,
+    "change_pct": "+118.7%",
+    "bench": "741",
+    "top3": "ก๋วยเตี๋ยวคั่วไก่ ×3<br>ไข่ดาว ×2<br>ข้าวสวย ×2"
+   },
+   {
+    "row_bg": "#FFFFFF",
+    "hour_color": "#2C3E50",
+    "hour": "20:00",
+    "hour_flag": "",
+    "prev_color": "#2C3E50",
+    "prev_rev": "2,537",
+    "cur_color": "#2C3E50",
+    "cur_rev": "678",
+    "change_color": "#E74C3C",
+    "change_weight": 700,
+    "change_pct": "-73.3%",
+    "bench": "1,000",
+    "top3": "มาม่าผัดกะเพราไก่ ×2<br>K027 ×2<br>แกงจืดเต้าหู้หมูสับ ×1"
+   },
+   {
+    "row_bg": "#FAFAFA",
+    "hour_color": "#2C3E50",
+    "hour": "21:00",
+    "hour_flag": "",
+    "prev_color": "#AAA",
+    "prev_rev": "—",
+    "cur_color": "#2C3E50",
+    "cur_rev": "542",
+    "change_color": "#17A2B8",
+    "change_weight": 700,
+    "change_pct": "New",
+    "bench": "534",
+    "top3": "มาม่าผัดกะเพราไก่ ×1<br>กุนเชียง ×1<br>K027 ×1"
+   }
+  ],
+  "lib_promo_cells": [
+   {
+    "val": "—",
+    "pct": "",
+    "color": "#888",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "—",
+    "pct": "",
+    "color": "#888",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "31",
+    "pct": "",
+    "color": "#888",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "108",
+    "pct": "▲+248.4%",
+    "color": "#27AE60",
+    "weight": 400,
+    "bg": "#FFFFFF"
+   },
+   {
+    "val": "138",
+    "pct": "▲+27.8%",
+    "color": "#27AE60",
+    "weight": 700,
+    "bg": "#EEECFF"
+   }
+  ]
+ },
+ "sections": {
+  "alert_banner": true,
+  "promo": true,
+  "cctv": false
+ }
+}
