@@ -1,0 +1,6 @@
+sent_at: 2026-08-29T22:31:00+07:00
+report_date: 2026-08-28
+subject_sent: [ActionCity] Daily Sales &amp; Stock — 28 Aug 2026 (Fri)
+note: subject was HTML-entity-escaped ("&amp;") in the email tool's stored subject rather than a literal "&" — future sent-mail-search guards should account for this when matching exact subject strings. Sent-flag file is the primary idempotency guard and does not depend on this.
+channels: email (3 recipients), group (ActionCity TH oc_4dabe0f3436e1201813c8cea6e38dbb1)
+mode: scheduled

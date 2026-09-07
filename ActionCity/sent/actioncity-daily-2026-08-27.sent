@@ -1,0 +1,7 @@
+sent_at: 2026-08-28T22:20:00+07:00
+mode: manual-test
+report_date: 2026-08-27
+subject_sent: [ActionCity] Daily Sales &amp; Stock — 27 Aug 2026 (Thu)
+subject_intended: [ActionCity] Daily Sales & Stock — 27 Aug 2026 (Thu)
+recipients: vichit@sfb.co.th
+note: Subject was passed HTML-escaped by mistake ("&amp;" instead of "&"); the mail-search idempotency guard should match on subject_sent (the literal string actually sent), not subject_intended.
