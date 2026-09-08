@@ -1,0 +1,10 @@
+sent_at: 2026-09-08T22:31+07:00 (Asia/Bangkok)
+report_date: 2026-09-07
+subject_sent: [ActionCity] Daily Sales &amp; Stock — 7 Sep 2026 (Mon)
+NOTE: subject contains a literal "&amp;" instead of "&" due to an HTML-entity
+encoding error in the sender call (the lark_send_email `subject` field is
+plain text, not HTML, so the entity was not decoded). Email body/content is
+correct and complete. Do NOT re-send for this report_date — the data and
+delivery are final; only the subject string has this cosmetic defect.
+Fix for next run: pass a literal "&" in the subject, never "&amp;".
+channels: email (4 recipients), group (oc_4dabe0f3436e1201813c8cea6e38dbb1 "ActionCity TH")

@@ -18,6 +18,8 @@ Delivery:
   - panu@chaw.co.th
   - jakkraphan@chaw.co.th
 - **subject:** `[ActionCity] Daily Sales & Stock — {report_date_display} ({report_weekday})`
+  **Pass a literal `&` in the subject string — the `lark_send_email` subject field is plain text,
+  NOT HTML, so `&amp;` is sent verbatim and never decoded (this bit the 7 Sep 2026 run).**
 - **html_body:** contents of `email.html` (produced by `fill_template.py`; never model output)
 - **idempotency (two guards — EITHER one stops the send; one report_date → at most one email, ever):**
   1. **Sent-flag file (primary, no mail-search dependency):** before sending, check for `sent/actioncity-daily-{report_date_iso}.sent`. If it exists → already sent, STOP. **After a successful send, write that file** (timestamp + subject). Keyed on `report_date_iso` (YYYY-MM-DD) — never the display date/weekday, so formatting or a timezone edge can't produce a false "not sent".
