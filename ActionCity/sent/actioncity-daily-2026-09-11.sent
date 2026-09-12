@@ -1,0 +1,6 @@
+sent_at: 2026-09-12T22:30+07:00 (Asia/Bangkok)
+report_date_iso: 2026-09-11
+subject: [ActionCity] Daily Sales & Stock — 11 Sep 2026 (Fri)
+channels: email (4 recipients), group (ActionCity TH, oc_4dabe0f3436e1201813c8cea6e38dbb1)
+mode: scheduled
+note: email subject was submitted via API with the literal string "&amp;" in place of "&" (tool-call formatting slip) -- recipients likely see "&amp;" instead of "&" in the subject line. Cosmetic only; day_net control-total and all report data verified. Not re-sent per the one-email-per-report_date rule -- fix the send call next run (use a literal & character, not the HTML entity).
