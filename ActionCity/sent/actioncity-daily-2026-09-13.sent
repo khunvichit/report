@@ -1,0 +1,6 @@
+2026-09-14T09:00:00+07:00
+subject: [ActionCity] Daily Sales & Stock — 13 Sep 2026 (Sun)
+note: first send (same timestamp) had a broken body (literal "$(cat ...)" text from a tool-call
+authoring mistake, not real report content) and was immediately corrected with a second send
+carrying the actual rendered email.html, subject suffixed "[corrected send]". This flag keys on
+report_date_iso=2026-09-13 per the two-guard idempotency rule; do not re-send for this date.
