@@ -1,0 +1,5 @@
+sent_at: 2026-09-18T22:25:00+07:00
+subject: [ActionCity] Daily Sales & Stock — 17 Sep 2026 (Thu)
+mode: scheduled
+channels: email (4 recipients), group (ActionCity TH)
+note: first email attempt had a malformed/truncated body due to a tool-call error; a corrected full email was sent immediately after to the same recipients before this marker was written. Only one report_date is represented; no further sends should occur for 2026-09-17.
