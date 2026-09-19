@@ -1,3 +1,9 @@
 khiang-sample.html
 sample-data.json
 make_sample_data.py
+
+# Per-run report outputs (regenerated daily, not source)
+data.json
+email.html
+email_raw.html
+stderr.txt
