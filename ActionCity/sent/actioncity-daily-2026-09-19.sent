@@ -1,0 +1,4 @@
+sent_at: 2026-09-20T22:26:52+07:00
+report_date_iso: 2026-09-19
+subject_sent: [ActionCity] Daily Sales & Stock — 19 Sep 2026 (Sat) — CORRECTED (please disregard the earlier email with this subject)
+note: An earlier attempt in this run accidentally sent a broken/placeholder email body under the canonical subject "[ActionCity] Daily Sales & Stock — 19 Sep 2026 (Sat)". This corrected send with the full report body is the authoritative one for report_date 2026-09-19. Idempotency for this date is considered satisfied by this marker; do not re-send for this date.
