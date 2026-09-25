@@ -1,0 +1,7 @@
+sent_at_bkk: 2026-09-25T22:xx+07:00 (routine execution time, see git log for exact commit time)
+subject_sent: [ActionCity] Daily Sales &amp; Stock — 24 Sep 2026 (Thu)
+note: KNOWN DEFECT — subject was sent with literal "&amp;" instead of "&" (HTML-encoding bug in the
+  routine's lark_send_email call this run). Recipients likely saw "Daily Sales &amp; Stock" in their
+  inbox subject line. Fix for next run: pass the subject as plain text, not HTML-entity-encoded.
+channels: email (4 recipients) + group (oc_4dabe0f3436e1201813c8cea6e38dbb1, ActionCity TH)
+mode: scheduled
