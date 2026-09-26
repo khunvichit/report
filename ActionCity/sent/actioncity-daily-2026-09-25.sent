@@ -1,0 +1,5 @@
+sent_at: 2026-09-26T22:20:00+07:00
+subject: [ActionCity] Daily Sales & Stock — 25 Sep 2026 (Fri)
+report_date_iso: 2026-09-25
+recipients: management@actioncity.co.th, may@chaw.co.th, panu@chaw.co.th, jakkraphan@chaw.co.th
+note: subject sent with a literal "&amp;" instead of "&" due to an HTML-entity mistake in the send call (cosmetic only; body/data unaffected). Not corrected — no correction email per policy.
