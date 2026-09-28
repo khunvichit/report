@@ -1,0 +1,7 @@
+sent_at: 2026-09-28T22:25:00+07:00
+report_date_iso: 2026-09-27
+subject_sent: [ActionCity] Daily Sales &amp; Stock — 27 Sep 2026 (Sun)
+subject_intended: [ActionCity] Daily Sales & Stock — 27 Sep 2026 (Sun)
+note: subject was sent with a literal "&amp;" due to an HTML-escaping slip in the send call (cosmetic only, email body unaffected). Idempotency for this date_iso is guarded by this sent-flag file, not by subject-text matching.
+channels_fired: email (4 recipients), group (ActionCity TH, oc_4dabe0f3436e1201813c8cea6e38dbb1)
+mode: scheduled
